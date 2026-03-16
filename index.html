@@ -113,21 +113,32 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .game-date {
+        .game-number {
             color: #ffd700;
             font-weight: 600;
+            font-size: 1.1rem;
         }
 
-        .game-id {
+        .game-version {
             color: rgba(255, 255, 255, 0.6);
             font-size: 0.9rem;
+        }
+
+        .game-map {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: inline-block;
+            border: 1px solid rgba(255, 215, 0, 0.3);
         }
 
         .winner-section {
             background: rgba(255, 215, 0, 0.1);
             border-radius: 10px;
             padding: 10px;
-            margin-bottom: 15px;
+            margin: 15px 0;
             text-align: center;
             border: 1px solid rgba(255, 215, 0, 0.3);
         }
@@ -150,37 +161,8 @@
         .nation-icon-small {
             width: 24px;
             height: 24px;
-            object-fit: contain;
-        }
-
-        .nations-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 15px 0;
-            justify-content: center;
-        }
-
-        .nation-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            min-width: 70px;
-        }
-
-        .nation-icon {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-        }
-
-        .nation-name {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .players-list {
@@ -205,7 +187,8 @@
         .player-nation-mini {
             width: 20px;
             height: 20px;
-            object-fit: contain;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .player-name {
@@ -296,6 +279,22 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: #ffd700;
+            grid-column: 1 / -1;
+        }
+
+        .error {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: #ff6b6b;
+            grid-column: 1 / -1;
+        }
+
         footer {
             text-align: center;
             margin-top: 50px;
@@ -305,283 +304,288 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🎮 ARCHIVE OF GAMES 🎮</h1>
-        
-        <div class="filters">
-            <div class="filter-group">
-                <label>Фильтр по нации</label>
-                <select id="nationFilter">
-                    <option value="all">Все нации</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label>Поиск по игроку</label>
-                <input type="text" id="playerSearch" placeholder="Введите никнейм...">
-            </div>
-            <div class="filter-group">
-                <label>Сортировка</label>
-                <select id="sortFilter">
-                    <option value="newest">Сначала новые</option>
-                    <option value="oldest">Сначала старые</option>
-                </select>
-            </div>
-        </div>
+<div class="container">
+    <h1>🎮 ARCHIVE OF GAMES 🎮</h1>
 
-        <div class="stats-bar" id="statsBar">
-            <div class="stat-item">
-                <div class="stat-value" id="totalGames">0</div>
-                <div class="stat-label">Всего игр</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="uniqueNations">0</div>
-                <div class="stat-label">Наций</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="uniquePlayers">0</div>
-                <div class="stat-label">Игроков</div>
-            </div>
+    <div class="filters">
+        <div class="filter-group">
+            <label>Фильтр по нации</label>
+            <select id="nationFilter">
+                <option value="all">Все нации</option>
+            </select>
         </div>
-
-        <div class="games-grid" id="gamesGrid">
-            <!-- Карточки игр будут добавляться сюда через JavaScript -->
+        <div class="filter-group">
+            <label>Поиск по игроку</label>
+            <input type="text" id="playerSearch" placeholder="Введите никнейм...">
+        </div>
+        <div class="filter-group">
+            <label>Сортировка</label>
+            <select id="sortFilter">
+                <option value="newest">Сначала новые</option>
+                <option value="oldest">Сначала старые</option>
+            </select>
         </div>
     </div>
 
-    <footer>
-        <p>📁 Хранилище реплеев | Нажмите на кнопку "Смотреть реплей" чтобы загрузить GIF</p>
-    </footer>
+    <div class="stats-bar" id="statsBar">
+        <div class="stat-item">
+            <div class="stat-value" id="totalGames">0</div>
+            <div class="stat-label">Всего игр</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value" id="uniqueNations">0</div>
+            <div class="stat-label">Наций</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value" id="uniquePlayers">0</div>
+            <div class="stat-label">Игроков</div>
+        </div>
+    </div>
 
-    <script>
-        // База данных с иконками наций (используем flagcdn.com для реальных флагов)
-        const nationsDB = {
-            'germany': { name: 'Германия', icon: 'https://flagcdn.com/w40/de.png' },
-            'usa': { name: 'США', icon: 'https://flagcdn.com/w40/us.png' },
-            'uk': { name: 'Великобритания', icon: 'https://flagcdn.com/w40/gb.png' },
-            'france': { name: 'Франция', icon: 'https://flagcdn.com/w40/fr.png' },
-            'ussr': { name: 'СССР', icon: 'https://flagcdn.com/w40/ru.png' }, // Используем флаг России как пример
-            'japan': { name: 'Япония', icon: 'https://flagcdn.com/w40/jp.png' },
-            'italy': { name: 'Италия', icon: 'https://flagcdn.com/w40/it.png' },
-            'china': { name: 'Китай', icon: 'https://flagcdn.com/w40/cn.png' }
-        };
+    <div class="games-grid" id="gamesGrid">
+        <div class="loading">Загрузка данных...</div>
+    </div>
+</div>
 
-        // Пример данных о прошедших играх с реальными URL для GIF
-        // ВНИМАНИЕ: Замените 'YOUR_USERNAME' на свой реальный никнейм на GitHub!
-        const GITHUB_USERNAME = 'DeStup'; // <-- ИЗМЕНИТЕ ЭТО!
-        const REPO_NAME = 'unciv-ironleague-ru'; // Название вашего репозитория
-        
-        const gamesData = [
-            {
-                id: 1,
-                date: '2024-01-15',
-                nations: ['germany', 'usa', 'uk'],
-                winner: 'germany',
-                players: [
-                    { name: 'ProGamer123', nation: 'germany', status: 'winner' },
-                    { name: 'TankMaster', nation: 'usa', status: 'loser' },
-                    { name: 'RoyalGuard', nation: 'uk', status: 'loser' }
-                ],
-                // GIF будет загружаться из папки gifs в вашем репозитории
-                replayGif: `https://${GITHUB_USERNAME}.github.io/${REPO_NAME}/gifs/battle-1.gif`
-            },
-            {
-                id: 2,
-                date: '2024-01-14',
-                nations: ['ussr', 'china', 'japan'],
-                winner: 'ussr',
-                players: [
-                    { name: 'RedStar', nation: 'ussr', status: 'winner' },
-                    { name: 'DragonSlayer', nation: 'china', status: 'loser' },
-                    { name: 'SamuraiX', nation: 'japan', status: 'loser' }
-                ],
-                replayGif: `https://${GITHUB_USERNAME}.github.io/${REPO_NAME}/gifs/battle-2.gif`
-            },
-            {
-                id: 3,
-                date: '2024-01-13',
-                nations: ['france', 'italy', 'germany'],
-                winner: 'france',
-                players: [
-                    { name: 'Napoleon', nation: 'france', status: 'winner' },
-                    { name: 'PizzaMaster', nation: 'italy', status: 'loser' },
-                    { name: 'PanzerKing', nation: 'germany', status: 'loser' }
-                ],
-                replayGif: `https://${GITHUB_USERNAME}.github.io/${REPO_NAME}/gifs/battle-3.gif`
-            },
-            {
-                id: 4,
-                date: '2024-01-12',
-                nations: ['usa', 'uk', 'japan'],
-                winner: 'usa',
-                players: [
-                    { name: 'Liberty', nation: 'usa', status: 'winner' },
-                    { name: 'QueenGuard', nation: 'uk', status: 'loser' },
-                    { name: 'Kamikaze', nation: 'japan', status: 'loser' }
-                ],
-                replayGif: `https://${GITHUB_USERNAME}.github.io/${REPO_NAME}/gifs/battle-4.gif`
-            },
-            {
-                id: 5,
-                date: '2024-01-11',
-                nations: ['germany', 'ussr', 'usa'],
-                winner: 'ussr',
-                players: [
-                    { name: 'Stalin', nation: 'ussr', status: 'winner' },
-                    { name: 'Hitler', nation: 'germany', status: 'loser' },
-                    { name: 'Roosevelt', nation: 'usa', status: 'loser' }
-                ],
-                replayGif: `https://${GITHUB_USERNAME}.github.io/${REPO_NAME}/gifs/battle-5.gif`
+<footer>
+    <p>📁 Хранилище реплеев | Нажмите на кнопку "Смотреть реплей" чтобы загрузить GIF</p>
+</footer>
+
+<script>
+    // Конфигурация
+    const CONFIG = {
+        // Путь к папке с иконками наций (круглые иконки)
+        nationsPath: 'nations/',
+        // Путь к папке с GIF реплеями
+        replaysPath: 'replays/',
+        // Формат имени файла реплея: session{id}.gif (например session1.gif)
+        replayFilePattern: 'session{id}.gif'
+    };
+
+    // Глобальные переменные
+    let gamesData = [];
+    let allNations = new Set();
+    let nationsMap = new Map(); // Для быстрого поиска наций
+
+    // Функция для загрузки данных из JSON
+    async function loadGamesData() {
+        try {
+            const response = await fetch('Games.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
-        ];
+            const data = await response.json();
+            gamesData = data.games;
 
-        // Заполняем фильтр наций
-        function populateNationFilter() {
-            const filterSelect = document.getElementById('nationFilter');
-            for (const [nationId, nationData] of Object.entries(nationsDB)) {
-                const option = document.createElement('option');
-                option.value = nationId;
-                option.textContent = nationData.name;
-                filterSelect.appendChild(option);
-            }
-        }
-
-        // Обновляем статистику
-        function updateStats() {
-            const totalGames = gamesData.length;
-            
-            // Уникальные нации
-            const allNations = new Set();
+            // Добавляем поле date для сортировки (используем id как дату)
             gamesData.forEach(game => {
-                game.nations.forEach(nation => allNations.add(nation));
-            });
-            
-            // Уникальные игроки
-            const allPlayers = new Set();
-            gamesData.forEach(game => {
-                game.players.forEach(player => allPlayers.add(player.name));
-            });
-            
-            document.getElementById('totalGames').textContent = totalGames;
-            document.getElementById('uniqueNations').textContent = allNations.size;
-            document.getElementById('uniquePlayers').textContent = allPlayers.size;
-        }
+                // Создаем искусственную дату на основе id для сортировки
+                // (чем больше id, тем новее игра)
+                game.date = new Date(2024, 0, game.id).toISOString().split('T')[0];
 
-        // Функция для отображения игр
-        function displayGames(gamesToShow) {
-            const grid = document.getElementById('gamesGrid');
-            grid.innerHTML = '';
-            
-            if (gamesToShow.length === 0) {
-                grid.innerHTML = '<div class="no-games">😢 Игр не найдено</div>';
-                return;
-            }
-            
-            gamesToShow.forEach(game => {
-                const card = document.createElement('div');
-                card.className = 'game-card';
-                
-                // Формируем HTML для наций
-                const nationsHtml = game.nations.map(nationId => `
-                    <div class="nation-item">
-                        <img class="nation-icon" src="${nationsDB[nationId].icon}" alt="${nationsDB[nationId].name}" onerror="this.src='https://via.placeholder.com/40?text=Flag'">
-                        <span class="nation-name">${nationsDB[nationId].name}</span>
-                    </div>
-                `).join('');
-                
-                // Формируем HTML для игроков
-                const playersHtml = game.players.map(player => `
-                    <div class="player-item">
-                        <img class="player-nation-mini" src="${nationsDB[player.nation].icon}" alt="${nationsDB[player.nation].name}" onerror="this.src='https://via.placeholder.com/20?text=Flag'">
-                        <span class="player-name">${player.name}</span>
-                        ${player.status === 'winner' ? '<span class="player-status">👑 Победитель</span>' : ''}
-                    </div>
-                `).join('');
-                
-                card.innerHTML = `
-                    <div class="game-header">
-                        <span class="game-date">📅 ${game.date}</span>
-                        <span class="game-id">#${game.id}</span>
-                    </div>
-                    
-                    <div class="winner-section">
-                        <span class="winner-label">🏆 ПОБЕДИТЕЛЬ:</span>
-                        <span class="winner-nation">
-                            <img class="nation-icon-small" src="${nationsDB[game.winner].icon}" alt="${nationsDB[game.winner].name}" onerror="this.src='https://via.placeholder.com/24?text=Flag'">
-                            ${nationsDB[game.winner].name}
-                        </span>
-                    </div>
-                    
-                    <div class="nations-grid">
-                        ${nationsHtml}
-                    </div>
-                    
-                    <div class="players-list">
-                        ${playersHtml}
-                    </div>
-                    
-                    <button class="replay-button" data-replay="${game.replayGif}">
-                        🎬 Смотреть реплей
-                    </button>
-                    <img class="replay-gif" src="${game.replayGif}" alt="Replay GIF" data-game-id="${game.id}">
-                `;
-                
-                grid.appendChild(card);
-            });
-            
-            // Добавляем обработчики для кнопок реплея
-            document.querySelectorAll('.replay-button').forEach(button => {
-                button.addEventListener('click', function() {
-                    const replayGif = this.nextElementSibling;
-                    if (replayGif && replayGif.classList.contains('replay-gif')) {
-                        replayGif.classList.toggle('show');
-                        this.textContent = replayGif.classList.contains('show') ? '🎬 Скрыть реплей' : '🎬 Смотреть реплей';
-                    }
+                // Формируем путь к реплею
+                game.replayGif = `${CONFIG.replaysPath}${CONFIG.replayFilePattern.replace('{id}', game.id)}`;
+
+                // Собираем все нации
+                game.players.forEach(player => {
+                    allNations.add(player.nation);
+                    // Сохраняем имя нации для поиска
+                    nationsMap.set(player.nation, player.nation);
                 });
             });
+
+            // Заполняем фильтр наций
+            populateNationFilter();
+            // Обновляем статистику
+            updateStats();
+            // Отображаем игры
+            filterGames();
+
+        } catch (error) {
+            console.error('Ошибка загрузки данных:', error);
+            document.getElementById('gamesGrid').innerHTML =
+                '<div class="error">❌ Ошибка загрузки данных. Проверьте наличие файла Games.json</div>';
+        }
+    }
+
+    // Заполняем фильтр наций
+    function populateNationFilter() {
+        const filterSelect = document.getElementById('nationFilter');
+        // Сортируем нации по алфавиту
+        const sortedNations = Array.from(allNations).sort((a, b) => a.localeCompare(b, 'ru'));
+
+        sortedNations.forEach(nation => {
+            const option = document.createElement('option');
+            option.value = nation;
+            option.textContent = nation;
+            filterSelect.appendChild(option);
+        });
+    }
+
+    // Обновляем статистику
+    function updateStats() {
+        const totalGames = gamesData.length;
+
+        // Уникальные игроки
+        const allPlayers = new Set();
+        gamesData.forEach(game => {
+            game.players.forEach(player => allPlayers.add(player.name));
+        });
+
+        document.getElementById('totalGames').textContent = totalGames;
+        document.getElementById('uniqueNations').textContent = allNations.size;
+        document.getElementById('uniquePlayers').textContent = allPlayers.size;
+    }
+
+    // Функция для получения пути к иконке нации
+    function getNationIconPath(nationName) {
+        // Транслитерация кириллицы в латиницу для имени файла
+        const translitMap = {
+            'А': 'A', 'Б': 'B', 'В': 'V', 'Г': 'G', 'Д': 'D', 'Е': 'E', 'Ё': 'E',
+            'Ж': 'Zh', 'З': 'Z', 'И': 'I', 'Й': 'Y', 'К': 'K', 'Л': 'L', 'М': 'M',
+            'Н': 'N', 'О': 'O', 'П': 'P', 'Р': 'R', 'С': 'S', 'Т': 'T', 'У': 'U',
+            'Ф': 'F', 'Х': 'Kh', 'Ц': 'Ts', 'Ч': 'Ch', 'Ш': 'Sh', 'Щ': 'Sch',
+            'Ъ': '', 'Ы': 'Y', 'Ь': '', 'Э': 'E', 'Ю': 'Yu', 'Я': 'Ya',
+            'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ё': 'e',
+            'ж': 'zh', 'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm',
+            'н': 'n', 'о': 'o', 'п': 'p', 'р': 'r', 'с': 's', 'т': 't', 'у': 'u',
+            'ф': 'f', 'х': 'kh', 'ц': 'ts', 'ч': 'ch', 'ш': 'sh', 'щ': 'sch',
+            'ъ': '', 'ы': 'y', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya'
+        };
+
+        let fileName = nationName
+            .split('')
+            .map(char => translitMap[char] || char)
+            .join('')
+            .replace(/\s+/g, '_')
+            .toLowerCase();
+
+        return `${CONFIG.nationsPath}${fileName}.png`;
+    }
+
+    // Функция для отображения игр
+    function displayGames(gamesToShow) {
+        const grid = document.getElementById('gamesGrid');
+        grid.innerHTML = '';
+
+        if (gamesToShow.length === 0) {
+            grid.innerHTML = '<div class="no-games">😢 Игр не найдено</div>';
+            return;
         }
 
-        // Фильтрация игр
-        function filterGames() {
-            const nationFilter = document.getElementById('nationFilter').value;
-            const playerSearch = document.getElementById('playerSearch').value.toLowerCase();
-            const sortFilter = document.getElementById('sortFilter').value;
-            
-            let filtered = gamesData.filter(game => {
-                // Фильтр по нации
-                if (nationFilter !== 'all' && !game.nations.includes(nationFilter)) {
-                    return false;
-                }
-                
-                // Поиск по игроку
-                if (playerSearch) {
-                    const playerFound = game.players.some(player => 
-                        player.name.toLowerCase().includes(playerSearch)
-                    );
-                    if (!playerFound) return false;
-                }
-                
-                return true;
-            });
-            
-            // Сортировка
-            filtered.sort((a, b) => {
-                const dateA = new Date(a.date);
-                const dateB = new Date(b.date);
-                return sortFilter === 'newest' ? dateB - dateA : dateA - dateB;
-            });
-            
-            displayGames(filtered);
-        }
+        gamesToShow.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'game-card';
 
-        // Инициализация при загрузке страницы
-        populateNationFilter();
-        updateStats();
-        displayGames(gamesData);
-        
-        // Добавляем обработчики событий для фильтров
-        document.getElementById('nationFilter').addEventListener('change', filterGames);
-        document.getElementById('playerSearch').addEventListener('input', filterGames);
-        document.getElementById('sortFilter').addEventListener('change', filterGames);
-    </script>
+            // Формируем HTML для игроков
+            const playersHtml = game.players.map(player => {
+                const isWinner = player.nation === game.winner;
+                return `
+                    <div class="player-item">
+                        <img class="player-nation-mini"
+                             src="${getNationIconPath(player.nation)}"
+                             alt="${player.nation}"
+                             onerror="this.src='https://via.placeholder.com/20?text=?'">
+                        <span class="player-name">${player.name}</span>
+                        ${isWinner ? '<span class="player-status">👑 Победитель</span>' : ''}
+                    </div>
+                `;
+            }).join('');
+
+            card.innerHTML = `
+                <div class="game-header">
+                    <span class="game-number">🎮 ${game.number}</span>
+                    <span class="game-version">${game.version || 'Версия не указана'}</span>
+                </div>
+
+                ${game.map ? `<div class="game-map">🗺️ ${game.map}</div>` : ''}
+
+                <div class="winner-section">
+                    <span class="winner-label">🏆 ПОБЕДИТЕЛЬ:</span>
+                    <span class="winner-nation">
+                        <img class="nation-icon-small"
+                             src="${getNationIconPath(game.winner)}"
+                             alt="${game.winner}"
+                             onerror="this.src='https://via.placeholder.com/24?text=?'">
+                        ${game.winner}
+                    </span>
+                </div>
+
+                <div class="players-list">
+                    ${playersHtml}
+                </div>
+
+                <button class="replay-button" data-replay="${game.replayGif}">
+                    🎬 Смотреть реплей
+                </button>
+                <img class="replay-gif" src="${game.replayGif}" alt="Replay GIF"
+                     data-game-id="${game.id}"
+                     onerror="this.style.display='none'; this.previousElementSibling.style.display='none';">
+            `;
+
+            grid.appendChild(card);
+        });
+
+        // Добавляем обработчики для кнопок реплея
+        document.querySelectorAll('.replay-button').forEach(button => {
+            // Проверяем существует ли GIF
+            const replayGif = button.nextElementSibling;
+            if (replayGif && replayGif.tagName === 'IMG') {
+                // Если GIF не загрузился (ошибка 404), скрываем кнопку
+                replayGif.addEventListener('error', function() {
+                    button.style.display = 'none';
+                });
+            }
+
+            button.addEventListener('click', function() {
+                const replayGif = this.nextElementSibling;
+                if (replayGif && replayGif.classList.contains('replay-gif')) {
+                    replayGif.classList.toggle('show');
+                    this.textContent = replayGif.classList.contains('show') ? '🎬 Скрыть реплей' : '🎬 Смотреть реплей';
+                }
+            });
+        });
+    }
+
+    // Фильтрация игр
+    function filterGames() {
+        const nationFilter = document.getElementById('nationFilter').value;
+        const playerSearch = document.getElementById('playerSearch').value.toLowerCase();
+        const sortFilter = document.getElementById('sortFilter').value;
+
+        let filtered = gamesData.filter(game => {
+            // Фильтр по нации
+            if (nationFilter !== 'all') {
+                const hasNation = game.players.some(player => player.nation === nationFilter);
+                if (!hasNation) return false;
+            }
+
+            // Поиск по игроку
+            if (playerSearch) {
+                const playerFound = game.players.some(player =>
+                    player.name.toLowerCase().includes(playerSearch)
+                );
+                if (!playerFound) return false;
+            }
+
+            return true;
+        });
+
+        // Сортировка по id (который соответствует номеру сессии)
+        filtered.sort((a, b) => {
+            return sortFilter === 'newest' ? b.id - a.id : a.id - b.id;
+        });
+
+        displayGames(filtered);
+    }
+
+    // Загружаем данные при загрузке страницы
+    loadGamesData();
+
+    // Добавляем обработчики событий для фильтров
+    document.getElementById('nationFilter').addEventListener('change', filterGames);
+    document.getElementById('playerSearch').addEventListener('input', filterGames);
+    document.getElementById('sortFilter').addEventListener('change', filterGames);
+</script>
 </body>
 </html>
