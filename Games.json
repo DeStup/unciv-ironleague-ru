@@ -256,7 +256,7 @@
     },
     {
       "id": 13,
-      "version": "",
+      "version": "4.15.12 (Build 1091)",
       "number": "Session15",
       "players": [
         {"name": "AlexUnderHill", "nation": "Готы"},
@@ -271,13 +271,13 @@
       "winner": "Кхмеры",
       "map": "Пангея",
       "playerCount": 8,
-      "endedOnTurn": "",
-      "victoryType": "",
-      "gif": ""
+      "endedOnTurn": "133",
+      "victoryType": "CC",
+      "gif": "Replays/Unciv_kZiCWJW5nk.gif"
     },
     {
       "id": 14,
-      "version": "",
+      "version": "4.15.14 (Build 1107)",
       "number": "Session16",
       "players": [
         {"name": "den_stu", "nation": "Бруней"},
@@ -292,13 +292,13 @@
       "winner": "Бруней",
       "map": "Шум перлина",
       "playerCount": 8,
-      "endedOnTurn": "",
-      "victoryType": "",
-      "gif": "Unciv_wwiabovy1p.gif"
+      "endedOnTurn": "172",
+      "victoryType": "CC",
+      "gif": "Replays/Unciv_wwiabovy1p.gif"
     },
     {
       "id": 15,
-      "version": "",
+      "version": "4.16.4 (Build 1119)",
       "number": "Session17",
       "players": [
         {"name": "Overslidishe", "nation": "Нормандия"},
@@ -315,13 +315,13 @@
       "winner": "Бразилия",
       "map": "Шум перлина",
       "playerCount": 10,
-      "endedOnTurn": "",
-      "victoryType": "",
-      "gif": ""
+      "endedOnTurn": "136",
+      "victoryType": "CC",
+      "gif": "Replays/Unciv_kd6lUrZElU.gif"
     },
     {
       "id": 16,
-      "version": "",
+      "version": "4.16.9 (Build 1125)",
       "number": "Session18",
       "players": [
         {"name": "n9306867842", "nation": "Полинезия"},
@@ -334,13 +334,13 @@
       "winner": "Германия",
       "map": "Пангея",
       "playerCount": 6,
-      "endedOnTurn": "",
-      "victoryType": "",
-      "gif": ""
+      "endedOnTurn": "128",
+      "victoryType": "CC",
+      "gif": "Replays/Unciv_ZpMnOiLVsf.gif"
     },
     {
       "id": 17,
-      "version": "",
+      "version": "4.17.17-patch1 (Build 1159)",
       "number": "Session20",
       "players": [
         {"name": "Ashegg2", "nation": "Византия"},
@@ -356,13 +356,13 @@
       "winner": "Ирокезы",
       "map": "Шум Перлина",
       "playerCount": 9,
-      "endedOnTurn": "",
-      "victoryType": "",
+      "endedOnTurn": "192",
+      "victoryType": "Science",
       "gif": "Replays/Unciv_r3NqbWLVTc.gif"
     },
     {
       "id": 18,
-      "version": "",
+      "version": "4.18.4 (Build 1166)",
       "number": "Session21",
       "players": [
         {"name": "Ouni0", "nation": "Румыния"},
@@ -379,8 +379,8 @@
       "winner": "Франция",
       "map": "Пангея",
       "playerCount": 10,
-      "endedOnTurn": "",
-      "victoryType": "",
+      "endedOnTurn": "148",
+      "victoryType": "Cultural",
       "gif": "Replays/Unciv_l70yhbz9MB.gif"
     },
     {
@@ -398,8 +398,8 @@
       "winner": "Нидерланды",
       "map": "Внутреннее море",
       "playerCount": 6,
-      "endedOnTurn": "",
-      "victoryType": "",
+      "endedOnTurn": "178",
+      "victoryType": "CC",
       "gif": "Replays/Unciv_W76DZEWIiC.gif"
     },
     {
@@ -420,8 +420,8 @@
       "winner": "Финляндия",
       "map": "Пангея",
       "playerCount": 9,
-      "endedOnTurn": "",
-      "victoryType": "",
+      "endedOnTurn": "139",
+      "victoryType": "CC",
       "gif": "Replays/Unciv_Wy7gVl9zgl.gif"
     }
   ]
