@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive of Games — История матчей</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+            color: #f0f0f0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 30px 0;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .filters {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        .filter-group select, .filter-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .filter-group select option {
+            background: #2a2a40;
+        }
+
+        .filter-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .game-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: #ffd700;
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .game-date {
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        .game-id {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .winner-section {
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .winner-label {
+            font-size: 0.9rem;
+            color: #ffd700;
+            margin-right: 10px;
+        }
+
+        .winner-nation {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .nation-icon-small {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        .nations-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 15px 0;
+            justify-content: center;
+        }
+
+        .nation-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            min-width: 70px;
+        }
+
+        .nation-icon {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .nation-name {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .players-list {
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .player-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .player-item:last-child {
+            border-bottom: none;
+        }
+
+        .player-nation-mini {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+
+        .player-name {
+            flex: 1;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .player-status {
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+        }
+
+        .replay-button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #ffd700, #ffa500);
+            border: none;
+            border-radius: 10px;
+            color: #1e1e2f;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: opacity 0.3s;
+            margin-top: 15px;
+        }
+
+        .replay-button:hover {
+            opacity: 0.9;
+        }
+
+        .replay-button:active {
+            transform: scale(0.98);
+        }
+
+        .replay-gif {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 15px;
+            display: none;
+            border: 2px solid #ffd700;
+        }
+
+        .replay-gif.show {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        .no-games {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.6);
+            grid-column: 1 / -1;
+        }
+
+        .stats-bar {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 ARCHIVE OF GAMES 🎮</h1>
+        
+        <div class="filters">
+            <div class="filter-group">
+                <label>Фильтр по нации</label>
+                <select id="nationFilter">
+                    <option value="all">Все нации</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Поиск по игроку</label>
+                <input type="text" id="playerSearch" placeholder="Введите никнейм...">
+            </div>
+            <div class="filter-group">
+                <label>Сортировка</label>
+                <select id="sortFilter">
+                    <option value="newest">Сначала новые</option>
+                    <option value="oldest">Сначала старые</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="stats-bar" id="statsBar">
+            <div class="stat-item">
+                <div class="stat-value" id="totalGames">0</div>
+                <div class="stat-label">Всего игр</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="uniqueNations">0</div>
+                <div class="stat-label">Наций</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="uniquePlayers">0</div>
+                <div class="stat-label">Игроков</div>
+            </div>
+        </div>
+
+        <div class="games-grid" id="gamesGrid">
+            <!-- Карточки игр будут добавляться сюда через JavaScript -->
+        </div>
+    </div>
+
+    <footer>
+        <p>📁 Хранилище реплеев | Нажмите на кнопку "Смотреть реплей" чтобы загрузить GIF</p>
+    </footer>
+
+    <script>
+        // База данных с иконками наций (используем flagcdn.com для реальных флагов)
+        const nationsDB = {
+            'germany': { name: 'Германия', icon: 'https://flagcdn.com/w40/de.png' },
+            'usa': { name: 'США', icon: 'https://flagcdn.com/w40/us.png' },
+            'uk': { name: 'Великобритания', icon: 'https://flagcdn.com/w40/gb.png' },
+            'france': { name: 'Франция', icon: 'https://flagcdn.com/w40/fr.png' },
+            'ussr': { name: 'СССР', icon: 'https://flagcdn.com/w40/ru.png' }, // Используем флаг России как пример
+            'japan': { name: 'Япония', icon: 'https://flagcdn.com/w40/jp.png' },
+            'italy': { name: 'Италия', icon: 'https://flagcdn.com/w40/it.png' },
+            'china': { name: 'Китай', icon: 'https://flagcdn.com/w40/cn.png' }
+        };
+
+        // Пример данных о прошедших играх с реальными URL для GIF
+        // ВНИМАНИЕ: Замените 'YOUR_USERNAME' на свой реальный никнейм на GitHub!
+        const GITHUB_USERNAME = 'YOUR_USERNAME'; // <-- ИЗМЕНИТЕ ЭТО!
+        const REPO_NAME = 'game-archive'; // Название вашего репозитория
+        
+        const gamesData = [
+            {
+                id: 1,
+                date: '2024-01-15',
+                nations: ['germany', 'usa', 'uk'],
+                winner: 'germany',
+                players: [
+                    { name: 'ProGamer123', nation: 'germany', status: 'winner' },
+                    { name: 'TankMaster', nation: 'usa', status: 'loser' },
+                    { name: 'RoyalGuard', nation: 'uk', status: 'loser' }
+                ],
+                // GIF будет загружаться из папки gifs в вашем репозитории
+                replayGif: `https://${GITHUB_USERNAME}.github.io/${REPO_NAME}/gifs/battle-1.gif`
+            },
+            {
+                id: 2,
+                date: '2024-01-14',
+                nations: ['ussr', 'china', 'japan'],
+                winner: 'ussr',
+                players: [
+                    { name: 'RedStar', nation: 'ussr', status: 'winner' },
+                    { name: 'DragonSlayer', nation: 'china', status: 'loser' },
+                    { name: 'SamuraiX', nation: 'japan', status: 'loser' }
+                ],
+                replayGif: `https://${GITHUB_USERNAME}.github.io/${REPO_NAME}/gifs/battle-2.gif`
+            },
+            {
+                id: 3,
+                date: '2024-01-13',
+                nations: ['france', 'italy', 'germany'],
+                winner: 'france',
+                players: [
+                    { name: 'Napoleon', nation: 'france', status: 'winner' },
+                    { name: 'PizzaMaster', nation: 'italy', status: 'loser' },
+                    { name: 'PanzerKing', nation: 'germany', status: 'loser' }
+                ],
+                replayGif: `https://${GITHUB_USERNAME}.github.io/${REPO_NAME}/gifs/battle-3.gif`
+            },
+            {
+                id: 4,
+                date: '2024-01-12',
+                nations: ['usa', 'uk', 'japan'],
+                winner: 'usa',
+                players: [
+                    { name: 'Liberty', nation: 'usa', status: 'winner' },
+                    { name: 'QueenGuard', nation: 'uk', status: 'loser' },
+                    { name: 'Kamikaze', nation: 'japan', status: 'loser' }
+                ],
+                replayGif: `https://${GITHUB_USERNAME}.github.io/${REPO_NAME}/gifs/battle-4.gif`
+            },
+            {
+                id: 5,
+                date: '2024-01-11',
+                nations: ['germany', 'ussr', 'usa'],
+                winner: 'ussr',
+                players: [
+                    { name: 'Stalin', nation: 'ussr', status: 'winner' },
+                    { name: 'Hitler', nation: 'germany', status: 'loser' },
+                    { name: 'Roosevelt', nation: 'usa', status: 'loser' }
+                ],
+                replayGif: `https://${GITHUB_USERNAME}.github.io/${REPO_NAME}/gifs/battle-5.gif`
+            }
+        ];
+
+        // Заполняем фильтр наций
+        function populateNationFilter() {
+            const filterSelect = document.getElementById('nationFilter');
+            for (const [nationId, nationData] of Object.entries(nationsDB)) {
+                const option = document.createElement('option');
+                option.value = nationId;
+                option.textContent = nationData.name;
+                filterSelect.appendChild(option);
+            }
+        }
+
+        // Обновляем статистику
+        function updateStats() {
+            const totalGames = gamesData.length;
+            
+            // Уникальные нации
+            const allNations = new Set();
+            gamesData.forEach(game => {
+                game.nations.forEach(nation => allNations.add(nation));
+            });
+            
+            // Уникальные игроки
+            const allPlayers = new Set();
+            gamesData.forEach(game => {
+                game.players.forEach(player => allPlayers.add(player.name));
+            });
+            
+            document.getElementById('totalGames').textContent = totalGames;
+            document.getElementById('uniqueNations').textContent = allNations.size;
+            document.getElementById('uniquePlayers').textContent = allPlayers.size;
+        }
+
+        // Функция для отображения игр
+        function displayGames(gamesToShow) {
+            const grid = document.getElementById('gamesGrid');
+            grid.innerHTML = '';
+            
+            if (gamesToShow.length === 0) {
+                grid.innerHTML = '<div class="no-games">😢 Игр не найдено</div>';
+                return;
+            }
+            
+            gamesToShow.forEach(game => {
+                const card = document.createElement('div');
+                card.className = 'game-card';
+                
+                // Формируем HTML для наций
+                const nationsHtml = game.nations.map(nationId => `
+                    <div class="nation-item">
+                        <img class="nation-icon" src="${nationsDB[nationId].icon}" alt="${nationsDB[nationId].name}" onerror="this.src='https://via.placeholder.com/40?text=Flag'">
+                        <span class="nation-name">${nationsDB[nationId].name}</span>
+                    </div>
+                `).join('');
+                
+                // Формируем HTML для игроков
+                const playersHtml = game.players.map(player => `
+                    <div class="player-item">
+                        <img class="player-nation-mini" src="${nationsDB[player.nation].icon}" alt="${nationsDB[player.nation].name}" onerror="this.src='https://via.placeholder.com/20?text=Flag'">
+                        <span class="player-name">${player.name}</span>
+                        ${player.status === 'winner' ? '<span class="player-status">👑 Победитель</span>' : ''}
+                    </div>
+                `).join('');
+                
+                card.innerHTML = `
+                    <div class="game-header">
+                        <span class="game-date">📅 ${game.date}</span>
+                        <span class="game-id">#${game.id}</span>
+                    </div>
+                    
+                    <div class="winner-section">
+                        <span class="winner-label">🏆 ПОБЕДИТЕЛЬ:</span>
+                        <span class="winner-nation">
+                            <img class="nation-icon-small" src="${nationsDB[game.winner].icon}" alt="${nationsDB[game.winner].name}" onerror="this.src='https://via.placeholder.com/24?text=Flag'">
+                            ${nationsDB[game.winner].name}
+                        </span>
+                    </div>
+                    
+                    <div class="nations-grid">
+                        ${nationsHtml}
+                    </div>
+                    
+                    <div class="players-list">
+                        ${playersHtml}
+                    </div>
+                    
+                    <button class="replay-button" data-replay="${game.replayGif}">
+                        🎬 Смотреть реплей
+                    </button>
+                    <img class="replay-gif" src="${game.replayGif}" alt="Replay GIF" data-game-id="${game.id}">
+                `;
+                
+                grid.appendChild(card);
+            });
+            
+            // Добавляем обработчики для кнопок реплея
+            document.querySelectorAll('.replay-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const replayGif = this.nextElementSibling;
+                    if (replayGif && replayGif.classList.contains('replay-gif')) {
+                        replayGif.classList.toggle('show');
+                        this.textContent = replayGif.classList.contains('show') ? '🎬 Скрыть реплей' : '🎬 Смотреть реплей';
+                    }
+                });
+            });
+        }
+
+        // Фильтрация игр
+        function filterGames() {
+            const nationFilter = document.getElementById('nationFilter').value;
+            const playerSearch = document.getElementById('playerSearch').value.toLowerCase();
+            const sortFilter = document.getElementById('sortFilter').value;
+            
+            let filtered = gamesData.filter(game => {
+                // Фильтр по нации
+                if (nationFilter !== 'all' && !game.nations.includes(nationFilter)) {
+                    return false;
+                }
+                
+                // Поиск по игроку
+                if (playerSearch) {
+                    const playerFound = game.players.some(player => 
+                        player.name.toLowerCase().includes(playerSearch)
+                    );
+                    if (!playerFound) return false;
+                }
+                
+                return true;
+            });
+            
+            // Сортировка
+            filtered.sort((a, b) => {
+                const dateA = new Date(a.date);
+                const dateB = new Date(b.date);
+                return sortFilter === 'newest' ? dateB - dateA : dateA - dateB;
+            });
+            
+            displayGames(filtered);
+        }
+
+        // Инициализация при загрузке страницы
+        populateNationFilter();
+        updateStats();
+        displayGames(gamesData);
+        
+        // Добавляем обработчики событий для фильтров
+        document.getElementById('nationFilter').addEventListener('change', filterGames);
+        document.getElementById('playerSearch').addEventListener('input', filterGames);
+        document.getElementById('sortFilter').addEventListener('change', filterGames);
+    </script>
+</body>
+</html>
