@@ -301,6 +301,22 @@
             padding: 20px;
             color: rgba(255, 255, 255, 0.5);
         }
+        /* Подсветка найденного игрока */
+.player-item.highlighted {
+    background: rgba(255, 215, 0, 0.3);
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin: 2px -10px;
+    border: 1px solid #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+    50% { box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+}
     </style>
 </head>
 <body>
@@ -654,6 +670,100 @@
         });
     }
 
+// Функция для отображения игр
+function displayGames(gamesToShow) {
+    const grid = document.getElementById('gamesGrid');
+    grid.innerHTML = '';
+
+    if (gamesToShow.length === 0) {
+        grid.innerHTML = '<div class="no-games">😢 Игр не найдено</div>';
+        return;
+    }
+
+    // Получаем текущий поисковый запрос для подсветки
+    const searchQuery = document.getElementById('playerSearch').value.toLowerCase();
+
+    gamesToShow.forEach(game => {
+        const card = document.createElement('div');
+        card.className = 'game-card';
+
+        // Формируем HTML для игроков с подсветкой найденных
+        const playersHtml = game.players.map(player => {
+            const isWinner = player.nation === game.winner;
+            // Проверяем, соответствует ли игрок поисковому запросу
+            const isHighlighted = searchQuery && player.name.toLowerCase().includes(searchQuery);
+
+            return `
+                <div class="player-item ${isHighlighted ? 'highlighted' : ''}">
+                    <img class="player-nation-mini"
+                         src="${getNationIconPath(player.nation)}"
+                         alt="${player.nation}"
+                         onerror="this.src='https://via.placeholder.com/20?text=?'">
+                    <span class="player-name">${player.name}</span>
+                    ${isWinner ? '<span class="player-status">👑 Победитель</span>' : ''}
+                </div>
+            `;
+        }).join('');
+
+        // Проверяем наличие GIF
+        const hasGif = game.replayGif && game.replayGif.trim() !== '';
+
+        card.innerHTML = `
+            <div class="game-header">
+                <span class="game-number">🌍 ${game.number}</span>
+                <span class="game-version">${game.version || 'Версия не указана'}</span>
+            </div>
+
+            ${game.map ? `<div class="game-map">🗺️ ${game.map}</div>` : ''}
+
+            <div class="winner-section">
+                <span class="winner-label">🏆 ПОБЕДИТЕЛЬ:</span>
+                <span class="winner-nation">
+                    <img class="nation-icon-small"
+                         src="${getNationIconPath(game.winner)}"
+                         alt="${game.winner}"
+                         onerror="this.src='https://via.placeholder.com/24?text=?'">
+                    ${game.winner}
+                </span>
+            </div>
+
+            <div class="players-list">
+                ${playersHtml}
+            </div>
+
+            ${hasGif ? `
+                <button class="replay-button" data-replay="${game.replayGif}">
+                    🎬 Смотреть реплей
+                </button>
+                <img class="replay-gif" src="${game.replayGif}" alt="Replay GIF"
+                     data-game-id="${game.id}"
+                     onerror="this.style.display='none'; this.previousElementSibling.style.display='none';">
+            ` : ''}
+        `;
+
+        grid.appendChild(card);
+    });
+
+    // Добавляем обработчики для кнопок реплея
+    document.querySelectorAll('.replay-button').forEach(button => {
+        // Проверяем существует ли GIF
+        const replayGif = button.nextElementSibling;
+        if (replayGif && replayGif.tagName === 'IMG') {
+            // Если GIF не загрузился (ошибка 404), скрываем кнопку
+            replayGif.addEventListener('error', function() {
+                button.style.display = 'none';
+            });
+        }
+
+        button.addEventListener('click', function() {
+            const replayGif = this.nextElementSibling;
+            if (replayGif && replayGif.classList.contains('replay-gif')) {
+                replayGif.classList.toggle('show');
+                this.textContent = replayGif.classList.contains('show') ? '🎬 Скрыть реплей' : '🎬 Смотреть реплей';
+            }
+        });
+    });
+}
     // Фильтрация игр
     function filterGames() {
         const nationFilter = document.getElementById('nationFilter').value;
@@ -686,8 +796,43 @@
         displayGames(filtered);
     }
 
-    // Загружаем данные при загрузке страницы
-    loadGamesData();
+// Функция для загрузки данных из JSON
+async function loadGamesData() {
+    try {
+        const response = await fetch('Games.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        gamesData = data.games;
+
+        gamesData.forEach(game => {
+            // Создаем искусственную дату на основе id для сортировки
+            game.date = new Date(2024, 0, game.id).toISOString().split('T')[0];
+
+            // Формируем путь к реплею из поля gif в JSON
+            // Если поле gif не указано, используем пустую строку
+            game.replayGif = game.gif || '';
+
+            // Собираем все нации для фильтра
+            game.players.forEach(player => {
+                allNations.add(player.nation);
+            });
+        });
+
+        // Заполняем фильтр наций
+        populateNationFilter();
+        // Обновляем статистику
+        updateStats();
+        // Отображаем игры
+        filterGames();
+
+    } catch (error) {
+        console.error('Ошибка загрузки данных:', error);
+        document.getElementById('gamesGrid').innerHTML =
+            '<div class="error">❌ Ошибка загрузки данных. Проверьте наличие файла Games.json</div>';
+    }
+}
 
     // Добавляем обработчики событий для фильтров
     document.getElementById('nationFilter').addEventListener('change', filterGames);
