@@ -495,7 +495,7 @@
 
         if (englishName) {
             // Если нашли, используем английское название для пути
-            return `${CONFIG.nationsPath}${englishName}.png`;
+            return `${CONFIG.nationsPath}${encodeURIComponent(englishName)}.png`;
         } else {
             // Если не нашли, логируем ошибку и возвращаем заглушку
             console.warn(`Иконка для нации "${russianName}" не найдена в справочнике`);
