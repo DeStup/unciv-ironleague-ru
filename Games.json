@@ -25,7 +25,7 @@
       "number": "Session2",
       "players": [
         {"name": "Click4x", "nation": "Аргентина"},
-        {"name": "VlaterRogue", "nation": "Maurya"},
+        {"name": "VlaterRogue", "nation": "Маурья"},
         {"name": "ICanSeeForever", "nation": "Америка"},
         {"name": "den_stu", "nation": "Пруссия"},
         {"name": "Ouni0", "nation": "Франция"},
@@ -207,7 +207,7 @@
         {"name": "VlaterRogue", "nation": "Марокко"},
         {"name": "YukiHino98", "nation": "Венгрия"},
         {"name": "Overslidishe", "nation": "Кильва"},
-        {"name": "den_stu", "nation": "Папство"},
+        {"name": "den_stu", "nation": "Папская область"},
         {"name": "Click4x", "nation": "Англия"},
         {"name": "n9306867842", "nation": "Турция"},
         {"name": "AlexUnderHill", "nation": "Айюбиды"},
@@ -268,7 +268,7 @@
       "number": "Session16",
       "players": [
         {"name": "den_stu", "nation": "Бруней"},
-        {"name": "Click4x", "nation": "Ацтек"},
+        {"name": "Click4x", "nation": "Ацтеки"},
         {"name": "Overslidishe", "nation": "Сонгай"},
         {"name": "munlait21", "nation": "Япония"},
         {"name": "konoval_mik", "nation": "Галлы"},
@@ -295,7 +295,7 @@
         {"name": "munlait21", "nation": "Тимуриды"},
         {"name": "VlaterRogue", "nation": "Бельгия"},
         {"name": "Click4x", "nation": "Монголия"},
-        {"name": "konoval_mik", "nation": "Золотая орда"},
+        {"name": "konoval_mik", "nation": "Золотая Орда"},
         {"name": "AlexUnderHill", "nation": "Венеция"}
       ],
       "winner": "Бразилия",
@@ -375,7 +375,7 @@
         {"name": "AlexUnderHill", "nation": "Нидерланды"},
         {"name": "Ouni0", "nation": "Рим"},
         {"name": "konoval_mik", "nation": "Франки"},
-        {"name": "Fanfblrik", "nation": "Шумерия"}
+        {"name": "Fanfblrik", "nation": "Шумеры"}
       ],
       "winner": "Нидерланды",
       "map": "Внутреннее море",
