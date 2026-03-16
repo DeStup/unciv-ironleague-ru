@@ -1,0 +1,408 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "version": "4.7.2 (Build881)",
+      "number": "Session1",
+      "players": [
+        {"name": "Click4x", "nation": "Корея"},
+        {"name": "VlaterRogue", "nation": "Шотландия"},
+        {"name": "ICanSeeForever", "nation": "Галлы"},
+        {"name": "den_stu", "nation": "Норвегия"},
+        {"name": "Ouni0", "nation": "Нормандия"},
+        {"name": "munlait21", "nation": "Вавилон"},
+        {"name": "Overslidishe", "nation": "Россия"}
+      ],
+      "winner": "Норвегия",
+      "map": "Пангея",
+      "playerCount": 7,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 2,
+      "version": "4.7.7 (Build889)",
+      "number": "Session2",
+      "players": [
+        {"name": "Click4x", "nation": "Аргентина"},
+        {"name": "VlaterRogue", "nation": "Maurya"},
+        {"name": "ICanSeeForever", "nation": "Америка"},
+        {"name": "den_stu", "nation": "Пруссия"},
+        {"name": "Ouni0", "nation": "Франция"},
+        {"name": "munlait21", "nation": "Сиам"},
+        {"name": "Overslidishe", "nation": "Иерусалим"},
+        {"name": "khtoyaaty", "nation": "Россия"},
+        {"name": "freedomanarhy", "nation": "Золотая Орда"}
+      ],
+      "winner": "Сиам",
+      "map": "Пангея",
+      "playerCount": 9,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 3,
+      "version": "4.7.12-patch2 (Build 898)",
+      "number": "Session3",
+      "players": [
+        {"name": "Click4x", "nation": "Сонгай"},
+        {"name": "Overslidishe", "nation": "Польша"},
+        {"name": "khtoyaaty", "nation": "Нидерланды"},
+        {"name": "freedomanarhy", "nation": "Япония"},
+        {"name": "VlaterRogue", "nation": "Италия"},
+        {"name": "munlait21", "nation": "Персия"},
+        {"name": "ICanSeeForever", "nation": "Тимуриды"},
+        {"name": "Ouni0", "nation": "Аравия"},
+        {"name": "den_stu", "nation": "Румыния"},
+        {"name": "Nepherthos", "nation": "Майя"}
+      ],
+      "winner": "Румыния",
+      "map": "Внутреннее море",
+      "playerCount": 10,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 4,
+      "version": "4.7.17 (Build 904)",
+      "number": "Session4",
+      "players": [
+        {"name": "freedomanarhy", "nation": "Рим"},
+        {"name": "munlait21", "nation": "Украина"},
+        {"name": "Click4x", "nation": "Сеукс"},
+        {"name": "khtoyaaty", "nation": "Кильва"},
+        {"name": "Ouni0", "nation": "Венгрия"},
+        {"name": "VlaterRogue", "nation": "Бельгия"},
+        {"name": "sarenkrit1", "nation": "Ирландия"},
+        {"name": "den_stu", "nation": "Германия"},
+        {"name": "ICanSeeForever", "nation": "Готы"},
+        {"name": "Overslidishe", "nation": "Англия"}
+      ],
+      "winner": "Германия",
+      "map": "Пангея",
+      "playerCount": 10,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 5,
+      "version": "4.8.7 (Build 915)",
+      "number": "Session6",
+      "players": [
+        {"name": "Overslidishe", "nation": "Япония"},
+        {"name": "Ouni0", "nation": "Марокко"},
+        {"name": "den_stu", "nation": "Египет"},
+        {"name": "ICanSeeForever", "nation": "Бирма"},
+        {"name": "sarenkrit1", "nation": "Индия"},
+        {"name": "VlaterRogue", "nation": "Франция"},
+        {"name": "AlexUnderHill", "nation": "Армения"},
+        {"name": "Click4x", "nation": "Османы"}
+      ],
+      "winner": "Бирма",
+      "map": "Пангея",
+      "playerCount": 8,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 6,
+      "version": "4.8.13 (Build 923)",
+      "number": "Session8",
+      "players": [
+        {"name": "AlexUnderHill", "nation": "Мавры"},
+        {"name": "Overslidishe", "nation": "Тибет"},
+        {"name": "sarenkrit1", "nation": "Вавилон"},
+        {"name": "YukiHino98", "nation": "Аксум"},
+        {"name": "Ouni0", "nation": "Конго"},
+        {"name": "ICanSeeForever", "nation": "Персия"},
+        {"name": "den_stu", "nation": "Ирландия"},
+        {"name": "VlaterRogue", "nation": "Вьетнам"},
+        {"name": "Click4x", "nation": "Россия"},
+        {"name": "munlait21", "nation": "Англия"}
+      ],
+      "winner": "Ирландия",
+      "map": "Внутреннее море",
+      "playerCount": 10,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 7,
+      "version": "4.8.13 (Build 1036)",
+      "number": "Session9",
+      "players": [
+        {"name": "AlexUnderHill", "nation": "Тимуриды"},
+        {"name": "YukiHino98", "nation": "Швейцария"},
+        {"name": "VlaterRogue", "nation": "Ассирия"},
+        {"name": "sarenkrit1", "nation": "Мавры"},
+        {"name": "Ouni0", "nation": "Турция"},
+        {"name": "Overslidishe", "nation": "Шумерия"}
+      ],
+      "winner": "Шумерия",
+      "map": "Пангея",
+      "playerCount": 6,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 8,
+      "version": "4.13.1 (Build 1040)",
+      "number": "Session10",
+      "players": [
+        {"name": "VlaterRogue", "nation": "Венгрия"},
+        {"name": "Overslidishe", "nation": "Дания"},
+        {"name": "YukiHino98", "nation": "Бруней"},
+        {"name": "AlexUnderHill", "nation": "Аксум"},
+        {"name": "ICanSeeForever", "nation": "Ирландия"},
+        {"name": "n9306867842", "nation": "Вьетнам"}
+      ],
+      "winner": "Вьетнам",
+      "map": "Пангея",
+      "playerCount": 6,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 9,
+      "version": "4.13.4 (Build 1043)",
+      "number": "Session11",
+      "players": [
+        {"name": "AlexUnderHill", "nation": "Ацтеки"},
+        {"name": "Overslidishe", "nation": "Аккад"},
+        {"name": "sarenkrit1", "nation": "Бирма"},
+        {"name": "Fanfblrik", "nation": "Бельгия"},
+        {"name": "VlaterRogue", "nation": "Монголия"},
+        {"name": "YukiHino98", "nation": "Византия"}
+      ],
+      "winner": "Бирма",
+      "map": "Внутреннее море",
+      "playerCount": 6,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 10,
+      "version": "4.13.13 (Build 1055)",
+      "number": "Session12",
+      "players": [
+        {"name": "AlexUnderHill", "nation": "Норвегия"},
+        {"name": "Fanfblrik", "nation": "Майсур"},
+        {"name": "VlaterRogue", "nation": "Португалия"},
+        {"name": "Overslidishe", "nation": "Тонго"},
+        {"name": "n9306867842", "nation": "Зимбабве"},
+        {"name": "YukiHino98", "nation": "Карфаген"}
+      ],
+      "winner": "Португалия",
+      "map": "Архипелаги",
+      "playerCount": 6,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 11,
+      "version": "4.14.4 (Build 1067)",
+      "number": "Session13",
+      "players": [
+        {"name": "munlait21", "nation": "Ассирия"},
+        {"name": "VlaterRogue", "nation": "Марокко"},
+        {"name": "YukiHino98", "nation": "Венгрия"},
+        {"name": "Overslidishe", "nation": "Кильва"},
+        {"name": "den_stu", "nation": "Папство"},
+        {"name": "Click4x", "nation": "Англия"},
+        {"name": "n9306867842", "nation": "Турция"},
+        {"name": "AlexUnderHill", "nation": "Айюбиды"},
+        {"name": "EmperorPenguin01", "nation": "Нидерланды"},
+        {"name": "Ouni0", "nation": "Аравия"}
+      ],
+      "winner": "Нидерланды",
+      "map": "Шум перлина",
+      "playerCount": 10,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 12,
+      "version": "4.14.14 (Build 1081) -> 4.4.19 (Build 1087)",
+      "number": "Session14",
+      "players": [
+        {"name": "Overslidishe", "nation": "Иерусалим"},
+        {"name": "AlexUnderHill", "nation": "Сиам"},
+        {"name": "munlait21", "nation": "Ирландия"},
+        {"name": "den_stu", "nation": "Швеция"},
+        {"name": "Click4x", "nation": "Инки"},
+        {"name": "konoval_mik", "nation": "Майя"},
+        {"name": "Ouni0", "nation": "Мексика"},
+        {"name": "EmperorPenguin01", "nation": "Византия"},
+        {"name": "VlaterRogue", "nation": "Мадагаскар"},
+        {"name": "YukiHino98", "nation": "Финикия"}
+      ],
+      "winner": "Византия",
+      "map": "Шум Перлина",
+      "playerCount": 10,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 13,
+      "version": "",
+      "number": "Session15",
+      "players": [
+        {"name": "AlexUnderHill", "nation": "Готы"},
+        {"name": "VlaterRogue", "nation": "Индия"},
+        {"name": "Overslidishe", "nation": "Франция"},
+        {"name": "den_stu", "nation": "Мавры"},
+        {"name": "EmperorPenguin01", "nation": "Кхмеры"},
+        {"name": "munlait21", "nation": "Китай"},
+        {"name": "Click4x", "nation": "Португалия"},
+        {"name": "konoval_mik", "nation": "Бирма"}
+      ],
+      "winner": "Кхмеры",
+      "map": "Пангея",
+      "playerCount": 8,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 14,
+      "version": "",
+      "number": "Session16",
+      "players": [
+        {"name": "den_stu", "nation": "Бруней"},
+        {"name": "Click4x", "nation": "Ацтек"},
+        {"name": "Overslidishe", "nation": "Сонгай"},
+        {"name": "munlait21", "nation": "Япония"},
+        {"name": "konoval_mik", "nation": "Галлы"},
+        {"name": "AlexUnderHill", "nation": "Оман"},
+        {"name": "Fanfblrik", "nation": "Болгария"},
+        {"name": "VlaterRogue", "nation": "Югославия"}
+      ],
+      "winner": "Бруней",
+      "map": "Шум перлина",
+      "playerCount": 8,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 15,
+      "version": "",
+      "number": "Session17",
+      "players": [
+        {"name": "Overslidishe", "nation": "Нормандия"},
+        {"name": "EmperorPenguin01", "nation": "Бразилия"},
+        {"name": "Fanfblrik", "nation": "Грузия"},
+        {"name": "den_stu", "nation": "Айюбиды"},
+        {"name": "n9306867842", "nation": "Сиу"},
+        {"name": "munlait21", "nation": "Тимуриды"},
+        {"name": "VlaterRogue", "nation": "Бельгия"},
+        {"name": "Click4x", "nation": "Монголия"},
+        {"name": "konoval_mik", "nation": "Золотая орда"},
+        {"name": "AlexUnderHill", "nation": "Венеция"}
+      ],
+      "winner": "Бразилия",
+      "map": "",
+      "playerCount": 10,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 16,
+      "version": "",
+      "number": "Session18",
+      "players": [
+        {"name": "n9306867842", "nation": "Полинезия"},
+        {"name": "Click4x", "nation": "Греция"},
+        {"name": "konoval_mik", "nation": "Гунны"},
+        {"name": "AlexUnderHill", "nation": "Украина"},
+        {"name": "ICanSeeForever", "nation": "Германия"},
+        {"name": "Fanfblrik", "nation": "Россия"}
+      ],
+      "winner": "Германия",
+      "map": "",
+      "playerCount": 6,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 17,
+      "version": "",
+      "number": "Session20",
+      "players": [
+        {"name": "Ashegg2", "nation": "Византия"},
+        {"name": "konoval_mik", "nation": "Китай"},
+        {"name": "munlait21", "nation": "Англия"},
+        {"name": "VlaterRogue", "nation": "Вьетнам"},
+        {"name": "Fanfblrik", "nation": "Османы"},
+        {"name": "AlexUnderHill", "nation": "Дания"},
+        {"name": "Click4x", "nation": "Филиппины"},
+        {"name": "den_stu", "nation": "Ирокезы"},
+        {"name": "Overslidishe", "nation": "Мавры"}
+      ],
+      "winner": "Ирокезы",
+      "map": "Шум Перлина",
+      "playerCount": 9,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 18,
+      "version": "",
+      "number": "Session21",
+      "players": [
+        {"name": "Ouni0", "nation": "Румыния"},
+        {"name": "Ashegg2", "nation": "Венгрия"},
+        {"name": "Overslidishe", "nation": "Бирма"},
+        {"name": "AlexUnderHill", "nation": "Тонга"},
+        {"name": "konoval_mik", "nation": "Португалия"},
+        {"name": "den_stu", "nation": "Майсур"},
+        {"name": "VlaterRogue", "nation": "Япония"},
+        {"name": "Click4x", "nation": "Франция"},
+        {"name": "Fanfblrik", "nation": "Монголия"},
+        {"name": "munlait21", "nation": "Кхмеры"}
+      ],
+      "winner": "Франция",
+      "map": "Пангея",
+      "playerCount": 10,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 19,
+      "version": "4.18.14-patch1",
+      "number": "Session22",
+      "players": [
+        {"name": "VlaterRogue", "nation": "Индия"},
+        {"name": "Overslidishe", "nation": "Индонезия"},
+        {"name": "AlexUnderHill", "nation": "Нидерланды"},
+        {"name": "Ouni0", "nation": "Рим"},
+        {"name": "konoval_mik", "nation": "Франки"},
+        {"name": "Fanfblrik", "nation": "Шумерия"}
+      ],
+      "winner": "Нидерланды",
+      "map": "Внутреннее море",
+      "playerCount": 6,
+      "endedOnTurn": "",
+      "victoryType": ""
+    },
+    {
+      "id": 20,
+      "version": "4.19.12 (1200)",
+      "number": "Session23",
+      "players": [
+        {"name": "Lvxvcs", "nation": "Сиам"},
+        {"name": "AlexUnderHill", "nation": "Ирландия"},
+        {"name": "den_stu", "nation": "Иерусалим"},
+        {"name": "konoval_mik", "nation": "Мавры"},
+        {"name": "Click4x", "nation": "Финляндия"},
+        {"name": "Overslidishe", "nation": "Карфаген"},
+        {"name": "Ouni0", "nation": "Аравия"},
+        {"name": "Bahahanchiklkm", "nation": "Майя"},
+        {"name": "PVL01011900", "nation": "Зимбабве"}
+      ],
+      "winner": "Финляндия",
+      "map": "Пангея",
+      "playerCount": 9,
+      "endedOnTurn": "",
+      "victoryType": ""
+    }
+  ]
+}
