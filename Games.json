@@ -3,7 +3,7 @@
     {
       "id": 1,
       "version": "4.7.2 (Build881)",
-      "number": "Session1",
+      "number": "Game 1",
       "players": [
         {"name": "Click4x", "nation": "Корея"},
         {"name": "VlaterRogue", "nation": "Шотландия"},
@@ -23,7 +23,7 @@
     {
       "id": 2,
       "version": "4.7.7 (Build889)",
-      "number": "Session2",
+      "number": "Game 2",
       "players": [
         {"name": "Click4x", "nation": "Аргентина"},
         {"name": "VlaterRogue", "nation": "Маурья"},
@@ -45,7 +45,7 @@
     {
       "id": 3,
       "version": "4.7.12-patch2 (Build 898)",
-      "number": "Session3",
+      "number": "Game 3",
       "players": [
         {"name": "Click4x", "nation": "Сонгай"},
         {"name": "Overslidishe", "nation": "Польша"},
@@ -68,7 +68,7 @@
     {
       "id": 4,
       "version": "4.7.17 (Build 904)",
-      "number": "Session4",
+      "number": "Game 4",
       "players": [
         {"name": "freedomanarhy", "nation": "Рим"},
         {"name": "munlait21", "nation": "Украина"},
@@ -91,7 +91,7 @@
     {
       "id": 5,
       "version": "4.8.7 (Build 915)",
-      "number": "Session6",
+      "number": "Game 6",
       "players": [
         {"name": "Overslidishe", "nation": "Япония"},
         {"name": "Ouni0", "nation": "Марокко"},
@@ -112,7 +112,7 @@
     {
       "id": 6,
       "version": "4.8.13 (Build 923)",
-      "number": "Session8",
+      "number": "Game 8",
       "players": [
         {"name": "AlexUnderHill", "nation": "Мавры"},
         {"name": "Overslidishe", "nation": "Тибет"},
@@ -135,7 +135,7 @@
     {
       "id": 7,
       "version": "4.8.13 (Build 1036)",
-      "number": "Session9",
+      "number": "Game 9",
       "players": [
         {"name": "AlexUnderHill", "nation": "Тимуриды"},
         {"name": "YukiHino98", "nation": "Швейцария"},
@@ -154,7 +154,7 @@
     {
       "id": 8,
       "version": "4.13.1 (Build 1040)",
-      "number": "Session10",
+      "number": "Game 10",
       "players": [
         {"name": "VlaterRogue", "nation": "Венгрия"},
         {"name": "Overslidishe", "nation": "Дания"},
@@ -173,7 +173,7 @@
     {
       "id": 9,
       "version": "4.13.4 (Build 1043)",
-      "number": "Session11",
+      "number": "Game 11",
       "players": [
         {"name": "AlexUnderHill", "nation": "Ацтеки"},
         {"name": "Overslidishe", "nation": "Аккад"},
@@ -192,7 +192,7 @@
     {
       "id": 10,
       "version": "4.13.13 (Build 1055)",
-      "number": "Session12",
+      "number": "Game 12",
       "players": [
         {"name": "AlexUnderHill", "nation": "Норвегия"},
         {"name": "Fanfblrik", "nation": "Майсур"},
@@ -211,7 +211,7 @@
     {
       "id": 11,
       "version": "4.14.4 (Build 1067)",
-      "number": "Session13",
+      "number": "Game 13",
       "players": [
         {"name": "munlait21", "nation": "Ассирия"},
         {"name": "VlaterRogue", "nation": "Марокко"},
@@ -234,7 +234,7 @@
     {
       "id": 12,
       "version": "4.14.14 (Build 1081) -> 4.4.19 (Build 1087)",
-      "number": "Session14",
+      "number": "Game 14",
       "players": [
         {"name": "Overslidishe", "nation": "Иерусалим"},
         {"name": "AlexUnderHill", "nation": "Сиам"},
@@ -257,7 +257,7 @@
     {
       "id": 13,
       "version": "4.15.12 (Build 1091)",
-      "number": "Session15",
+      "number": "Game 15",
       "players": [
         {"name": "AlexUnderHill", "nation": "Готы"},
         {"name": "VlaterRogue", "nation": "Индия"},
@@ -278,7 +278,7 @@
     {
       "id": 14,
       "version": "4.15.14 (Build 1107)",
-      "number": "Session16",
+      "number": "Game 16",
       "players": [
         {"name": "den_stu", "nation": "Бруней"},
         {"name": "Click4x", "nation": "Ацтеки"},
@@ -299,7 +299,7 @@
     {
       "id": 15,
       "version": "4.16.4 (Build 1119)",
-      "number": "Session17",
+      "number": "Game 17",
       "players": [
         {"name": "Overslidishe", "nation": "Нормандия"},
         {"name": "EmperorPenguin01", "nation": "Бразилия"},
@@ -322,7 +322,7 @@
     {
       "id": 16,
       "version": "4.16.9 (Build 1125)",
-      "number": "Session18",
+      "number": "Game 18",
       "players": [
         {"name": "n9306867842", "nation": "Полинезия"},
         {"name": "Click4x", "nation": "Греция"},
@@ -341,7 +341,7 @@
     {
       "id": 17,
       "version": "4.17.17-patch1 (Build 1159)",
-      "number": "Session20",
+      "number": "Game 20",
       "players": [
         {"name": "Ashegg2", "nation": "Византия"},
         {"name": "konoval_mik", "nation": "Китай"},
@@ -363,7 +363,7 @@
     {
       "id": 18,
       "version": "4.18.4 (Build 1166)",
-      "number": "Session21",
+      "number": "Game 21",
       "players": [
         {"name": "Ouni0", "nation": "Румыния"},
         {"name": "Ashegg2", "nation": "Венгрия"},
@@ -386,7 +386,7 @@
     {
       "id": 19,
       "version": "4.18.14-patch1",
-      "number": "Session22",
+      "number": "Game 22",
       "players": [
         {"name": "VlaterRogue", "nation": "Индия"},
         {"name": "Overslidishe", "nation": "Индонезия"},
@@ -405,7 +405,7 @@
     {
       "id": 20,
       "version": "4.19.12 (1200)",
-      "number": "Session23",
+      "number": "Game 23",
       "players": [
         {"name": "Lvxvcs", "nation": "Сиам"},
         {"name": "AlexUnderHill", "nation": "Ирландия"},
