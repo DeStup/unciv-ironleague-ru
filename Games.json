@@ -136,9 +136,9 @@
         {"name": "VlaterRogue", "nation": "Ассирия"},
         {"name": "sarenkrit1", "nation": "Мавры"},
         {"name": "Ouni0", "nation": "Турция"},
-        {"name": "Overslidishe", "nation": "Шумерия"}
+        {"name": "Overslidishe", "nation": "Шумеры"}
       ],
-      "winner": "Шумерия",
+      "winner": "Шумеры",
       "map": "Пангея",
       "playerCount": 6,
       "endedOnTurn": "",
