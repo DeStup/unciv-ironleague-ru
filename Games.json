@@ -1018,6 +1018,14 @@
           "nation": "Чили"
         },
         {
+          "name": "Bahahanchiklkm",
+          "nation": "Украина"
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Венгрия"
+        },
+        {
           "name": "REPUNZEL2882",
           "nation": "Корея"
         },
@@ -1026,13 +1034,25 @@
           "nation": "Австрия"
         },
         {
+          "name": "Lvxvcs",
+          "nation": "Германия"
+        },
+        {
+          "name": "Ouni0",
+          "nation": "Бразилия"
+        },
+        {
+          "name": "PVL01011900",
+          "nation": "Рим"
+        },
+        {
           "name": "AlexUnderHill",
           "nation": "Тонга"
         }
       ],
       "winner": "Чили",
       "map": "Fractal",
-      "playerCount": 4,
+      "playerCount": 9,
       "endedOnTurn": "162",
       "victoryType": ""
     },
