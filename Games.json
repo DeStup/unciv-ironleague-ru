@@ -1010,6 +1010,50 @@
       "map": "Pangaea",
       "playerCount": 4,
       "endedOnTurn": "125",
+      "version": "4.19.18 (Build 1209)",
+      "number": "Game 24",
+      "players": [
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Bulgaria"
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Ayyubids"
+        },
+        {
+          "name": "Fanfblrik",
+          "nation": "Persia"
+        },
+        {
+          "name": "Click4x",
+          "nation": "Colombia"
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Philippines"
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Burma"
+        },
+        {
+          "name": "den_stu",
+          "nation": "Portugal"
+        },
+        {
+          "name": "Lvxvcs",
+          "nation": "Denmark"
+        },
+        {
+          "name": "Ouni0",
+          "nation": "Macedonia"
+        }
+      ],
+      "winner": "Colombia",
+      "map": "Perlin",
+      "playerCount": 9,
+      "endedOnTurn": "123",
       "victoryType": ""
     }
   ]
