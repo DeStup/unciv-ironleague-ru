@@ -502,14 +502,21 @@
     let allNations = new Set();
 
     // Функция для получения пути к иконке нации
-    function getNationIconPath(russianName) {
-        const englishName = nationMap.get(russianName);
+    function getNationIconPath(nationName) {
+        // Старые записи Games.json — русские имена; новые (из бота) — английские Unciv.
+        let englishName = nationMap.get(nationName);
+        if (!englishName) {
+            const knownEng = new Set(nations.map(n => n.eng));
+            if (knownEng.has(nationName)) {
+                englishName = nationName;
+            }
+        }
         if (englishName) {
             return `${CONFIG.nationsPath}${encodeURIComponent(englishName)}.png`;
-        } else {
-            console.warn(`Иконка для нации "${russianName}" не найдена`);
-            return `${CONFIG.nationsPath}Unknown.png`;
         }
+        console.warn(`Иконка для нации "${nationName}" не найдена`);
+        // Файлы в Nation_icons именованы по-английски — пробуем имя как есть.
+        return `${CONFIG.nationsPath}${encodeURIComponent(nationName)}.png`;
     }
 
     // Заполняем фильтр наций
