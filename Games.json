@@ -958,16 +958,16 @@
           "nation": "Македония"
         },
         {
+          "name": "Overslidishe",
+          "nation": "Зулусы"
+        },
+        {
           "name": "Click4x",
           "nation": "Колумбия"
         },
         {
           "name": "AlexUnderHill",
           "nation": "Италия"
-        },
-        {
-          "name": "Overslidishe",
-          "nation": "Зулусы"
         }
       ],
       "winner": "Колумбия",
