@@ -594,10 +594,17 @@
       'records.item.most_wars_declared.flavor': 'Дипломатия по-спартански',
       'records.item.most_wars_declared.body':
         '{player} объявил больше всего войн живым игрокам: {value} (по данным финала).',
-      'records.item.most_wars_received.title': 'Не нравится мне твоя рожа',
+      'records.item.most_wars_received.title': 'Наживка',
       'records.item.most_wars_received.flavor': 'Я вам что? А?',
       'records.item.most_wars_received.body':
         'На {player} чаще всего объявляли войну: {value} раз(а).',
+      'records.item.zeus_statue_win.title': 'Построить Статую Зевса и победить',
+      'records.item.zeus_statue_win.flavor': 'Олимпийский контракт',
+      'records.item.zeus_statue_win.body':
+        '{player} выиграл партию, построив Статую Зевса (Game {game}).',
+      'records.item.zeus_statue_win.bodyVacant':
+        'Пока никто не получил: в архиве нет победы с собственно построенной Статуей Зевса. Гром ждёт своего полководца.',
+      'records.vacantPlayer': 'Пока никого',
       'records.item.most_military_deaths.title': 'Мясорубка',
       'records.item.most_military_deaths.flavor': 'Мясной штурм',
       'records.item.most_military_deaths.body':
@@ -1096,10 +1103,17 @@
       'records.item.most_wars_declared.flavor': 'Spartan diplomacy',
       'records.item.most_wars_declared.body':
         '{player} declared the most wars on living players: {value} (finale data).',
-      'records.item.most_wars_received.title': "I don't like your face",
+      'records.item.most_wars_received.title': 'Bait',
       'records.item.most_wars_received.flavor': 'What am I to you?',
       'records.item.most_wars_received.body':
         '{player} had the most wars declared on them: {value}.',
+      'records.item.zeus_statue_win.title': 'Build the Statue of Zeus and win',
+      'records.item.zeus_statue_win.flavor': 'Olympic contract',
+      'records.item.zeus_statue_win.body':
+        '{player} won a game after building the Statue of Zeus (Game {game}).',
+      'records.item.zeus_statue_win.bodyVacant':
+        'Unclaimed so far: no archive win with a self-built Statue of Zeus. The thunder still waits.',
+      'records.vacantPlayer': 'Nobody yet',
       'records.item.most_military_deaths.title': 'Meat grinder',
       'records.item.most_military_deaths.flavor': 'Meat grinder',
       'records.item.most_military_deaths.body':

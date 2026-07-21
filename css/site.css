@@ -1654,6 +1654,16 @@
             overflow-wrap: anywhere;
         }
 
+        .record-card--vacant {
+            opacity: 0.82;
+        }
+
+        .record-card--vacant .record-card-player {
+            color: rgba(255, 255, 255, 0.62);
+            font-style: italic;
+            font-weight: 500;
+        }
+
         /* Value sits in the free space under the icon, centered between icon and body rule. */
         .record-card-value {
             flex: 1 1 auto;

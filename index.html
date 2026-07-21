@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=dossier-5">
+    <link rel="stylesheet" href="css/site.css?v=zeus-bait-1">
 
 </head>
 <body>
@@ -907,12 +907,12 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=wonders-owned-1"></script>
+<script src="js/i18n.js?v=zeus-bait-1"></script>
 <script src="js/player-meta.js?v=dossier-1"></script>
 <script src="js/stats-charts.js?v=2"></script>
 <script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=lobby-opp-1"></script>
-<script src="js/achievements.js?v=most-ach-1"></script>
+<script src="js/achievements.js?v=zeus-bait-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -2625,6 +2625,7 @@
             'ideology_autocracy_count',
             'most_wonders_built',
             'most_wonders_owned',
+            'zeus_statue_win',
             'most_unique_nations',
         ],
         peaks: ['max_score_finale', 'max_cities_finale', 'max_units_finale', 'max_techs_finale'],
@@ -2647,19 +2648,28 @@
         const flavorKey = `records.item.${item.id}.flavor`;
         let flavor = tt(flavorKey);
         if (flavor === flavorKey) flavor = '';
-        let body = tt(`records.item.${item.id}.body`, {
-            player: item.player,
-            value: item.value,
-            games: item.games != null ? String(item.games) : '',
-            wins: item.wins != null ? String(item.wins) : '',
-            game: item.gameNumber != null ? String(item.gameNumber) : '',
-        });
-        if (body === `records.item.${item.id}.body`) {
-            body = `${item.player}: ${item.value}`;
+        const vacant = !!item.vacant;
+        const playerLabel = vacant ? tt('records.vacantPlayer') : item.player;
+        let body;
+        if (vacant) {
+            const vacantKey = `records.item.${item.id}.bodyVacant`;
+            body = tt(vacantKey);
+            if (body === vacantKey) body = tt('records.empty');
+        } else {
+            body = tt(`records.item.${item.id}.body`, {
+                player: item.player,
+                value: item.value,
+                games: item.games != null ? String(item.games) : '',
+                wins: item.wins != null ? String(item.wins) : '',
+                game: item.gameNumber != null ? String(item.gameNumber) : '',
+            });
+            if (body === `records.item.${item.id}.body`) {
+                body = `${item.player}: ${item.value}`;
+            }
         }
         const iconSrc = recordIconSrc(item.id);
         const iconFallback = `img/records/${item.id}.svg`;
-        return `<article class="record-card" id="record-${item.id}">
+        return `<article class="record-card${vacant ? ' record-card--vacant' : ''}" id="record-${item.id}">
             <div class="record-card-top">
                 <div class="record-card-media">
                     <img class="record-card-icon" src="${iconSrc}" alt="" width="80" height="80" loading="lazy"
@@ -2669,7 +2679,7 @@
                 <div class="record-card-meta">
                     <p class="record-card-flavor">${flavor}</p>
                     <h3 class="record-card-title">${title === `records.item.${item.id}.title` ? item.id : title}</h3>
-                    <p class="record-card-player">${item.player}</p>
+                    <p class="record-card-player">${playerLabel}</p>
                 </div>
             </div>
             <p class="record-card-body">${body}</p>

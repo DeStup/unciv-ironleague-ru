@@ -16,9 +16,15 @@
   const ORDER_NAMES = new Set(['порядок', 'order']);
   const FREEDOM_NAMES = new Set(['свобода', 'freedom']);
   const AUTOCRACY_NAMES = new Set(['автократия', 'самодержавие', 'autocracy']);
+  const ZEUS_WONDER_NAMES = new Set(['statue of zeus', 'статуя зевса']);
 
   function normSetHas(set, value) {
     return set.has(String(value || '').trim().toLowerCase());
+  }
+
+  function hasZeusWonder(wonders) {
+    if (!Array.isArray(wonders)) return false;
+    return wonders.some((w) => ZEUS_WONDER_NAMES.has(String(w || '').trim().toLowerCase()));
   }
 
   function gameFlags(game) {
@@ -513,6 +519,35 @@
     const wonders = pickMax(stats, (s) => s.wondersBuilt, (s) => s.wondersBuilt > 0);
     if (wonders) push('most_wonders_built', wonders, String(wonders.stat.wondersBuilt));
 
+    // First win while owning a self-built Statue of Zeus (may stay vacant).
+    // Первая победа с собственно построенной Статуей Зевса (может быть пустой).
+    let zeusWin = null;
+    for (const game of eligibleGames(games)) {
+      const wp = winnerPlayer(game);
+      if (!wp) continue;
+      const row = survivorByName(game, wp);
+      if (!row || !hasZeusWonder(row.wonders_built)) continue;
+      const gNum = parseGameNum(game);
+      if (!zeusWin || gNum < zeusWin.game) {
+        zeusWin = { player: wp, game: gNum };
+      }
+    }
+    if (zeusWin) {
+      out.push({
+        id: 'zeus_statue_win',
+        player: zeusWin.player,
+        value: String(zeusWin.game),
+        gameNumber: zeusWin.game,
+      });
+    } else {
+      out.push({
+        id: 'zeus_statue_win',
+        player: '',
+        value: '—',
+        vacant: true,
+      });
+    }
+
     const wondersOwned = pickMax(stats, (s) => s.wondersOwned, (s) => s.wondersOwned > 0);
     if (wondersOwned) {
       push('most_wonders_owned', wondersOwned, String(wondersOwned.stat.wondersOwned));
@@ -595,7 +630,7 @@
     const achCounts = new Map();
     for (const item of out) {
       const name = item && item.player;
-      if (!name) continue;
+      if (!name || item.vacant) continue;
       achCounts.set(name, (achCounts.get(name) || 0) + 1);
     }
     let mostTitled = null;
