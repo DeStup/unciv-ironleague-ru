@@ -68,7 +68,10 @@
       if (aScore !== null && bScore !== null && aScore !== bScore) return bScore - aScore;
       if (aScore !== null && bScore === null) return -1;
       if (aScore === null && bScore !== null) return 1;
-      return a.localeCompare(b, 'en');
+      return a.localeCompare(b, (global.IronLeagueI18n && IronLeagueI18n.getLang() === 'en') ? 'en' : 'ru', {
+        sensitivity: 'base',
+        numeric: true,
+      });
     });
     return names;
   }
@@ -200,7 +203,11 @@
         perGame: games > 0 ? Math.round((rounded / games) * 100) / 100 : null,
       };
     });
-    rows.sort((a, b) => b.rating - a.rating || a.name.localeCompare(b.name, 'en'));
+    rows.sort((a, b) => {
+      const loc = (global.IronLeagueI18n && IronLeagueI18n.getLang() === 'en') ? 'en' : 'ru';
+      return b.rating - a.rating
+        || a.name.localeCompare(b.name, loc, { sensitivity: 'base', numeric: true });
+    });
     rows.forEach((r, i) => {
       r.place = i + 1;
     });
