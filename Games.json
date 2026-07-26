@@ -950,7 +950,7 @@
         }
       ],
       "winner": "Румыния",
-      "map": "Пангея",
+      "map": "Внутреннее море",
       "playerCount": 10,
       "endedOnTurn": "163",
       "victoryType": "CC",
@@ -4907,7 +4907,7 @@
         }
       ],
       "winner": "Византия",
-      "map": "Внутреннее море",
+      "map": "Шум Перлина",
       "playerCount": 10,
       "endedOnTurn": "163",
       "victoryType": "CC",
