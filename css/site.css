@@ -2130,6 +2130,11 @@
             align-items: center;
             gap: 6px;
         }
+        .player-flags {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+        }
         .player-flag {
             display: inline-flex;
             width: 18px;
@@ -2374,6 +2379,12 @@
         .profile-flags .player-flag {
             width: 28px;
             height: 18px;
+        }
+        .profile-flags .player-flags,
+        .profile-hero h2 .player-flags {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
         .profile-rating {
             display: flex;
