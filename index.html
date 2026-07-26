@@ -924,6 +924,32 @@
         return (window.IronLeagueI18n && IronLeagueI18n.getLang() === 'en') ? 'en' : 'ru';
     }
 
+    /** localeCompare options for UI alphabetical sorts. */
+    function localeCompareOpts() {
+        return { sensitivity: 'base', numeric: true };
+    }
+
+    /**
+     * Text used for alphabetical column sort (matches what the user sees).
+     * Текст для алфавитной сортировки колонки (как на экране).
+     */
+    function sortDisplayText(row, key, labelFns) {
+        if (labelFns && typeof labelFns[key] === 'function') {
+            return String(labelFns[key](row) ?? '');
+        }
+        const raw = row ? row[key] : '';
+        if (key === 'nation' || key === 'topNation' || key === 'civRu') {
+            return displayNationName(row.nation || row.civRu || raw || '');
+        }
+        if (key === 'civ') {
+            return displayNationName(row.civRu || engToRusNation(row.civ) || row.civ || '');
+        }
+        if (key === 'topIdeology') {
+            return displayPolicyName(raw || '');
+        }
+        return null;
+    }
+
     const CONFIG = {
         nationsPath: 'Nation_icons/',
         wonderIconsPath: 'Wonder_icons/',
@@ -1412,7 +1438,7 @@
         const filterSelect = document.getElementById('nationFilter');
         const prev = filterSelect.value;
         const sortedNations = Array.from(allNations).sort((a, b) =>
-            displayNationName(a).localeCompare(displayNationName(b), localeTag())
+            displayNationName(a).localeCompare(displayNationName(b), localeTag(), localeCompareOpts())
         );
 
         filterSelect.innerHTML = '';
@@ -1451,7 +1477,7 @@
                 if (n) names.add(n);
             }
         }
-        const sorted = [...names].sort((a, b) => a.localeCompare(b, localeTag()));
+        const sorted = [...names].sort((a, b) => a.localeCompare(b, localeTag(), localeCompareOpts()));
         select.innerHTML = '';
         const all = document.createElement('option');
         all.value = 'all';
@@ -1477,7 +1503,7 @@
             const values = [...new Set(
                 gamesData.map((g) => String(g.victoryType || '').trim()).filter(Boolean)
             )].sort((a, b) =>
-                victoryTypeLabel(a).localeCompare(victoryTypeLabel(b), localeTag())
+                victoryTypeLabel(a).localeCompare(victoryTypeLabel(b), localeTag(), localeCompareOpts())
             );
             victorySelect.innerHTML = '';
             const all = document.createElement('option');
@@ -1505,7 +1531,7 @@
                 if (!byCanon.has(canon)) byCanon.set(canon, raw);
             }
             const values = [...byCanon.keys()].sort((a, b) =>
-                displayMapName(a).localeCompare(displayMapName(b), localeTag())
+                displayMapName(a).localeCompare(displayMapName(b), localeTag(), localeCompareOpts())
             );
             mapSelect.innerHTML = '';
             const all = document.createElement('option');
@@ -1582,9 +1608,11 @@
         });
     }
 
-    function topCounted(mapObj, n) {
+    function topCounted(mapObj, n, labelFn) {
+        const label = labelFn || ((k) => String(k));
         const entries = [...(mapObj || new Map()).entries()]
-            .sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(String(b[0])));
+            .sort((a, b) => b[1] - a[1]
+                || label(a[0]).localeCompare(label(b[0]), localeTag(), localeCompareOpts()));
         return entries.slice(0, n || 3);
     }
 
@@ -1687,13 +1715,13 @@
             const nationCell = (nationRu) => renderNationLabel(nationRu);
             const chip = (labelHtml, count) =>
                 `<span class="profile-chip">${labelHtml}<span class="profile-chip-count">${count}</span></span>`;
-            const topPol = topCounted(row && row.firstPolicyCounts, 3)
+            const topPol = topCounted(row && row.firstPolicyCounts, 3, displayPolicyName)
                 .map(([k, v]) => chip(displayPolicyName(k), v)).join('') || '—';
-            const topWonders = topCounted(row && row.wonderCounts, 5)
+            const topWonders = topCounted(row && row.wonderCounts, 5, wonderNameRu)
                 .map(([k, v]) => chip(renderWonderLabel(k), v)).join('') || '—';
-            const topNations = topCounted(row && row.nationCounts, 3)
+            const topNations = topCounted(row && row.nationCounts, 3, displayNationName)
                 .map(([k, v]) => chip(nationCell(k), v)).join('') || '—';
-            const topIdeologies = topCounted(row && row.ideologyCounts, 3)
+            const topIdeologies = topCounted(row && row.ideologyCounts, 3, displayPolicyName)
                 .map(([k, v]) => chip(displayPolicyName(k), v)).join('') || '—';
             summaryBody.innerHTML = row ? `
                 <tr><th>${tt('stats.col.topNation')}</th><td>${nationCell(row.topNation)}</td></tr>
@@ -1796,7 +1824,11 @@
             const as = (a && Number.isFinite(Number(a.score))) ? Number(a.score) : -1;
             const bs = (b && Number.isFinite(Number(b.score))) ? Number(b.score) : -1;
             if (bs !== as) return bs - as;
-            return displayNationName((a && a.nation) || '').localeCompare(displayNationName((b && b.nation) || ''), localeTag());
+            return displayNationName((a && a.nation) || '').localeCompare(
+                displayNationName((b && b.nation) || ''),
+                localeTag(),
+                localeCompareOpts(),
+            );
         });
     }
 
@@ -2744,22 +2776,29 @@
                     return;
                 }
                 const map = {
-                    firstPolicyStatsTable: [cache.firstPolicyRows, cache.policyLabel],
-                    policyBranchStatsTable: [cache.policyBranchRows, cache.policyLabel],
-                    policyComboStatsTable: [cache.policyComboRows, cache.policyComboLabel],
+                    firstPolicyStatsTable: [cache.firstPolicyRows, cache.policyLabel, cache.policyLabel],
+                    policyBranchStatsTable: [cache.policyBranchRows, cache.policyLabel, cache.policyLabel],
+                    policyComboStatsTable: [
+                        cache.policyComboRows,
+                        cache.policyComboLabel,
+                        cache.policyComboSortLabel,
+                    ],
                     policyIdeologyPairStatsTable: [
                         cache.policyIdeologyPairRows,
                         cache.policyPairLabel,
+                        cache.policyPairSortLabel,
                     ],
                 };
                 const entry = map[tableId];
                 if (!entry) return;
+                const sortLabel = entry[2] || entry[1];
                 fillSortableTable(
                     document.getElementById(tableId),
                     filterPolicyStatRows(entry[0], select.value),
                     (r) => pickStatRowHtml(r, entry[1]),
                     'picks',
                     'desc',
+                    { name: (r) => sortLabel(r.name) },
                 );
             });
         });
@@ -3016,7 +3055,12 @@
 
     function topNFromCounts(countsMap, n) {
         return [...countsMap.entries()]
-            .sort((a, b) => b[1] - a[1] || displayPolicyName(a[0]).localeCompare(displayPolicyName(b[0]), localeTag()))
+            .sort((a, b) => b[1] - a[1]
+                || displayPolicyName(a[0]).localeCompare(
+                    displayPolicyName(b[0]),
+                    localeTag(),
+                    localeCompareOpts(),
+                ))
             .slice(0, n)
             .map(([name, count]) => `${displayPolicyName(name)} (${count})`)
             .join(', ') || '—';
@@ -3391,11 +3435,12 @@
         };
     }
 
-    function fillSortableTable(table, rows, renderRow, defaultSort, defaultDir) {
+    function fillSortableTable(table, rows, renderRow, defaultSort, defaultDir, labelFns) {
         if (!table) return;
         const tbody = table.querySelector('tbody');
         let sortKey = defaultSort;
         let sortDir = defaultDir || 'desc';
+        const labels = labelFns || null;
 
         const paintHeaders = () => {
             table.querySelectorAll('th[data-sort]').forEach((th) => {
@@ -3407,13 +3452,20 @@
         };
 
         const paint = () => {
+            const loc = localeTag();
+            const cmpOpts = localeCompareOpts();
             const sorted = [...rows].sort((a, b) => {
                 const av = a[sortKey];
                 const bv = b[sortKey];
-                if (typeof av === 'string' || typeof bv === 'string') {
+                const aDisp = sortDisplayText(a, sortKey, labels);
+                const bDisp = sortDisplayText(b, sortKey, labels);
+                if (aDisp !== null || bDisp !== null
+                    || typeof av === 'string' || typeof bv === 'string') {
+                    const as = aDisp !== null ? aDisp : String(av ?? '');
+                    const bs = bDisp !== null ? bDisp : String(bv ?? '');
                     return sortDir === 'asc'
-                        ? String(av ?? '').localeCompare(String(bv ?? ''), localeTag())
-                        : String(bv ?? '').localeCompare(String(av ?? ''), localeTag());
+                        ? as.localeCompare(bs, loc, cmpOpts)
+                        : bs.localeCompare(as, loc, cmpOpts);
                 }
                 const an = Number(av);
                 const bn = Number(bv);
@@ -3563,6 +3615,18 @@
             if (idx < 0) return displayPolicyName(raw);
             return `${displayPolicyName(raw.slice(0, idx))}${sep}${displayPolicyName(raw.slice(idx + sep.length))}`;
         };
+        const policyComboSortLabel = (name) => String(name || '')
+            .split(' · ')
+            .filter(Boolean)
+            .map((p) => displayPolicyName(p))
+            .join(' · ');
+        const policyPairSortLabel = (name) => {
+            const raw = String(name || '');
+            const sep = ' + ';
+            const idx = raw.indexOf(sep);
+            if (idx < 0) return displayPolicyName(raw);
+            return `${displayPolicyName(raw.slice(0, idx))}${sep}${displayPolicyName(raw.slice(idx + sep.length))}`;
+        };
         const wonderLabel = (name) => wonderNameRu(name);
 
         window._policyStatsCache = {
@@ -3573,30 +3637,40 @@
             policyLabel,
             policyComboLabel,
             policyPairLabel,
+            policyComboSortLabel,
+            policyPairSortLabel,
         };
 
-        const fillPolicyTable = (tableId, rows, labelFn) => {
+        const fillPolicyTable = (tableId, rows, labelFn, sortLabelFn) => {
             const mode = policyFilterModeFor(tableId);
             const select = document.querySelector(
                 `[data-policy-filter-for="${tableId}"] .policy-stats-filter`,
             );
             if (select) select.value = mode;
+            const sortFn = sortLabelFn || labelFn;
             fillSortableTable(
                 document.getElementById(tableId),
                 filterPolicyStatRows(rows, mode),
                 (r) => pickStatRowHtml(r, labelFn),
                 'picks',
                 'desc',
+                { name: (r) => sortFn(r.name) },
             );
         };
 
         fillPolicyTable('firstPolicyStatsTable', firstPolicyRows, policyLabel);
         fillPolicyTable('policyBranchStatsTable', policyBranchRows, policyLabel);
-        fillPolicyTable('policyComboStatsTable', policyComboRows, policyComboLabel);
+        fillPolicyTable(
+            'policyComboStatsTable',
+            policyComboRows,
+            policyComboLabel,
+            policyComboSortLabel,
+        );
         fillPolicyTable(
             'policyIdeologyPairStatsTable',
             policyIdeologyPairRows,
             policyPairLabel,
+            policyPairSortLabel,
         );
         fillSortableTable(
             document.getElementById('ideologyStatsTable'),
@@ -3604,6 +3678,7 @@
             (r) => pickStatRowHtml(r, policyLabel),
             'picks',
             'desc',
+            { name: (r) => policyLabel(r.name) },
         );
         fillSortableTable(
             document.getElementById('wonderBuiltStatsTable'),
@@ -3611,6 +3686,7 @@
             (r) => pickStatRowHtml(r, wonderLabel),
             'picks',
             'desc',
+            { name: (r) => wonderLabel(r.name) },
         );
         fillSortableTable(
             document.getElementById('wonderOwnedStatsTable'),
@@ -3618,6 +3694,7 @@
             (r) => pickStatRowHtml(r, wonderLabel),
             'picks',
             'desc',
+            { name: (r) => wonderLabel(r.name) },
         );
         fillSortableTable(
             document.getElementById('pantheonStatsTable'),
@@ -3625,6 +3702,7 @@
             (r) => pickStatRowHtml(r, displayPolicyName),
             'picks',
             'desc',
+            { name: (r) => displayPolicyName(r.name) },
         );
         fillSortableTable(
             document.getElementById('founderBeliefStatsTable'),
@@ -3632,6 +3710,7 @@
             (r) => pickStatRowHtml(r, displayPolicyName),
             'picks',
             'desc',
+            { name: (r) => displayPolicyName(r.name) },
         );
         fillSortableTable(
             document.getElementById('followerBeliefStatsTable'),
@@ -3639,6 +3718,7 @@
             (r) => pickStatRowHtml(r, displayPolicyName),
             'picks',
             'desc',
+            { name: (r) => displayPolicyName(r.name) },
         );
 
         // Charts: opening policies, ideologies, maps
@@ -3711,6 +3791,7 @@
                 </tr>`,
                 'games',
                 'desc',
+                { name: (r) => displayMapName(r.name) },
             );
         }
     }
