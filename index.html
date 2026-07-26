@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=zeus-bait-1">
+    <link rel="stylesheet" href="css/site.css?v=click4x-flags-1">
 
 </head>
 <body>
@@ -290,6 +290,7 @@
                             <th class="num" data-sort="picks" data-i18n="stats.col.picks">Пиков</th>
                             <th class="num" data-sort="wins" data-i18n="stats.col.wins">Побед</th>
                             <th class="num" data-sort="winrate" data-i18n="stats.col.winrate">Винрейт</th>
+                            <th class="num" data-sort="avgPlace" data-i18n="stats.col.avgPlaceNorm">Ср. место</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -907,9 +908,9 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=zeus-bait-1"></script>
-<script src="js/player-meta.js?v=dossier-1"></script>
-<script src="js/stats-charts.js?v=2"></script>
+<script src="js/i18n.js?v=nation-avg-1"></script>
+<script src="js/player-meta.js?v=click4x-cy-ru-1"></script>
+<script src="js/stats-charts.js?v=policy-colors-1"></script>
 <script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=lobby-opp-1"></script>
 <script src="js/achievements.js?v=zeus-bait-1"></script>
@@ -1717,13 +1718,13 @@
 
         if (chartsEl && window.IronLeagueCharts && row) {
             const polRows = topCounted(row.firstPolicyCounts, 8).map(([label, value]) => ({
-                label: displayPolicyName(label), value,
+                label: displayPolicyName(label), value, colorKey: label,
             }));
             const natRows = topCounted(row.nationCounts, 8).map(([label, value]) => ({
                 label: displayNationName(label), value,
             }));
             const ideoRows = topCounted(row.ideologyCounts, 8).map(([label, value]) => ({
-                label: displayPolicyName(label), value,
+                label: displayPolicyName(label), value, colorKey: label,
             }));
             chartsEl.innerHTML = `
                 <div class="profile-chart-block"><h4>${tt('profile.chartPolicies')}</h4><div id="profilePolicyChart"></div></div>
@@ -3184,7 +3185,9 @@
 
         const ensureNation = (nation) => {
             if (!nationStats.has(nation)) {
-                nationStats.set(nation, { nation, picks: 0, wins: 0 });
+                nationStats.set(nation, {
+                    nation, picks: 0, wins: 0, placeSum: 0, placeN: 0,
+                });
             }
             return nationStats.get(nation);
         };
@@ -3215,6 +3218,11 @@
                 if (nation === winnerNation) {
                     row.wins += 1;
                     nat.wins += 1;
+                }
+                const idx = placeIndex.has(name) ? placeIndex.get(name) : null;
+                if (idx !== null && lobbyN > 1) {
+                    nat.placeSum += (lobbyN - 1 - idx) / (lobbyN - 1);
+                    nat.placeN += 1;
                 }
             }
 
@@ -3359,6 +3367,9 @@
         const nationRows = [...nationStats.values()].map((n) => ({
             ...n,
             winrate: pct(n.wins, n.picks),
+            avgPlace: n.placeN
+                ? Math.round((n.placeSum / n.placeN) * 1000) / 1000
+                : null,
         }));
 
         return {
@@ -3465,12 +3476,18 @@
         fillSortableTable(
             document.getElementById('nationStatsTable'),
             nationRows,
-            (n) => `<tr>
+            (n) => {
+                const avg = n.avgPlace === null || n.avgPlace === undefined
+                    ? '—'
+                    : n.avgPlace.toFixed(3);
+                return `<tr>
                 <td><span class="nation-cell">${renderNationPortrait(n.nation, 'player-nation-mini')}${displayNationName(n.nation)}</span></td>
                 <td class="num">${n.picks}</td>
                 <td class="num">${n.wins}</td>
                 <td class="num">${n.winrate}%</td>
-            </tr>`,
+                <td class="num">${avg}</td>
+            </tr>`;
+            },
             'picks',
             'desc',
         );
@@ -3633,6 +3650,7 @@
                 firstPolicyRows.map((r) => ({
                     label: displayPolicyName(r.name),
                     value: r.picks,
+                    colorKey: r.name,
                 })),
                 Object.assign({}, chartOpts, {
                     aria: tt('stats.firstPolicyChart'),
@@ -3644,6 +3662,7 @@
                 ideologyRows.map((r) => ({
                     label: displayPolicyName(r.name),
                     value: r.picks,
+                    colorKey: r.name,
                 })),
                 Object.assign({}, chartOpts, {
                     aria: tt('stats.ideologies'),

@@ -5,23 +5,30 @@
 (function (global) {
   'use strict';
 
-  /** Default RU; exceptions only. */
+  /**
+   * Default RU; exceptions only.
+   * Value: country code string or array of codes (shown left→right).
+   */
   const COUNTRY_BY_PLAYER = {
     EmperorPenguin01: 'nl',
     Bahahanchiklkm: 'kz',
     REPUNZEL2882: 'kz',
+    Click4x: ['cy', 'ru'],
   };
 
   const FLAG_SVG = {
     ru: '<svg viewBox="0 0 9 6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="9" height="6" fill="#fff"/><rect y="2" width="9" height="2" fill="#0039a6"/><rect y="4" width="9" height="2" fill="#d52b1e"/></svg>',
     nl: '<svg viewBox="0 0 9 6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="9" height="2" fill="#ae1c28"/><rect y="2" width="9" height="2" fill="#fff"/><rect y="4" width="9" height="2" fill="#21468b"/></svg>',
     kz: '<svg viewBox="0 0 12 6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="12" height="6" fill="#00afca"/><circle cx="6" cy="3" r="1.35" fill="#fec50c"/><path fill="#fec50c" d="M1.2 1.1h.35v3.8H1.2zm.55.4c.7.35 1.15 1.1 1.15 1.9s-.45 1.55-1.15 1.9V1.5z"/></svg>',
+    // White field + copper island + olive wreath (simplified Cyprus flag).
+    cy: '<svg viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="36" height="24" fill="#fff"/><path fill="#d4762c" d="M10.2 8.2c1.6-.9 3.4-1.5 5.4-1.6 1.8-.1 3.5.2 4.9.8 1.1.5 1.6 1.2 1.4 1.9-.3 1.1-1.6 1.6-2.8 2-.7.2-1.1.6-1 .9.2.5 1.1.4 1.9.6 1.2.3 2.2 1 2.1 1.8-.1.9-1.2 1.3-2.3 1.4-1.6.2-3.4-.1-5-.7-1.8-.7-3.4-1.8-4.4-3.2-.7-1-.9-2.1-.2-2.9z"/><path fill="none" stroke="#4c8c2b" stroke-width="0.7" stroke-linecap="round" d="M14.2 16.8c1.2 1.4 2.6 2.2 3.8 2.2s2.6-.8 3.8-2.2"/><path fill="#4c8c2b" d="M15.4 17.2c.2-.5.7-.7 1-.5.2.5-.2 1.1-.7 1.2-.3 0-.5-.3-.3-.7zm5.2 0c-.2-.5-.7-.7-1-.5-.2.5.2 1.1.7 1.2.3 0 .5-.3.3-.7z"/></svg>',
   };
 
   const COUNTRY_LABEL = {
     ru: { ru: 'Россия', en: 'Russia' },
     nl: { ru: 'Нидерланды', en: 'Netherlands' },
     kz: { ru: 'Казахстан', en: 'Kazakhstan' },
+    cy: { ru: 'Кипр', en: 'Cyprus' },
   };
 
   const BG_PALETTES = [
@@ -33,18 +40,37 @@
     ['#101820', '#182838', '#283018'],
   ];
 
-  function countryCodeFor(name) {
+  function countryCodesFor(name) {
     const key = String(name || '').trim();
-    return COUNTRY_BY_PLAYER[key] || 'ru';
+    const raw = COUNTRY_BY_PLAYER[key];
+    if (Array.isArray(raw) && raw.length) {
+      return raw.map((c) => String(c || '').trim().toLowerCase()).filter(Boolean);
+    }
+    if (typeof raw === 'string' && raw.trim()) return [raw.trim().toLowerCase()];
+    return ['ru'];
+  }
+
+  /** Primary country code (first flag). */
+  function countryCodeFor(name) {
+    return countryCodesFor(name)[0] || 'ru';
+  }
+
+  function oneFlagHtml(code, lang, titleOverride) {
+    const svg = FLAG_SVG[code] || FLAG_SVG.ru;
+    const label = (COUNTRY_LABEL[code] && COUNTRY_LABEL[code][lang]) || code.toUpperCase();
+    const title = titleOverride || label;
+    return `<span class="player-flag" title="${title}" data-country="${code}">${svg}</span>`;
   }
 
   function flagHtml(name, opts) {
-    const code = countryCodeFor(name);
-    const svg = FLAG_SVG[code] || FLAG_SVG.ru;
+    const codes = countryCodesFor(name);
     const lang = (opts && opts.lang) || 'ru';
-    const label = (COUNTRY_LABEL[code] && COUNTRY_LABEL[code][lang]) || code.toUpperCase();
-    const title = (opts && opts.title) || label;
-    return `<span class="player-flag" title="${title}" data-country="${code}">${svg}</span>`;
+    if (opts && opts.title && codes.length === 1) {
+      return oneFlagHtml(codes[0], lang, opts.title);
+    }
+    const flags = codes.map((code) => oneFlagHtml(code, lang)).join('');
+    if (codes.length <= 1) return flags;
+    return `<span class="player-flags">${flags}</span>`;
   }
 
   function hashName(name) {
@@ -96,6 +122,7 @@
   global.IronLeaguePlayerMeta = {
     COUNTRY_BY_PLAYER,
     countryCodeFor,
+    countryCodesFor,
     flagHtml,
     profileBackgroundStyle,
     mapPreviewKey,

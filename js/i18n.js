@@ -409,7 +409,7 @@
       'stats.winrateHint':
         'Победы / участия только в актуальных играх (без teams/scrap). «Выжил» — alive=true в финале. Минимум 1 игра.',
       'stats.nations': 'Нации: пики и винрейт',
-      'stats.nationsHint': 'Все нации мода. Не пикнутые — 0 пиков и 0% винрейта. Только актуальные игры.',
+      'stats.nationsHint': 'Все нации мода. Не пикнутые — 0 пиков и 0% винрейта. «Ср. место» — нормированный placeScore (1 = победа … 0 = последнее). Только актуальные игры.',
       'stats.detail': 'Игроки: нации и финал',
       'stats.detailHint':
         'Частая нация и идеология, сумма владеемых чудес, сумма своих чудес (wonders_built), захваченных столиц и боевых потерь юнитов (military_deaths) — по данным «Финал» (без teams/scrap).',
@@ -918,7 +918,7 @@
       'stats.winrateHint':
         'Wins / games in ranked archive only (no teams/scrap). “Survived” = alive=true in finale. Minimum 1 game.',
       'stats.nations': 'Nations: picks and winrate',
-      'stats.nationsHint': 'All mod nations. Unpicked show 0 picks and 0% winrate. Ranked games only.',
+      'stats.nationsHint': 'All mod nations. Unpicked show 0 picks and 0% winrate. “Avg place” is normalized placeScore (1 = win … 0 = last). Ranked games only.',
       'stats.detail': 'Players: nations and finale',
       'stats.detailHint':
         'Most-picked nation and ideology, sum of owned wonders, sum of self-built wonders (wonders_built), captured capitals, and military units lost (military_deaths) — from Finale data (no teams/scrap).',
