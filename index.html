@@ -2825,6 +2825,8 @@
         const aliases = {
             Aztec: 'Ацтеки',
             Aztecs: 'Ацтеки',
+            Gaul: 'Галлы',
+            Gauls: 'Галлы',
             Maya: 'Майя',
             'The Maya': 'Майя',
             Huns: 'Гунны',
@@ -2859,6 +2861,7 @@
             yugoslavia: 'yugolslavia',
             yugolslavia: 'yugolslavia',
             aztecs: 'aztec',
+            gauls: 'gaul',
             ottomans: 'ottomans',
             moors: 'moors',
         };
@@ -3733,13 +3736,34 @@
                 return `<span class="tier-pill">${starsHtml(stars)} ${label}</span>`;
             }).join('');
 
-            const rows = (tierlistData.entries || []).map((e) => ({
+            const rawRows = (tierlistData.entries || []).map((e) => ({
                 civ: e.civ,
                 civRu: engToRusNation(e.civ),
                 avg: e.avg || 0,
                 Community: e.ratings?.Community,
                 note: e.note || '',
             }));
+            // Prefer canonical eng name / poll note when sheet has aliases (Gaul vs Gauls).
+            const byRu = new Map();
+            for (const r of rawRows) {
+                const key = String(r.civRu || r.civ || '').trim();
+                if (!key) continue;
+                const prev = byRu.get(key);
+                if (!prev) {
+                    byRu.set(key, r);
+                    continue;
+                }
+                const canon = String(rusToEngNation(key) || '').toLowerCase();
+                const prevCanon = String(prev.civ || '').toLowerCase() === canon;
+                const nextCanon = String(r.civ || '').toLowerCase() === canon;
+                if (nextCanon && !prevCanon) {
+                    byRu.set(key, r);
+                    continue;
+                }
+                if (prevCanon && !nextCanon) continue;
+                if (r.note && !prev.note) byRu.set(key, r);
+            }
+            const rows = [...byRu.values()];
 
             fillSortableTable(
                 document.getElementById('tierlistTable'),
