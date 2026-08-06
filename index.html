@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=click4x-flags-1">
+    <link rel="stylesheet" href="css/site.css?v=survival-top3-1">
 
 </head>
 <body>
@@ -908,12 +908,12 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=nation-avg-1"></script>
+<script src="js/i18n.js?v=survival-top3-1"></script>
 <script src="js/player-meta.js?v=click4x-cy-ru-1"></script>
 <script src="js/stats-charts.js?v=policy-colors-1"></script>
 <script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=lobby-opp-1"></script>
-<script src="js/achievements.js?v=zeus-bait-1"></script>
+<script src="js/achievements.js?v=survival-top3-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -1685,24 +1685,43 @@
         if (achEl && window.IronLeagueAchievements) {
             try {
                 const items = IronLeagueAchievements.computeAchievements(ranked) || [];
-                const owned = items.filter((it) => it.player === name);
+                const owned = [];
+                for (const it of items) {
+                    const places = Array.isArray(it.top) && it.top.length
+                        ? it.top
+                        : (it.player && !it.vacant
+                            ? [{ place: 1, player: it.player, value: it.value }]
+                            : []);
+                    for (const slot of places) {
+                        if (slot.player !== name) continue;
+                        owned.push({
+                            id: it.id,
+                            place: slot.place || 1,
+                            value: slot.value != null ? slot.value : it.value,
+                        });
+                    }
+                }
                 achEl.innerHTML = owned.length
                     ? owned.map((it) => {
                         const label = tt(`records.item.${it.id}.title`);
                         const titleText = label.startsWith('records.') ? it.id : label;
                         const iconSrc = `img/records/${it.id}.png`;
                         const iconFb = `img/records/${it.id}.svg`;
-                        return `<div class="profile-ach-card" title="${String(it.value || '').replace(/"/g, '&quot;')}">
+                        const place = it.place || 1;
+                        const placeHtml = place > 1
+                            ? `<span class="profile-ach-place">#${place}</span>`
+                            : '';
+                        return `<div class="profile-ach-card${place > 1 ? ' profile-ach-card--runner' : ''}" title="${String(it.value || '').replace(/"/g, '&quot;')}">
                             <img src="${iconSrc}" alt="" width="40" height="40" loading="lazy"
                                  onerror="this.onerror=null;this.src='${iconFb}'">
                             <div class="profile-ach-main">
-                                <span class="profile-ach-title">${titleText}</span>
+                                <span class="profile-ach-title">${placeHtml}${titleText}</span>
                                 <span class="profile-ach-value">${it.value || ''}</span>
                             </div>
                         </div>`;
                     }).join('')
                     : `<p class="hint">${tt('profile.noAchievements')}</p>`;
-                renderProfileEmblem(row, owned.length);
+                renderProfileEmblem(row, owned.filter((x) => (x.place || 1) === 1).length);
             } catch (e) {
                 achEl.innerHTML = '';
                 renderProfileEmblem(row, 0);
@@ -2665,6 +2684,7 @@
         curious: [
             'most_games_no_win',
             'never_eliminated',
+            'best_survival_rate',
             'pacifist_games',
             'survived_no_capital',
             'fewest_military_deaths',
@@ -2694,12 +2714,23 @@
                 value: item.value,
                 games: item.games != null ? String(item.games) : '',
                 wins: item.wins != null ? String(item.wins) : '',
+                survived: item.survived != null ? String(item.survived) : '',
                 game: item.gameNumber != null ? String(item.gameNumber) : '',
             });
             if (body === `records.item.${item.id}.body`) {
                 body = `${item.player}: ${item.value}`;
             }
         }
+        const runners = (Array.isArray(item.top) ? item.top : []).filter((t) => t && t.place > 1);
+        const runnersHtml = (!vacant && runners.length)
+            ? `<ol class="record-card-runners" aria-label="${tt('records.runners')}">${
+                runners.map((t) => `<li>
+                    <span class="record-runner-place">#${t.place}</span>
+                    <span class="record-runner-name">${t.player}</span>
+                    <span class="record-runner-value">${t.value}</span>
+                </li>`).join('')
+            }</ol>`
+            : '';
         const iconSrc = recordIconSrc(item.id);
         const iconFallback = `img/records/${item.id}.svg`;
         return `<article class="record-card${vacant ? ' record-card--vacant' : ''}" id="record-${item.id}">
@@ -2716,6 +2747,7 @@
                 </div>
             </div>
             <p class="record-card-body">${body}</p>
+            ${runnersHtml}
         </article>`;
     }
 
