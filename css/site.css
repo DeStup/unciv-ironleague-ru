@@ -1693,6 +1693,43 @@
             line-height: 1.45;
         }
 
+        .record-card-runners {
+            list-style: none;
+            margin: 10px 0 0;
+            padding: 8px 0 0;
+            border-top: 1px dashed rgba(255, 215, 0, 0.14);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .record-card-runners li {
+            display: grid;
+            grid-template-columns: 2.2em 1fr auto;
+            column-gap: 8px;
+            align-items: baseline;
+            color: rgba(255, 255, 255, 0.62);
+            font-size: 0.86rem;
+            line-height: 1.35;
+        }
+
+        .record-runner-place {
+            color: rgba(255, 210, 120, 0.75);
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .record-runner-name {
+            overflow-wrap: anywhere;
+            min-width: 0;
+        }
+
+        .record-runner-value {
+            color: rgba(255, 255, 255, 0.78);
+            font-weight: 600;
+            font-variant-numeric: tabular-nums;
+        }
+
         .lang-switch {
             position: fixed;
             top: 12px;
@@ -2472,6 +2509,17 @@
             height: 40px;
             object-fit: contain;
             flex-shrink: 0;
+        }
+        .profile-ach-card--runner {
+            border-color: rgba(255, 215, 0, 0.16);
+            opacity: 0.9;
+        }
+        .profile-ach-place {
+            display: inline-block;
+            margin-right: 6px;
+            color: rgba(255, 210, 120, 0.85);
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
         }
         .profile-ach-main {
             display: flex;

@@ -544,6 +544,7 @@
         'Рекорды считаются из архива при каждой загрузке. Игры с флагами teams / scrap не учитываются.',
       'records.toc': 'Разделы рекордов',
       'records.empty': 'Пока нет данных для этого раздела.',
+      'records.runners': '2–3 места',
       'records.section.glory': 'Слава',
       'records.section.war': 'Война',
       'records.section.veteran': 'Ветеран',
@@ -665,6 +666,10 @@
       'records.item.never_eliminated.flavor': 'Дожил. Всегда.',
       'records.item.never_eliminated.body':
         '{player} ни разу не выбывал в финале ({value} игр с данными финала).',
+      'records.item.best_survival_rate.title': 'Наибольшая выживаемость',
+      'records.item.best_survival_rate.flavor': 'Не убит — значит жив',
+      'records.item.best_survival_rate.body':
+        '{player} лидирует по выживаемости во всех учтённых играх: {value} ({survived}/{games}).',
       'records.item.pacifist_games.title': 'Пацифист по бумагам',
       'records.item.pacifist_games.flavor': 'Голубь мира',
       'records.item.pacifist_games.body':
@@ -1053,6 +1058,7 @@
         'Records are computed from the archive on every load. Games flagged teams / scrap are ignored.',
       'records.toc': 'Records sections',
       'records.empty': 'No data for this section yet.',
+      'records.runners': '2nd–3rd places',
       'records.section.glory': 'Glory',
       'records.section.war': 'War',
       'records.section.veteran': 'Veteran',
@@ -1174,6 +1180,10 @@
       'records.item.never_eliminated.flavor': 'Always made it',
       'records.item.never_eliminated.body':
         '{player} was never eliminated in finale ({value} games with finale data).',
+      'records.item.best_survival_rate.title': 'Highest survival rate',
+      'records.item.best_survival_rate.flavor': 'Not dead means alive',
+      'records.item.best_survival_rate.body':
+        '{player} leads survival across all counted games: {value} ({survived}/{games}).',
       'records.item.pacifist_games.title': 'Paper pacifist',
       'records.item.pacifist_games.flavor': 'Dove of peace',
       'records.item.pacifist_games.body':

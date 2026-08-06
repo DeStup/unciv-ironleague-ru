@@ -282,40 +282,44 @@
     return { stats, games: list };
   }
 
-  function pickMax(stats, scoreFn, filterFn) {
-    let best = null;
-    let bestScore = -Infinity;
+  /**
+   * Top-N by score (desc); ties by nickname asc.
+   * Топ-N по score (убыв.); ничья — ник по возрастанию.
+   */
+  function pickTop(stats, scoreFn, filterFn, limit) {
+    const n = limit == null ? 3 : limit;
+    const rows = [];
     for (const [name, s] of stats) {
       if (filterFn && !filterFn(s)) continue;
       const score = scoreFn(s);
       if (!Number.isFinite(score)) continue;
-      if (
-        score > bestScore
-        || (score === bestScore && best && name.localeCompare(best.player) < 0)
-      ) {
-        bestScore = score;
-        best = { player: name, stat: s, score };
-      }
+      rows.push({ player: name, stat: s, score });
     }
-    return best;
+    rows.sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return a.player.localeCompare(b.player);
+    });
+    return rows.slice(0, Math.max(0, n));
+  }
+
+  /**
+   * Top-N by lowest score (asc); ties by nickname asc.
+   * Топ-N по наименьшему score; ничья — ник по возрастанию.
+   */
+  function pickTopMin(stats, scoreFn, filterFn, limit) {
+    return pickTop(stats, (s) => -scoreFn(s), filterFn, limit).map((row) => ({
+      player: row.player,
+      stat: row.stat,
+      score: -row.score,
+    }));
+  }
+
+  function pickMax(stats, scoreFn, filterFn) {
+    return pickTop(stats, scoreFn, filterFn, 1)[0] || null;
   }
 
   function pickMin(stats, scoreFn, filterFn) {
-    let best = null;
-    let bestScore = Infinity;
-    for (const [name, s] of stats) {
-      if (filterFn && !filterFn(s)) continue;
-      const score = scoreFn(s);
-      if (!Number.isFinite(score)) continue;
-      if (
-        score < bestScore
-        || (score === bestScore && best && name.localeCompare(best.player) < 0)
-      ) {
-        bestScore = score;
-        best = { player: name, stat: s, score };
-      }
-    }
-    return best;
+    return pickTopMin(stats, scoreFn, filterFn, 1)[0] || null;
   }
 
   /**
@@ -329,198 +333,217 @@
     const { stats } = buildStats(games);
     const out = [];
 
-    function push(id, hit, value, extra) {
-      if (!hit) return;
-      out.push(Object.assign({ id, player: hit.player, value }, extra || {}));
+    /**
+     * Push a ranked record with optional top-2 / top-3 runners-up.
+     * Пишет рекорд с опциональными 2–3 местами.
+     *
+     * :param id: record id / id рекорда
+     * :param hits: pickTop rows / строки pickTop
+     * :param valueFn: (hit) => display value / значение для UI
+     * :param extraFn: optional (hit) => extra fields for #1 body / доп. поля для текста 1 места
+     */
+    function pushTop(id, hits, valueFn, extraFn) {
+      if (!hits || !hits.length) return;
+      const top = hits.map((h, i) => {
+        const row = { place: i + 1, player: h.player, value: valueFn(h) };
+        if (h.game != null) row.gameNumber = h.game;
+        return row;
+      });
+      const head = hits[0];
+      const extra = typeof extraFn === 'function' ? (extraFn(head) || {}) : (extraFn || {});
+      out.push(Object.assign({
+        id,
+        player: head.player,
+        value: top[0].value,
+        top,
+      }, extra));
     }
 
-    const mostWins = pickMax(stats, (s) => s.wins, (s) => s.wins > 0);
-    if (mostWins) {
-      push('most_wins', mostWins, String(mostWins.stat.wins), { games: mostWins.stat.played });
-    }
-
-    const winrateHit = pickMax(
-      stats,
-      // Prefer higher winrate; on a tie, prefer more games.
-      // При равном винрейте предпочитаем больше игр.
-      (s) => s.wins / s.played + s.played * 1e-9,
-      (s) => s.played >= 3 && s.wins > 0,
+    pushTop(
+      'most_wins',
+      pickTop(stats, (s) => s.wins, (s) => s.wins > 0),
+      (h) => String(h.stat.wins),
+      (h) => ({ games: h.stat.played }),
     );
-    if (winrateHit) {
-      const pct = Math.round((winrateHit.stat.wins / winrateHit.stat.played) * 1000) / 10;
-      push('best_winrate', winrateHit, `${pct}%`, {
-        games: winrateHit.stat.played,
-        wins: winrateHit.stat.wins,
-      });
-    }
 
-    const winStreak = pickMax(stats, (s) => s.winStreak, (s) => s.winStreak >= 2);
-    if (winStreak) push('longest_win_streak', winStreak, String(winStreak.stat.winStreak));
+    pushTop(
+      'best_winrate',
+      pickTop(
+        stats,
+        // Prefer higher winrate; on a tie, prefer more games.
+        // При равном винрейте предпочитаем больше игр.
+        (s) => s.wins / s.played + s.played * 1e-9,
+        (s) => s.played >= 3 && s.wins > 0,
+      ),
+      (h) => `${Math.round((h.stat.wins / h.stat.played) * 1000) / 10}%`,
+      (h) => ({ games: h.stat.played, wins: h.stat.wins }),
+    );
 
-    const playStreak = pickMax(stats, (s) => s.playStreak, (s) => s.playStreak >= 3);
-    if (playStreak) {
-      push('longest_play_streak', playStreak, String(playStreak.stat.playStreak), {
-        games: playStreak.stat.played,
-      });
-    }
+    pushTop(
+      'longest_win_streak',
+      pickTop(stats, (s) => s.winStreak, (s) => s.winStreak >= 2),
+      (h) => String(h.stat.winStreak),
+    );
 
-    let fastest = null;
-    let slowest = null;
+    pushTop(
+      'longest_play_streak',
+      pickTop(stats, (s) => s.playStreak, (s) => s.playStreak >= 3),
+      (h) => String(h.stat.playStreak),
+      (h) => ({ games: h.stat.played }),
+    );
+
+    const winTurns = [];
     for (const [name, s] of stats) {
       for (const w of s.winTurns) {
-        if (
-          !fastest
-          || w.turn < fastest.turn
-          || (w.turn === fastest.turn && name < fastest.player)
-        ) {
-          fastest = { player: name, turn: w.turn, game: w.game };
-        }
-        if (
-          !slowest
-          || w.turn > slowest.turn
-          || (w.turn === slowest.turn && name < slowest.player)
-        ) {
-          slowest = { player: name, turn: w.turn, game: w.game };
-        }
+        winTurns.push({ player: name, turn: w.turn, game: w.game });
       }
     }
-    if (fastest) {
-      out.push({
-        id: 'fastest_win',
-        player: fastest.player,
-        value: String(fastest.turn),
-        gameNumber: fastest.game,
-      });
-    }
-    if (slowest) {
-      out.push({
-        id: 'slowest_win',
-        player: slowest.player,
-        value: String(slowest.turn),
-        gameNumber: slowest.game,
-      });
-    }
-
-    const allCapsWins = pickMax(
-      stats,
-      (s) => s.wins,
-      (s) => s.wins >= 2 && s.winsNoCaps === 0,
+    const fastestHits = winTurns
+      .slice()
+      .sort((a, b) => (a.turn - b.turn) || a.player.localeCompare(b.player))
+      .slice(0, 3)
+      .map((w) => ({ player: w.player, stat: w, score: -w.turn, game: w.game }));
+    pushTop(
+      'fastest_win',
+      fastestHits,
+      (h) => String(h.stat.turn),
+      (h) => ({ gameNumber: h.game }),
     );
-    if (allCapsWins) {
-      push('wins_all_with_caps', allCapsWins, String(allCapsWins.stat.wins), {
-        games: allCapsWins.stat.played,
-      });
-    }
 
-    const capsInOne = pickMax(stats, (s) => s.maxCapsInWin, (s) => s.maxCapsInWin >= 2);
-    if (capsInOne) {
-      push('most_caps_single_win', capsInOne, String(capsInOne.stat.maxCapsInWin), {
-        gameNumber: capsInOne.stat.maxCapsInWinGame,
-      });
-    }
-
-    const mostCaps = pickMax(stats, (s) => s.caps, (s) => s.caps > 0);
-    if (mostCaps) push('most_caps', mostCaps, String(mostCaps.stat.caps));
-
-    const warmonger = pickMax(
-      stats,
-      (s) => s.warsDeclared,
-      (s) => s.warsDeclKnown >= 3 && s.warsDeclared > 0,
+    const slowestHits = winTurns
+      .slice()
+      .sort((a, b) => (b.turn - a.turn) || a.player.localeCompare(b.player))
+      .slice(0, 3)
+      .map((w) => ({ player: w.player, stat: w, score: w.turn, game: w.game }));
+    pushTop(
+      'slowest_win',
+      slowestHits,
+      (h) => String(h.stat.turn),
+      (h) => ({ gameNumber: h.game }),
     );
-    if (warmonger) {
-      push('most_wars_declared', warmonger, String(warmonger.stat.warsDeclared), {
-        games: warmonger.stat.warsDeclKnown,
-      });
-    }
 
-    const attacked = pickMax(
-      stats,
-      (s) => s.warsReceived,
-      (s) => s.finaleGames >= 3 && s.warsReceived > 0,
+    pushTop(
+      'wins_all_with_caps',
+      pickTop(stats, (s) => s.wins, (s) => s.wins >= 2 && s.winsNoCaps === 0),
+      (h) => String(h.stat.wins),
+      (h) => ({ games: h.stat.played }),
     );
-    if (attacked) {
-      push('most_wars_received', attacked, String(attacked.stat.warsReceived), {
-        games: attacked.stat.finaleGames,
-      });
-    }
 
-    const deaths = pickMax(
-      stats,
-      (s) => s.deaths,
-      (s) => s.deathsKnownGames >= 1 && s.deaths > 0,
+    pushTop(
+      'most_caps_single_win',
+      pickTop(stats, (s) => s.maxCapsInWin, (s) => s.maxCapsInWin >= 2),
+      (h) => String(h.stat.maxCapsInWin),
+      (h) => ({ gameNumber: h.stat.maxCapsInWinGame }),
     );
-    if (deaths) push('most_military_deaths', deaths, String(deaths.stat.deaths));
 
-    const fewestDeaths = pickMin(
-      stats,
-      (s) => s.deaths,
-      (s) => s.deathsKnownGames >= 5,
+    pushTop(
+      'most_caps',
+      pickTop(stats, (s) => s.caps, (s) => s.caps > 0),
+      (h) => String(h.stat.caps),
     );
-    if (fewestDeaths) {
-      push('fewest_military_deaths', fewestDeaths, String(fewestDeaths.stat.deaths), {
-        games: fewestDeaths.stat.deathsKnownGames,
-      });
-    }
 
-    const pietyCount = pickMax(stats, (s) => s.pietyCount, (s) => s.pietyCount >= 2);
-    if (pietyCount) {
-      push('piety_first_count', pietyCount, String(pietyCount.stat.pietyCount), {
-        games: pietyCount.stat.played,
-      });
-    }
+    pushTop(
+      'most_wars_declared',
+      pickTop(
+        stats,
+        (s) => s.warsDeclared,
+        (s) => s.warsDeclKnown >= 3 && s.warsDeclared > 0,
+      ),
+      (h) => String(h.stat.warsDeclared),
+      (h) => ({ games: h.stat.warsDeclKnown }),
+    );
 
-    const pietyStreak = pickMax(stats, (s) => s.pietyStreak, (s) => s.pietyStreak >= 2);
-    if (pietyStreak) {
-      push('piety_first_streak', pietyStreak, String(pietyStreak.stat.pietyStreak));
-    }
+    pushTop(
+      'most_wars_received',
+      pickTop(
+        stats,
+        (s) => s.warsReceived,
+        (s) => s.finaleGames >= 3 && s.warsReceived > 0,
+      ),
+      (h) => String(h.stat.warsReceived),
+      (h) => ({ games: h.stat.finaleGames }),
+    );
 
-    const tradition = pickMax(stats, (s) => s.traditionCount, (s) => s.traditionCount >= 3);
-    if (tradition) {
-      push('tradition_first_count', tradition, String(tradition.stat.traditionCount), {
-        games: tradition.stat.played,
-      });
-    }
+    pushTop(
+      'most_military_deaths',
+      pickTop(
+        stats,
+        (s) => s.deaths,
+        (s) => s.deathsKnownGames >= 1 && s.deaths > 0,
+      ),
+      (h) => String(h.stat.deaths),
+    );
 
-    const liberty = pickMax(stats, (s) => s.libertyCount, (s) => s.libertyCount >= 3);
-    if (liberty) {
-      push('liberty_first_count', liberty, String(liberty.stat.libertyCount), {
-        games: liberty.stat.played,
-      });
-    }
+    pushTop(
+      'fewest_military_deaths',
+      pickTopMin(stats, (s) => s.deaths, (s) => s.deathsKnownGames >= 5),
+      (h) => String(h.stat.deaths),
+      (h) => ({ games: h.stat.deathsKnownGames }),
+    );
 
-    const honor = pickMax(stats, (s) => s.honorCount, (s) => s.honorCount >= 2);
-    if (honor) {
-      push('honor_first_count', honor, String(honor.stat.honorCount), {
-        games: honor.stat.played,
-      });
-    }
+    pushTop(
+      'piety_first_count',
+      pickTop(stats, (s) => s.pietyCount, (s) => s.pietyCount >= 2),
+      (h) => String(h.stat.pietyCount),
+      (h) => ({ games: h.stat.played }),
+    );
 
-    const orderIdeo = pickMax(stats, (s) => s.orderCount, (s) => s.orderCount >= 2);
-    if (orderIdeo) {
-      push('ideology_order_count', orderIdeo, String(orderIdeo.stat.orderCount), {
-        games: orderIdeo.stat.played,
-      });
-    }
+    pushTop(
+      'piety_first_streak',
+      pickTop(stats, (s) => s.pietyStreak, (s) => s.pietyStreak >= 2),
+      (h) => String(h.stat.pietyStreak),
+    );
 
-    const freedomIdeo = pickMax(stats, (s) => s.freedomCount, (s) => s.freedomCount >= 2);
-    if (freedomIdeo) {
-      push('ideology_freedom_count', freedomIdeo, String(freedomIdeo.stat.freedomCount), {
-        games: freedomIdeo.stat.played,
-      });
-    }
+    pushTop(
+      'tradition_first_count',
+      pickTop(stats, (s) => s.traditionCount, (s) => s.traditionCount >= 3),
+      (h) => String(h.stat.traditionCount),
+      (h) => ({ games: h.stat.played }),
+    );
 
-    const autoIdeo = pickMax(stats, (s) => s.autocracyCount, (s) => s.autocracyCount >= 2);
-    if (autoIdeo) {
-      push('ideology_autocracy_count', autoIdeo, String(autoIdeo.stat.autocracyCount), {
-        games: autoIdeo.stat.played,
-      });
-    }
+    pushTop(
+      'liberty_first_count',
+      pickTop(stats, (s) => s.libertyCount, (s) => s.libertyCount >= 3),
+      (h) => String(h.stat.libertyCount),
+      (h) => ({ games: h.stat.played }),
+    );
 
-    const wonders = pickMax(stats, (s) => s.wondersBuilt, (s) => s.wondersBuilt > 0);
-    if (wonders) push('most_wonders_built', wonders, String(wonders.stat.wondersBuilt));
+    pushTop(
+      'honor_first_count',
+      pickTop(stats, (s) => s.honorCount, (s) => s.honorCount >= 2),
+      (h) => String(h.stat.honorCount),
+      (h) => ({ games: h.stat.played }),
+    );
 
-    // First win while owning a self-built Statue of Zeus (may stay vacant).
-    // Первая победа с собственно построенной Статуей Зевса (может быть пустой).
+    pushTop(
+      'ideology_order_count',
+      pickTop(stats, (s) => s.orderCount, (s) => s.orderCount >= 2),
+      (h) => String(h.stat.orderCount),
+      (h) => ({ games: h.stat.played }),
+    );
+
+    pushTop(
+      'ideology_freedom_count',
+      pickTop(stats, (s) => s.freedomCount, (s) => s.freedomCount >= 2),
+      (h) => String(h.stat.freedomCount),
+      (h) => ({ games: h.stat.played }),
+    );
+
+    pushTop(
+      'ideology_autocracy_count',
+      pickTop(stats, (s) => s.autocracyCount, (s) => s.autocracyCount >= 2),
+      (h) => String(h.stat.autocracyCount),
+      (h) => ({ games: h.stat.played }),
+    );
+
+    pushTop(
+      'most_wonders_built',
+      pickTop(stats, (s) => s.wondersBuilt, (s) => s.wondersBuilt > 0),
+      (h) => String(h.stat.wondersBuilt),
+    );
+
+    // First win while owning a self-built Statue of Zeus (may stay vacant; no top-3).
+    // Первая победа с собственно построенной Статуей Зевса (может быть пустой; без топ-3).
     let zeusWin = null;
     for (const game of eligibleGames(games)) {
       const wp = winnerPlayer(game);
@@ -548,105 +571,116 @@
       });
     }
 
-    const wondersOwned = pickMax(stats, (s) => s.wondersOwned, (s) => s.wondersOwned > 0);
-    if (wondersOwned) {
-      push('most_wonders_owned', wondersOwned, String(wondersOwned.stat.wondersOwned));
-    }
-
-    const uniqueNations = pickMax(
-      stats,
-      (s) => s.nations.size,
-      (s) => s.played >= 5 && s.nations.size >= 5,
+    pushTop(
+      'most_wonders_owned',
+      pickTop(stats, (s) => s.wondersOwned, (s) => s.wondersOwned > 0),
+      (h) => String(h.stat.wondersOwned),
     );
-    if (uniqueNations) {
-      push('most_unique_nations', uniqueNations, String(uniqueNations.stat.nations.size), {
-        games: uniqueNations.stat.played,
-      });
-    }
 
-    const noWin = pickMax(stats, (s) => s.played, (s) => s.played >= 5 && s.wins === 0);
-    if (noWin) push('most_games_no_win', noWin, String(noWin.stat.played));
-
-    const survivor = pickMax(
-      stats,
-      (s) => s.finaleGames,
-      (s) => s.finaleGames >= 3 && s.elim === 0,
+    pushTop(
+      'most_unique_nations',
+      pickTop(
+        stats,
+        (s) => s.nations.size,
+        (s) => s.played >= 5 && s.nations.size >= 5,
+      ),
+      (h) => String(h.stat.nations.size),
+      (h) => ({ games: h.stat.played }),
     );
-    if (survivor) push('never_eliminated', survivor, String(survivor.stat.finaleGames));
 
-    const pacifist = pickMax(
-      stats,
-      (s) => s.warsDeclZero,
-      (s) => s.warsDeclKnown >= 5,
+    pushTop(
+      'most_games_no_win',
+      pickTop(stats, (s) => s.played, (s) => s.played >= 5 && s.wins === 0),
+      (h) => String(h.stat.played),
     );
-    if (pacifist) {
-      push(
-        'pacifist_games',
-        pacifist,
-        `${pacifist.stat.warsDeclZero}/${pacifist.stat.warsDeclKnown}`,
-        { games: pacifist.stat.warsDeclKnown },
-      );
-    }
 
-    const noCapSurvive = pickMax(
-      stats,
-      (s) => s.survivedNoCap,
-      (s) => s.survivedNoCap >= 1,
+    // Never eliminated in finale (count of finale rows with elim===0).
+    // Ни разу не выбывал в финале (число финалов при elim===0).
+    pushTop(
+      'never_eliminated',
+      pickTop(
+        stats,
+        (s) => s.finaleGames,
+        (s) => s.finaleGames >= 3 && s.elim === 0,
+      ),
+      (h) => String(h.stat.finaleGames),
     );
-    if (noCapSurvive) {
-      push('survived_no_capital', noCapSurvive, String(noCapSurvive.stat.survivedNoCap));
-    }
 
-    const maxCities = pickMax(stats, (s) => s.maxCities, (s) => s.maxCities > 0);
-    if (maxCities) {
-      push('max_cities_finale', maxCities, String(maxCities.stat.maxCities), {
-        gameNumber: maxCities.stat.maxCitiesGame,
-      });
-    }
+    // Survival rate over all ranked games: (played − elim) / played.
+    // Выживаемость по всем учтённым играм: (played − elim) / played.
+    pushTop(
+      'best_survival_rate',
+      pickTop(
+        stats,
+        (s) => (s.played - s.elim) / s.played + s.played * 1e-9,
+        (s) => s.played >= 5,
+      ),
+      (h) => `${Math.round(((h.stat.played - h.stat.elim) / h.stat.played) * 1000) / 10}%`,
+      (h) => ({
+        games: h.stat.played,
+        survived: h.stat.played - h.stat.elim,
+      }),
+    );
 
-    const maxScore = pickMax(stats, (s) => s.maxScore, (s) => s.maxScore > 0);
-    if (maxScore) {
-      push('max_score_finale', maxScore, String(maxScore.stat.maxScore), {
-        gameNumber: maxScore.stat.maxScoreGame,
-      });
-    }
+    pushTop(
+      'pacifist_games',
+      pickTop(stats, (s) => s.warsDeclZero, (s) => s.warsDeclKnown >= 5),
+      (h) => `${h.stat.warsDeclZero}/${h.stat.warsDeclKnown}`,
+      (h) => ({ games: h.stat.warsDeclKnown }),
+    );
 
-    const maxUnits = pickMax(stats, (s) => s.maxUnits, (s) => s.maxUnits > 0);
-    if (maxUnits) {
-      push('max_units_finale', maxUnits, String(maxUnits.stat.maxUnits), {
-        gameNumber: maxUnits.stat.maxUnitsGame,
-      });
-    }
+    pushTop(
+      'survived_no_capital',
+      pickTop(stats, (s) => s.survivedNoCap, (s) => s.survivedNoCap >= 1),
+      (h) => String(h.stat.survivedNoCap),
+    );
 
-    const maxTechs = pickMax(stats, (s) => s.maxTechs, (s) => s.maxTechs > 0);
-    if (maxTechs) {
-      push('max_techs_finale', maxTechs, String(maxTechs.stat.maxTechs), {
-        gameNumber: maxTechs.stat.maxTechsGame,
-      });
-    }
+    pushTop(
+      'max_cities_finale',
+      pickTop(stats, (s) => s.maxCities, (s) => s.maxCities > 0),
+      (h) => String(h.stat.maxCities),
+      (h) => ({ gameNumber: h.stat.maxCitiesGame }),
+    );
 
-    // Meta-record: most other records held (computed after the rest).
-    // Мета-рекорд: больше всего остальных рекордов (считаем после остальных).
+    pushTop(
+      'max_score_finale',
+      pickTop(stats, (s) => s.maxScore, (s) => s.maxScore > 0),
+      (h) => String(h.stat.maxScore),
+      (h) => ({ gameNumber: h.stat.maxScoreGame }),
+    );
+
+    pushTop(
+      'max_units_finale',
+      pickTop(stats, (s) => s.maxUnits, (s) => s.maxUnits > 0),
+      (h) => String(h.stat.maxUnits),
+      (h) => ({ gameNumber: h.stat.maxUnitsGame }),
+    );
+
+    pushTop(
+      'max_techs_finale',
+      pickTop(stats, (s) => s.maxTechs, (s) => s.maxTechs > 0),
+      (h) => String(h.stat.maxTechs),
+      (h) => ({ gameNumber: h.stat.maxTechsGame }),
+    );
+
+    // Meta-record: most other 1st-place records (computed after the rest).
+    // Мета-рекорд: больше всего остальных рекордов 1 места (считаем после остальных).
     const achCounts = new Map();
     for (const item of out) {
       const name = item && item.player;
       if (!name || item.vacant) continue;
       achCounts.set(name, (achCounts.get(name) || 0) + 1);
     }
-    let mostTitled = null;
-    let mostTitledCount = 0;
-    for (const [player, count] of achCounts) {
-      if (
-        count > mostTitledCount
-        || (count === mostTitledCount && mostTitled && player.localeCompare(mostTitled.player) < 0)
-      ) {
-        mostTitledCount = count;
-        mostTitled = { player, stat: { count } };
-      }
-    }
-    if (mostTitled && mostTitledCount >= 2) {
-      push('most_achievements', mostTitled, String(mostTitledCount));
-    }
+    const titledHits = [...achCounts.entries()]
+      .map(([player, count]) => ({ player, stat: { count }, score: count }))
+      .filter((h) => h.score >= 2)
+      .sort((a, b) => (b.score - a.score) || a.player.localeCompare(b.player))
+      .slice(0, 3);
+    pushTop(
+      'most_achievements',
+      titledHits,
+      (h) => String(h.stat.count),
+    );
 
     return out;
   }
@@ -656,5 +690,7 @@
     isExcludedGame,
     eligibleGames,
     winnerPlayer,
+    pickTop,
+    pickTopMin,
   };
 })(typeof window !== 'undefined' ? window : globalThis);
