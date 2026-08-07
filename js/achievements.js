@@ -391,8 +391,35 @@
    * :return: achievement objects for the UI / объекты ачивок для UI
    */
   function computeAchievements(games) {
-    const { stats } = buildStats(games);
+    const { stats, games: gameList } = buildStats(games);
     const out = [];
+
+    function nationAtGame(player, gNum) {
+      const want = Number(gNum);
+      if (!Number.isFinite(want) || want <= 0) return '';
+      for (const game of gameList) {
+        if (parseGameNum(game) !== want) continue;
+        const row = survivorByName(game, player);
+        if (row && String(row.nation || '').trim()) {
+          return String(row.nation).trim();
+        }
+        for (const p of game.players || []) {
+          if (String(p.name || '').trim() !== player) continue;
+          const nat = String(p.nation || '').trim();
+          if (nat) return nat;
+        }
+      }
+      return '';
+    }
+
+    /** Attach per-hit game number so top-2/3 and nation badges resolve. */
+    function withGame(hits, gameFromHit) {
+      return (hits || []).map((h) => {
+        const g = typeof gameFromHit === 'function' ? gameFromHit(h) : gameFromHit;
+        if (g == null || !Number.isFinite(Number(g))) return h;
+        return Object.assign({}, h, { game: Number(g) });
+      });
+    }
 
     /**
      * Push a ranked record with optional top-2 / top-3 runners-up.
@@ -408,10 +435,26 @@
       const top = hits.map((h, i) => {
         const row = { place: i + 1, player: h.player, value: valueFn(h) };
         if (h.game != null) row.gameNumber = h.game;
+        if (h.nation) row.nation = h.nation;
+        else if (row.gameNumber != null) {
+          const nat = nationAtGame(h.player, row.gameNumber);
+          if (nat) row.nation = nat;
+        }
         return row;
       });
       const head = hits[0];
       const extra = typeof extraFn === 'function' ? (extraFn(head) || {}) : (extraFn || {});
+      if (extra.gameNumber != null && top[0].gameNumber == null) {
+        top[0].gameNumber = extra.gameNumber;
+      }
+      if (!extra.nation && top[0].nation) extra.nation = top[0].nation;
+      if (extra.gameNumber != null && !extra.nation) {
+        const nat = nationAtGame(head.player, extra.gameNumber);
+        if (nat) {
+          extra.nation = nat;
+          top[0].nation = nat;
+        }
+      }
       out.push(Object.assign({
         id,
         player: head.player,
@@ -492,7 +535,10 @@
 
     pushTop(
       'most_caps_single_win',
-      pickTop(stats, (s) => s.maxCapsInWin, (s) => s.maxCapsInWin >= 2),
+      withGame(
+        pickTop(stats, (s) => s.maxCapsInWin, (s) => s.maxCapsInWin >= 2),
+        (h) => h.stat.maxCapsInWinGame,
+      ),
       (h) => String(h.stat.maxCapsInWin),
       (h) => ({ gameNumber: h.stat.maxCapsInWinGame }),
     );
@@ -622,6 +668,7 @@
         player: zeusWin.player,
         value: String(zeusWin.game),
         gameNumber: zeusWin.game,
+        nation: nationAtGame(zeusWin.player, zeusWin.game),
       });
     } else {
       out.push({
@@ -698,122 +745,125 @@
 
     pushTop(
       'max_cities_finale',
-      pickTop(stats, (s) => s.maxCities, (s) => s.maxCities > 0),
+      withGame(pickTop(stats, (s) => s.maxCities, (s) => s.maxCities > 0), (h) => h.stat.maxCitiesGame),
       (h) => String(h.stat.maxCities),
       (h) => ({ gameNumber: h.stat.maxCitiesGame }),
     );
 
     pushTop(
       'max_score_finale',
-      pickTop(stats, (s) => s.maxScore, (s) => s.maxScore > 0),
+      withGame(pickTop(stats, (s) => s.maxScore, (s) => s.maxScore > 0), (h) => h.stat.maxScoreGame),
       (h) => String(h.stat.maxScore),
       (h) => ({ gameNumber: h.stat.maxScoreGame }),
     );
 
     pushTop(
       'max_units_finale',
-      pickTop(stats, (s) => s.maxUnits, (s) => s.maxUnits > 0),
+      withGame(pickTop(stats, (s) => s.maxUnits, (s) => s.maxUnits > 0), (h) => h.stat.maxUnitsGame),
       (h) => String(h.stat.maxUnits),
       (h) => ({ gameNumber: h.stat.maxUnitsGame }),
     );
 
     pushTop(
       'max_techs_finale',
-      pickTop(stats, (s) => s.maxTechs, (s) => s.maxTechs > 0),
+      withGame(pickTop(stats, (s) => s.maxTechs, (s) => s.maxTechs > 0), (h) => h.stat.maxTechsGame),
       (h) => String(h.stat.maxTechs),
       (h) => ({ gameNumber: h.stat.maxTechsGame }),
     );
 
     pushTop(
       'max_population_finale',
-      pickTop(stats, (s) => s.maxPopulation, (s) => s.maxPopulation > 0),
+      withGame(pickTop(stats, (s) => s.maxPopulation, (s) => s.maxPopulation > 0), (h) => h.stat.maxPopulationGame),
       (h) => String(h.stat.maxPopulation),
       (h) => ({ gameNumber: h.stat.maxPopulationGame }),
     );
 
     pushTop(
       'max_capital_population_finale',
-      pickTop(stats, (s) => s.maxCapitalPop, (s) => s.maxCapitalPop > 0),
+      withGame(pickTop(stats, (s) => s.maxCapitalPop, (s) => s.maxCapitalPop > 0), (h) => h.stat.maxCapitalPopGame),
       (h) => String(h.stat.maxCapitalPop),
       (h) => ({ gameNumber: h.stat.maxCapitalPopGame }),
     );
 
     pushTop(
       'max_production_finale',
-      pickTop(stats, (s) => s.maxProduction, (s) => s.maxProduction > 0),
+      withGame(pickTop(stats, (s) => s.maxProduction, (s) => s.maxProduction > 0), (h) => h.stat.maxProductionGame),
       (h) => String(h.stat.maxProduction),
       (h) => ({ gameNumber: h.stat.maxProductionGame }),
     );
 
     pushTop(
       'max_gold_finale',
-      pickTop(stats, (s) => s.maxGold, (s) => s.maxGold > 0),
+      withGame(pickTop(stats, (s) => s.maxGold, (s) => s.maxGold > 0), (h) => h.stat.maxGoldGame),
       (h) => String(h.stat.maxGold),
       (h) => ({ gameNumber: h.stat.maxGoldGame }),
     );
 
     pushTop(
       'max_gold_income_finale',
-      pickTop(stats, (s) => s.maxGoldIncome, (s) => s.maxGoldIncome > 0),
+      withGame(pickTop(stats, (s) => s.maxGoldIncome, (s) => s.maxGoldIncome > 0), (h) => h.stat.maxGoldIncomeGame),
       (h) => `+${h.stat.maxGoldIncome}`,
       (h) => ({ gameNumber: h.stat.maxGoldIncomeGame }),
     );
 
     pushTop(
       'max_science_finale',
-      pickTop(stats, (s) => s.maxScience, (s) => s.maxScience > 0),
+      withGame(pickTop(stats, (s) => s.maxScience, (s) => s.maxScience > 0), (h) => h.stat.maxScienceGame),
       (h) => String(h.stat.maxScience),
       (h) => ({ gameNumber: h.stat.maxScienceGame }),
     );
 
     pushTop(
       'max_culture_finale',
-      pickTop(stats, (s) => s.maxCulture, (s) => s.maxCulture > 0),
+      withGame(pickTop(stats, (s) => s.maxCulture, (s) => s.maxCulture > 0), (h) => h.stat.maxCultureGame),
       (h) => String(h.stat.maxCulture),
       (h) => ({ gameNumber: h.stat.maxCultureGame }),
     );
 
     pushTop(
       'most_great_people_finale',
-      pickTop(stats, (s) => s.maxGreatPeople, (s) => s.maxGreatPeople > 0),
+      withGame(pickTop(stats, (s) => s.maxGreatPeople, (s) => s.maxGreatPeople > 0), (h) => h.stat.maxGreatPeopleGame),
       (h) => String(h.stat.maxGreatPeople),
       (h) => ({ gameNumber: h.stat.maxGreatPeopleGame }),
     );
 
     pushTop(
       'most_great_scientists_finale',
-      pickTop(stats, (s) => s.maxGreatScientists, (s) => s.maxGreatScientists > 0),
+      withGame(pickTop(stats, (s) => s.maxGreatScientists, (s) => s.maxGreatScientists > 0), (h) => h.stat.maxGreatScientistsGame),
       (h) => String(h.stat.maxGreatScientists),
       (h) => ({ gameNumber: h.stat.maxGreatScientistsGame }),
     );
 
     pushTop(
       'most_great_engineers_finale',
-      pickTop(stats, (s) => s.maxGreatEngineers, (s) => s.maxGreatEngineers > 0),
+      withGame(pickTop(stats, (s) => s.maxGreatEngineers, (s) => s.maxGreatEngineers > 0), (h) => h.stat.maxGreatEngineersGame),
       (h) => String(h.stat.maxGreatEngineers),
       (h) => ({ gameNumber: h.stat.maxGreatEngineersGame }),
     );
 
     pushTop(
       'most_great_generals_finale',
-      pickTop(stats, (s) => s.maxGreatGenerals, (s) => s.maxGreatGenerals > 0),
+      withGame(pickTop(stats, (s) => s.maxGreatGenerals, (s) => s.maxGreatGenerals > 0), (h) => h.stat.maxGreatGeneralsGame),
       (h) => String(h.stat.maxGreatGenerals),
       (h) => ({ gameNumber: h.stat.maxGreatGeneralsGame }),
     );
 
     pushTop(
       'most_great_culture_people_finale',
-      pickTop(stats, (s) => s.maxGreatCulturePeople, (s) => s.maxGreatCulturePeople > 0),
+      withGame(pickTop(stats, (s) => s.maxGreatCulturePeople, (s) => s.maxGreatCulturePeople > 0), (h) => h.stat.maxGreatCulturePeopleGame),
       (h) => String(h.stat.maxGreatCulturePeople),
       (h) => ({ gameNumber: h.stat.maxGreatCulturePeopleGame }),
     );
 
     pushTop(
       'fastest_ideology',
-      pickTopMin(
-        stats,
-        (s) => s.minIdeologyTurn,
-        (s) => Number.isFinite(s.minIdeologyTurn) && s.minIdeologyTurn < Infinity,
+      withGame(
+        pickTopMin(
+          stats,
+          (s) => s.minIdeologyTurn,
+          (s) => Number.isFinite(s.minIdeologyTurn) && s.minIdeologyTurn < Infinity,
+        ),
+        (h) => h.stat.minIdeologyTurnGame,
       ),
       (h) => String(h.stat.minIdeologyTurn),
       (h) => ({ gameNumber: h.stat.minIdeologyTurnGame }),
