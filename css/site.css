@@ -1239,7 +1239,13 @@
                 color: rgba(255, 215, 0, 0.85);
                 font-weight: 600;
                 flex: 0 1 auto;
+                max-width: 65%;
+                overflow-wrap: anywhere;
                 text-align: left;
+            }
+
+            table.stats-table--economy td:last-child {
+                border-bottom: none;
             }
 
             table.stats-table--economy td.num {
@@ -2521,6 +2527,17 @@
             }
             .profile-summary-table-wrap {
                 width: 100%;
+                overflow-x: visible;
+            }
+            #profileSummaryTable th,
+            #profileSummaryTable td {
+                white-space: normal;
+                overflow-wrap: anywhere;
+                vertical-align: top;
+            }
+            #profileSummaryTable th {
+                width: 48%;
+                padding-right: 8px;
             }
         }
         .profile-hero-top {
