@@ -164,6 +164,22 @@
       maxUnitsGame: null,
       maxTechs: 0,
       maxTechsGame: null,
+      maxPopulation: 0,
+      maxPopulationGame: null,
+      maxCapitalPop: 0,
+      maxCapitalPopGame: null,
+      maxProduction: 0,
+      maxProductionGame: null,
+      maxGold: 0,
+      maxGoldGame: null,
+      maxGoldIncome: 0,
+      maxGoldIncomeGame: null,
+      maxScience: 0,
+      maxScienceGame: null,
+      maxCulture: 0,
+      maxCultureGame: null,
+      minIdeologyTurn: Infinity,
+      minIdeologyTurnGame: null,
     };
   }
 
@@ -171,6 +187,15 @@
     const n = Number(value);
     if (!Number.isFinite(n)) return;
     if (n > s[key]) {
+      s[key] = n;
+      s[gameKey] = gNum;
+    }
+  }
+
+  function bumpMinPeak(s, key, gameKey, value, gNum) {
+    const n = Number(value);
+    if (!Number.isFinite(n) || n <= 0) return;
+    if (n < s[key]) {
       s[key] = n;
       s[gameKey] = gNum;
     }
@@ -254,6 +279,14 @@
           bumpPeak(s, 'maxScore', 'maxScoreGame', row.score, gNum);
           bumpPeak(s, 'maxUnits', 'maxUnitsGame', row.units, gNum);
           bumpPeak(s, 'maxTechs', 'maxTechsGame', row.techs, gNum);
+          bumpPeak(s, 'maxPopulation', 'maxPopulationGame', row.population, gNum);
+          bumpPeak(s, 'maxCapitalPop', 'maxCapitalPopGame', row.capital_population, gNum);
+          bumpPeak(s, 'maxProduction', 'maxProductionGame', row.production, gNum);
+          bumpPeak(s, 'maxGold', 'maxGoldGame', row.gold, gNum);
+          bumpPeak(s, 'maxGoldIncome', 'maxGoldIncomeGame', row.gold_income, gNum);
+          bumpPeak(s, 'maxScience', 'maxScienceGame', row.science, gNum);
+          bumpPeak(s, 'maxCulture', 'maxCultureGame', row.culture, gNum);
+          bumpMinPeak(s, 'minIdeologyTurn', 'minIdeologyTurnGame', row.ideology_turn, gNum);
         }
 
         if (piety) {
@@ -661,6 +694,66 @@
       pickTop(stats, (s) => s.maxTechs, (s) => s.maxTechs > 0),
       (h) => String(h.stat.maxTechs),
       (h) => ({ gameNumber: h.stat.maxTechsGame }),
+    );
+
+    pushTop(
+      'max_population_finale',
+      pickTop(stats, (s) => s.maxPopulation, (s) => s.maxPopulation > 0),
+      (h) => String(h.stat.maxPopulation),
+      (h) => ({ gameNumber: h.stat.maxPopulationGame }),
+    );
+
+    pushTop(
+      'max_capital_population_finale',
+      pickTop(stats, (s) => s.maxCapitalPop, (s) => s.maxCapitalPop > 0),
+      (h) => String(h.stat.maxCapitalPop),
+      (h) => ({ gameNumber: h.stat.maxCapitalPopGame }),
+    );
+
+    pushTop(
+      'max_production_finale',
+      pickTop(stats, (s) => s.maxProduction, (s) => s.maxProduction > 0),
+      (h) => String(h.stat.maxProduction),
+      (h) => ({ gameNumber: h.stat.maxProductionGame }),
+    );
+
+    pushTop(
+      'max_gold_finale',
+      pickTop(stats, (s) => s.maxGold, (s) => s.maxGold > 0),
+      (h) => String(h.stat.maxGold),
+      (h) => ({ gameNumber: h.stat.maxGoldGame }),
+    );
+
+    pushTop(
+      'max_gold_income_finale',
+      pickTop(stats, (s) => s.maxGoldIncome, (s) => s.maxGoldIncome > 0),
+      (h) => `+${h.stat.maxGoldIncome}`,
+      (h) => ({ gameNumber: h.stat.maxGoldIncomeGame }),
+    );
+
+    pushTop(
+      'max_science_finale',
+      pickTop(stats, (s) => s.maxScience, (s) => s.maxScience > 0),
+      (h) => String(h.stat.maxScience),
+      (h) => ({ gameNumber: h.stat.maxScienceGame }),
+    );
+
+    pushTop(
+      'max_culture_finale',
+      pickTop(stats, (s) => s.maxCulture, (s) => s.maxCulture > 0),
+      (h) => String(h.stat.maxCulture),
+      (h) => ({ gameNumber: h.stat.maxCultureGame }),
+    );
+
+    pushTop(
+      'fastest_ideology',
+      pickTopMin(
+        stats,
+        (s) => s.minIdeologyTurn,
+        (s) => Number.isFinite(s.minIdeologyTurn) && s.minIdeologyTurn < Infinity,
+      ),
+      (h) => String(h.stat.minIdeologyTurn),
+      (h) => ({ gameNumber: h.stat.minIdeologyTurnGame }),
     );
 
     // Meta-record: most other 1st-place records (computed after the rest).

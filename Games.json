@@ -64,7 +64,7 @@
           "score": null,
           "units": 2,
           "strength": null,
-          "science": 50,
+          "science": 86,
           "cities": 4,
           "population": 29,
           "religion": "Zoroastrianism",
@@ -86,7 +86,8 @@
             "Liturgical Drama",
             "Religious Center"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 10
         },
         {
           "name": "ICanSeeForever",
@@ -112,7 +113,7 @@
           "score": null,
           "units": 21,
           "strength": null,
-          "science": 29,
+          "science": 49,
           "cities": 3,
           "population": 20,
           "religion": "",
@@ -133,7 +134,8 @@
           "follower_beliefs": [
             "Holy Warriors"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 9
         },
         {
           "name": "Click4x",
@@ -159,7 +161,7 @@
           "score": null,
           "units": 12,
           "strength": null,
-          "science": 48,
+          "science": 71,
           "cities": 4,
           "population": 33,
           "religion": "Shinto",
@@ -182,7 +184,8 @@
             "Devoted Elite",
             "Religious Community"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 10
         },
         {
           "name": "den_stu",
@@ -212,7 +215,7 @@
           "score": null,
           "units": 22,
           "strength": null,
-          "science": 94,
+          "science": 160,
           "cities": 3,
           "population": 47,
           "religion": "Christianity",
@@ -237,7 +240,8 @@
             "Devout Performers",
             "Guruship"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 24
         },
         {
           "name": "Ouni0",
@@ -263,7 +267,7 @@
           "score": null,
           "units": 1,
           "strength": null,
-          "science": 33,
+          "science": 52,
           "cities": 4,
           "population": 24,
           "religion": "",
@@ -280,7 +284,8 @@
           "pantheon": "God-King",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 10
         },
         {
           "name": "Overslidishe",
@@ -306,7 +311,7 @@
           "score": null,
           "units": 10,
           "strength": null,
-          "science": 72,
+          "science": 89,
           "cities": 4,
           "population": 29,
           "religion": "Долбоебизм",
@@ -329,7 +334,8 @@
             "Choral Music",
             "Peace Gardens"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 11
         },
         {
           "name": "VlaterRogue",
@@ -358,7 +364,7 @@
           "score": null,
           "units": 5,
           "strength": null,
-          "science": 37,
+          "science": 51,
           "cities": 4,
           "population": 24,
           "religion": "",
@@ -376,7 +382,8 @@
           "pantheon": "",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 9
         }
       ],
       "flags": []
@@ -454,7 +461,7 @@
           "score": null,
           "units": 22,
           "strength": null,
-          "science": 72,
+          "science": 448,
           "cities": 5,
           "population": 48,
           "religion": "Самолетик, вжжж",
@@ -476,7 +483,8 @@
             "Devout Performers",
             "Religious Community"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 25
         },
         {
           "name": "Click4x",
@@ -505,7 +513,7 @@
           "score": null,
           "units": 19,
           "strength": null,
-          "science": 83,
+          "science": 256,
           "cities": 6,
           "population": 61,
           "religion": "Christianity",
@@ -528,7 +536,8 @@
             "Peace Gardens",
             "Cathedrals"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 27
         },
         {
           "name": "freedomanarhy",
@@ -555,7 +564,7 @@
           "score": null,
           "units": 6,
           "strength": null,
-          "science": 92,
+          "science": 135,
           "cities": 4,
           "population": 37,
           "religion": "",
@@ -578,7 +587,8 @@
             "Devoted Elite",
             "Sacred Waters"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 25
         },
         {
           "name": "Overslidishe",
@@ -601,7 +611,7 @@
           "score": null,
           "units": 17,
           "strength": null,
-          "science": 88,
+          "science": 51,
           "cities": 4,
           "population": 39,
           "religion": "Islam",
@@ -622,7 +632,8 @@
             "Holy Warriors",
             "Religious Center"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 12
         },
         {
           "name": "VlaterRogue",
@@ -648,7 +659,7 @@
           "score": null,
           "units": 7,
           "strength": null,
-          "science": 63,
+          "science": 509,
           "cities": 6,
           "population": 40,
           "religion": "doom",
@@ -670,7 +681,8 @@
             "Liturgical Drama",
             "Gurdwaras"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 13
         },
         {
           "name": "den_stu",
@@ -701,7 +713,7 @@
           "score": null,
           "units": 22,
           "strength": null,
-          "science": 85,
+          "science": 541,
           "cities": 7,
           "population": 50,
           "religion": "Атеизм",
@@ -728,7 +740,8 @@
             "Guruship",
             "Followers of Refined Crafts"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 21
         },
         {
           "name": "khtoyaaty",
@@ -755,7 +768,7 @@
           "score": null,
           "units": 15,
           "strength": null,
-          "science": 32,
+          "science": 127,
           "cities": 4,
           "population": 21,
           "religion": "",
@@ -777,7 +790,8 @@
             "Viharas",
             "Feed the World"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 14
         },
         {
           "name": "munlait21",
@@ -819,7 +833,7 @@
           "score": null,
           "units": 4,
           "strength": null,
-          "science": 109,
+          "science": 992,
           "cities": 4,
           "population": 57,
           "religion": "Фашизм",
@@ -856,7 +870,8 @@
             "Choral Music",
             "Religious Art"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 36
         },
         {
           "name": "Ouni0",
@@ -882,7 +897,7 @@
           "score": null,
           "units": 10,
           "strength": null,
-          "science": 97,
+          "science": 273,
           "cities": 4,
           "population": 41,
           "religion": "",
@@ -898,7 +913,8 @@
           "pantheon": "Alters of Worship",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 22
         }
       ],
       "flags": []
@@ -980,7 +996,7 @@
           "score": null,
           "units": 8,
           "strength": null,
-          "science": 71,
+          "science": 184,
           "cities": 4,
           "population": 41,
           "religion": "",
@@ -997,7 +1013,8 @@
           "pantheon": "",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 18
         },
         {
           "name": "VlaterRogue",
@@ -1020,7 +1037,7 @@
           "score": null,
           "units": 6,
           "strength": null,
-          "science": 46,
+          "science": 76,
           "cities": 4,
           "population": 35,
           "religion": "скверна",
@@ -1040,7 +1057,8 @@
             "Pagodas",
             "Liturgical Drama"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 12
         },
         {
           "name": "Nepherthos",
@@ -1067,7 +1085,7 @@
           "score": null,
           "units": 11,
           "strength": null,
-          "science": 41,
+          "science": 77,
           "cities": 4,
           "population": 24,
           "religion": "Shinto",
@@ -1089,7 +1107,8 @@
           "follower_beliefs": [
             "Religious Center"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 14
         },
         {
           "name": "khtoyaaty",
@@ -1114,7 +1133,7 @@
           "score": null,
           "units": 12,
           "strength": null,
-          "science": 31,
+          "science": 63,
           "cities": 4,
           "population": 23,
           "religion": "",
@@ -1130,7 +1149,8 @@
           "pantheon": "",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 16
         },
         {
           "name": "munlait21",
@@ -1158,7 +1178,7 @@
           "score": null,
           "units": 7,
           "strength": null,
-          "science": 100,
+          "science": 206,
           "cities": 4,
           "population": 43,
           "religion": "Zoroastrianism",
@@ -1182,7 +1202,8 @@
             "Choral Music",
             "Peace Gardens"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 22
         },
         {
           "name": "Overslidishe",
@@ -1209,7 +1230,7 @@
           "score": null,
           "units": 15,
           "strength": null,
-          "science": 60,
+          "science": 173,
           "cities": 4,
           "population": 35,
           "religion": "Бомжеизм",
@@ -1233,7 +1254,8 @@
             "Viharas",
             "Holy Warriors"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 15
         },
         {
           "name": "den_stu",
@@ -1260,7 +1282,7 @@
           "score": null,
           "units": 14,
           "strength": null,
-          "science": 88,
+          "science": 241,
           "cities": 7,
           "population": 60,
           "religion": "Протестантизм",
@@ -1284,7 +1306,8 @@
             "Gurdwaras",
             "Feed the World"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 15
         },
         {
           "name": "Click4x",
@@ -1308,7 +1331,7 @@
           "score": null,
           "units": 6,
           "strength": null,
-          "science": 69,
+          "science": 198,
           "cities": 4,
           "population": 38,
           "religion": "Buddhism",
@@ -1328,7 +1351,8 @@
             "Cathedrals",
             "Devout Performers"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 21
         },
         {
           "name": "ICanSeeForever",
@@ -1355,7 +1379,7 @@
           "score": null,
           "units": 19,
           "strength": null,
-          "science": 59,
+          "science": 136,
           "cities": 5,
           "population": 29,
           "religion": "",
@@ -1373,7 +1397,8 @@
           "pantheon": "Religious Settlements",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 13
         },
         {
           "name": "freedomanarhy",
@@ -1404,7 +1429,7 @@
           "score": null,
           "units": 3,
           "strength": null,
-          "science": 50,
+          "science": 116,
           "cities": 3,
           "population": 23,
           "religion": "",
@@ -1424,7 +1449,8 @@
           "pantheon": "",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "capital_population": 12
         }
       ],
       "flags": []
@@ -3931,7 +3957,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": null
+          "military_deaths": null,
+          "production": 1208,
+          "gold": 1594,
+          "culture": 374,
+          "capital_population": 33,
+          "gold_income": 102
         },
         {
           "name": "VlaterRogue",
@@ -3997,7 +4028,12 @@
             "Pagodas"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": null
+          "military_deaths": null,
+          "production": 393,
+          "gold": 5809,
+          "culture": 339,
+          "capital_population": 41,
+          "gold_income": -134
         },
         {
           "name": "YukiHino98",
@@ -4055,7 +4091,12 @@
             "Religious Community"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": null
+          "military_deaths": null,
+          "production": 336,
+          "gold": 987,
+          "culture": 146,
+          "capital_population": 20,
+          "gold_income": -120
         },
         {
           "name": "Fanfblrik",
@@ -4103,7 +4144,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": null
+          "military_deaths": null,
+          "production": 430,
+          "gold": 6445,
+          "culture": 43,
+          "capital_population": 29,
+          "gold_income": -773
         },
         {
           "name": "AlexUnderHill",
@@ -4150,7 +4196,12 @@
             "Holy Warriors"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": null
+          "military_deaths": null,
+          "production": 139,
+          "gold": 5794,
+          "culture": 248,
+          "capital_population": 22,
+          "gold_income": 652
         },
         {
           "name": "Overslidishe",
@@ -4193,7 +4244,11 @@
             "Synagogues"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": null
+          "military_deaths": null,
+          "production": 21,
+          "gold": 151,
+          "culture": 18,
+          "gold_income": 6
         },
         {
           "name": "Barbarians",
@@ -4358,7 +4413,12 @@
             "Guruship"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": null
+          "military_deaths": null,
+          "production": 1355,
+          "gold": 1434,
+          "culture": 316,
+          "capital_population": 33,
+          "gold_income": 50
         },
         {
           "name": "Click4x",
@@ -4430,7 +4490,12 @@
             "Devoted Elite"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": null
+          "military_deaths": null,
+          "production": 999,
+          "gold": 2241,
+          "culture": 393,
+          "capital_population": 37,
+          "gold_income": 86
         },
         {
           "name": "YukiHino98",
@@ -4486,7 +4551,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": null
+          "military_deaths": null,
+          "production": 348,
+          "gold": 314,
+          "culture": 486,
+          "capital_population": 29,
+          "gold_income": 33
         },
         {
           "name": "VlaterRogue",
@@ -4542,7 +4612,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": null
+          "military_deaths": null,
+          "production": 350,
+          "gold": 1380,
+          "culture": 414,
+          "capital_population": 29,
+          "gold_income": 94
         },
         {
           "name": "n9306867842",
@@ -4594,7 +4669,12 @@
             "Sacred Waters"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": null
+          "military_deaths": null,
+          "production": 540,
+          "gold": 233,
+          "culture": 125,
+          "capital_population": 28,
+          "gold_income": -10
         },
         {
           "name": "Overslidishe",
@@ -4645,7 +4725,12 @@
             "Viharas"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": null
+          "military_deaths": null,
+          "production": 313,
+          "gold": 1565,
+          "culture": 237,
+          "capital_population": 22,
+          "gold_income": 109
         },
         {
           "name": "den_stu",
@@ -4693,7 +4778,11 @@
             "Holy Warriors"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": null
+          "military_deaths": null,
+          "production": 159,
+          "gold": 1265,
+          "culture": 132,
+          "gold_income": 8
         },
         {
           "name": "munlait21",
@@ -4740,7 +4829,11 @@
             "Religious Center"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": null
+          "military_deaths": null,
+          "production": 50,
+          "gold": 179,
+          "culture": 76,
+          "gold_income": -61
         },
         {
           "name": "AlexUnderHill",
@@ -4779,7 +4872,11 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": null
+          "military_deaths": null,
+          "production": 19,
+          "gold": -97,
+          "culture": 10,
+          "gold_income": 1
         },
         {
           "name": "Ouni0",
@@ -4818,7 +4915,11 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": null
+          "military_deaths": null,
+          "production": 10,
+          "gold": 178,
+          "culture": 16,
+          "gold_income": 13
         },
         {
           "name": "Barbarians",
@@ -4991,7 +5092,12 @@
             "Religious Center"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 64
+          "military_deaths": 64,
+          "production": 1007,
+          "gold": 809,
+          "culture": 703,
+          "capital_population": 24,
+          "gold_income": -7
         },
         {
           "name": "den_stu",
@@ -5052,7 +5158,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 15
+          "military_deaths": 15,
+          "production": 357,
+          "gold": 1201,
+          "culture": 313,
+          "capital_population": 24,
+          "gold_income": 83
         },
         {
           "name": "Click4x",
@@ -5102,7 +5213,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 30
+          "military_deaths": 30,
+          "production": 378,
+          "gold": 682,
+          "culture": 90,
+          "capital_population": 24,
+          "gold_income": -123
         },
         {
           "name": "munlait21",
@@ -5147,7 +5263,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 29
+          "military_deaths": 29,
+          "production": 298,
+          "gold": 548,
+          "culture": 72,
+          "capital_population": 26,
+          "gold_income": 29
         },
         {
           "name": "VlaterRogue",
@@ -5205,7 +5326,12 @@
             "Synagogues"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 52
+          "military_deaths": 52,
+          "production": 313,
+          "gold": 327,
+          "culture": 238,
+          "capital_population": 25,
+          "gold_income": -59
         },
         {
           "name": "AlexUnderHill",
@@ -5249,7 +5375,12 @@
             "Devout Performers"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 41
+          "military_deaths": 41,
+          "production": 242,
+          "gold": 583,
+          "culture": 156,
+          "capital_population": 25,
+          "gold_income": -10
         },
         {
           "name": "konoval_mik",
@@ -5277,7 +5408,7 @@
           "score": 401,
           "units": 4,
           "strength": 909,
-          "science": 454,
+          "science": 500,
           "cities": 4,
           "population": 40,
           "religion": "Zoroastrianism",
@@ -5302,7 +5433,12 @@
             "Cathedrals"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 52
+          "military_deaths": 52,
+          "production": 240,
+          "gold": 383,
+          "culture": 283,
+          "capital_population": 13,
+          "gold_income": -125
         },
         {
           "name": "Ouni0",
@@ -5326,7 +5462,7 @@
           "score": 386,
           "units": 27,
           "strength": 6184,
-          "science": 269,
+          "science": 263,
           "cities": 5,
           "population": 69,
           "religion": "Taoism",
@@ -5347,7 +5483,12 @@
             "Liturgical Drama"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 60
+          "military_deaths": 60,
+          "production": 162,
+          "gold": 84,
+          "culture": 36,
+          "capital_population": 27,
+          "gold_income": -4
         },
         {
           "name": "Overslidishe",
@@ -5394,7 +5535,11 @@
             "Holy Warriors"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 40
+          "military_deaths": 40,
+          "production": 55,
+          "gold": 368,
+          "culture": 51,
+          "gold_income": 24
         },
         {
           "name": "YukiHino98",
@@ -5433,7 +5578,11 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 16
+          "military_deaths": 16,
+          "production": 15,
+          "gold": 18,
+          "culture": 14,
+          "gold_income": -2
         },
         {
           "name": "Barbarians",
@@ -5587,7 +5736,12 @@
             "Guruship"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 17
+          "military_deaths": 17,
+          "production": 740,
+          "gold": 752,
+          "culture": 257,
+          "capital_population": 33,
+          "gold_income": -326
         },
         {
           "name": "AlexUnderHill",
@@ -5647,7 +5801,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 17
+          "military_deaths": 17,
+          "production": 688,
+          "gold": 1762,
+          "culture": 182,
+          "capital_population": 17,
+          "gold_income": 167
         },
         {
           "name": "den_stu",
@@ -5706,7 +5865,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 21
+          "military_deaths": 21,
+          "production": 608,
+          "gold": 373,
+          "culture": 202,
+          "capital_population": 28,
+          "gold_income": -167
         },
         {
           "name": "Click4x",
@@ -5770,7 +5934,12 @@
             "Followers of Refined Crafts"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 12
+          "military_deaths": 12,
+          "production": 602,
+          "gold": 674,
+          "culture": 179,
+          "capital_population": 22,
+          "gold_income": -30
         },
         {
           "name": "konoval_mik",
@@ -5809,7 +5978,11 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 26
+          "military_deaths": 26,
+          "production": 41,
+          "gold": 74,
+          "culture": 28,
+          "gold_income": -5
         },
         {
           "name": "munlait21",
@@ -5855,7 +6028,11 @@
             "Devout Performers"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 47
+          "military_deaths": 47,
+          "production": 43,
+          "gold": 334,
+          "culture": 59,
+          "gold_income": 27
         },
         {
           "name": "VlaterRogue",
@@ -5901,7 +6078,11 @@
             "Pagodas"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 9
+          "military_deaths": 9,
+          "production": 10,
+          "gold": -7,
+          "culture": 23,
+          "gold_income": -20
         },
         {
           "name": "Overslidishe",
@@ -5945,7 +6126,11 @@
             "Synagogues"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 12
+          "military_deaths": 12,
+          "production": 6,
+          "gold": 118,
+          "culture": 8,
+          "gold_income": 13
         },
         {
           "name": "Barbarians",
@@ -6114,7 +6299,12 @@
             "Religious Center"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 68
+          "military_deaths": 68,
+          "production": 1249,
+          "gold": 3089,
+          "culture": 288,
+          "capital_population": 31,
+          "gold_income": -113
         },
         {
           "name": "Overslidishe",
@@ -6190,7 +6380,12 @@
             "Holy Warriors"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 61
+          "military_deaths": 61,
+          "production": 438,
+          "gold": 3646,
+          "culture": 228,
+          "capital_population": 26,
+          "gold_income": 350
         },
         {
           "name": "AlexUnderHill",
@@ -6240,7 +6435,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 36
+          "military_deaths": 36,
+          "production": 514,
+          "gold": 406,
+          "culture": 146,
+          "capital_population": 28,
+          "gold_income": 22
         },
         {
           "name": "munlait21",
@@ -6294,7 +6494,12 @@
             "Devout Performers"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 41
+          "military_deaths": 41,
+          "production": 744,
+          "gold": 775,
+          "culture": 210,
+          "capital_population": 35,
+          "gold_income": 28
         },
         {
           "name": "Fanfblrik",
@@ -6338,7 +6543,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 35
+          "military_deaths": 35,
+          "production": 862,
+          "gold": 4731,
+          "culture": 221,
+          "capital_population": 19,
+          "gold_income": 286
         },
         {
           "name": "Click4x",
@@ -6386,7 +6596,12 @@
             "Peace Gardens"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 80
+          "military_deaths": 80,
+          "production": 326,
+          "gold": 223,
+          "culture": 453,
+          "capital_population": 29,
+          "gold_income": -179
         },
         {
           "name": "VlaterRogue",
@@ -6425,7 +6640,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 39
+          "military_deaths": 39,
+          "production": 334,
+          "gold": 661,
+          "culture": 52,
+          "capital_population": 16,
+          "gold_income": 64
         },
         {
           "name": "konoval_mik",
@@ -6471,7 +6691,12 @@
             "Devoted Elite"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 58
+          "military_deaths": 58,
+          "production": 55,
+          "gold": -157,
+          "culture": 41,
+          "capital_population": 9,
+          "gold_income": -33
         },
         {
           "name": "Barbarians",
@@ -6634,7 +6859,12 @@
             "Pagodas"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 15
+          "military_deaths": 15,
+          "production": 669,
+          "gold": 1115,
+          "culture": 156,
+          "capital_population": 40,
+          "gold_income": 19
         },
         {
           "name": "EmperorPenguin01",
@@ -6698,7 +6928,12 @@
             "Religious Center"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 33
+          "military_deaths": 33,
+          "production": 1377,
+          "gold": 832,
+          "culture": 338,
+          "capital_population": 21,
+          "gold_income": -726
         },
         {
           "name": "Click4x",
@@ -6754,7 +6989,12 @@
             "Devout Performers"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 57
+          "military_deaths": 57,
+          "production": 392,
+          "gold": 933,
+          "culture": 155,
+          "capital_population": 24,
+          "gold_income": 81
         },
         {
           "name": "n9306867842",
@@ -6809,7 +7049,12 @@
             "Holy Warriors"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 49
+          "military_deaths": 49,
+          "production": 396,
+          "gold": 1439,
+          "culture": 141,
+          "capital_population": 24,
+          "gold_income": 111
         },
         {
           "name": "Overslidishe",
@@ -6856,7 +7101,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 43
+          "military_deaths": 43,
+          "production": 332,
+          "gold": 1242,
+          "culture": 76,
+          "capital_population": 17,
+          "gold_income": 108
         },
         {
           "name": "AlexUnderHill",
@@ -6906,7 +7156,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 4
+          "military_deaths": 4,
+          "production": 257,
+          "gold": 1571,
+          "culture": 138,
+          "capital_population": 27,
+          "gold_income": 95
         },
         {
           "name": "Fanfblrik",
@@ -6957,7 +7212,12 @@
             "Feed the World"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 3
+          "military_deaths": 3,
+          "production": 304,
+          "gold": 1225,
+          "culture": 101,
+          "capital_population": 21,
+          "gold_income": 60
         },
         {
           "name": "munlait21",
@@ -6997,7 +7257,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 5
+          "military_deaths": 5,
+          "production": 255,
+          "gold": 788,
+          "culture": 66,
+          "capital_population": 26,
+          "gold_income": 31
         },
         {
           "name": "VlaterRogue",
@@ -7037,7 +7302,11 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 63
+          "military_deaths": 63,
+          "production": 20,
+          "gold": 614,
+          "culture": 64,
+          "gold_income": 48
         },
         {
           "name": "konoval_mik",
@@ -7082,7 +7351,11 @@
             "Devoted Elite"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 16
+          "military_deaths": 16,
+          "production": 58,
+          "gold": 179,
+          "culture": 13,
+          "gold_income": -11
         },
         {
           "name": "Barbarians",
@@ -7226,7 +7499,12 @@
             "Guruship"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 7
+          "military_deaths": 7,
+          "production": 452,
+          "gold": 380,
+          "culture": 182,
+          "capital_population": 20,
+          "gold_income": 10
         },
         {
           "name": "konoval_mik",
@@ -7286,7 +7564,12 @@
             "Feed the World"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 16
+          "military_deaths": 16,
+          "production": 274,
+          "gold": 541,
+          "culture": 78,
+          "capital_population": 18,
+          "gold_income": 45
         },
         {
           "name": "ICanSeeForever",
@@ -7340,7 +7623,12 @@
             "Gurdwaras",
             "Viharas"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "production": 691,
+          "gold": 571,
+          "culture": 206,
+          "capital_population": 18,
+          "gold_income": -176
         },
         {
           "name": "n9306867842",
@@ -7401,7 +7689,12 @@
             "Religious Center"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 11
+          "military_deaths": 11,
+          "production": 368,
+          "gold": 922,
+          "culture": 134,
+          "capital_population": 19,
+          "gold_income": 1
         },
         {
           "name": "Fanfblrik",
@@ -7440,7 +7733,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 2
+          "military_deaths": 2,
+          "production": 157,
+          "gold": 1071,
+          "culture": 47,
+          "capital_population": 14,
+          "gold_income": 77
         },
         {
           "name": "AlexUnderHill",
@@ -7484,7 +7782,12 @@
             "Devout Performers"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 17
+          "military_deaths": 17,
+          "production": 164,
+          "gold": 79,
+          "culture": 58,
+          "capital_population": 11,
+          "gold_income": -3
         },
         {
           "name": "Barbarians",
@@ -7620,7 +7923,12 @@
           "pantheon": "Goddess of Love",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "production": 44,
+          "gold": 41,
+          "culture": 18,
+          "capital_population": 5,
+          "gold_income": 0
         },
         {
           "name": "munlait21",
@@ -7661,7 +7969,12 @@
           "pantheon": "Seafood Rituals",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "production": 27,
+          "gold": 39,
+          "culture": 18,
+          "capital_population": 9,
+          "gold_income": -16
         },
         {
           "name": "EmperorPenguin01",
@@ -7704,7 +8017,12 @@
           "pantheon": "Religious Settlements",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "production": 50,
+          "gold": 2,
+          "culture": 13,
+          "capital_population": 8,
+          "gold_income": 1
         },
         {
           "name": "AlexUnderHill",
@@ -7742,7 +8060,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 2
+          "military_deaths": 2,
+          "production": 53,
+          "gold": 93,
+          "culture": 20,
+          "capital_population": 5,
+          "gold_income": 5
         },
         {
           "name": "VlaterRogue",
@@ -7783,7 +8106,12 @@
           "follower_beliefs": [
             "Mandirs"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "production": 66,
+          "gold": 115,
+          "culture": 16,
+          "capital_population": 5,
+          "gold_income": -8
         },
         {
           "name": "konoval_mik",
@@ -7820,7 +8148,12 @@
           "pantheon": "Stone Circles",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "production": 57,
+          "gold": -13,
+          "culture": 11,
+          "capital_population": 4,
+          "gold_income": -13
         },
         {
           "name": "den_stu",
@@ -7863,7 +8196,12 @@
           "follower_beliefs": [
             "Viharas"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "production": 34,
+          "gold": 112,
+          "culture": 25,
+          "capital_population": 8,
+          "gold_income": 3
         },
         {
           "name": "Fanfblrik",
@@ -7905,7 +8243,12 @@
             "Religious Community"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 5
+          "military_deaths": 5,
+          "production": 27,
+          "gold": 76,
+          "culture": 17,
+          "capital_population": 9,
+          "gold_income": -29
         },
         {
           "name": "Overslidishe",
@@ -7949,7 +8292,12 @@
             "Gurdwaras",
             "Holy Warriors"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "production": 32,
+          "gold": 93,
+          "culture": 28,
+          "capital_population": 9,
+          "gold_income": 8
         },
         {
           "name": "Ashegg2",
@@ -7987,7 +8335,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 1
+          "military_deaths": 1,
+          "production": 20,
+          "gold": 453,
+          "culture": 12,
+          "capital_population": 9,
+          "gold_income": 12
         },
         {
           "name": "Barbarians",
@@ -8159,7 +8512,12 @@
             "Devout Performers"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 80
+          "military_deaths": 80,
+          "production": 1566,
+          "gold": 1524,
+          "culture": 699,
+          "capital_population": 20,
+          "gold_income": -4
         },
         {
           "name": "den_stu",
@@ -8229,7 +8587,12 @@
             "Followers of Refined Crafts"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 91
+          "military_deaths": 91,
+          "production": 1590,
+          "gold": 1649,
+          "culture": 240,
+          "capital_population": 20,
+          "gold_income": -302
         },
         {
           "name": "Click4x",
@@ -8303,7 +8666,12 @@
             "Divine inspiration"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 22
+          "military_deaths": 22,
+          "production": 1001,
+          "gold": 601,
+          "culture": 701,
+          "capital_population": 24,
+          "gold_income": -11
         },
         {
           "name": "munlait21",
@@ -8356,7 +8724,12 @@
             "Religious Center"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 68
+          "military_deaths": 68,
+          "production": 1137,
+          "gold": 1194,
+          "culture": 158,
+          "capital_population": 28,
+          "gold_income": 96
         },
         {
           "name": "VlaterRogue",
@@ -8417,7 +8790,12 @@
             "Holy Warriors"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 31
+          "military_deaths": 31,
+          "production": 1006,
+          "gold": 346,
+          "culture": 414,
+          "capital_population": 29,
+          "gold_income": -94
         },
         {
           "name": "Overslidishe",
@@ -8464,7 +8842,11 @@
             "Feed the World"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 41
+          "military_deaths": 41,
+          "production": 58,
+          "gold": 341,
+          "culture": 254,
+          "gold_income": -18
         },
         {
           "name": "konoval_mik",
@@ -8507,7 +8889,11 @@
             "Peace Gardens"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 37
+          "military_deaths": 37,
+          "production": 26,
+          "gold": 256,
+          "culture": 31,
+          "gold_income": -15
         },
         {
           "name": "Ashegg2",
@@ -8555,7 +8941,11 @@
             "Synagogues"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 46
+          "military_deaths": 46,
+          "production": 53,
+          "gold": 1539,
+          "culture": 32,
+          "gold_income": -155
         },
         {
           "name": "Fanfblrik",
@@ -8601,7 +8991,11 @@
             "Viharas"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 34
+          "military_deaths": 34,
+          "production": 18,
+          "gold": 238,
+          "culture": 22,
+          "gold_income": 10
         },
         {
           "name": "Barbarians",
@@ -8769,7 +9163,12 @@
             "Liturgical Drama"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 37
+          "military_deaths": 37,
+          "production": 750,
+          "gold": 594,
+          "culture": 610,
+          "capital_population": 26,
+          "gold_income": -83
         },
         {
           "name": "den_stu",
@@ -8827,7 +9226,12 @@
             "Guruship"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 56
+          "military_deaths": 56,
+          "production": 718,
+          "gold": 621,
+          "culture": 226,
+          "capital_population": 30,
+          "gold_income": 23
         },
         {
           "name": "AlexUnderHill",
@@ -8886,7 +9290,12 @@
             "Religious Community"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 62
+          "military_deaths": 62,
+          "production": 583,
+          "gold": 257,
+          "culture": 248,
+          "capital_population": 22,
+          "gold_income": -84
         },
         {
           "name": "Overslidishe",
@@ -8938,7 +9347,12 @@
             "Pagodas"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 67
+          "military_deaths": 67,
+          "production": 627,
+          "gold": 604,
+          "culture": 146,
+          "capital_population": 22,
+          "gold_income": -6
         },
         {
           "name": "Fanfblrik",
@@ -8997,7 +9411,12 @@
             "Peace Gardens"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 10
+          "military_deaths": 10,
+          "production": 556,
+          "gold": 1079,
+          "culture": 188,
+          "capital_population": 23,
+          "gold_income": 8
         },
         {
           "name": "Ouni0",
@@ -9048,7 +9467,12 @@
             "Followers of Refined Crafts"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 35
+          "military_deaths": 35,
+          "production": 360,
+          "gold": 691,
+          "culture": 42,
+          "capital_population": 23,
+          "gold_income": -132
         },
         {
           "name": "munlait21",
@@ -9098,7 +9522,12 @@
             "Choral Music"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 11
+          "military_deaths": 11,
+          "production": 496,
+          "gold": 731,
+          "culture": 237,
+          "capital_population": 39,
+          "gold_income": -52
         },
         {
           "name": "VlaterRogue",
@@ -9143,7 +9572,12 @@
             "Devoted Elite"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 37
+          "military_deaths": 37,
+          "production": 82,
+          "gold": 661,
+          "culture": 49,
+          "capital_population": 26,
+          "gold_income": 29
         },
         {
           "name": "Ashegg2",
@@ -9188,7 +9622,12 @@
             "Sacred Waters"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 42
+          "military_deaths": 42,
+          "production": 24,
+          "gold": 182,
+          "culture": 8,
+          "capital_population": 20,
+          "gold_income": 0
         },
         {
           "name": "konoval_mik",
@@ -9233,7 +9672,11 @@
             "Religious Center"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 9
+          "military_deaths": 9,
+          "production": 8,
+          "gold": 47,
+          "culture": 9,
+          "gold_income": -19
         },
         {
           "name": "Barbarians",
@@ -9398,7 +9841,12 @@
             "Liturgical Drama"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 67
+          "military_deaths": 67,
+          "production": 2084,
+          "gold": 3142,
+          "culture": 719,
+          "capital_population": 33,
+          "gold_income": 73
         },
         {
           "name": "Ouni0",
@@ -9480,7 +9928,12 @@
             "Peace Gardens"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 39
+          "military_deaths": 39,
+          "production": 886,
+          "gold": 5410,
+          "culture": 202,
+          "capital_population": 36,
+          "gold_income": 376
         },
         {
           "name": "Fanfblrik",
@@ -9530,7 +9983,12 @@
             "Guruship"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 3
+          "military_deaths": 3,
+          "production": 603,
+          "gold": 385,
+          "culture": 94,
+          "capital_population": 35,
+          "gold_income": 3
         },
         {
           "name": "VlaterRogue",
@@ -9574,7 +10032,11 @@
             "Pagodas"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 57
+          "military_deaths": 57,
+          "production": 1,
+          "gold": 181,
+          "culture": 34,
+          "gold_income": 18
         },
         {
           "name": "Overslidishe",
@@ -9620,7 +10082,11 @@
             "Religious Community"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 57
+          "military_deaths": 57,
+          "production": 40,
+          "gold": 161,
+          "culture": 32,
+          "gold_income": 18
         },
         {
           "name": "konoval_mik",
@@ -9666,7 +10132,11 @@
             "Religious Center"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 26
+          "military_deaths": 26,
+          "production": 33,
+          "gold": 73,
+          "culture": 29,
+          "gold_income": 1
         },
         {
           "name": "Barbarians",
@@ -9838,7 +10308,12 @@
             "Holy Warriors"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 58
+          "military_deaths": 58,
+          "production": 774,
+          "gold": 599,
+          "culture": 272,
+          "capital_population": 16,
+          "gold_income": 10
         },
         {
           "name": "Overslidishe",
@@ -9895,7 +10370,12 @@
             "Liturgical Drama"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 15
+          "military_deaths": 15,
+          "production": 380,
+          "gold": 2696,
+          "culture": 192,
+          "capital_population": 25,
+          "gold_income": 249
         },
         {
           "name": "konoval_mik",
@@ -9944,7 +10424,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 33
+          "military_deaths": 33,
+          "production": 232,
+          "gold": 438,
+          "culture": 92,
+          "capital_population": 23,
+          "gold_income": -34
         },
         {
           "name": "Bahahanchiklkm",
@@ -10002,7 +10487,12 @@
             "Pagodas"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 48
+          "military_deaths": 48,
+          "production": 540,
+          "gold": 407,
+          "culture": 262,
+          "capital_population": 24,
+          "gold_income": -128
         },
         {
           "name": "den_stu",
@@ -10057,7 +10547,12 @@
             "Religious Center"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 3
+          "military_deaths": 3,
+          "production": 463,
+          "gold": 1341,
+          "culture": 127,
+          "capital_population": 19,
+          "gold_income": 30
         },
         {
           "name": "Lvxvcs",
@@ -10105,7 +10600,12 @@
             "Followers of Refined Crafts"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 9
+          "military_deaths": 9,
+          "production": 325,
+          "gold": 413,
+          "culture": 46,
+          "capital_population": 22,
+          "gold_income": 39
         },
         {
           "name": "AlexUnderHill",
@@ -10151,7 +10651,11 @@
             "Sacred Waters"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 76
+          "military_deaths": 76,
+          "production": 35,
+          "gold": -45,
+          "culture": 11,
+          "gold_income": -19
         },
         {
           "name": "Ouni0",
@@ -10196,7 +10700,11 @@
             "Devout Performers"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 34
+          "military_deaths": 34,
+          "production": 32,
+          "gold": 46,
+          "culture": 16,
+          "gold_income": -17
         },
         {
           "name": "PVL01011900",
@@ -10239,7 +10747,11 @@
             "Choral Music"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 21
+          "military_deaths": 21,
+          "production": 5,
+          "gold": 56,
+          "culture": 15,
+          "gold_income": -2
         },
         {
           "name": "Barbarians",
@@ -10379,7 +10891,7 @@
           "score": 1036,
           "units": 66,
           "strength": 18464,
-          "science": 571,
+          "science": 555,
           "cities": 19,
           "population": 253,
           "religion": "Шизоизм",
@@ -10405,7 +10917,12 @@
             "Liturgical Drama"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 30
+          "military_deaths": 30,
+          "production": 1072,
+          "gold": 562,
+          "culture": 256,
+          "capital_population": 16,
+          "gold_income": -164
         },
         {
           "name": "Bahahanchiklkm",
@@ -10464,7 +10981,12 @@
             "Holy Warriors"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 48
+          "military_deaths": 48,
+          "production": 878,
+          "gold": 45,
+          "culture": 142,
+          "capital_population": 15,
+          "gold_income": -17
         },
         {
           "name": "Ouni0",
@@ -10511,7 +11033,12 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 31
+          "military_deaths": 31,
+          "production": 232,
+          "gold": 906,
+          "culture": 89,
+          "capital_population": 21,
+          "gold_income": 81
         },
         {
           "name": "den_stu",
@@ -10572,7 +11099,12 @@
             "Feed the World"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 4
+          "military_deaths": 4,
+          "production": 185,
+          "gold": 1397,
+          "culture": 107,
+          "capital_population": 32,
+          "gold_income": 7
         },
         {
           "name": "VlaterRogue",
@@ -10622,7 +11154,12 @@
             "Followers of Refined Crafts"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 4
+          "military_deaths": 4,
+          "production": 245,
+          "gold": 344,
+          "culture": 83,
+          "capital_population": 13,
+          "gold_income": 21
         },
         {
           "name": "REPUNZEL2882",
@@ -10650,7 +11187,7 @@
           "score": 433,
           "units": 14,
           "strength": 1802,
-          "science": 201,
+          "science": 205,
           "cities": 5,
           "population": 64,
           "religion": "Christianity",
@@ -10675,7 +11212,12 @@
             "Religious Community"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 27
+          "military_deaths": 27,
+          "production": 261,
+          "gold": 230,
+          "culture": 138,
+          "capital_population": 20,
+          "gold_income": -15
         },
         {
           "name": "konoval_mik",
@@ -10702,7 +11244,7 @@
           "score": 432,
           "units": 33,
           "strength": 3207,
-          "science": 192,
+          "science": 190,
           "cities": 8,
           "population": 81,
           "religion": "Buddhism",
@@ -10726,7 +11268,12 @@
             "Cathedrals"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 23
+          "military_deaths": 23,
+          "production": 285,
+          "gold": 430,
+          "culture": 137,
+          "capital_population": 14,
+          "gold_income": 0
         },
         {
           "name": "Fanfblrik",
@@ -10753,7 +11300,7 @@
           "score": 401,
           "units": 30,
           "strength": 4985,
-          "science": 230,
+          "science": 225,
           "cities": 7,
           "population": 78,
           "religion": "нухотьктонибудьстопнеттоп1?",
@@ -10774,7 +11321,12 @@
             "Pagodas"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 14
+          "military_deaths": 14,
+          "production": 254,
+          "gold": 753,
+          "culture": 70,
+          "capital_population": 13,
+          "gold_income": -102
         },
         {
           "name": "Lvxvcs",
@@ -10822,7 +11374,12 @@
             "Peace Gardens"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 22
+          "military_deaths": 22,
+          "production": 238,
+          "gold": 333,
+          "culture": 38,
+          "capital_population": 22,
+          "gold_income": 16
         },
         {
           "name": "Overslidishe",
@@ -10868,7 +11425,11 @@
             "Religious Center"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 37
+          "military_deaths": 37,
+          "production": 22,
+          "gold": 187,
+          "culture": 39,
+          "gold_income": 2
         },
         {
           "name": "PVL01011900",
@@ -10911,7 +11472,11 @@
             "Devout Performers"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 35
+          "military_deaths": 35,
+          "production": 21,
+          "gold": 50,
+          "culture": 15,
+          "gold_income": -26
         },
         {
           "name": "AlexUnderHill",
@@ -10954,7 +11519,11 @@
             "Devoted Elite"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 30
+          "military_deaths": 30,
+          "production": 7,
+          "gold": 11,
+          "culture": 15,
+          "gold_income": 2
         },
         {
           "name": "Barbarians",
@@ -11113,7 +11682,12 @@
             "City of God"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 33
+          "military_deaths": 33,
+          "production": 666,
+          "gold": 2207,
+          "culture": 214,
+          "capital_population": 26,
+          "gold_income": 41
         },
         {
           "name": "n9306867842",
@@ -11173,7 +11747,12 @@
             "Viharas"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 16
+          "military_deaths": 16,
+          "production": 546,
+          "gold": 237,
+          "culture": 230,
+          "capital_population": 23,
+          "gold_income": 13
         },
         {
           "name": "Lvxvcs",
@@ -11233,7 +11812,12 @@
             "Religious Center"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 90
+          "military_deaths": 90,
+          "production": 428,
+          "gold": 481,
+          "culture": 63,
+          "capital_population": 22,
+          "gold_income": -20
         },
         {
           "name": "AlexUnderHill",
@@ -11289,7 +11873,12 @@
             "Synagogues"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 39
+          "military_deaths": 39,
+          "production": 429,
+          "gold": 518,
+          "culture": 140,
+          "capital_population": 26,
+          "gold_income": -22
         },
         {
           "name": "konoval_mik",
@@ -11342,7 +11931,12 @@
             "Feed the World"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 20
+          "military_deaths": 20,
+          "production": 375,
+          "gold": 1062,
+          "culture": 77,
+          "capital_population": 10,
+          "gold_income": 24
         },
         {
           "name": "Click4x",
@@ -11395,7 +11989,12 @@
             "Holy Warriors"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 48
+          "military_deaths": 48,
+          "production": 289,
+          "gold": 2307,
+          "culture": 340,
+          "capital_population": 20,
+          "gold_income": 232
         },
         {
           "name": "REPUNZEL2882",
@@ -11441,7 +12040,12 @@
             "Pagodas"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 54
+          "military_deaths": 54,
+          "production": 200,
+          "gold": 523,
+          "culture": 49,
+          "capital_population": 13,
+          "gold_income": 14
         },
         {
           "name": "Ouni0",
@@ -11484,7 +12088,11 @@
             "Guruship"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 48
+          "military_deaths": 48,
+          "production": 50,
+          "gold": 216,
+          "culture": 26,
+          "gold_income": 5
         },
         {
           "name": "PVL01011900",
@@ -11527,7 +12135,11 @@
             "Choral Music"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 49
+          "military_deaths": 49,
+          "production": 19,
+          "gold": 27,
+          "culture": 33,
+          "gold_income": -35
         },
         {
           "name": "Barbarians",
@@ -11694,7 +12306,12 @@
             "Holy Warriors"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 72
+          "military_deaths": 72,
+          "production": 1549,
+          "gold": 945,
+          "culture": 350,
+          "capital_population": 28,
+          "gold_income": -390
         },
         {
           "name": "AlexUnderHill",
@@ -11753,7 +12370,12 @@
             "Jesuit Education"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 31
+          "military_deaths": 31,
+          "production": 1156,
+          "gold": 907,
+          "culture": 568,
+          "capital_population": 19,
+          "gold_income": 33
         },
         {
           "name": "den_stu",
@@ -11829,7 +12451,12 @@
             "Guruship"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 21
+          "military_deaths": 21,
+          "production": 566,
+          "gold": 554,
+          "culture": 130,
+          "capital_population": 24,
+          "gold_income": -190
         },
         {
           "name": "REPUNZEL2882",
@@ -11887,7 +12514,12 @@
             "Religious Community"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 30
+          "military_deaths": 30,
+          "production": 617,
+          "gold": 1190,
+          "culture": 293,
+          "capital_population": 32,
+          "gold_income": -40
         },
         {
           "name": "konoval_mik",
@@ -11933,7 +12565,12 @@
             "Religious Center"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 100
+          "military_deaths": 100,
+          "production": 411,
+          "gold": 113,
+          "culture": 258,
+          "capital_population": 21,
+          "gold_income": -54
         },
         {
           "name": "Ouni0",
@@ -11979,7 +12616,11 @@
             "Liturgical Drama"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 29
+          "military_deaths": 29,
+          "production": 68,
+          "gold": 351,
+          "culture": 281,
+          "gold_income": -184
         },
         {
           "name": "PVL01011900",
@@ -12025,7 +12666,11 @@
             "Sacred Waters"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 51
+          "military_deaths": 51,
+          "production": 86,
+          "gold": -91,
+          "culture": 26,
+          "gold_income": 13
         },
         {
           "name": "Bahahanchiklkm",
@@ -12070,7 +12715,11 @@
             "Viharas"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 62
+          "military_deaths": 62,
+          "production": 12,
+          "gold": -9,
+          "culture": 20,
+          "gold_income": -18
         },
         {
           "name": "Lvxvcs",
@@ -12116,7 +12765,11 @@
             "Peace Gardens"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 24
+          "military_deaths": 24,
+          "production": 13,
+          "gold": 49,
+          "culture": 17,
+          "gold_income": -4
         },
         {
           "name": "Barbarians",
@@ -12264,7 +12917,12 @@
           "wars": [],
           "wars_declared": 4,
           "wars_received": 1,
-          "military_deaths": 38
+          "military_deaths": 38,
+          "production": 841,
+          "gold": 768,
+          "culture": 227,
+          "capital_population": 33,
+          "gold_income": 20
         },
         {
           "name": "Click4x",
@@ -12304,7 +12962,7 @@
           "score": 659,
           "units": 18,
           "strength": 4632,
-          "science": 420,
+          "science": 404,
           "cities": 8,
           "population": 118,
           "religion": "Taoism",
@@ -12325,7 +12983,12 @@
           "wars": [],
           "wars_declared": 1,
           "wars_received": 1,
-          "military_deaths": 37
+          "military_deaths": 37,
+          "production": 491,
+          "gold": 224,
+          "culture": 147,
+          "capital_population": 20,
+          "gold_income": -53
         },
         {
           "name": "AlexUnderHill",
@@ -12385,7 +13048,12 @@
           "wars": [],
           "wars_declared": 1,
           "wars_received": 1,
-          "military_deaths": 51
+          "military_deaths": 51,
+          "production": 318,
+          "gold": 572,
+          "culture": 133,
+          "capital_population": 13,
+          "gold_income": 24
         },
         {
           "name": "REPUNZEL2882",
@@ -12440,7 +13108,12 @@
           "wars": [],
           "wars_declared": 0,
           "wars_received": 1,
-          "military_deaths": 1
+          "military_deaths": 1,
+          "production": 303,
+          "gold": 877,
+          "culture": 80,
+          "capital_population": 14,
+          "gold_income": 49
         },
         {
           "name": "konoval_mik",
@@ -12482,7 +13155,11 @@
           "wars": [],
           "wars_declared": 0,
           "wars_received": 1,
-          "military_deaths": 15
+          "military_deaths": 15,
+          "production": 32,
+          "gold": 247,
+          "culture": 18,
+          "gold_income": -11
         },
         {
           "name": "Bahahanchiklkm",
@@ -12527,7 +13204,11 @@
           "wars": [],
           "wars_declared": 0,
           "wars_received": 1,
-          "military_deaths": 29
+          "military_deaths": 29,
+          "production": 21,
+          "gold": 141,
+          "culture": 15,
+          "gold_income": 9
         },
         {
           "name": "Barbarians",
@@ -12682,7 +13363,12 @@
           "wars": [],
           "wars_declared": 5,
           "wars_received": 0,
-          "military_deaths": 35
+          "military_deaths": 35,
+          "production": 799,
+          "gold": 5644,
+          "culture": 174,
+          "capital_population": 30,
+          "gold_income": 498
         },
         {
           "name": "O8DD_ff",
@@ -12749,7 +13435,12 @@
           "wars": [],
           "wars_declared": 1,
           "wars_received": 2,
-          "military_deaths": 47
+          "military_deaths": 47,
+          "production": 240,
+          "gold": 2296,
+          "culture": 100,
+          "capital_population": 21,
+          "gold_income": 148
         },
         {
           "name": "den_stu",
@@ -12800,7 +13491,12 @@
           "wars": [],
           "wars_declared": 3,
           "wars_received": 1,
-          "military_deaths": 26
+          "military_deaths": 26,
+          "production": 137,
+          "gold": 527,
+          "culture": 43,
+          "capital_population": 16,
+          "gold_income": -14
         },
         {
           "name": "Click4x",
@@ -12856,7 +13552,12 @@
           "wars": [],
           "wars_declared": 3,
           "wars_received": 3,
-          "military_deaths": 70
+          "military_deaths": 70,
+          "production": 138,
+          "gold": 599,
+          "culture": 58,
+          "capital_population": 17,
+          "gold_income": 34
         },
         {
           "name": "Laste2187",
@@ -12902,7 +13603,12 @@
           "wars": [],
           "wars_declared": 1,
           "wars_received": 4,
-          "military_deaths": 22
+          "military_deaths": 22,
+          "production": 69,
+          "gold": 181,
+          "culture": 12,
+          "capital_population": 17,
+          "gold_income": 12
         },
         {
           "name": "REPUNZEL2882",
@@ -12947,7 +13653,11 @@
           "wars": [],
           "wars_declared": 0,
           "wars_received": 3,
-          "military_deaths": 35
+          "military_deaths": 35,
+          "production": 27,
+          "gold": -8,
+          "culture": 34,
+          "gold_income": -14
         },
         {
           "name": "Barbarians",

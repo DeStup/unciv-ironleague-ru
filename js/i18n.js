@@ -694,6 +694,38 @@
       'records.item.max_techs_finale.flavor': 'Всё исследовано',
       'records.item.max_techs_finale.body':
         '{player} открыл больше всего технологий к одному финалу: {value} (Game {game}).',
+      'records.item.max_population_finale.title': 'Самое большое население',
+      'records.item.max_population_finale.flavor': 'Людской вал',
+      'records.item.max_population_finale.body':
+        '{player} набрал больше всего населения империи в одном финале: {value} (Game {game}).',
+      'records.item.max_capital_population_finale.title': 'Самая населённая столица',
+      'records.item.max_capital_population_finale.flavor': 'Мегаполис',
+      'records.item.max_capital_population_finale.body':
+        '{player} вырастил самую населённую столицу к финалу: {value} (Game {game}).',
+      'records.item.max_production_finale.title': 'Пик производства',
+      'records.item.max_production_finale.flavor': 'Заводы гудят',
+      'records.item.max_production_finale.body':
+        '{player} показал наибольшее производство за ход в финале: {value} (Game {game}).',
+      'records.item.max_gold_finale.title': 'Самая тугая казна',
+      'records.item.max_gold_finale.flavor': 'Куда тратить?',
+      'records.item.max_gold_finale.body':
+        '{player} накопил больше всего золота в казне к финалу: {value} (Game {game}).',
+      'records.item.max_gold_income_finale.title': 'Самый жирный инком',
+      'records.item.max_gold_income_finale.flavor': '+золото в ход',
+      'records.item.max_gold_income_finale.body':
+        '{player} показал наибольший прирост казны за ход (прокси GPT +X) в финале: {value} (Game {game}).',
+      'records.item.max_science_finale.title': 'Научный пик',
+      'records.item.max_science_finale.flavor': 'Эврика!',
+      'records.item.max_science_finale.body':
+        '{player} выдал наибольший урожай науки (среднее за последние ходы) в финале: {value} (Game {game}).',
+      'records.item.max_culture_finale.title': 'Культурный пик',
+      'records.item.max_culture_finale.flavor': 'Туристы в очереди',
+      'records.item.max_culture_finale.body':
+        '{player} выдал наибольший урожай культуры (среднее за последние ходы) в финале: {value} (Game {game}).',
+      'records.item.fastest_ideology.title': 'Самая быстрая идеология',
+      'records.item.fastest_ideology.flavor': 'Уже определился',
+      'records.item.fastest_ideology.body':
+        '{player} взял идеологию раньше всех: ход {value} (Game {game}).',
       'tier.title': 'Тирлист наций',
       'tier.col.nation': 'Нация',
       'tier.col.avg': 'Среднее',
@@ -1208,6 +1240,38 @@
       'records.item.max_techs_finale.flavor': 'Fully researched',
       'records.item.max_techs_finale.body':
         '{player} had the most techs in one finale: {value} (Game {game}).',
+      'records.item.max_population_finale.title': 'Highest population',
+      'records.item.max_population_finale.flavor': 'Human wave',
+      'records.item.max_population_finale.body':
+        '{player} reached the highest empire population in one finale: {value} (Game {game}).',
+      'records.item.max_capital_population_finale.title': 'Most populated capital',
+      'records.item.max_capital_population_finale.flavor': 'Megacity',
+      'records.item.max_capital_population_finale.body':
+        '{player} grew the most populated capital by finale: {value} (Game {game}).',
+      'records.item.max_production_finale.title': 'Production peak',
+      'records.item.max_production_finale.flavor': 'Factories humming',
+      'records.item.max_production_finale.body':
+        '{player} posted the highest per-turn production in a finale: {value} (Game {game}).',
+      'records.item.max_gold_finale.title': 'Fullest treasury',
+      'records.item.max_gold_finale.flavor': 'Where to spend it?',
+      'records.item.max_gold_finale.body':
+        '{player} held the most gold in the treasury at finale: {value} (Game {game}).',
+      'records.item.max_gold_income_finale.title': 'Highest gold income',
+      'records.item.max_gold_income_finale.flavor': '+gold per turn',
+      'records.item.max_gold_income_finale.body':
+        '{player} posted the highest treasury growth per turn (GPT +X proxy) in a finale: {value} (Game {game}).',
+      'records.item.max_science_finale.title': 'Science peak',
+      'records.item.max_science_finale.flavor': 'Eureka!',
+      'records.item.max_science_finale.body':
+        '{player} posted the highest science yield (recent-turn average) in a finale: {value} (Game {game}).',
+      'records.item.max_culture_finale.title': 'Culture peak',
+      'records.item.max_culture_finale.flavor': 'Tourists queuing',
+      'records.item.max_culture_finale.body':
+        '{player} posted the highest culture yield (recent-turn average) in a finale: {value} (Game {game}).',
+      'records.item.fastest_ideology.title': 'Fastest ideology',
+      'records.item.fastest_ideology.flavor': 'Already decided',
+      'records.item.fastest_ideology.body':
+        '{player} adopted an ideology earliest: turn {value} (Game {game}).',
       'tier.title': 'Nation tier list',
       'tier.col.nation': 'Nation',
       'tier.col.avg': 'Average',
