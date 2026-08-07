@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=survival-top3-1">
+    <link rel="stylesheet" href="css/site.css?v=economy-avg-1">
 
 </head>
 <body>
@@ -254,6 +254,8 @@
             <div class="faq-toc stats-toc" id="playersToc">
                 <a href="#stats-winrate-table" data-i18n="stats.winrate">Винрейт игроков</a>
                 <a href="#stats-player-detail" data-i18n="stats.playerDetail">Детали игроков</a>
+                <a href="#stats-player-averages" data-i18n="stats.averages">Игроки: средние показатели</a>
+                <a href="#stats-player-economy" data-i18n="stats.economyAverages">Игроки: средняя экономика</a>
             </div>
             <h2 id="stats-winrate-table" data-i18n="stats.winrate">Винрейт игроков</h2>
             <p class="hint" data-i18n="stats.winrateHint">Победы / участия в играх из архива (без teams/scrap). «Выжил» — alive=true в финале.</p>
@@ -356,6 +358,31 @@
                             <th class="num" data-sort="avgPopulation" data-i18n="stats.col.population">Население</th>
                             <th class="num" data-sort="avgTechs" data-i18n="stats.col.techs">Технологии</th>
                             <th data-sort="topPolicies" data-i18n="stats.col.topPolicies">Топ‑3 института</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="stats-section" id="stats-player-economy" data-stats-group="players">
+            <h2 data-i18n="stats.economyAverages">Игроки: средняя экономика</h2>
+            <p class="hint" data-i18n="stats.economyAveragesHint">Средние демо/экономики по финалу. Каждая колонка — только по играм, где поле в survivors заполнено (идеология и ВЛ исторически реже).</p>
+            <div class="stats-table-wrap stats-table-wrap--economy">
+                <table class="stats-table stats-table--economy" id="playerEconomyAveragesTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name" data-i18n="stats.col.player">Игрок</th>
+                            <th class="num" data-sort="gamesWithStats" data-i18n="stats.col.gamesWithStats">Игр со статой</th>
+                            <th class="num" data-sort="avgPopulation" data-i18n="stats.col.population">Население</th>
+                            <th class="num" data-sort="avgCapitalPop" data-i18n="stats.col.capitalPop">Столица</th>
+                            <th class="num" data-sort="avgProduction" data-i18n="stats.col.production">Промка</th>
+                            <th class="num" data-sort="avgGold" data-i18n="stats.col.gold">Казна</th>
+                            <th class="num" data-sort="avgGoldIncome" data-i18n="stats.col.goldIncome">Инком</th>
+                            <th class="num" data-sort="avgScience" data-i18n="stats.col.science">Наука</th>
+                            <th class="num" data-sort="avgCulture" data-i18n="stats.col.culture">Культура</th>
+                            <th class="num" data-sort="avgIdeologyTurn" data-i18n="stats.col.ideologyTurn">Идеология</th>
+                            <th class="num" data-sort="avgGreatPeople" data-i18n="stats.col.greatPeople">ВЛ</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -1623,6 +1650,15 @@
         return (sum / count).toFixed(1);
     }
 
+    function avgOrDashSigned(sum, count) {
+        if (!count) return '—';
+        const v = sum / count;
+        const body = Math.abs(v).toFixed(1);
+        if (v > 0) return `+${body}`;
+        if (v < 0) return `-${body}`;
+        return body;
+    }
+
     function openPlayerProfile(playerName) {
         const name = String(playerName || '').trim();
         if (!name) return;
@@ -1758,8 +1794,15 @@
                 <tr><th>${tt('profile.avgUnits')}</th><td>${avgOrDash(row.sumUnits, row.nUnits)}</td></tr>
                 <tr><th>${tt('profile.avgCities')}</th><td>${avgOrDash(row.sumCities, row.nCities)}</td></tr>
                 <tr><th>${tt('profile.avgPopulation')}</th><td>${avgOrDash(row.sumPopulation, row.nPopulation)}</td></tr>
+                <tr><th>${tt('profile.avgCapitalPop')}</th><td>${avgOrDash(row.sumCapitalPop, row.nCapitalPop)}</td></tr>
+                <tr><th>${tt('profile.avgProduction')}</th><td>${avgOrDash(row.sumProduction, row.nProduction)}</td></tr>
+                <tr><th>${tt('profile.avgGold')}</th><td>${avgOrDash(row.sumGold, row.nGold)}</td></tr>
+                <tr><th>${tt('profile.avgGoldIncome')}</th><td>${avgOrDashSigned(row.sumGoldIncome, row.nGoldIncome)}</td></tr>
                 <tr><th>${tt('profile.avgTechs')}</th><td>${avgOrDash(row.sumTechs, row.nTechs)}</td></tr>
                 <tr><th>${tt('profile.avgScience')}</th><td>${avgOrDash(row.sumScience, row.nScience)}</td></tr>
+                <tr><th>${tt('profile.avgCulture')}</th><td>${avgOrDash(row.sumCulture, row.nCulture)}</td></tr>
+                <tr><th>${tt('profile.avgIdeologyTurn')}</th><td>${avgOrDash(row.sumIdeologyTurn, row.nIdeologyTurn)}</td></tr>
+                <tr><th>${tt('profile.avgGreatPeople')}</th><td>${avgOrDash(row.sumGreatPeople, row.nGreatPeople)}</td></tr>
                 <tr><th>${tt('profile.avgStrength')}</th><td>${avgOrDash(row.sumStrength, row.nStrength)}</td></tr>
             ` : '';
             hydrateNationPortraits(summaryBody);
@@ -3278,6 +3321,13 @@
                     sumCities: 0,
                     sumPopulation: 0,
                     sumTechs: 0,
+                    sumCapitalPop: 0,
+                    sumProduction: 0,
+                    sumGold: 0,
+                    sumGoldIncome: 0,
+                    sumCulture: 0,
+                    sumIdeologyTurn: 0,
+                    sumGreatPeople: 0,
                     nScore: 0,
                     nUnits: 0,
                     nStrength: 0,
@@ -3285,6 +3335,13 @@
                     nCities: 0,
                     nPopulation: 0,
                     nTechs: 0,
+                    nCapitalPop: 0,
+                    nProduction: 0,
+                    nGold: 0,
+                    nGoldIncome: 0,
+                    nCulture: 0,
+                    nIdeologyTurn: 0,
+                    nGreatPeople: 0,
                     firstPolicyCounts: new Map(),
                     wonderCounts: new Map(),
                 });
@@ -3377,6 +3434,13 @@
                 add('sumCities', 'nCities', s.cities);
                 add('sumPopulation', 'nPopulation', s.population);
                 add('sumTechs', 'nTechs', s.techs);
+                add('sumCapitalPop', 'nCapitalPop', s.capital_population);
+                add('sumProduction', 'nProduction', s.production);
+                add('sumGold', 'nGold', s.gold);
+                add('sumGoldIncome', 'nGoldIncome', s.gold_income);
+                add('sumCulture', 'nCulture', s.culture);
+                add('sumIdeologyTurn', 'nIdeologyTurn', s.ideology_turn);
+                add('sumGreatPeople', 'nGreatPeople', s.great_people);
 
                 const firstPol = (s.first_policy || '').trim();
                 if (firstPol && !isInvalidFirstPolicy(firstPol)) {
@@ -3469,6 +3533,13 @@
                 avgCities: avg(p.sumCities, p.nCities),
                 avgPopulation: avg(p.sumPopulation, p.nPopulation),
                 avgTechs: avg(p.sumTechs, p.nTechs),
+                avgCapitalPop: avg(p.sumCapitalPop, p.nCapitalPop),
+                avgProduction: avg(p.sumProduction, p.nProduction),
+                avgGold: avg(p.sumGold, p.nGold),
+                avgGoldIncome: avg(p.sumGoldIncome, p.nGoldIncome),
+                avgCulture: avg(p.sumCulture, p.nCulture),
+                avgIdeologyTurn: avg(p.sumIdeologyTurn, p.nIdeologyTurn),
+                avgGreatPeople: avg(p.sumGreatPeople, p.nGreatPeople),
                 topPolicies: topNFromCounts(p.firstPolicyCounts, 3),
             };
         });
@@ -3643,6 +3714,11 @@
         );
 
         const fmtAvg = (v) => (v === null || v === undefined ? '—' : v);
+        const fmtAvgSigned = (v) => {
+            if (v === null || v === undefined) return '—';
+            if (v > 0) return `+${v}`;
+            return String(v);
+        };
         fillSortableTable(
             document.getElementById('playerAveragesTable'),
             playerRows.filter((p) => p.gamesWithStats > 0),
@@ -3657,6 +3733,28 @@
                 <td class="num">${fmtAvg(p.avgPopulation)}</td>
                 <td class="num">${fmtAvg(p.avgTechs)}</td>
                 <td>${p.topPolicies || '—'}</td>
+            </tr>`,
+            'gamesWithStats',
+            'desc',
+        );
+
+        const ecoCell = (labelKey, valueHtml) =>
+            `<td class="num" data-label="${tt(labelKey)}">${valueHtml}</td>`;
+        fillSortableTable(
+            document.getElementById('playerEconomyAveragesTable'),
+            playerRows.filter((p) => p.gamesWithStats > 0),
+            (p) => `<tr>
+                <td data-label="${tt('stats.col.player')}">${playerLinkHtml(p.name)}</td>
+                ${ecoCell('stats.col.gamesWithStats', p.gamesWithStats)}
+                ${ecoCell('stats.col.population', fmtAvg(p.avgPopulation))}
+                ${ecoCell('stats.col.capitalPop', fmtAvg(p.avgCapitalPop))}
+                ${ecoCell('stats.col.production', fmtAvg(p.avgProduction))}
+                ${ecoCell('stats.col.gold', fmtAvg(p.avgGold))}
+                ${ecoCell('stats.col.goldIncome', fmtAvgSigned(p.avgGoldIncome))}
+                ${ecoCell('stats.col.science', fmtAvg(p.avgScience))}
+                ${ecoCell('stats.col.culture', fmtAvg(p.avgCulture))}
+                ${ecoCell('stats.col.ideologyTurn', fmtAvg(p.avgIdeologyTurn))}
+                ${ecoCell('stats.col.greatPeople', fmtAvg(p.avgGreatPeople))}
             </tr>`,
             'gamesWithStats',
             'desc',
