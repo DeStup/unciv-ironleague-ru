@@ -1406,7 +1406,9 @@
     function renderNationPortrait(russianName, extraClass) {
         let size = 24;
         if (extraClass && extraClass.includes('profile-emblem-portrait')) size = 100;
+        else if (extraClass && extraClass.includes('record-card-nation')) size = 28;
         else if (extraClass && extraClass.includes('player-nation-mini')) size = 20;
+        else if (extraClass && extraClass.includes('record-runner-nation')) size = 18;
         const cls = ['nation-portrait', extraClass].filter(Boolean).join(' ');
         const safe = String(russianName || '').replace(/"/g, '&quot;');
         const shown = String(displayNationName(russianName) || russianName || '').replace(/"/g, '&quot;');
@@ -2742,12 +2744,21 @@
         const runners = (Array.isArray(item.top) ? item.top : []).filter((t) => t && t.place > 1);
         const runnersHtml = (!vacant && runners.length)
             ? `<ol class="record-card-runners" aria-label="${tt('records.runners')}">${
-                runners.map((t) => `<li>
+                runners.map((t) => {
+                    const nat = t.nation
+                        ? renderNationPortrait(t.nation, 'record-runner-nation')
+                        : '';
+                    return `<li>
                     <span class="record-runner-place">#${t.place}</span>
+                    ${nat}
                     <span class="record-runner-name">${t.player}</span>
                     <span class="record-runner-value">${t.value}</span>
-                </li>`).join('')
+                </li>`;
+                }).join('')
             }</ol>`
+            : '';
+        const nationHtml = (!vacant && item.nation)
+            ? renderNationPortrait(item.nation, 'record-card-nation')
             : '';
         const iconSrc = recordIconSrc(item.id);
         const iconFallback = `img/records/${item.id}.svg`;
@@ -2761,7 +2772,7 @@
                 <div class="record-card-meta">
                     <p class="record-card-flavor">${flavor}</p>
                     <h3 class="record-card-title">${title === `records.item.${item.id}.title` ? item.id : title}</h3>
-                    <p class="record-card-player">${playerLabel}</p>
+                    <p class="record-card-player">${nationHtml}<span class="record-card-player-name">${playerLabel}</span></p>
                 </div>
             </div>
             <p class="record-card-body">${body}</p>
@@ -2790,6 +2801,7 @@
             el.innerHTML = cards.length
                 ? cards.join('')
                 : `<p class="hint">${tt('records.empty')}</p>`;
+            hydrateNationPortraits(el);
         });
     }
 
