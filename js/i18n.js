@@ -722,6 +722,26 @@
       'records.item.max_culture_finale.flavor': 'Туристы в очереди',
       'records.item.max_culture_finale.body':
         '{player} выдал наибольший урожай культуры (среднее за последние ходы) в финале: {value} (Game {game}).',
+      'records.item.most_great_people_finale.title': 'Фабрика великих',
+      'records.item.most_great_people_finale.flavor': 'Гении на конвейере',
+      'records.item.most_great_people_finale.body':
+        '{player} родил больше всего великих людей за игру: {value} (Game {game}).',
+      'records.item.most_great_scientists_finale.title': 'Академия учёных',
+      'records.item.most_great_scientists_finale.flavor': 'Эврика × N',
+      'records.item.most_great_scientists_finale.body':
+        '{player} вырастил больше всего великих учёных: {value} (Game {game}).',
+      'records.item.most_great_engineers_finale.title': 'Цех инженеров',
+      'records.item.most_great_engineers_finale.flavor': 'Чудо за чудом',
+      'records.item.most_great_engineers_finale.body':
+        '{player} вырастил больше всего великих инженеров: {value} (Game {game}).',
+      'records.item.most_great_culture_people_finale.title': 'Пантеон муз',
+      'records.item.most_great_culture_people_finale.flavor': 'Писатели, художники, музыканты',
+      'records.item.most_great_culture_people_finale.body':
+        '{player} собрал больше всего культурных великих (писатель+художник+музыкант): {value} (Game {game}).',
+      'records.item.most_great_generals_finale.title': 'Школа полководцев',
+      'records.item.most_great_generals_finale.flavor': 'Звёзды на погонах',
+      'records.item.most_great_generals_finale.body':
+        '{player} вырастил больше всего великих генералов: {value} (Game {game}).',
       'records.item.fastest_ideology.title': 'Самая быстрая идеология',
       'records.item.fastest_ideology.flavor': 'Уже определился',
       'records.item.fastest_ideology.body':
@@ -1268,6 +1288,26 @@
       'records.item.max_culture_finale.flavor': 'Tourists queuing',
       'records.item.max_culture_finale.body':
         '{player} posted the highest culture yield (recent-turn average) in a finale: {value} (Game {game}).',
+      'records.item.most_great_people_finale.title': 'Great Person factory',
+      'records.item.most_great_people_finale.flavor': 'Geniuses on a conveyor',
+      'records.item.most_great_people_finale.body':
+        '{player} spawned the most Great People in one game: {value} (Game {game}).',
+      'records.item.most_great_scientists_finale.title': 'Scientist academy',
+      'records.item.most_great_scientists_finale.flavor': 'Eureka × N',
+      'records.item.most_great_scientists_finale.body':
+        '{player} spawned the most Great Scientists: {value} (Game {game}).',
+      'records.item.most_great_engineers_finale.title': 'Engineer workshop',
+      'records.item.most_great_engineers_finale.flavor': 'Wonder after wonder',
+      'records.item.most_great_engineers_finale.body':
+        '{player} spawned the most Great Engineers: {value} (Game {game}).',
+      'records.item.most_great_culture_people_finale.title': 'Pantheon of the muses',
+      'records.item.most_great_culture_people_finale.flavor': 'Writers, artists, musicians',
+      'records.item.most_great_culture_people_finale.body':
+        '{player} spawned the most cultural Great People (writer+artist+musician): {value} (Game {game}).',
+      'records.item.most_great_generals_finale.title': 'School of generals',
+      'records.item.most_great_generals_finale.flavor': 'Stars on the shoulders',
+      'records.item.most_great_generals_finale.body':
+        '{player} spawned the most Great Generals: {value} (Game {game}).',
       'records.item.fastest_ideology.title': 'Fastest ideology',
       'records.item.fastest_ideology.flavor': 'Already decided',
       'records.item.fastest_ideology.body':

@@ -178,9 +178,32 @@
       maxScienceGame: null,
       maxCulture: 0,
       maxCultureGame: null,
+      maxGreatPeople: 0,
+      maxGreatPeopleGame: null,
+      maxGreatScientists: 0,
+      maxGreatScientistsGame: null,
+      maxGreatEngineers: 0,
+      maxGreatEngineersGame: null,
+      maxGreatGenerals: 0,
+      maxGreatGeneralsGame: null,
+      maxGreatCulturePeople: 0,
+      maxGreatCulturePeopleGame: null,
       minIdeologyTurn: Infinity,
       minIdeologyTurnGame: null,
     };
+  }
+
+  function gpTypeCount(row, type) {
+    const types = row && row.great_people_types;
+    if (!types || typeof types !== 'object') return null;
+    const n = Number(types[type]);
+    return Number.isFinite(n) ? n : null;
+  }
+
+  function gpCultureCount(row) {
+    const parts = ['Artist', 'Writer', 'Musician'].map((t) => gpTypeCount(row, t));
+    if (parts.every((x) => x == null)) return null;
+    return parts.reduce((sum, x) => sum + (x || 0), 0);
   }
 
   function bumpPeak(s, key, gameKey, value, gNum) {
@@ -286,6 +309,11 @@
           bumpPeak(s, 'maxGoldIncome', 'maxGoldIncomeGame', row.gold_income, gNum);
           bumpPeak(s, 'maxScience', 'maxScienceGame', row.science, gNum);
           bumpPeak(s, 'maxCulture', 'maxCultureGame', row.culture, gNum);
+          bumpPeak(s, 'maxGreatPeople', 'maxGreatPeopleGame', row.great_people, gNum);
+          bumpPeak(s, 'maxGreatScientists', 'maxGreatScientistsGame', gpTypeCount(row, 'Scientist'), gNum);
+          bumpPeak(s, 'maxGreatEngineers', 'maxGreatEngineersGame', gpTypeCount(row, 'Engineer'), gNum);
+          bumpPeak(s, 'maxGreatGenerals', 'maxGreatGeneralsGame', gpTypeCount(row, 'General'), gNum);
+          bumpPeak(s, 'maxGreatCulturePeople', 'maxGreatCulturePeopleGame', gpCultureCount(row), gNum);
           bumpMinPeak(s, 'minIdeologyTurn', 'minIdeologyTurnGame', row.ideology_turn, gNum);
         }
 
@@ -743,6 +771,41 @@
       pickTop(stats, (s) => s.maxCulture, (s) => s.maxCulture > 0),
       (h) => String(h.stat.maxCulture),
       (h) => ({ gameNumber: h.stat.maxCultureGame }),
+    );
+
+    pushTop(
+      'most_great_people_finale',
+      pickTop(stats, (s) => s.maxGreatPeople, (s) => s.maxGreatPeople > 0),
+      (h) => String(h.stat.maxGreatPeople),
+      (h) => ({ gameNumber: h.stat.maxGreatPeopleGame }),
+    );
+
+    pushTop(
+      'most_great_scientists_finale',
+      pickTop(stats, (s) => s.maxGreatScientists, (s) => s.maxGreatScientists > 0),
+      (h) => String(h.stat.maxGreatScientists),
+      (h) => ({ gameNumber: h.stat.maxGreatScientistsGame }),
+    );
+
+    pushTop(
+      'most_great_engineers_finale',
+      pickTop(stats, (s) => s.maxGreatEngineers, (s) => s.maxGreatEngineers > 0),
+      (h) => String(h.stat.maxGreatEngineers),
+      (h) => ({ gameNumber: h.stat.maxGreatEngineersGame }),
+    );
+
+    pushTop(
+      'most_great_generals_finale',
+      pickTop(stats, (s) => s.maxGreatGenerals, (s) => s.maxGreatGenerals > 0),
+      (h) => String(h.stat.maxGreatGenerals),
+      (h) => ({ gameNumber: h.stat.maxGreatGeneralsGame }),
+    );
+
+    pushTop(
+      'most_great_culture_people_finale',
+      pickTop(stats, (s) => s.maxGreatCulturePeople, (s) => s.maxGreatCulturePeople > 0),
+      (h) => String(h.stat.maxGreatCulturePeople),
+      (h) => ({ gameNumber: h.stat.maxGreatCulturePeopleGame }),
     );
 
     pushTop(

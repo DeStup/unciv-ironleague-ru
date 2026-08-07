@@ -135,7 +135,11 @@
             "Holy Warriors"
           ],
           "enhancer_beliefs": [],
-          "capital_population": 9
+          "capital_population": 9,
+          "great_people": 1,
+          "great_people_types": {
+            "General": 1
+          }
         },
         {
           "name": "Click4x",
@@ -185,7 +189,11 @@
             "Religious Community"
           ],
           "enhancer_beliefs": [],
-          "capital_population": 10
+          "capital_population": 10,
+          "great_people": 1,
+          "great_people_types": {
+            "General": 1
+          }
         },
         {
           "name": "den_stu",
@@ -484,7 +492,11 @@
             "Religious Community"
           ],
           "enhancer_beliefs": [],
-          "capital_population": 25
+          "capital_population": 25,
+          "great_people": 1,
+          "great_people_types": {
+            "General": 1
+          }
         },
         {
           "name": "Click4x",
@@ -537,7 +549,11 @@
             "Cathedrals"
           ],
           "enhancer_beliefs": [],
-          "capital_population": 27
+          "capital_population": 27,
+          "great_people": 7,
+          "great_people_types": {
+            "General": 7
+          }
         },
         {
           "name": "freedomanarhy",
@@ -588,7 +604,11 @@
             "Sacred Waters"
           ],
           "enhancer_beliefs": [],
-          "capital_population": 25
+          "capital_population": 25,
+          "great_people": 4,
+          "great_people_types": {
+            "General": 4
+          }
         },
         {
           "name": "Overslidishe",
@@ -633,7 +653,11 @@
             "Religious Center"
           ],
           "enhancer_beliefs": [],
-          "capital_population": 12
+          "capital_population": 12,
+          "great_people": 6,
+          "great_people_types": {
+            "General": 6
+          }
         },
         {
           "name": "VlaterRogue",
@@ -682,7 +706,11 @@
             "Gurdwaras"
           ],
           "enhancer_beliefs": [],
-          "capital_population": 13
+          "capital_population": 13,
+          "great_people": 1,
+          "great_people_types": {
+            "General": 1
+          }
         },
         {
           "name": "den_stu",
@@ -741,7 +769,11 @@
             "Followers of Refined Crafts"
           ],
           "enhancer_beliefs": [],
-          "capital_population": 21
+          "capital_population": 21,
+          "great_people": 4,
+          "great_people_types": {
+            "General": 4
+          }
         },
         {
           "name": "khtoyaaty",
@@ -791,7 +823,9 @@
             "Feed the World"
           ],
           "enhancer_beliefs": [],
-          "capital_population": 14
+          "capital_population": 14,
+          "great_people": 0,
+          "great_people_types": {}
         },
         {
           "name": "munlait21",
@@ -871,7 +905,11 @@
             "Religious Art"
           ],
           "enhancer_beliefs": [],
-          "capital_population": 36
+          "capital_population": 36,
+          "great_people": 4,
+          "great_people_types": {
+            "General": 4
+          }
         },
         {
           "name": "Ouni0",
@@ -914,7 +952,11 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "capital_population": 22
+          "capital_population": 22,
+          "great_people": 4,
+          "great_people_types": {
+            "General": 4
+          }
         }
       ],
       "flags": []
@@ -1014,7 +1056,9 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "capital_population": 18
+          "capital_population": 18,
+          "great_people": 0,
+          "great_people_types": {}
         },
         {
           "name": "VlaterRogue",
@@ -1058,7 +1102,9 @@
             "Liturgical Drama"
           ],
           "enhancer_beliefs": [],
-          "capital_population": 12
+          "capital_population": 12,
+          "great_people": 0,
+          "great_people_types": {}
         },
         {
           "name": "Nepherthos",
@@ -1108,7 +1154,9 @@
             "Religious Center"
           ],
           "enhancer_beliefs": [],
-          "capital_population": 14
+          "capital_population": 14,
+          "great_people": 0,
+          "great_people_types": {}
         },
         {
           "name": "khtoyaaty",
@@ -1150,7 +1198,9 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "capital_population": 16
+          "capital_population": 16,
+          "great_people": 0,
+          "great_people_types": {}
         },
         {
           "name": "munlait21",
@@ -1203,7 +1253,9 @@
             "Peace Gardens"
           ],
           "enhancer_beliefs": [],
-          "capital_population": 22
+          "capital_population": 22,
+          "great_people": 0,
+          "great_people_types": {}
         },
         {
           "name": "Overslidishe",
@@ -1255,7 +1307,9 @@
             "Holy Warriors"
           ],
           "enhancer_beliefs": [],
-          "capital_population": 15
+          "capital_population": 15,
+          "great_people": 0,
+          "great_people_types": {}
         },
         {
           "name": "den_stu",
@@ -1307,7 +1361,9 @@
             "Feed the World"
           ],
           "enhancer_beliefs": [],
-          "capital_population": 15
+          "capital_population": 15,
+          "great_people": 0,
+          "great_people_types": {}
         },
         {
           "name": "Click4x",
@@ -1352,7 +1408,9 @@
             "Devout Performers"
           ],
           "enhancer_beliefs": [],
-          "capital_population": 21
+          "capital_population": 21,
+          "great_people": 0,
+          "great_people_types": {}
         },
         {
           "name": "ICanSeeForever",
@@ -1398,7 +1456,9 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "capital_population": 13
+          "capital_population": 13,
+          "great_people": 0,
+          "great_people_types": {}
         },
         {
           "name": "freedomanarhy",
@@ -1450,7 +1510,9 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "capital_population": 12
+          "capital_population": 12,
+          "great_people": 0,
+          "great_people_types": {}
         }
       ],
       "flags": []
@@ -3962,7 +4024,18 @@
           "gold": 1594,
           "culture": 374,
           "capital_population": 33,
-          "gold_income": 102
+          "gold_income": 102,
+          "great_people": 29,
+          "great_people_types": {
+            "Admiral": 5,
+            "Artist": 2,
+            "Engineer": 5,
+            "General": 3,
+            "Merchant": 4,
+            "Musician": 2,
+            "Scientist": 6,
+            "Writer": 2
+          }
         },
         {
           "name": "VlaterRogue",
@@ -4033,7 +4106,18 @@
           "gold": 5809,
           "culture": 339,
           "capital_population": 41,
-          "gold_income": -134
+          "gold_income": -134,
+          "great_people": 33,
+          "great_people_types": {
+            "Admiral": 3,
+            "Artist": 4,
+            "Engineer": 5,
+            "General": 1,
+            "Merchant": 6,
+            "Musician": 4,
+            "Scientist": 6,
+            "Writer": 4
+          }
         },
         {
           "name": "YukiHino98",
@@ -4096,7 +4180,15 @@
           "gold": 987,
           "culture": 146,
           "capital_population": 20,
-          "gold_income": -120
+          "gold_income": -120,
+          "great_people": 10,
+          "great_people_types": {
+            "Artist": 1,
+            "Engineer": 2,
+            "Merchant": 1,
+            "Musician": 2,
+            "Scientist": 4
+          }
         },
         {
           "name": "Fanfblrik",
@@ -4149,7 +4241,13 @@
           "gold": 6445,
           "culture": 43,
           "capital_population": 29,
-          "gold_income": -773
+          "gold_income": -773,
+          "great_people": 12,
+          "great_people_types": {
+            "Engineer": 4,
+            "Merchant": 3,
+            "Scientist": 5
+          }
         },
         {
           "name": "AlexUnderHill",
@@ -4201,7 +4299,18 @@
           "gold": 5794,
           "culture": 248,
           "capital_population": 22,
-          "gold_income": 652
+          "gold_income": 652,
+          "great_people": 26,
+          "great_people_types": {
+            "Admiral": 5,
+            "Artist": 2,
+            "Engineer": 5,
+            "General": 1,
+            "Merchant": 3,
+            "Musician": 2,
+            "Scientist": 6,
+            "Writer": 2
+          }
         },
         {
           "name": "Overslidishe",
@@ -4248,7 +4357,13 @@
           "production": 21,
           "gold": 151,
           "culture": 18,
-          "gold_income": 6
+          "gold_income": 6,
+          "great_people": 3,
+          "great_people_types": {
+            "Admiral": 1,
+            "Engineer": 1,
+            "General": 1
+          }
         },
         {
           "name": "Barbarians",
@@ -4418,7 +4533,17 @@
           "gold": 1434,
           "culture": 316,
           "capital_population": 33,
-          "gold_income": 50
+          "gold_income": 50,
+          "great_people": 30,
+          "great_people_types": {
+            "Artist": 3,
+            "Engineer": 5,
+            "General": 7,
+            "Merchant": 4,
+            "Musician": 2,
+            "Scientist": 6,
+            "Writer": 3
+          }
         },
         {
           "name": "Click4x",
@@ -4495,7 +4620,17 @@
           "gold": 2241,
           "culture": 393,
           "capital_population": 37,
-          "gold_income": 86
+          "gold_income": 86,
+          "great_people": 26,
+          "great_people_types": {
+            "Admiral": 5,
+            "Artist": 3,
+            "Engineer": 4,
+            "Merchant": 4,
+            "Musician": 3,
+            "Scientist": 5,
+            "Writer": 2
+          }
         },
         {
           "name": "YukiHino98",
@@ -4556,7 +4691,15 @@
           "gold": 314,
           "culture": 486,
           "capital_population": 29,
-          "gold_income": 33
+          "gold_income": 33,
+          "great_people": 18,
+          "great_people_types": {
+            "Artist": 3,
+            "Engineer": 4,
+            "Musician": 3,
+            "Scientist": 5,
+            "Writer": 3
+          }
         },
         {
           "name": "VlaterRogue",
@@ -4617,7 +4760,16 @@
           "gold": 1380,
           "culture": 414,
           "capital_population": 29,
-          "gold_income": 94
+          "gold_income": 94,
+          "great_people": 16,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 3,
+            "Merchant": 3,
+            "Musician": 2,
+            "Scientist": 4,
+            "Writer": 2
+          }
         },
         {
           "name": "n9306867842",
@@ -4674,7 +4826,16 @@
           "gold": 233,
           "culture": 125,
           "capital_population": 28,
-          "gold_income": -10
+          "gold_income": -10,
+          "great_people": 13,
+          "great_people_types": {
+            "Engineer": 3,
+            "General": 3,
+            "Merchant": 1,
+            "Musician": 1,
+            "Scientist": 4,
+            "Writer": 1
+          }
         },
         {
           "name": "Overslidishe",
@@ -4730,7 +4891,17 @@
           "gold": 1565,
           "culture": 237,
           "capital_population": 22,
-          "gold_income": 109
+          "gold_income": 109,
+          "great_people": 19,
+          "great_people_types": {
+            "Admiral": 5,
+            "Artist": 3,
+            "Engineer": 2,
+            "Merchant": 1,
+            "Musician": 2,
+            "Scientist": 4,
+            "Writer": 2
+          }
         },
         {
           "name": "den_stu",
@@ -4782,7 +4953,16 @@
           "production": 159,
           "gold": 1265,
           "culture": 132,
-          "gold_income": 8
+          "gold_income": 8,
+          "great_people": 20,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 4,
+            "General": 5,
+            "Merchant": 1,
+            "Scientist": 5,
+            "Writer": 3
+          }
         },
         {
           "name": "munlait21",
@@ -4833,7 +5013,14 @@
           "production": 50,
           "gold": 179,
           "culture": 76,
-          "gold_income": -61
+          "gold_income": -61,
+          "great_people": 10,
+          "great_people_types": {
+            "Engineer": 3,
+            "General": 2,
+            "Merchant": 3,
+            "Scientist": 2
+          }
         },
         {
           "name": "AlexUnderHill",
@@ -4876,7 +5063,12 @@
           "production": 19,
           "gold": -97,
           "culture": 10,
-          "gold_income": 1
+          "gold_income": 1,
+          "great_people": 2,
+          "great_people_types": {
+            "Engineer": 1,
+            "General": 1
+          }
         },
         {
           "name": "Ouni0",
@@ -4919,7 +5111,13 @@
           "production": 10,
           "gold": 178,
           "culture": 16,
-          "gold_income": 13
+          "gold_income": 13,
+          "great_people": 4,
+          "great_people_types": {
+            "Engineer": 1,
+            "General": 2,
+            "Merchant": 1
+          }
         },
         {
           "name": "Barbarians",
@@ -5097,7 +5295,18 @@
           "gold": 809,
           "culture": 703,
           "capital_population": 24,
-          "gold_income": -7
+          "gold_income": -7,
+          "great_people": 33,
+          "great_people_types": {
+            "Admiral": 3,
+            "Artist": 4,
+            "Engineer": 4,
+            "General": 6,
+            "Merchant": 3,
+            "Musician": 3,
+            "Scientist": 5,
+            "Writer": 5
+          }
         },
         {
           "name": "den_stu",
@@ -5163,7 +5372,17 @@
           "gold": 1201,
           "culture": 313,
           "capital_population": 24,
-          "gold_income": 83
+          "gold_income": 83,
+          "great_people": 21,
+          "great_people_types": {
+            "Artist": 3,
+            "Engineer": 3,
+            "General": 3,
+            "Merchant": 2,
+            "Musician": 1,
+            "Scientist": 5,
+            "Writer": 4
+          }
         },
         {
           "name": "Click4x",
@@ -5218,7 +5437,17 @@
           "gold": 682,
           "culture": 90,
           "capital_population": 24,
-          "gold_income": -123
+          "gold_income": -123,
+          "great_people": 21,
+          "great_people_types": {
+            "Artist": 3,
+            "Engineer": 4,
+            "General": 3,
+            "Merchant": 2,
+            "Musician": 2,
+            "Scientist": 4,
+            "Writer": 3
+          }
         },
         {
           "name": "munlait21",
@@ -5268,7 +5497,14 @@
           "gold": 548,
           "culture": 72,
           "capital_population": 26,
-          "gold_income": 29
+          "gold_income": 29,
+          "great_people": 11,
+          "great_people_types": {
+            "Admiral": 1,
+            "Engineer": 4,
+            "Merchant": 1,
+            "Scientist": 5
+          }
         },
         {
           "name": "VlaterRogue",
@@ -5331,7 +5567,16 @@
           "gold": 327,
           "culture": 238,
           "capital_population": 25,
-          "gold_income": -59
+          "gold_income": -59,
+          "great_people": 11,
+          "great_people_types": {
+            "Artist": 1,
+            "Engineer": 2,
+            "General": 3,
+            "Merchant": 1,
+            "Scientist": 3,
+            "Writer": 1
+          }
         },
         {
           "name": "AlexUnderHill",
@@ -5380,7 +5625,14 @@
           "gold": 583,
           "culture": 156,
           "capital_population": 25,
-          "gold_income": -10
+          "gold_income": -10,
+          "great_people": 10,
+          "great_people_types": {
+            "Engineer": 4,
+            "General": 2,
+            "Merchant": 1,
+            "Scientist": 3
+          }
         },
         {
           "name": "konoval_mik",
@@ -5438,7 +5690,16 @@
           "gold": 383,
           "culture": 283,
           "capital_population": 13,
-          "gold_income": -125
+          "gold_income": -125,
+          "great_people": 11,
+          "great_people_types": {
+            "Admiral": 1,
+            "Artist": 1,
+            "Engineer": 3,
+            "General": 4,
+            "Merchant": 1,
+            "Scientist": 1
+          }
         },
         {
           "name": "Ouni0",
@@ -5488,7 +5749,13 @@
           "gold": 84,
           "culture": 36,
           "capital_population": 27,
-          "gold_income": -4
+          "gold_income": -4,
+          "great_people": 7,
+          "great_people_types": {
+            "Engineer": 2,
+            "General": 3,
+            "Scientist": 2
+          }
         },
         {
           "name": "Overslidishe",
@@ -5539,7 +5806,13 @@
           "production": 55,
           "gold": 368,
           "culture": 51,
-          "gold_income": 24
+          "gold_income": 24,
+          "great_people": 6,
+          "great_people_types": {
+            "Engineer": 2,
+            "General": 2,
+            "Scientist": 2
+          }
         },
         {
           "name": "YukiHino98",
@@ -5582,7 +5855,12 @@
           "production": 15,
           "gold": 18,
           "culture": 14,
-          "gold_income": -2
+          "gold_income": -2,
+          "great_people": 3,
+          "great_people_types": {
+            "Engineer": 2,
+            "Merchant": 1
+          }
         },
         {
           "name": "Barbarians",
@@ -5741,7 +6019,18 @@
           "gold": 752,
           "culture": 257,
           "capital_population": 33,
-          "gold_income": -326
+          "gold_income": -326,
+          "great_people": 21,
+          "great_people_types": {
+            "Admiral": 1,
+            "Artist": 3,
+            "Engineer": 4,
+            "General": 1,
+            "Merchant": 3,
+            "Musician": 1,
+            "Scientist": 5,
+            "Writer": 3
+          }
         },
         {
           "name": "AlexUnderHill",
@@ -5806,7 +6095,14 @@
           "gold": 1762,
           "culture": 182,
           "capital_population": 17,
-          "gold_income": 167
+          "gold_income": 167,
+          "great_people": 10,
+          "great_people_types": {
+            "Engineer": 3,
+            "General": 2,
+            "Merchant": 2,
+            "Scientist": 3
+          }
         },
         {
           "name": "den_stu",
@@ -5870,7 +6166,16 @@
           "gold": 373,
           "culture": 202,
           "capital_population": 28,
-          "gold_income": -167
+          "gold_income": -167,
+          "great_people": 18,
+          "great_people_types": {
+            "Artist": 1,
+            "Engineer": 3,
+            "General": 4,
+            "Merchant": 2,
+            "Scientist": 5,
+            "Writer": 3
+          }
         },
         {
           "name": "Click4x",
@@ -5939,7 +6244,17 @@
           "gold": 674,
           "culture": 179,
           "capital_population": 22,
-          "gold_income": -30
+          "gold_income": -30,
+          "great_people": 15,
+          "great_people_types": {
+            "Admiral": 1,
+            "Artist": 2,
+            "Engineer": 4,
+            "Merchant": 3,
+            "Musician": 1,
+            "Scientist": 3,
+            "Writer": 1
+          }
         },
         {
           "name": "konoval_mik",
@@ -5982,7 +6297,12 @@
           "production": 41,
           "gold": 74,
           "culture": 28,
-          "gold_income": -5
+          "gold_income": -5,
+          "great_people": 3,
+          "great_people_types": {
+            "Engineer": 1,
+            "General": 2
+          }
         },
         {
           "name": "munlait21",
@@ -6032,7 +6352,13 @@
           "production": 43,
           "gold": 334,
           "culture": 59,
-          "gold_income": 27
+          "gold_income": 27,
+          "great_people": 5,
+          "great_people_types": {
+            "Engineer": 2,
+            "General": 2,
+            "Scientist": 1
+          }
         },
         {
           "name": "VlaterRogue",
@@ -6082,7 +6408,11 @@
           "production": 10,
           "gold": -7,
           "culture": 23,
-          "gold_income": -20
+          "gold_income": -20,
+          "great_people": 1,
+          "great_people_types": {
+            "General": 1
+          }
         },
         {
           "name": "Overslidishe",
@@ -6304,7 +6634,17 @@
           "gold": 3089,
           "culture": 288,
           "capital_population": 31,
-          "gold_income": -113
+          "gold_income": -113,
+          "great_people": 31,
+          "great_people_types": {
+            "Admiral": 4,
+            "Artist": 3,
+            "Engineer": 6,
+            "General": 4,
+            "Merchant": 4,
+            "Scientist": 7,
+            "Writer": 3
+          }
         },
         {
           "name": "Overslidishe",
@@ -6385,7 +6725,14 @@
           "gold": 3646,
           "culture": 228,
           "capital_population": 26,
-          "gold_income": 350
+          "gold_income": 350,
+          "great_people": 17,
+          "great_people_types": {
+            "Engineer": 3,
+            "General": 6,
+            "Merchant": 2,
+            "Scientist": 6
+          }
         },
         {
           "name": "AlexUnderHill",
@@ -6440,7 +6787,15 @@
           "gold": 406,
           "culture": 146,
           "capital_population": 28,
-          "gold_income": 22
+          "gold_income": 22,
+          "great_people": 15,
+          "great_people_types": {
+            "Admiral": 3,
+            "Engineer": 3,
+            "General": 1,
+            "Merchant": 3,
+            "Scientist": 5
+          }
         },
         {
           "name": "munlait21",
@@ -6499,7 +6854,14 @@
           "gold": 775,
           "culture": 210,
           "capital_population": 35,
-          "gold_income": 28
+          "gold_income": 28,
+          "great_people": 14,
+          "great_people_types": {
+            "Admiral": 3,
+            "Engineer": 5,
+            "Merchant": 1,
+            "Scientist": 5
+          }
         },
         {
           "name": "Fanfblrik",
@@ -6548,7 +6910,14 @@
           "gold": 4731,
           "culture": 221,
           "capital_population": 19,
-          "gold_income": 286
+          "gold_income": 286,
+          "great_people": 6,
+          "great_people_types": {
+            "Engineer": 1,
+            "General": 2,
+            "Scientist": 2,
+            "Writer": 1
+          }
         },
         {
           "name": "Click4x",
@@ -6601,7 +6970,17 @@
           "gold": 223,
           "culture": 453,
           "capital_population": 29,
-          "gold_income": -179
+          "gold_income": -179,
+          "great_people": 30,
+          "great_people_types": {
+            "Artist": 5,
+            "Engineer": 5,
+            "General": 3,
+            "Merchant": 2,
+            "Musician": 5,
+            "Scientist": 5,
+            "Writer": 5
+          }
         },
         {
           "name": "VlaterRogue",
@@ -6645,7 +7024,17 @@
           "gold": 661,
           "culture": 52,
           "capital_population": 16,
-          "gold_income": 64
+          "gold_income": 64,
+          "great_people": 14,
+          "great_people_types": {
+            "Artist": 1,
+            "Engineer": 3,
+            "General": 2,
+            "Merchant": 2,
+            "Musician": 1,
+            "Scientist": 4,
+            "Writer": 1
+          }
         },
         {
           "name": "konoval_mik",
@@ -6696,7 +7085,14 @@
           "gold": -157,
           "culture": 41,
           "capital_population": 9,
-          "gold_income": -33
+          "gold_income": -33,
+          "great_people": 19,
+          "great_people_types": {
+            "Engineer": 3,
+            "General": 11,
+            "Merchant": 1,
+            "Scientist": 4
+          }
         },
         {
           "name": "Barbarians",
@@ -6864,7 +7260,16 @@
           "gold": 1115,
           "culture": 156,
           "capital_population": 40,
-          "gold_income": 19
+          "gold_income": 19,
+          "great_people": 18,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 4,
+            "General": 3,
+            "Merchant": 2,
+            "Scientist": 5,
+            "Writer": 2
+          }
         },
         {
           "name": "EmperorPenguin01",
@@ -6933,7 +7338,16 @@
           "gold": 832,
           "culture": 338,
           "capital_population": 21,
-          "gold_income": -726
+          "gold_income": -726,
+          "great_people": 18,
+          "great_people_types": {
+            "Artist": 3,
+            "Engineer": 3,
+            "General": 4,
+            "Merchant": 1,
+            "Scientist": 5,
+            "Writer": 2
+          }
         },
         {
           "name": "Click4x",
@@ -6994,7 +7408,17 @@
           "gold": 933,
           "culture": 155,
           "capital_population": 24,
-          "gold_income": 81
+          "gold_income": 81,
+          "great_people": 22,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 4,
+            "Khan": 6,
+            "Merchant": 2,
+            "Musician": 2,
+            "Scientist": 3,
+            "Writer": 3
+          }
         },
         {
           "name": "n9306867842",
@@ -7054,7 +7478,16 @@
           "gold": 1439,
           "culture": 141,
           "capital_population": 24,
-          "gold_income": 111
+          "gold_income": 111,
+          "great_people": 15,
+          "great_people_types": {
+            "Engineer": 3,
+            "General": 4,
+            "Merchant": 3,
+            "Musician": 1,
+            "Scientist": 3,
+            "Writer": 1
+          }
         },
         {
           "name": "Overslidishe",
@@ -7106,7 +7539,14 @@
           "gold": 1242,
           "culture": 76,
           "capital_population": 17,
-          "gold_income": 108
+          "gold_income": 108,
+          "great_people": 12,
+          "great_people_types": {
+            "Engineer": 2,
+            "General": 6,
+            "Merchant": 1,
+            "Scientist": 3
+          }
         },
         {
           "name": "AlexUnderHill",
@@ -7161,7 +7601,13 @@
           "gold": 1571,
           "culture": 138,
           "capital_population": 27,
-          "gold_income": 95
+          "gold_income": 95,
+          "great_people": 12,
+          "great_people_types": {
+            "Engineer": 4,
+            "Merchant": 4,
+            "Scientist": 4
+          }
         },
         {
           "name": "Fanfblrik",
@@ -7217,7 +7663,12 @@
           "gold": 1225,
           "culture": 101,
           "capital_population": 21,
-          "gold_income": 60
+          "gold_income": 60,
+          "great_people": 3,
+          "great_people_types": {
+            "Engineer": 1,
+            "Scientist": 2
+          }
         },
         {
           "name": "munlait21",
@@ -7262,7 +7713,13 @@
           "gold": 788,
           "culture": 66,
           "capital_population": 26,
-          "gold_income": 31
+          "gold_income": 31,
+          "great_people": 8,
+          "great_people_types": {
+            "Engineer": 2,
+            "Merchant": 2,
+            "Scientist": 4
+          }
         },
         {
           "name": "VlaterRogue",
@@ -7306,7 +7763,14 @@
           "production": 20,
           "gold": 614,
           "culture": 64,
-          "gold_income": 48
+          "gold_income": 48,
+          "great_people": 6,
+          "great_people_types": {
+            "Artist": 1,
+            "General": 3,
+            "Scientist": 1,
+            "Writer": 1
+          }
         },
         {
           "name": "konoval_mik",
@@ -7355,7 +7819,9 @@
           "production": 58,
           "gold": 179,
           "culture": 13,
-          "gold_income": -11
+          "gold_income": -11,
+          "great_people": 0,
+          "great_people_types": {}
         },
         {
           "name": "Barbarians",
@@ -7504,7 +7970,16 @@
           "gold": 380,
           "culture": 182,
           "capital_population": 20,
-          "gold_income": 10
+          "gold_income": 10,
+          "great_people": 13,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 3,
+            "General": 1,
+            "Merchant": 1,
+            "Scientist": 4,
+            "Writer": 2
+          }
         },
         {
           "name": "konoval_mik",
@@ -7569,7 +8044,13 @@
           "gold": 541,
           "culture": 78,
           "capital_population": 18,
-          "gold_income": 45
+          "gold_income": 45,
+          "great_people": 6,
+          "great_people_types": {
+            "Engineer": 3,
+            "General": 2,
+            "Scientist": 1
+          }
         },
         {
           "name": "ICanSeeForever",
@@ -7628,7 +8109,12 @@
           "gold": 571,
           "culture": 206,
           "capital_population": 18,
-          "gold_income": -176
+          "gold_income": -176,
+          "great_people": 8,
+          "great_people_types": {
+            "Engineer": 4,
+            "Scientist": 4
+          }
         },
         {
           "name": "n9306867842",
@@ -7694,7 +8180,16 @@
           "gold": 922,
           "culture": 134,
           "capital_population": 19,
-          "gold_income": 1
+          "gold_income": 1,
+          "great_people": 13,
+          "great_people_types": {
+            "Admiral": 1,
+            "Artist": 1,
+            "Engineer": 3,
+            "General": 2,
+            "Merchant": 2,
+            "Scientist": 4
+          }
         },
         {
           "name": "Fanfblrik",
@@ -7738,7 +8233,12 @@
           "gold": 1071,
           "culture": 47,
           "capital_population": 14,
-          "gold_income": 77
+          "gold_income": 77,
+          "great_people": 2,
+          "great_people_types": {
+            "Engineer": 1,
+            "Scientist": 1
+          }
         },
         {
           "name": "AlexUnderHill",
@@ -7787,7 +8287,14 @@
           "gold": 79,
           "culture": 58,
           "capital_population": 11,
-          "gold_income": -3
+          "gold_income": -3,
+          "great_people": 6,
+          "great_people_types": {
+            "Engineer": 2,
+            "General": 1,
+            "Merchant": 2,
+            "Scientist": 1
+          }
         },
         {
           "name": "Barbarians",
@@ -7928,7 +8435,9 @@
           "gold": 41,
           "culture": 18,
           "capital_population": 5,
-          "gold_income": 0
+          "gold_income": 0,
+          "great_people": 0,
+          "great_people_types": {}
         },
         {
           "name": "munlait21",
@@ -7974,7 +8483,9 @@
           "gold": 39,
           "culture": 18,
           "capital_population": 9,
-          "gold_income": -16
+          "gold_income": -16,
+          "great_people": 0,
+          "great_people_types": {}
         },
         {
           "name": "EmperorPenguin01",
@@ -8022,7 +8533,9 @@
           "gold": 2,
           "culture": 13,
           "capital_population": 8,
-          "gold_income": 1
+          "gold_income": 1,
+          "great_people": 0,
+          "great_people_types": {}
         },
         {
           "name": "AlexUnderHill",
@@ -8517,7 +9030,17 @@
           "gold": 1524,
           "culture": 699,
           "capital_population": 20,
-          "gold_income": -4
+          "gold_income": -4,
+          "great_people": 33,
+          "great_people_types": {
+            "Admiral": 6,
+            "Artist": 1,
+            "Engineer": 6,
+            "General": 5,
+            "Merchant": 5,
+            "Scientist": 7,
+            "Writer": 3
+          }
         },
         {
           "name": "den_stu",
@@ -8592,7 +9115,17 @@
           "gold": 1649,
           "culture": 240,
           "capital_population": 20,
-          "gold_income": -302
+          "gold_income": -302,
+          "great_people": 26,
+          "great_people_types": {
+            "Admiral": 1,
+            "Artist": 3,
+            "Engineer": 3,
+            "General": 6,
+            "Merchant": 3,
+            "Scientist": 7,
+            "Writer": 3
+          }
         },
         {
           "name": "Click4x",
@@ -8671,7 +9204,17 @@
           "gold": 601,
           "culture": 701,
           "capital_population": 24,
-          "gold_income": -11
+          "gold_income": -11,
+          "great_people": 29,
+          "great_people_types": {
+            "Artist": 4,
+            "Engineer": 5,
+            "General": 4,
+            "Merchant": 3,
+            "Musician": 3,
+            "Scientist": 7,
+            "Writer": 3
+          }
         },
         {
           "name": "munlait21",
@@ -8729,7 +9272,15 @@
           "gold": 1194,
           "culture": 158,
           "capital_population": 28,
-          "gold_income": 96
+          "gold_income": 96,
+          "great_people": 22,
+          "great_people_types": {
+            "Engineer": 5,
+            "General": 5,
+            "Merchant": 3,
+            "Scientist": 6,
+            "Writer": 3
+          }
         },
         {
           "name": "VlaterRogue",
@@ -8795,7 +9346,17 @@
           "gold": 346,
           "culture": 414,
           "capital_population": 29,
-          "gold_income": -94
+          "gold_income": -94,
+          "great_people": 20,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 4,
+            "General": 5,
+            "Merchant": 1,
+            "Musician": 2,
+            "Scientist": 4,
+            "Writer": 2
+          }
         },
         {
           "name": "Overslidishe",
@@ -8846,7 +9407,17 @@
           "production": 58,
           "gold": 341,
           "culture": 254,
-          "gold_income": -18
+          "gold_income": -18,
+          "great_people": 17,
+          "great_people_types": {
+            "Artist": 1,
+            "Engineer": 3,
+            "General": 1,
+            "Merchant": 3,
+            "Musician": 2,
+            "Scientist": 5,
+            "Writer": 2
+          }
         },
         {
           "name": "konoval_mik",
@@ -8893,7 +9464,15 @@
           "production": 26,
           "gold": 256,
           "culture": 31,
-          "gold_income": -15
+          "gold_income": -15,
+          "great_people": 9,
+          "great_people_types": {
+            "Artist": 1,
+            "Engineer": 3,
+            "General": 3,
+            "Merchant": 1,
+            "Scientist": 1
+          }
         },
         {
           "name": "Ashegg2",
@@ -8945,7 +9524,15 @@
           "production": 53,
           "gold": 1539,
           "culture": 32,
-          "gold_income": -155
+          "gold_income": -155,
+          "great_people": 9,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 2,
+            "General": 2,
+            "Merchant": 1,
+            "Writer": 2
+          }
         },
         {
           "name": "Fanfblrik",
@@ -8995,7 +9582,11 @@
           "production": 18,
           "gold": 238,
           "culture": 22,
-          "gold_income": 10
+          "gold_income": 10,
+          "great_people": 1,
+          "great_people_types": {
+            "General": 1
+          }
         },
         {
           "name": "Barbarians",
@@ -9168,7 +9759,17 @@
           "gold": 594,
           "culture": 610,
           "capital_population": 26,
-          "gold_income": -83
+          "gold_income": -83,
+          "great_people": 30,
+          "great_people_types": {
+            "Artist": 4,
+            "Engineer": 5,
+            "General": 5,
+            "Merchant": 2,
+            "Musician": 4,
+            "Scientist": 5,
+            "Writer": 5
+          }
         },
         {
           "name": "den_stu",
@@ -9231,7 +9832,18 @@
           "gold": 621,
           "culture": 226,
           "capital_population": 30,
-          "gold_income": 23
+          "gold_income": 23,
+          "great_people": 27,
+          "great_people_types": {
+            "Admiral": 5,
+            "Artist": 3,
+            "Engineer": 5,
+            "General": 1,
+            "Merchant": 4,
+            "Musician": 2,
+            "Scientist": 5,
+            "Writer": 2
+          }
         },
         {
           "name": "AlexUnderHill",
@@ -9295,7 +9907,17 @@
           "gold": 257,
           "culture": 248,
           "capital_population": 22,
-          "gold_income": -84
+          "gold_income": -84,
+          "great_people": 24,
+          "great_people_types": {
+            "Admiral": 4,
+            "Artist": 2,
+            "Engineer": 5,
+            "General": 2,
+            "Merchant": 3,
+            "Scientist": 5,
+            "Writer": 3
+          }
         },
         {
           "name": "Overslidishe",
@@ -9352,7 +9974,14 @@
           "gold": 604,
           "culture": 146,
           "capital_population": 22,
-          "gold_income": -6
+          "gold_income": -6,
+          "great_people": 17,
+          "great_people_types": {
+            "Engineer": 4,
+            "General": 6,
+            "Merchant": 2,
+            "Scientist": 5
+          }
         },
         {
           "name": "Fanfblrik",
@@ -9416,7 +10045,16 @@
           "gold": 1079,
           "culture": 188,
           "capital_population": 23,
-          "gold_income": 8
+          "gold_income": 8,
+          "great_people": 13,
+          "great_people_types": {
+            "Artist": 1,
+            "Engineer": 3,
+            "Khan": 1,
+            "Merchant": 1,
+            "Scientist": 5,
+            "Writer": 2
+          }
         },
         {
           "name": "Ouni0",
@@ -9472,7 +10110,15 @@
           "gold": 691,
           "culture": 42,
           "capital_population": 23,
-          "gold_income": -132
+          "gold_income": -132,
+          "great_people": 12,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 2,
+            "General": 2,
+            "Merchant": 2,
+            "Scientist": 4
+          }
         },
         {
           "name": "munlait21",
@@ -9527,7 +10173,16 @@
           "gold": 731,
           "culture": 237,
           "capital_population": 39,
-          "gold_income": -52
+          "gold_income": -52,
+          "great_people": 21,
+          "great_people_types": {
+            "Artist": 4,
+            "Engineer": 4,
+            "Merchant": 1,
+            "Musician": 3,
+            "Scientist": 5,
+            "Writer": 4
+          }
         },
         {
           "name": "VlaterRogue",
@@ -9577,7 +10232,12 @@
           "gold": 661,
           "culture": 49,
           "capital_population": 26,
-          "gold_income": 29
+          "gold_income": 29,
+          "great_people": 4,
+          "great_people_types": {
+            "Engineer": 2,
+            "General": 2
+          }
         },
         {
           "name": "Ashegg2",
@@ -9627,7 +10287,15 @@
           "gold": 182,
           "culture": 8,
           "capital_population": 20,
-          "gold_income": 0
+          "gold_income": 0,
+          "great_people": 6,
+          "great_people_types": {
+            "Engineer": 2,
+            "General": 1,
+            "Merchant": 1,
+            "Scientist": 1,
+            "Writer": 1
+          }
         },
         {
           "name": "konoval_mik",
@@ -9676,7 +10344,9 @@
           "production": 8,
           "gold": 47,
           "culture": 9,
-          "gold_income": -19
+          "gold_income": -19,
+          "great_people": 0,
+          "great_people_types": {}
         },
         {
           "name": "Barbarians",
@@ -9846,7 +10516,18 @@
           "gold": 3142,
           "culture": 719,
           "capital_population": 33,
-          "gold_income": 73
+          "gold_income": 73,
+          "great_people": 33,
+          "great_people_types": {
+            "Admiral": 2,
+            "Artist": 3,
+            "Engineer": 6,
+            "General": 5,
+            "Merchant": 5,
+            "Musician": 3,
+            "Scientist": 6,
+            "Writer": 3
+          }
         },
         {
           "name": "Ouni0",
@@ -9933,7 +10614,16 @@
           "gold": 5410,
           "culture": 202,
           "capital_population": 36,
-          "gold_income": 376
+          "gold_income": 376,
+          "great_people": 21,
+          "great_people_types": {
+            "Artist": 1,
+            "Engineer": 4,
+            "General": 4,
+            "Merchant": 4,
+            "Scientist": 6,
+            "Writer": 2
+          }
         },
         {
           "name": "Fanfblrik",
@@ -9988,7 +10678,15 @@
           "gold": 385,
           "culture": 94,
           "capital_population": 35,
-          "gold_income": 3
+          "gold_income": 3,
+          "great_people": 13,
+          "great_people_types": {
+            "Engineer": 3,
+            "General": 1,
+            "Merchant": 1,
+            "Scientist": 5,
+            "Writer": 3
+          }
         },
         {
           "name": "VlaterRogue",
@@ -10036,7 +10734,17 @@
           "production": 1,
           "gold": 181,
           "culture": 34,
-          "gold_income": 18
+          "gold_income": 18,
+          "great_people": 21,
+          "great_people_types": {
+            "Artist": 3,
+            "Engineer": 4,
+            "General": 3,
+            "Merchant": 2,
+            "Musician": 2,
+            "Scientist": 4,
+            "Writer": 3
+          }
         },
         {
           "name": "Overslidishe",
@@ -10086,7 +10794,14 @@
           "production": 40,
           "gold": 161,
           "culture": 32,
-          "gold_income": 18
+          "gold_income": 18,
+          "great_people": 9,
+          "great_people_types": {
+            "Engineer": 2,
+            "General": 4,
+            "Merchant": 1,
+            "Scientist": 2
+          }
         },
         {
           "name": "konoval_mik",
@@ -10136,7 +10851,12 @@
           "production": 33,
           "gold": 73,
           "culture": 29,
-          "gold_income": 1
+          "gold_income": 1,
+          "great_people": 4,
+          "great_people_types": {
+            "Engineer": 2,
+            "General": 2
+          }
         },
         {
           "name": "Barbarians",
@@ -10313,7 +11033,18 @@
           "gold": 599,
           "culture": 272,
           "capital_population": 16,
-          "gold_income": 10
+          "gold_income": 10,
+          "great_people": 29,
+          "great_people_types": {
+            "Admiral": 2,
+            "Artist": 3,
+            "Engineer": 5,
+            "General": 5,
+            "Merchant": 3,
+            "Musician": 2,
+            "Scientist": 6,
+            "Writer": 3
+          }
         },
         {
           "name": "Overslidishe",
@@ -10375,7 +11106,16 @@
           "gold": 2696,
           "culture": 192,
           "capital_population": 25,
-          "gold_income": 249
+          "gold_income": 249,
+          "great_people": 17,
+          "great_people_types": {
+            "Admiral": 4,
+            "Artist": 2,
+            "Engineer": 3,
+            "Merchant": 2,
+            "Scientist": 4,
+            "Writer": 2
+          }
         },
         {
           "name": "konoval_mik",
@@ -10429,7 +11169,14 @@
           "gold": 438,
           "culture": 92,
           "capital_population": 23,
-          "gold_income": -34
+          "gold_income": -34,
+          "great_people": 12,
+          "great_people_types": {
+            "Engineer": 3,
+            "General": 5,
+            "Scientist": 3,
+            "Writer": 1
+          }
         },
         {
           "name": "Bahahanchiklkm",
@@ -10492,7 +11239,18 @@
           "gold": 407,
           "culture": 262,
           "capital_population": 24,
-          "gold_income": -128
+          "gold_income": -128,
+          "great_people": 17,
+          "great_people_types": {
+            "Admiral": 2,
+            "Artist": 1,
+            "Engineer": 4,
+            "General": 2,
+            "Merchant": 1,
+            "Musician": 1,
+            "Scientist": 4,
+            "Writer": 2
+          }
         },
         {
           "name": "den_stu",
@@ -10552,7 +11310,17 @@
           "gold": 1341,
           "culture": 127,
           "capital_population": 19,
-          "gold_income": 30
+          "gold_income": 30,
+          "great_people": 15,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 3,
+            "General": 1,
+            "Merchant": 2,
+            "Musician": 1,
+            "Scientist": 4,
+            "Writer": 2
+          }
         },
         {
           "name": "Lvxvcs",
@@ -10605,7 +11373,13 @@
           "gold": 413,
           "culture": 46,
           "capital_population": 22,
-          "gold_income": 39
+          "gold_income": 39,
+          "great_people": 7,
+          "great_people_types": {
+            "Engineer": 3,
+            "Merchant": 1,
+            "Scientist": 3
+          }
         },
         {
           "name": "AlexUnderHill",
@@ -10655,7 +11429,15 @@
           "production": 35,
           "gold": -45,
           "culture": 11,
-          "gold_income": -19
+          "gold_income": -19,
+          "great_people": 14,
+          "great_people_types": {
+            "Admiral": 1,
+            "Engineer": 4,
+            "General": 3,
+            "Merchant": 2,
+            "Scientist": 4
+          }
         },
         {
           "name": "Ouni0",
@@ -10704,7 +11486,11 @@
           "production": 32,
           "gold": 46,
           "culture": 16,
-          "gold_income": -17
+          "gold_income": -17,
+          "great_people": 2,
+          "great_people_types": {
+            "General": 2
+          }
         },
         {
           "name": "PVL01011900",
@@ -10751,7 +11537,12 @@
           "production": 5,
           "gold": 56,
           "culture": 15,
-          "gold_income": -2
+          "gold_income": -2,
+          "great_people": 2,
+          "great_people_types": {
+            "Engineer": 1,
+            "General": 1
+          }
         },
         {
           "name": "Barbarians",
@@ -10922,7 +11713,15 @@
           "gold": 562,
           "culture": 256,
           "capital_population": 16,
-          "gold_income": -164
+          "gold_income": -164,
+          "great_people": 16,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 3,
+            "General": 5,
+            "Scientist": 4,
+            "Writer": 2
+          }
         },
         {
           "name": "Bahahanchiklkm",
@@ -10986,7 +11785,16 @@
           "gold": 45,
           "culture": 142,
           "capital_population": 15,
-          "gold_income": -17
+          "gold_income": -17,
+          "great_people": 17,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 4,
+            "General": 6,
+            "Merchant": 1,
+            "Scientist": 3,
+            "Writer": 1
+          }
         },
         {
           "name": "Ouni0",
@@ -11038,7 +11846,14 @@
           "gold": 906,
           "culture": 89,
           "capital_population": 21,
-          "gold_income": 81
+          "gold_income": 81,
+          "great_people": 11,
+          "great_people_types": {
+            "Artist": 1,
+            "Engineer": 3,
+            "Hetairoi": 4,
+            "Scientist": 3
+          }
         },
         {
           "name": "den_stu",
@@ -11104,7 +11919,15 @@
           "gold": 1397,
           "culture": 107,
           "capital_population": 32,
-          "gold_income": 7
+          "gold_income": 7,
+          "great_people": 14,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 3,
+            "Merchant": 2,
+            "Scientist": 4,
+            "Writer": 3
+          }
         },
         {
           "name": "VlaterRogue",
@@ -11159,7 +11982,13 @@
           "gold": 344,
           "culture": 83,
           "capital_population": 13,
-          "gold_income": 21
+          "gold_income": 21,
+          "great_people": 4,
+          "great_people_types": {
+            "Engineer": 1,
+            "Merchant": 1,
+            "Scientist": 2
+          }
         },
         {
           "name": "REPUNZEL2882",
@@ -11217,7 +12046,16 @@
           "gold": 230,
           "culture": 138,
           "capital_population": 20,
-          "gold_income": -15
+          "gold_income": -15,
+          "great_people": 11,
+          "great_people_types": {
+            "Artist": 1,
+            "Engineer": 2,
+            "General": 3,
+            "Merchant": 1,
+            "Scientist": 2,
+            "Writer": 2
+          }
         },
         {
           "name": "konoval_mik",
@@ -11273,7 +12111,12 @@
           "gold": 430,
           "culture": 137,
           "capital_population": 14,
-          "gold_income": 0
+          "gold_income": 0,
+          "great_people": 5,
+          "great_people_types": {
+            "Engineer": 3,
+            "General": 2
+          }
         },
         {
           "name": "Fanfblrik",
@@ -11326,7 +12169,13 @@
           "gold": 753,
           "culture": 70,
           "capital_population": 13,
-          "gold_income": -102
+          "gold_income": -102,
+          "great_people": 5,
+          "great_people_types": {
+            "Engineer": 1,
+            "General": 1,
+            "Scientist": 3
+          }
         },
         {
           "name": "Lvxvcs",
@@ -11379,7 +12228,14 @@
           "gold": 333,
           "culture": 38,
           "capital_population": 22,
-          "gold_income": 16
+          "gold_income": 16,
+          "great_people": 8,
+          "great_people_types": {
+            "Engineer": 3,
+            "General": 2,
+            "Merchant": 1,
+            "Scientist": 2
+          }
         },
         {
           "name": "Overslidishe",
@@ -11429,7 +12285,11 @@
           "production": 22,
           "gold": 187,
           "culture": 39,
-          "gold_income": 2
+          "gold_income": 2,
+          "great_people": 4,
+          "great_people_types": {
+            "General": 4
+          }
         },
         {
           "name": "PVL01011900",
@@ -11476,7 +12336,13 @@
           "production": 21,
           "gold": 50,
           "culture": 15,
-          "gold_income": -26
+          "gold_income": -26,
+          "great_people": 3,
+          "great_people_types": {
+            "Engineer": 1,
+            "General": 1,
+            "Scientist": 1
+          }
         },
         {
           "name": "AlexUnderHill",
@@ -11523,7 +12389,13 @@
           "production": 7,
           "gold": 11,
           "culture": 15,
-          "gold_income": 2
+          "gold_income": 2,
+          "great_people": 6,
+          "great_people_types": {
+            "Engineer": 2,
+            "General": 3,
+            "Writer": 1
+          }
         },
         {
           "name": "Barbarians",
@@ -11687,7 +12559,17 @@
           "gold": 2207,
           "culture": 214,
           "capital_population": 26,
-          "gold_income": 41
+          "gold_income": 41,
+          "great_people": 20,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 3,
+            "General": 7,
+            "Merchant": 1,
+            "Musician": 1,
+            "Scientist": 4,
+            "Writer": 2
+          }
         },
         {
           "name": "n9306867842",
@@ -11752,7 +12634,16 @@
           "gold": 237,
           "culture": 230,
           "capital_population": 23,
-          "gold_income": 13
+          "gold_income": 13,
+          "great_people": 14,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 3,
+            "General": 2,
+            "Merchant": 1,
+            "Scientist": 4,
+            "Writer": 2
+          }
         },
         {
           "name": "Lvxvcs",
@@ -11817,7 +12708,14 @@
           "gold": 481,
           "culture": 63,
           "capital_population": 22,
-          "gold_income": -20
+          "gold_income": -20,
+          "great_people": 14,
+          "great_people_types": {
+            "Engineer": 4,
+            "General": 5,
+            "Merchant": 1,
+            "Scientist": 4
+          }
         },
         {
           "name": "AlexUnderHill",
@@ -11878,7 +12776,14 @@
           "gold": 518,
           "culture": 140,
           "capital_population": 26,
-          "gold_income": -22
+          "gold_income": -22,
+          "great_people": 18,
+          "great_people_types": {
+            "Engineer": 4,
+            "Khan": 10,
+            "Merchant": 1,
+            "Scientist": 3
+          }
         },
         {
           "name": "konoval_mik",
@@ -11936,7 +12841,15 @@
           "gold": 1062,
           "culture": 77,
           "capital_population": 10,
-          "gold_income": 24
+          "gold_income": 24,
+          "great_people": 14,
+          "great_people_types": {
+            "Admiral": 2,
+            "Engineer": 3,
+            "General": 4,
+            "Merchant": 2,
+            "Scientist": 3
+          }
         },
         {
           "name": "Click4x",
@@ -11994,7 +12907,17 @@
           "gold": 2307,
           "culture": 340,
           "capital_population": 20,
-          "gold_income": 232
+          "gold_income": 232,
+          "great_people": 20,
+          "great_people_types": {
+            "Artist": 3,
+            "Engineer": 3,
+            "General": 4,
+            "Merchant": 1,
+            "Musician": 3,
+            "Scientist": 3,
+            "Writer": 3
+          }
         },
         {
           "name": "REPUNZEL2882",
@@ -12045,7 +12968,14 @@
           "gold": 523,
           "culture": 49,
           "capital_population": 13,
-          "gold_income": 14
+          "gold_income": 14,
+          "great_people": 12,
+          "great_people_types": {
+            "Engineer": 3,
+            "General": 4,
+            "Merchant": 2,
+            "Scientist": 3
+          }
         },
         {
           "name": "Ouni0",
@@ -12092,7 +13022,13 @@
           "production": 50,
           "gold": 216,
           "culture": 26,
-          "gold_income": 5
+          "gold_income": 5,
+          "great_people": 10,
+          "great_people_types": {
+            "Engineer": 3,
+            "General": 4,
+            "Scientist": 3
+          }
         },
         {
           "name": "PVL01011900",
@@ -12139,7 +13075,12 @@
           "production": 19,
           "gold": 27,
           "culture": 33,
-          "gold_income": -35
+          "gold_income": -35,
+          "great_people": 3,
+          "great_people_types": {
+            "Engineer": 1,
+            "General": 2
+          }
         },
         {
           "name": "Barbarians",
@@ -12311,7 +13252,18 @@
           "gold": 945,
           "culture": 350,
           "capital_population": 28,
-          "gold_income": -390
+          "gold_income": -390,
+          "great_people": 31,
+          "great_people_types": {
+            "Admiral": 4,
+            "Artist": 3,
+            "Engineer": 4,
+            "General": 7,
+            "Merchant": 2,
+            "Musician": 2,
+            "Scientist": 6,
+            "Writer": 3
+          }
         },
         {
           "name": "AlexUnderHill",
@@ -12375,7 +13327,17 @@
           "gold": 907,
           "culture": 568,
           "capital_population": 19,
-          "gold_income": 33
+          "gold_income": 33,
+          "great_people": 23,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 5,
+            "General": 3,
+            "Merchant": 3,
+            "Musician": 2,
+            "Scientist": 5,
+            "Writer": 3
+          }
         },
         {
           "name": "den_stu",
@@ -12456,7 +13418,17 @@
           "gold": 554,
           "culture": 130,
           "capital_population": 24,
-          "gold_income": -190
+          "gold_income": -190,
+          "great_people": 25,
+          "great_people_types": {
+            "Artist": 3,
+            "Engineer": 5,
+            "General": 3,
+            "Merchant": 4,
+            "Musician": 1,
+            "Scientist": 6,
+            "Writer": 3
+          }
         },
         {
           "name": "REPUNZEL2882",
@@ -12519,7 +13491,17 @@
           "gold": 1190,
           "culture": 293,
           "capital_population": 32,
-          "gold_income": -40
+          "gold_income": -40,
+          "great_people": 21,
+          "great_people_types": {
+            "Artist": 3,
+            "Engineer": 4,
+            "General": 2,
+            "Merchant": 1,
+            "Musician": 3,
+            "Scientist": 5,
+            "Writer": 3
+          }
         },
         {
           "name": "konoval_mik",
@@ -12570,7 +13552,16 @@
           "gold": 113,
           "culture": 258,
           "capital_population": 21,
-          "gold_income": -54
+          "gold_income": -54,
+          "great_people": 20,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 3,
+            "General": 5,
+            "Merchant": 2,
+            "Scientist": 6,
+            "Writer": 2
+          }
         },
         {
           "name": "Ouni0",
@@ -12620,7 +13611,15 @@
           "production": 68,
           "gold": 351,
           "culture": 281,
-          "gold_income": -184
+          "gold_income": -184,
+          "great_people": 16,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 4,
+            "General": 2,
+            "Scientist": 4,
+            "Writer": 4
+          }
         },
         {
           "name": "PVL01011900",
@@ -12670,7 +13669,12 @@
           "production": 86,
           "gold": -91,
           "culture": 26,
-          "gold_income": 13
+          "gold_income": 13,
+          "great_people": 4,
+          "great_people_types": {
+            "Engineer": 2,
+            "General": 2
+          }
         },
         {
           "name": "Bahahanchiklkm",
@@ -12719,7 +13723,16 @@
           "production": 12,
           "gold": -9,
           "culture": 20,
-          "gold_income": -18
+          "gold_income": -18,
+          "great_people": 17,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 3,
+            "General": 5,
+            "Merchant": 2,
+            "Scientist": 3,
+            "Writer": 2
+          }
         },
         {
           "name": "Lvxvcs",
@@ -12769,7 +13782,12 @@
           "production": 13,
           "gold": 49,
           "culture": 17,
-          "gold_income": -4
+          "gold_income": -4,
+          "great_people": 2,
+          "great_people_types": {
+            "Engineer": 1,
+            "General": 1
+          }
         },
         {
           "name": "Barbarians",
@@ -12922,7 +13940,16 @@
           "gold": 768,
           "culture": 227,
           "capital_population": 33,
-          "gold_income": 20
+          "gold_income": 20,
+          "great_people": 22,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 4,
+            "General": 7,
+            "Merchant": 3,
+            "Scientist": 4,
+            "Writer": 2
+          }
         },
         {
           "name": "Click4x",
@@ -12988,7 +14015,16 @@
           "gold": 224,
           "culture": 147,
           "capital_population": 20,
-          "gold_income": -53
+          "gold_income": -53,
+          "great_people": 17,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 4,
+            "General": 3,
+            "Merchant": 2,
+            "Scientist": 4,
+            "Writer": 2
+          }
         },
         {
           "name": "AlexUnderHill",
@@ -13053,7 +14089,15 @@
           "gold": 572,
           "culture": 133,
           "capital_population": 13,
-          "gold_income": 24
+          "gold_income": 24,
+          "great_people": 14,
+          "great_people_types": {
+            "Admiral": 2,
+            "Engineer": 4,
+            "General": 2,
+            "Merchant": 2,
+            "Scientist": 4
+          }
         },
         {
           "name": "REPUNZEL2882",
@@ -13113,7 +14157,12 @@
           "gold": 877,
           "culture": 80,
           "capital_population": 14,
-          "gold_income": 49
+          "gold_income": 49,
+          "great_people": 6,
+          "great_people_types": {
+            "Engineer": 3,
+            "Scientist": 3
+          }
         },
         {
           "name": "konoval_mik",
@@ -13159,7 +14208,9 @@
           "production": 32,
           "gold": 247,
           "culture": 18,
-          "gold_income": -11
+          "gold_income": -11,
+          "great_people": 0,
+          "great_people_types": {}
         },
         {
           "name": "Bahahanchiklkm",
@@ -13208,7 +14259,14 @@
           "production": 21,
           "gold": 141,
           "culture": 15,
-          "gold_income": 9
+          "gold_income": 9,
+          "great_people": 8,
+          "great_people_types": {
+            "Engineer": 2,
+            "General": 3,
+            "Scientist": 1,
+            "Writer": 2
+          }
         },
         {
           "name": "Barbarians",
@@ -13368,7 +14426,17 @@
           "gold": 5644,
           "culture": 174,
           "capital_population": 30,
-          "gold_income": 498
+          "gold_income": 498,
+          "great_people": 19,
+          "great_people_types": {
+            "Admiral": 2,
+            "Artist": 2,
+            "Engineer": 4,
+            "General": 4,
+            "Merchant": 2,
+            "Scientist": 3,
+            "Writer": 2
+          }
         },
         {
           "name": "O8DD_ff",
@@ -13440,7 +14508,16 @@
           "gold": 2296,
           "culture": 100,
           "capital_population": 21,
-          "gold_income": 148
+          "gold_income": 148,
+          "great_people": 19,
+          "great_people_types": {
+            "Artist": 2,
+            "Engineer": 4,
+            "General": 4,
+            "Merchant": 2,
+            "Scientist": 4,
+            "Writer": 3
+          }
         },
         {
           "name": "den_stu",
@@ -13496,7 +14573,13 @@
           "gold": 527,
           "culture": 43,
           "capital_population": 16,
-          "gold_income": -14
+          "gold_income": -14,
+          "great_people": 5,
+          "great_people_types": {
+            "Engineer": 1,
+            "General": 3,
+            "Scientist": 1
+          }
         },
         {
           "name": "Click4x",
@@ -13557,7 +14640,16 @@
           "gold": 599,
           "culture": 58,
           "capital_population": 17,
-          "gold_income": 34
+          "gold_income": 34,
+          "great_people": 22,
+          "great_people_types": {
+            "Artist": 3,
+            "Engineer": 4,
+            "General": 5,
+            "Merchant": 3,
+            "Scientist": 4,
+            "Writer": 3
+          }
         },
         {
           "name": "Laste2187",
@@ -13608,7 +14700,13 @@
           "gold": 181,
           "culture": 12,
           "capital_population": 17,
-          "gold_income": 12
+          "gold_income": 12,
+          "great_people": 3,
+          "great_people_types": {
+            "Engineer": 1,
+            "General": 1,
+            "Scientist": 1
+          }
         },
         {
           "name": "REPUNZEL2882",
@@ -13657,7 +14755,14 @@
           "production": 27,
           "gold": -8,
           "culture": 34,
-          "gold_income": -14
+          "gold_income": -14,
+          "great_people": 8,
+          "great_people_types": {
+            "Engineer": 2,
+            "General": 3,
+            "Merchant": 1,
+            "Scientist": 2
+          }
         },
         {
           "name": "Barbarians",
