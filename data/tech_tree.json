@@ -1,22 +1,11 @@
 {
-  "source": "Civ V - Gods & Kings / Unciv Techs.json",
-  "eras": [
-    "Ancient era",
-    "Classical era",
-    "Medieval era",
-    "Renaissance era",
-    "Industrial era",
-    "Modern era",
-    "Atomic era",
-    "Information era",
-    "Future era"
-  ],
+  "source": "RekMOD-iron",
   "techs": [
     {
       "name": "Agriculture",
       "era": "Ancient era",
       "column": 0,
-      "row": 6,
+      "row": 5,
       "prerequisites": []
     },
     {
@@ -210,8 +199,8 @@
       "column": 5,
       "row": 2,
       "prerequisites": [
-        "Philosophy",
-        "Drama and Poetry"
+        "Drama and Poetry",
+        "Philosophy"
       ]
     },
     {
@@ -406,8 +395,7 @@
       "column": 9,
       "row": 2,
       "prerequisites": [
-        "Navigation",
-        "Architecture"
+        "Navigation"
       ]
     },
     {
@@ -435,7 +423,6 @@
       "column": 9,
       "row": 7,
       "prerequisites": [
-        "Economics",
         "Metallurgy"
       ]
     },
@@ -484,7 +471,6 @@
       "row": 6,
       "prerequisites": [
         "Industrialization",
-        "Scientific Theory",
         "Rifling"
       ]
     },
@@ -724,7 +710,7 @@
       "name": "Globalization",
       "era": "Information era",
       "column": 16,
-      "row": 2,
+      "row": 1,
       "prerequisites": [
         "Telecommunications"
       ]
@@ -735,27 +721,26 @@
       "column": 16,
       "row": 3,
       "prerequisites": [
-        "Telecommunications",
         "Mobile Tactics",
-        "Advanced Ballistics"
+        "Telecommunications"
       ]
     },
     {
       "name": "Nuclear Fusion",
       "era": "Information era",
       "column": 16,
-      "row": 6,
+      "row": 5,
       "prerequisites": [
-        "Advanced Ballistics",
         "Satellites",
-        "Robotics"
+        "Robotics",
+        "Advanced Ballistics"
       ]
     },
     {
       "name": "Nanotechnology",
       "era": "Information era",
       "column": 16,
-      "row": 7,
+      "row": 6,
       "prerequisites": [
         "Robotics"
       ]
@@ -764,7 +749,7 @@
       "name": "Stealth",
       "era": "Information era",
       "column": 16,
-      "row": 8,
+      "row": 7,
       "prerequisites": [
         "Robotics",
         "Lasers"
@@ -772,14 +757,13 @@
     },
     {
       "name": "Future Tech",
-      "era": "Future era",
+      "era": "Information era",
       "column": 17,
       "row": 5,
       "prerequisites": [
-        "Globalization",
+        "Nanotechnology",
         "Particle Physics",
         "Nuclear Fusion",
-        "Nanotechnology",
         "Stealth"
       ]
     }

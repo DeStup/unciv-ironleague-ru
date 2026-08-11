@@ -110,6 +110,11 @@
     return map[kind] || kind;
   }
 
+  /** Selected player's nation for highlighting UU/UB on the tree. */
+  function selectedNation() {
+    return selectedPlayer() || '';
+  }
+
   /** G&K strategic resources revealed by tech (Unciv TileResources.revealedBy). */
   const STRATEGIC_REVEALS = {
     'Animal Husbandry': ['Horses'],
@@ -175,13 +180,19 @@
   };
 
   function unlocksForTech(techName, detail) {
-    // Unciv TechButton order: units → buildings → resources → improvements → tech uniques
-    const base = (detail.unlocks || []).slice();
-    const extras = (STRATEGIC_REVEALS[techName] || []).map((name) => ({
-      kind: 'resource',
-      name,
-      uniques: [],
-    }));
+    // Unciv TechButton (generic civ): common unlocks only — no uniqueTo.
+    // Nation UU/UB live in detail.nation_unlocks and render in the expandable tray.
+    const base = (detail.unlocks || []).filter((u) => !u.uniqueTo);
+    const seenRes = new Set(
+      base.filter((u) => u.kind === 'resource').map((u) => u.name)
+    );
+    const extras = (STRATEGIC_REVEALS[techName] || [])
+      .filter((name) => !seenRes.has(name))
+      .map((name) => ({
+        kind: 'resource',
+        name,
+        uniques: [],
+      }));
     const passives = (detail.uniques || [])
       .filter((u) => u && !String(u).includes('weight to this choice for AI'))
       .map((text) => ({
@@ -192,6 +203,19 @@
     const all = base.concat(extras).concat(passives);
     all.sort((a, b) => (UNLOCK_KIND_ORDER[a.kind] ?? 9) - (UNLOCK_KIND_ORDER[b.kind] ?? 9));
     return all;
+  }
+
+  function nationUnlocksForTech(detail, nationFilter) {
+    const list = (detail.nation_unlocks || []).slice();
+    list.sort((a, b) => {
+      const aMine = nationFilter && a.uniqueTo === nationFilter ? 0 : 1;
+      const bMine = nationFilter && b.uniqueTo === nationFilter ? 0 : 1;
+      if (aMine !== bMine) return aMine - bMine;
+      return (UNLOCK_KIND_ORDER[a.kind] ?? 9) - (UNLOCK_KIND_ORDER[b.kind] ?? 9)
+        || String(a.uniqueTo || '').localeCompare(String(b.uniqueTo || ''))
+        || String(a.name || '').localeCompare(String(b.name || ''));
+    });
+    return list;
   }
 
   function pct(count, total) {
@@ -527,6 +551,7 @@
       const lines = [
         `${labelConstruction(item.name)} (${kindLabel('improvement_bonus')})`,
       ];
+      if (item.uniqueTo) lines.push(`${t('paths.uniqueTo', 'нация')}: ${labelNation(item.uniqueTo)}`);
       (item.uniques || []).forEach((u) => lines.push(String(u)));
       return lines.join('\n');
     }
@@ -534,12 +559,16 @@
       const lines = [
         `${labelConstruction(item.name)} (${kindLabel('building_bonus')})`,
       ];
+      if (item.uniqueTo) lines.push(`${t('paths.uniqueTo', 'нация')}: ${labelNation(item.uniqueTo)}`);
       (item.uniques || []).forEach((u) => lines.push(String(u)));
       return lines.join('\n');
     }
     const lines = [
       `${labelConstruction(item.name)} (${kindLabel(item.kind)})`,
     ];
+    if (item.uniqueTo) {
+      lines.push(`${t('paths.uniqueTo', 'нация')}: ${labelNation(item.uniqueTo)}`);
+    }
     const quote = (lang() === 'ru' && item.quote_ru) ? item.quote_ru : (item.quote || '');
     if (quote) lines.push(quote);
     const uniques = (lang() === 'ru' && item.uniques_ru && item.uniques_ru.length)
@@ -555,57 +584,151 @@
     const lines = [labelTech(name)];
     const quote = (lang() === 'ru' && detail.quote_ru) ? detail.quote_ru : (detail.quote || '');
     if (quote) lines.push(quote);
+    const common = unlocksForTech(name, detail).length;
+    const nationN = (detail.nation_unlocks || []).length;
+    if (common || nationN) {
+      lines.push(
+        t('paths.unlockSummary', 'открывает: {common} · уникалии наций: {nation}')
+          .replace('{common}', String(common))
+          .replace('{nation}', String(nationN))
+      );
+    }
     return lines.join('\n');
+  }
+
+  function makeUnlockIcon(item, opts) {
+    const wrap = document.createElement('span');
+    wrap.className = 'paths-tree-unlock';
+    wrap.dataset.kind = item.kind || 'building';
+    if (item.uniqueTo) wrap.dataset.uniqueTo = item.uniqueTo;
+    if (opts && opts.mine) wrap.classList.add('is-mine');
+    wrap.title = unlockTooltip(item);
+    const img = document.createElement('img');
+    img.className = 'paths-tree-unlock-img';
+    img.alt = item.kind === 'unique' ? item.name : labelConstruction(item.name);
+    img.loading = 'lazy';
+    img.src = unlockIcon(item);
+    img.onerror = () => {
+      if (item.kind === 'wonder' && !img.dataset.fallback) {
+        img.dataset.fallback = '1';
+        img.src = `Building_icons/${encodeURIComponent(item.name)}.png`;
+        return;
+      }
+      if (item.kind === 'improvement' && !img.dataset.fallback) {
+        img.dataset.fallback = '1';
+        img.src = `Building_icons/${encodeURIComponent(item.name)}.png`;
+        return;
+      }
+      if (item.kind === 'improvement_bonus' && !img.dataset.fallback) {
+        img.dataset.fallback = '1';
+        img.src = 'Unique_icons/Star.png';
+        return;
+      }
+      if (item.kind === 'building_bonus' && !img.dataset.fallback) {
+        img.dataset.fallback = '1';
+        img.src = item.is_wonder
+          ? `Building_icons/${encodeURIComponent(item.name)}.png`
+          : 'Unique_icons/Star.png';
+        return;
+      }
+      if (item.kind === 'unique' && !img.dataset.fallback) {
+        img.dataset.fallback = '1';
+        img.src = 'Unique_icons/Star.png';
+        return;
+      }
+      if (item.kind === 'unit' && !img.dataset.fallback) {
+        img.dataset.fallback = '1';
+        img.src = 'Unique_icons/Star.png';
+        return;
+      }
+      wrap.remove();
+    };
+    wrap.appendChild(img);
+    if (opts && opts.withNation && item.uniqueTo) {
+      const tag = document.createElement('span');
+      tag.className = 'paths-tree-unlock-nation';
+      tag.textContent = labelNation(item.uniqueTo);
+      wrap.appendChild(tag);
+    }
+    return wrap;
   }
 
   function appendUnlocks(node, detail, techName) {
     const unlocks = unlocksForTech(techName, detail);
-    if (!unlocks.length) return;
+    const nation = selectedNation();
+    const nationList = nationUnlocksForTech(detail, nation);
+    if (!unlocks.length && !nationList.length) return;
+
     const row = document.createElement('div');
     row.className = 'paths-tree-unlocks';
     unlocks.slice(0, MAX_UNLOCK_ICONS).forEach((item) => {
-      const wrap = document.createElement('span');
-      wrap.className = 'paths-tree-unlock';
-      wrap.dataset.kind = item.kind || 'building';
-      wrap.title = unlockTooltip(item);
-      const img = document.createElement('img');
-      img.className = 'paths-tree-unlock-img';
-      img.alt = item.kind === 'unique' ? item.name : labelConstruction(item.name);
-      img.loading = 'lazy';
-      img.src = unlockIcon(item);
-      img.onerror = () => {
-        if (item.kind === 'wonder' && !img.dataset.fallback) {
-          img.dataset.fallback = '1';
-          img.src = `Building_icons/${encodeURIComponent(item.name)}.png`;
-          return;
-        }
-        if (item.kind === 'improvement' && !img.dataset.fallback) {
-          img.dataset.fallback = '1';
-          img.src = `Building_icons/${encodeURIComponent(item.name)}.png`;
-          return;
-        }
-        if (item.kind === 'improvement_bonus' && !img.dataset.fallback) {
-          img.dataset.fallback = '1';
-          img.src = 'Unique_icons/Star.png';
-          return;
-        }
-        if (item.kind === 'building_bonus' && !img.dataset.fallback) {
-          img.dataset.fallback = '1';
-          img.src = item.is_wonder
-            ? `Building_icons/${encodeURIComponent(item.name)}.png`
-            : 'Unique_icons/Star.png';
-          return;
-        }
-        if (item.kind === 'unique' && !img.dataset.fallback) {
-          img.dataset.fallback = '1';
-          img.src = 'Unique_icons/Fallback.png';
-          return;
-        }
-        wrap.remove();
-      };
-      wrap.appendChild(img);
-      row.appendChild(wrap);
+      row.appendChild(makeUnlockIcon(item));
     });
+
+    if (nationList.length) {
+      const mineCount = nation
+        ? nationList.filter((u) => u.uniqueTo === nation).length
+        : 0;
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'paths-tree-nation-toggle' + (mineCount ? ' has-mine' : '');
+      btn.title = t(
+        'paths.nationUnlocksHint',
+        'Уникальные юниты / здания / бонусы наций (как uniqueTo в Unciv)'
+      );
+      btn.textContent = mineCount
+        ? `★${mineCount}/${nationList.length}`
+        : `★${nationList.length}`;
+      btn.setAttribute(
+        'aria-label',
+        t('paths.nationUnlocks', 'уникалии наций') + `: ${nationList.length}`
+      );
+
+      const panel = document.createElement('div');
+      panel.className = 'paths-tree-nation-panel';
+      panel.hidden = true;
+      const head = document.createElement('div');
+      head.className = 'paths-tree-nation-panel-head';
+      head.textContent = t('paths.nationUnlocks', 'уникалии наций');
+      panel.appendChild(head);
+      const grid = document.createElement('div');
+      grid.className = 'paths-tree-nation-grid';
+      nationList.forEach((item) => {
+        grid.appendChild(
+          makeUnlockIcon(item, {
+            withNation: true,
+            mine: !!(nation && item.uniqueTo === nation),
+          })
+        );
+      });
+      panel.appendChild(grid);
+
+      btn.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        const open = panel.hidden;
+        // Close other open nation panels on the tree.
+        node.parentElement
+          && node.parentElement.querySelectorAll('.paths-tree-nation-panel:not([hidden])')
+            .forEach((el) => {
+              if (el !== panel) {
+                el.hidden = true;
+                const otherBtn = el.parentElement
+                  && el.parentElement.querySelector('.paths-tree-nation-toggle.is-open');
+                if (otherBtn) otherBtn.classList.remove('is-open');
+              }
+            });
+        panel.hidden = !open;
+        btn.classList.toggle('is-open', open);
+        node.classList.toggle('is-nation-open', open);
+      });
+
+      row.appendChild(btn);
+      node.appendChild(row);
+      node.appendChild(panel);
+      return;
+    }
+
     if (row.childNodes.length) node.appendChild(row);
   }
 
@@ -735,6 +858,7 @@
         t('paths.legendDone', 'зелёный — открыто'),
         t('paths.legendLocked', 'тёмный — не открыто'),
         t('paths.legendUnlocks', 'иконки снизу — что открывает тех'),
+        t('paths.legendNation', '★ — уникалии наций (нажмите)'),
       ];
       if (researching) {
         parts.push(

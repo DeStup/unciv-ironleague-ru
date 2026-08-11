@@ -3087,6 +3087,94 @@
         .paths-tree-unlock[data-kind="unique"] {
             background: #f5f5f5;
         }
+        .paths-tree-nation-toggle {
+            flex-shrink: 0;
+            min-width: 28px;
+            height: 22px;
+            margin-left: 2px;
+            padding: 0 5px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 213, 79, 0.55);
+            background: rgba(40, 30, 10, 0.85);
+            color: #ffe082;
+            font-size: 10px;
+            font-weight: 700;
+            line-height: 1;
+            cursor: pointer;
+        }
+        .paths-tree-nation-toggle.has-mine {
+            border-color: #ffd54f;
+            box-shadow: 0 0 0 1px rgba(255, 213, 79, 0.35);
+        }
+        .paths-tree-nation-toggle.is-open {
+            background: rgba(255, 213, 79, 0.2);
+            color: #fff8e1;
+        }
+        .paths-tree-node.is-nation-open {
+            z-index: 6;
+            overflow: visible;
+        }
+        .paths-tree-nation-panel {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: calc(100% + 4px);
+            z-index: 7;
+            grid-column: 1 / -1;
+            padding: 6px 8px 8px;
+            border-radius: 8px;
+            background: rgba(12, 18, 24, 0.96);
+            border: 1px solid rgba(255, 213, 79, 0.35);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
+            max-height: 160px;
+            overflow: auto;
+        }
+        .paths-tree-nation-panel-head {
+            font-size: 10px;
+            letter-spacing: 0.02em;
+            color: #ffe082;
+            margin-bottom: 4px;
+        }
+        .paths-tree-nation-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            align-items: flex-start;
+        }
+        .paths-tree-nation-grid .paths-tree-unlock {
+            width: auto;
+            height: auto;
+            min-width: 24px;
+            padding: 2px 4px 2px 2px;
+            border-radius: 8px;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .paths-tree-nation-grid .paths-tree-unlock.is-mine {
+            outline: 2px solid #ffd54f;
+            outline-offset: 1px;
+        }
+        .paths-tree-unlock-nation {
+            display: block;
+            max-width: 64px;
+            font-size: 8px;
+            line-height: 1.1;
+            color: #1a1a1a;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .paths-tree-nation-grid .paths-tree-unlock[data-kind="improvement"],
+        .paths-tree-nation-grid .paths-tree-unlock[data-kind="improvement_bonus"],
+        .paths-tree-nation-grid .paths-tree-unlock[data-kind="resource"] {
+            color: #fff;
+        }
+        .paths-tree-nation-grid .paths-tree-unlock[data-kind="improvement"] .paths-tree-unlock-nation,
+        .paths-tree-nation-grid .paths-tree-unlock[data-kind="improvement_bonus"] .paths-tree-unlock-nation,
+        .paths-tree-nation-grid .paths-tree-unlock[data-kind="resource"] .paths-tree-unlock-nation {
+            color: #102010;
+        }
         @media (max-width: 860px) {
             .paths-columns,
             .paths-timelines {

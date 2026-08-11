@@ -1,0 +1,305 @@
+#!/usr/bin/env python3
+"""Export Iron League tech_details (+ tech_tree) from RekMOD-iron.
+
+Зеркалит Unciv TechButton / TechnologyDescriptions.getTechEnabledIcons:
+units, buildings/wonders, resources, improvements, improvement bonuses
+(<after discovering>), building bonuses, tech uniques.
+Nation-unique (uniqueTo) items go to nation_unlocks, not the common tray.
+
+Export Iron League tech details from RekMOD-iron for the paths tab.
+"""
+
+from __future__ import annotations
+
+import json
+import re
+from collections import defaultdict
+from pathlib import Path
+
+REKMOD = Path(r"D:\PythonProjects\RekMOD-iron\jsons")
+OUT_DIR = Path(__file__).resolve().parents[1] / "data"
+
+AFTER_DISCOVERING = re.compile(
+    r"<after discovering \[([^\]]+)\]>", re.IGNORECASE
+)
+HIDDEN = re.compile(r"<hidden from users>", re.IGNORECASE)
+AI_WEIGHT = re.compile(r"weight to this choice for AI", re.IGNORECASE)
+
+
+def load_jsonc(path: Path):
+    """Load Unciv-style JSON with // and /* */ comments and trailing commas."""
+    raw = path.read_text(encoding="utf-8")
+    # Strip block comments first (outside strings — good enough for these files).
+    raw = re.sub(r"/\*.*?\*/", "", raw, flags=re.DOTALL)
+    out_lines = []
+    for line in raw.splitlines():
+        in_str = False
+        esc = False
+        cut = len(line)
+        for i, ch in enumerate(line):
+            if esc:
+                esc = False
+                continue
+            if ch == "\\" and in_str:
+                esc = True
+                continue
+            if ch == '"':
+                in_str = not in_str
+                continue
+            if not in_str and ch == "/" and i + 1 < len(line) and line[i + 1] == "/":
+                cut = i
+                break
+        out_lines.append(line[:cut])
+    text = "\n".join(out_lines)
+    text = re.sub(r",\s*([}\]])", r"\1", text)
+    return json.loads(text)
+
+
+def is_hidden_construction(obj: dict) -> bool:
+    texts = unique_texts(obj) if "uniques" in obj else []
+    joined = " | ".join(texts)
+    if "Will not be displayed in Civilopedia" in joined:
+        return True
+    if "Unbuildable" in joined and "Piety Complete Building" in joined:
+        return True
+    return False
+
+
+def unique_texts(obj) -> list[str]:
+    uniques = obj.get("uniques") or []
+    out = []
+    for u in uniques:
+        if isinstance(u, dict):
+            text = u.get("text") or ""
+        else:
+            text = str(u)
+        if not text or HIDDEN.search(text) or AI_WEIGHT.search(text):
+            continue
+        out.append(text)
+    return out
+
+
+def is_wonder(building: dict) -> bool:
+    return bool(building.get("isWonder") or building.get("isNationalWonder"))
+
+
+def unlock_entry(kind: str, obj: dict, **extra) -> dict:
+    entry = {"kind": kind, "name": obj["name"], "uniques": unique_texts(obj)}
+    if obj.get("uniqueTo"):
+        entry["uniqueTo"] = obj["uniqueTo"]
+    if obj.get("quote"):
+        entry["quote"] = obj["quote"]
+    if kind == "wonder" or (kind == "building" and is_wonder(obj)):
+        entry["kind"] = "wonder"
+    entry.update(extra)
+    return entry
+
+
+def main() -> None:
+    techs_raw = load_jsonc(REKMOD / "Techs.json")
+    units = load_jsonc(REKMOD / "Units.json")
+    buildings = load_jsonc(REKMOD / "Buildings.json")
+    improvements = load_jsonc(REKMOD / "TileImprovements.json")
+    resources = load_jsonc(REKMOD / "TileResources.json")
+
+    # Preserve RU quotes / uniques from previous export when names match.
+    old_path = OUT_DIR / "tech_details.json"
+    old = {}
+    if old_path.exists():
+        old = json.loads(old_path.read_text(encoding="utf-8")).get("techs") or {}
+
+    techs: dict[str, dict] = {}
+    tree_techs: list[dict] = []
+
+    for column in techs_raw:
+        col_num = column["columnNumber"]
+        era = column["era"]
+        for tech in column.get("techs") or []:
+            name = tech["name"]
+            entry = {
+                "era": era,
+                "column": col_num,
+                "row": tech.get("row", 0),
+                "prerequisites": list(tech.get("prerequisites") or []),
+                "quote": tech.get("quote") or "",
+                "unlocks": [],
+                "nation_unlocks": [],
+                "uniques": [
+                    u
+                    for u in (tech.get("uniques") or [])
+                    if isinstance(u, str)
+                    and not AI_WEIGHT.search(u)
+                    and not HIDDEN.search(u)
+                ],
+            }
+            prev = old.get(name) or {}
+            if prev.get("quote_ru"):
+                entry["quote_ru"] = prev["quote_ru"]
+            techs[name] = entry
+            tree_techs.append(
+                {
+                    "name": name,
+                    "era": era,
+                    "column": col_num,
+                    "row": tech.get("row", 0),
+                    "prerequisites": list(tech.get("prerequisites") or []),
+                }
+            )
+
+    def add_unlock(tech_name: str, entry: dict) -> None:
+        tech = techs.get(tech_name)
+        if not tech:
+            return
+        bucket = "nation_unlocks" if entry.get("uniqueTo") else "unlocks"
+        # de-dupe by kind+name+uniqueTo
+        key = (entry["kind"], entry["name"], entry.get("uniqueTo") or "")
+        existing = {(u["kind"], u["name"], u.get("uniqueTo") or "") for u in tech[bucket]}
+        if key in existing:
+            return
+        # Carry RU uniques/quote from old common unlocks when possible.
+        prev_list = (old.get(tech_name) or {}).get("unlocks") or []
+        for prev in prev_list:
+            if prev.get("name") == entry["name"] and prev.get("kind") in (
+                entry["kind"],
+                "building",
+                "wonder",
+            ):
+                if prev.get("uniques_ru") and not entry.get("uniques_ru"):
+                    entry["uniques_ru"] = prev["uniques_ru"]
+                if prev.get("quote_ru") and not entry.get("quote_ru"):
+                    entry["quote_ru"] = prev["quote_ru"]
+                break
+        tech[bucket].append(entry)
+
+    # Units / buildings by requiredTech
+    for unit in units:
+        tech_name = unit.get("requiredTech")
+        if not tech_name or is_hidden_construction(unit):
+            continue
+        add_unlock(tech_name, unlock_entry("unit", unit))
+
+    for building in buildings:
+        tech_name = building.get("requiredTech")
+        if not tech_name or is_hidden_construction(building):
+            continue
+        kind = "wonder" if is_wonder(building) else "building"
+        add_unlock(tech_name, unlock_entry(kind, building))
+
+    # Improvements by techRequired
+    for imp in improvements:
+        tech_name = imp.get("techRequired")
+        if not tech_name:
+            continue
+        # Skip Remove X / repair helpers from tray noise if excluded
+        name = imp.get("name") or ""
+        if name.startswith("Remove ") or name.startswith("Repair "):
+            continue
+        if "Excluded from map editor" in unique_texts(imp) and name.startswith("Remove"):
+            continue
+        add_unlock(tech_name, unlock_entry("improvement", imp))
+
+    # Resources revealedBy
+    for res in resources:
+        tech_name = res.get("revealedBy")
+        if not tech_name:
+            continue
+        add_unlock(
+            tech_name,
+            {
+                "kind": "resource",
+                "name": res["name"],
+                "uniques": unique_texts(res),
+            },
+        )
+
+    # Improvement / building bonuses gated by <after discovering [Tech]>
+    # (Unciv TechButton second improvement loop / see-also buildings)
+    for imp in improvements:
+        texts = unique_texts(imp)
+        by_tech: dict[str, list[str]] = defaultdict(list)
+        for text in texts:
+            for m in AFTER_DISCOVERING.finditer(text):
+                by_tech[m.group(1)].append(text)
+        for tech_name, gated in by_tech.items():
+            entry = {
+                "kind": "improvement_bonus",
+                "name": imp["name"],
+                "uniques": gated,
+            }
+            if imp.get("uniqueTo"):
+                entry["uniqueTo"] = imp["uniqueTo"]
+            add_unlock(tech_name, entry)
+
+    for building in buildings:
+        texts = unique_texts(building)
+        by_tech: dict[str, list[str]] = defaultdict(list)
+        for text in texts:
+            for m in AFTER_DISCOVERING.finditer(text):
+                by_tech[m.group(1)].append(text)
+        for tech_name, gated in by_tech.items():
+            entry = {
+                "kind": "building_bonus",
+                "name": building["name"],
+                "uniques": gated,
+            }
+            if building.get("uniqueTo"):
+                entry["uniqueTo"] = building["uniqueTo"]
+            if is_wonder(building):
+                entry["is_wonder"] = True
+            add_unlock(tech_name, entry)
+
+    # Stable sort unlocks like Unciv: unit, building, wonder, resource, improvement, bonuses
+    order = {
+        "unit": 0,
+        "building": 1,
+        "wonder": 2,
+        "resource": 3,
+        "improvement": 4,
+        "improvement_bonus": 5,
+        "building_bonus": 6,
+    }
+
+    def sort_key(u: dict):
+        return (order.get(u["kind"], 9), u["name"], u.get("uniqueTo") or "")
+
+    for tech in techs.values():
+        tech["unlocks"].sort(key=sort_key)
+        tech["nation_unlocks"].sort(key=sort_key)
+        # Drop empty nation_unlocks for smaller JSON? keep for stable schema.
+        if not tech["uniques"]:
+            tech.pop("uniques", None)
+        if not tech.get("quote"):
+            tech.pop("quote", None)
+
+    details = {
+        "source": "RekMOD-iron",
+        "techs": techs,
+    }
+    tree = {"source": "RekMOD-iron", "techs": tree_techs}
+
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    (OUT_DIR / "tech_details.json").write_text(
+        json.dumps(details, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    (OUT_DIR / "tech_tree.json").write_text(
+        json.dumps(tree, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+    rr = techs.get("Railroads") or {}
+    print("Railroads unlocks:", [u["name"] for u in rr.get("unlocks", [])])
+    print("Railroads nation:", [u["name"] for u in rr.get("nation_unlocks", [])])
+    print("Railroads uniques:", rr.get("uniques"))
+    print(
+        "totals:",
+        len(techs),
+        "common",
+        sum(len(t["unlocks"]) for t in techs.values()),
+        "nation",
+        sum(len(t["nation_unlocks"]) for t in techs.values()),
+    )
+
+
+if __name__ == "__main__":
+    main()
