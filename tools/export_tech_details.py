@@ -86,8 +86,83 @@ def unique_texts(obj) -> list[str]:
     return out
 
 
+STAT_FIELDS = (
+    ("production", "Production"),
+    ("food", "Food"),
+    ("gold", "Gold"),
+    ("science", "Science"),
+    ("culture", "Culture"),
+    ("happiness", "Happiness"),
+    ("faith", "Faith"),
+)
+
+
 def is_wonder(building: dict) -> bool:
     return bool(building.get("isWonder") or building.get("isNationalWonder"))
+
+
+def format_base_stats(obj: dict) -> str | None:
+    """Unciv Stats.toString form from JSON fields (+2 Food, +1 Faith, …).
+
+    Форма Stats.toString Unciv из полей JSON (+2 Food, +1 Faith, …).
+    """
+    parts: list[str] = []
+    for field, label in STAT_FIELDS:
+        raw = obj.get(field)
+        if raw is None:
+            continue
+        try:
+            val = float(raw)
+        except (TypeError, ValueError):
+            continue
+        if val == 0:
+            continue
+        num = int(val) if val == int(val) else val
+        sign = "+" if num > 0 else ""
+        parts.append(f"{sign}{num} {label}")
+    return ", ".join(parts) if parts else None
+
+
+def construction_meta_lines(obj: dict, tr: UncivTranslator) -> list[str]:
+    """Civilopedia short-description lines (stats / % / city / resource req).
+
+    Короткие строки цивилопедии (статы / % / город / ресурсы рядом).
+    """
+    lines: list[str] = []
+    base = format_base_stats(obj)
+    if base:
+        lines.append(tr.tr(base))
+
+    percent = obj.get("percentStatBonus") or {}
+    if isinstance(percent, dict):
+        for field, label in STAT_FIELDS:
+            raw = percent.get(field)
+            if raw is None:
+                continue
+            try:
+                val = int(float(raw))
+            except (TypeError, ValueError):
+                continue
+            if val == 0:
+                continue
+            sign = "+" if val > 0 else ""
+            lines.append(f"{sign}{val}% {tr.tr(label)}")
+
+    nearby = obj.get("requiredNearbyImprovedResources")
+    if nearby:
+        # Keep English names inside [] so Unciv placeholder tr fills them.
+        joined = "/".join(str(x) for x in nearby)
+        lines.append(tr.tr(f"Requires improved [{joined}] near city"))
+
+    strength = obj.get("cityStrength")
+    if strength:
+        lines.append(tr.tr(f"{{City strength}} +{strength}"))
+
+    health = obj.get("cityHealth")
+    if health:
+        lines.append(tr.tr(f"{{City health}} +{health}"))
+
+    return lines
 
 
 def unlock_entry(kind: str, obj: dict, **extra) -> dict:
@@ -98,6 +173,20 @@ def unlock_entry(kind: str, obj: dict, **extra) -> dict:
         entry["quote"] = obj["quote"]
     if kind == "wonder" or (kind == "building" and is_wonder(obj)):
         entry["kind"] = "wonder"
+    # Raw English stats for debugging / EN fallback before tr.
+    stats = format_base_stats(obj)
+    if stats:
+        entry["stats"] = stats
+    if obj.get("percentStatBonus"):
+        entry["percentStatBonus"] = obj["percentStatBonus"]
+    if obj.get("requiredNearbyImprovedResources"):
+        entry["requiredNearbyImprovedResources"] = list(
+            obj["requiredNearbyImprovedResources"]
+        )
+    if obj.get("cityStrength"):
+        entry["cityStrength"] = obj["cityStrength"]
+    if obj.get("cityHealth"):
+        entry["cityHealth"] = obj["cityHealth"]
     entry.update(extra)
     return entry
 
@@ -106,18 +195,35 @@ def apply_unique_translations(
     entry: dict,
     tr_ru: UncivTranslator,
     tr_en: UncivTranslator,
+    source_obj: dict | None = None,
 ) -> None:
-    """Fill uniques_en / uniques_ru (Civilopedia-style) from raw uniques.
+    """Fill uniques_* and short_lines_* (Civilopedia-style) for an unlock.
 
-    Заполняет uniques_en / uniques_ru (стиль цивилопедии) из сырых unique.
+    Заполняет uniques_* и short_lines_* (стиль цивилопедии) для анлока.
     """
     raw = entry.get("uniques") or []
-    if not raw:
+    if raw:
+        entry["uniques_en"] = tr_en.tr_unique_list(raw)
+        entry["uniques_ru"] = tr_ru.tr_unique_list(raw)
+    else:
         entry.pop("uniques_en", None)
         entry.pop("uniques_ru", None)
-        return
-    entry["uniques_en"] = tr_en.tr_unique_list(raw)
-    entry["uniques_ru"] = tr_ru.tr_unique_list(raw)
+
+    if entry.get("kind") in ("building", "wonder", "improvement"):
+        meta_src = source_obj if isinstance(source_obj, dict) else entry
+        en_lines = construction_meta_lines(meta_src, tr_en)
+        ru_lines = construction_meta_lines(meta_src, tr_ru)
+        if en_lines:
+            entry["short_lines_en"] = en_lines
+        else:
+            entry.pop("short_lines_en", None)
+        if ru_lines:
+            entry["short_lines_ru"] = ru_lines
+        else:
+            entry.pop("short_lines_ru", None)
+    else:
+        entry.pop("short_lines_en", None)
+        entry.pop("short_lines_ru", None)
 
 
 def main() -> None:
@@ -177,7 +283,7 @@ def main() -> None:
                 }
             )
 
-    def add_unlock(tech_name: str, entry: dict) -> None:
+    def add_unlock(tech_name: str, entry: dict, source_obj: dict | None = None) -> None:
         tech = techs.get(tech_name)
         if not tech:
             return
@@ -198,7 +304,7 @@ def main() -> None:
                 if prev.get("quote_ru") and not entry.get("quote_ru"):
                     entry["quote_ru"] = prev["quote_ru"]
                 break
-        apply_unique_translations(entry, tr_ru, tr_en)
+        apply_unique_translations(entry, tr_ru, tr_en, source_obj=source_obj)
         tech[bucket].append(entry)
 
     # Units / buildings by requiredTech
@@ -206,14 +312,14 @@ def main() -> None:
         tech_name = unit.get("requiredTech")
         if not tech_name or is_hidden_construction(unit):
             continue
-        add_unlock(tech_name, unlock_entry("unit", unit))
+        add_unlock(tech_name, unlock_entry("unit", unit), unit)
 
     for building in buildings:
         tech_name = building.get("requiredTech")
         if not tech_name or is_hidden_construction(building):
             continue
         kind = "wonder" if is_wonder(building) else "building"
-        add_unlock(tech_name, unlock_entry(kind, building))
+        add_unlock(tech_name, unlock_entry(kind, building), building)
 
     # Improvements by techRequired
     for imp in improvements:
@@ -226,7 +332,7 @@ def main() -> None:
             continue
         if "Excluded from map editor" in unique_texts(imp) and name.startswith("Remove"):
             continue
-        add_unlock(tech_name, unlock_entry("improvement", imp))
+        add_unlock(tech_name, unlock_entry("improvement", imp), imp)
 
     # Resources revealedBy
     for res in resources:
