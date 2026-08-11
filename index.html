@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=paths-polish-2">
+    <link rel="stylesheet" href="css/site.css?v=paths-polish-3">
 
 </head>
 <body>
@@ -1000,8 +1000,8 @@
 <script src="js/stats-charts.js?v=policy-colors-1"></script>
 <script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=lobby-opp-1"></script>
-<script src="js/achievements.js?v=survival-top3-1"></script>
-<script src="js/tech-policy-paths.js?v=polish-2"></script>
+<script src="js/achievements.js?v=memo-fp-1"></script>
+<script src="js/tech-policy-paths.js?v=polish-3"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -2504,6 +2504,9 @@
 
             const data = await gamesResponse.json();
             gamesData = data.games;
+            if (window.IronLeagueAchievements && typeof IronLeagueAchievements.invalidateAchievementsCache === 'function') {
+                IronLeagueAchievements.invalidateAchievementsCache();
+            }
 
             gamesData.forEach(game => {
                 game.players?.forEach(player => allNations.add(player.nation));

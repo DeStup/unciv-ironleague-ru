@@ -2794,7 +2794,7 @@
         }
         .paths-tl-item {
             display: grid;
-            grid-template-columns: 42px 28px 1fr auto;
+            grid-template-columns: 42px 40px 1fr auto;
             gap: 8px;
             align-items: center;
             padding: 6px 8px;
@@ -2805,12 +2805,17 @@
             border: 1px solid rgba(255, 215, 0, 0.28);
             background: rgba(255, 215, 0, 0.06);
         }
+        .paths-tl-icon,
         .paths-tl-item img {
-            width: 28px;
-            height: 28px;
+            width: 36px;
+            height: 36px;
             image-rendering: pixelated;
             background: #000;
-            border-radius: 4px;
+            border-radius: 6px;
+            filter: sepia(0.45) saturate(2.4) brightness(1.08) hue-rotate(8deg);
+        }
+        .paths-tl-icon.is-branch-icon {
+            filter: sepia(0.55) saturate(3) brightness(1.12) hue-rotate(2deg);
         }
         .paths-tl-order {
             color: #ffd700;
@@ -2933,8 +2938,8 @@
         }
         .paths-tree-node {
             position: absolute;
-            width: 168px;
-            min-height: 92px;
+            width: 176px;
+            min-height: 102px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -2948,7 +2953,7 @@
         }
         .paths-tree-node-top {
             display: grid;
-            grid-template-columns: 36px 1fr;
+            grid-template-columns: 44px 1fr;
             gap: 8px;
             align-items: center;
         }
@@ -2961,11 +2966,33 @@
             box-shadow: 0 0 0 2px rgba(90, 210, 230, 0.85), 0 2px 10px rgba(0, 0, 0, 0.35);
         }
         .paths-tree-tech-icon {
-            width: 36px;
-            height: 36px;
+            width: 44px;
+            height: 44px;
             image-rendering: pixelated;
             background: #000;
-            border-radius: 6px;
+            border-radius: 8px;
+            filter: sepia(0.5) saturate(2.6) brightness(1.1) hue-rotate(8deg);
+        }
+        .paths-tree-node[data-era="Ancient era"] .paths-tree-tech-icon {
+            filter: sepia(0.7) saturate(3) brightness(1.05) hue-rotate(5deg);
+        }
+        .paths-tree-node[data-era="Classical era"] .paths-tree-tech-icon {
+            filter: sepia(0.35) saturate(2.8) brightness(1.1) hue-rotate(250deg);
+        }
+        .paths-tree-node[data-era="Medieval era"] .paths-tree-tech-icon {
+            filter: sepia(0.45) saturate(2.4) brightness(1.05) hue-rotate(85deg);
+        }
+        .paths-tree-node[data-era="Renaissance era"] .paths-tree-tech-icon {
+            filter: sepia(0.4) saturate(2.6) brightness(1.12) hue-rotate(320deg);
+        }
+        .paths-tree-node[data-era="Industrial era"] .paths-tree-tech-icon {
+            filter: sepia(0.25) saturate(1.6) brightness(1.15) hue-rotate(180deg);
+        }
+        .paths-tree-node[data-era="Modern era"] .paths-tree-tech-icon,
+        .paths-tree-node[data-era="Atomic era"] .paths-tree-tech-icon,
+        .paths-tree-node[data-era="Information era"] .paths-tree-tech-icon,
+        .paths-tree-node[data-era="Future era"] .paths-tree-tech-icon {
+            filter: sepia(0.2) saturate(2.2) brightness(1.15) hue-rotate(160deg);
         }
         .paths-tree-node-title {
             font-size: 0.78rem;
@@ -2988,17 +3015,27 @@
         .paths-tree-unlocks {
             display: flex;
             flex-wrap: wrap;
-            gap: 4px;
-            min-height: 22px;
+            gap: 5px;
+            min-height: 28px;
         }
         .paths-tree-unlock {
-            width: 22px;
-            height: 22px;
-            border-radius: 4px;
+            width: 28px;
+            height: 28px;
+            border-radius: 5px;
             background: rgba(0, 0, 0, 0.45);
             border: 1px solid rgba(255, 255, 255, 0.12);
             image-rendering: pixelated;
             cursor: help;
+            filter: sepia(0.55) saturate(2.8) brightness(1.12) hue-rotate(12deg);
+        }
+        .paths-tree-unlock[data-kind="unit"] {
+            filter: sepia(0.25) saturate(2.4) brightness(1.15) hue-rotate(170deg);
+        }
+        .paths-tree-unlock[data-kind="wonder"] {
+            filter: sepia(0.75) saturate(3.2) brightness(1.15) hue-rotate(2deg);
+        }
+        .paths-tree-unlock[data-kind="building"] {
+            filter: sepia(0.5) saturate(2.6) brightness(1.1) hue-rotate(25deg);
         }
         @media (max-width: 860px) {
             .paths-columns,
