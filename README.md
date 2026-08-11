@@ -76,6 +76,7 @@ Iron League (Unciv) — архив, статистика, рейтинг и пу
 | `tech_policy_timelines.json` | Порядок техов/политик по играм |
 | `tech_names.json`, `policy_names.json`, `construction_names.json`, `nation_names.json` | RU/EN подписи |
 | `default_capitals.json` | Столицы по умолчанию (EN/RU) для архива |
+| `wonder_details.json` | Описания чудес (статы/unique) для подсказок |
 | `paths_roster.json` | Ники игроков для путей |
 | `faq.json` / `faq_en.json`, `tierlist.json`, `nation_colors.json` | FAQ, тирлист, цвета портретов |
 

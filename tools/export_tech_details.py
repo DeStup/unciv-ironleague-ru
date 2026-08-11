@@ -439,6 +439,35 @@ def main() -> None:
     }
     tree = {"source": "RekMOD-iron", "techs": tree_techs}
 
+    # Flat wonder catalog for archive / stats / profile tooltips (same text as tech tree).
+    wonders_out: dict[str, dict] = {}
+    for tech in techs.values():
+        for bucket in ("unlocks", "nation_unlocks"):
+            for u in tech.get(bucket) or []:
+                if u.get("kind") != "wonder" and not u.get("is_wonder"):
+                    continue
+                name = u.get("name")
+                if not name or name in wonders_out:
+                    continue
+                slim = {
+                    "kind": "wonder",
+                    "name": name,
+                }
+                for key in (
+                    "uniques",
+                    "uniques_en",
+                    "uniques_ru",
+                    "short_lines_en",
+                    "short_lines_ru",
+                    "quote",
+                    "quote_ru",
+                    "uniqueTo",
+                    "stats",
+                ):
+                    if u.get(key):
+                        slim[key] = u[key]
+                wonders_out[name] = slim
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     (OUT_DIR / "tech_details.json").write_text(
         json.dumps(details, ensure_ascii=False, indent=2) + "\n",
@@ -446,6 +475,15 @@ def main() -> None:
     )
     (OUT_DIR / "tech_tree.json").write_text(
         json.dumps(tree, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    (OUT_DIR / "wonder_details.json").write_text(
+        json.dumps(
+            {"source": "RekMOD-iron", "wonders": wonders_out},
+            ensure_ascii=False,
+            indent=2,
+        )
+        + "\n",
         encoding="utf-8",
     )
 
@@ -472,6 +510,8 @@ def main() -> None:
             for u in t.get("nation_unlocks") or []
             if u.get("kind") == "nation_effect"
         ),
+        "wonders",
+        len(wonders_out),
     )
 
 
