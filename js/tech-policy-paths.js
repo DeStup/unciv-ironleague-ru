@@ -185,10 +185,13 @@
     unique: 8,
   };
 
-  function unlocksForTech(techName, detail) {
-    // Unciv TechButton (generic civ): common unlocks only — no uniqueTo.
-    // Nation UU/UB live in detail.nation_unlocks and render in the expandable tray.
+  function unlocksForTech(techName, detail, nationFilter) {
+    // Unciv TechButton: common unlocks + this civ's uniqueTo (UU/UB/bonuses/effects).
+    // Other nations stay in detail.nation_unlocks (★ panel).
     const base = (detail.unlocks || []).filter((u) => !u.uniqueTo);
+    const mine = nationFilter
+      ? (detail.nation_unlocks || []).filter((u) => u.uniqueTo === nationFilter)
+      : [];
     const seenRes = new Set(
       base.filter((u) => u.kind === 'resource').map((u) => u.name)
     );
@@ -206,8 +209,14 @@
         name: String(text),
         uniques: [String(text)],
       }));
-    const all = base.concat(extras).concat(passives);
-    all.sort((a, b) => (UNLOCK_KIND_ORDER[a.kind] ?? 9) - (UNLOCK_KIND_ORDER[b.kind] ?? 9));
+    const all = base.concat(mine).concat(extras).concat(passives);
+    all.sort((a, b) => {
+      const aMine = nationFilter && a.uniqueTo === nationFilter ? 0 : 1;
+      const bMine = nationFilter && b.uniqueTo === nationFilter ? 0 : 1;
+      if (aMine !== bMine) return aMine - bMine;
+      return (UNLOCK_KIND_ORDER[a.kind] ?? 9) - (UNLOCK_KIND_ORDER[b.kind] ?? 9)
+        || String(a.name || '').localeCompare(String(b.name || ''));
+    });
     return all;
   }
 
@@ -597,7 +606,7 @@
     const lines = [labelTech(name)];
     const quote = (lang() === 'ru' && detail.quote_ru) ? detail.quote_ru : (detail.quote || '');
     if (quote) lines.push(quote);
-    const common = unlocksForTech(name, detail).length;
+    const common = unlocksForTech(name, detail, selectedNation()).length;
     const nationN = (detail.nation_unlocks || []).length;
     if (common || nationN) {
       lines.push(
@@ -679,15 +688,19 @@
   }
 
   function appendUnlocks(node, detail, techName) {
-    const unlocks = unlocksForTech(techName, detail);
     const nation = selectedNation();
+    const unlocks = unlocksForTech(techName, detail, nation);
     const nationList = nationUnlocksForTech(detail, nation);
     if (!unlocks.length && !nationList.length) return;
 
     const row = document.createElement('div');
     row.className = 'paths-tree-unlocks';
     unlocks.slice(0, MAX_UNLOCK_ICONS).forEach((item) => {
-      row.appendChild(makeUnlockIcon(item));
+      row.appendChild(
+        makeUnlockIcon(item, {
+          mine: !!(nation && item.uniqueTo === nation),
+        })
+      );
     });
 
     if (nationList.length) {
