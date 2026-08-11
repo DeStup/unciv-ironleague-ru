@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=economy-avg-1">
+    <link rel="stylesheet" href="css/site.css?v=paths-1">
 
 </head>
 <body>
@@ -34,6 +34,7 @@
         <button type="button" class="site-nav-btn active" data-view="home" data-i18n="nav.home">Главная</button>
         <button type="button" class="site-nav-btn" data-view="archive" data-i18n="nav.archive">Архив игр</button>
         <button type="button" class="site-nav-btn" data-view="stats" data-i18n="nav.stats">Статистика</button>
+        <button type="button" class="site-nav-btn" data-view="paths" data-i18n="nav.paths">Техи и институты</button>
         <button type="button" class="site-nav-btn" data-view="rating" data-i18n="nav.rating">Рейтинг</button>
         <button type="button" class="site-nav-btn" data-view="tierlist" data-i18n="nav.tierlist">Тирлист</button>
         <button type="button" class="site-nav-btn" data-view="records" data-i18n="nav.records">Рекорды</button>
@@ -65,6 +66,10 @@
                 <button type="button" class="home-card" data-go-view="stats">
                     <span class="home-card-title" data-i18n="nav.stats">Статистика</span>
                     <span class="home-card-text" data-i18n="home.card.stats">Винрейты, нации, институты, чудеса и верования.</span>
+                </button>
+                <button type="button" class="home-card" data-go-view="paths">
+                    <span class="home-card-title" data-i18n="nav.paths">Техи и институты</span>
+                    <span class="home-card-text" data-i18n="home.card.paths">Порядок техов и институтов, что открывали первым.</span>
                 </button>
                 <button type="button" class="home-card" data-go-view="rating">
                     <span class="home-card-title" data-i18n="nav.rating">Рейтинг</span>
@@ -235,6 +240,53 @@
             </div>
         </div>
     </div>
+
+<div class="view-panel" id="viewPaths">
+    <p class="stats-intro" data-i18n="paths.lead">
+        По бэкапам ходов восстановлен порядок открытия технологий и институтов. Нет бэкапов: games 4–11 и 14.
+    </p>
+    <p class="hint" id="pathsCoverageNote"></p>
+
+    <section class="paths-section">
+        <h2 data-i18n="paths.statsTitle">Что открывали первым</h2>
+        <div class="paths-columns">
+            <div>
+                <h3 data-i18n="paths.firstBranch">Первый институт (ветка)</h3>
+                <div class="paths-stat-grid" id="pathsFirstBranch"></div>
+            </div>
+            <div>
+                <h3 data-i18n="paths.firstTech">Первый тех после Agriculture</h3>
+                <div class="paths-stat-grid" id="pathsFirstTech"></div>
+            </div>
+        </div>
+        <h3 data-i18n="paths.eraFirst">Первый тех эпохи</h3>
+        <div id="pathsEraFirst"></div>
+    </section>
+
+    <section class="paths-section">
+        <h2 data-i18n="paths.browseTitle">Партия и игрок</h2>
+        <div class="paths-filters">
+            <label>
+                <select id="pathsGameSelect"></select>
+            </label>
+            <label>
+                <select id="pathsPlayerSelect"></select>
+            </label>
+        </div>
+        <h3 id="pathsPlayerHeading"></h3>
+        <p class="hint" id="pathsPlayerMeta"></p>
+        <div class="paths-timelines">
+            <div>
+                <h4 data-i18n="paths.techs">Технологии</h4>
+                <div class="paths-tl" id="pathsTechTimeline"></div>
+            </div>
+            <div>
+                <h4 data-i18n="paths.policies">Институты / политики</h4>
+                <div class="paths-tl" id="pathsPolicyTimeline"></div>
+            </div>
+        </div>
+    </section>
+</div>
 
 <div class="view-panel" id="viewStats">
         <p class="stats-intro" id="statsIntro" data-i18n="stats.intro">В статистику не входят игры с пометками «командная» (teams) и «скрап» (scrap).</p>
@@ -935,12 +987,13 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=survival-top3-1"></script>
+<script src="js/i18n.js?v=paths-1"></script>
 <script src="js/player-meta.js?v=click4x-cy-ru-1"></script>
 <script src="js/stats-charts.js?v=policy-colors-1"></script>
 <script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=lobby-opp-1"></script>
 <script src="js/achievements.js?v=survival-top3-1"></script>
+<script src="js/tech-policy-paths.js?v=1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -2482,6 +2535,7 @@
             home: homeTitle,
             archive: viewTitle('title.archive', 'Архив игр'),
             stats: viewTitle('title.stats', 'Статистика лиги'),
+            paths: viewTitle('title.paths', 'Техи и институты'),
             rating: viewTitle('title.rating', 'Рейтинг'),
             tierlist: viewTitle('title.tierlist', 'Тирлист наций'),
             records: viewTitle('title.records', 'Рекорды'),
@@ -2492,6 +2546,7 @@
             home: viewTitle('footer.home', 'Iron League — главная'),
             archive: viewTitle('footer.archive', 'Данные обновляются автоматически'),
             stats: viewTitle('footer.stats', 'Статистика по играм архива (без teams/scrap)'),
+            paths: viewTitle('footer.paths', 'Порядок открытия по бэкапам ходов'),
             rating: viewTitle('footer.rating', 'Рейтинг: шкала от 1000 или от нуля'),
             tierlist: viewTitle('footer.tierlist', 'Тирлист наций лиги'),
             records: viewTitle('footer.records', 'Рекорды и достижения (без teams/scrap)'),
@@ -2922,7 +2977,7 @@
     })();
 
     function showSiteView(view) {
-        const allowed = new Set(['home', 'archive', 'stats', 'rating', 'tierlist', 'records', 'faq', 'profile']);
+        const allowed = new Set(['home', 'archive', 'stats', 'paths', 'rating', 'tierlist', 'records', 'faq', 'profile']);
         const next = allowed.has(view) ? view : 'home';
         document.querySelectorAll('.site-nav-btn').forEach((b) => {
             b.classList.toggle('active', b.dataset.view === next);
@@ -2930,6 +2985,7 @@
         document.getElementById('viewHome')?.classList.toggle('active', next === 'home');
         document.getElementById('viewArchive').classList.toggle('active', next === 'archive');
         document.getElementById('viewStats').classList.toggle('active', next === 'stats');
+        document.getElementById('viewPaths')?.classList.toggle('active', next === 'paths');
         document.getElementById('viewProfile')?.classList.toggle('active', next === 'profile');
         document.getElementById('viewRating')?.classList.toggle('active', next === 'rating');
         document.getElementById('viewTierlist').classList.toggle('active', next === 'tierlist');
@@ -2940,6 +2996,7 @@
             renderStatsTables();
             setStatsTab(document.querySelector('.stats-subnav-btn.active')?.dataset.statsTab || 'players');
         }
+        if (next === 'paths' && window.IronLeaguePaths) window.IronLeaguePaths.show();
         if (next === 'rating') {
             applyRatingScale(ratingScale, true);
             renderRatingTables();
@@ -4126,6 +4183,7 @@
         if (document.getElementById('viewRecords')?.classList.contains('active')) {
             renderRecords();
         }
+        if (window.IronLeaguePaths) window.IronLeaguePaths.refreshLabels();
     };
 
     // Back to top when site nav scrolls out of view

@@ -1,0 +1,338 @@
+{
+  "Acoustics": {
+    "en": "Acoustics",
+    "ru": "Акустика"
+  },
+  "Advanced Ballistics": {
+    "en": "Advanced Ballistics",
+    "ru": "Продвинутая баллистика"
+  },
+  "Agriculture": {
+    "en": "Agriculture",
+    "ru": "Земледелие"
+  },
+  "Animal Husbandry": {
+    "en": "Animal Husbandry",
+    "ru": "Животноводство"
+  },
+  "Archaeology": {
+    "en": "Archaeology",
+    "ru": "Археология"
+  },
+  "Archery": {
+    "en": "Archery",
+    "ru": "Стрельба из лука"
+  },
+  "Architecture": {
+    "en": "Architecture",
+    "ru": "Архитектура"
+  },
+  "Astronomy": {
+    "en": "Astronomy",
+    "ru": "Астрономия"
+  },
+  "Atomic Theory": {
+    "en": "Atomic Theory",
+    "ru": "Атомная теория"
+  },
+  "Ballistics": {
+    "en": "Ballistics",
+    "ru": "Баллистика"
+  },
+  "Banking": {
+    "en": "Banking",
+    "ru": "Банковское дело"
+  },
+  "Biology": {
+    "en": "Biology",
+    "ru": "Биология"
+  },
+  "Bronze Working": {
+    "en": "Bronze Working",
+    "ru": "Обработка бронзы"
+  },
+  "Calendar": {
+    "en": "Calendar",
+    "ru": "Календарь"
+  },
+  "Chemistry": {
+    "en": "Chemistry",
+    "ru": "Химия"
+  },
+  "Chivalry": {
+    "en": "Chivalry",
+    "ru": "Рыцарство"
+  },
+  "Circle": {
+    "en": "Circle",
+    "ru": "Circle"
+  },
+  "Civil Service": {
+    "en": "Civil Service",
+    "ru": "Госслужба"
+  },
+  "Combined Arms": {
+    "en": "Combined Arms",
+    "ru": "Общевойсковая бригада"
+  },
+  "Combustion": {
+    "en": "Combustion",
+    "ru": "Двигатель ВС"
+  },
+  "Compass": {
+    "en": "Compass",
+    "ru": "Компас"
+  },
+  "Computers": {
+    "en": "Computers",
+    "ru": "Компьютеры"
+  },
+  "Construction": {
+    "en": "Construction",
+    "ru": "Металлоконструкции"
+  },
+  "Currency": {
+    "en": "Currency",
+    "ru": "Деньги"
+  },
+  "Drama and Poetry": {
+    "en": "Drama and Poetry",
+    "ru": "Драма и поэзия"
+  },
+  "Dynamite": {
+    "en": "Dynamite",
+    "ru": "Динамит"
+  },
+  "Ecology": {
+    "en": "Ecology",
+    "ru": "Экология"
+  },
+  "Economics": {
+    "en": "Economics",
+    "ru": "Экономика"
+  },
+  "Education": {
+    "en": "Education",
+    "ru": "Образование"
+  },
+  "Electricity": {
+    "en": "Electricity",
+    "ru": "Электричество"
+  },
+  "Electronics": {
+    "en": "Electronics",
+    "ru": "Электроника"
+  },
+  "Engineering": {
+    "en": "Engineering",
+    "ru": "Инженерное дело"
+  },
+  "Fallback": {
+    "en": "Fallback",
+    "ru": "Fallback"
+  },
+  "Fertilizer": {
+    "en": "Fertilizer",
+    "ru": "Удобрения"
+  },
+  "Flight": {
+    "en": "Flight",
+    "ru": "Авиация"
+  },
+  "Future Tech": {
+    "en": "Future Tech",
+    "ru": "Технологии будущего"
+  },
+  "Globalization": {
+    "en": "Globalization",
+    "ru": "Глобализация"
+  },
+  "Guilds": {
+    "en": "Guilds",
+    "ru": "Гильдии"
+  },
+  "Gunpowder": {
+    "en": "Gunpowder",
+    "ru": "Порох"
+  },
+  "Horseback Riding": {
+    "en": "Horseback Riding",
+    "ru": "Верховая езда"
+  },
+  "Industrialization": {
+    "en": "Industrialization",
+    "ru": "Индустриализация"
+  },
+  "Iron Working": {
+    "en": "Iron Working",
+    "ru": "Обработка железа"
+  },
+  "Lasers": {
+    "en": "Lasers",
+    "ru": "Лазеры"
+  },
+  "Machinery": {
+    "en": "Machinery",
+    "ru": "Машиностроение"
+  },
+  "Masonry": {
+    "en": "Masonry",
+    "ru": "Каменная кладка"
+  },
+  "Mass Media": {
+    "en": "Mass Media",
+    "ru": "СМИ"
+  },
+  "Mathematics": {
+    "en": "Mathematics",
+    "ru": "Математика"
+  },
+  "Metal Casting": {
+    "en": "Metal Casting",
+    "ru": "Литье"
+  },
+  "Metallurgy": {
+    "en": "Metallurgy",
+    "ru": "Металлургия"
+  },
+  "Military Science": {
+    "en": "Military Science",
+    "ru": "Военная наука"
+  },
+  "Mining": {
+    "en": "Mining",
+    "ru": "Добыча руды"
+  },
+  "Mobile Tactics": {
+    "en": "Mobile Tactics",
+    "ru": "Тактика мобильной войны"
+  },
+  "Nanotechnology": {
+    "en": "Nanotechnology",
+    "ru": "Нанотехнологии"
+  },
+  "Navigation": {
+    "en": "Navigation",
+    "ru": "Навигация"
+  },
+  "Nuclear Fission": {
+    "en": "Nuclear Fission",
+    "ru": "Расщепление ядра"
+  },
+  "Nuclear Fusion": {
+    "en": "Nuclear Fusion",
+    "ru": "Ядерный синтез"
+  },
+  "Optics": {
+    "en": "Optics",
+    "ru": "Оптика"
+  },
+  "Particle Physics": {
+    "en": "Particle Physics",
+    "ru": "Физика элементарных частиц"
+  },
+  "Pharmaceuticals": {
+    "en": "Pharmaceuticals",
+    "ru": "Пенициллин"
+  },
+  "Philosophy": {
+    "en": "Philosophy",
+    "ru": "Философия"
+  },
+  "Physics": {
+    "en": "Physics",
+    "ru": "Физика"
+  },
+  "Plastics": {
+    "en": "Plastics",
+    "ru": "Пластмассы"
+  },
+  "Pottery": {
+    "en": "Pottery",
+    "ru": "Гончарное дело"
+  },
+  "Printing Press": {
+    "en": "Printing Press",
+    "ru": "Печатный пресс"
+  },
+  "Radar": {
+    "en": "Radar",
+    "ru": "Радар"
+  },
+  "Radio": {
+    "en": "Radio",
+    "ru": "Радио"
+  },
+  "Railroads": {
+    "en": "Railroads",
+    "ru": "Железная дорога"
+  },
+  "Refrigeration": {
+    "en": "Refrigeration",
+    "ru": "Криогеника"
+  },
+  "Replaceable Parts": {
+    "en": "Replaceable Parts",
+    "ru": "Стандартизация"
+  },
+  "Rifling": {
+    "en": "Rifling",
+    "ru": "Нарезные стволы"
+  },
+  "Robotics": {
+    "en": "Robotics",
+    "ru": "Робототехника"
+  },
+  "Rocketry": {
+    "en": "Rocketry",
+    "ru": "Ракетостроение"
+  },
+  "Sailing": {
+    "en": "Sailing",
+    "ru": "Мореходство"
+  },
+  "Satellites": {
+    "en": "Satellites",
+    "ru": "Спутники"
+  },
+  "Scientific Theory": {
+    "en": "Scientific Theory",
+    "ru": "Научная теория"
+  },
+  "Stealth": {
+    "en": "Stealth",
+    "ru": "Маскировка"
+  },
+  "Steam Power": {
+    "en": "Steam Power",
+    "ru": "Паровой двигатель"
+  },
+  "Steel": {
+    "en": "Steel",
+    "ru": "Сталеварение"
+  },
+  "Telecommunications": {
+    "en": "Telecommunications",
+    "ru": "Телекоммуникации"
+  },
+  "Telegraph": {
+    "en": "Telegraph",
+    "ru": "Телеграф"
+  },
+  "The Wheel": {
+    "en": "The Wheel",
+    "ru": "Колесо"
+  },
+  "Theology": {
+    "en": "Theology",
+    "ru": "Богословие"
+  },
+  "Trapping": {
+    "en": "Trapping",
+    "ru": "Охота"
+  },
+  "Writing": {
+    "en": "Writing",
+    "ru": "Письменность"
+  }
+}
