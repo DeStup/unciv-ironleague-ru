@@ -584,10 +584,10 @@
             width: 26px;
             height: 26px;
             border-radius: 50%;
-            /* Wonder PNGs are light silhouettes (same family as Building_icons). */
-            background: #0a0a0a;
-            border: 1px solid rgba(255, 215, 0, 0.35);
-            box-shadow: 0 0 0 1px rgba(255, 215, 0, 0.18);
+            /* Unciv PortraitBuilding: white disc + black-tinted silhouette */
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.18);
+            box-shadow: 0 0 0 1px rgba(255, 215, 0, 0.28);
             flex-shrink: 0;
             overflow: hidden;
         }
@@ -598,6 +598,7 @@
             object-fit: contain;
             flex-shrink: 0;
             image-rendering: pixelated;
+            filter: brightness(0);
         }
 
         .survivor-stats {
@@ -2489,9 +2490,8 @@
             align-items: center;
             justify-content: center;
             padding: 0;
-            /* Light wonder silhouettes — dark disc (same as finale wonder chips). */
-            background: #0a0a0a;
-            border: 1px solid rgba(255, 215, 0, 0.4);
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.18);
             box-shadow:
                 0 0 0 2px rgba(255, 215, 0, 0.45),
                 0 4px 10px rgba(0, 0, 0, 0.45);
@@ -2747,12 +2747,23 @@
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 215, 0, 0.14);
         }
-        .paths-stat-icon {
+        .paths-stat-icon-plate {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             width: 44px;
             height: 44px;
-            image-rendering: pixelated;
-            background: #000;
             border-radius: 8px;
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.18);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .paths-stat-icon {
+            width: 40px;
+            height: 40px;
+            image-rendering: pixelated;
+            filter: brightness(0);
         }
         .paths-stat-title {
             font-weight: 600;
@@ -2806,17 +2817,29 @@
             border: 1px solid rgba(255, 215, 0, 0.28);
             background: rgba(255, 215, 0, 0.06);
         }
-        .paths-tl-icon,
-        .paths-tl-item img {
+        .paths-tl-icon-plate {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             width: 36px;
             height: 36px;
-            image-rendering: pixelated;
-            background: #000;
             border-radius: 6px;
-            filter: sepia(0.45) saturate(2.4) brightness(1.08) hue-rotate(8deg);
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.16);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .paths-tl-icon,
+        .paths-tl-item img.paths-tl-icon {
+            width: 32px;
+            height: 32px;
+            image-rendering: pixelated;
+            background: transparent;
+            border-radius: 0;
+            filter: brightness(0);
         }
         .paths-tl-icon.is-branch-icon {
-            filter: sepia(0.55) saturate(3) brightness(1.12) hue-rotate(2deg);
+            filter: brightness(0);
         }
         .paths-tl-order {
             color: #ffd700;
@@ -2966,34 +2989,25 @@
         .paths-tree-node.is-researching {
             box-shadow: 0 0 0 2px rgba(90, 210, 230, 0.85), 0 2px 10px rgba(0, 0, 0, 0.35);
         }
-        .paths-tree-tech-icon {
+        .paths-tree-tech-icon-plate {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             width: 44px;
             height: 44px;
-            image-rendering: pixelated;
-            background: #000;
             border-radius: 8px;
-            filter: sepia(0.5) saturate(2.6) brightness(1.1) hue-rotate(8deg);
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.18);
+            overflow: hidden;
+            flex-shrink: 0;
         }
-        .paths-tree-node[data-era="Ancient era"] .paths-tree-tech-icon {
-            filter: sepia(0.7) saturate(3) brightness(1.05) hue-rotate(5deg);
-        }
-        .paths-tree-node[data-era="Classical era"] .paths-tree-tech-icon {
-            filter: sepia(0.35) saturate(2.8) brightness(1.1) hue-rotate(250deg);
-        }
-        .paths-tree-node[data-era="Medieval era"] .paths-tree-tech-icon {
-            filter: sepia(0.45) saturate(2.4) brightness(1.05) hue-rotate(85deg);
-        }
-        .paths-tree-node[data-era="Renaissance era"] .paths-tree-tech-icon {
-            filter: sepia(0.4) saturate(2.6) brightness(1.12) hue-rotate(320deg);
-        }
-        .paths-tree-node[data-era="Industrial era"] .paths-tree-tech-icon {
-            filter: sepia(0.25) saturate(1.6) brightness(1.15) hue-rotate(180deg);
-        }
-        .paths-tree-node[data-era="Modern era"] .paths-tree-tech-icon,
-        .paths-tree-node[data-era="Atomic era"] .paths-tree-tech-icon,
-        .paths-tree-node[data-era="Information era"] .paths-tree-tech-icon,
-        .paths-tree-node[data-era="Future era"] .paths-tree-tech-icon {
-            filter: sepia(0.2) saturate(2.2) brightness(1.15) hue-rotate(160deg);
+        .paths-tree-tech-icon {
+            width: 40px;
+            height: 40px;
+            image-rendering: pixelated;
+            background: transparent;
+            border-radius: 0;
+            filter: brightness(0);
         }
         .paths-tree-node-title {
             font-size: 0.78rem;
@@ -3020,23 +3034,28 @@
             min-height: 28px;
         }
         .paths-tree-unlock {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             width: 28px;
             height: 28px;
             border-radius: 5px;
-            background: rgba(0, 0, 0, 0.45);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            image-rendering: pixelated;
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.16);
+            overflow: hidden;
             cursor: help;
-            filter: sepia(0.55) saturate(2.8) brightness(1.12) hue-rotate(12deg);
+            flex-shrink: 0;
         }
-        .paths-tree-unlock[data-kind="unit"] {
-            filter: sepia(0.25) saturate(2.4) brightness(1.15) hue-rotate(170deg);
+        .paths-tree-unlock-img {
+            width: 22px;
+            height: 22px;
+            image-rendering: pixelated;
+            filter: brightness(0);
         }
-        .paths-tree-unlock[data-kind="wonder"] {
-            filter: sepia(0.75) saturate(3.2) brightness(1.15) hue-rotate(2deg);
-        }
-        .paths-tree-unlock[data-kind="building"] {
-            filter: sepia(0.5) saturate(2.6) brightness(1.1) hue-rotate(25deg);
+        /* Unciv ResourceType.Strategic = #c14d00 */
+        .paths-tree-unlock[data-kind="resource"] {
+            background: #c14d00;
+            border-color: rgba(0, 0, 0, 0.25);
         }
         @media (max-width: 860px) {
             .paths-columns,
