@@ -1,0 +1,932 @@
+{
+  "Worker": {
+    "en": "Worker",
+    "ru": "Рабочий",
+    "kind": "unit"
+  },
+  "Settler": {
+    "en": "Settler",
+    "ru": "Поселенец",
+    "kind": "unit"
+  },
+  "Scout": {
+    "en": "Scout",
+    "ru": "Разведчик",
+    "kind": "unit"
+  },
+  "Warrior": {
+    "en": "Warrior",
+    "ru": "Воин",
+    "kind": "unit"
+  },
+  "Farm": {
+    "en": "Farm",
+    "ru": "Ферма",
+    "kind": "improvement"
+  },
+  "Granary": {
+    "en": "Granary",
+    "ru": "Амбар",
+    "kind": "building"
+  },
+  "Shrine": {
+    "en": "Shrine",
+    "ru": "Святилище",
+    "kind": "building"
+  },
+  "Pasture": {
+    "en": "Pasture",
+    "ru": "Выгон",
+    "kind": "improvement"
+  },
+  "Temple of Artemis": {
+    "en": "Temple of Artemis",
+    "ru": "Храм Артемиды",
+    "kind": "wonder"
+  },
+  "Archer": {
+    "en": "Archer",
+    "ru": "Лучник",
+    "kind": "unit"
+  },
+  "Mine": {
+    "en": "Mine",
+    "ru": "Рудник",
+    "kind": "improvement"
+  },
+  "Remove Forest": {
+    "en": "Remove Forest",
+    "ru": "Вырубить лес",
+    "kind": "improvement"
+  },
+  "Work Boats": {
+    "en": "Work Boats",
+    "ru": "Рабочие лодки",
+    "kind": "unit"
+  },
+  "Trireme": {
+    "en": "Trireme",
+    "ru": "Трирема",
+    "kind": "unit"
+  },
+  "Fishing Boats": {
+    "en": "Fishing Boats",
+    "ru": "Рыбацкие лодки",
+    "kind": "improvement"
+  },
+  "Stone Works": {
+    "en": "Stone Works",
+    "ru": "Каменная мастерская",
+    "kind": "building"
+  },
+  "Stonehenge": {
+    "en": "Stonehenge",
+    "ru": "Стоунхендж",
+    "kind": "wonder"
+  },
+  "Plantation": {
+    "en": "Plantation",
+    "ru": "Плантация",
+    "kind": "improvement"
+  },
+  "Library": {
+    "en": "Library",
+    "ru": "Библиотека",
+    "kind": "building"
+  },
+  "The Great Library": {
+    "en": "The Great Library",
+    "ru": "Великая библиотека",
+    "kind": "wonder"
+  },
+  "Circus": {
+    "en": "Circus",
+    "ru": "Цирк",
+    "kind": "building"
+  },
+  "Camp": {
+    "en": "Camp",
+    "ru": "Лагерь",
+    "kind": "improvement"
+  },
+  "Water Mill": {
+    "en": "Water Mill",
+    "ru": "Водяная мельница",
+    "kind": "building"
+  },
+  "Chariot Archer": {
+    "en": "Chariot Archer",
+    "ru": "Лучник на колеснице",
+    "kind": "unit"
+  },
+  "Road": {
+    "en": "Road",
+    "ru": "Дорога",
+    "kind": "improvement"
+  },
+  "Walls": {
+    "en": "Walls",
+    "ru": "Стены",
+    "kind": "building"
+  },
+  "The Pyramids": {
+    "en": "The Pyramids",
+    "ru": "Пирамиды",
+    "kind": "wonder"
+  },
+  "Mausoleum of Halicarnassus": {
+    "en": "Mausoleum of Halicarnassus",
+    "ru": "Галикарнасский мавзолей",
+    "kind": "wonder"
+  },
+  "Quarry": {
+    "en": "Quarry",
+    "ru": "Каменоломня",
+    "kind": "improvement"
+  },
+  "Remove Marsh": {
+    "en": "Remove Marsh",
+    "ru": "Осушить болото",
+    "kind": "improvement"
+  },
+  "Barracks": {
+    "en": "Barracks",
+    "ru": "Казармы",
+    "kind": "building"
+  },
+  "Statue of Zeus": {
+    "en": "Statue of Zeus",
+    "ru": "Статуя Зевса",
+    "kind": "wonder"
+  },
+  "Spearman": {
+    "en": "Spearman",
+    "ru": "Копейщик",
+    "kind": "unit"
+  },
+  "Remove Jungle": {
+    "en": "Remove Jungle",
+    "ru": "Вырубить джунгли",
+    "kind": "improvement"
+  },
+  "Lighthouse": {
+    "en": "Lighthouse",
+    "ru": "Маяк",
+    "kind": "building"
+  },
+  "The Great Lighthouse": {
+    "en": "The Great Lighthouse",
+    "ru": "Фаросский маяк",
+    "kind": "wonder"
+  },
+  "Stable": {
+    "en": "Stable",
+    "ru": "Конюшня",
+    "kind": "building"
+  },
+  "Circus Maximus": {
+    "en": "Circus Maximus",
+    "ru": "Большой цирк",
+    "kind": "wonder"
+  },
+  "Horseman": {
+    "en": "Horseman",
+    "ru": "Всадник",
+    "kind": "unit"
+  },
+  "Courthouse": {
+    "en": "Courthouse",
+    "ru": "Суд",
+    "kind": "building"
+  },
+  "Hanging Gardens": {
+    "en": "Hanging Gardens",
+    "ru": "Висячие сады",
+    "kind": "wonder"
+  },
+  "Catapult": {
+    "en": "Catapult",
+    "ru": "Катапульта",
+    "kind": "unit"
+  },
+  "Colosseum": {
+    "en": "Colosseum",
+    "ru": "Арена",
+    "kind": "building"
+  },
+  "Terracotta Army": {
+    "en": "Terracotta Army",
+    "ru": "Терракотовая армия",
+    "kind": "wonder"
+  },
+  "Composite Bowman": {
+    "en": "Composite Bowman",
+    "ru": "Лучник (композитный лук)",
+    "kind": "unit"
+  },
+  "Lumber mill": {
+    "en": "Lumber mill",
+    "ru": "Лесопилка",
+    "kind": "improvement"
+  },
+  "Moai": {
+    "en": "Moai",
+    "ru": "Статуя Моаи",
+    "kind": "improvement"
+  },
+  "Terrace farm": {
+    "en": "Terrace farm",
+    "ru": "Террасная ферма",
+    "kind": "improvement"
+  },
+  "Temple": {
+    "en": "Temple",
+    "ru": "Храм",
+    "kind": "building"
+  },
+  "National College": {
+    "en": "National College",
+    "ru": "Национальный колледж",
+    "kind": "wonder"
+  },
+  "The Oracle": {
+    "en": "The Oracle",
+    "ru": "Оракул",
+    "kind": "wonder"
+  },
+  "Amphitheater": {
+    "en": "Amphitheater",
+    "ru": "Амфитеатр",
+    "kind": "building"
+  },
+  "National Epic": {
+    "en": "National Epic",
+    "ru": "Национальный эпос",
+    "kind": "wonder"
+  },
+  "Market": {
+    "en": "Market",
+    "ru": "Рынок",
+    "kind": "building"
+  },
+  "Mint": {
+    "en": "Mint",
+    "ru": "Монетный двор",
+    "kind": "building"
+  },
+  "Petra": {
+    "en": "Petra",
+    "ru": "Петра",
+    "kind": "wonder"
+  },
+  "Aqueduct": {
+    "en": "Aqueduct",
+    "ru": "Акведук",
+    "kind": "building"
+  },
+  "Great Wall": {
+    "en": "Great Wall",
+    "ru": "Великая стена",
+    "kind": "wonder"
+  },
+  "Fort": {
+    "en": "Fort",
+    "ru": "Форт",
+    "kind": "improvement"
+  },
+  "Heroic Epic": {
+    "en": "Heroic Epic",
+    "ru": "Героический эпос",
+    "kind": "wonder"
+  },
+  "Colossus": {
+    "en": "Colossus",
+    "ru": "Колосс",
+    "kind": "wonder"
+  },
+  "Swordsman": {
+    "en": "Swordsman",
+    "ru": "Мечник",
+    "kind": "unit"
+  },
+  "Garden": {
+    "en": "Garden",
+    "ru": "Сад",
+    "kind": "building"
+  },
+  "Hagia Sophia": {
+    "en": "Hagia Sophia",
+    "ru": "Собор Святой Софии",
+    "kind": "wonder"
+  },
+  "Great Mosque of Djenne": {
+    "en": "Great Mosque of Djenne",
+    "ru": "Великая мечеть Дженне",
+    "kind": "wonder"
+  },
+  "Grand Temple": {
+    "en": "Grand Temple",
+    "ru": "Великий храм",
+    "kind": "wonder"
+  },
+  "Chichen Itza": {
+    "en": "Chichen Itza",
+    "ru": "Чичен-Ица",
+    "kind": "wonder"
+  },
+  "Pikeman": {
+    "en": "Pikeman",
+    "ru": "Пикинер",
+    "kind": "unit"
+  },
+  "National Treasury": {
+    "en": "National Treasury",
+    "ru": "Национальная казна",
+    "kind": "wonder"
+  },
+  "Machu Picchu": {
+    "en": "Machu Picchu",
+    "ru": "Мачу-Пикчу",
+    "kind": "wonder"
+  },
+  "Trading post": {
+    "en": "Trading post",
+    "ru": "Торговый пост",
+    "kind": "improvement"
+  },
+  "Polder": {
+    "en": "Polder",
+    "ru": "Польдер",
+    "kind": "improvement"
+  },
+  "Workshop": {
+    "en": "Workshop",
+    "ru": "Мастерская",
+    "kind": "building"
+  },
+  "Forge": {
+    "en": "Forge",
+    "ru": "Кузница",
+    "kind": "building"
+  },
+  "Harbor": {
+    "en": "Harbor",
+    "ru": "Гавань",
+    "kind": "building"
+  },
+  "Galleass": {
+    "en": "Galleass",
+    "ru": "Галеас",
+    "kind": "unit"
+  },
+  "University": {
+    "en": "University",
+    "ru": "Университет",
+    "kind": "building"
+  },
+  "Oxford University": {
+    "en": "Oxford University",
+    "ru": "Оксфордский университет",
+    "kind": "wonder"
+  },
+  "Angkor Wat": {
+    "en": "Angkor Wat",
+    "ru": "Ангкор-Ват",
+    "kind": "wonder"
+  },
+  "Castle": {
+    "en": "Castle",
+    "ru": "Замок",
+    "kind": "building"
+  },
+  "Alhambra": {
+    "en": "Alhambra",
+    "ru": "Альгамбра",
+    "kind": "wonder"
+  },
+  "Knight": {
+    "en": "Knight",
+    "ru": "Рыцарь",
+    "kind": "unit"
+  },
+  "Ironworks": {
+    "en": "Ironworks",
+    "ru": "Металлургический завод",
+    "kind": "wonder"
+  },
+  "Crossbowman": {
+    "en": "Crossbowman",
+    "ru": "Арбалетчик",
+    "kind": "unit"
+  },
+  "Notre Dame": {
+    "en": "Notre Dame",
+    "ru": "Нотр-Дам",
+    "kind": "wonder"
+  },
+  "Trebuchet": {
+    "en": "Trebuchet",
+    "ru": "Требушет",
+    "kind": "unit"
+  },
+  "Armory": {
+    "en": "Armory",
+    "ru": "Оружейная",
+    "kind": "building"
+  },
+  "Longswordsman": {
+    "en": "Longswordsman",
+    "ru": "Мечник (длинный меч)",
+    "kind": "unit"
+  },
+  "Observatory": {
+    "en": "Observatory",
+    "ru": "Обсерватория",
+    "kind": "building"
+  },
+  "Caravel": {
+    "en": "Caravel",
+    "ru": "Каравелла",
+    "kind": "unit"
+  },
+  "Opera House": {
+    "en": "Opera House",
+    "ru": "Оперный театр",
+    "kind": "building"
+  },
+  "Sistine Chapel": {
+    "en": "Sistine Chapel",
+    "ru": "Сикстинская капелла",
+    "kind": "wonder"
+  },
+  "Bank": {
+    "en": "Bank",
+    "ru": "Банк",
+    "kind": "building"
+  },
+  "Constabulary": {
+    "en": "Constabulary",
+    "ru": "Жандармерия",
+    "kind": "building"
+  },
+  "Forbidden Palace": {
+    "en": "Forbidden Palace",
+    "ru": "Запретный город",
+    "kind": "wonder"
+  },
+  "Theatre": {
+    "en": "Theatre",
+    "ru": "Театр",
+    "kind": "building"
+  },
+  "Leaning Tower of Pisa": {
+    "en": "Leaning Tower of Pisa",
+    "ru": "Пизанская башня",
+    "kind": "wonder"
+  },
+  "Himeji Castle": {
+    "en": "Himeji Castle",
+    "ru": "Замок Химэдзи",
+    "kind": "wonder"
+  },
+  "Musketman": {
+    "en": "Musketman",
+    "ru": "Аркебузир",
+    "kind": "unit"
+  },
+  "Seaport": {
+    "en": "Seaport",
+    "ru": "Морской порт",
+    "kind": "building"
+  },
+  "Privateer": {
+    "en": "Privateer",
+    "ru": "Капер",
+    "kind": "unit"
+  },
+  "Frigate": {
+    "en": "Frigate",
+    "ru": "Фрегат",
+    "kind": "unit"
+  },
+  "Hermitage": {
+    "en": "Hermitage",
+    "ru": "Эрмитаж",
+    "kind": "wonder"
+  },
+  "Taj Mahal": {
+    "en": "Taj Mahal",
+    "ru": "Тадж-Махал",
+    "kind": "wonder"
+  },
+  "Porcelain Tower": {
+    "en": "Porcelain Tower",
+    "ru": "Фарфоровая пагода",
+    "kind": "wonder"
+  },
+  "Windmill": {
+    "en": "Windmill",
+    "ru": "Ветряная мельница",
+    "kind": "building"
+  },
+  "Arsenal": {
+    "en": "Arsenal",
+    "ru": "Арсенал",
+    "kind": "building"
+  },
+  "Kremlin": {
+    "en": "Kremlin",
+    "ru": "Кремль",
+    "kind": "wonder"
+  },
+  "Lancer": {
+    "en": "Lancer",
+    "ru": "Улан",
+    "kind": "unit"
+  },
+  "Cannon": {
+    "en": "Cannon",
+    "ru": "Пушка",
+    "kind": "unit"
+  },
+  "Museum": {
+    "en": "Museum",
+    "ru": "Музей",
+    "kind": "building"
+  },
+  "The Louvre": {
+    "en": "The Louvre",
+    "ru": "Лувр",
+    "kind": "wonder"
+  },
+  "Public School": {
+    "en": "Public School",
+    "ru": "Школа",
+    "kind": "building"
+  },
+  "Factory": {
+    "en": "Factory",
+    "ru": "Фабрика",
+    "kind": "building"
+  },
+  "Big Ben": {
+    "en": "Big Ben",
+    "ru": "Биг-Бен",
+    "kind": "wonder"
+  },
+  "Gatling Gun": {
+    "en": "Gatling Gun",
+    "ru": "Пулемет Гатлинга",
+    "kind": "unit"
+  },
+  "Rifleman": {
+    "en": "Rifleman",
+    "ru": "Стрелок",
+    "kind": "unit"
+  },
+  "Military Academy": {
+    "en": "Military Academy",
+    "ru": "Военная академия",
+    "kind": "building"
+  },
+  "Brandenburg Gate": {
+    "en": "Brandenburg Gate",
+    "ru": "Бранденбургские ворота",
+    "kind": "wonder"
+  },
+  "Cavalry": {
+    "en": "Cavalry",
+    "ru": "Кавалерия",
+    "kind": "unit"
+  },
+  "Hospital": {
+    "en": "Hospital",
+    "ru": "Больница",
+    "kind": "building"
+  },
+  "Oil well": {
+    "en": "Oil well",
+    "ru": "Нефтяная скважина",
+    "kind": "improvement"
+  },
+  "Stock Exchange": {
+    "en": "Stock Exchange",
+    "ru": "Биржа",
+    "kind": "building"
+  },
+  "Hydro Plant": {
+    "en": "Hydro Plant",
+    "ru": "ГЭС",
+    "kind": "building"
+  },
+  "Police Station": {
+    "en": "Police Station",
+    "ru": "Полицейский участок",
+    "kind": "building"
+  },
+  "Ironclad": {
+    "en": "Ironclad",
+    "ru": "Броненосец",
+    "kind": "unit"
+  },
+  "Artillery": {
+    "en": "Artillery",
+    "ru": "Артиллерия",
+    "kind": "unit"
+  },
+  "Stadium": {
+    "en": "Stadium",
+    "ru": "Стадион",
+    "kind": "building"
+  },
+  "Submarine": {
+    "en": "Submarine",
+    "ru": "Подлодка",
+    "kind": "unit"
+  },
+  "Offshore Platform": {
+    "en": "Offshore Platform",
+    "ru": "Нефтяная платформа",
+    "kind": "improvement"
+  },
+  "Broadcast Tower": {
+    "en": "Broadcast Tower",
+    "ru": "Радиовышка",
+    "kind": "building"
+  },
+  "Eiffel Tower": {
+    "en": "Eiffel Tower",
+    "ru": "Эйфелева башня",
+    "kind": "wonder"
+  },
+  "National Intelligence Agency": {
+    "en": "National Intelligence Agency",
+    "ru": "Национальное разведывательное управление",
+    "kind": "wonder"
+  },
+  "Military Base": {
+    "en": "Military Base",
+    "ru": "Военная база",
+    "kind": "building"
+  },
+  "Statue of Liberty": {
+    "en": "Statue of Liberty",
+    "ru": "Статуя Свободы",
+    "kind": "wonder"
+  },
+  "Great War Infantry": {
+    "en": "Great War Infantry",
+    "ru": "Пехота ПМВ",
+    "kind": "unit"
+  },
+  "Triplane": {
+    "en": "Triplane",
+    "ru": "Триплан",
+    "kind": "unit"
+  },
+  "Great War Bomber": {
+    "en": "Great War Bomber",
+    "ru": "Трехмоторный бомбардировщик",
+    "kind": "unit"
+  },
+  "Neuschwanstein": {
+    "en": "Neuschwanstein",
+    "ru": "Замок Нойшванштайн",
+    "kind": "wonder"
+  },
+  "Railroad": {
+    "en": "Railroad",
+    "ru": "Железная дорога",
+    "kind": "improvement"
+  },
+  "Research Lab": {
+    "en": "Research Lab",
+    "ru": "Лаборатория",
+    "kind": "building"
+  },
+  "Cristo Redentor": {
+    "en": "Cristo Redentor",
+    "ru": "Христос-Искупитель",
+    "kind": "wonder"
+  },
+  "Infantry": {
+    "en": "Infantry",
+    "ru": "Пехота",
+    "kind": "unit"
+  },
+  "Carrier": {
+    "en": "Carrier",
+    "ru": "Авианосец",
+    "kind": "unit"
+  },
+  "Battleship": {
+    "en": "Battleship",
+    "ru": "Линкор",
+    "kind": "unit"
+  },
+  "Machine Gun": {
+    "en": "Machine Gun",
+    "ru": "Пулемёт",
+    "kind": "unit"
+  },
+  "Anti-Aircraft Gun": {
+    "en": "Anti-Aircraft Gun",
+    "ru": "Зенитное орудие",
+    "kind": "unit"
+  },
+  "Landship": {
+    "en": "Landship",
+    "ru": "Танкетка",
+    "kind": "unit"
+  },
+  "Destroyer": {
+    "en": "Destroyer",
+    "ru": "Эсминец",
+    "kind": "unit"
+  },
+  "Medical Lab": {
+    "en": "Medical Lab",
+    "ru": "Мед. лаборатория",
+    "kind": "building"
+  },
+  "Marine": {
+    "en": "Marine",
+    "ru": "Морской пехотинец",
+    "kind": "unit"
+  },
+  "Manhattan Project": {
+    "en": "Manhattan Project",
+    "ru": "Манхэттенский проект",
+    "kind": "wonder"
+  },
+  "Fighter": {
+    "en": "Fighter",
+    "ru": "Истребитель",
+    "kind": "unit"
+  },
+  "Bomber": {
+    "en": "Bomber",
+    "ru": "Бомбардировщик",
+    "kind": "unit"
+  },
+  "Paratrooper": {
+    "en": "Paratrooper",
+    "ru": "Парашютист",
+    "kind": "unit"
+  },
+  "Pentagon": {
+    "en": "Pentagon",
+    "ru": "Пентагон",
+    "kind": "wonder"
+  },
+  "Tank": {
+    "en": "Tank",
+    "ru": "Танк",
+    "kind": "unit"
+  },
+  "Anti-Tank Gun": {
+    "en": "Anti-Tank Gun",
+    "ru": "Противотанковое орудие",
+    "kind": "unit"
+  },
+  "Solar Plant": {
+    "en": "Solar Plant",
+    "ru": "Солнечная ЭС",
+    "kind": "building"
+  },
+  "Recycling Center": {
+    "en": "Recycling Center",
+    "ru": "Центр переработки отходов",
+    "kind": "building"
+  },
+  "Sydney Opera House": {
+    "en": "Sydney Opera House",
+    "ru": "Сиднейский оперный театр",
+    "kind": "wonder"
+  },
+  "Nuclear Plant": {
+    "en": "Nuclear Plant",
+    "ru": "АЭС",
+    "kind": "building"
+  },
+  "Atomic Bomb": {
+    "en": "Atomic Bomb",
+    "ru": "Атомная бомба",
+    "kind": "unit"
+  },
+  "Apollo Program": {
+    "en": "Apollo Program",
+    "ru": "Программа \"Аполлон\"",
+    "kind": "wonder"
+  },
+  "Rocket Artillery": {
+    "en": "Rocket Artillery",
+    "ru": "Ракетная артиллерия",
+    "kind": "unit"
+  },
+  "Mobile SAM": {
+    "en": "Mobile SAM",
+    "ru": "Мобильный ЗРК",
+    "kind": "unit"
+  },
+  "Great Firewall": {
+    "en": "Great Firewall",
+    "ru": "Великий Файрвол",
+    "kind": "wonder"
+  },
+  "Helicopter Gunship": {
+    "en": "Helicopter Gunship",
+    "ru": "Боевой вертолет",
+    "kind": "unit"
+  },
+  "CN Tower": {
+    "en": "CN Tower",
+    "ru": "Си-Эн Тауэр",
+    "kind": "wonder"
+  },
+  "Bomb Shelter": {
+    "en": "Bomb Shelter",
+    "ru": "Бомбоубежище",
+    "kind": "building"
+  },
+  "Nuclear Submarine": {
+    "en": "Nuclear Submarine",
+    "ru": "Атомная подлодка",
+    "kind": "unit"
+  },
+  "Mechanized Infantry": {
+    "en": "Mechanized Infantry",
+    "ru": "Мотопехота",
+    "kind": "unit"
+  },
+  "Guided Missile": {
+    "en": "Guided Missile",
+    "ru": "Управляемая ракета",
+    "kind": "unit"
+  },
+  "Nuclear Missile": {
+    "en": "Nuclear Missile",
+    "ru": "Ядерная ракета",
+    "kind": "unit"
+  },
+  "SS Booster": {
+    "en": "SS Booster",
+    "ru": "Ракета-носитель КК",
+    "kind": "unit"
+  },
+  "Hubble Space Telescope": {
+    "en": "Hubble Space Telescope",
+    "ru": "Телескоп Хаббл",
+    "kind": "wonder"
+  },
+  "SS Cockpit": {
+    "en": "SS Cockpit",
+    "ru": "Мостик КК",
+    "kind": "unit"
+  },
+  "Spaceship Factory": {
+    "en": "Spaceship Factory",
+    "ru": "Завод косм. кораблей",
+    "kind": "building"
+  },
+  "Missile Cruiser": {
+    "en": "Missile Cruiser",
+    "ru": "Ракетный крейсер",
+    "kind": "unit"
+  },
+  "Modern Armor": {
+    "en": "Modern Armor",
+    "ru": "Современный танк",
+    "kind": "unit"
+  },
+  "Jet Fighter": {
+    "en": "Jet Fighter",
+    "ru": "Реактивный истребитель",
+    "kind": "unit"
+  },
+  "United Nations": {
+    "en": "United Nations",
+    "ru": "ООН",
+    "kind": "wonder"
+  },
+  "SS Engine": {
+    "en": "SS Engine",
+    "ru": "Двигатель КК",
+    "kind": "unit"
+  },
+  "Giant Death Robot": {
+    "en": "Giant Death Robot",
+    "ru": "Гигантский робот смерти",
+    "kind": "unit"
+  },
+  "SS Stasis Chamber": {
+    "en": "SS Stasis Chamber",
+    "ru": "Система анабиоза КК",
+    "kind": "unit"
+  },
+  "Stealth Bomber": {
+    "en": "Stealth Bomber",
+    "ru": "Бомбардировщик \"Стелс\"",
+    "kind": "unit"
+  }
+}

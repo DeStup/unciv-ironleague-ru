@@ -1,0 +1,450 @@
+{
+  "Akkad": {
+    "en": "Akkad",
+    "ru": "Аккад"
+  },
+  "Aksum": {
+    "en": "Aksum",
+    "ru": "Аксум"
+  },
+  "America": {
+    "en": "America",
+    "ru": "Америка"
+  },
+  "Arabia": {
+    "en": "Arabia",
+    "ru": "Аравия"
+  },
+  "Argentina": {
+    "en": "Argentina",
+    "ru": "Аргентина"
+  },
+  "Armenia": {
+    "en": "Armenia",
+    "ru": "Армения"
+  },
+  "Assyria": {
+    "en": "Assyria",
+    "ru": "Ассирия"
+  },
+  "Australia": {
+    "en": "Australia",
+    "ru": "Австралия"
+  },
+  "Austria": {
+    "en": "Austria",
+    "ru": "Австрия"
+  },
+  "Ayyubids": {
+    "en": "Ayyubids",
+    "ru": "Айюбиды"
+  },
+  "Aztecs": {
+    "en": "Aztecs",
+    "ru": "Ацтеки"
+  },
+  "Babylon": {
+    "en": "Babylon",
+    "ru": "Вавилон"
+  },
+  "Belgium": {
+    "en": "Belgium",
+    "ru": "Бельгия"
+  },
+  "Boers": {
+    "en": "Boers",
+    "ru": "Буры"
+  },
+  "Bolivia": {
+    "en": "Bolivia",
+    "ru": "Боливия"
+  },
+  "Brazil": {
+    "en": "Brazil",
+    "ru": "Бразилия"
+  },
+  "Brunei": {
+    "en": "Brunei",
+    "ru": "Бруней"
+  },
+  "Bulgaria": {
+    "en": "Bulgaria",
+    "ru": "Болгария"
+  },
+  "Burma": {
+    "en": "Burma",
+    "ru": "Бирма"
+  },
+  "Byzantium": {
+    "en": "Byzantium",
+    "ru": "Византия"
+  },
+  "Canada": {
+    "en": "Canada",
+    "ru": "Канада"
+  },
+  "Carthage": {
+    "en": "Carthage",
+    "ru": "Карфаген"
+  },
+  "Celts": {
+    "en": "Celts",
+    "ru": "Кельты"
+  },
+  "Chile": {
+    "en": "Chile",
+    "ru": "Чили"
+  },
+  "China": {
+    "en": "China",
+    "ru": "Китай"
+  },
+  "Colombia": {
+    "en": "Colombia",
+    "ru": "Колумбия"
+  },
+  "Cuba": {
+    "en": "Cuba",
+    "ru": "Куба"
+  },
+  "Czechia": {
+    "en": "Czechia",
+    "ru": "Чехия"
+  },
+  "Denmark": {
+    "en": "Denmark",
+    "ru": "Дания"
+  },
+  "Egypt": {
+    "en": "Egypt",
+    "ru": "Египет"
+  },
+  "England": {
+    "en": "England",
+    "ru": "Англия"
+  },
+  "Ethiopia": {
+    "en": "Ethiopia",
+    "ru": "Эфиопия"
+  },
+  "Finland": {
+    "en": "Finland",
+    "ru": "Финляндия"
+  },
+  "France": {
+    "en": "France",
+    "ru": "Франция"
+  },
+  "Franks": {
+    "en": "Franks",
+    "ru": "Франки"
+  },
+  "Gaul": {
+    "en": "Gaul",
+    "ru": "Галлы"
+  },
+  "Georgia": {
+    "en": "Georgia",
+    "ru": "Грузия"
+  },
+  "Germany": {
+    "en": "Germany",
+    "ru": "Германия"
+  },
+  "Golden Horde": {
+    "en": "Golden Horde",
+    "ru": "Золотая Орда"
+  },
+  "Goths": {
+    "en": "Goths",
+    "ru": "Готы"
+  },
+  "Greece": {
+    "en": "Greece",
+    "ru": "Греция"
+  },
+  "Hittites": {
+    "en": "Hittites",
+    "ru": "Хетты"
+  },
+  "Hungary": {
+    "en": "Hungary",
+    "ru": "Венгрия"
+  },
+  "The Huns": {
+    "en": "The Huns",
+    "ru": "Гунны"
+  },
+  "Inca": {
+    "en": "Inca",
+    "ru": "Инки"
+  },
+  "India": {
+    "en": "India",
+    "ru": "Индия"
+  },
+  "Indonesia": {
+    "en": "Indonesia",
+    "ru": "Индонезия"
+  },
+  "Ireland": {
+    "en": "Ireland",
+    "ru": "Ирландия"
+  },
+  "Iroquois": {
+    "en": "Iroquois",
+    "ru": "Ирокезы"
+  },
+  "Israel": {
+    "en": "Israel",
+    "ru": "Израиль"
+  },
+  "Italy": {
+    "en": "Italy",
+    "ru": "Италия"
+  },
+  "Japan": {
+    "en": "Japan",
+    "ru": "Япония"
+  },
+  "Jerusalem": {
+    "en": "Jerusalem",
+    "ru": "Иерусалим"
+  },
+  "Khmer": {
+    "en": "Khmer",
+    "ru": "Кхмеры"
+  },
+  "Kilwa": {
+    "en": "Kilwa",
+    "ru": "Кильва"
+  },
+  "Kongo": {
+    "en": "Kongo",
+    "ru": "Конго"
+  },
+  "Korea": {
+    "en": "Korea",
+    "ru": "Корея"
+  },
+  "Lithuania": {
+    "en": "Lithuania",
+    "ru": "Литва"
+  },
+  "Macedonia": {
+    "en": "Macedonia",
+    "ru": "Македония"
+  },
+  "Madagascar": {
+    "en": "Madagascar",
+    "ru": "Мадагаскар"
+  },
+  "Manchuria": {
+    "en": "Manchuria",
+    "ru": "Маньчжурия"
+  },
+  "Maori": {
+    "en": "Maori",
+    "ru": "Маори"
+  },
+  "Maurya": {
+    "en": "Maurya",
+    "ru": "Маурья"
+  },
+  "The Maya": {
+    "en": "The Maya",
+    "ru": "Майя"
+  },
+  "Mexico": {
+    "en": "Mexico",
+    "ru": "Мексика"
+  },
+  "Mongolia": {
+    "en": "Mongolia",
+    "ru": "Монголия"
+  },
+  "The Moors": {
+    "en": "The Moors",
+    "ru": "Мавры"
+  },
+  "Morocco": {
+    "en": "Morocco",
+    "ru": "Марокко"
+  },
+  "Mughals": {
+    "en": "Mughals",
+    "ru": "Великие Моголы"
+  },
+  "Mysore": {
+    "en": "Mysore",
+    "ru": "Майсур"
+  },
+  "Nabataea": {
+    "en": "Nabataea",
+    "ru": "Набатея"
+  },
+  "The Netherlands": {
+    "en": "The Netherlands",
+    "ru": "Нидерланды"
+  },
+  "New Zealand": {
+    "en": "New Zealand",
+    "ru": "Новая Зеландия"
+  },
+  "Normandy": {
+    "en": "Normandy",
+    "ru": "Нормандия"
+  },
+  "Norway": {
+    "en": "Norway",
+    "ru": "Норвегия"
+  },
+  "Nubia": {
+    "en": "Nubia",
+    "ru": "Нубия"
+  },
+  "Oman": {
+    "en": "Oman",
+    "ru": "Оман"
+  },
+  "The Ottomans": {
+    "en": "The Ottomans",
+    "ru": "Османы"
+  },
+  "Palmyra": {
+    "en": "Palmyra",
+    "ru": "Пальмира"
+  },
+  "Papal State": {
+    "en": "Papal State",
+    "ru": "Папская область"
+  },
+  "Persia": {
+    "en": "Persia",
+    "ru": "Персия"
+  },
+  "Philippines": {
+    "en": "Philippines",
+    "ru": "Филиппины"
+  },
+  "Phoenicia": {
+    "en": "Phoenicia",
+    "ru": "Финикия"
+  },
+  "Poland": {
+    "en": "Poland",
+    "ru": "Польша"
+  },
+  "Polynesia": {
+    "en": "Polynesia",
+    "ru": "Полинезия"
+  },
+  "Portugal": {
+    "en": "Portugal",
+    "ru": "Португалия"
+  },
+  "Prussia": {
+    "en": "Prussia",
+    "ru": "Пруссия"
+  },
+  "Romania": {
+    "en": "Romania",
+    "ru": "Румыния"
+  },
+  "Rome": {
+    "en": "Rome",
+    "ru": "Рим"
+  },
+  "Russia": {
+    "en": "Russia",
+    "ru": "Россия"
+  },
+  "Scotland": {
+    "en": "Scotland",
+    "ru": "Шотландия"
+  },
+  "Shoshone": {
+    "en": "Shoshone",
+    "ru": "Шошоны"
+  },
+  "Siam": {
+    "en": "Siam",
+    "ru": "Сиам"
+  },
+  "Sioux": {
+    "en": "Sioux",
+    "ru": "Сиу"
+  },
+  "Songhai": {
+    "en": "Songhai",
+    "ru": "Сонгай"
+  },
+  "Spain": {
+    "en": "Spain",
+    "ru": "Испания"
+  },
+  "Sumeria": {
+    "en": "Sumeria",
+    "ru": "Шумеры"
+  },
+  "Sweden": {
+    "en": "Sweden",
+    "ru": "Швеция"
+  },
+  "Switzerland": {
+    "en": "Switzerland",
+    "ru": "Швейцария"
+  },
+  "Tibet": {
+    "en": "Tibet",
+    "ru": "Тибет"
+  },
+  "Timurids": {
+    "en": "Timurids",
+    "ru": "Тимуриды"
+  },
+  "Tonga": {
+    "en": "Tonga",
+    "ru": "Тонга"
+  },
+  "Tunisia": {
+    "en": "Tunisia",
+    "ru": "Тунис"
+  },
+  "Turkey": {
+    "en": "Turkey",
+    "ru": "Турция"
+  },
+  "UAE": {
+    "en": "UAE",
+    "ru": "ОАЭ"
+  },
+  "Ukraine": {
+    "en": "Ukraine",
+    "ru": "Украина"
+  },
+  "Venice": {
+    "en": "Venice",
+    "ru": "Венеция"
+  },
+  "Vietnam": {
+    "en": "Vietnam",
+    "ru": "Вьетнам"
+  },
+  "Wales": {
+    "en": "Wales",
+    "ru": "Уэльс"
+  },
+  "Yugoslavia": {
+    "en": "Yugoslavia",
+    "ru": "Югославия"
+  },
+  "Zimbabwe": {
+    "en": "Zimbabwe",
+    "ru": "Зимбабве"
+  },
+  "Zulu": {
+    "en": "Zulu",
+    "ru": "Зулусы"
+  }
+}

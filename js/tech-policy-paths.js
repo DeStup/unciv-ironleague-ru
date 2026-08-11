@@ -1,7 +1,6 @@
 /**
  * Tech / policy unlock paths tab for Iron League archive.
- * Loads timelines + G&K tech tree layout; renders full tech tree per player
- * (researched vs locked) and policy unlock lists.
+ * Full G&K tech tree, unlock icons, roster nicks from Games.json.
  */
 (function () {
   const ERA_ORDER = [
@@ -16,17 +15,20 @@
     'Future era',
   ];
 
-  const NODE_W = 152;
-  const NODE_H = 62;
-  const COL_W = 178;
-  const ROW_H = 84;
+  const NODE_W = 168;
+  const NODE_H = 92;
+  const COL_W = 196;
+  const ROW_H = 118;
   const PAD_X = 28;
   const PAD_Y = 24;
 
   let timelines = null;
   let techTree = null;
+  let techDetails = {};
   let techNames = {};
   let policyNames = {};
+  let constructionNames = {};
+  let roster = {};
   let ready = false;
   let selectedEra = 'all';
 
@@ -54,6 +56,19 @@
     return lang() === 'en' ? (row.en || name) : (row.ru || name);
   }
 
+  function labelConstruction(name) {
+    const row = constructionNames[name];
+    if (!row) return name;
+    return lang() === 'en' ? (row.en || name) : (row.ru || name);
+  }
+
+  function playerNick(gameNum, civ) {
+    const fromRoster = ((roster[String(gameNum)] || {})[civ]) || '';
+    if (fromRoster) return fromRoster;
+    const row = (((timelines.games[String(gameNum)] || {}).players) || {})[civ] || {};
+    return row.player || '';
+  }
+
   function eraLabel(eraEn) {
     if (eraEn === 'all') return t('paths.era.all', lang() === 'en' ? 'All eras' : 'Все эпохи');
     const key = 'paths.era.' + String(eraEn || '').replace(/ /g, '_');
@@ -71,12 +86,29 @@
     return t(key, lang() === 'en' ? String(eraEn || '').replace(' era', '') : (fallbacks[eraEn] || eraEn));
   }
 
+  function kindLabel(kind) {
+    const map = {
+      building: t('paths.kind.building', 'здание'),
+      wonder: t('paths.kind.wonder', 'чудо'),
+      unit: t('paths.kind.unit', 'юнит'),
+      improvement: t('paths.kind.improvement', 'улучшение'),
+    };
+    return map[kind] || kind;
+  }
+
   function techIcon(name) {
     return `Tech_icons/${encodeURIComponent(name)}.png`;
   }
 
   function policyIcon(name) {
     return `Policy_icons/${encodeURIComponent(name)}.png`;
+  }
+
+  function unlockIcon(item) {
+    const name = item.name;
+    if (item.kind === 'unit') return `Unit_icons/${encodeURIComponent(name)}.png`;
+    if (item.kind === 'improvement') return `Building_icons/${encodeURIComponent(name)}.png`;
+    return `Building_icons/${encodeURIComponent(name)}.png`;
   }
 
   function pct(count, total) {
@@ -91,11 +123,17 @@
       fetch('data/tech_names.json').then((r) => r.json()),
       fetch('data/policy_names.json').then((r) => r.json()),
       fetch('data/tech_tree.json').then((r) => r.json()),
-    ]).then(([tl, tn, pn, tree]) => {
+      fetch('data/tech_details.json').then((r) => r.json()),
+      fetch('data/construction_names.json').then((r) => r.json()),
+      fetch('data/paths_roster.json').then((r) => r.json()),
+    ]).then(([tl, tn, pn, tree, details, cn, rost]) => {
       timelines = tl;
       techNames = tn || {};
       policyNames = pn || {};
       techTree = tree;
+      techDetails = (details && details.techs) || {};
+      constructionNames = cn || {};
+      roster = rost || {};
       ready = true;
     });
   }
@@ -152,6 +190,7 @@
       const parts = [
         t('paths.coverage', 'Покрытие:') + ` Game ${games.join(', ')}`,
         `${t('paths.samples', 'игроков')}: ${stats.samples || 0}`,
+        t('paths.statsFilter', 'статистика только по полным архивам'),
       ];
       if (partial.length) {
         parts.push(t('paths.partial', 'частично') + `: ${partial.join(', ')}`);
@@ -216,14 +255,12 @@
     const select = document.getElementById('pathsGameSelect');
     if (!select || !timelines) return;
     const cur = select.value;
-    const sort = document.getElementById('pathsSortSelect')?.value || 'newest';
     select.innerHTML = '';
     const opt0 = document.createElement('option');
     opt0.value = '';
     opt0.textContent = t('paths.pickGame', 'Выберите игру…');
     select.appendChild(opt0);
-    const nums = Object.keys(timelines.games || {}).map(Number);
-    nums.sort((a, b) => (sort === 'oldest' ? a - b : b - a));
+    const nums = Object.keys(timelines.games || {}).map(Number).sort((a, b) => a - b);
     nums.forEach((n) => {
       const g = timelines.games[String(n)] || {};
       const opt = document.createElement('option');
@@ -250,11 +287,10 @@
     Object.keys(players)
       .sort((a, b) => a.localeCompare(b))
       .forEach((civ) => {
-        const row = players[civ] || {};
+        const nick = playerNick(gameNum, civ);
         const opt = document.createElement('option');
         opt.value = civ;
-        const nick = row.player ? ` — ${row.player}` : '';
-        opt.textContent = `${civ}${nick}`;
+        opt.textContent = nick ? `${civ} — ${nick}` : civ;
         select.appendChild(opt);
       });
     if (prev && players[prev]) select.value = prev;
@@ -265,9 +301,7 @@
     const wrap = document.getElementById('pathsGameChips');
     if (!wrap || !timelines) return;
     wrap.innerHTML = '';
-    const sort = document.getElementById('pathsSortSelect')?.value || 'newest';
-    const nums = Object.keys(timelines.games || {}).map(Number);
-    nums.sort((a, b) => (sort === 'oldest' ? a - b : b - a));
+    const nums = Object.keys(timelines.games || {}).map(Number).sort((a, b) => a - b);
     const cur = selectedGame();
     nums.forEach((n) => {
       const g = timelines.games[String(n)] || {};
@@ -285,17 +319,33 @@
     if (!wrap || !timelines) return;
     wrap.innerHTML = '';
     const gameNum = selectedGame();
-    if (!gameNum) return;
+    if (!gameNum) {
+      const hint = document.createElement('span');
+      hint.className = 'paths-chip-hint';
+      hint.textContent = t('paths.pickGameFirst', 'Сначала выберите игру');
+      wrap.appendChild(hint);
+      return;
+    }
     const players = (timelines.games[gameNum] || {}).players || {};
     const cur = selectedPlayer();
     Object.keys(players)
       .sort((a, b) => a.localeCompare(b))
       .forEach((civ) => {
-        const row = players[civ] || {};
+        const nick = playerNick(gameNum, civ);
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = 'paths-chip' + (civ === cur ? ' active' : '');
-        btn.textContent = row.player ? `${civ} · ${row.player}` : civ;
+        btn.className = 'paths-chip paths-chip-player' + (civ === cur ? ' active' : '');
+        const civSpan = document.createElement('span');
+        civSpan.className = 'paths-chip-civ';
+        civSpan.textContent = civ;
+        btn.appendChild(civSpan);
+        if (nick) {
+          const nickSpan = document.createElement('span');
+          nickSpan.className = 'paths-chip-nick';
+          nickSpan.textContent = nick;
+          btn.appendChild(nickSpan);
+        }
+        btn.title = nick ? `${civ} — ${nick}` : civ;
         btn.addEventListener('click', () => setPlayer(civ));
         wrap.appendChild(btn);
       });
@@ -371,6 +421,44 @@
     };
   }
 
+  function unlockTooltip(item) {
+    const lines = [
+      `${labelConstruction(item.name)} (${kindLabel(item.kind)})`,
+    ];
+    const quote = item.quote || '';
+    if (quote) lines.push(quote);
+    (item.uniques || []).forEach((u) => {
+      // Keep English unique text; translations of uniques are uneven.
+      lines.push(String(u));
+    });
+    return lines.join('\n');
+  }
+
+  function techTooltip(name, detail) {
+    const lines = [labelTech(name)];
+    const quote = (lang() === 'ru' && detail.quote_ru) ? detail.quote_ru : (detail.quote || '');
+    if (quote) lines.push(quote);
+    return lines.join('\n');
+  }
+
+  function appendUnlocks(node, detail) {
+    const unlocks = (detail.unlocks || []).filter((u) => u.kind !== 'improvement');
+    if (!unlocks.length) return;
+    const row = document.createElement('div');
+    row.className = 'paths-tree-unlocks';
+    unlocks.slice(0, 6).forEach((item) => {
+      const img = document.createElement('img');
+      img.className = 'paths-tree-unlock';
+      img.alt = labelConstruction(item.name);
+      img.loading = 'lazy';
+      img.src = unlockIcon(item);
+      img.title = unlockTooltip(item);
+      img.onerror = () => { img.remove(); };
+      row.appendChild(img);
+    });
+    if (row.childNodes.length) node.appendChild(row);
+  }
+
   function renderTechTree() {
     const canvas = document.getElementById('pathsTechTree');
     const legend = document.getElementById('pathsTreeLegend');
@@ -382,7 +470,12 @@
       canvas.innerHTML = '';
       canvas.style.width = '';
       canvas.style.height = '';
-      if (legend) legend.textContent = t('paths.treeHint', 'Выберите игру и игрока, чтобы увидеть полное древо техов.');
+      if (legend) {
+        legend.textContent = t(
+          'paths.treeHint',
+          'Выберите игру и игрока, чтобы увидеть полное древо техов.'
+        );
+      }
       return;
     }
 
@@ -444,13 +537,18 @@
     techs.forEach((tech) => {
       const pos = nodeOrigin(tech, minCol, minRow);
       const info = done[tech.name];
+      const detail = techDetails[tech.name] || {};
       const node = document.createElement('div');
       node.className = 'paths-tree-node' + (info ? ' is-done' : ' is-locked');
       if (researching && researching === tech.name) node.classList.add('is-researching');
       node.style.left = `${pos.x}px`;
       node.style.top = `${pos.y}px`;
+      node.title = techTooltip(tech.name, detail);
 
+      const top = document.createElement('div');
+      top.className = 'paths-tree-node-top';
       const img = document.createElement('img');
+      img.className = 'paths-tree-tech-icon';
       img.alt = '';
       img.loading = 'lazy';
       img.src = techIcon(tech.name);
@@ -474,9 +572,10 @@
         body.appendChild(meta);
       }
 
-      node.appendChild(img);
-      node.appendChild(body);
-      node.title = labelTech(tech.name);
+      top.appendChild(img);
+      top.appendChild(body);
+      node.appendChild(top);
+      appendUnlocks(node, detail);
       canvas.appendChild(node);
     });
 
@@ -484,6 +583,7 @@
       const parts = [
         t('paths.legendDone', 'зелёный — открыто'),
         t('paths.legendLocked', 'тёмный — не открыто'),
+        t('paths.legendUnlocks', 'иконки снизу — что открывает тех'),
       ];
       if (researching) {
         parts.push(
@@ -512,8 +612,11 @@
     }
     const row = (((timelines.games[gameNum] || {}).players) || {})[civ];
     if (!row) return;
+    const nick = playerNick(gameNum, civ);
     if (head) {
-      head.textContent = `${civ}${row.player ? ' — ' + row.player : ''} · Game ${gameNum}`;
+      head.textContent = nick
+        ? `${civ} — ${nick} · Game ${gameNum}`
+        : `${civ} · Game ${gameNum}`;
     }
     if (meta) {
       const bits = [
@@ -560,14 +663,6 @@
   };
 
   document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('pathsSortSelect')?.addEventListener('change', () => {
-      fillGameSelect();
-      const gameNum = selectedGame();
-      fillPlayerSelect(gameNum);
-      renderGameChips();
-      renderPlayerChips();
-      renderPlayer();
-    });
     document.getElementById('pathsGameSelect')?.addEventListener('change', (e) => {
       setGame(e.target.value);
     });

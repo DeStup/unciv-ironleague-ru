@@ -2831,6 +2831,27 @@
             gap: 8px;
             margin: 0 0 12px;
         }
+        .paths-browse-games {
+            margin-bottom: 6px;
+        }
+        .paths-browse-players {
+            margin: 18px 0 14px;
+            padding: 14px 14px 6px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 215, 0, 0.12);
+        }
+        .paths-subhead {
+            color: #e8d48b !important;
+            margin: 0 0 10px !important;
+            font-size: 0.95rem !important;
+            font-weight: 600;
+        }
+        .paths-chip-hint {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.9rem;
+            padding: 6px 2px;
+        }
         .paths-chip,
         .paths-era-tab {
             appearance: none;
@@ -2843,6 +2864,26 @@
             font-size: 0.9rem;
             cursor: pointer;
             transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+        }
+        .paths-chip-player {
+            border-radius: 12px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+            padding: 7px 12px;
+            line-height: 1.15;
+        }
+        .paths-chip-civ {
+            font-weight: 600;
+        }
+        .paths-chip-nick {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.62);
+        }
+        .paths-chip.active .paths-chip-nick,
+        .paths-chip-player.active .paths-chip-nick {
+            color: rgba(255, 230, 150, 0.9);
         }
         .paths-chip:hover,
         .paths-era-tab:hover {
@@ -2892,19 +2933,24 @@
         }
         .paths-tree-node {
             position: absolute;
-            width: 152px;
-            height: 62px;
+            width: 168px;
+            min-height: 92px;
             box-sizing: border-box;
-            display: grid;
-            grid-template-columns: 36px 1fr;
-            gap: 8px;
-            align-items: center;
-            padding: 6px 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 6px 8px 8px;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.12);
             background: rgba(40, 44, 48, 0.92);
             color: rgba(255, 255, 255, 0.55);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+        }
+        .paths-tree-node-top {
+            display: grid;
+            grid-template-columns: 36px 1fr;
+            gap: 8px;
+            align-items: center;
         }
         .paths-tree-node.is-done {
             background: rgba(28, 78, 42, 0.92);
@@ -2914,7 +2960,7 @@
         .paths-tree-node.is-researching {
             box-shadow: 0 0 0 2px rgba(90, 210, 230, 0.85), 0 2px 10px rgba(0, 0, 0, 0.35);
         }
-        .paths-tree-node img {
+        .paths-tree-tech-icon {
             width: 36px;
             height: 36px;
             image-rendering: pixelated;
@@ -2938,6 +2984,21 @@
         }
         .paths-tree-node.is-locked .paths-tree-node-meta {
             color: rgba(160, 230, 245, 0.9);
+        }
+        .paths-tree-unlocks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            min-height: 22px;
+        }
+        .paths-tree-unlock {
+            width: 22px;
+            height: 22px;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            image-rendering: pixelated;
+            cursor: help;
         }
         @media (max-width: 860px) {
             .paths-columns,
