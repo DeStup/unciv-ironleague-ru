@@ -58,6 +58,7 @@ Iron League (Unciv) — архив, статистика, рейтинг и пу
 | `Games.json` | Архив игр (стабильный URL для бота) |
 | `data/` | FAQ, тирлист, имена, древо/детали техов, таймлайны |
 | `tools/export_tech_details.py` | Сборка `tech_details.json` / `tech_tree.json` из RekMOD-iron |
+| `tools/export_default_capitals.py` | Сборка `default_capitals.json` из Nations.json + RU properties |
 | `tools/extract_missing_unlock_icons.py` | Вырезание иконок из атласов Unciv/RekMOD |
 | `Tech_icons/`, `Unit_icons/`, `Building_icons/`, `Wonder_icons/`, `Improvement_icons/`, `Resource_icons/`, `Policy_icons/`, `Nation_icons/`, `Unique_icons/` | Иконки |
 | `Replays/` | GIF (`gif` в `Games.json`) |
@@ -73,6 +74,7 @@ Iron League (Unciv) — архив, статистика, рейтинг и пу
 | `tech_details.json` | Анлоки, бонусы, `nation_unlocks`, цитаты |
 | `tech_policy_timelines.json` | Порядок техов/политик по играм |
 | `tech_names.json`, `policy_names.json`, `construction_names.json`, `nation_names.json` | RU/EN подписи |
+| `default_capitals.json` | Столицы по умолчанию (EN/RU) для архива |
 | `paths_roster.json` | Ники игроков для путей |
 | `faq.json` / `faq_en.json`, `tierlist.json`, `nation_colors.json` | FAQ, тирлист, цвета портретов |
 

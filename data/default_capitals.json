@@ -1,0 +1,418 @@
+{
+  "Akkad": {
+    "en": "Akkad",
+    "ru": "Аккад"
+  },
+  "Aksum": {
+    "en": "Aksum",
+    "ru": "Аксум"
+  },
+  "America": {
+    "en": "Washington",
+    "ru": "Вашингтон"
+  },
+  "Arabia": {
+    "en": "Mecca",
+    "ru": "Мекка"
+  },
+  "Argentina": {
+    "en": "Buenos Aires",
+    "ru": "Буэнос-Айрес"
+  },
+  "Armenia": {
+    "en": "Yerevan",
+    "ru": "Ереван"
+  },
+  "Assyria": {
+    "en": "Assur",
+    "ru": "Ашшур"
+  },
+  "Australia": {
+    "en": "Canberra",
+    "ru": "Канберра"
+  },
+  "Austria": {
+    "en": "Vienna",
+    "ru": "Вена"
+  },
+  "Ayyubids": {
+    "en": "Al-Qahirah",
+    "ru": "Каир"
+  },
+  "Aztecs": {
+    "en": "Tenochtitlan",
+    "ru": "Теночтитлан"
+  },
+  "Babylon": {
+    "en": "Babylon",
+    "ru": "Вавилон"
+  },
+  "Belgium": {
+    "en": "Brussels",
+    "ru": "Брюссель"
+  },
+  "Boers": {
+    "en": "Pretoria",
+    "ru": "Претория"
+  },
+  "Bolivia": {
+    "en": "Sucre",
+    "ru": "Сукре"
+  },
+  "Brazil": {
+    "en": "Rio de Janeiro",
+    "ru": "Рио-де-Жанейро"
+  },
+  "Brunei": {
+    "en": "Bandar Brunei",
+    "ru": "Бандар-Бруней"
+  },
+  "Bulgaria": {
+    "en": "Pliska",
+    "ru": "Плиска"
+  },
+  "Burma": {
+    "en": "Yangon",
+    "ru": "Янгон"
+  },
+  "Byzantium": {
+    "en": "Constantinople",
+    "ru": "Константинополь"
+  },
+  "Canada": {
+    "en": "Ottawa",
+    "ru": "Оттава"
+  },
+  "Carthage": {
+    "en": "Carthage",
+    "ru": "Карфаген"
+  },
+  "Celts": {
+    "en": "Edinburgh",
+    "ru": "Эдинбург"
+  },
+  "Chile": {
+    "en": "Santiago de Chile",
+    "ru": "Сантьяго"
+  },
+  "Colombia": {
+    "en": "Bogotá",
+    "ru": "Богота"
+  },
+  "China": {
+    "en": "Beijing",
+    "ru": "Пекин"
+  },
+  "Denmark": {
+    "en": "Copenhagen",
+    "ru": "Копенгаген"
+  },
+  "Egypt": {
+    "en": "Thebes",
+    "ru": "Фивы"
+  },
+  "England": {
+    "en": "London",
+    "ru": "Лондон"
+  },
+  "Ethiopia": {
+    "en": "Addis Ababa",
+    "ru": "Аддис Абеба"
+  },
+  "Finland": {
+    "en": "Helsinki",
+    "ru": "Хельсинки"
+  },
+  "France": {
+    "en": "Paris",
+    "ru": "Париж"
+  },
+  "Franks": {
+    "en": "Aachen",
+    "ru": "Ахен"
+  },
+  "Gaul": {
+    "en": "Bibracte",
+    "ru": "Бибракта"
+  },
+  "Germany": {
+    "en": "Berlin",
+    "ru": "Берлин"
+  },
+  "Georgia": {
+    "en": "Tbilisi",
+    "ru": "Тбилиси"
+  },
+  "Golden Horde": {
+    "en": "Sarai Batu",
+    "ru": "Сарай-Бату"
+  },
+  "Goths": {
+    "en": "Arheimar",
+    "ru": "Археймар"
+  },
+  "Greece": {
+    "en": "Athens",
+    "ru": "Афины"
+  },
+  "Hittites": {
+    "en": "Hattusa",
+    "ru": "Хаттуса"
+  },
+  "The Huns": {
+    "en": "Attila's Court",
+    "ru": "Ставка Аттилы"
+  },
+  "Hungary": {
+    "en": "Buda",
+    "ru": "Буда"
+  },
+  "Inca": {
+    "en": "Cuzco",
+    "ru": "Куско"
+  },
+  "India": {
+    "en": "Delhi",
+    "ru": "Дели"
+  },
+  "Indonesia": {
+    "en": "Jakarta",
+    "ru": "Джакарта"
+  },
+  "Ireland": {
+    "en": "Dublin",
+    "ru": "Дублин"
+  },
+  "Iroquois": {
+    "en": "Onoondaga",
+    "ru": "Онондага"
+  },
+  "Israel": {
+    "en": "Yerushalayim",
+    "ru": "Иерусалим"
+  },
+  "Italy": {
+    "en": "Roma",
+    "ru": "Рим"
+  },
+  "Japan": {
+    "en": "Kyoto",
+    "ru": "Киото"
+  },
+  "Jerusalem": {
+    "en": "Jerusalem",
+    "ru": "Иерусалим"
+  },
+  "Khmer": {
+    "en": "Yasodharapura",
+    "ru": "Ясодхарапура"
+  },
+  "Kilwa": {
+    "en": "Kilwa Kiswani",
+    "ru": "Килва-Кисивани"
+  },
+  "Kongo": {
+    "en": "M'banza-Kongo",
+    "ru": "М'банза-Конго"
+  },
+  "Korea": {
+    "en": "Seoul",
+    "ru": "Сеул"
+  },
+  "Lithuania": {
+    "en": "Vilnius",
+    "ru": "Вильнюс"
+  },
+  "Macedonia": {
+    "en": "Pella",
+    "ru": "Пелла"
+  },
+  "Madagascar": {
+    "en": "Antananarivo",
+    "ru": "Антананариву"
+  },
+  "Manchuria": {
+    "en": "Mukden",
+    "ru": "Мукден"
+  },
+  "Maurya": {
+    "en": "Pataliputra",
+    "ru": "Паталипутра"
+  },
+  "The Maya": {
+    "en": "Palenque",
+    "ru": "Паленке"
+  },
+  "Mexico": {
+    "en": "Mexico City",
+    "ru": "Мехико"
+  },
+  "Mongolia": {
+    "en": "Karakorum",
+    "ru": "Каракорум"
+  },
+  "The Moors": {
+    "en": "Córdoba",
+    "ru": "Кордова"
+  },
+  "Morocco": {
+    "en": "Marrakech",
+    "ru": "Марракеш"
+  },
+  "Mysore": {
+    "en": "Mysuru",
+    "ru": "Майсур"
+  },
+  "Nabataea": {
+    "en": "Petra",
+    "ru": "Петра"
+  },
+  "The Netherlands": {
+    "en": "Amsterdam",
+    "ru": "Амстердам"
+  },
+  "Normandy": {
+    "en": "Caen",
+    "ru": "Кан"
+  },
+  "Norway": {
+    "en": "Oslo",
+    "ru": "Осло"
+  },
+  "Nubia": {
+    "en": "Meroe",
+    "ru": "Мероэ"
+  },
+  "Oman": {
+    "en": "Muscat",
+    "ru": "Маскат"
+  },
+  "The Ottomans": {
+    "en": "Istanbul",
+    "ru": "Стамбул"
+  },
+  "Papal State": {
+    "en": "Vatican City",
+    "ru": "Ватикан"
+  },
+  "Persia": {
+    "en": "Persepolis",
+    "ru": "Персеполис"
+  },
+  "Philippines": {
+    "en": "Malolos",
+    "ru": "Малолос"
+  },
+  "Phoenicia": {
+    "en": "Tyre",
+    "ru": "Тир"
+  },
+  "Poland": {
+    "en": "Warsaw",
+    "ru": "Варшава"
+  },
+  "Polynesia": {
+    "en": "Honolulu",
+    "ru": "Гонолулу"
+  },
+  "Portugal": {
+    "en": "Lisbon",
+    "ru": "Лиссабон"
+  },
+  "Prussia": {
+    "en": "Konigsberg",
+    "ru": "Кенигсберг"
+  },
+  "Romania": {
+    "en": "Bucharest",
+    "ru": "Бухарест"
+  },
+  "Rome": {
+    "en": "Rome",
+    "ru": "Рим"
+  },
+  "Russia": {
+    "en": "Moscow",
+    "ru": "Москва"
+  },
+  "Scotland": {
+    "en": "Edinburgh",
+    "ru": "Эдинбург"
+  },
+  "Shoshone": {
+    "en": "Moson Kahni",
+    "ru": "Мосон-Кани"
+  },
+  "Siam": {
+    "en": "Sukhothai",
+    "ru": "Сукхотхай"
+  },
+  "Sioux": {
+    "en": "Ihankthunwanna",
+    "ru": "Иханктунванна"
+  },
+  "Songhai": {
+    "en": "Gao",
+    "ru": "Гао"
+  },
+  "Spain": {
+    "en": "Madrid",
+    "ru": "Мадрид"
+  },
+  "Sumeria": {
+    "en": "Ur",
+    "ru": "Ур"
+  },
+  "Sweden": {
+    "en": "Stockholm",
+    "ru": "Стокгольм"
+  },
+  "Switzerland": {
+    "en": "Bern",
+    "ru": "Берн"
+  },
+  "Tibet": {
+    "en": "Lhasa",
+    "ru": "Лхаса"
+  },
+  "Timurids": {
+    "en": "Samarkand",
+    "ru": "Самарканд"
+  },
+  "Tonga": {
+    "en": "Mu'a",
+    "ru": "Муа"
+  },
+  "Turkey": {
+    "en": "Ankara",
+    "ru": "Анкара"
+  },
+  "Ukraine": {
+    "en": "Kiev",
+    "ru": "Киев"
+  },
+  "Venice": {
+    "en": "Venice",
+    "ru": "Венеция"
+  },
+  "Vietnam": {
+    "en": "Hà Noi",
+    "ru": "Ханой"
+  },
+  "Wales": {
+    "en": "Cardiff",
+    "ru": "Кардиф"
+  },
+  "Yugoslavia": {
+    "en": "Belgrade",
+    "ru": "Белград"
+  },
+  "Zimbabwe": {
+    "en": "Great Zimbabwe",
+    "ru": "Великий Зимбабве"
+  },
+  "Zulu": {
+    "en": "Ulundi",
+    "ru": "Улунди"
+  }
+}

@@ -1043,6 +1043,7 @@
         wonderIconsPath: 'Wonder_icons/',
         colorsPath: 'data/nation_colors.json',
         wonderNamesPath: 'data/wonder_names_ru.json',
+        defaultCapitalsPath: 'data/default_capitals.json',
         replaysPath: 'Replays/'
     };
 
@@ -1081,6 +1082,8 @@
     }
 
     let wonderNamesRu = {};
+    /** eng nation → { en, ru } default capital (first city in Nations.json). */
+    let defaultCapitals = {};
 
     // Массив соответствия русских и английских названий наций
     const nations = [
@@ -1424,6 +1427,43 @@
             return englishName;
         }
         return wonderNamesRu[englishName] || englishName;
+    }
+
+    /** Resolve Games.json nation (RU or EN) to default_capitals.json key. */
+    function resolveDefaultCapitalNationKey(nation) {
+        const raw = String(nation || '').trim();
+        if (!raw) return '';
+        if (defaultCapitals[raw]) return raw;
+        const fromRu = rusToEngNation(raw);
+        if (fromRu && defaultCapitals[fromRu]) return fromRu;
+        const stripped = raw.replace(/^The\s+/i, '');
+        if (stripped !== raw && defaultCapitals[stripped]) return stripped;
+        if (defaultCapitals[`The ${stripped}`]) return `The ${stripped}`;
+        if (fromRu) {
+            const fromRuStripped = String(fromRu).replace(/^The\s+/i, '');
+            if (defaultCapitals[fromRuStripped]) return fromRuStripped;
+            if (defaultCapitals[`The ${fromRuStripped}`]) return `The ${fromRuStripped}`;
+        }
+        return fromRu || raw;
+    }
+
+    /**
+     * Show captured capital in UI language when the save city equals that
+     * nation's default capital; leave renamed cities as stored.
+     */
+    function displayCapturedCity(nation, city) {
+        const cityName = String(city || '').trim();
+        if (!cityName) return displayNationName(nation);
+        const entry = defaultCapitals[resolveDefaultCapitalNationKey(nation)];
+        if (!entry) return cityName;
+        const defaultEn = String(entry.en || '').trim();
+        if (!defaultEn || cityName.toLowerCase() !== defaultEn.toLowerCase()) {
+            return cityName;
+        }
+        if (window.IronLeagueI18n && IronLeagueI18n.getLang() === 'en') {
+            return defaultEn;
+        }
+        return entry.ru || cityName;
     }
 
     function wonderIconUrl(englishName) {
@@ -2115,7 +2155,9 @@
                 conquered.map(c => {
                     const nat = c.nation || '';
                     const city = c.city || '';
-                    const label = city || displayNationName(nat);
+                    const label = city
+                        ? displayCapturedCity(nat, city)
+                        : displayNationName(nat);
                     const capWonders = Array.isArray(c.wonders) ? c.wonders.filter(Boolean) : [];
                     const wondersInner = capWonders.length
                         ? `<div class="survivor-captured-wonders">${tt('captured.wonders')}<ul class="survivor-wonders-list">${
@@ -2478,10 +2520,11 @@
     // Загрузка данных
     async function loadGamesData() {
         try {
-            const [gamesResponse, colorsResponse, wondersResponse] = await Promise.all([
+            const [gamesResponse, colorsResponse, wondersResponse, capitalsResponse] = await Promise.all([
                 fetchFresh('Games.json'),
                 fetchFresh(CONFIG.colorsPath),
                 fetchFresh(CONFIG.wonderNamesPath),
+                fetchFresh(CONFIG.defaultCapitalsPath),
             ]);
             if (!gamesResponse.ok) throw new Error(`HTTP ${gamesResponse.status}`);
 
@@ -2500,6 +2543,12 @@
                 wonderNamesRu = wondersData.names || wondersData || {};
             } else {
                 console.warn('wonder_names_ru.json не загружен');
+            }
+
+            if (capitalsResponse.ok) {
+                defaultCapitals = await capitalsResponse.json() || {};
+            } else {
+                console.warn('default_capitals.json не загружен');
             }
 
             const data = await gamesResponse.json();
