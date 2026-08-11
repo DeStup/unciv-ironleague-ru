@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=scrollbar-1">
+    <link rel="stylesheet" href="css/site.css?v=profile-perf-1">
 
 </head>
 <body>
@@ -237,6 +237,11 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+            </div>
+            <div class="profile-perf" id="profilePerf" hidden>
+                <h4 data-i18n="profile.perfTitle">Динамика показателей</h4>
+                <p class="hint" data-i18n="profile.perfHint">Средние по финалам и график по играм (только ranked, без teams/scrap).</p>
+                <div id="profilePerfCharts"></div>
             </div>
         </div>
     </div>
@@ -995,9 +1000,9 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=tech-eras-1"></script>
+<script src="js/i18n.js?v=profile-perf-1"></script>
 <script src="js/player-meta.js?v=click4x-cy-ru-1"></script>
-<script src="js/stats-charts.js?v=policy-colors-1"></script>
+<script src="js/stats-charts.js?v=profile-perf-1"></script>
 <script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=lobby-opp-1"></script>
 <script src="js/achievements.js?v=memo-fp-1"></script>
@@ -1993,7 +1998,11 @@
 
         if (gamesBody) {
             const rows = [];
-            for (const game of ranked) {
+            const perfSeries = [];
+            const gamesChrono = ranked.slice().sort((a, b) =>
+                (Number(a.number) || Number(a.id) || 0) - (Number(b.number) || Number(b.id) || 0)
+            );
+            for (const game of gamesChrono) {
                 const roster = Array.isArray(game.players) ? game.players : [];
                 const me = roster.find((p) => (p.name || '').trim() === name);
                 if (!me) continue;
@@ -2001,17 +2010,74 @@
                 const surv = (game.survivors || []).find((s) => (s.name || '').trim() === name);
                 const units = surv && Number.isFinite(Number(surv.units)) ? surv.units : '—';
                 const cities = surv && Number.isFinite(Number(surv.cities)) ? surv.cities : '—';
+                const gameLabel = String(game.number || game.id);
                 rows.push(`<tr>
-                    <td><button type="button" class="stats-game-link" data-game-id="${game.id}">#${game.number || game.id}</button></td>
+                    <td><button type="button" class="stats-game-link" data-game-id="${game.id}">#${gameLabel}</button></td>
                     <td>${renderNationLabel(me.nation)}</td>
                     <td>${won ? tt('profile.win') : tt('profile.loss')}</td>
                     <td>${displayMapName(game.map) || '—'}</td>
                     <td class="num">${units}</td>
                     <td class="num">${cities}</td>
                 </tr>`);
+                if (surv) {
+                    const num = (key) => {
+                        const v = Number(surv[key]);
+                        return Number.isFinite(v) ? v : null;
+                    };
+                    perfSeries.push({
+                        game: Number(game.number) || Number(game.id) || 0,
+                        gameLabel: `#${gameLabel}`,
+                        techs: num('techs'),
+                        science: num('science'),
+                        culture: num('culture'),
+                        gold: num('gold'),
+                        gold_income: num('gold_income'),
+                        production: num('production'),
+                        population: num('population'),
+                        capital_population: num('capital_population'),
+                        cities: num('cities'),
+                        units: num('units'),
+                        score: num('score'),
+                        great_people: num('great_people'),
+                        military_deaths: num('military_deaths'),
+                    });
+                }
             }
             gamesBody.innerHTML = rows.join('') || `<tr><td colspan="6">—</td></tr>`;
             hydrateNationPortraits(gamesBody);
+
+            const perfWrap = document.getElementById('profilePerf');
+            const perfCharts = document.getElementById('profilePerfCharts');
+            if (perfWrap && perfCharts && window.IronLeagueCharts && IronLeagueCharts.renderProfilePerformance) {
+                if (perfSeries.length) {
+                    perfWrap.hidden = false;
+                    IronLeagueCharts.renderProfilePerformance(perfCharts, perfSeries, {
+                        storageKey: 'il_profile_perf_metric',
+                        defaultMetric: 'techs',
+                        avgLabel: tt('profile.perfAvg'),
+                        emptyText: '—',
+                        avgsAria: tt('profile.perfAvgsAria'),
+                        metrics: [
+                            { key: 'techs', label: tt('stats.col.techs') },
+                            { key: 'science', label: tt('stats.col.science') },
+                            { key: 'culture', label: tt('stats.col.culture') },
+                            { key: 'gold', label: tt('stats.col.gold') },
+                            { key: 'gold_income', label: tt('stats.col.goldIncome') },
+                            { key: 'production', label: tt('stats.col.production') },
+                            { key: 'population', label: tt('stats.col.population') },
+                            { key: 'capital_population', label: tt('stats.col.capitalPop') },
+                            { key: 'cities', label: tt('stats.col.cities') },
+                            { key: 'units', label: tt('stats.col.units') },
+                            { key: 'score', label: tt('stats.col.score') },
+                            { key: 'great_people', label: tt('stats.col.greatPeople') },
+                            { key: 'military_deaths', label: tt('stats.col.militaryDeaths') },
+                        ],
+                    });
+                } else {
+                    perfWrap.hidden = true;
+                    perfCharts.innerHTML = '';
+                }
+            }
         }
         showSiteView('profile');
     }

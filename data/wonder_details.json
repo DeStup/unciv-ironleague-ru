@@ -313,6 +313,7 @@
         "+3 Культура, +3 Счастье, +6 Вера"
       ],
       "quote": "'With the magnificence of eternity before us, let time, with all its fluctuations, dwindle into its own littleness.' - Thomas Chalmers",
+      "quote_ru": "'Перед нами величие вечности, так пусть же время со всеми его колебаниями пребудет в собственной ничтожности.' - Томас Чалмерс",
       "stats": "+3 Culture, +3 Happiness, +6 Faith"
     },
     "National College": {
@@ -454,6 +455,7 @@
         "+4 Культура"
       ],
       "quote": "'Earth proudly wears the Parthenon as the best gem upon her zone.' - Ralph Waldo Emerson",
+      "quote_ru": "'Земля гордо носит Парфенон как прекраснейшую жемчужину в своем одеянии.' - Ральф Уолдо Эмерсон",
       "stats": "+4 Culture"
     },
     "Writer Guild": {
@@ -675,6 +677,7 @@
         "+5 Вера"
       ],
       "quote": "'When you realize how perfect everything is, you will tilt your head back and laugh at the sky' - Gautama Buddha",
+      "quote_ru": "'Когда вы осознаете, насколько все идеально, вы откинете голову назад и рассмеетесь в небеса' - Будда Гаутама",
       "stats": "+5 Faith"
     },
     "Grand Temple": {
@@ -1212,6 +1215,7 @@
         "+2 Культура"
       ],
       "quote": "'Totus mundus agit histrionem.' - Inscription above main entrance to the Globe Theatre",
+      "quote_ru": "'Totus mundus agit histrionem.' - Надпись над главным входом в Театр Глобус",
       "stats": "+2 Culture"
     },
     "Leaning Tower of Pisa": {
@@ -1311,7 +1315,7 @@
         "+1 Культура"
       ],
       "quote": "'Things always seem fairer when we look back at them, and it is out of that inaccessible tower' - James Russell Lowell",
-      "quote_ru": "'Многое начинает казаться лучше, когда остается в прошлом - и из этой неприступной башни Прошлого нас зовет и манит рукою Тоска.' - Джеймс Расселл Лоуэлл",
+      "quote_ru": "'Вещи всегда кажутся более справедливыми, когда мы оглядываемся на них, и именно из этой недоступной башни тоска наклоняется и манит' - Джеймс Рассел Лоуэлл",
       "stats": "+1 Culture"
     },
     "Taj Mahal": {
@@ -1361,6 +1365,7 @@
         "+2 Культура"
       ],
       "quote": "'The painter is not simply someone who looks and who sees. Above all, the artist is someone who exposes a personal vision by rendering it visible.' - Marcel Paquet",
+      "quote_ru": "'Художник - это не просто кто-то, кто смотрит и видит. В первую очередь художник - тот, кто выражает личное видение, делая его видимым.' - Марсель Паке",
       "stats": "+2 Culture"
     },
     "Red Fort": {
@@ -1384,6 +1389,7 @@
         "Мощь города +12"
       ],
       "quote": "'When we build, let us think that we build forever.' - John Ruskin",
+      "quote_ru": "'Когда мы строим, позвольте нам думать, что мы строим навсегда.' - Джон Рёскин",
       "stats": "+8 Culture, +4 Happiness"
     },
     "The Louvre": {
@@ -1458,6 +1464,7 @@
         "+6 Золото, +4 Культура, +2 Счастье"
       ],
       "quote": "'...the location is one of the most beautiful to be found, holy and unapproachable, a worthy temple for the divine friend who has brought salvation and true blessing to the world.' - King Ludwig II of Bavaria",
+      "quote_ru": "'...это одно из самых красивых мест, святое и безупречное, достойный монастырь для божественного друга, который принес спасение и благословение миру.' - Король Баварии Людвиг II",
       "stats": "+6 Gold, +4 Culture, +2 Happiness"
     },
     "Brandenburg Gate": {
@@ -1507,6 +1514,7 @@
         "+2 Культура"
       ],
       "quote": "'Broadway is a main artery of New York cultural life - the hardened artery.' - Walter Winchell",
+      "quote_ru": "'Бродвей - это главная артерия культурной жизни Нью-Йорка - затвердевшая артерия.' - Уолтер Уинчелл",
       "stats": "+2 Culture"
     },
     "Eiffel Tower": {
@@ -1619,6 +1627,7 @@
         "+1 Счастье"
       ],
       "quote": "'This loss (of freedom) means the fading from human life of values infinitely precious to it. There only remain ironbound conditions of employment and trivial amusements for leisure.' - A.N. Whitehead",
+      "quote_ru": "'Эта потеря (свободы) означает исчезновение из человеческой жизни ценностей, бесконечно ценных для нас. Остаются только жесткие условия труда и банальные виды развлечений для досуга.' - А.Н. Уайтхед",
       "stats": "+1 Happiness"
     },
     "Kremlin": {
@@ -1646,6 +1655,7 @@
         "+1 Культура"
       ],
       "quote": "'The Law is a fortress on a hill that armies cannot take or floods wash away.' - The Prophet Muhammed",
+      "quote_ru": "'Закон - это крепость на холме, которую не могут взять армии и смыть наводнения.' - Пророк Мухаммед",
       "stats": "+1 Culture"
     },
     "Panama Canal": {
@@ -1740,6 +1750,7 @@
         "+1 Культура"
       ],
       "quote": "'Nothing travels faster than light with the possible exception of bad news, which obeys its own special rules.' - Douglas Adams",
+      "quote_ru": "'Ничто не движется быстрее скорости света, кроме плохих новостей - они подчиняются собственным законам.' – Дуглас Адамс",
       "stats": "+1 Culture"
     },
     "Pentagon": {

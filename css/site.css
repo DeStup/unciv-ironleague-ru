@@ -2680,6 +2680,68 @@
             color: #ffd700;
             font-size: 0.95rem;
         }
+        .profile-perf {
+            margin-top: 18px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .profile-perf > h4 {
+            margin: 0 0 4px;
+            color: #ffd700;
+            font-size: 1rem;
+        }
+        .profile-perf-shell {
+            margin-top: 8px;
+        }
+        .profile-perf-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 12px 0 8px;
+        }
+        .profile-perf-tab {
+            cursor: pointer;
+            border: 1px solid rgba(255, 215, 0, 0.28);
+            background: rgba(0, 0, 0, 0.25);
+            color: rgba(255, 255, 255, 0.88);
+            border-radius: 999px;
+            padding: 5px 11px;
+            font-size: 0.82rem;
+        }
+        .profile-perf-tab.active {
+            border-color: #ffd700;
+            color: #ffd700;
+            background: rgba(255, 215, 0, 0.12);
+        }
+        .il-line-chart {
+            margin: 6px 0 10px;
+            padding: 8px 6px 4px;
+            border-radius: 12px;
+            background: rgba(0, 0, 0, 0.28);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .il-line-chart svg {
+            display: block;
+            max-width: 100%;
+        }
+        .il-line-grid {
+            stroke: rgba(255, 255, 255, 0.08);
+            stroke-width: 1;
+        }
+        .il-line-avg {
+            stroke: rgba(255, 215, 0, 0.45);
+            stroke-width: 1.25;
+            stroke-dasharray: 5 4;
+        }
+        .il-line-axis {
+            fill: rgba(255, 255, 255, 0.55);
+            font-size: 11px;
+        }
+        .il-line-meta {
+            margin: 2px 8px 6px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.75);
+        }
         .profile-achievements {
             display: flex;
             flex-wrap: wrap;
@@ -2701,8 +2763,11 @@
         .profile-ach-card img {
             width: 40px;
             height: 40px;
-            object-fit: contain;
+            object-fit: cover;
             flex-shrink: 0;
+            border-radius: 50%;
+            background: #1a1624;
+            box-shadow: 0 0 0 1px rgba(255, 215, 0, 0.28);
         }
         .profile-ach-card--runner {
             border-color: rgba(255, 215, 0, 0.16);
