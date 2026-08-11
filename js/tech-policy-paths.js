@@ -15,10 +15,10 @@
     'Future era',
   ];
 
-  const NODE_W = 220;
-  const NODE_H = 74;
-  const COL_W = 248;
-  const ROW_H = 90;
+  const NODE_W = 248;
+  const NODE_H = 96;
+  const COL_W = 276;
+  const ROW_H = 116;
   const PAD_X = 20;
   const PAD_Y = 16;
   const MAX_UNLOCK_ICONS = 8;

@@ -2962,7 +2962,7 @@
         }
         .paths-tree-node {
             position: absolute;
-            width: 220px;
+            width: 248px;
             box-sizing: border-box;
             display: grid;
             grid-template-columns: 42px minmax(0, 1fr);
@@ -3035,14 +3035,16 @@
         .paths-tree-unlocks {
             grid-column: 2;
             display: flex;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
             gap: 3px;
             align-items: center;
+            align-content: flex-start;
             min-height: 26px;
+            max-width: 100%;
             padding: 2px 5px;
             border-radius: 10px;
             background: rgba(0, 0, 0, 0.55);
-            overflow: hidden;
+            overflow: visible;
         }
         .paths-tree-unlock {
             display: inline-flex;
