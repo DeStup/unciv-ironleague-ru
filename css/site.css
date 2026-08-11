@@ -3089,6 +3089,16 @@
         .paths-tree-unlock[data-kind="unique"] {
             background: #f5f5f5;
         }
+        .paths-tree-unlock[data-kind="nation_effect"] {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+        }
+        .paths-tree-unlock[data-kind="nation_effect"] .paths-tree-unlock-img {
+            filter: none;
+            width: 20px;
+            height: 20px;
+            image-rendering: auto;
+        }
         .paths-tree-nation-toggle {
             flex-shrink: 0;
             min-width: 28px;

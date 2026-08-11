@@ -185,7 +185,16 @@
           ]
         }
       ],
-      "nation_unlocks": [],
+      "nation_unlocks": [
+        {
+          "kind": "nation_effect",
+          "name": "Wales",
+          "uniqueTo": "Wales",
+          "uniques": [
+            "[+1 Food, +1 Gold] from every [Sheep] <after discovering [Animal Husbandry]>"
+          ]
+        }
+      ],
       "uniques": [
         "Provides [1] [Trade Route]"
       ],
@@ -742,6 +751,16 @@
             "Provides [2] [Horses]"
           ],
           "uniqueTo": "Golden Horde"
+        },
+        {
+          "kind": "nation_effect",
+          "name": "Ukraine",
+          "uniqueTo": "Ukraine",
+          "uniques": [
+            "[+1 Food] from every [Maize] <after discovering [The Wheel]>",
+            "[+1 Food] from every [Wheat] <after discovering [The Wheel]>",
+            "[+1 Food] from every [Salt] <after discovering [The Wheel]>"
+          ]
         }
       ],
       "quote_ru": "'Мудрость и добродетель — как два колеса телеги.' - японская пословица"
@@ -1103,6 +1122,15 @@
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
           "uniqueTo": "Brunei"
+        },
+        {
+          "kind": "nation_effect",
+          "name": "Phoenicia",
+          "uniqueTo": "Phoenicia",
+          "uniques": [
+            "Gain [75] [Gold] <(modified by game speed)> <upon founding a city> <after discovering [Optics]>",
+            "[+1] population [in this city] <upon founding a city> <after discovering [Optics]>"
+          ]
         }
       ],
       "uniques": [
@@ -1354,6 +1382,14 @@
             "Can only be built <in [Annexed] cities>"
           ],
           "uniqueTo": "Jerusalem"
+        },
+        {
+          "kind": "nation_effect",
+          "name": "Nabataea",
+          "uniqueTo": "Nabataea",
+          "uniques": [
+            "[+1 Food] from [{Fresh Water} {Farm}] tiles [in all cities] <after discovering [Mathematics]>"
+          ]
         }
       ],
       "quote_ru": "'Математика — врата и ключ всех наук.' - Роджер Бэкон"
@@ -1429,13 +1465,7 @@
             "Improves [Bonus] resource in this tile",
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
-          "uniqueTo": "Polynesia",
-          "uniques_ru": [
-            "Можно построить только on [Coastal] tiles",
-            "[+1 Culture] for each adjacent [Moai]",
-            "[+1 Gold] <after discovering [Flight]>",
-            "Pillaging this improvement yields approximately [+10 Gold]"
-          ]
+          "uniqueTo": "Polynesia"
         },
         {
           "kind": "improvement",
@@ -1447,13 +1477,7 @@
             "Cannot be built on [resource] tiles",
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
-          "uniqueTo": "Inca",
-          "uniques_ru": [
-            "Невозможно построить на [Bonus resource] tiles",
-            "[+1 Food] for each adjacent [Mountain]",
-            "[+1 Food] from [Fresh water] tiles <after discovering [Civil Service]>",
-            "[+1 Food] from [non-fresh water] tiles <after discovering [Fertilizer]>"
-          ]
+          "uniqueTo": "Inca"
         }
       ],
       "quote_ru": "'Три правила следует помнить при всякой постройке: здание должно стоять на подобающем месте, иметь прочное основание и быть полностью завершено.' - Иоганн Гете"
@@ -1699,6 +1723,22 @@
             "[+2 Food, +2 Faith] <after discovering [Drama and Poetry]>"
           ],
           "uniqueTo": "Khmer"
+        },
+        {
+          "kind": "nation_effect",
+          "name": "Sumeria",
+          "uniqueTo": "Sumeria",
+          "uniques": [
+            "[+2 Culture] [in all cities] <after discovering [Drama and Poetry]>"
+          ]
+        },
+        {
+          "kind": "nation_effect",
+          "name": "Tibet",
+          "uniqueTo": "Tibet",
+          "uniques": [
+            "[+2 Faith, +2 Food, +2 Culture, +2 Production, +2 Science, +2 Gold] [in capital] <after discovering [Drama and Poetry]>"
+          ]
         }
       ],
       "quote_ru": "'Что такое драма, если не сама жизнь, из которой вырезаны скучные кадры.' - Альфред Хичкок"
@@ -2188,6 +2228,14 @@
             "[+1 Food] <after discovering [Civil Service]>"
           ],
           "uniqueTo": "Sioux"
+        },
+        {
+          "kind": "nation_effect",
+          "name": "Nabataea",
+          "uniqueTo": "Nabataea",
+          "uniques": [
+            "[-1 Food] from [{Fresh Water} {Farm}] tiles [in all cities] <after discovering [Civil Service]>"
+          ]
         }
       ],
       "quote_ru": "'Единственное, что нас спасает от бюрократии, это ее неэффективность.' - Юджин Маккарти"
@@ -2287,11 +2335,7 @@
             "Cannot be built on [resource] tiles",
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
-          "uniqueTo": "The Netherlands",
-          "uniques_ru": [
-            "[+1 Production, +2 Gold] <after discovering [Economics]>",
-            "Pillaging this improvement yields approximately [+18 Gold]"
-          ]
+          "uniqueTo": "The Netherlands"
         }
       ],
       "uniques": [
@@ -2530,6 +2574,14 @@
             "[+15]% Production when constructing [Water] units [in this city]"
           ],
           "uniqueTo": "Phoenicia"
+        },
+        {
+          "kind": "nation_effect",
+          "name": "Venice",
+          "uniqueTo": "Venice",
+          "uniques": [
+            "Provides [1] [Trade Route] <after discovering [Compass]>"
+          ]
         }
       ],
       "uniques": [
@@ -2823,6 +2875,15 @@
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
           "uniqueTo": "France"
+        },
+        {
+          "kind": "nation_effect",
+          "name": "Mongolia",
+          "uniqueTo": "Mongolia",
+          "uniques": [
+            "[+100]% [Horses] resource production <after discovering [Chivalry]>",
+            "[+1 Food] from every [Horses] <after discovering [Chivalry]>"
+          ]
         }
       ],
       "quote_ru": "'Кто вытащит сей меч из-под наковальни, тот и есть по праву рождения король над всей землей английской.' - Сэр Томас Мэлори"
@@ -3211,6 +3272,14 @@
             "[+1 Culture] <after discovering [Acoustics]>"
           ],
           "uniqueTo": "Tibet"
+        },
+        {
+          "kind": "nation_effect",
+          "name": "France",
+          "uniqueTo": "France",
+          "uniques": [
+            "[+15 Culture] [in capital] <after discovering [Acoustics]>"
+          ]
         }
       ],
       "quote_ru": "'Под громовый рык рогов и труб воинственных он повелел поднять свою могучую хоругвь.' - Джон Мильтон"
@@ -3799,7 +3868,16 @@
           ]
         }
       ],
-      "nation_unlocks": [],
+      "nation_unlocks": [
+        {
+          "kind": "nation_effect",
+          "name": "Colombia",
+          "uniqueTo": "Colombia",
+          "uniques": [
+            "[+1 Science] from every [Lumber mill] <after discovering [Chemistry]>"
+          ]
+        }
+      ],
       "quote_ru": "'Куда ни посмотри, химия повсеместно повысила уровень цивилизации и продуктивную способность нации.' - Джон Калвин Кулидж"
     },
     "Archaeology": {

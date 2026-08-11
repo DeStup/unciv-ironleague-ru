@@ -101,6 +101,7 @@ def main() -> None:
     buildings = load_jsonc(REKMOD / "Buildings.json")
     improvements = load_jsonc(REKMOD / "TileImprovements.json")
     resources = load_jsonc(REKMOD / "TileResources.json")
+    nations = load_jsonc(REKMOD / "Nations.json")
 
     # Preserve RU quotes / uniques from previous export when names match.
     old_path = OUT_DIR / "tech_details.json"
@@ -248,6 +249,28 @@ def main() -> None:
                 entry["is_wonder"] = True
             add_unlock(tech_name, entry)
 
+    # Nation UA / civ effects gated by <after discovering [Tech]> (RekMOD-heavy).
+    # These are not requiredTech unlocks; Unciv civilopedia "see also" / league archive.
+    for nation in nations:
+        nation_name = nation.get("name")
+        if not nation_name or nation.get("isCityState"):
+            continue
+        texts = unique_texts(nation)
+        by_tech: dict[str, list[str]] = defaultdict(list)
+        for text in texts:
+            for m in AFTER_DISCOVERING.finditer(text):
+                by_tech[m.group(1)].append(text)
+        for tech_name, gated in by_tech.items():
+            add_unlock(
+                tech_name,
+                {
+                    "kind": "nation_effect",
+                    "name": nation_name,
+                    "uniqueTo": nation_name,
+                    "uniques": gated,
+                },
+            )
+
     # Stable sort unlocks like Unciv: unit, building, wonder, resource, improvement, bonuses
     order = {
         "unit": 0,
@@ -257,6 +280,7 @@ def main() -> None:
         "improvement": 4,
         "improvement_bonus": 5,
         "building_bonus": 6,
+        "nation_effect": 7,
     }
 
     def sort_key(u: dict):
@@ -291,6 +315,11 @@ def main() -> None:
     print("Railroads unlocks:", [u["name"] for u in rr.get("unlocks", [])])
     print("Railroads nation:", [u["name"] for u in rr.get("nation_unlocks", [])])
     print("Railroads uniques:", rr.get("uniques"))
+    chem = techs.get("Chemistry") or {}
+    print(
+        "Chemistry nation:",
+        [(u["kind"], u["name"], (u.get("uniques") or [""])[0][:60]) for u in chem.get("nation_unlocks", [])],
+    )
     print(
         "totals:",
         len(techs),
@@ -298,6 +327,13 @@ def main() -> None:
         sum(len(t["unlocks"]) for t in techs.values()),
         "nation",
         sum(len(t["nation_unlocks"]) for t in techs.values()),
+        "nation_effects",
+        sum(
+            1
+            for t in techs.values()
+            for u in t.get("nation_unlocks") or []
+            if u.get("kind") == "nation_effect"
+        ),
     )
 
 
