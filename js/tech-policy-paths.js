@@ -104,6 +104,7 @@
       improvement: t('paths.kind.improvement', 'улучшение'),
       improvement_bonus: t('paths.kind.improvement_bonus', 'бонус улучшения'),
       building_bonus: t('paths.kind.building_bonus', 'бонус здания'),
+      nation_effect: t('paths.kind.nation_effect', 'эффект нации'),
       resource: t('paths.kind.resource', 'ресурс'),
       unique: t('paths.kind.unique', 'эффект'),
     };
@@ -160,6 +161,10 @@
     if (item.kind === 'building_bonus') {
       return `Building_icons/${encodeURIComponent(name)}.png`;
     }
+    if (item.kind === 'nation_effect') {
+      const nation = item.uniqueTo || name;
+      return `Nation_icons/${encodeURIComponent(nation)}.png`;
+    }
     if (item.kind === 'unique') {
       return item.icon
         ? `Unique_icons/${encodeURIComponent(item.icon)}.png`
@@ -176,7 +181,8 @@
     improvement: 4,
     improvement_bonus: 5,
     building_bonus: 6,
-    unique: 7,
+    nation_effect: 7,
+    unique: 8,
   };
 
   function unlocksForTech(techName, detail) {
@@ -563,6 +569,13 @@
       (item.uniques || []).forEach((u) => lines.push(String(u)));
       return lines.join('\n');
     }
+    if (item.kind === 'nation_effect') {
+      const lines = [
+        `${labelNation(item.uniqueTo || item.name)} (${kindLabel('nation_effect')})`,
+      ];
+      (item.uniques || []).forEach((u) => lines.push(String(u)));
+      return lines.join('\n');
+    }
     const lines = [
       `${labelConstruction(item.name)} (${kindLabel(item.kind)})`,
     ];
@@ -605,7 +618,9 @@
     wrap.title = unlockTooltip(item);
     const img = document.createElement('img');
     img.className = 'paths-tree-unlock-img';
-    img.alt = item.kind === 'unique' ? item.name : labelConstruction(item.name);
+    img.alt = (item.kind === 'unique' || item.kind === 'nation_effect')
+      ? (item.kind === 'nation_effect' ? labelNation(item.uniqueTo || item.name) : item.name)
+      : labelConstruction(item.name);
     img.loading = 'lazy';
 
     // Try primary + fallbacks; never remove the slot (missing RekMOD icons
@@ -633,6 +648,10 @@
     }
     if (item.kind === 'resource') {
       push(`Resource_icons/${encodeURIComponent(name)}.png`);
+    }
+    if (item.kind === 'nation_effect') {
+      const nation = item.uniqueTo || name;
+      push(`Nation_icons/${encodeURIComponent(nation)}.png`);
     }
     push('Unique_icons/Star.png');
 
