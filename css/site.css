@@ -3,6 +3,9 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Firefox: dark track + muted gold thumb */
+            scrollbar-width: thin;
+            scrollbar-color: rgba(201, 162, 39, 0.75) rgba(18, 18, 28, 0.85);
         }
 
         html {
@@ -15,6 +18,44 @@
             padding: 20px;
             min-height: 100vh;
             overflow-x: clip;
+            /* Hint native UI (Firefox / some Chromium) toward dark chrome. */
+            color-scheme: dark;
+        }
+
+        /* Scrollbars (WebKit/Blink): dark track + gold thumb to match site theme. */
+        *::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: rgba(12, 12, 20, 0.9);
+            border-radius: 8px;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background: linear-gradient(
+                180deg,
+                rgba(255, 215, 0, 0.55),
+                rgba(160, 120, 20, 0.85)
+            );
+            border-radius: 8px;
+            border: 2px solid rgba(12, 12, 20, 0.9);
+            background-clip: padding-box;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(
+                180deg,
+                rgba(255, 230, 120, 0.75),
+                rgba(201, 162, 39, 0.95)
+            );
+            border: 2px solid rgba(12, 12, 20, 0.9);
+            background-clip: padding-box;
+        }
+
+        *::-webkit-scrollbar-corner {
+            background: rgba(12, 12, 20, 0.9);
         }
 
         .container {
