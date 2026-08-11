@@ -1,0 +1,246 @@
+{
+  "Aristocracy": {
+    "en": "Aristocracy",
+    "ru": "Аристократия"
+  },
+  "Merchant Navy": {
+    "en": "Merchant Navy",
+    "ru": "Торговый Флот"
+  },
+  "Landed Elite": {
+    "en": "Landed Elite",
+    "ru": "Землевладельческая Элита"
+  },
+  "Aesthetics": {
+    "en": "Aesthetics",
+    "ru": "Эстетика"
+  },
+  "Honor": {
+    "en": "Honor",
+    "ru": "Честь"
+  },
+  "Mercantilism": {
+    "en": "Mercantilism",
+    "ru": "Меркантилизм"
+  },
+  "Representation": {
+    "en": "Representation",
+    "ru": "Представительство"
+  },
+  "Legalism": {
+    "en": "Legalism",
+    "ru": "Легализм"
+  },
+  "Constitution": {
+    "en": "Constitution",
+    "ru": "Конституция"
+  },
+  "Rationalism": {
+    "en": "Rationalism",
+    "ru": "Рационализм"
+  },
+  "Scientific Revolution": {
+    "en": "Scientific Revolution",
+    "ru": "Научная Революция"
+  },
+  "Citizenship": {
+    "en": "Citizenship",
+    "ru": "Гражданство"
+  },
+  "Oligarchy": {
+    "en": "Oligarchy",
+    "ru": "Олигархия"
+  },
+  "Republic": {
+    "en": "Republic",
+    "ru": "Республика"
+  },
+  "Military Tradition": {
+    "en": "Military Tradition",
+    "ru": "Военные Традиции"
+  },
+  "Scholasticism": {
+    "en": "Scholasticism",
+    "ru": "Схоластика"
+  },
+  "Planned Economy": {
+    "en": "Planned Economy",
+    "ru": "Плановая Экономика"
+  },
+  "Secularism": {
+    "en": "Secularism",
+    "ru": "Секуляризм"
+  },
+  "Nationalism": {
+    "en": "Nationalism",
+    "ru": "Национализм"
+  },
+  "Trade Unions": {
+    "en": "Trade Unions",
+    "ru": "Торговые Союзы"
+  },
+  "Naval Tradition": {
+    "en": "Naval Tradition",
+    "ru": "Морские Традиции"
+  },
+  "Mandate Of Heaven": {
+    "en": "Mandate Of Heaven",
+    "ru": "Небесный Мандат"
+  },
+  "Sovereignty": {
+    "en": "Sovereignty",
+    "ru": "Суверенитет"
+  },
+  "Socialism": {
+    "en": "Socialism",
+    "ru": "Социализм"
+  },
+  "Fallback": {
+    "en": "Fallback",
+    "ru": "Fallback"
+  },
+  "Warrior Code": {
+    "en": "Warrior Code",
+    "ru": "Военная Присяга"
+  },
+  "Organized Religion": {
+    "en": "Organized Religion",
+    "ru": "Организованная Религия"
+  },
+  "Piety": {
+    "en": "Piety",
+    "ru": "Набожность"
+  },
+  "Professional Army": {
+    "en": "Professional Army",
+    "ru": "Профессиональная Армия"
+  },
+  "Order": {
+    "en": "Order",
+    "ru": "Порядок"
+  },
+  "Philantropy": {
+    "en": "Philantropy",
+    "ru": "Филантропия"
+  },
+  "Populism": {
+    "en": "Populism",
+    "ru": "Популизм"
+  },
+  "Total War": {
+    "en": "Total War",
+    "ru": "Тотальная Война"
+  },
+  "Reformation": {
+    "en": "Reformation",
+    "ru": "Реформация"
+  },
+  "Universal Suffrage": {
+    "en": "Universal Suffrage",
+    "ru": "Всеобщее Избирательное Право"
+  },
+  "Educated Elite": {
+    "en": "Educated Elite",
+    "ru": "Образованная Элита"
+  },
+  "United Front": {
+    "en": "United Front",
+    "ru": "Объединённый Фронт"
+  },
+  "Theocracy": {
+    "en": "Theocracy",
+    "ru": "Теократия"
+  },
+  "Cultural Diplomacy": {
+    "en": "Cultural Diplomacy",
+    "ru": "Культурная Дипломатия"
+  },
+  "Patronage": {
+    "en": "Patronage",
+    "ru": "Меценатство"
+  },
+  "Fascism": {
+    "en": "Fascism",
+    "ru": "Фашизм"
+  },
+  "Collective Rule": {
+    "en": "Collective Rule",
+    "ru": "Совместное Управление"
+  },
+  "Discipline": {
+    "en": "Discipline",
+    "ru": "Дисциплина"
+  },
+  "Free Speech": {
+    "en": "Free Speech",
+    "ru": "Свобода Слова"
+  },
+  "Liberty": {
+    "en": "Liberty",
+    "ru": "Воля"
+  },
+  "Freedom": {
+    "en": "Freedom",
+    "ru": "Свобода"
+  },
+  "Free Religion": {
+    "en": "Free Religion",
+    "ru": "Веротерпимость"
+  },
+  "Meritocracy": {
+    "en": "Meritocracy",
+    "ru": "Меритократия"
+  },
+  "Militarism": {
+    "en": "Militarism",
+    "ru": "Милитаризм"
+  },
+  "Autocracy": {
+    "en": "Autocracy",
+    "ru": "Автократия"
+  },
+  "Tradition": {
+    "en": "Tradition",
+    "ru": "Традиция"
+  },
+  "Democracy": {
+    "en": "Democracy",
+    "ru": "Демократия"
+  },
+  "Civil Society": {
+    "en": "Civil Society",
+    "ru": "Гражданское Общество"
+  },
+  "Monarchy": {
+    "en": "Monarchy",
+    "ru": "Монархия"
+  },
+  "Commerce": {
+    "en": "Commerce",
+    "ru": "Коммерция"
+  },
+  "Free Thought": {
+    "en": "Free Thought",
+    "ru": "Свободомыслие"
+  },
+  "Police State": {
+    "en": "Police State",
+    "ru": "Полицейское Государство"
+  },
+  "Military Caste": {
+    "en": "Military Caste",
+    "ru": "Военная Каста"
+  },
+  "Humanism": {
+    "en": "Humanism",
+    "ru": "Гуманизм"
+  },
+  "Protectionism": {
+    "en": "Protectionism",
+    "ru": "Протекционизм"
+  },
+  "Communism": {
+    "en": "Communism",
+    "ru": "Коммунизм"
+  }
+}
