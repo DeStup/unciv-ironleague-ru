@@ -14830,6 +14830,565 @@
         }
       },
       "gif": "Replays/Game_28.gif"
+    },
+    {
+      "id": 29,
+      "version": "4.21.4 (Build 1239)",
+      "number": "Game 29",
+      "players": [
+        {
+          "name": "den_stu",
+          "nation": "Рим"
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Нидерланды"
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Папская область"
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Франки"
+        },
+        {
+          "name": "Click4x",
+          "nation": "Майя"
+        },
+        {
+          "name": "Fanfblrik",
+          "nation": "Индия"
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Португалия"
+        },
+        {
+          "name": "Laste2187",
+          "nation": "Кхмеры"
+        }
+      ],
+      "winner": "Майя",
+      "map": "Perlin",
+      "playerCount": 8,
+      "endedOnTurn": "141",
+      "victoryType": "CC",
+      "survivors": [
+        {
+          "name": "Click4x",
+          "nation": "Майя",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Индия",
+              "city": "Delhi"
+            },
+            {
+              "nation": "Кхмеры",
+              "city": "Yasodharapura"
+            },
+            {
+              "nation": "Нидерланды",
+              "city": "Amsterdam"
+            }
+          ],
+          "ideology": "Порядок",
+          "wonders": [
+            "Alhambra",
+            "Terracotta Army",
+            "The Great Library",
+            "Porcelain Tower",
+            "Forbidden Palace",
+            "Kremlin",
+            "The Oracle",
+            "Statue of Zeus",
+            "Brandenburg Gate",
+            "Himeji Castle",
+            "Chichen Itza",
+            "Hanging Gardens",
+            "Temple of Artemis",
+            "Angkor Wat"
+          ],
+          "wonders_built": [
+            "Alhambra",
+            "Terracotta Army",
+            "The Great Library",
+            "Porcelain Tower",
+            "Forbidden Palace",
+            "Kremlin",
+            "The Oracle",
+            "Statue of Zeus",
+            "Brandenburg Gate",
+            "Himeji Castle"
+          ],
+          "techs": 60,
+          "policies": 26,
+          "policy_branches": [
+            "Воля",
+            "Честь",
+            "Меценатство",
+            "Рационализм"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Современность",
+          "score": 2156,
+          "units": 59,
+          "strength": 42259,
+          "science": 2114,
+          "cities": 24,
+          "population": 339,
+          "religion": "Islam",
+          "religion_state": "Усилена",
+          "pantheon": "Religious Settlements",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Religious Community",
+            "Guruship"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 103,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 5,
+          "wars_received": 1,
+          "military_deaths": 66
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Франки",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "Порядок",
+          "wonders": [
+            "Leaning Tower of Pisa",
+            "Taj Mahal",
+            "Machu Picchu",
+            "Notre Dame",
+            "CN Tower",
+            "The Pyramids"
+          ],
+          "wonders_built": [
+            "Leaning Tower of Pisa",
+            "Taj Mahal",
+            "Machu Picchu",
+            "Notre Dame",
+            "CN Tower",
+            "The Pyramids"
+          ],
+          "techs": 57,
+          "policies": 20,
+          "policy_branches": [
+            "Воля",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Современность",
+          "score": 998,
+          "units": 27,
+          "strength": 13762,
+          "science": 751,
+          "cities": 9,
+          "population": 141,
+          "religion": "Tengriism",
+          "religion_state": "Усилена",
+          "pantheon": "Goddess of Love",
+          "founder_beliefs": [
+            "Tithe",
+            "Karma"
+          ],
+          "follower_beliefs": [
+            "Devoted Elite",
+            "Feed the World"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 100,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 2,
+          "wars_received": 2,
+          "military_deaths": 49
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Папская область",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Португалия",
+              "city": "Lisbon"
+            }
+          ],
+          "ideology": "Свобода",
+          "wonders": [
+            "Great Mosque of Djenne",
+            "Statue of Liberty",
+            "Hagia Sophia",
+            "Neuschwanstein",
+            "The Great Lighthouse",
+            "Colossus"
+          ],
+          "wonders_built": [
+            "Great Mosque of Djenne",
+            "Statue of Liberty",
+            "Hagia Sophia",
+            "Neuschwanstein"
+          ],
+          "techs": 52,
+          "policies": 24,
+          "policy_branches": [
+            "Честь",
+            "Набожность",
+            "Исследование"
+          ],
+          "first_policy": "Честь",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Современность",
+          "score": 937,
+          "units": 38,
+          "strength": 14752,
+          "science": 535,
+          "cities": 9,
+          "population": 140,
+          "religion": "Christianity",
+          "religion_state": "Усилена",
+          "pantheon": "Ritual Sacrifice",
+          "founder_beliefs": [
+            "Messiah",
+            "Disciples"
+          ],
+          "follower_beliefs": [
+            "Mosques",
+            "Apostolic Palace",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 116,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 2,
+          "military_deaths": 39
+        },
+        {
+          "name": "den_stu",
+          "nation": "Рим",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "Порядок",
+          "wonders": [
+            "Sistine Chapel",
+            "Cristo Redentor",
+            "Great Wall",
+            "Mausoleum of Halicarnassus",
+            "Stonehenge",
+            "Petra"
+          ],
+          "wonders_built": [
+            "Sistine Chapel",
+            "Cristo Redentor",
+            "Great Wall"
+          ],
+          "techs": 57,
+          "policies": 23,
+          "policy_branches": [
+            "Воля",
+            "Набожность"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Современность",
+          "score": 872,
+          "units": 42,
+          "strength": 22083,
+          "science": 1133,
+          "cities": 11,
+          "population": 153,
+          "religion": "Рим не падёт",
+          "religion_state": "Усилена",
+          "pantheon": "Religious Idols",
+          "founder_beliefs": [
+            "Kotel",
+            "Church Property"
+          ],
+          "follower_beliefs": [
+            "Viharas",
+            "Devout Performers",
+            "Indulgences"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 108,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 2,
+          "wars_received": 1,
+          "military_deaths": 6
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Португалия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Папская область",
+          "conquered_capitals": [],
+          "ideology": "Свобода",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 48,
+          "policies": 20,
+          "policy_branches": [
+            "Набожность",
+            "Меценатство",
+            "Исследование"
+          ],
+          "first_policy": "",
+          "eliminated_turn": 114,
+          "capital_lost_turn": 114,
+          "era": "Индустриальная",
+          "score": 360,
+          "units": 19,
+          "strength": 4463,
+          "science": 73,
+          "cities": 4,
+          "population": 41,
+          "religion": "Zoroastrianism",
+          "religion_state": "Усилена",
+          "pantheon": "God of the Sea",
+          "founder_beliefs": [
+            "Mithraea",
+            "Unity of the Prophets"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "City of God",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 2,
+          "military_deaths": 34
+        },
+        {
+          "name": "Laste2187",
+          "nation": "Кхмеры",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "Майя",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 37,
+          "policies": 11,
+          "policy_branches": [
+            "Воля",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": 101,
+          "era": "Возрождение",
+          "score": 359,
+          "units": 21,
+          "strength": 2196,
+          "science": 103,
+          "cities": 5,
+          "population": 50,
+          "religion": "Confucianism",
+          "religion_state": "Усилена",
+          "pantheon": "Altars of Worship",
+          "founder_beliefs": [
+            "Missionary Zeal",
+            "Jizya"
+          ],
+          "follower_beliefs": [
+            "Followers of Refined Crafts",
+            "Liturgical Drama"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 1,
+          "military_deaths": 45
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Нидерланды",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Майя",
+          "conquered_capitals": [],
+          "ideology": "Автократия",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 51,
+          "policies": 23,
+          "policy_branches": [
+            "Традиция",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": 124,
+          "capital_lost_turn": 111,
+          "era": "Современность",
+          "score": 223,
+          "units": 0,
+          "strength": 358,
+          "science": 149,
+          "cities": 0,
+          "population": 3,
+          "religion": "Buddhism",
+          "religion_state": "Усилена",
+          "pantheon": "Mystic Rituals",
+          "founder_beliefs": [
+            "Religious Troubadours",
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Divine inspiration",
+            "Pagodas"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 93,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 2,
+          "wars_received": 4,
+          "military_deaths": 123
+        },
+        {
+          "name": "Fanfblrik",
+          "nation": "Индия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Майя",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 27,
+          "policies": 10,
+          "policy_branches": [
+            "Традиция",
+            "Честь",
+            "Эстетика"
+          ],
+          "first_policy": "",
+          "eliminated_turn": 101,
+          "capital_lost_turn": 101,
+          "era": "Средневековье",
+          "score": 166,
+          "units": 0,
+          "strength": 66,
+          "science": 60,
+          "cities": 0,
+          "population": 16,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "Oral Tradition",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "military_deaths": 12
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 185,
+          "is_barbarian": true
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Майя",
+          "start": 141,
+          "plus": [
+            "Рим",
+            "Папская область",
+            "Франки"
+          ],
+          "minus": [],
+          "abstain": [],
+          "stop": true
+        },
+        "capital_lost_turns": {
+          "Индия": 101,
+          "Кхмеры": 101,
+          "Нидерланды": 111,
+          "Португалия": 114
+        },
+        "eliminated_turns": {
+          "Индия": 101,
+          "Португалия": 114,
+          "Нидерланды": 124
+        },
+        "ideology_turns": {
+          "Нидерланды": 93,
+          "Франки": 100,
+          "Майя": 103,
+          "Рим": 108,
+          "Папская область": 116
+        }
+      },
+      "gif": "Replays/Game_29.gif"
     }
   ]
 }
