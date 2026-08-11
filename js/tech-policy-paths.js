@@ -15,12 +15,13 @@
     'Future era',
   ];
 
-  const NODE_W = 176;
-  const NODE_H = 102;
-  const COL_W = 204;
-  const ROW_H = 128;
-  const PAD_X = 28;
-  const PAD_Y = 24;
+  const NODE_W = 220;
+  const NODE_H = 74;
+  const COL_W = 248;
+  const ROW_H = 90;
+  const PAD_X = 20;
+  const PAD_Y = 16;
+  const MAX_UNLOCK_ICONS = 8;
 
   let timelines = null;
   let techTree = null;
@@ -102,6 +103,7 @@
       unit: t('paths.kind.unit', 'юнит'),
       improvement: t('paths.kind.improvement', 'улучшение'),
       resource: t('paths.kind.resource', 'ресурс'),
+      unique: t('paths.kind.unique', 'эффект'),
     };
     return map[kind] || kind;
   }
@@ -143,18 +145,42 @@
     if (item.kind === 'unit') return `Unit_icons/${encodeURIComponent(name)}.png`;
     if (item.kind === 'resource') return `Resource_icons/${encodeURIComponent(name)}.png`;
     if (item.kind === 'wonder') return `Wonder_icons/${encodeURIComponent(name)}.png`;
-    if (item.kind === 'improvement') return `Building_icons/${encodeURIComponent(name)}.png`;
+    if (item.kind === 'improvement') return `Improvement_icons/${encodeURIComponent(name)}.png`;
+    if (item.kind === 'unique') {
+      return item.icon
+        ? `Unique_icons/${encodeURIComponent(item.icon)}.png`
+        : 'Unique_icons/Star.png';
+    }
     return `Building_icons/${encodeURIComponent(name)}.png`;
   }
 
+  const UNLOCK_KIND_ORDER = {
+    unit: 0,
+    building: 1,
+    wonder: 2,
+    resource: 3,
+    improvement: 4,
+    unique: 5,
+  };
+
   function unlocksForTech(techName, detail) {
-    const base = (detail.unlocks || []).filter((u) => u.kind !== 'improvement');
+    // Unciv TechButton order: units → buildings → resources → improvements → tech uniques
+    const base = (detail.unlocks || []).slice();
     const extras = (STRATEGIC_REVEALS[techName] || []).map((name) => ({
       kind: 'resource',
       name,
       uniques: [],
     }));
-    return base.concat(extras);
+    const passives = (detail.uniques || [])
+      .filter((u) => u && !String(u).includes('weight to this choice for AI'))
+      .map((text) => ({
+        kind: 'unique',
+        name: String(text),
+        uniques: [String(text)],
+      }));
+    const all = base.concat(extras).concat(passives);
+    all.sort((a, b) => (UNLOCK_KIND_ORDER[a.kind] ?? 9) - (UNLOCK_KIND_ORDER[b.kind] ?? 9));
+    return all;
   }
 
   function pct(count, total) {
@@ -483,6 +509,9 @@
   }
 
   function unlockTooltip(item) {
+    if (item.kind === 'unique') {
+      return `${kindLabel('unique')}: ${item.name}`;
+    }
     const lines = [
       `${labelConstruction(item.name)} (${kindLabel(item.kind)})`,
     ];
@@ -509,21 +538,30 @@
     if (!unlocks.length) return;
     const row = document.createElement('div');
     row.className = 'paths-tree-unlocks';
-    unlocks.slice(0, 8).forEach((item) => {
+    unlocks.slice(0, MAX_UNLOCK_ICONS).forEach((item) => {
       const wrap = document.createElement('span');
       wrap.className = 'paths-tree-unlock';
       wrap.dataset.kind = item.kind || 'building';
       wrap.title = unlockTooltip(item);
       const img = document.createElement('img');
       img.className = 'paths-tree-unlock-img';
-      img.alt = labelConstruction(item.name);
+      img.alt = item.kind === 'unique' ? item.name : labelConstruction(item.name);
       img.loading = 'lazy';
       img.src = unlockIcon(item);
       img.onerror = () => {
-        // Wonders may live only under Building_icons in older exports
         if (item.kind === 'wonder' && !img.dataset.fallback) {
           img.dataset.fallback = '1';
           img.src = `Building_icons/${encodeURIComponent(item.name)}.png`;
+          return;
+        }
+        if (item.kind === 'improvement' && !img.dataset.fallback) {
+          img.dataset.fallback = '1';
+          img.src = `Building_icons/${encodeURIComponent(item.name)}.png`;
+          return;
+        }
+        if (item.kind === 'unique' && !img.dataset.fallback) {
+          img.dataset.fallback = '1';
+          img.src = 'Unique_icons/Fallback.png';
           return;
         }
         wrap.remove();
@@ -621,8 +659,6 @@
       node.style.top = `${pos.y}px`;
       node.title = techTooltip(tech.name, detail);
 
-      const top = document.createElement('div');
-      top.className = 'paths-tree-node-top';
       const plate = document.createElement('span');
       plate.className = 'paths-tree-tech-icon-plate';
       const img = document.createElement('img');
@@ -633,27 +669,26 @@
       img.onerror = () => { plate.style.visibility = 'hidden'; };
       plate.appendChild(img);
 
-      const body = document.createElement('div');
-      body.className = 'paths-tree-node-body';
+      const head = document.createElement('div');
+      head.className = 'paths-tree-node-head';
       const title = document.createElement('div');
       title.className = 'paths-tree-node-title';
       title.textContent = labelTech(tech.name);
-      body.appendChild(title);
+      head.appendChild(title);
       if (info) {
         const meta = document.createElement('div');
         meta.className = 'paths-tree-node-meta';
         meta.textContent = `#${info.order} · ${t('paths.turn', 'ход')} ${info.turn}`;
-        body.appendChild(meta);
+        head.appendChild(meta);
       } else if (researching && researching === tech.name) {
         const meta = document.createElement('div');
         meta.className = 'paths-tree-node-meta';
         meta.textContent = t('paths.researchingEnd', 'изучалось на финише');
-        body.appendChild(meta);
+        head.appendChild(meta);
       }
 
-      top.appendChild(plate);
-      top.appendChild(body);
-      node.appendChild(top);
+      node.appendChild(plate);
+      node.appendChild(head);
       appendUnlocks(node, detail, tech.name);
       canvas.appendChild(node);
     });
