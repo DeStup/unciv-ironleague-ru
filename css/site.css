@@ -3166,6 +3166,10 @@
             outline: 2px solid #ffd54f;
             outline-offset: 1px;
         }
+        .paths-tree-unlocks .paths-tree-unlock.is-mine {
+            outline: 2px solid #ffd54f;
+            outline-offset: 0;
+        }
         .paths-tree-unlock-nation {
             display: block;
             max-width: 64px;
