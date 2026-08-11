@@ -64,6 +64,8 @@
   }
 
   function labelConstruction(name) {
+    const res = RESOURCE_NAMES[name];
+    if (res) return lang() === 'en' ? (res.en || name) : (res.ru || name);
     const row = constructionNames[name];
     if (!row) return name;
     return lang() === 'en' ? (row.en || name) : (row.ru || name);
@@ -99,9 +101,29 @@
       wonder: t('paths.kind.wonder', 'чудо'),
       unit: t('paths.kind.unit', 'юнит'),
       improvement: t('paths.kind.improvement', 'улучшение'),
+      resource: t('paths.kind.resource', 'ресурс'),
     };
     return map[kind] || kind;
   }
+
+  /** G&K strategic resources revealed by tech (Unciv TileResources.revealedBy). */
+  const STRATEGIC_REVEALS = {
+    'Animal Husbandry': ['Horses'],
+    'Iron Working': ['Iron'],
+    Industrialization: ['Coal'],
+    Biology: ['Oil'],
+    Electricity: ['Aluminum'],
+    'Atomic Theory': ['Uranium'],
+  };
+
+  const RESOURCE_NAMES = {
+    Horses: { en: 'Horses', ru: 'Лошади' },
+    Iron: { en: 'Iron', ru: 'Железо' },
+    Coal: { en: 'Coal', ru: 'Уголь' },
+    Oil: { en: 'Oil', ru: 'Нефть' },
+    Aluminum: { en: 'Aluminum', ru: 'Алюминий' },
+    Uranium: { en: 'Uranium', ru: 'Уран' },
+  };
 
   function techIcon(name) {
     return `Tech_icons/${encodeURIComponent(name)}.png`;
@@ -119,8 +141,20 @@
   function unlockIcon(item) {
     const name = item.name;
     if (item.kind === 'unit') return `Unit_icons/${encodeURIComponent(name)}.png`;
+    if (item.kind === 'resource') return `Resource_icons/${encodeURIComponent(name)}.png`;
+    if (item.kind === 'wonder') return `Wonder_icons/${encodeURIComponent(name)}.png`;
     if (item.kind === 'improvement') return `Building_icons/${encodeURIComponent(name)}.png`;
     return `Building_icons/${encodeURIComponent(name)}.png`;
+  }
+
+  function unlocksForTech(techName, detail) {
+    const base = (detail.unlocks || []).filter((u) => u.kind !== 'improvement');
+    const extras = (STRATEGIC_REVEALS[techName] || []).map((name) => ({
+      kind: 'resource',
+      name,
+      uniques: [],
+    }));
+    return base.concat(extras);
   }
 
   function pct(count, total) {
@@ -159,12 +193,15 @@
       const name = row.name;
       const card = document.createElement('div');
       card.className = 'paths-stat-card';
+      const plate = document.createElement('span');
+      plate.className = 'paths-stat-icon-plate';
       const img = document.createElement('img');
       img.className = 'paths-stat-icon';
       img.alt = '';
       img.loading = 'lazy';
       img.src = kind === 'tech' ? techIcon(name) : policyIcon(name);
-      img.onerror = () => { img.style.visibility = 'hidden'; };
+      img.onerror = () => { plate.style.visibility = 'hidden'; };
+      plate.appendChild(img);
 
       const body = document.createElement('div');
       body.className = 'paths-stat-body';
@@ -184,7 +221,7 @@
       body.appendChild(title);
       body.appendChild(meta);
       body.appendChild(bar);
-      card.appendChild(img);
+      card.appendChild(plate);
       card.appendChild(body);
       container.appendChild(card);
     });
@@ -394,6 +431,8 @@
     (items || []).forEach((item) => {
       const li = document.createElement('div');
       li.className = 'paths-tl-item' + (item.is_branch ? ' is-branch' : '');
+      const plate = document.createElement('span');
+      plate.className = 'paths-tl-icon-plate';
       const img = document.createElement('img');
       img.alt = '';
       img.loading = 'lazy';
@@ -403,7 +442,8 @@
       } else {
         img.className = 'paths-tl-icon';
       }
-      img.onerror = () => { img.style.visibility = 'hidden'; };
+      img.onerror = () => { plate.style.visibility = 'hidden'; };
+      plate.appendChild(img);
       const order = document.createElement('span');
       order.className = 'paths-tl-order';
       order.textContent = `#${item.order}`;
@@ -414,7 +454,7 @@
       turn.className = 'paths-tl-turn';
       turn.textContent = `${t('paths.turn', 'ход')} ${item.turn}`;
       li.appendChild(order);
-      li.appendChild(img);
+      li.appendChild(plate);
       li.appendChild(name);
       li.appendChild(turn);
       container.appendChild(li);
@@ -464,21 +504,32 @@
     return lines.join('\n');
   }
 
-  function appendUnlocks(node, detail) {
-    const unlocks = (detail.unlocks || []).filter((u) => u.kind !== 'improvement');
+  function appendUnlocks(node, detail, techName) {
+    const unlocks = unlocksForTech(techName, detail);
     if (!unlocks.length) return;
     const row = document.createElement('div');
     row.className = 'paths-tree-unlocks';
-    unlocks.slice(0, 6).forEach((item) => {
+    unlocks.slice(0, 8).forEach((item) => {
+      const wrap = document.createElement('span');
+      wrap.className = 'paths-tree-unlock';
+      wrap.dataset.kind = item.kind || 'building';
+      wrap.title = unlockTooltip(item);
       const img = document.createElement('img');
-      img.className = 'paths-tree-unlock';
-      img.dataset.kind = item.kind || 'building';
+      img.className = 'paths-tree-unlock-img';
       img.alt = labelConstruction(item.name);
       img.loading = 'lazy';
       img.src = unlockIcon(item);
-      img.title = unlockTooltip(item);
-      img.onerror = () => { img.remove(); };
-      row.appendChild(img);
+      img.onerror = () => {
+        // Wonders may live only under Building_icons in older exports
+        if (item.kind === 'wonder' && !img.dataset.fallback) {
+          img.dataset.fallback = '1';
+          img.src = `Building_icons/${encodeURIComponent(item.name)}.png`;
+          return;
+        }
+        wrap.remove();
+      };
+      wrap.appendChild(img);
+      row.appendChild(wrap);
     });
     if (row.childNodes.length) node.appendChild(row);
   }
@@ -572,12 +623,15 @@
 
       const top = document.createElement('div');
       top.className = 'paths-tree-node-top';
+      const plate = document.createElement('span');
+      plate.className = 'paths-tree-tech-icon-plate';
       const img = document.createElement('img');
       img.className = 'paths-tree-tech-icon';
       img.alt = '';
       img.loading = 'lazy';
       img.src = techIcon(tech.name);
-      img.onerror = () => { img.style.visibility = 'hidden'; };
+      img.onerror = () => { plate.style.visibility = 'hidden'; };
+      plate.appendChild(img);
 
       const body = document.createElement('div');
       body.className = 'paths-tree-node-body';
@@ -597,10 +651,10 @@
         body.appendChild(meta);
       }
 
-      top.appendChild(img);
+      top.appendChild(plate);
       top.appendChild(body);
       node.appendChild(top);
-      appendUnlocks(node, detail);
+      appendUnlocks(node, detail, tech.name);
       canvas.appendChild(node);
     });
 
