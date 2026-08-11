@@ -104,8 +104,3 @@ npx --yes serve -l 3000 .
 - `/ironleaguegifs` — записи без поля `gif`
 
 Нужен `GITHUB_TOKEN` у бота с правом открывать PR в fork / `DeStup/unciv-ironleague-ru`.
-
-## PR
-
-Для этого репозитория: **русский** title / Summary / Test plan (см. правила Civ Bot / Iron League).
-PRs в upstream Unciv и ravignir/RekMOD — только на английском.
