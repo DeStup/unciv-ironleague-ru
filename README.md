@@ -58,6 +58,7 @@ Iron League (Unciv) — архив, статистика, рейтинг и пу
 | `Games.json` | Архив игр (стабильный URL для бота) |
 | `data/` | FAQ, тирлист, имена, древо/детали техов, таймлайны |
 | `tools/export_tech_details.py` | Сборка `tech_details.json` / `tech_tree.json` из RekMOD-iron |
+| `tools/unciv_tr.py` | Перевод уникалей в стиле цивилопедии Unciv (для экспорта) |
 | `tools/export_default_capitals.py` | Сборка `default_capitals.json` из Nations.json + RU properties |
 | `tools/extract_missing_unlock_icons.py` | Вырезание иконок из атласов Unciv/RekMOD |
 | `Tech_icons/`, `Unit_icons/`, `Building_icons/`, `Wonder_icons/`, `Improvement_icons/`, `Resource_icons/`, `Policy_icons/`, `Nation_icons/`, `Unique_icons/` | Иконки |

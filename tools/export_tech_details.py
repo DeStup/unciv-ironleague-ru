@@ -13,10 +13,17 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from collections import defaultdict
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from unciv_tr import UncivTranslator, english_display_translator
+
 REKMOD = Path(r"D:\PythonProjects\RekMOD-iron\jsons")
+UNCIV_RU = Path(
+    r"D:\PythonProjects\Unciv\android\assets\jsons\translations\Russian.properties"
+)
 OUT_DIR = Path(__file__).resolve().parents[1] / "data"
 
 AFTER_DISCOVERING = re.compile(
@@ -95,7 +102,30 @@ def unlock_entry(kind: str, obj: dict, **extra) -> dict:
     return entry
 
 
+def apply_unique_translations(
+    entry: dict,
+    tr_ru: UncivTranslator,
+    tr_en: UncivTranslator,
+) -> None:
+    """Fill uniques_en / uniques_ru (Civilopedia-style) from raw uniques.
+
+    Заполняет uniques_en / uniques_ru (стиль цивилопедии) из сырых unique.
+    """
+    raw = entry.get("uniques") or []
+    if not raw:
+        entry.pop("uniques_en", None)
+        entry.pop("uniques_ru", None)
+        return
+    entry["uniques_en"] = tr_en.tr_unique_list(raw)
+    entry["uniques_ru"] = tr_ru.tr_unique_list(raw)
+
+
 def main() -> None:
+    tr_ru = UncivTranslator.from_files(
+        UNCIV_RU,
+        REKMOD / "translations" / "Russian.properties",
+    )
+    tr_en = english_display_translator()
     techs_raw = load_jsonc(REKMOD / "Techs.json")
     units = load_jsonc(REKMOD / "Units.json")
     buildings = load_jsonc(REKMOD / "Buildings.json")
@@ -103,7 +133,7 @@ def main() -> None:
     resources = load_jsonc(REKMOD / "TileResources.json")
     nations = load_jsonc(REKMOD / "Nations.json")
 
-    # Preserve RU quotes / uniques from previous export when names match.
+    # Preserve hand-tuned quote_ru from previous export when names match.
     old_path = OUT_DIR / "tech_details.json"
     old = {}
     if old_path.exists():
@@ -157,7 +187,7 @@ def main() -> None:
         existing = {(u["kind"], u["name"], u.get("uniqueTo") or "") for u in tech[bucket]}
         if key in existing:
             return
-        # Carry RU uniques/quote from old common unlocks when possible.
+        # Carry hand-tuned quote_ru only; uniques_* are regenerated via Unciv tr.
         prev_list = (old.get(tech_name) or {}).get("unlocks") or []
         for prev in prev_list:
             if prev.get("name") == entry["name"] and prev.get("kind") in (
@@ -165,11 +195,10 @@ def main() -> None:
                 "building",
                 "wonder",
             ):
-                if prev.get("uniques_ru") and not entry.get("uniques_ru"):
-                    entry["uniques_ru"] = prev["uniques_ru"]
                 if prev.get("quote_ru") and not entry.get("quote_ru"):
                     entry["quote_ru"] = prev["quote_ru"]
                 break
+        apply_unique_translations(entry, tr_ru, tr_en)
         tech[bucket].append(entry)
 
     # Units / buildings by requiredTech
@@ -289,8 +318,11 @@ def main() -> None:
     for tech in techs.values():
         tech["unlocks"].sort(key=sort_key)
         tech["nation_unlocks"].sort(key=sort_key)
-        # Drop empty nation_unlocks for smaller JSON? keep for stable schema.
-        if not tech["uniques"]:
+        raw_tech_uniques = tech.get("uniques") or []
+        if raw_tech_uniques:
+            tech["uniques_en"] = tr_en.tr_unique_list(raw_tech_uniques)
+            tech["uniques_ru"] = tr_ru.tr_unique_list(raw_tech_uniques)
+        else:
             tech.pop("uniques", None)
         if not tech.get("quote"):
             tech.pop("quote", None)
