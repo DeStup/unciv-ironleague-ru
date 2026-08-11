@@ -364,6 +364,11 @@
       'profile.win': 'Победа',
       'profile.loss': 'Поражение',
       'profile.achievements': 'Достижения',
+      'profile.perfTitle': 'Динамика показателей',
+      'profile.perfHint':
+        'Сверху — средние по ranked-финалам; ниже — график выбранной метрики по играм (без teams/scrap).',
+      'profile.perfAvg': 'среднее',
+      'profile.perfAvgsAria': 'Средние показатели по играм',
       'profile.noAchievements': 'Пока нет рекордов лиги на этом игроке.',
       'profile.emblemAchievements': 'Рекордов: {n}',
       'profile.favNations': 'Любимые нации',
@@ -1003,6 +1008,11 @@
       'profile.win': 'Win',
       'profile.loss': 'Loss',
       'profile.achievements': 'Achievements',
+      'profile.perfTitle': 'Stat trends',
+      'profile.perfHint':
+        'Averages across ranked finales above; pick a metric below to see the per-game line (no teams/scrap).',
+      'profile.perfAvg': 'avg',
+      'profile.perfAvgsAria': 'Average finale stats',
       'profile.noAchievements': 'No league records for this player yet.',
       'profile.emblemAchievements': 'Records: {n}',
       'profile.favNations': 'Favorite nations',

@@ -206,10 +206,170 @@
     paint();
   }
 
+  /**
+   * Line chart for ordered points { label, value } (e.g. game # → metric).
+   * Линейный график по упорядоченным точкам { label, value }.
+   */
+  function renderLineChart(container, points, opts) {
+    if (!container) return;
+    const options = opts || {};
+    const list = (points || [])
+      .map((p) => ({
+        label: String(p.label != null ? p.label : ''),
+        value: Number(p.value),
+      }))
+      .filter((p) => Number.isFinite(p.value));
+    if (!list.length) {
+      container.innerHTML = `<p class="hint">${options.emptyText || '—'}</p>`;
+      return;
+    }
+
+    const W = 640;
+    const H = 220;
+    const padL = 44;
+    const padR = 16;
+    const padT = 16;
+    const padB = 36;
+    const plotW = W - padL - padR;
+    const plotH = H - padT - padB;
+    const values = list.map((p) => p.value);
+    let minV = Math.min(...values);
+    let maxV = Math.max(...values);
+    if (minV === maxV) {
+      minV -= 1;
+      maxV += 1;
+    }
+    const avg = values.reduce((s, v) => s + v, 0) / values.length;
+    const xAt = (i) => padL + (list.length === 1 ? plotW / 2 : (i / (list.length - 1)) * plotW);
+    const yAt = (v) => padT + plotH - ((v - minV) / (maxV - minV)) * plotH;
+    const poly = list.map((p, i) => `${xAt(i).toFixed(1)},${yAt(p.value).toFixed(1)}`).join(' ');
+    const avgY = yAt(avg);
+    const color = options.color || '#ffd700';
+    const dots = list.map((p, i) => {
+      const cx = xAt(i);
+      const cy = yAt(p.value);
+      const title = `${p.label}: ${p.value}`;
+      return `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="4" fill="${color}" stroke="#0c0c14" stroke-width="1.5">
+        <title>${title}</title></circle>`;
+    }).join('');
+    const xLabels = list.map((p, i) => {
+      // Avoid crowding: show first/last and ~every Nth
+      const step = Math.max(1, Math.ceil(list.length / 8));
+      if (i !== 0 && i !== list.length - 1 && i % step !== 0) return '';
+      return `<text x="${xAt(i).toFixed(1)}" y="${H - 10}" text-anchor="middle" class="il-line-axis">${p.label}</text>`;
+    }).join('');
+    const yTicks = [minV, avg, maxV].map((v) => {
+      const y = yAt(v);
+      const label = Number.isInteger(v) ? String(v) : v.toFixed(1);
+      return `<line x1="${padL}" y1="${y.toFixed(1)}" x2="${W - padR}" y2="${y.toFixed(1)}" class="il-line-grid" />
+        <text x="${padL - 6}" y="${(y + 4).toFixed(1)}" text-anchor="end" class="il-line-axis">${label}</text>`;
+    }).join('');
+
+    container.innerHTML = `<div class="il-line-chart" role="img" aria-label="${options.aria || ''}">
+      <svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" preserveAspectRatio="xMidYMid meet">
+        ${yTicks}
+        <line x1="${padL}" y1="${avgY.toFixed(1)}" x2="${W - padR}" y2="${avgY.toFixed(1)}" class="il-line-avg" />
+        <polyline fill="none" stroke="${color}" stroke-width="2.5" points="${poly}" />
+        ${dots}
+        ${xLabels}
+      </svg>
+      <div class="il-line-meta">${options.avgLabel || 'avg'}: <b>${avg.toFixed(1)}</b>
+        · n=${list.length}
+        · min ${Math.min(...values)}
+        · max ${Math.max(...values)}</div>
+    </div>`;
+  }
+
+  /**
+   * Profile performance: average bars + metric tabs + line dynamics.
+   * Профиль: средние + вкладки метрик + динамика по играм.
+   */
+  function renderProfilePerformance(container, series, opts) {
+    if (!container) return;
+    const options = opts || {};
+    const metrics = options.metrics || [];
+    const points = Array.isArray(series) ? series : [];
+    if (!metrics.length || !points.length) {
+      container.innerHTML = `<p class="hint">${options.emptyText || '—'}</p>`;
+      return;
+    }
+
+    const avgs = [];
+    metrics.forEach((m) => {
+      const vals = points
+        .map((p) => Number(p[m.key]))
+        .filter((v) => Number.isFinite(v));
+      if (!vals.length) return;
+      const avg = vals.reduce((s, v) => s + v, 0) / vals.length;
+      avgs.push({ label: m.label, value: Math.round(avg * 10) / 10, colorKey: m.key });
+    });
+
+    let metricKey = options.defaultMetric || (metrics[0] && metrics[0].key) || '';
+    try {
+      const saved = localStorage.getItem(options.storageKey || 'il_profile_perf_metric');
+      if (saved && metrics.some((m) => m.key === saved)) metricKey = saved;
+    } catch (e) { /* ignore */ }
+
+    container.innerHTML = '';
+    const shell = document.createElement('div');
+    shell.className = 'profile-perf-shell';
+    shell.innerHTML = `
+      <div class="profile-perf-avgs"></div>
+      <div class="profile-perf-tabs" role="tablist"></div>
+      <div class="profile-perf-line"></div>`;
+    container.appendChild(shell);
+    const avgsEl = shell.querySelector('.profile-perf-avgs');
+    const tabsEl = shell.querySelector('.profile-perf-tabs');
+    const lineEl = shell.querySelector('.profile-perf-line');
+
+    renderBarChart(avgsEl, avgs, {
+      aria: options.avgsAria || '',
+      emptyText: options.emptyText || '—',
+      maxBars: metrics.length,
+    });
+
+    const paintLine = () => {
+      const meta = metrics.find((m) => m.key === metricKey) || metrics[0];
+      tabsEl.querySelectorAll('.profile-perf-tab').forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.metric === meta.key);
+      });
+      const linePoints = points
+        .map((p) => ({
+          label: String(p.gameLabel != null ? p.gameLabel : p.game),
+          value: Number(p[meta.key]),
+        }))
+        .filter((p) => Number.isFinite(p.value));
+      renderLineChart(lineEl, linePoints, {
+        color: colorForLabel(meta.label, 0, meta.key),
+        avgLabel: options.avgLabel || 'avg',
+        emptyText: options.emptyText || '—',
+        aria: meta.label,
+      });
+    };
+
+    tabsEl.innerHTML = metrics.map((m) => {
+      const has = points.some((p) => Number.isFinite(Number(p[m.key])));
+      if (!has) return '';
+      return `<button type="button" class="profile-perf-tab" data-metric="${m.key}">${m.label}</button>`;
+    }).join('');
+    tabsEl.querySelectorAll('.profile-perf-tab').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        metricKey = btn.dataset.metric;
+        try {
+          localStorage.setItem(options.storageKey || 'il_profile_perf_metric', metricKey);
+        } catch (e) { /* ignore */ }
+        paintLine();
+      });
+    });
+    paintLine();
+  }
+
   global.IronLeagueCharts = {
     renderBarChart,
     renderPieChart,
+    renderLineChart,
     renderChartWithToggle,
+    renderProfilePerformance,
     colorForLabel,
   };
 })(typeof window !== 'undefined' ? window : globalThis);

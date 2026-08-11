@@ -225,6 +225,14 @@ def apply_unique_translations(
         entry.pop("short_lines_en", None)
         entry.pop("short_lines_ru", None)
 
+    quote = entry.get("quote") or ""
+    if quote:
+        translated = tr_ru.tr(quote)
+        if translated != quote:
+            entry["quote_ru"] = translated
+        elif not entry.get("quote_ru"):
+            entry.pop("quote_ru", None)
+
 
 def main() -> None:
     tr_ru = UncivTranslator.from_files(
