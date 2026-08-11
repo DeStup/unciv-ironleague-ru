@@ -204,7 +204,8 @@
             "Liberty",
             "Patronage"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Education"
         },
         "Gaul": {
           "player": null,
@@ -354,7 +355,8 @@
           "policy_branch_order": [
             "Honor"
           ],
-          "first_policy_branch": "Honor"
+          "first_policy_branch": "Honor",
+          "researching_at_end": "Steel"
         },
         "Korea": {
           "player": null,
@@ -553,7 +555,8 @@
             "Liberty",
             "Exploration"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Guilds"
         },
         "Normandy": {
           "player": null,
@@ -720,7 +723,8 @@
           "policy_branch_order": [
             "Liberty"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Steel"
         },
         "Norway": {
           "player": null,
@@ -973,7 +977,8 @@
             "Piety",
             "Tradition"
           ],
-          "first_policy_branch": "Exploration"
+          "first_policy_branch": "Exploration",
+          "researching_at_end": null
         },
         "Russia": {
           "player": null,
@@ -1182,7 +1187,8 @@
             "Liberty",
             "Aesthetics"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Physics"
         },
         "Scotland": {
           "player": null,
@@ -1371,7 +1377,8 @@
             "Liberty",
             "Tradition"
           ],
-          "first_policy_branch": "Aesthetics"
+          "first_policy_branch": "Aesthetics",
+          "researching_at_end": "Education"
         }
       }
     },
@@ -1866,7 +1873,8 @@
             "Exploration",
             "Rationalism"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Atomic Theory"
         },
         "Mysore": {
           "player": null,
@@ -2332,7 +2340,8 @@
             "Liberty",
             "Rationalism"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Atomic Theory"
         },
         "Norway": {
           "player": null,
@@ -2977,7 +2986,8 @@
             "Rationalism",
             "Freedom"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Globalization"
         },
         "Portugal": {
           "player": null,
@@ -3592,7 +3602,8 @@
             "Freedom",
             "Rationalism"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": null
         },
         "Tonga": {
           "player": null,
@@ -3791,7 +3802,8 @@
             "Tradition",
             "Exploration"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Education"
         },
         "Zimbabwe": {
           "player": null,
@@ -4353,7 +4365,8 @@
             "Exploration",
             "Order"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": null
         }
       }
     },
@@ -4597,7 +4610,8 @@
             "Tradition",
             "Commerce"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Gunpowder"
         },
         "Assyria": {
           "player": null,
@@ -4941,7 +4955,8 @@
             "Commerce",
             "Piety"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Compass"
         },
         "Ayyubids": {
           "player": null,
@@ -5125,7 +5140,8 @@
             "Liberty",
             "Honor"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Chivalry"
         },
         "England": {
           "player": null,
@@ -5653,7 +5669,8 @@
             "Exploration",
             "Freedom"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Refrigeration"
         },
         "Hungary": {
           "player": null,
@@ -6189,7 +6206,8 @@
             "Rationalism",
             "Freedom"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Pharmaceuticals"
         },
         "Kilwa": {
           "player": null,
@@ -6669,7 +6687,8 @@
             "Rationalism",
             "Order"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Ecology"
         },
         "Morocco": {
           "player": null,
@@ -7124,7 +7143,8 @@
             "Patronage",
             "Freedom"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Refrigeration"
         },
         "Papal State": {
           "player": null,
@@ -7625,7 +7645,8 @@
             "Rationalism",
             "Order"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Radar"
         },
         "The Netherlands": {
           "player": null,
@@ -8165,7 +8186,8 @@
             "Rationalism",
             "Autocracy"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": null
         },
         "Turkey": {
           "player": null,
@@ -8604,7 +8626,8 @@
             "Honor",
             "Autocracy"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Ballistics"
         }
       }
     },
@@ -8808,7 +8831,8 @@
             "Honor",
             "Tradition"
           ],
-          "first_policy_branch": "Honor"
+          "first_policy_branch": "Honor",
+          "researching_at_end": "Gunpowder"
         },
         "China": {
           "player": null,
@@ -9091,7 +9115,8 @@
             "Piety",
             "Honor"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Military Science"
         },
         "France": {
           "player": null,
@@ -9228,7 +9253,8 @@
             "Piety",
             "Honor"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Engineering"
         },
         "Goths": {
           "player": null,
@@ -9631,7 +9657,8 @@
             "Commerce",
             "Autocracy"
           ],
-          "first_policy_branch": "Honor"
+          "first_policy_branch": "Honor",
+          "researching_at_end": "Flight"
         },
         "India": {
           "player": null,
@@ -9810,7 +9837,8 @@
             "Piety",
             "Tradition"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Chivalry"
         },
         "Khmer": {
           "player": null,
@@ -10266,7 +10294,8 @@
             "Rationalism",
             "Autocracy"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Combustion"
         },
         "Portugal": {
           "player": null,
@@ -10671,7 +10700,8 @@
             "Autocracy",
             "Patronage"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Radio"
         },
         "The Moors": {
           "player": null,
@@ -11118,7 +11148,8 @@
             "Rationalism",
             "Order"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Combustion"
         },
         "Trieste": {
           "player": null,
@@ -12103,7 +12134,8 @@
             "Freedom",
             "Honor"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Lasers"
         },
         "Brunei": {
           "player": null,
@@ -12673,7 +12705,8 @@
             "Honor",
             "Rationalism"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Advanced Ballistics"
         },
         "Bulgaria": {
           "player": null,
@@ -13135,7 +13168,8 @@
             "Honor",
             "Order"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Plastics"
         },
         "Gaul": {
           "player": null,
@@ -13621,7 +13655,8 @@
             "Rationalism",
             "Autocracy"
           ],
-          "first_policy_branch": "Honor"
+          "first_policy_branch": "Honor",
+          "researching_at_end": "Radar"
         },
         "Japan": {
           "player": null,
@@ -14123,7 +14158,8 @@
             "Exploration",
             "Freedom"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Nuclear Fission"
         },
         "Oman": {
           "player": null,
@@ -14616,7 +14652,8 @@
             "Exploration",
             "Autocracy"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Ecology"
         },
         "Songhai": {
           "player": null,
@@ -15169,7 +15206,8 @@
             "Order",
             "Honor"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": null
         },
         "Yugoslavia": {
           "player": null,
@@ -15623,7 +15661,8 @@
             "Commerce",
             "Order"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Refrigeration"
         }
       }
     },
@@ -16098,7 +16137,8 @@
             "Autocracy",
             "Rationalism"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Radio"
         },
         "Belgium": {
           "player": null,
@@ -16428,7 +16468,8 @@
             "Aesthetics",
             "Commerce"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Steam Power"
         },
         "Brazil": {
           "player": null,
@@ -16928,7 +16969,8 @@
             "Honor",
             "Order"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Plastics"
         },
         "Georgia": {
           "player": null,
@@ -17322,7 +17364,8 @@
             "Rationalism",
             "Order"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Radio"
         },
         "Golden Horde": {
           "player": null,
@@ -17506,7 +17549,8 @@
             "Tradition",
             "Honor"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Civil Service"
         },
         "Mongolia": {
           "player": null,
@@ -17929,7 +17973,8 @@
             "Aesthetics",
             "Autocracy"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Flight"
         },
         "Normandy": {
           "player": null,
@@ -18313,7 +18358,8 @@
             "Commerce",
             "Autocracy"
           ],
-          "first_policy_branch": "Honor"
+          "first_policy_branch": "Honor",
+          "researching_at_end": "Flight"
         },
         "Sioux": {
           "player": null,
@@ -18755,7 +18801,8 @@
             "Rationalism",
             "Autocracy"
           ],
-          "first_policy_branch": "Honor"
+          "first_policy_branch": "Honor",
+          "researching_at_end": null
         },
         "Timurids": {
           "player": null,
@@ -19136,7 +19183,8 @@
             "Rationalism",
             "Freedom"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Railroads"
         },
         "Venice": {
           "player": null,
@@ -19550,7 +19598,8 @@
             "Freedom",
             "Honor"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Electronics"
         }
       }
     },
@@ -19987,7 +20036,8 @@
             "Rationalism",
             "Order"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Archaeology"
         },
         "Greece": {
           "player": null,
@@ -20379,7 +20429,8 @@
             "Patronage",
             "Order"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Steam Power"
         },
         "Polynesia": {
           "player": null,
@@ -20750,7 +20801,8 @@
             "Honor",
             "Autocracy"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Military Science"
         },
         "Russia": {
           "player": null,
@@ -21020,7 +21072,8 @@
             "Liberty",
             "Commerce"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Gunpowder"
         },
         "The Huns": {
           "player": null,
@@ -21323,7 +21376,8 @@
             "Honor",
             "Rationalism"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Scientific Theory"
         },
         "Ukraine": {
           "player": null,
@@ -21590,7 +21644,8 @@
             "Commerce",
             "Honor"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": null
         }
       }
     },
@@ -21715,7 +21770,8 @@
           "policy_branch_order": [
             "Tradition"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Iron Working"
         },
         "Austria": {
           "player": null,
@@ -21826,7 +21882,8 @@
           "policy_branch_order": [
             "Liberty"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Currency"
         },
         "Babylon": {
           "player": null,
@@ -21942,7 +21999,8 @@
           "policy_branch_order": [
             "Liberty"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Mathematics"
         },
         "Boers": {
           "player": null,
@@ -22063,7 +22121,8 @@
           "policy_branch_order": [
             "Tradition"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": null
         },
         "China": {
           "player": null,
@@ -22168,7 +22227,8 @@
           "policy_branch_order": [
             "Liberty"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Currency"
         },
         "England": {
           "player": null,
@@ -22299,7 +22359,8 @@
           "policy_branch_order": [
             "Tradition"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Engineering"
         },
         "Manchuria": {
           "player": null,
@@ -22427,7 +22488,8 @@
             "Piety",
             "Honor"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Engineering"
         },
         "Philippines": {
           "player": null,
@@ -22543,7 +22605,8 @@
           "policy_branch_order": [
             "Liberty"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Iron Working"
         },
         "The Moors": {
           "player": null,
@@ -22671,7 +22734,8 @@
           "policy_branch_order": [
             "Piety"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Iron Working"
         },
         "Yugoslavia": {
           "player": null,
@@ -22777,7 +22841,8 @@
           "policy_branch_order": [
             "Tradition"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Currency"
         }
       }
     },
@@ -23160,7 +23225,8 @@
             "Rationalism",
             "Order"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Electricity"
         },
         "Argentina": {
           "player": null,
@@ -23537,7 +23603,8 @@
             "Exploration",
             "Freedom"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Military Science"
         },
         "France": {
           "player": null,
@@ -23905,7 +23972,8 @@
             "Liberty",
             "Rationalism"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Navigation"
         },
         "Golden Horde": {
           "player": null,
@@ -24248,7 +24316,8 @@
             "Honor",
             "Autocracy"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Scientific Theory"
         },
         "Jerusalem": {
           "player": null,
@@ -24583,7 +24652,8 @@
             "Rationalism",
             "Commerce"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Steam Power"
         },
         "Maurya": {
           "player": null,
@@ -24970,7 +25040,8 @@
             "Commerce",
             "Rationalism"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": null
         },
         "Prussia": {
           "player": null,
@@ -25345,7 +25416,8 @@
             "Rationalism",
             "Order"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Radio"
         },
         "Russia": {
           "player": null,
@@ -25608,7 +25680,8 @@
             "Liberty",
             "Aesthetics"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Architecture"
         },
         "Siam": {
           "player": null,
@@ -26089,7 +26162,8 @@
             "Freedom",
             "Rationalism"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Electronics"
         }
       }
     },
@@ -26404,7 +26478,8 @@
             "Honor",
             "Aesthetics"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Education"
         },
         "China": {
           "player": null,
@@ -26725,7 +26800,8 @@
             "Liberty",
             "Honor"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Flight"
         },
         "Denmark": {
           "player": null,
@@ -27375,7 +27451,8 @@
             "Rationalism",
             "Order"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": null
         },
         "England": {
           "player": null,
@@ -27944,7 +28021,8 @@
             "Order",
             "Honor"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": null
         },
         "Iroquois": {
           "player": null,
@@ -28534,7 +28612,8 @@
             "Order",
             "Rationalism"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Stealth"
         },
         "Philippines": {
           "player": null,
@@ -29141,7 +29220,8 @@
             "Rationalism",
             "Aesthetics"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Nuclear Fusion"
         },
         "The Moors": {
           "player": null,
@@ -29634,7 +29714,8 @@
             "Commerce",
             "Order"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Radar"
         },
         "The Ottomans": {
           "player": null,
@@ -29863,7 +29944,8 @@
             "Honor",
             "Piety"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Physics"
         },
         "Vietnam": {
           "player": null,
@@ -30445,7 +30527,8 @@
             "Autocracy",
             "Rationalism"
           ],
-          "first_policy_branch": "Honor"
+          "first_policy_branch": "Honor",
+          "researching_at_end": "Nanotechnology"
         }
       }
     },
@@ -30916,7 +30999,8 @@
             "Honor",
             "Order"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Combined Arms"
         },
         "France": {
           "player": null,
@@ -31487,7 +31571,8 @@
             "Rationalism",
             "Freedom"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Combined Arms"
         },
         "Hungary": {
           "player": null,
@@ -31753,7 +31838,8 @@
             "Tradition",
             "Honor"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Acoustics"
         },
         "Japan": {
           "player": null,
@@ -32053,7 +32139,8 @@
             "Exploration",
             "Honor"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Navigation"
         },
         "Khmer": {
           "player": null,
@@ -32518,7 +32605,8 @@
             "Rationalism",
             "Freedom"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Ballistics"
         },
         "Mongolia": {
           "player": null,
@@ -32990,7 +33078,8 @@
             "Honor",
             "Order"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Combined Arms"
         },
         "Mysore": {
           "player": null,
@@ -33478,7 +33567,8 @@
             "Rationalism",
             "Autocracy"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Atomic Theory"
         },
         "Portugal": {
           "player": null,
@@ -33604,7 +33694,8 @@
           "policy_branch_order": [
             "Piety"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Engineering"
         },
         "Romania": {
           "player": null,
@@ -33996,7 +34087,8 @@
             "Commerce",
             "Autocracy"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Railroads"
         },
         "Tonga": {
           "player": null,
@@ -34505,7 +34597,8 @@
             "Exploration",
             "Autocracy"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Radio"
         }
       }
     },
@@ -34780,7 +34873,8 @@
             "Tradition",
             "Piety"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": null
         },
         "India": {
           "player": null,
@@ -35227,7 +35321,8 @@
             "Rationalism",
             "Freedom"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Ballistics"
         },
         "Indonesia": {
           "player": null,
@@ -35545,7 +35640,8 @@
             "Piety",
             "Honor"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Metallurgy"
         },
         "Rome": {
           "player": null,
@@ -36092,7 +36188,8 @@
             "Commerce",
             "Order"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Ecology"
         },
         "Sumeria": {
           "player": null,
@@ -36572,7 +36669,8 @@
             "Rationalism",
             "Order"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Radar"
         },
         "The Netherlands": {
           "player": null,
@@ -37138,7 +37236,8 @@
             "Freedom",
             "Aesthetics"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": null
         }
       }
     },
@@ -37366,7 +37465,8 @@
             "Tradition",
             "Commerce"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Printing Press"
         },
         "Carthage": {
           "player": null,
@@ -37799,7 +37899,8 @@
             "Exploration",
             "Order"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Radio"
         },
         "Finland": {
           "player": null,
@@ -38306,7 +38407,8 @@
             "Rationalism",
             "Order"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Computers"
         },
         "Ireland": {
           "player": null,
@@ -38649,7 +38751,8 @@
             "Honor",
             "Exploration"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Electricity"
         },
         "Jerusalem": {
           "player": null,
@@ -39066,7 +39169,8 @@
             "Autocracy",
             "Commerce"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Archaeology"
         },
         "Siam": {
           "player": null,
@@ -39413,7 +39517,8 @@
             "Commerce",
             "Freedom"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Steam Power"
         },
         "The Maya": {
           "player": null,
@@ -39921,7 +40026,8 @@
             "Honor",
             "Order"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Atomic Theory"
         },
         "The Moors": {
           "player": null,
@@ -40311,7 +40417,8 @@
             "Honor",
             "Autocracy"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": null
         },
         "Zimbabwe": {
           "player": null,
@@ -40532,7 +40639,8 @@
             "Honor",
             "Tradition"
           ],
-          "first_policy_branch": "Honor"
+          "first_policy_branch": "Honor",
+          "researching_at_end": "Chivalry"
         }
       }
     },
@@ -40842,7 +40950,8 @@
             "Piety",
             "Rationalism"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Military Science"
         },
         "Belgium": {
           "player": null,
@@ -41079,7 +41188,8 @@
             "Tradition",
             "Liberty"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Drama and Poetry"
         },
         "Bulgaria": {
           "player": null,
@@ -41427,7 +41537,8 @@
             "Aesthetics",
             "Order"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Military Science"
         },
         "Burma": {
           "player": null,
@@ -41792,7 +41903,8 @@
             "Piety",
             "Order"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Rifling"
         },
         "Colombia": {
           "player": null,
@@ -42204,7 +42316,8 @@
             "Honor",
             "Autocracy"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": null
         },
         "Denmark": {
           "player": null,
@@ -42494,7 +42607,8 @@
             "Exploration",
             "Rationalism"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": null
         },
         "Italy": {
           "player": null,
@@ -42724,7 +42838,8 @@
             "Tradition",
             "Aesthetics"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Guilds"
         },
         "Macedonia": {
           "player": null,
@@ -43027,7 +43142,8 @@
             "Tradition",
             "Honor"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": null
         },
         "Persia": {
           "player": null,
@@ -43365,7 +43481,8 @@
             "Rationalism",
             "Order"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": null
         },
         "Philippines": {
           "player": null,
@@ -43672,7 +43789,8 @@
             "Honor",
             "Commerce"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Fertilizer"
         },
         "Portugal": {
           "player": null,
@@ -44048,7 +44166,8 @@
             "Rationalism",
             "Freedom"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Electricity"
         },
         "Zulu": {
           "player": null,
@@ -44276,7 +44395,8 @@
             "Piety",
             "Honor"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Compass"
         }
       }
     },
@@ -44729,7 +44849,8 @@
             "Aesthetics",
             "Freedom"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Dynamite"
         },
         "Mongolia": {
           "player": "AlexUnderHill",
@@ -45111,7 +45232,8 @@
             "Rationalism",
             "Order"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": null
         },
         "Nabataea": {
           "player": "REPUNZEL2882",
@@ -45468,7 +45590,8 @@
             "Rationalism",
             "Order"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Steam Power"
         },
         "Normandy": {
           "player": "Ouni0",
@@ -45788,7 +45911,8 @@
             "Commerce",
             "Autocracy"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Acoustics"
         },
         "Papal State": {
           "player": "Bahahanchiklkm",
@@ -46226,7 +46350,8 @@
             "Honor",
             "Autocracy"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": null
         },
         "Prussia": {
           "player": "Lvxvcs",
@@ -46608,7 +46733,8 @@
             "Honor",
             "Order"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Combustion"
         },
         "Romania": {
           "player": "n9306867842",
@@ -47002,7 +47128,8 @@
             "Rationalism",
             "Order"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Replaceable Parts"
         },
         "Shoshone": {
           "player": "konoval_mik",
@@ -47325,7 +47452,8 @@
             "Liberty",
             "Honor"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": null
         },
         "The Netherlands": {
           "player": "PVL01011900",
@@ -47576,7 +47704,8 @@
             "Liberty",
             "Piety"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Metallurgy"
         }
       }
     },
@@ -48081,7 +48210,8 @@
             "Rationalism",
             "Order"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Computers"
         },
         "Brazil": {
           "player": "Ouni0",
@@ -48543,7 +48673,8 @@
             "Rationalism",
             "Freedom"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Archaeology"
         },
         "Chile": {
           "player": "Click4x",
@@ -49086,7 +49217,8 @@
             "Exploration",
             "Order"
           ],
-          "first_policy_branch": "Honor"
+          "first_policy_branch": "Honor",
+          "researching_at_end": "Robotics"
         },
         "Germany": {
           "player": "Lvxvcs",
@@ -49352,7 +49484,8 @@
             "Liberty",
             "Piety"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Gunpowder"
         },
         "Hungary": {
           "player": "konoval_mik",
@@ -49870,7 +50003,8 @@
             "Piety",
             "Order"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Pharmaceuticals"
         },
         "Korea": {
           "player": "REPUNZEL2882",
@@ -50345,7 +50479,8 @@
             "Freedom",
             "Rationalism"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Electronics"
         },
         "Rome": {
           "player": "PVL01011900",
@@ -50620,7 +50755,8 @@
             "Patronage",
             "Piety"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Architecture"
         },
         "Tonga": {
           "player": "AlexUnderHill",
@@ -51134,7 +51270,8 @@
             "Piety",
             "Order"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Nuclear Fission"
         },
         "Ukraine": {
           "player": "Bahahanchiklkm",
@@ -51528,7 +51665,8 @@
             "Tradition",
             "Order"
           ],
-          "first_policy_branch": "Honor"
+          "first_policy_branch": "Honor",
+          "researching_at_end": "Archaeology"
         }
       }
     },
@@ -51962,7 +52100,8 @@
             "Rationalism",
             "Autocracy"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Steam Power"
         },
         "Boers": {
           "player": "Bahahanchiklkm",
@@ -52234,7 +52373,8 @@
             "Tradition",
             "Aesthetics"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Compass"
         },
         "Brunei": {
           "player": "REPUNZEL2882",
@@ -52580,7 +52720,8 @@
             "Exploration",
             "Freedom"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Refrigeration"
         },
         "Colombia": {
           "player": "konoval_mik",
@@ -52728,7 +52869,8 @@
           "policy_branch_order": [
             "Tradition"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Theology"
         },
         "Denmark": {
           "player": "AlexUnderHill",
@@ -53114,7 +53256,8 @@
             "Exploration",
             "Freedom"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Electricity"
         },
         "Japan": {
           "player": "Click4x",
@@ -53532,7 +53675,8 @@
             "Order",
             "Honor"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Combustion"
         }
       }
     },
@@ -53941,7 +54085,8 @@
             "Rationalism",
             "Autocracy"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Biology"
         },
         "Belgium": {
           "player": "den_stu",
@@ -54271,7 +54416,8 @@
             "Honor",
             "Commerce"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Astronomy"
         },
         "Inca": {
           "player": "O8DD_ff",
@@ -54665,7 +54811,8 @@
             "Honor",
             "Autocracy"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Biology"
         },
         "Morocco": {
           "player": "Bahahanchiklkm",
@@ -55087,7 +55234,8 @@
             "Honor",
             "Autocracy"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": null
         },
         "Persia": {
           "player": "REPUNZEL2882",
@@ -55450,7 +55598,8 @@
             "Honor",
             "Autocracy"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Fertilizer"
         },
         "Shoshone": {
           "player": "Laste2187",
@@ -55717,7 +55866,8 @@
             "Commerce",
             "Honor"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Astronomy"
         }
       }
     },
@@ -56174,7 +56324,8 @@
             "Honor",
             "Order"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Refrigeration"
         },
         "India": {
           "player": "Fanfblrik",
@@ -56396,7 +56547,8 @@
             "Honor",
             "Aesthetics"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Banking"
         },
         "Khmer": {
           "player": "Laste2187",
@@ -56681,7 +56833,8 @@
             "Liberty",
             "Honor"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": null
         },
         "Papal State": {
           "player": "AlexUnderHill",
@@ -57125,7 +57278,8 @@
             "Exploration",
             "Freedom"
           ],
-          "first_policy_branch": "Honor"
+          "first_policy_branch": "Honor",
+          "researching_at_end": "Plastics"
         },
         "Portugal": {
           "player": "REPUNZEL2882",
@@ -57521,7 +57675,8 @@
             "Exploration",
             "Freedom"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Fertilizer"
         },
         "Rome": {
           "player": "den_stu",
@@ -57977,7 +58132,8 @@
             "Piety",
             "Order"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Electronics"
         },
         "The Maya": {
           "player": "Click4x",
@@ -58478,7 +58634,8 @@
             "Order",
             "Patronage"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": null
         },
         "The Netherlands": {
           "player": "Bahahanchiklkm",
@@ -58910,7 +59067,8 @@
             "Honor",
             "Autocracy"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Biology"
         }
       }
     },
@@ -59168,7 +59326,8 @@
             "Tradition",
             "Commerce"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": null
         },
         "Italy": {
           "player": null,
@@ -59373,7 +59532,8 @@
             "Tradition",
             "Aesthetics"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Acoustics"
         },
         "Japan": {
           "player": null,
@@ -59625,7 +59785,8 @@
             "Honor",
             "Exploration"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": null
         },
         "Persia": {
           "player": null,
@@ -59887,7 +60048,8 @@
             "Commerce",
             "Rationalism"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Acoustics"
         },
         "Poland": {
           "player": null,
@@ -60133,7 +60295,8 @@
             "Piety",
             "Commerce"
           ],
-          "first_policy_branch": "Piety"
+          "first_policy_branch": "Piety",
+          "researching_at_end": "Economics"
         },
         "Romania": {
           "player": null,
@@ -60410,7 +60573,8 @@
             "Liberty",
             "Piety"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": "Industrialization"
         },
         "Songhai": {
           "player": null,
@@ -60666,7 +60830,8 @@
             "Piety",
             "Rationalism"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Economics"
         },
         "The Maya": {
           "player": null,
@@ -60881,7 +61046,8 @@
             "Tradition",
             "Liberty"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": null
         },
         "The Netherlands": {
           "player": null,
@@ -61085,7 +61251,8 @@
             "Tradition",
             "Liberty"
           ],
-          "first_policy_branch": "Tradition"
+          "first_policy_branch": "Tradition",
+          "researching_at_end": "Compass"
         },
         "Timurids": {
           "player": null,
@@ -61310,7 +61477,8 @@
             "Patronage",
             "Rationalism"
           ],
-          "first_policy_branch": "Liberty"
+          "first_policy_branch": "Liberty",
+          "researching_at_end": null
         }
       }
     }

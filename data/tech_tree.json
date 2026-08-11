@@ -1,0 +1,787 @@
+{
+  "source": "Civ V - Gods & Kings / Unciv Techs.json",
+  "eras": [
+    "Ancient era",
+    "Classical era",
+    "Medieval era",
+    "Renaissance era",
+    "Industrial era",
+    "Modern era",
+    "Atomic era",
+    "Information era",
+    "Future era"
+  ],
+  "techs": [
+    {
+      "name": "Agriculture",
+      "era": "Ancient era",
+      "column": 0,
+      "row": 6,
+      "prerequisites": []
+    },
+    {
+      "name": "Pottery",
+      "era": "Ancient era",
+      "column": 1,
+      "row": 2,
+      "prerequisites": [
+        "Agriculture"
+      ]
+    },
+    {
+      "name": "Animal Husbandry",
+      "era": "Ancient era",
+      "column": 1,
+      "row": 5,
+      "prerequisites": [
+        "Agriculture"
+      ]
+    },
+    {
+      "name": "Archery",
+      "era": "Ancient era",
+      "column": 1,
+      "row": 7,
+      "prerequisites": [
+        "Agriculture"
+      ]
+    },
+    {
+      "name": "Mining",
+      "era": "Ancient era",
+      "column": 1,
+      "row": 9,
+      "prerequisites": [
+        "Agriculture"
+      ]
+    },
+    {
+      "name": "Sailing",
+      "era": "Ancient era",
+      "column": 2,
+      "row": 1,
+      "prerequisites": [
+        "Pottery"
+      ]
+    },
+    {
+      "name": "Calendar",
+      "era": "Ancient era",
+      "column": 2,
+      "row": 2,
+      "prerequisites": [
+        "Pottery"
+      ]
+    },
+    {
+      "name": "Writing",
+      "era": "Ancient era",
+      "column": 2,
+      "row": 3,
+      "prerequisites": [
+        "Pottery"
+      ]
+    },
+    {
+      "name": "Trapping",
+      "era": "Ancient era",
+      "column": 2,
+      "row": 5,
+      "prerequisites": [
+        "Animal Husbandry"
+      ]
+    },
+    {
+      "name": "The Wheel",
+      "era": "Ancient era",
+      "column": 2,
+      "row": 7,
+      "prerequisites": [
+        "Animal Husbandry",
+        "Archery"
+      ]
+    },
+    {
+      "name": "Masonry",
+      "era": "Ancient era",
+      "column": 2,
+      "row": 9,
+      "prerequisites": [
+        "Mining"
+      ]
+    },
+    {
+      "name": "Bronze Working",
+      "era": "Ancient era",
+      "column": 2,
+      "row": 10,
+      "prerequisites": [
+        "Mining"
+      ]
+    },
+    {
+      "name": "Optics",
+      "era": "Classical era",
+      "column": 3,
+      "row": 1,
+      "prerequisites": [
+        "Sailing"
+      ]
+    },
+    {
+      "name": "Horseback Riding",
+      "era": "Classical era",
+      "column": 3,
+      "row": 5,
+      "prerequisites": [
+        "Trapping",
+        "The Wheel"
+      ]
+    },
+    {
+      "name": "Mathematics",
+      "era": "Classical era",
+      "column": 3,
+      "row": 7,
+      "prerequisites": [
+        "The Wheel"
+      ]
+    },
+    {
+      "name": "Construction",
+      "era": "Classical era",
+      "column": 3,
+      "row": 9,
+      "prerequisites": [
+        "Masonry",
+        "The Wheel"
+      ]
+    },
+    {
+      "name": "Philosophy",
+      "era": "Classical era",
+      "column": 4,
+      "row": 2,
+      "prerequisites": [
+        "Writing",
+        "Calendar"
+      ]
+    },
+    {
+      "name": "Drama and Poetry",
+      "era": "Classical era",
+      "column": 4,
+      "row": 3,
+      "prerequisites": [
+        "Writing"
+      ]
+    },
+    {
+      "name": "Currency",
+      "era": "Classical era",
+      "column": 4,
+      "row": 7,
+      "prerequisites": [
+        "Mathematics"
+      ]
+    },
+    {
+      "name": "Engineering",
+      "era": "Classical era",
+      "column": 4,
+      "row": 8,
+      "prerequisites": [
+        "Mathematics",
+        "Construction"
+      ]
+    },
+    {
+      "name": "Iron Working",
+      "era": "Classical era",
+      "column": 4,
+      "row": 10,
+      "prerequisites": [
+        "Bronze Working"
+      ]
+    },
+    {
+      "name": "Theology",
+      "era": "Medieval era",
+      "column": 5,
+      "row": 2,
+      "prerequisites": [
+        "Philosophy",
+        "Drama and Poetry"
+      ]
+    },
+    {
+      "name": "Civil Service",
+      "era": "Medieval era",
+      "column": 5,
+      "row": 5,
+      "prerequisites": [
+        "Currency",
+        "Horseback Riding",
+        "Drama and Poetry"
+      ]
+    },
+    {
+      "name": "Guilds",
+      "era": "Medieval era",
+      "column": 5,
+      "row": 7,
+      "prerequisites": [
+        "Currency"
+      ]
+    },
+    {
+      "name": "Metal Casting",
+      "era": "Medieval era",
+      "column": 5,
+      "row": 9,
+      "prerequisites": [
+        "Engineering",
+        "Iron Working"
+      ]
+    },
+    {
+      "name": "Compass",
+      "era": "Medieval era",
+      "column": 6,
+      "row": 1,
+      "prerequisites": [
+        "Optics",
+        "Theology"
+      ]
+    },
+    {
+      "name": "Education",
+      "era": "Medieval era",
+      "column": 6,
+      "row": 3,
+      "prerequisites": [
+        "Theology",
+        "Civil Service"
+      ]
+    },
+    {
+      "name": "Chivalry",
+      "era": "Medieval era",
+      "column": 6,
+      "row": 6,
+      "prerequisites": [
+        "Civil Service",
+        "Guilds"
+      ]
+    },
+    {
+      "name": "Machinery",
+      "era": "Medieval era",
+      "column": 6,
+      "row": 8,
+      "prerequisites": [
+        "Guilds",
+        "Engineering"
+      ]
+    },
+    {
+      "name": "Physics",
+      "era": "Medieval era",
+      "column": 6,
+      "row": 9,
+      "prerequisites": [
+        "Metal Casting"
+      ]
+    },
+    {
+      "name": "Steel",
+      "era": "Medieval era",
+      "column": 6,
+      "row": 10,
+      "prerequisites": [
+        "Metal Casting"
+      ]
+    },
+    {
+      "name": "Astronomy",
+      "era": "Renaissance era",
+      "column": 7,
+      "row": 2,
+      "prerequisites": [
+        "Compass",
+        "Education"
+      ]
+    },
+    {
+      "name": "Acoustics",
+      "era": "Renaissance era",
+      "column": 7,
+      "row": 4,
+      "prerequisites": [
+        "Education"
+      ]
+    },
+    {
+      "name": "Banking",
+      "era": "Renaissance era",
+      "column": 7,
+      "row": 6,
+      "prerequisites": [
+        "Chivalry",
+        "Education"
+      ]
+    },
+    {
+      "name": "Printing Press",
+      "era": "Renaissance era",
+      "column": 7,
+      "row": 8,
+      "prerequisites": [
+        "Machinery",
+        "Physics",
+        "Chivalry"
+      ]
+    },
+    {
+      "name": "Gunpowder",
+      "era": "Renaissance era",
+      "column": 7,
+      "row": 10,
+      "prerequisites": [
+        "Physics",
+        "Steel"
+      ]
+    },
+    {
+      "name": "Navigation",
+      "era": "Renaissance era",
+      "column": 8,
+      "row": 2,
+      "prerequisites": [
+        "Astronomy"
+      ]
+    },
+    {
+      "name": "Architecture",
+      "era": "Renaissance era",
+      "column": 8,
+      "row": 4,
+      "prerequisites": [
+        "Acoustics",
+        "Banking"
+      ]
+    },
+    {
+      "name": "Economics",
+      "era": "Renaissance era",
+      "column": 8,
+      "row": 6,
+      "prerequisites": [
+        "Banking",
+        "Printing Press"
+      ]
+    },
+    {
+      "name": "Metallurgy",
+      "era": "Renaissance era",
+      "column": 8,
+      "row": 9,
+      "prerequisites": [
+        "Printing Press",
+        "Gunpowder"
+      ]
+    },
+    {
+      "name": "Chemistry",
+      "era": "Renaissance era",
+      "column": 8,
+      "row": 10,
+      "prerequisites": [
+        "Gunpowder"
+      ]
+    },
+    {
+      "name": "Archaeology",
+      "era": "Industrial era",
+      "column": 9,
+      "row": 2,
+      "prerequisites": [
+        "Navigation",
+        "Architecture"
+      ]
+    },
+    {
+      "name": "Scientific Theory",
+      "era": "Industrial era",
+      "column": 9,
+      "row": 4,
+      "prerequisites": [
+        "Architecture",
+        "Economics"
+      ]
+    },
+    {
+      "name": "Industrialization",
+      "era": "Industrial era",
+      "column": 9,
+      "row": 6,
+      "prerequisites": [
+        "Economics"
+      ]
+    },
+    {
+      "name": "Rifling",
+      "era": "Industrial era",
+      "column": 9,
+      "row": 7,
+      "prerequisites": [
+        "Economics",
+        "Metallurgy"
+      ]
+    },
+    {
+      "name": "Military Science",
+      "era": "Industrial era",
+      "column": 9,
+      "row": 9,
+      "prerequisites": [
+        "Metallurgy",
+        "Chemistry"
+      ]
+    },
+    {
+      "name": "Fertilizer",
+      "era": "Industrial era",
+      "column": 9,
+      "row": 10,
+      "prerequisites": [
+        "Chemistry"
+      ]
+    },
+    {
+      "name": "Biology",
+      "era": "Industrial era",
+      "column": 10,
+      "row": 2,
+      "prerequisites": [
+        "Archaeology",
+        "Scientific Theory"
+      ]
+    },
+    {
+      "name": "Electricity",
+      "era": "Industrial era",
+      "column": 10,
+      "row": 3,
+      "prerequisites": [
+        "Scientific Theory"
+      ]
+    },
+    {
+      "name": "Steam Power",
+      "era": "Industrial era",
+      "column": 10,
+      "row": 6,
+      "prerequisites": [
+        "Industrialization",
+        "Scientific Theory",
+        "Rifling"
+      ]
+    },
+    {
+      "name": "Dynamite",
+      "era": "Industrial era",
+      "column": 10,
+      "row": 9,
+      "prerequisites": [
+        "Fertilizer",
+        "Military Science"
+      ]
+    },
+    {
+      "name": "Refrigeration",
+      "era": "Modern era",
+      "column": 11,
+      "row": 2,
+      "prerequisites": [
+        "Biology",
+        "Electricity"
+      ]
+    },
+    {
+      "name": "Radio",
+      "era": "Modern era",
+      "column": 11,
+      "row": 3,
+      "prerequisites": [
+        "Electricity"
+      ]
+    },
+    {
+      "name": "Replaceable Parts",
+      "era": "Modern era",
+      "column": 11,
+      "row": 4,
+      "prerequisites": [
+        "Electricity",
+        "Steam Power"
+      ]
+    },
+    {
+      "name": "Flight",
+      "era": "Modern era",
+      "column": 11,
+      "row": 6,
+      "prerequisites": [
+        "Steam Power"
+      ]
+    },
+    {
+      "name": "Railroads",
+      "era": "Modern era",
+      "column": 11,
+      "row": 8,
+      "prerequisites": [
+        "Steam Power",
+        "Dynamite"
+      ]
+    },
+    {
+      "name": "Plastics",
+      "era": "Modern era",
+      "column": 12,
+      "row": 3,
+      "prerequisites": [
+        "Radio",
+        "Replaceable Parts"
+      ]
+    },
+    {
+      "name": "Electronics",
+      "era": "Modern era",
+      "column": 12,
+      "row": 5,
+      "prerequisites": [
+        "Replaceable Parts",
+        "Flight"
+      ]
+    },
+    {
+      "name": "Ballistics",
+      "era": "Modern era",
+      "column": 12,
+      "row": 6,
+      "prerequisites": [
+        "Flight"
+      ]
+    },
+    {
+      "name": "Combustion",
+      "era": "Modern era",
+      "column": 12,
+      "row": 8,
+      "prerequisites": [
+        "Railroads"
+      ]
+    },
+    {
+      "name": "Pharmaceuticals",
+      "era": "Atomic era",
+      "column": 13,
+      "row": 2,
+      "prerequisites": [
+        "Plastics",
+        "Refrigeration"
+      ]
+    },
+    {
+      "name": "Atomic Theory",
+      "era": "Atomic era",
+      "column": 13,
+      "row": 4,
+      "prerequisites": [
+        "Plastics",
+        "Electronics"
+      ]
+    },
+    {
+      "name": "Radar",
+      "era": "Atomic era",
+      "column": 13,
+      "row": 6,
+      "prerequisites": [
+        "Ballistics",
+        "Electronics"
+      ]
+    },
+    {
+      "name": "Combined Arms",
+      "era": "Atomic era",
+      "column": 13,
+      "row": 8,
+      "prerequisites": [
+        "Ballistics",
+        "Combustion"
+      ]
+    },
+    {
+      "name": "Ecology",
+      "era": "Atomic era",
+      "column": 14,
+      "row": 2,
+      "prerequisites": [
+        "Atomic Theory",
+        "Pharmaceuticals"
+      ]
+    },
+    {
+      "name": "Nuclear Fission",
+      "era": "Atomic era",
+      "column": 14,
+      "row": 4,
+      "prerequisites": [
+        "Atomic Theory",
+        "Radar"
+      ]
+    },
+    {
+      "name": "Rocketry",
+      "era": "Atomic era",
+      "column": 14,
+      "row": 6,
+      "prerequisites": [
+        "Radar"
+      ]
+    },
+    {
+      "name": "Computers",
+      "era": "Atomic era",
+      "column": 14,
+      "row": 8,
+      "prerequisites": [
+        "Combined Arms",
+        "Radar"
+      ]
+    },
+    {
+      "name": "Telecommunications",
+      "era": "Information era",
+      "column": 15,
+      "row": 2,
+      "prerequisites": [
+        "Ecology"
+      ]
+    },
+    {
+      "name": "Mobile Tactics",
+      "era": "Information era",
+      "column": 15,
+      "row": 3,
+      "prerequisites": [
+        "Ecology",
+        "Nuclear Fission"
+      ]
+    },
+    {
+      "name": "Advanced Ballistics",
+      "era": "Information era",
+      "column": 15,
+      "row": 5,
+      "prerequisites": [
+        "Nuclear Fission",
+        "Rocketry"
+      ]
+    },
+    {
+      "name": "Satellites",
+      "era": "Information era",
+      "column": 15,
+      "row": 6,
+      "prerequisites": [
+        "Rocketry"
+      ]
+    },
+    {
+      "name": "Robotics",
+      "era": "Information era",
+      "column": 15,
+      "row": 7,
+      "prerequisites": [
+        "Rocketry",
+        "Computers"
+      ]
+    },
+    {
+      "name": "Lasers",
+      "era": "Information era",
+      "column": 15,
+      "row": 8,
+      "prerequisites": [
+        "Computers"
+      ]
+    },
+    {
+      "name": "Globalization",
+      "era": "Information era",
+      "column": 16,
+      "row": 2,
+      "prerequisites": [
+        "Telecommunications"
+      ]
+    },
+    {
+      "name": "Particle Physics",
+      "era": "Information era",
+      "column": 16,
+      "row": 3,
+      "prerequisites": [
+        "Telecommunications",
+        "Mobile Tactics",
+        "Advanced Ballistics"
+      ]
+    },
+    {
+      "name": "Nuclear Fusion",
+      "era": "Information era",
+      "column": 16,
+      "row": 6,
+      "prerequisites": [
+        "Advanced Ballistics",
+        "Satellites",
+        "Robotics"
+      ]
+    },
+    {
+      "name": "Nanotechnology",
+      "era": "Information era",
+      "column": 16,
+      "row": 7,
+      "prerequisites": [
+        "Robotics"
+      ]
+    },
+    {
+      "name": "Stealth",
+      "era": "Information era",
+      "column": 16,
+      "row": 8,
+      "prerequisites": [
+        "Robotics",
+        "Lasers"
+      ]
+    },
+    {
+      "name": "Future Tech",
+      "era": "Future era",
+      "column": 17,
+      "row": 5,
+      "prerequisites": [
+        "Globalization",
+        "Particle Physics",
+        "Nuclear Fusion",
+        "Nanotechnology",
+        "Stealth"
+      ]
+    }
+  ]
+}

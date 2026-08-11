@@ -1,7 +1,7 @@
 /**
  * Tech / policy unlock paths tab for Iron League archive.
- * Loads data/tech_policy_timelines.json + name maps; renders league stats
- * and per-game player timelines with Unciv icons.
+ * Loads timelines + G&K tech tree layout; renders full tech tree per player
+ * (researched vs locked) and policy unlock lists.
  */
 (function () {
   const ERA_ORDER = [
@@ -13,12 +13,22 @@
     'Modern era',
     'Atomic era',
     'Information era',
+    'Future era',
   ];
 
+  const NODE_W = 152;
+  const NODE_H = 62;
+  const COL_W = 178;
+  const ROW_H = 84;
+  const PAD_X = 28;
+  const PAD_Y = 24;
+
   let timelines = null;
+  let techTree = null;
   let techNames = {};
   let policyNames = {};
   let ready = false;
+  let selectedEra = 'all';
 
   function t(key, fallback) {
     if (window.IronLeagueI18n && IronLeagueI18n.t) {
@@ -45,6 +55,7 @@
   }
 
   function eraLabel(eraEn) {
+    if (eraEn === 'all') return t('paths.era.all', lang() === 'en' ? 'All eras' : 'Все эпохи');
     const key = 'paths.era.' + String(eraEn || '').replace(/ /g, '_');
     const fallbacks = {
       'Ancient era': 'Древность',
@@ -55,6 +66,7 @@
       'Modern era': 'Новейшая',
       'Atomic era': 'Атомная',
       'Information era': 'Информационная',
+      'Future era': 'Будущее',
     };
     return t(key, lang() === 'en' ? String(eraEn || '').replace(' era', '') : (fallbacks[eraEn] || eraEn));
   }
@@ -64,7 +76,6 @@
   }
 
   function policyIcon(name) {
-    // Branch icons share folder with policy icons
     return `Policy_icons/${encodeURIComponent(name)}.png`;
   }
 
@@ -79,10 +90,12 @@
       fetch('data/tech_policy_timelines.json').then((r) => r.json()),
       fetch('data/tech_names.json').then((r) => r.json()),
       fetch('data/policy_names.json').then((r) => r.json()),
-    ]).then(([tl, tn, pn]) => {
+      fetch('data/tech_tree.json').then((r) => r.json()),
+    ]).then(([tl, tn, pn, tree]) => {
       timelines = tl;
       techNames = tn || {};
       policyNames = pn || {};
+      techTree = tree;
       ready = true;
     });
   }
@@ -175,6 +188,30 @@
     });
   }
 
+  function selectedGame() {
+    return document.getElementById('pathsGameSelect')?.value || '';
+  }
+
+  function selectedPlayer() {
+    return document.getElementById('pathsPlayerSelect')?.value || '';
+  }
+
+  function setGame(gameNum, opts) {
+    const select = document.getElementById('pathsGameSelect');
+    if (select) select.value = gameNum || '';
+    fillPlayerSelect(gameNum);
+    renderGameChips();
+    renderPlayerChips();
+    if (!opts || opts.render !== false) renderPlayer();
+  }
+
+  function setPlayer(civ, opts) {
+    const select = document.getElementById('pathsPlayerSelect');
+    if (select) select.value = civ || '';
+    renderPlayerChips();
+    if (!opts || opts.render !== false) renderPlayer();
+  }
+
   function fillGameSelect() {
     const select = document.getElementById('pathsGameSelect');
     if (!select || !timelines) return;
@@ -221,9 +258,72 @@
         select.appendChild(opt);
       });
     if (prev && players[prev]) select.value = prev;
+    else select.value = '';
+  }
+
+  function renderGameChips() {
+    const wrap = document.getElementById('pathsGameChips');
+    if (!wrap || !timelines) return;
+    wrap.innerHTML = '';
+    const sort = document.getElementById('pathsSortSelect')?.value || 'newest';
+    const nums = Object.keys(timelines.games || {}).map(Number);
+    nums.sort((a, b) => (sort === 'oldest' ? a - b : b - a));
+    const cur = selectedGame();
+    nums.forEach((n) => {
+      const g = timelines.games[String(n)] || {};
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'paths-chip' + (String(n) === cur ? ' active' : '');
+      btn.textContent = `Game ${n}${g.status === 'partial' ? '*' : ''}`;
+      btn.addEventListener('click', () => setGame(String(n)));
+      wrap.appendChild(btn);
+    });
+  }
+
+  function renderPlayerChips() {
+    const wrap = document.getElementById('pathsPlayerChips');
+    if (!wrap || !timelines) return;
+    wrap.innerHTML = '';
+    const gameNum = selectedGame();
+    if (!gameNum) return;
+    const players = (timelines.games[gameNum] || {}).players || {};
+    const cur = selectedPlayer();
+    Object.keys(players)
+      .sort((a, b) => a.localeCompare(b))
+      .forEach((civ) => {
+        const row = players[civ] || {};
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'paths-chip' + (civ === cur ? ' active' : '');
+        btn.textContent = row.player ? `${civ} · ${row.player}` : civ;
+        btn.addEventListener('click', () => setPlayer(civ));
+        wrap.appendChild(btn);
+      });
+  }
+
+  function renderEraTabs() {
+    const wrap = document.getElementById('pathsEraTabs');
+    if (!wrap) return;
+    wrap.innerHTML = '';
+    const eras = ['all'].concat(
+      (techTree && techTree.eras && techTree.eras.length) ? techTree.eras : ERA_ORDER
+    );
+    eras.forEach((era) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'paths-era-tab' + (era === selectedEra ? ' active' : '');
+      btn.textContent = eraLabel(era);
+      btn.addEventListener('click', () => {
+        selectedEra = era;
+        renderEraTabs();
+        renderTechTree();
+      });
+      wrap.appendChild(btn);
+    });
   }
 
   function renderTimelineList(container, items, kind) {
+    if (!container) return;
     container.innerHTML = '';
     (items || []).forEach((item) => {
       const li = document.createElement('div');
@@ -250,9 +350,154 @@
     });
   }
 
+  function researchedMap(row) {
+    const map = Object.create(null);
+    (row.techs || []).forEach((item) => {
+      map[item.name] = item;
+    });
+    return map;
+  }
+
+  function visibleTechs() {
+    const all = (techTree && techTree.techs) || [];
+    if (selectedEra === 'all') return all.slice();
+    return all.filter((tech) => tech.era === selectedEra);
+  }
+
+  function nodeOrigin(tech, minCol, minRow) {
+    return {
+      x: PAD_X + (tech.column - minCol) * COL_W,
+      y: PAD_Y + (tech.row - minRow) * ROW_H,
+    };
+  }
+
+  function renderTechTree() {
+    const canvas = document.getElementById('pathsTechTree');
+    const legend = document.getElementById('pathsTreeLegend');
+    if (!canvas) return;
+
+    const gameNum = selectedGame();
+    const civ = selectedPlayer();
+    if (!gameNum || !civ || !techTree) {
+      canvas.innerHTML = '';
+      canvas.style.width = '';
+      canvas.style.height = '';
+      if (legend) legend.textContent = t('paths.treeHint', 'Выберите игру и игрока, чтобы увидеть полное древо техов.');
+      return;
+    }
+
+    const row = (((timelines.games[gameNum] || {}).players) || {})[civ];
+    if (!row) {
+      canvas.innerHTML = '';
+      return;
+    }
+
+    const done = researchedMap(row);
+    const researching = row.researching_at_end || row.researching || null;
+    const techs = visibleTechs();
+    if (!techs.length) {
+      canvas.innerHTML = '';
+      if (legend) legend.textContent = '';
+      return;
+    }
+
+    const minCol = Math.min(...techs.map((x) => x.column));
+    const maxCol = Math.max(...techs.map((x) => x.column));
+    const minRow = Math.min(...techs.map((x) => x.row));
+    const maxRow = Math.max(...techs.map((x) => x.row));
+    const width = PAD_X * 2 + (maxCol - minCol) * COL_W + NODE_W;
+    const height = PAD_Y * 2 + (maxRow - minRow) * ROW_H + NODE_H;
+
+    const byName = Object.create(null);
+    techs.forEach((tech) => { byName[tech.name] = tech; });
+
+    canvas.innerHTML = '';
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'paths-tree-edges');
+    svg.setAttribute('width', String(width));
+    svg.setAttribute('height', String(height));
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+
+    techs.forEach((tech) => {
+      const to = nodeOrigin(tech, minCol, minRow);
+      (tech.prerequisites || []).forEach((preName) => {
+        const pre = byName[preName];
+        if (!pre) return;
+        const from = nodeOrigin(pre, minCol, minRow);
+        const x1 = from.x + NODE_W;
+        const y1 = from.y + NODE_H / 2;
+        const x2 = to.x;
+        const y2 = to.y + NODE_H / 2;
+        const mx = (x1 + x2) / 2;
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        const researchedEdge = done[preName] && done[tech.name];
+        path.setAttribute('d', `M ${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`);
+        path.setAttribute('class', researchedEdge ? 'paths-edge is-done' : 'paths-edge');
+        svg.appendChild(path);
+      });
+    });
+    canvas.appendChild(svg);
+
+    techs.forEach((tech) => {
+      const pos = nodeOrigin(tech, minCol, minRow);
+      const info = done[tech.name];
+      const node = document.createElement('div');
+      node.className = 'paths-tree-node' + (info ? ' is-done' : ' is-locked');
+      if (researching && researching === tech.name) node.classList.add('is-researching');
+      node.style.left = `${pos.x}px`;
+      node.style.top = `${pos.y}px`;
+
+      const img = document.createElement('img');
+      img.alt = '';
+      img.loading = 'lazy';
+      img.src = techIcon(tech.name);
+      img.onerror = () => { img.style.visibility = 'hidden'; };
+
+      const body = document.createElement('div');
+      body.className = 'paths-tree-node-body';
+      const title = document.createElement('div');
+      title.className = 'paths-tree-node-title';
+      title.textContent = labelTech(tech.name);
+      body.appendChild(title);
+      if (info) {
+        const meta = document.createElement('div');
+        meta.className = 'paths-tree-node-meta';
+        meta.textContent = `#${info.order} · ${t('paths.turn', 'ход')} ${info.turn}`;
+        body.appendChild(meta);
+      } else if (researching && researching === tech.name) {
+        const meta = document.createElement('div');
+        meta.className = 'paths-tree-node-meta';
+        meta.textContent = t('paths.researchingEnd', 'изучалось на финише');
+        body.appendChild(meta);
+      }
+
+      node.appendChild(img);
+      node.appendChild(body);
+      node.title = labelTech(tech.name);
+      canvas.appendChild(node);
+    });
+
+    if (legend) {
+      const parts = [
+        t('paths.legendDone', 'зелёный — открыто'),
+        t('paths.legendLocked', 'тёмный — не открыто'),
+      ];
+      if (researching) {
+        parts.push(
+          t('paths.legendResearching', 'обводка — изучалось на финише') +
+            `: ${labelTech(researching)}`
+        );
+      }
+      legend.textContent = parts.join(' · ');
+    }
+  }
+
   function renderPlayer() {
-    const gameNum = document.getElementById('pathsGameSelect')?.value;
-    const civ = document.getElementById('pathsPlayerSelect')?.value;
+    const gameNum = selectedGame();
+    const civ = selectedPlayer();
     const head = document.getElementById('pathsPlayerHeading');
     const techBox = document.getElementById('pathsTechTimeline');
     const polBox = document.getElementById('pathsPolicyTimeline');
@@ -262,6 +507,7 @@
       if (techBox) techBox.innerHTML = '';
       if (polBox) polBox.innerHTML = '';
       if (meta) meta.textContent = '';
+      renderTechTree();
       return;
     }
     const row = (((timelines.games[gameNum] || {}).players) || {})[civ];
@@ -270,17 +516,31 @@
       head.textContent = `${civ}${row.player ? ' — ' + row.player : ''} · Game ${gameNum}`;
     }
     if (meta) {
-      const branch = row.first_policy_branch
-        ? labelPolicy(row.first_policy_branch)
-        : '—';
-      meta.textContent = t('paths.playerMeta', 'Первый институт') + `: ${branch}`;
+      const bits = [
+        t('paths.playerMeta', 'Первый институт') + `: ${
+          row.first_policy_branch ? labelPolicy(row.first_policy_branch) : '—'
+        }`,
+      ];
+      if (row.researching_at_end || row.researching) {
+        bits.push(
+          t('paths.researchingEnd', 'изучалось на финише') +
+            `: ${labelTech(row.researching_at_end || row.researching)}`
+        );
+      }
+      meta.textContent = bits.join(' · ');
     }
+    renderEraTabs();
+    renderTechTree();
     renderTimelineList(techBox, row.techs, 'tech');
     renderTimelineList(polBox, row.policies, 'policy');
   }
 
   function renderAll() {
     fillGameSelect();
+    fillPlayerSelect(selectedGame());
+    renderGameChips();
+    renderPlayerChips();
+    renderEraTabs();
     renderLeagueStats();
     renderPlayer();
   }
@@ -302,14 +562,17 @@
   document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('pathsSortSelect')?.addEventListener('change', () => {
       fillGameSelect();
-      const gameNum = document.getElementById('pathsGameSelect')?.value || '';
+      const gameNum = selectedGame();
       fillPlayerSelect(gameNum);
+      renderGameChips();
+      renderPlayerChips();
       renderPlayer();
     });
     document.getElementById('pathsGameSelect')?.addEventListener('change', (e) => {
-      fillPlayerSelect(e.target.value);
-      renderPlayer();
+      setGame(e.target.value);
     });
-    document.getElementById('pathsPlayerSelect')?.addEventListener('change', renderPlayer);
+    document.getElementById('pathsPlayerSelect')?.addEventListener('change', (e) => {
+      setPlayer(e.target.value);
+    });
   });
 })();

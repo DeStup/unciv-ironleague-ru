@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=paths-bg-1">
+    <link rel="stylesheet" href="css/site.css?v=paths-tree-1">
 
 </head>
 <body>
@@ -267,11 +267,18 @@
 
     <section class="paths-section" id="pathsBrowseSection">
         <h2 data-i18n="paths.browseTitle">Партия и игрок</h2>
+        <div class="paths-chip-row" id="pathsGameChips" role="tablist" data-i18n-aria="paths.filter.game" aria-label="Игры"></div>
+        <div class="paths-chip-row" id="pathsPlayerChips" role="tablist" data-i18n-aria="paths.filter.player" aria-label="Игроки"></div>
         <h3 id="pathsPlayerHeading"></h3>
         <p class="hint" id="pathsPlayerMeta"></p>
+        <div class="paths-era-tabs" id="pathsEraTabs" role="tablist" data-i18n-aria="paths.eraTabs" aria-label="Эпохи"></div>
+        <p class="hint paths-tree-legend" id="pathsTreeLegend"></p>
+        <div class="paths-tree-scroll" id="pathsTreeScroll">
+            <div class="paths-tree-canvas" id="pathsTechTree"></div>
+        </div>
         <div class="paths-timelines">
             <div>
-                <h4 data-i18n="paths.techs">Технологии</h4>
+                <h4 data-i18n="paths.techs">Технологии (порядок)</h4>
                 <div class="paths-tl" id="pathsTechTimeline"></div>
             </div>
             <div>
@@ -989,13 +996,13 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=paths-2"></script>
+<script src="js/i18n.js?v=paths-tree-1"></script>
 <script src="js/player-meta.js?v=click4x-cy-ru-1"></script>
 <script src="js/stats-charts.js?v=policy-colors-1"></script>
 <script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=lobby-opp-1"></script>
 <script src="js/achievements.js?v=survival-top3-1"></script>
-<script src="js/tech-policy-paths.js?v=2"></script>
+<script src="js/tech-policy-paths.js?v=tree-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
