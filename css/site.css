@@ -149,6 +149,7 @@
         #viewArchive::before { background-image: url('../bg/archive.png'); }
         #viewHome::before { background-image: url('../bg/home.png'); }
         #viewStats::before { background-image: url('../bg/stats.png'); }
+        #viewPaths::before { background-image: url('../bg/paths.png'); }
         #viewTierlist::before { background-image: url('../bg/tierlist.png'); }
         #viewFaq::before { background-image: url('../bg/faq.png'); }
         #viewProfile::before { background-image: url('../img/profiles/dossier-bg.jpg'); }
@@ -2778,20 +2779,6 @@
             border-radius: 14px;
             background: rgba(0, 0, 0, 0.22);
             border: 1px solid rgba(255, 255, 255, 0.06);
-        }
-        .paths-filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 14px;
-        }
-        .paths-filters select {
-            min-width: 220px;
-            padding: 8px 10px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 215, 0, 0.25);
-            background: #1a1a28;
-            color: #f0f0f0;
         }
         .paths-timelines {
             display: grid;

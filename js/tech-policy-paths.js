@@ -184,29 +184,30 @@
     const select = document.getElementById('pathsGameSelect');
     if (!select || !timelines) return;
     const cur = select.value;
+    const sort = document.getElementById('pathsSortSelect')?.value || 'newest';
     select.innerHTML = '';
     const opt0 = document.createElement('option');
     opt0.value = '';
     opt0.textContent = t('paths.pickGame', 'Выберите игру…');
     select.appendChild(opt0);
-    Object.keys(timelines.games || {})
-      .map(Number)
-      .sort((a, b) => a - b)
-      .forEach((n) => {
-        const g = timelines.games[String(n)] || {};
-        const opt = document.createElement('option');
-        opt.value = String(n);
-        const players = Object.keys(g.players || {}).length;
-        const tag = g.status === 'partial' ? ' *' : '';
-        opt.textContent = `Game ${n}${tag} (${players})`;
-        select.appendChild(opt);
-      });
+    const nums = Object.keys(timelines.games || {}).map(Number);
+    nums.sort((a, b) => (sort === 'oldest' ? a - b : b - a));
+    nums.forEach((n) => {
+      const g = timelines.games[String(n)] || {};
+      const opt = document.createElement('option');
+      opt.value = String(n);
+      const players = Object.keys(g.players || {}).length;
+      const tag = g.status === 'partial' ? ' *' : '';
+      opt.textContent = `Game ${n}${tag} (${players})`;
+      select.appendChild(opt);
+    });
     if (cur && timelines.games[cur]) select.value = cur;
   }
 
   function fillPlayerSelect(gameNum) {
     const select = document.getElementById('pathsPlayerSelect');
     if (!select || !timelines) return;
+    const prev = select.value;
     select.innerHTML = '';
     const opt0 = document.createElement('option');
     opt0.value = '';
@@ -224,6 +225,7 @@
         opt.textContent = `${civ}${nick}`;
         select.appendChild(opt);
       });
+    if (prev && players[prev]) select.value = prev;
   }
 
   function renderTimelineList(container, items, kind) {
@@ -303,13 +305,16 @@
   };
 
   document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('pathsSortSelect')?.addEventListener('change', () => {
+      fillGameSelect();
+      const gameNum = document.getElementById('pathsGameSelect')?.value || '';
+      fillPlayerSelect(gameNum);
+      renderPlayer();
+    });
     document.getElementById('pathsGameSelect')?.addEventListener('change', (e) => {
       fillPlayerSelect(e.target.value);
       renderPlayer();
     });
     document.getElementById('pathsPlayerSelect')?.addEventListener('change', renderPlayer);
-    document.addEventListener('ironleague:lang', () => {
-      if (window.IronLeaguePaths) window.IronLeaguePaths.refreshLabels();
-    });
   });
 })();
