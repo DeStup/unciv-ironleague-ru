@@ -1000,7 +1000,7 @@
 <script src="js/stats-charts.js?v=policy-colors-1"></script>
 <script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=lobby-opp-1"></script>
-<script src="js/achievements.js?v=survival-top3-1"></script>
+<script src="js/achievements.js?v=memo-fp-1"></script>
 <script src="js/tech-policy-paths.js?v=polish-3"></script>
 <script>
     // Конфигурация
@@ -2504,6 +2504,9 @@
 
             const data = await gamesResponse.json();
             gamesData = data.games;
+            if (window.IronLeagueAchievements && typeof IronLeagueAchievements.invalidateAchievementsCache === 'function') {
+                IronLeagueAchievements.invalidateAchievementsCache();
+            }
 
             gamesData.forEach(game => {
                 game.players?.forEach(player => allNations.add(player.nation));

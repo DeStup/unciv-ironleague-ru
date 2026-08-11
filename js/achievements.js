@@ -50,6 +50,28 @@
       .sort((a, b) => parseGameNum(a) - parseGameNum(b));
   }
 
+  /** Cheap fingerprint so we recompute only when archive content changes. */
+  function gamesFingerprint(games) {
+    if (!games || !games.length) return '0';
+    let parts = [String(games.length)];
+    for (const g of games) {
+      parts.push(
+        [
+          g.id,
+          g.number,
+          g.endedOnTurn,
+          g.winner,
+          Array.isArray(g.survivors) ? g.survivors.length : 0,
+          Array.isArray(g.players) ? g.players.length : 0,
+        ].join(':')
+      );
+    }
+    return parts.join('|');
+  }
+
+  let achievementsCacheKey = '';
+  let achievementsCacheItems = null;
+
   function isBarbarianName(name) {
     return BARBARIAN_NAMES.has(String(name || '').trim().toLowerCase());
   }
@@ -391,6 +413,11 @@
    * :return: achievement objects for the UI / объекты ачивок для UI
    */
   function computeAchievements(games) {
+    const key = gamesFingerprint(games);
+    if (achievementsCacheKey === key && achievementsCacheItems) {
+      return achievementsCacheItems;
+    }
+
     const { stats, games: gameList } = buildStats(games);
     const out = [];
 
@@ -888,11 +915,20 @@
       (h) => String(h.stat.count),
     );
 
+    achievementsCacheKey = key;
+    achievementsCacheItems = out;
     return out;
+  }
+
+  /** Drop memo when Games.json is reloaded (same array ref can still be mutated). */
+  function invalidateAchievementsCache() {
+    achievementsCacheKey = '';
+    achievementsCacheItems = null;
   }
 
   global.IronLeagueAchievements = {
     computeAchievements,
+    invalidateAchievementsCache,
     isExcludedGame,
     eligibleGames,
     winnerPlayer,
