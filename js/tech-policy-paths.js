@@ -102,6 +102,8 @@
       wonder: t('paths.kind.wonder', 'чудо'),
       unit: t('paths.kind.unit', 'юнит'),
       improvement: t('paths.kind.improvement', 'улучшение'),
+      improvement_bonus: t('paths.kind.improvement_bonus', 'бонус улучшения'),
+      building_bonus: t('paths.kind.building_bonus', 'бонус здания'),
       resource: t('paths.kind.resource', 'ресурс'),
       unique: t('paths.kind.unique', 'эффект'),
     };
@@ -144,8 +146,15 @@
     const name = item.name;
     if (item.kind === 'unit') return `Unit_icons/${encodeURIComponent(name)}.png`;
     if (item.kind === 'resource') return `Resource_icons/${encodeURIComponent(name)}.png`;
-    if (item.kind === 'wonder') return `Wonder_icons/${encodeURIComponent(name)}.png`;
-    if (item.kind === 'improvement') return `Improvement_icons/${encodeURIComponent(name)}.png`;
+    if (item.kind === 'wonder' || (item.kind === 'building_bonus' && item.is_wonder)) {
+      return `Wonder_icons/${encodeURIComponent(name)}.png`;
+    }
+    if (item.kind === 'improvement' || item.kind === 'improvement_bonus') {
+      return `Improvement_icons/${encodeURIComponent(name)}.png`;
+    }
+    if (item.kind === 'building_bonus') {
+      return `Building_icons/${encodeURIComponent(name)}.png`;
+    }
     if (item.kind === 'unique') {
       return item.icon
         ? `Unique_icons/${encodeURIComponent(item.icon)}.png`
@@ -160,7 +169,9 @@
     wonder: 2,
     resource: 3,
     improvement: 4,
-    unique: 5,
+    improvement_bonus: 5,
+    building_bonus: 6,
+    unique: 7,
   };
 
   function unlocksForTech(techName, detail) {
@@ -512,6 +523,20 @@
     if (item.kind === 'unique') {
       return `${kindLabel('unique')}: ${item.name}`;
     }
+    if (item.kind === 'improvement_bonus') {
+      const lines = [
+        `${labelConstruction(item.name)} (${kindLabel('improvement_bonus')})`,
+      ];
+      (item.uniques || []).forEach((u) => lines.push(String(u)));
+      return lines.join('\n');
+    }
+    if (item.kind === 'building_bonus') {
+      const lines = [
+        `${labelConstruction(item.name)} (${kindLabel('building_bonus')})`,
+      ];
+      (item.uniques || []).forEach((u) => lines.push(String(u)));
+      return lines.join('\n');
+    }
     const lines = [
       `${labelConstruction(item.name)} (${kindLabel(item.kind)})`,
     ];
@@ -557,6 +582,18 @@
         if (item.kind === 'improvement' && !img.dataset.fallback) {
           img.dataset.fallback = '1';
           img.src = `Building_icons/${encodeURIComponent(item.name)}.png`;
+          return;
+        }
+        if (item.kind === 'improvement_bonus' && !img.dataset.fallback) {
+          img.dataset.fallback = '1';
+          img.src = 'Unique_icons/Star.png';
+          return;
+        }
+        if (item.kind === 'building_bonus' && !img.dataset.fallback) {
+          img.dataset.fallback = '1';
+          img.src = item.is_wonder
+            ? `Building_icons/${encodeURIComponent(item.name)}.png`
+            : 'Unique_icons/Star.png';
           return;
         }
         if (item.kind === 'unique' && !img.dataset.fallback) {

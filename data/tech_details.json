@@ -1133,6 +1133,20 @@
           "uniques_ru": [
             "[+50]% Strength <vs [Mounted] units>"
           ]
+        },
+        {
+          "kind": "improvement_bonus",
+          "name": "Farm",
+          "uniques": [
+            "[+1 Food] from [Fresh water] tiles <after discovering [Civil Service]>"
+          ]
+        },
+        {
+          "kind": "improvement_bonus",
+          "name": "Terrace farm",
+          "uniques": [
+            "[+1 Food] from [Fresh water] tiles <after discovering [Civil Service]>"
+          ]
         }
       ],
       "uniques": [
@@ -1267,6 +1281,13 @@
           ],
           "uniques_ru": [
             "Не может выйти в океан"
+          ]
+        },
+        {
+          "kind": "improvement_bonus",
+          "name": "Fishing Boats",
+          "uniques": [
+            "[+1 Gold] <after discovering [Compass]>"
           ]
         }
       ]
@@ -1768,6 +1789,34 @@
             "Must not be on [Hill]",
             "[+10]% Production when constructing [All] buildings [in this city]"
           ]
+        },
+        {
+          "kind": "improvement_bonus",
+          "name": "Trading post",
+          "uniques": [
+            "[+1 Gold] <after discovering [Economics]>"
+          ]
+        },
+        {
+          "kind": "improvement_bonus",
+          "name": "Camp",
+          "uniques": [
+            "[+1 Gold] <after discovering [Economics]>"
+          ]
+        },
+        {
+          "kind": "improvement_bonus",
+          "name": "Customs house",
+          "uniques": [
+            "[+1 Gold] <after discovering [Economics]>"
+          ]
+        },
+        {
+          "kind": "improvement_bonus",
+          "name": "Polder",
+          "uniques": [
+            "[+1 Production, +2 Gold] <after discovering [Economics]>"
+          ]
         }
       ]
     },
@@ -1847,6 +1896,27 @@
             "Должен подготовиться перед дальнобойной атакой",
             "[-1] Sight"
           ]
+        },
+        {
+          "kind": "improvement_bonus",
+          "name": "Mine",
+          "uniques": [
+            "[+1 Production] <after discovering [Chemistry]>"
+          ]
+        },
+        {
+          "kind": "improvement_bonus",
+          "name": "Quarry",
+          "uniques": [
+            "[+1 Production] <after discovering [Chemistry]>"
+          ]
+        },
+        {
+          "kind": "improvement_bonus",
+          "name": "Manufactory",
+          "uniques": [
+            "[+1 Production] <after discovering [Chemistry]>"
+          ]
         }
       ]
     },
@@ -1882,6 +1952,14 @@
             "[2] free [Great Artist] units appear"
           ],
           "quote_ru": "'У подлинного произведения искусства столько же прав на существование, сколько у солнца и земли.' - Ральф Уолдо Эмерсон"
+        },
+        {
+          "kind": "building_bonus",
+          "name": "Petra",
+          "uniques": [
+            "[+6 Culture] [in this city] <after discovering [Archaeology]>"
+          ],
+          "is_wonder": true
         }
       ]
     },
@@ -1904,6 +1982,20 @@
           ],
           "uniques_ru": [
             "[+1 Science] per [2] population [in this city]"
+          ]
+        },
+        {
+          "kind": "improvement_bonus",
+          "name": "Lumber mill",
+          "uniques": [
+            "[+1 Production] <after discovering [Scientific Theory]>"
+          ]
+        },
+        {
+          "kind": "improvement_bonus",
+          "name": "Academy",
+          "uniques": [
+            "[+2 Science] <after discovering [Scientific Theory]>"
           ]
         }
       ]
@@ -2024,7 +2116,36 @@
       ],
       "quote": "'The nation that destroys its soil destroys itself.' - Franklin Delano Roosevelt",
       "quote_ru": "'Народ, который разрушает свою почву, уничтожает сам себя.' - Франклин Делано Рузвельт",
-      "unlocks": []
+      "unlocks": [
+        {
+          "kind": "improvement_bonus",
+          "name": "Farm",
+          "uniques": [
+            "[+1 Food] from [non-fresh water] tiles <after discovering [Fertilizer]>"
+          ]
+        },
+        {
+          "kind": "improvement_bonus",
+          "name": "Pasture",
+          "uniques": [
+            "[+1 Food] <after discovering [Fertilizer]>"
+          ]
+        },
+        {
+          "kind": "improvement_bonus",
+          "name": "Plantation",
+          "uniques": [
+            "[+1 Food] <after discovering [Fertilizer]>"
+          ]
+        },
+        {
+          "kind": "improvement_bonus",
+          "name": "Terrace farm",
+          "uniques": [
+            "[+1 Food] from [non-fresh water] tiles <after discovering [Fertilizer]>"
+          ]
+        }
+      ]
     },
     "Biology": {
       "era": "Industrial era",
@@ -2156,6 +2277,14 @@
             "Должен подготовиться перед дальнобойной атакой",
             "[-1] Sight"
           ]
+        },
+        {
+          "kind": "building_bonus",
+          "name": "Great Wall",
+          "uniques": [
+            "Enemy [Land] units must spend [1] extra movement points when inside your territory <before discovering [Dynamite]> <Suppress warning [*contains a conditional on a unit movement unique*]>"
+          ],
+          "is_wonder": true
         }
       ]
     },
@@ -2323,6 +2452,20 @@
           "kind": "unit",
           "name": "Great War Bomber",
           "uniques_ru": []
+        },
+        {
+          "kind": "improvement_bonus",
+          "name": "Moai",
+          "uniques": [
+            "[+1 Gold] <after discovering [Flight]>"
+          ]
+        },
+        {
+          "kind": "building_bonus",
+          "name": "Mughal Fort",
+          "uniques": [
+            "[+1 Gold] [in this city] <after discovering [Flight]>"
+          ]
         }
       ]
     },
@@ -2568,6 +2711,13 @@
             "Позволяет производить ядерное оружие",
             "Вызывает глобальное оповещение при завершении",
             "Нельзя ускорить"
+          ]
+        },
+        {
+          "kind": "improvement_bonus",
+          "name": "Academy",
+          "uniques": [
+            "[+2 Science] <after discovering [Atomic Theory]>"
           ]
         }
       ]
