@@ -72,6 +72,9 @@
             "Pillaging this improvement yields approximately [+18 Gold]"
           ]
         }
+      ],
+      "uniques": [
+        "Starting tech"
       ]
     },
     "Pottery": {
@@ -340,6 +343,9 @@
           ],
           "quote_ru": "'Библиотеки — это раки, где покойно хранятся останки великих святых, полных добродетели и лишенных притворства.' - Сэр Френсис Бэкон"
         }
+      ],
+      "uniques": [
+        "Enables establishment of embassies <Civilopedia link [Tutorials/Embassies]>"
       ]
     },
     "Trapping": {
@@ -604,6 +610,9 @@
           ],
           "quote_ru": "'Отправляющиеся на кораблях в море, производящие дела на больших водах, видят дела Господа и чудеса Его в пучине...' - Псалтирь, Псалом 106: 23-24"
         }
+      ],
+      "uniques": [
+        "Enables embarkation for land units"
       ]
     },
     "Horseback Riding": {
@@ -966,6 +975,9 @@
             "Gives a defensive bonus of [50]%"
           ]
         }
+      ],
+      "uniques": [
+        "Roads connect tiles across rivers"
       ]
     },
     "Iron Working": {
@@ -1122,6 +1134,9 @@
             "[+50]% Strength <vs [Mounted] units>"
           ]
         }
+      ],
+      "uniques": [
+        "Enables Open Borders agreements <Civilopedia link [Tutorials/Open Borders]>"
       ]
     },
     "Guilds": {
@@ -1184,6 +1199,9 @@
             "Pillaging this improvement yields approximately [+18 Gold]"
           ]
         }
+      ],
+      "uniques": [
+        "Enables conversion of city production to [Gold]"
       ]
     },
     "Metal Casting": {
@@ -1302,6 +1320,10 @@
           ],
           "quote_ru": "'Храм... выдающееся сооружение. Оно имеет башни, рельефы и украшения, какие только может вообразить человеческий гений.' - Антонио де Магдалена"
         }
+      ],
+      "uniques": [
+        "Enables conversion of city production to [Science]",
+        "Enables Research agreements <Civilopedia link [Tutorials/Research Agreements]>"
       ]
     },
     "Chivalry": {
@@ -1355,6 +1377,9 @@
             "Never appears as a Barbarian unit"
           ]
         }
+      ],
+      "uniques": [
+        "Enables Defensive Pacts <Civilopedia link [Tutorials/Defensive Pacts]>"
       ]
     },
     "Machinery": {
@@ -1385,6 +1410,9 @@
           "name": "Crossbowman",
           "uniques_ru": []
         }
+      ],
+      "uniques": [
+        "Improves movement speed on roads"
       ]
     },
     "Physics": {
@@ -1484,6 +1512,10 @@
             "Отступает перед ближним боем <with [80]% chance>"
           ]
         }
+      ],
+      "uniques": [
+        "[+1] Movement <for [Embarked] units>",
+        "Enables [Embarked] units to enter ocean tiles"
       ]
     },
     "Acoustics": {
@@ -2093,6 +2125,9 @@
             "Never appears as a Barbarian unit"
           ]
         }
+      ],
+      "uniques": [
+        "[+1] Movement <for [Embarked] units>"
       ]
     },
     "Dynamite": {
@@ -3005,6 +3040,9 @@
             "Нельзя захватить"
           ]
         }
+      ],
+      "uniques": [
+        "Reveals the entire map"
       ]
     },
     "Robotics": {
@@ -3242,7 +3280,10 @@
       ],
       "quote": "'I think we agree, the past is over.' - George W. Bush",
       "quote_ru": "'Думаю, мы все согласны, что прошлое закончилось.' - Линдон Джонсон",
-      "unlocks": []
+      "unlocks": [],
+      "uniques": [
+        "Can be continually researched"
+      ]
     }
   }
 }
