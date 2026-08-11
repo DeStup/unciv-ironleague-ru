@@ -12,22 +12,37 @@ Iron League (Unciv) — архив, статистика, рейтинг и пу
 
 ## Разделы сайта
 
-| Раздел | Содержание |
-|--------|------------|
-| Архив игр | Список партий, фильтры, карточки, реплеи GIF |
-| Статистика / профиль | Winrate, экономика, институты, нации |
-| Техи и институты | Древо техов игрока, таймлайны, «что открывали первым» |
-| Рейтинг | Elo / очки лобби |
-| Рекорды | Ачивки из `Games.json` (без teams/scrap) |
-| FAQ | RU/EN |
+### Главная
 
-### Вкладка «Техи и институты»
+Карточки-переходы на остальные разделы, краткие описания.
 
-- Полное древо по **RekMOD-iron**: узлы, связи, эпохи (полосы как в Unciv TechPicker).
-- Иконки анлоков: юниты, здания, чудеса, ресурсы, улучшения, бонусы `<after discovering>`, пассивы теха.
-- UU/UB выбранной нации — в основном ряду (как TechButton); остальные нации — панель **★**.
-- Эффекты UA наций с `<after discovering [Tech]>` — в ★ как `nation_effect`.
-- Переводы эпох как в Unciv (`Древнейший мир`, `Античность`, …).
+### Архив игр
+
+Список завершённых партий из `Games.json`: фильтры (в т.ч. teams/scrap), карточки финала, победители, нации, чудеса/верования при наличии, ссылки на GIF в `Replays/`.
+
+### Статистика
+
+Сводные таблицы по игрокам и нациям (winrate, экономика, институты, чудеса, верования). Профиль игрока — его партии и агрегаты. Игры с тегами teams/scrap в рейтинг/агрегаты не входят (в архиве остаются).
+
+### Техи и институты
+
+Порядок открытия техов и политик по партии и игроку: полное древо (RekMOD-iron), эпохи как в Unciv, таймлайны, статистика «что открывали первым». Анлоки на узлах (здания/юниты/чудеса/ресурсы/улучшения/бонусы); UU/UB своей нации в основном ряду, остальные нации и UA-эффекты — в панели ★.
+
+### Рейтинг
+
+Таблица рейтинга по архиву: Elo и/или очки лобби (настройки шкалы на вкладке). Считает клиентски из `Games.json`.
+
+### Тирлист
+
+Оценка силы наций мода из `data/tierlist.json` (лист лиги), сравнение с частотой побед в архиве.
+
+### Рекорды
+
+Клиентские «ачивки» / пики по архиву (без teams/scrap): серии, экономика, великие люди и т.п. — `js/achievements.js`.
+
+### FAQ
+
+Инструкции по клиенту, серверу, типичным ошибкам; RU и EN (`data/faq.json`, `data/faq_en.json`).
 
 ## Структура репозитория
 
@@ -43,6 +58,7 @@ Iron League (Unciv) — архив, статистика, рейтинг и пу
 | `Games.json` | Архив игр (стабильный URL для бота) |
 | `data/` | FAQ, тирлист, имена, древо/детали техов, таймлайны |
 | `tools/export_tech_details.py` | Сборка `tech_details.json` / `tech_tree.json` из RekMOD-iron |
+| `tools/export_default_capitals.py` | Сборка `default_capitals.json` из Nations.json + RU properties |
 | `tools/extract_missing_unlock_icons.py` | Вырезание иконок из атласов Unciv/RekMOD |
 | `Tech_icons/`, `Unit_icons/`, `Building_icons/`, `Wonder_icons/`, `Improvement_icons/`, `Resource_icons/`, `Policy_icons/`, `Nation_icons/`, `Unique_icons/` | Иконки |
 | `Replays/` | GIF (`gif` в `Games.json`) |
@@ -58,21 +74,28 @@ Iron League (Unciv) — архив, статистика, рейтинг и пу
 | `tech_details.json` | Анлоки, бонусы, `nation_unlocks`, цитаты |
 | `tech_policy_timelines.json` | Порядок техов/политик по играм |
 | `tech_names.json`, `policy_names.json`, `construction_names.json`, `nation_names.json` | RU/EN подписи |
+| `default_capitals.json` | Столицы по умолчанию (EN/RU) для архива |
 | `paths_roster.json` | Ники игроков для путей |
 | `faq.json` / `faq_en.json`, `tierlist.json`, `nation_colors.json` | FAQ, тирлист, цвета портретов |
 
-## Обновление данных техов (RekMOD)
+## Обновление данных (мейнтейнеры)
 
-Локально нужен клон **RekMOD-iron** по пути `D:\PythonProjects\RekMOD-iron` (или поправь путь в скрипте).
+### Техи / анлоки (RekMOD-iron)
+
+Локально нужен клон **RekMOD-iron** (по умолчанию `D:\PythonProjects\RekMOD-iron`, иначе поправь путь в скрипте).
 
 ```powershell
 cd D:\PythonProjects\unciv-ironleague-ru
 py -3 tools\export_tech_details.py
-# при нехватке PNG анлоков (опционально, нужен Pillow + атласы Unciv/RekMOD):
+# опционально, если не хватает PNG (Pillow + атласы Unciv/RekMOD):
 py -3 tools\extract_missing_unlock_icons.py
 ```
 
-После экспорта закоммить `data/tech_details.json`, `data/tech_tree.json` и новые иконки при необходимости.
+Закоммить `data/tech_details.json`, `data/tech_tree.json` и новые иконки при необходимости.
+
+### Архив игр
+
+Новые партии обычно приходят PR от Civ Bot (`Games.json`, иногда `Replays/`). Тирлист / FAQ правятся вручную в `data/`.
 
 ## Локальный просмотр
 
@@ -104,8 +127,3 @@ npx --yes serve -l 3000 .
 - `/ironleaguegifs` — записи без поля `gif`
 
 Нужен `GITHUB_TOKEN` у бота с правом открывать PR в fork / `DeStup/unciv-ironleague-ru`.
-
-## PR
-
-Для этого репозитория: **русский** title / Summary / Test plan (см. правила Civ Bot / Iron League).
-PRs в upstream Unciv и ravignir/RekMOD — только на английском.
