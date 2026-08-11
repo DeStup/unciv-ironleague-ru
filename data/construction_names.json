@@ -51,7 +51,7 @@
   },
   "Mine": {
     "en": "Mine",
-    "ru": "Рудник",
+    "ru": "Шахта",
     "kind": "improvement"
   },
   "Remove Forest": {
@@ -221,7 +221,7 @@
   },
   "Composite Bowman": {
     "en": "Composite Bowman",
-    "ru": "Лучник (композитный лук)",
+    "ru": "Лучник (составной лук)",
     "kind": "unit"
   },
   "Lumber mill": {
@@ -831,12 +831,12 @@
   },
   "Great Firewall": {
     "en": "Great Firewall",
-    "ru": "Великий Файрвол",
+    "ru": "Великий Фаерволл",
     "kind": "wonder"
   },
   "Helicopter Gunship": {
     "en": "Helicopter Gunship",
-    "ru": "Боевой вертолет",
+    "ru": "Боевой Вертолет",
     "kind": "unit"
   },
   "CN Tower": {
@@ -851,7 +851,7 @@
   },
   "Nuclear Submarine": {
     "en": "Nuclear Submarine",
-    "ru": "Атомная подлодка",
+    "ru": "Атомная подводная лодка",
     "kind": "unit"
   },
   "Mechanized Infantry": {
@@ -891,7 +891,7 @@
   },
   "Missile Cruiser": {
     "en": "Missile Cruiser",
-    "ru": "Ракетный крейсер",
+    "ru": "Ракетный Крейсер",
     "kind": "unit"
   },
   "Modern Armor": {
@@ -916,7 +916,7 @@
   },
   "Giant Death Robot": {
     "en": "Giant Death Robot",
-    "ru": "Гигантский робот смерти",
+    "ru": "ОБЧР",
     "kind": "unit"
   },
   "SS Stasis Chamber": {
@@ -926,7 +926,7 @@
   },
   "Stealth Bomber": {
     "en": "Stealth Bomber",
-    "ru": "Бомбардировщик \"Стелс\"",
+    "ru": "Бомбардировщик Стелс",
     "kind": "unit"
   }
 }

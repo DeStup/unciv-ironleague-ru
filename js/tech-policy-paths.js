@@ -15,10 +15,10 @@
     'Future era',
   ];
 
-  const NODE_W = 168;
-  const NODE_H = 92;
-  const COL_W = 196;
-  const ROW_H = 118;
+  const NODE_W = 176;
+  const NODE_H = 102;
+  const COL_W = 204;
+  const ROW_H = 128;
   const PAD_X = 28;
   const PAD_Y = 24;
 
@@ -108,7 +108,12 @@
   }
 
   function policyIcon(name) {
-    return `Policy_icons/${encodeURIComponent(name)}.png`;
+    let iconName = name;
+    // Branch completion rows share the branch icon (Tradition Complete → Tradition).
+    if (String(name).endsWith(' Complete')) {
+      iconName = String(name).slice(0, -' Complete'.length);
+    }
+    return `Policy_icons/${encodeURIComponent(iconName)}.png`;
   }
 
   function unlockIcon(item) {
@@ -393,6 +398,11 @@
       img.alt = '';
       img.loading = 'lazy';
       img.src = kind === 'tech' ? techIcon(item.name) : policyIcon(item.name);
+      if (kind === 'policy') {
+        img.className = 'paths-tl-icon' + (item.is_branch || String(item.name).endsWith(' Complete') ? ' is-branch-icon' : '');
+      } else {
+        img.className = 'paths-tl-icon';
+      }
       img.onerror = () => { img.style.visibility = 'hidden'; };
       const order = document.createElement('span');
       order.className = 'paths-tl-order';
@@ -436,10 +446,12 @@
     const lines = [
       `${labelConstruction(item.name)} (${kindLabel(item.kind)})`,
     ];
-    const quote = item.quote || '';
+    const quote = (lang() === 'ru' && item.quote_ru) ? item.quote_ru : (item.quote || '');
     if (quote) lines.push(quote);
-    (item.uniques || []).forEach((u) => {
-      // Keep English unique text; translations of uniques are uneven.
+    const uniques = (lang() === 'ru' && item.uniques_ru && item.uniques_ru.length)
+      ? item.uniques_ru
+      : (item.uniques || []);
+    uniques.forEach((u) => {
       lines.push(String(u));
     });
     return lines.join('\n');
@@ -460,6 +472,7 @@
     unlocks.slice(0, 6).forEach((item) => {
       const img = document.createElement('img');
       img.className = 'paths-tree-unlock';
+      img.dataset.kind = item.kind || 'building';
       img.alt = labelConstruction(item.name);
       img.loading = 'lazy';
       img.src = unlockIcon(item);
@@ -552,6 +565,7 @@
       const node = document.createElement('div');
       node.className = 'paths-tree-node' + (info ? ' is-done' : ' is-locked');
       if (researching && researching === tech.name) node.classList.add('is-researching');
+      node.dataset.era = tech.era || '';
       node.style.left = `${pos.x}px`;
       node.style.top = `${pos.y}px`;
       node.title = techTooltip(tech.name, detail);

@@ -14,6 +14,10 @@
           "uniques": [
             "Can build [Land] improvements on tiles",
             "Automation is a primary action"
+          ],
+          "uniques_ru": [
+            "Can build [Land] improvements on tiles",
+            "Automation is a primary action"
           ]
         },
         {
@@ -23,12 +27,21 @@
             "Founds a new city <by consuming this unit>",
             "Excess Food converted to Production when under construction",
             "Requires at least [2] population"
+          ],
+          "uniques_ru": [
+            "Может основать город <при растрате этого юнита>",
+            "Избыток еды конвертируется в производство во время сооружения",
+            "Requires at least [2] population"
           ]
         },
         {
           "kind": "unit",
           "name": "Scout",
           "uniques": [
+            "May upgrade to [Archer] through ruins-like effects",
+            "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
             "May upgrade to [Archer] through ruins-like effects",
             "Never appears as a Barbarian unit"
           ]
@@ -38,6 +51,9 @@
           "name": "Warrior",
           "uniques": [
             "May upgrade to [Spearman] through ruins-like effects"
+          ],
+          "uniques_ru": [
+            "May upgrade to [Spearman] through ruins-like effects"
           ]
         },
         {
@@ -45,6 +61,12 @@
           "name": "Farm",
           "uniques": [
             "Can also be built on tiles adjacent to fresh water",
+            "[+1 Food] from [Fresh water] tiles <after discovering [Civil Service]>",
+            "[+1 Food] from [non-fresh water] tiles <after discovering [Fertilizer]>",
+            "Pillaging this improvement yields approximately [+18 Gold]"
+          ],
+          "uniques_ru": [
+            "Также можно построить на клетках, прилегающих к пресной воде",
             "[+1 Food] from [Fresh water] tiles <after discovering [Civil Service]>",
             "[+1 Food] from [non-fresh water] tiles <after discovering [Fertilizer]>",
             "Pillaging this improvement yields approximately [+18 Gold]"
@@ -69,6 +91,11 @@
             "[+1 Food] from [Deer] tiles [in this city]",
             "[+1 Food] from [Bananas] tiles [in this city]",
             "[+1 Food] from [Wheat] tiles [in this city]"
+          ],
+          "uniques_ru": [
+            "[+1 Food] from [Deer] tiles [in this city]",
+            "[+1 Food] from [Bananas] tiles [in this city]",
+            "[+1 Food] from [Wheat] tiles [in this city]"
           ]
         },
         {
@@ -76,6 +103,9 @@
           "name": "Shrine",
           "uniques": [
             "Only available <when religion is enabled>"
+          ],
+          "uniques_ru": [
+            "Доступно только <когда религия включена>"
           ]
         }
       ]
@@ -96,6 +126,11 @@
           "uniques": [
             "[+1 Food] <after discovering [Fertilizer]>",
             "Can only be built to improve a resource",
+            "Pillaging this improvement yields approximately [+10 Gold]"
+          ],
+          "uniques_ru": [
+            "[+1 Food] <after discovering [Fertilizer]>",
+            "Можно построить только для улучшения ресурса",
             "Pillaging this improvement yields approximately [+10 Gold]"
           ]
         }
@@ -119,11 +154,18 @@
             "[+10]% [Food] [in all cities]",
             "[+15]% Production when constructing [Archery] units [in this city]",
             "[+15]% Production when constructing [Ranged Gunpowder] units [in this city]"
-          ]
+          ],
+          "uniques_ru": [
+            "[+10]% [Food] [in all cities]",
+            "[+15]% Production when constructing [Archery] units [in this city]",
+            "[+15]% Production when constructing [Ranged Gunpowder] units [in this city]"
+          ],
+          "quote_ru": "'Лес пленяет сердца людей не столько своей красотой, сколько прекрасным воздухом, эманацией старых деревьев, чем-то неуловимым, что так замечательно изменяет и восстанавливает усталый дух.' - Роберт Льюис Стивенсон"
         },
         {
           "kind": "unit",
-          "name": "Archer"
+          "name": "Archer",
+          "uniques_ru": []
         }
       ]
     },
@@ -143,6 +185,10 @@
           "uniques": [
             "[+1 Production] <after discovering [Chemistry]>",
             "Pillaging this improvement yields approximately [+20 Gold]"
+          ],
+          "uniques_ru": [
+            "[+1 Production] <after discovering [Chemistry]>",
+            "Pillaging this improvement yields approximately [+20 Gold]"
           ]
         },
         {
@@ -150,6 +196,10 @@
           "name": "Remove Forest",
           "uniques": [
             "Can be built outside your borders",
+            "Excluded from map editor"
+          ],
+          "uniques_ru": [
+            "Можно построить за пределами ваших границ",
             "Excluded from map editor"
           ]
         }
@@ -173,6 +223,12 @@
             "May create improvements on water resources",
             "Uncapturable",
             "Automation is a primary action"
+          ],
+          "uniques_ru": [
+            "Не может выйти в океан <before discovering [Astronomy]>",
+            "Может создавать улучшения на морских ресурсах",
+            "Нельзя захватить",
+            "Automation is a primary action"
           ]
         },
         {
@@ -180,6 +236,10 @@
           "name": "Trireme",
           "uniques": [
             "Cannot enter ocean tiles",
+            "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
+            "Не может выйти в океан",
             "Never appears as a Barbarian unit"
           ]
         },
@@ -189,6 +249,11 @@
           "uniques": [
             "[+1 Gold] <after discovering [Compass]>",
             "Can only be built to improve a resource",
+            "Pillaging this improvement yields approximately [+10 Gold]"
+          ],
+          "uniques_ru": [
+            "[+1 Gold] <after discovering [Compass]>",
+            "Можно построить только для улучшения ресурса",
             "Pillaging this improvement yields approximately [+10 Gold]"
           ]
         }
@@ -211,12 +276,19 @@
             "Must not be on [Plains]",
             "[+1 Production] from [Stone] tiles [in this city]",
             "[+1 Production] from [Marble] tiles [in this city]"
+          ],
+          "uniques_ru": [
+            "Must not be on [Plains]",
+            "[+1 Production] from [Stone] tiles [in this city]",
+            "[+1 Production] from [Marble] tiles [in this city]"
           ]
         },
         {
           "kind": "wonder",
           "name": "Stonehenge",
-          "quote": "'Time crumbles things; everything grows old and is forgotten under the power of time' - Aristotle"
+          "quote": "'Time crumbles things; everything grows old and is forgotten under the power of time' - Aristotle",
+          "uniques_ru": [],
+          "quote_ru": "'Все вещи подвергаются воздействию со стороны времени... ибо время само по себе скорее причина уничтожения.' - Аристотель"
         },
         {
           "kind": "improvement",
@@ -224,6 +296,11 @@
           "uniques": [
             "[+1 Food] <after discovering [Fertilizer]>",
             "Can only be built to improve a resource",
+            "Pillaging this improvement yields approximately [+10 Gold]"
+          ],
+          "uniques_ru": [
+            "[+1 Food] <after discovering [Fertilizer]>",
+            "Можно построить только для улучшения ресурса",
             "Pillaging this improvement yields approximately [+10 Gold]"
           ]
         }
@@ -244,6 +321,9 @@
           "name": "Library",
           "uniques": [
             "[+1 Science] per [2] population [in this city]"
+          ],
+          "uniques_ru": [
+            "[+1 Science] per [2] population [in this city]"
           ]
         },
         {
@@ -253,7 +333,12 @@
           "uniques": [
             "Free Technology",
             "Gain a free [Library] [in this city]"
-          ]
+          ],
+          "uniques_ru": [
+            "Бесплатная технология",
+            "Gain a free [Library] [in this city]"
+          ],
+          "quote_ru": "'Библиотеки — это раки, где покойно хранятся останки великих святых, полных добродетели и лишенных притворства.' - Сэр Френсис Бэкон"
         }
       ]
     },
@@ -269,7 +354,8 @@
       "unlocks": [
         {
           "kind": "building",
-          "name": "Circus"
+          "name": "Circus",
+          "uniques_ru": []
         },
         {
           "kind": "improvement",
@@ -279,6 +365,12 @@
             "Does not need removal of [Jungle]",
             "[+1 Gold] <after discovering [Economics]>",
             "Can only be built to improve a resource"
+          ],
+          "uniques_ru": [
+            "Does not need removal of [Forest]",
+            "Does not need removal of [Jungle]",
+            "[+1 Gold] <after discovering [Economics]>",
+            "Можно построить только для улучшения ресурса"
           ]
         }
       ]
@@ -299,6 +391,9 @@
           "name": "Water Mill",
           "uniques": [
             "Must be on [River]"
+          ],
+          "uniques_ru": [
+            "Must be on [River]"
           ]
         },
         {
@@ -308,6 +403,11 @@
             "No defensive terrain bonus",
             "Rough terrain penalty",
             "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
+            "Нет бонуса защиты от ландшафта",
+            "Штраф пересечённой местности",
+            "Never appears as a Barbarian unit"
           ]
         },
         {
@@ -315,6 +415,10 @@
           "name": "Road",
           "uniques": [
             "Can be built outside your borders",
+            "Costs [1] [Gold] per turn"
+          ],
+          "uniques_ru": [
+            "Можно построить за пределами ваших границ",
             "Costs [1] [Gold] per turn"
           ]
         }
@@ -335,6 +439,9 @@
           "name": "Walls",
           "uniques": [
             "Destroyed when the city is captured"
+          ],
+          "uniques_ru": [
+            "Уничтожается при захвате города"
           ]
         },
         {
@@ -344,7 +451,12 @@
           "uniques": [
             "Can build [all] improvements at a [+25]% rate",
             "[2] free [Worker] units appear"
-          ]
+          ],
+          "uniques_ru": [
+            "Can build [all] improvements at a [+25]% rate",
+            "[2] free [Worker] units appear"
+          ],
+          "quote_ru": "'А вы даруйте мне, когда я есмь там, погребальные тризны, и воскурение ладана, и мази для умащения, и все чистые и прекрасные вещи, в которых обитает бог...' - из египетской \"Книги мертвых\""
         },
         {
           "kind": "wonder",
@@ -354,7 +466,13 @@
             "Gain [100] [Gold] <upon expending a [Great Person] unit> <(modified by game speed)>",
             "[+2 Gold] from [Marble] tiles [in this city]",
             "[+2 Gold] from [Stone] tiles [in this city]"
-          ]
+          ],
+          "uniques_ru": [
+            "Gain [100] [Gold] <upon expending a [Great Person] unit> <(в зависимости от скорости игры)>",
+            "[+2 Gold] from [Marble] tiles [in this city]",
+            "[+2 Gold] from [Stone] tiles [in this city]"
+          ],
+          "quote_ru": "'Могилою знаменитых людей служит вся земля, и о них свидетельствуют не только надписи на надгробных плитах в родной стране. Не столько о самих подвигах, сколько о мужестве незаписанное воспоминание вечно живет в каждом человеке.' - Перикл"
         },
         {
           "kind": "improvement",
@@ -363,6 +481,11 @@
             "[+1 Production] <after discovering [Chemistry]>",
             "Can only be built to improve a resource",
             "Pillaging this improvement yields approximately [+20 Gold]"
+          ],
+          "uniques_ru": [
+            "[+1 Production] <after discovering [Chemistry]>",
+            "Можно построить только для улучшения ресурса",
+            "Pillaging this improvement yields approximately [+20 Gold]"
           ]
         },
         {
@@ -370,6 +493,10 @@
           "name": "Remove Marsh",
           "uniques": [
             "Can be built outside your borders",
+            "Excluded from map editor"
+          ],
+          "uniques_ru": [
+            "Можно построить за пределами ваших границ",
             "Excluded from map editor"
           ]
         }
@@ -391,6 +518,10 @@
           "uniques": [
             "New [Military] units start with [15] XP [in this city]",
             "Destroyed when the city is captured"
+          ],
+          "uniques_ru": [
+            "New [Military] units start with [15] XP [in this city]",
+            "Уничтожается при захвате города"
           ]
         },
         {
@@ -399,12 +530,19 @@
           "quote": "'He spoke, the son of Kronos, and nodded his head with the dark brows, and the immortally anointed hair of the great god swept from his divine head, and all Olympos was shaken' - The Iliad",
           "uniques": [
             "[+15]% Strength <for [All] units> <vs cities> <when attacking>"
-          ]
+          ],
+          "uniques_ru": [
+            "[+15]% Strength <for [All] units> <против городов> <когда атакует>"
+          ],
+          "quote_ru": "'Молвил Кронин и иссиня-черными двинул бровями; волны нетленных волос с головы Громовержца бессмертной на плечи пали его. И Олимп всколебался великий.' - Илиада"
         },
         {
           "kind": "unit",
           "name": "Spearman",
           "uniques": [
+            "[+50]% Strength <vs [Mounted] units>"
+          ],
+          "uniques_ru": [
             "[+50]% Strength <vs [Mounted] units>"
           ]
         },
@@ -413,6 +551,10 @@
           "name": "Remove Jungle",
           "uniques": [
             "Can be built outside your borders",
+            "Excluded from map editor"
+          ],
+          "uniques_ru": [
+            "Можно построить за пределами ваших границ",
             "Excluded from map editor"
           ]
         }
@@ -436,6 +578,12 @@
             "[+1 Food] from [Ocean] tiles [in this city]",
             "[+1 Food] from [Coast] tiles [in this city]",
             "[+1 Food] from [Fish] tiles [in this city]"
+          ],
+          "uniques_ru": [
+            "Must be next to [Coast]",
+            "[+1 Food] from [Ocean] tiles [in this city]",
+            "[+1 Food] from [Coast] tiles [in this city]",
+            "[+1 Food] from [Fish] tiles [in this city]"
           ]
         },
         {
@@ -447,7 +595,14 @@
             "[+1] Movement <for [{Military} {Water}] units>",
             "[+1] Sight <for [{Military} {Water}] units>",
             "Gain a free [Lighthouse] [in this city]"
-          ]
+          ],
+          "uniques_ru": [
+            "Must be next to [Coast]",
+            "[+1] Movement <for [{Military} {Water}] units>",
+            "[+1] Sight <for [{Military} {Water}] units>",
+            "Gain a free [Lighthouse] [in this city]"
+          ],
+          "quote_ru": "'Отправляющиеся на кораблях в море, производящие дела на больших водах, видят дела Господа и чудеса Его в пучине...' - Псалтирь, Псалом 106: 23-24"
         }
       ]
     },
@@ -470,6 +625,12 @@
             "[+1 Production] from [Cattle] tiles [in this city]",
             "[+1 Production] from [Horses] tiles [in this city]",
             "[+1 Production] from [Sheep] tiles [in this city]"
+          ],
+          "uniques_ru": [
+            "[+15]% Production when constructing [Mounted] units [in this city]",
+            "[+1 Production] from [Cattle] tiles [in this city]",
+            "[+1 Production] from [Horses] tiles [in this city]",
+            "[+1 Production] from [Sheep] tiles [in this city]"
           ]
         },
         {
@@ -477,6 +638,10 @@
           "name": "Circus Maximus",
           "uniques": [
             "Only available <if [Colosseum] is constructed in all [non-[Puppeted]] cities>",
+            "Cost increases by [30] per owned city"
+          ],
+          "uniques_ru": [
+            "Доступно только <if [Colosseum] is constructed in all [non-[Puppeted]] cities>",
             "Cost increases by [30] per owned city"
           ]
         },
@@ -487,6 +652,11 @@
             "Can move after attacking",
             "No defensive terrain bonus",
             "[-33]% Strength <vs cities> <when attacking>"
+          ],
+          "uniques_ru": [
+            "Может двигаться после атаки",
+            "Нет бонуса защиты от ландшафта",
+            "[-33]% Strength <против городов> <когда атакует>"
           ]
         }
       ]
@@ -507,6 +677,10 @@
           "uniques": [
             "Removes extra unhappiness from annexed cities",
             "Can only be built <in [Annexed] cities>"
+          ],
+          "uniques_ru": [
+            "Убирает лишнее несчастье от аннексированных городов",
+            "Можно построить только <in [Annexed] cities>"
           ]
         },
         {
@@ -515,7 +689,11 @@
           "quote": "'I think that if ever a mortal heard the word of God it would be in a garden at the cool of the day.' - F. Frankfort Moore",
           "uniques": [
             "Gain a free [Garden] [in this city]"
-          ]
+          ],
+          "uniques_ru": [
+            "Gain a free [Garden] [in this city]"
+          ],
+          "quote_ru": "'Если бы смертному когда-либо прозвучал голос Бога, это случилось бы в саду на закате дня.' - Ф. Франкфорт Мур"
         },
         {
           "kind": "unit",
@@ -524,6 +702,12 @@
             "[+200]% Strength <vs cities> <when attacking>",
             "No defensive terrain bonus",
             "Must set up to ranged attack",
+            "[-1] Sight"
+          ],
+          "uniques_ru": [
+            "[+200]% Strength <против городов> <когда атакует>",
+            "Нет бонуса защиты от ландшафта",
+            "Должен подготовиться перед дальнобойной атакой",
             "[-1] Sight"
           ]
         }
@@ -542,21 +726,29 @@
       "unlocks": [
         {
           "kind": "building",
-          "name": "Colosseum"
+          "name": "Colosseum",
+          "uniques_ru": []
         },
         {
           "kind": "wonder",
           "name": "Terracotta Army",
-          "quote": "'Regard your soldiers as your children, and they will follow you into the deepest valleys; look on them as your own beloved sons, and they will stand by you even unto death.' - Sun Tzu"
+          "quote": "'Regard your soldiers as your children, and they will follow you into the deepest valleys; look on them as your own beloved sons, and they will stand by you even unto death.' - Sun Tzu",
+          "uniques_ru": [],
+          "quote_ru": "'Если будешь смотреть на солдат, как на детей, сможешь отправиться с ними в самое глубокое ущелье; если будешь смотреть на солдат, как на любимых сыновей, сможешь идти с ними хоть на смерть.' - Сунь Цзы"
         },
         {
           "kind": "unit",
-          "name": "Composite Bowman"
+          "name": "Composite Bowman",
+          "uniques_ru": []
         },
         {
           "kind": "improvement",
           "name": "Lumber mill",
           "uniques": [
+            "[+1 Production] <after discovering [Scientific Theory]>",
+            "Pillaging this improvement yields approximately [+10 Gold]"
+          ],
+          "uniques_ru": [
             "[+1 Production] <after discovering [Scientific Theory]>",
             "Pillaging this improvement yields approximately [+10 Gold]"
           ]
@@ -569,6 +761,12 @@
             "[+1 Culture] for each adjacent [Moai]",
             "[+1 Gold] <after discovering [Flight]>",
             "Pillaging this improvement yields approximately [+10 Gold]"
+          ],
+          "uniques_ru": [
+            "Можно построить только on [Coastal] tiles",
+            "[+1 Culture] for each adjacent [Moai]",
+            "[+1 Gold] <after discovering [Flight]>",
+            "Pillaging this improvement yields approximately [+10 Gold]"
           ]
         },
         {
@@ -576,6 +774,12 @@
           "name": "Terrace farm",
           "uniques": [
             "Cannot be built on [Bonus resource] tiles",
+            "[+1 Food] for each adjacent [Mountain]",
+            "[+1 Food] from [Fresh water] tiles <after discovering [Civil Service]>",
+            "[+1 Food] from [non-fresh water] tiles <after discovering [Fertilizer]>"
+          ],
+          "uniques_ru": [
+            "Невозможно построить на [Bonus resource] tiles",
             "[+1 Food] for each adjacent [Mountain]",
             "[+1 Food] from [Fresh water] tiles <after discovering [Civil Service]>",
             "[+1 Food] from [non-fresh water] tiles <after discovering [Fertilizer]>"
@@ -600,6 +804,10 @@
           "uniques": [
             "Only available <when religion is enabled>",
             "Destroyed when the city is captured"
+          ],
+          "uniques_ru": [
+            "Доступно только <когда религия включена>",
+            "Уничтожается при захвате города"
           ]
         },
         {
@@ -607,6 +815,10 @@
           "name": "National College",
           "uniques": [
             "Only available <if [Library] is constructed in all [non-[Puppeted]] cities>",
+            "Cost increases by [30] per owned city"
+          ],
+          "uniques_ru": [
+            "Доступно только <if [Library] is constructed in all [non-[Puppeted]] cities>",
             "Cost increases by [30] per owned city"
           ]
         },
@@ -616,7 +828,11 @@
           "quote": "'The ancient Oracle said that I was the wisest of all the Greeks. It is because I alone, of all the Greeks, know that I know nothing' - Socrates",
           "uniques": [
             "Free Social Policy"
-          ]
+          ],
+          "uniques_ru": [
+            "Бесплатный общественный институт"
+          ],
+          "quote_ru": "'Он спросил, есть ли кто-нибудь на свете мудрее меня, и Пифия ему ответила, что никого нет мудрее... потому что я коли уж не знаю, то и не думаю, что знаю.' - Сократ"
         }
       ]
     },
@@ -635,6 +851,9 @@
           "name": "Amphitheater",
           "uniques": [
             "Destroyed when the city is captured"
+          ],
+          "uniques_ru": [
+            "Уничтожается при захвате города"
           ]
         },
         {
@@ -642,6 +861,11 @@
           "name": "National Epic",
           "uniques": [
             "Only available <if [Monument] is constructed in all [non-[Puppeted]] cities>",
+            "[+25]% Great Person generation [in this city]",
+            "Cost increases by [30] per owned city"
+          ],
+          "uniques_ru": [
+            "Доступно только <if [Monument] is constructed in all [non-[Puppeted]] cities>",
             "[+25]% Great Person generation [in this city]",
             "Cost increases by [30] per owned city"
           ]
@@ -660,12 +884,17 @@
       "unlocks": [
         {
           "kind": "building",
-          "name": "Market"
+          "name": "Market",
+          "uniques_ru": []
         },
         {
           "kind": "building",
           "name": "Mint",
           "uniques": [
+            "[+2 Gold] from [Gold Ore] tiles [in this city]",
+            "[+2 Gold] from [Silver] tiles [in this city]"
+          ],
+          "uniques_ru": [
             "[+2 Gold] from [Gold Ore] tiles [in this city]",
             "[+2 Gold] from [Silver] tiles [in this city]"
           ]
@@ -679,7 +908,14 @@
             "[+1 Food, +1 Production, +1 Gold] from [Desert] tiles without [Flood plains] [in this city]",
             "Gain a free [Amphitheater] [in this city]",
             "[+6 Culture] [in this city] <after discovering [Archaeology]>"
-          ]
+          ],
+          "uniques_ru": [
+            "Must be next to [Desert]",
+            "[+1 Food, +1 Production, +1 Gold] from [Desert] tiles without [Flood plains] [in this city]",
+            "Gain a free [Amphitheater] [in this city]",
+            "[+6 Culture] [in this city] <after discovering [Archaeology]>"
+          ],
+          "quote_ru": "'...а кто будет пить воду, которую Я дам ему, говорит Господь, будет иметь внутри себя источник воды, текущей в жизнь вечную. Да ведут они меня и приведут на святую гору Твою и в обители Твои. Через пустыню и через горы к каньону Полумесяца...' - Индиана Джонс"
         }
       ]
     },
@@ -699,6 +935,9 @@
           "name": "Aqueduct",
           "uniques": [
             "[40]% Food is carried over after population increases [in this city]"
+          ],
+          "uniques_ru": [
+            "[40]% Food is carried over after population increases [in this city]"
           ]
         },
         {
@@ -708,13 +947,22 @@
           "uniques": [
             "Enemy [Land] units must spend [1] extra movement points when inside your territory <before discovering [Dynamite]> <Suppress warning [*contains a conditional on a unit movement unique*]>",
             "Gain a free [Walls] [in this city]"
-          ]
+          ],
+          "uniques_ru": [
+            "Enemy [Land] units must spend [1] extra movement points when inside your territory <before discovering [Dynamite]> <Suppress warning [*contains a conditional on a unit movement unique*]>",
+            "Gain a free [Walls] [in this city]"
+          ],
+          "quote_ru": "'Правило ведения войны заключается в том, чтобы... не полагаться на то, что враг не нападет, а... на то, что я сделаю нападение на себя невозможным.' - Сунь Цзы"
         },
         {
           "kind": "improvement",
           "name": "Fort",
           "uniques": [
             "Can be built outside your borders",
+            "Gives a defensive bonus of [50]%"
+          ],
+          "uniques_ru": [
+            "Можно построить за пределами ваших границ",
             "Gives a defensive bonus of [50]%"
           ]
         }
@@ -737,6 +985,11 @@
             "Only available <if [Barracks] is constructed in all [non-[Puppeted]] cities>",
             "All newly-trained [non-[Air]] units [in this city] receive the [Morale] promotion",
             "Cost increases by [30] per owned city"
+          ],
+          "uniques_ru": [
+            "Доступно только <if [Barracks] is constructed in all [non-[Puppeted]] cities>",
+            "All newly-trained [non-[Air]] units [in this city] receive the [Morale] promotion",
+            "Cost increases by [30] per owned city"
           ]
         },
         {
@@ -746,11 +999,17 @@
           "uniques": [
             "Must be next to [Coast]",
             "[+1 Gold] from [Water] tiles [in this city]"
-          ]
+          ],
+          "uniques_ru": [
+            "Must be next to [Coast]",
+            "[+1 Gold] from [Water] tiles [in this city]"
+          ],
+          "quote_ru": "'По миру тесному шагает колосс, а мы, ничтожные людишки, у исполинских ног его снуем и для себя могил бесславных ищем.' - Уильям Шекспир, 'Юлий Цезарь'"
         },
         {
           "kind": "unit",
-          "name": "Swordsman"
+          "name": "Swordsman",
+          "uniques_ru": []
         }
       ]
     },
@@ -771,6 +1030,10 @@
           "uniques": [
             "[+25]% Great Person generation [in this city]",
             "Must be next to [Fresh water]"
+          ],
+          "uniques_ru": [
+            "[+25]% Great Person generation [in this city]",
+            "Must be next to [Fresh water]"
           ]
         },
         {
@@ -781,7 +1044,13 @@
             "Gain a free [Temple] [in this city]",
             "Free [Great Prophet] appears",
             "Only available <when religion is enabled>"
-          ]
+          ],
+          "uniques_ru": [
+            "Gain a free [Temple] [in this city]",
+            "Free [Great Prophet] appears",
+            "Доступно только <когда религия включена>"
+          ],
+          "quote_ru": "'В высоту он поднимается как будто до неба и, как корабль на высоких волнах моря, он выделяется среди других строений, как бы склоняясь над остальным городом, украшая его как составная его часть, и сам украшается им.' - Прокопий, \"О постройках\""
         },
         {
           "kind": "wonder",
@@ -792,7 +1061,14 @@
             "Only available <when religion is enabled>",
             "All newly-trained [Missionary] units [in this city] receive the [Devout] promotion",
             "All newly-trained [Great Prophet] units [in this city] receive the [Devout] promotion"
-          ]
+          ],
+          "uniques_ru": [
+            "Gain a free [Mosque] [in this city]",
+            "Доступно только <когда религия включена>",
+            "All newly-trained [Missionary] units [in this city] receive the [Devout] promotion",
+            "All newly-trained [Great Prophet] units [in this city] receive the [Devout] promotion"
+          ],
+          "quote_ru": "'Перед нами величие вечности, так пусть же время со всеми его колебаниями пребудет в собственной ничтожности.' - Томас Чалмерс"
         },
         {
           "kind": "wonder",
@@ -802,6 +1078,12 @@
             "Cost increases by [30] per owned city",
             "[+100]% Natural religion spread [in this city]",
             "Only available <when religion is enabled>"
+          ],
+          "uniques_ru": [
+            "Доступно только <if [Temple] is constructed in all [non-[Puppeted]] cities>",
+            "Cost increases by [30] per owned city",
+            "[+100]% Natural religion spread [in this city]",
+            "Доступно только <когда религия включена>"
           ]
         }
       ]
@@ -824,12 +1106,19 @@
           "quote": "'The katun is established at Chichen Itza. The settlement of the Itza shall take place there. The quetzal shall come, the green bird shall come. Ah Kantenal shall come. It is the word of God. The Itza shall come.' - The Books of Chilam Balam",
           "uniques": [
             "[+50]% Golden Age length"
-          ]
+          ],
+          "uniques_ru": [
+            "[+50]% Golden Age length"
+          ],
+          "quote_ru": "'Катун установлен в Чичен-Итце. Здесь будет поселение Итца. Кетцаль придет, зеленая птица придет. Ах Кантеналь придет. Вот слово Бога. Народ Итца придет.' - из книг Чилам Балам"
         },
         {
           "kind": "unit",
           "name": "Pikeman",
           "uniques": [
+            "[+50]% Strength <vs [Mounted] units>"
+          ],
+          "uniques_ru": [
             "[+50]% Strength <vs [Mounted] units>"
           ]
         }
@@ -851,6 +1140,10 @@
           "uniques": [
             "Only available <if [Market] is constructed in all [non-[Puppeted]] cities>",
             "Cost increases by [30] per owned city"
+          ],
+          "uniques_ru": [
+            "Доступно только <if [Market] is constructed in all [non-[Puppeted]] cities>",
+            "Cost increases by [30] per owned city"
           ]
         },
         {
@@ -860,12 +1153,21 @@
           "uniques": [
             "[+25]% [Gold] from Trade Routes",
             "Must have an owned [{non-[Natural Wonder]} {Mountain}] within [2] tiles"
-          ]
+          ],
+          "uniques_ru": [
+            "[+25]% [Gold] from Trade Routes",
+            "Must have an owned [{non-[Natural Wonder]} {Mountain}] within [2] tiles"
+          ],
+          "quote_ru": "'Даже самый захватывающий вид не вызовет такого движения сердца, как гранитная крепость на крутых уступах Мачу Пикчу - короны земли инков.' - Хирам Бингам"
         },
         {
           "kind": "improvement",
           "name": "Trading post",
           "uniques": [
+            "[+1 Gold] <after discovering [Economics]>",
+            "Pillaging this improvement yields approximately [+20 Gold]"
+          ],
+          "uniques_ru": [
             "[+1 Gold] <after discovering [Economics]>",
             "Pillaging this improvement yields approximately [+20 Gold]"
           ]
@@ -874,6 +1176,10 @@
           "kind": "improvement",
           "name": "Polder",
           "uniques": [
+            "[+1 Production, +2 Gold] <after discovering [Economics]>",
+            "Pillaging this improvement yields approximately [+18 Gold]"
+          ],
+          "uniques_ru": [
             "[+1 Production, +2 Gold] <after discovering [Economics]>",
             "Pillaging this improvement yields approximately [+18 Gold]"
           ]
@@ -893,12 +1199,17 @@
       "unlocks": [
         {
           "kind": "building",
-          "name": "Workshop"
+          "name": "Workshop",
+          "uniques_ru": []
         },
         {
           "kind": "building",
           "name": "Forge",
           "uniques": [
+            "[+15]% Production when constructing [Land] units [in this city]",
+            "[+1 Production] from [Iron] tiles [in this city]"
+          ],
+          "uniques_ru": [
             "[+15]% Production when constructing [Land] units [in this city]",
             "[+1 Production] from [Iron] tiles [in this city]"
           ]
@@ -923,6 +1234,11 @@
             "[+1 Production] from [Water resource] tiles [in this city]",
             "Connects trade routes over water",
             "Must be next to [Coast]"
+          ],
+          "uniques_ru": [
+            "[+1 Production] from [Water resource] tiles [in this city]",
+            "Создает морские торговые пути",
+            "Must be next to [Coast]"
           ]
         },
         {
@@ -930,6 +1246,9 @@
           "name": "Galleass",
           "uniques": [
             "Cannot enter ocean tiles"
+          ],
+          "uniques_ru": [
+            "Не может выйти в океан"
           ]
         }
       ]
@@ -950,6 +1269,9 @@
           "name": "University",
           "uniques": [
             "[+2 Science] from [Jungle] tiles [in this city]"
+          ],
+          "uniques_ru": [
+            "[+2 Science] from [Jungle] tiles [in this city]"
           ]
         },
         {
@@ -958,6 +1280,11 @@
           "uniques": [
             "Only available <if [University] is constructed in all [non-[Puppeted]] cities>",
             "Free Technology",
+            "Cost increases by [30] per owned city"
+          ],
+          "uniques_ru": [
+            "Доступно только <if [University] is constructed in all [non-[Puppeted]] cities>",
+            "Бесплатная технология",
             "Cost increases by [30] per owned city"
           ]
         },
@@ -968,7 +1295,12 @@
           "uniques": [
             "[-25]% Culture cost of natural border growth [in all cities]",
             "[-25]% Gold cost of acquiring tiles [in all cities]"
-          ]
+          ],
+          "uniques_ru": [
+            "[-25]% Culture cost of natural border growth [in all cities]",
+            "[-25]% Gold cost of acquiring tiles [in all cities]"
+          ],
+          "quote_ru": "'Храм... выдающееся сооружение. Оно имеет башни, рельефы и украшения, какие только может вообразить человеческий гений.' - Антонио де Магдалена"
         }
       ]
     },
@@ -988,6 +1320,9 @@
           "name": "Castle",
           "uniques": [
             "Destroyed when the city is captured"
+          ],
+          "uniques_ru": [
+            "Уничтожается при захвате города"
           ]
         },
         {
@@ -997,7 +1332,12 @@
           "uniques": [
             "All newly-trained [relevant] units [in this city] receive the [Drill I] promotion",
             "Gain a free [Castle] [in this city]"
-          ]
+          ],
+          "uniques_ru": [
+            "All newly-trained [relevant] units [in this city] receive the [Drill I] promotion",
+            "Gain a free [Castle] [in this city]"
+          ],
+          "quote_ru": "'Справедливость - это неприступная крепость, построенная на гребне горы, которую не может разрушить ярость стихий или уничтожить армия солдат.' - Джозеф Эддисон"
         },
         {
           "kind": "unit",
@@ -1006,6 +1346,12 @@
             "Can move after attacking",
             "No defensive terrain bonus",
             "[-33]% Strength <vs cities> <when attacking>",
+            "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
+            "Может двигаться после атаки",
+            "Нет бонуса защиты от ландшафта",
+            "[-33]% Strength <против городов> <когда атакует>",
             "Never appears as a Barbarian unit"
           ]
         }
@@ -1028,11 +1374,16 @@
           "uniques": [
             "Only available <if [Workshop] is constructed in all [non-[Puppeted]] cities>",
             "Cost increases by [30] per owned city"
+          ],
+          "uniques_ru": [
+            "Доступно только <if [Workshop] is constructed in all [non-[Puppeted]] cities>",
+            "Cost increases by [30] per owned city"
           ]
         },
         {
           "kind": "unit",
-          "name": "Crossbowman"
+          "name": "Crossbowman",
+          "uniques_ru": []
         }
       ]
     },
@@ -1049,7 +1400,9 @@
         {
           "kind": "wonder",
           "name": "Notre Dame",
-          "quote": "'Architecture has recorded the great ideas of the human race. Not only every religious symbol, but every human thought has its page in that vast book.' - Victor Hugo"
+          "quote": "'Architecture has recorded the great ideas of the human race. Not only every religious symbol, but every human thought has its page in that vast book.' - Victor Hugo",
+          "uniques_ru": [],
+          "quote_ru": "'Зодчество было главной летописью человечества... каждая общедоступная идея, как и каждый религиозный закон, имела свой памятник' - Виктор Гюго"
         },
         {
           "kind": "unit",
@@ -1058,6 +1411,12 @@
             "[+200]% Strength <vs cities> <when attacking>",
             "No defensive terrain bonus",
             "Must set up to ranged attack",
+            "[-1] Sight"
+          ],
+          "uniques_ru": [
+            "[+200]% Strength <против городов> <когда атакует>",
+            "Нет бонуса защиты от ландшафта",
+            "Должен подготовиться перед дальнобойной атакой",
             "[-1] Sight"
           ]
         }
@@ -1079,11 +1438,16 @@
           "uniques": [
             "New [Military] units start with [15] XP [in this city]",
             "Destroyed when the city is captured"
+          ],
+          "uniques_ru": [
+            "New [Military] units start with [15] XP [in this city]",
+            "Уничтожается при захвате города"
           ]
         },
         {
           "kind": "unit",
-          "name": "Longswordsman"
+          "name": "Longswordsman",
+          "uniques_ru": []
         }
       ]
     },
@@ -1103,6 +1467,9 @@
           "name": "Observatory",
           "uniques": [
             "Must be next to [Mountain]"
+          ],
+          "uniques_ru": [
+            "Must be next to [Mountain]"
           ]
         },
         {
@@ -1111,6 +1478,10 @@
           "uniques": [
             "[+1] Sight",
             "Withdraws before melee combat <with [80]% chance>"
+          ],
+          "uniques_ru": [
+            "[+1] Sight",
+            "Отступает перед ближним боем <with [80]% chance>"
           ]
         }
       ]
@@ -1130,6 +1501,9 @@
           "name": "Opera House",
           "uniques": [
             "Destroyed when the city is captured"
+          ],
+          "uniques_ru": [
+            "Уничтожается при захвате города"
           ]
         },
         {
@@ -1138,7 +1512,11 @@
           "quote": "'I live and love in God's peculiar light.' - Michelangelo Buonarroti",
           "uniques": [
             "[+25]% [Culture] [in all cities]"
-          ]
+          ],
+          "uniques_ru": [
+            "[+25]% [Culture] [in all cities]"
+          ],
+          "quote_ru": "'Я живу и люблю в особом свете Господа.' - Микеланджело Буонарроти"
         }
       ]
     },
@@ -1155,13 +1533,18 @@
       "unlocks": [
         {
           "kind": "building",
-          "name": "Bank"
+          "name": "Bank",
+          "uniques_ru": []
         },
         {
           "kind": "building",
           "name": "Constabulary",
           "uniques": [
             "Only available <when espionage is enabled>",
+            "[-25]% enemy spy effectiveness [in this city]"
+          ],
+          "uniques_ru": [
+            "Доступно только <когда шпионаж включен>",
             "[-25]% enemy spy effectiveness [in this city]"
           ]
         },
@@ -1171,7 +1554,11 @@
           "quote": "'Most of us can, as we choose, make of this world either a palace or a prison' - John Lubbock",
           "uniques": [
             "[-10]% Unhappiness from [Population] [in all non-occupied cities]"
-          ]
+          ],
+          "uniques_ru": [
+            "[-10]% Unhappiness from [Population] [in all non-occupied cities]"
+          ],
+          "quote_ru": "'Фактически любой из нас может по собственному желанию превратить мир во дворец или в темницу' - Джон Лаббок"
         }
       ]
     },
@@ -1189,7 +1576,8 @@
       "unlocks": [
         {
           "kind": "building",
-          "name": "Theatre"
+          "name": "Theatre",
+          "uniques_ru": []
         },
         {
           "kind": "wonder",
@@ -1198,7 +1586,12 @@
           "uniques": [
             "[+25]% Great Person generation [in all cities]",
             "Free Great Person"
-          ]
+          ],
+          "uniques_ru": [
+            "[+25]% Great Person generation [in all cities]",
+            "Бесплатный Великий человек"
+          ],
+          "quote_ru": "'Не хлопайте так громко - здание старое, может развалиться.' - Джон Осборн"
         }
       ]
     },
@@ -1220,11 +1613,17 @@
           "uniques": [
             "[+15]% Strength <for [All] units> <when fighting in [Friendly Land] tiles>",
             "Gain a free [Castle] [in this city]"
-          ]
+          ],
+          "uniques_ru": [
+            "[+15]% Strength <for [All] units> <when fighting in [Friendly Land] tiles>",
+            "Gain a free [Castle] [in this city]"
+          ],
+          "quote_ru": "'Бусидо - путь воина - означает смерть. Когда для выбора имеются два пути, выбирай тот, который ведет к смерти. Не рассуждай! Направь мысль на путь, который ты предпочел, и иди.' - Ямамото Цунэтомо"
         },
         {
           "kind": "unit",
-          "name": "Musketman"
+          "name": "Musketman",
+          "uniques_ru": []
         }
       ]
     },
@@ -1245,15 +1644,22 @@
             "[+1 Production, +1 Gold] from [Water resource] tiles [in this city]",
             "Must be next to [Coast]",
             "[+15]% Production when constructing [Water] units [in this city]"
+          ],
+          "uniques_ru": [
+            "[+1 Production, +1 Gold] from [Water resource] tiles [in this city]",
+            "Must be next to [Coast]",
+            "[+15]% Production when constructing [Water] units [in this city]"
           ]
         },
         {
           "kind": "unit",
-          "name": "Privateer"
+          "name": "Privateer",
+          "uniques_ru": []
         },
         {
           "kind": "unit",
-          "name": "Frigate"
+          "name": "Frigate",
+          "uniques_ru": []
         }
       ]
     },
@@ -1274,6 +1680,10 @@
           "uniques": [
             "Only available <if [Opera House] is constructed in all [non-[Puppeted]] cities>",
             "Cost increases by [30] per owned city"
+          ],
+          "uniques_ru": [
+            "Доступно только <if [Opera House] is constructed in all [non-[Puppeted]] cities>",
+            "Cost increases by [30] per owned city"
           ]
         },
         {
@@ -1282,7 +1692,11 @@
           "quote": "'The Taj Mahal rises above the banks of the river like a solitary tear suspended on the cheek of time.' - Rabindranath Tagore",
           "uniques": [
             "Empire enters golden age"
-          ]
+          ],
+          "uniques_ru": [
+            "Империя вступает в золотой век"
+          ],
+          "quote_ru": "'Пусть великолепие алмаза, рубина исчезнет, как магическое мерцание от радуги, только пусть одна слеза - Тадж-Махал - ярко сияет на щеке времени.' - Рабиндарат Тагор"
         },
         {
           "kind": "wonder",
@@ -1291,7 +1705,12 @@
           "uniques": [
             "Free [Great Scientist] appears",
             "Science gained from research agreements [+50]%"
-          ]
+          ],
+          "uniques_ru": [
+            "Free [Great Scientist] appears",
+            "Science gained from research agreements [+50]%"
+          ],
+          "quote_ru": "'Многое начинает казаться лучше, когда остается в прошлом - и из этой неприступной башни Прошлого нас зовет и манит рукою Тоска.' - Джеймс Расселл Лоуэлл"
         }
       ]
     },
@@ -1310,6 +1729,10 @@
           "kind": "building",
           "name": "Windmill",
           "uniques": [
+            "Must not be on [Hill]",
+            "[+10]% Production when constructing [All] buildings [in this city]"
+          ],
+          "uniques_ru": [
             "Must not be on [Hill]",
             "[+10]% Production when constructing [All] buildings [in this city]"
           ]
@@ -1332,6 +1755,9 @@
           "name": "Arsenal",
           "uniques": [
             "Destroyed when the city is captured"
+          ],
+          "uniques_ru": [
+            "Уничтожается при захвате города"
           ]
         },
         {
@@ -1340,7 +1766,11 @@
           "quote": "'The Kremlin is constantly changing the rules of the game to suit its purposes. We are not playing chess, we're playing roulette.' - Garry Kasparov",
           "uniques": [
             "[+25]% City Strength from defensive buildings"
-          ]
+          ],
+          "uniques_ru": [
+            "[+25]% City Strength from defensive buildings"
+          ],
+          "quote_ru": "'Кремль постоянно меняет правила игры в соответствии со своими целями. Мы не играем в шахматы, мы играем в рулетку.' - Гарри Каспаров"
         },
         {
           "kind": "unit",
@@ -1349,6 +1779,12 @@
             "Can move after attacking",
             "No defensive terrain bonus",
             "[-33]% Strength <vs cities> <when attacking>",
+            "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
+            "Может двигаться после атаки",
+            "Нет бонуса защиты от ландшафта",
+            "[-33]% Strength <против городов> <когда атакует>",
             "Never appears as a Barbarian unit"
           ]
         }
@@ -1372,6 +1808,12 @@
             "No defensive terrain bonus",
             "Must set up to ranged attack",
             "[-1] Sight"
+          ],
+          "uniques_ru": [
+            "[+200]% Strength <против городов> <когда атакует>",
+            "Нет бонуса защиты от ландшафта",
+            "Должен подготовиться перед дальнобойной атакой",
+            "[-1] Sight"
           ]
         }
       ]
@@ -1392,6 +1834,9 @@
           "name": "Museum",
           "uniques": [
             "Destroyed when the city is captured"
+          ],
+          "uniques_ru": [
+            "Уничтожается при захвате города"
           ]
         },
         {
@@ -1400,7 +1845,11 @@
           "quote": "'Every genuine work of art has as much reason for being as the earth and the sun' - Ralph Waldo Emerson",
           "uniques": [
             "[2] free [Great Artist] units appear"
-          ]
+          ],
+          "uniques_ru": [
+            "[2] free [Great Artist] units appear"
+          ],
+          "quote_ru": "'У подлинного произведения искусства столько же прав на существование, сколько у солнца и земли.' - Ральф Уолдо Эмерсон"
         }
       ]
     },
@@ -1420,6 +1869,9 @@
           "name": "Public School",
           "uniques": [
             "[+1 Science] per [2] population [in this city]"
+          ],
+          "uniques_ru": [
+            "[+1 Science] per [2] population [in this city]"
           ]
         }
       ]
@@ -1436,7 +1888,8 @@
       "unlocks": [
         {
           "kind": "building",
-          "name": "Factory"
+          "name": "Factory",
+          "uniques_ru": []
         },
         {
           "kind": "wonder",
@@ -1444,11 +1897,16 @@
           "quote": "'To achieve great things, two things are needed: a plan, and not quite enough time.' - Leonard Bernstein",
           "uniques": [
             "[Gold] cost of purchasing items in cities [-15]%"
-          ]
+          ],
+          "uniques_ru": [
+            "[Gold] cost of purchasing items in cities [-15]%"
+          ],
+          "quote_ru": "'Для великих свершений потребны две вещи: план действий и недостаток времени.' - Леонард Бернстайн"
         },
         {
           "kind": "unit",
-          "name": "Gatling Gun"
+          "name": "Gatling Gun",
+          "uniques_ru": []
         }
       ]
     },
@@ -1465,7 +1923,8 @@
       "unlocks": [
         {
           "kind": "unit",
-          "name": "Rifleman"
+          "name": "Rifleman",
+          "uniques_ru": []
         }
       ]
     },
@@ -1486,6 +1945,10 @@
           "uniques": [
             "New [Military] units start with [15] XP [in this city]",
             "Destroyed when the city is captured"
+          ],
+          "uniques_ru": [
+            "New [Military] units start with [15] XP [in this city]",
+            "Уничтожается при захвате города"
           ]
         },
         {
@@ -1495,7 +1958,12 @@
           "uniques": [
             "Free [Great General] appears",
             "New [Military] units start with [15] XP [in this city]"
-          ]
+          ],
+          "uniques_ru": [
+            "Free [Great General] appears",
+            "New [Military] units start with [15] XP [in this city]"
+          ],
+          "quote_ru": "'Что в лачуги нищих, что во дворцы царей бледная Смерть ломится одной и той же ногой.' - Гораций"
         },
         {
           "kind": "unit",
@@ -1504,6 +1972,12 @@
             "Can move after attacking",
             "No defensive terrain bonus",
             "[-33]% Strength <vs cities> <when attacking>",
+            "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
+            "Может двигаться после атаки",
+            "Нет бонуса защиты от ландшафта",
+            "[-33]% Strength <против городов> <когда атакует>",
             "Never appears as a Barbarian unit"
           ]
         }
@@ -1533,7 +2007,8 @@
       "unlocks": [
         {
           "kind": "building",
-          "name": "Hospital"
+          "name": "Hospital",
+          "uniques_ru": []
         },
         {
           "kind": "improvement",
@@ -1541,6 +2016,11 @@
           "uniques": [
             "Can only be built to improve a resource",
             "Cannot be built on [Water] tiles",
+            "Pillaging this improvement yields approximately [+20 Gold]"
+          ],
+          "uniques_ru": [
+            "Можно построить только для улучшения ресурса",
+            "Невозможно построить на [Water] tiles",
             "Pillaging this improvement yields approximately [+20 Gold]"
           ]
         }
@@ -1558,12 +2038,17 @@
       "unlocks": [
         {
           "kind": "building",
-          "name": "Stock Exchange"
+          "name": "Stock Exchange",
+          "uniques_ru": []
         },
         {
           "kind": "building",
           "name": "Hydro Plant",
           "uniques": [
+            "Must be on [River]",
+            "[+1 Production] from [River] tiles [in this city]"
+          ],
+          "uniques_ru": [
             "Must be on [River]",
             "[+1 Production] from [River] tiles [in this city]"
           ]
@@ -1573,6 +2058,10 @@
           "name": "Police Station",
           "uniques": [
             "Only available <when espionage is enabled>",
+            "[-25]% enemy spy effectiveness [in this city]"
+          ],
+          "uniques_ru": [
+            "Доступно только <когда шпионаж включен>",
             "[-25]% enemy spy effectiveness [in this city]"
           ]
         }
@@ -1595,6 +2084,11 @@
           "name": "Ironclad",
           "uniques": [
             "[+33]% Strength <vs cities>",
+            "Double movement in [Coast]",
+            "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
+            "[+33]% Strength <против городов>",
             "Double movement in [Coast]",
             "Never appears as a Barbarian unit"
           ]
@@ -1620,6 +2114,12 @@
             "No defensive terrain bonus",
             "Must set up to ranged attack",
             "[-1] Sight"
+          ],
+          "uniques_ru": [
+            "[+200]% Strength <против городов> <когда атакует>",
+            "Нет бонуса защиты от ландшафта",
+            "Должен подготовиться перед дальнобойной атакой",
+            "[-1] Sight"
           ]
         }
       ]
@@ -1637,13 +2137,19 @@
       "unlocks": [
         {
           "kind": "building",
-          "name": "Stadium"
+          "name": "Stadium",
+          "uniques_ru": []
         },
         {
           "kind": "unit",
           "name": "Submarine",
           "uniques": [
             "[+75]% Strength <when attacking>",
+            "Can only attack [Water] tiles",
+            "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
+            "[+75]% Strength <когда атакует>",
             "Can only attack [Water] tiles",
             "Never appears as a Barbarian unit"
           ]
@@ -1654,6 +2160,11 @@
           "uniques": [
             "Can only be built to improve a resource",
             "Can only be built on [Water] tiles",
+            "Pillaging this improvement yields approximately [+20 Gold]"
+          ],
+          "uniques_ru": [
+            "Можно построить только для улучшения ресурса",
+            "Можно построить только on [Water] tiles",
             "Pillaging this improvement yields approximately [+20 Gold]"
           ]
         }
@@ -1674,6 +2185,9 @@
           "name": "Broadcast Tower",
           "uniques": [
             "Destroyed when the city is captured"
+          ],
+          "uniques_ru": [
+            "Уничтожается при захвате города"
           ]
         },
         {
@@ -1682,7 +2196,11 @@
           "quote": "'We live only to discover beauty, all else is a form of waiting' - Kahlil Gibran",
           "uniques": [
             "[+1 Happiness] per [2] social policies adopted"
-          ]
+          ],
+          "uniques_ru": [
+            "[+1 Happiness] per [2] social policies adopted"
+          ],
+          "quote_ru": "'Мы живем лишь для того, чтобы познавать красоту. Все прочее – ожидание.' - Халиль Джебран"
         },
         {
           "kind": "wonder",
@@ -1692,6 +2210,12 @@
             "New spies start with [1] level(s)",
             "Promotes all spies [1] time(s)",
             "Gain an extra spy"
+          ],
+          "uniques_ru": [
+            "Доступно только <когда шпионаж включен>",
+            "New spies start with [1] level(s)",
+            "Дает повышение всем шпионам [1] time(s)",
+            "Получите дополнительного шпиона"
           ]
         }
       ]
@@ -1712,6 +2236,9 @@
           "name": "Military Base",
           "uniques": [
             "Destroyed when the city is captured"
+          ],
+          "uniques_ru": [
+            "Уничтожается при захвате города"
           ]
         },
         {
@@ -1720,11 +2247,16 @@
           "quote": "'Give me your tired, your poor, your huddled masses yearning to breathe free, the wretched refuse of your teeming shore. Send these, the homeless, tempest-tossed to me, I lift my lamp beside the golden door!' - Emma Lazarus",
           "uniques": [
             "[+1 Production] from every specialist [in all cities]"
-          ]
+          ],
+          "uniques_ru": [
+            "[+1 Production] from every specialist [in all cities]"
+          ],
+          "quote_ru": "'А мне отдайте ваших усталых, ваших бедных... а мне отдайте из глубин бездонных своих изгоев, люд забитый свой, пошлите мне отверженных, бездомных, я им свечу у двери золотой...' - Эмма Лазарус"
         },
         {
           "kind": "unit",
-          "name": "Great War Infantry"
+          "name": "Great War Infantry",
+          "uniques_ru": []
         }
       ]
     },
@@ -1745,11 +2277,17 @@
             "[50]% chance to intercept air attacks",
             "[+150]% Strength <vs [Bomber] units>",
             "[+150]% Strength <vs [Helicopter] units>"
+          ],
+          "uniques_ru": [
+            "[50]% chance to intercept air attacks",
+            "[+150]% Strength <vs [Bomber] units>",
+            "[+150]% Strength <vs [Helicopter] units>"
           ]
         },
         {
           "kind": "unit",
-          "name": "Great War Bomber"
+          "name": "Great War Bomber",
+          "uniques_ru": []
         }
       ]
     },
@@ -1771,13 +2309,22 @@
           "uniques": [
             "[+1 Happiness, +2 Culture, +3 Gold] from every [Castle]",
             "Must have an owned [{non-[Natural Wonder]} {Mountain}] within [2] tiles"
-          ]
+          ],
+          "uniques_ru": [
+            "[+1 Happiness, +2 Culture, +3 Gold] from every [Castle]",
+            "Must have an owned [{non-[Natural Wonder]} {Mountain}] within [2] tiles"
+          ],
+          "quote_ru": "'...это одно из самых красивых мест, святое и безупречное, достойный монастырь для божественного друга, который принес спасение и благословение миру.' - Король Баварии Людвиг II"
         },
         {
           "kind": "improvement",
           "name": "Railroad",
           "uniques": [
             "Can be built outside your borders",
+            "Costs [2] [Gold] per turn"
+          ],
+          "uniques_ru": [
+            "Можно построить за пределами ваших границ",
             "Costs [2] [Gold] per turn"
           ]
         }
@@ -1796,7 +2343,8 @@
       "unlocks": [
         {
           "kind": "building",
-          "name": "Research Lab"
+          "name": "Research Lab",
+          "uniques_ru": []
         },
         {
           "kind": "wonder",
@@ -1804,11 +2352,16 @@
           "quote": "'Come to me, all who labor and are heavy burdened, and I will give you rest.' - New Testament, Matthew 11:28",
           "uniques": [
             "[-10]% Culture cost of adopting new Policies"
-          ]
+          ],
+          "uniques_ru": [
+            "[-10]% Culture cost of adopting new Policies"
+          ],
+          "quote_ru": "'Придите ко Мне все трудящиеся и обремененные, и Я успокою вас.' - Евангелие от Матфея, 11:28"
         },
         {
           "kind": "unit",
-          "name": "Infantry"
+          "name": "Infantry",
+          "uniques_ru": []
         }
       ]
     },
@@ -1829,12 +2382,19 @@
           "uniques": [
             "Cannot attack",
             "Can carry [2] [Aircraft] units"
+          ],
+          "uniques_ru": [
+            "Не может атаковать",
+            "Can carry [2] [Aircraft] units"
           ]
         },
         {
           "kind": "unit",
           "name": "Battleship",
           "uniques": [
+            "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
             "Never appears as a Barbarian unit"
           ]
         }
@@ -1852,12 +2412,19 @@
       "unlocks": [
         {
           "kind": "unit",
-          "name": "Machine Gun"
+          "name": "Machine Gun",
+          "uniques_ru": []
         },
         {
           "kind": "unit",
           "name": "Anti-Aircraft Gun",
           "uniques": [
+            "[100]% chance to intercept air attacks",
+            "[+150]% Strength <vs [Air] units>",
+            "[+150]% Strength <vs [Helicopter] units>",
+            "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
             "[100]% chance to intercept air attacks",
             "[+150]% Strength <vs [Air] units>",
             "[+150]% Strength <vs [Helicopter] units>",
@@ -1883,6 +2450,11 @@
             "Can move after attacking",
             "No defensive terrain bonus",
             "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
+            "Может двигаться после атаки",
+            "Нет бонуса защиты от ландшафта",
+            "Never appears as a Barbarian unit"
           ]
         },
         {
@@ -1892,6 +2464,12 @@
             "Can see invisible [Submarine] units",
             "[40]% chance to intercept air attacks",
             "Withdraws before melee combat <with [80]% chance>",
+            "[+100]% Strength <vs [Submarine] units>"
+          ],
+          "uniques_ru": [
+            "Can see invisible [Submarine] units",
+            "[40]% chance to intercept air attacks",
+            "Отступает перед ближним боем <with [80]% chance>",
             "[+100]% Strength <vs [Submarine] units>"
           ]
         }
@@ -1913,6 +2491,9 @@
           "name": "Medical Lab",
           "uniques": [
             "[25]% Food is carried over after population increases [in this city]"
+          ],
+          "uniques_ru": [
+            "[25]% Food is carried over after population increases [in this city]"
           ]
         },
         {
@@ -1921,6 +2502,10 @@
           "uniques": [
             "[+1] Sight <when [Embarked]>",
             "[+100]% Strength <when defending> <when [Embarked]>"
+          ],
+          "uniques_ru": [
+            "[+1] Sight <when [Embarked]>",
+            "[+100]% Strength <когда защищается> <when [Embarked]>"
           ]
         }
       ]
@@ -1943,6 +2528,11 @@
             "Enables nuclear weapon",
             "Triggers a global alert upon completion",
             "Cannot be hurried"
+          ],
+          "uniques_ru": [
+            "Позволяет производить ядерное оружие",
+            "Вызывает глобальное оповещение при завершении",
+            "Нельзя ускорить"
           ]
         }
       ]
@@ -1965,16 +2555,26 @@
             "[100]% chance to intercept air attacks",
             "[+150]% Strength <vs [Bomber] units>",
             "[+150]% Strength <vs [Helicopter] units>"
+          ],
+          "uniques_ru": [
+            "[100]% chance to intercept air attacks",
+            "[+150]% Strength <vs [Bomber] units>",
+            "[+150]% Strength <vs [Helicopter] units>"
           ]
         },
         {
           "kind": "unit",
-          "name": "Bomber"
+          "name": "Bomber",
+          "uniques_ru": []
         },
         {
           "kind": "unit",
           "name": "Paratrooper",
           "uniques": [
+            "May Paradrop to [Land] tiles up to [5] tiles away <in [{Friendly} {Land}] tiles>",
+            "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
             "May Paradrop to [Land] tiles up to [5] tiles away <in [{Friendly} {Land}] tiles>",
             "Never appears as a Barbarian unit"
           ]
@@ -1998,7 +2598,11 @@
           "quote": "'In preparing for battle I have always found that plans are useless, but planning is indispensable.' - Dwight D. Eisenhower",
           "uniques": [
             "[-33]% Gold cost of upgrading <for [Military] units>"
-          ]
+          ],
+          "uniques_ru": [
+            "[-33]% Gold cost of upgrading <for [Military] units>"
+          ],
+          "quote_ru": "'При подготовке к битве планы незаменимы, но, как только битва началась, план становится совершенно бесполезным.' - Дуайт Эйзенхауэр"
         },
         {
           "kind": "unit",
@@ -2007,12 +2611,21 @@
             "Can move after attacking",
             "No defensive terrain bonus",
             "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
+            "Может двигаться после атаки",
+            "Нет бонуса защиты от ландшафта",
+            "Never appears as a Barbarian unit"
           ]
         },
         {
           "kind": "unit",
           "name": "Anti-Tank Gun",
           "uniques": [
+            "[+100]% Strength <vs [Armored] units>",
+            "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
             "[+100]% Strength <vs [Armored] units>",
             "Never appears as a Barbarian unit"
           ]
@@ -2036,12 +2649,20 @@
           "uniques": [
             "Must be next to [Desert]",
             "Only available <in cities without a [Nuclear Plant]>"
+          ],
+          "uniques_ru": [
+            "Must be next to [Desert]",
+            "Доступно только <in cities without a [Nuclear Plant]>"
           ]
         },
         {
           "kind": "building",
           "name": "Recycling Center",
           "uniques": [
+            "Provides [2] [Aluminum]",
+            "Limited to [5] per Civilization"
+          ],
+          "uniques_ru": [
             "Provides [2] [Aluminum]",
             "Limited to [5] per Civilization"
           ]
@@ -2053,7 +2674,12 @@
           "uniques": [
             "Free Social Policy",
             "Must be next to [Coast]"
-          ]
+          ],
+          "uniques_ru": [
+            "Бесплатный общественный институт",
+            "Must be next to [Coast]"
+          ],
+          "quote_ru": "'У кого погибли мечты, тот и сам погиб.' - пословица австралийских аборигенов"
         }
       ]
     },
@@ -2073,6 +2699,9 @@
           "name": "Nuclear Plant",
           "uniques": [
             "Only available <in cities without a [Solar Plant]>"
+          ],
+          "uniques_ru": [
+            "Доступно только <in cities without a [Solar Plant]>"
           ]
         },
         {
@@ -2082,6 +2711,12 @@
             "Nuclear weapon of Strength [1]",
             "Only available <if [Manhattan Project] is constructed>",
             "Self-destructs when attacking",
+            "Blast radius [2]"
+          ],
+          "uniques_ru": [
+            "Nuclear weapon of Strength [1]",
+            "Доступно только <if [Manhattan Project] is constructed>",
+            "Самоуничтожается при атаке",
             "Blast radius [2]"
           ]
         }
@@ -2105,6 +2740,12 @@
             "Triggers a global alert upon completion",
             "Only available <when [Scientific] Victory is enabled>",
             "Cannot be hurried"
+          ],
+          "uniques_ru": [
+            "Позволяет строить части космического корабля",
+            "Вызывает глобальное оповещение при завершении",
+            "Доступно только <when [Scientific] Victory is enabled>",
+            "Нельзя ускорить"
           ]
         },
         {
@@ -2115,12 +2756,24 @@
             "No defensive terrain bonus",
             "[-1] Sight",
             "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
+            "[+200]% Strength <против городов> <когда атакует>",
+            "Нет бонуса защиты от ландшафта",
+            "[-1] Sight",
+            "Never appears as a Barbarian unit"
           ]
         },
         {
           "kind": "unit",
           "name": "Mobile SAM",
           "uniques": [
+            "[100]% chance to intercept air attacks",
+            "[+150]% Strength <vs [Air] units>",
+            "[+150]% Strength <vs [Helicopter] units>",
+            "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
             "[100]% chance to intercept air attacks",
             "[+150]% Strength <vs [Air] units>",
             "[+150]% Strength <vs [Helicopter] units>",
@@ -2148,7 +2801,13 @@
             "Only available <when espionage is enabled>",
             "[-99]% enemy spy effectiveness [in this city]",
             "[-25]% enemy spy effectiveness [in all cities]"
-          ]
+          ],
+          "uniques_ru": [
+            "Доступно только <когда шпионаж включен>",
+            "[-99]% enemy spy effectiveness [in this city]",
+            "[-25]% enemy spy effectiveness [in all cities]"
+          ],
+          "quote_ru": "'Недоверие и настороженность - родители безопасности.' - Бенджамин Франклин"
         },
         {
           "kind": "unit",
@@ -2158,6 +2817,12 @@
             "No defensive terrain bonus",
             "Can move after attacking",
             "All tiles cost 1 movement"
+          ],
+          "uniques_ru": [
+            "[+100]% Strength <vs [Armored] units>",
+            "Нет бонуса защиты от ландшафта",
+            "Может двигаться после атаки",
+            "Все клетки обходятся в 1 передвижение"
           ]
         }
       ]
@@ -2180,7 +2845,13 @@
             "[+1] population [in all cities]",
             "[+1 Happiness] [in all cities]",
             "Gain a free [Broadcast Tower] [in all cities]"
-          ]
+          ],
+          "uniques_ru": [
+            "[+1] population [in all cities]",
+            "[+1 Happiness] [in all cities]",
+            "Gain a free [Broadcast Tower] [in all cities]"
+          ],
+          "quote_ru": "'Ничто не движется быстрее скорости света, кроме плохих новостей - они подчиняются собственным законам.' – Дуглас Адамс"
         },
         {
           "kind": "building",
@@ -2189,6 +2860,11 @@
             "Population loss from nuclear attacks [-75]% [in this city]",
             "Damage to garrison from nuclear attacks [-75]% [in this city]",
             "Only available <when nuclear weapons are enabled> <hidden from users>"
+          ],
+          "uniques_ru": [
+            "Population loss from nuclear attacks [-75]% [in this city]",
+            "Damage to garrison from nuclear attacks [-75]% [in this city]",
+            "Доступно только <когда ядерное оружие включено> <спрятано от пользователей>"
           ]
         },
         {
@@ -2196,6 +2872,12 @@
           "name": "Nuclear Submarine",
           "uniques": [
             "[+75]% Strength <when attacking>",
+            "Can only attack [Water] tiles",
+            "[+1] Sight",
+            "Can carry [2] [Missile] units"
+          ],
+          "uniques_ru": [
+            "[+75]% Strength <когда атакует>",
             "Can only attack [Water] tiles",
             "[+1] Sight",
             "Can carry [2] [Missile] units"
@@ -2219,6 +2901,9 @@
           "name": "Mechanized Infantry",
           "uniques": [
             "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
+            "Never appears as a Barbarian unit"
           ]
         }
       ]
@@ -2239,6 +2924,9 @@
           "name": "Guided Missile",
           "uniques": [
             "[-100]% maintenance costs"
+          ],
+          "uniques_ru": [
+            "[-100]% maintenance costs"
           ]
         },
         {
@@ -2247,6 +2935,12 @@
           "uniques": [
             "Nuclear weapon of Strength [2]",
             "Only available <if [Manhattan Project] is constructed>",
+            "Blast radius [2]",
+            "Consumes [2] [Uranium]"
+          ],
+          "uniques_ru": [
+            "Nuclear weapon of Strength [2]",
+            "Доступно только <if [Manhattan Project] is constructed>",
             "Blast radius [2]",
             "Consumes [2] [Uranium]"
           ]
@@ -2259,6 +2953,12 @@
             "Cannot be purchased",
             "Only available <if [Apollo Program] is constructed>",
             "Uncapturable"
+          ],
+          "uniques_ru": [
+            "Часть космического корабля",
+            "Нельзя купить",
+            "Доступно только <if [Apollo Program] is constructed>",
+            "Нельзя захватить"
           ]
         }
       ]
@@ -2281,7 +2981,13 @@
             "[2] free [Great Scientist] units appear",
             "[+25]% Production when constructing [Spaceship part] units [in this city]",
             "Gain a free [Spaceship Factory] [in this city]"
-          ]
+          ],
+          "uniques_ru": [
+            "[2] free [Great Scientist] units appear",
+            "[+25]% Production when constructing [Spaceship part] units [in this city]",
+            "Gain a free [Spaceship Factory] [in this city]"
+          ],
+          "quote_ru": "'Чудо не в том, что звездный небосклон столь обширен, но в том, что человек сумел измерить его.' - Анатоль Франс"
         },
         {
           "kind": "unit",
@@ -2291,6 +2997,12 @@
             "Cannot be purchased",
             "Only available <if [Apollo Program] is constructed>",
             "Uncapturable"
+          ],
+          "uniques_ru": [
+            "Часть космического корабля",
+            "Нельзя купить",
+            "Доступно только <if [Apollo Program] is constructed>",
+            "Нельзя захватить"
           ]
         }
       ]
@@ -2311,12 +3023,21 @@
           "name": "Spaceship Factory",
           "uniques": [
             "[+50]% Production when constructing [Spaceship part] units [in this city]"
+          ],
+          "uniques_ru": [
+            "[+50]% Production when constructing [Spaceship part] units [in this city]"
           ]
         },
         {
           "kind": "unit",
           "name": "Missile Cruiser",
           "uniques": [
+            "[100]% chance to intercept air attacks",
+            "Can see invisible [Submarine] units",
+            "Can carry [3] [Missile] units",
+            "[+100]% Strength <vs [Submarine] units>"
+          ],
+          "uniques_ru": [
             "[100]% chance to intercept air attacks",
             "Can see invisible [Submarine] units",
             "Can carry [3] [Missile] units",
@@ -2342,12 +3063,22 @@
             "Can move after attacking",
             "No defensive terrain bonus",
             "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
+            "Может двигаться после атаки",
+            "Нет бонуса защиты от ландшафта",
+            "Never appears as a Barbarian unit"
           ]
         },
         {
           "kind": "unit",
           "name": "Jet Fighter",
           "uniques": [
+            "[100]% chance to intercept air attacks",
+            "[+150]% Strength <vs [Bomber] units>",
+            "[+150]% Strength <vs [Helicopter] units>"
+          ],
+          "uniques_ru": [
             "[100]% chance to intercept air attacks",
             "[+150]% Strength <vs [Bomber] units>",
             "[+150]% Strength <vs [Helicopter] units>"
@@ -2373,7 +3104,13 @@
             "Triggers voting for the Diplomatic Victory",
             "Only available <when [Diplomatic] Victory is enabled>",
             "Triggers a global alert upon completion"
-          ]
+          ],
+          "uniques_ru": [
+            "Начинает голосование за дипломатическую победу",
+            "Доступно только <when [Diplomatic] Victory is enabled>",
+            "Вызывает глобальное оповещение при завершении"
+          ],
+          "quote_ru": "'Сейчас мы больше, чем когда-либо раньше, связаны общей судьбой. Мы выстоим перед ней, только если встретим её вместе. Именно для этого и нужна ООН.' - Кофи Аннан"
         }
       ]
     },
@@ -2397,6 +3134,12 @@
             "Cannot be purchased",
             "Only available <if [Apollo Program] is constructed>",
             "Uncapturable"
+          ],
+          "uniques_ru": [
+            "Часть космического корабля",
+            "Нельзя купить",
+            "Доступно только <if [Apollo Program] is constructed>",
+            "Нельзя захватить"
           ]
         }
       ]
@@ -2420,6 +3163,11 @@
             "Can move after attacking",
             "No defensive terrain bonus",
             "Never appears as a Barbarian unit"
+          ],
+          "uniques_ru": [
+            "Может двигаться после атаки",
+            "Нет бонуса защиты от ландшафта",
+            "Never appears as a Barbarian unit"
           ]
         }
       ]
@@ -2442,6 +3190,12 @@
             "Cannot be purchased",
             "Only available <if [Apollo Program] is constructed>",
             "Uncapturable"
+          ],
+          "uniques_ru": [
+            "Часть космического корабля",
+            "Нельзя купить",
+            "Доступно только <if [Apollo Program] is constructed>",
+            "Нельзя захватить"
           ]
         }
       ]
@@ -2465,6 +3219,12 @@
             "Cannot be carried by [Carrier] units",
             "[+4] Sight",
             "Can see over obstacles"
+          ],
+          "uniques_ru": [
+            "Damage taken from interception reduced by [100]%",
+            "Cannot be carried by [Carrier] units",
+            "[+4] Sight",
+            "Может видеть сквозь препятствия"
           ]
         }
       ]
