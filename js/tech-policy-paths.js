@@ -28,6 +28,7 @@
   let techNames = {};
   let policyNames = {};
   let constructionNames = {};
+  let nationNames = {};
   let roster = {};
   let ready = false;
   let selectedEra = 'all';
@@ -52,6 +53,12 @@
 
   function labelPolicy(name) {
     const row = policyNames[name];
+    if (!row) return name;
+    return lang() === 'en' ? (row.en || name) : (row.ru || name);
+  }
+
+  function labelNation(name) {
+    const row = nationNames[name];
     if (!row) return name;
     return lang() === 'en' ? (row.en || name) : (row.ru || name);
   }
@@ -126,7 +133,8 @@
       fetch('data/tech_details.json').then((r) => r.json()),
       fetch('data/construction_names.json').then((r) => r.json()),
       fetch('data/paths_roster.json').then((r) => r.json()),
-    ]).then(([tl, tn, pn, tree, details, cn, rost]) => {
+      fetch('data/nation_names.json').then((r) => r.json()),
+    ]).then(([tl, tn, pn, tree, details, cn, rost, nn]) => {
       timelines = tl;
       techNames = tn || {};
       policyNames = pn || {};
@@ -134,6 +142,7 @@
       techDetails = (details && details.techs) || {};
       constructionNames = cn || {};
       roster = rost || {};
+      nationNames = nn || {};
       ready = true;
     });
   }
@@ -290,7 +299,8 @@
         const nick = playerNick(gameNum, civ);
         const opt = document.createElement('option');
         opt.value = civ;
-        opt.textContent = nick ? `${civ} — ${nick}` : civ;
+        const civLabel = labelNation(civ);
+        opt.textContent = nick ? `${civLabel} — ${nick}` : civLabel;
         select.appendChild(opt);
       });
     if (prev && players[prev]) select.value = prev;
@@ -329,15 +339,13 @@
     const players = (timelines.games[gameNum] || {}).players || {};
     const cur = selectedPlayer();
     Object.keys(players)
-      .sort((a, b) => a.localeCompare(b))
+      .sort((a, b) => labelNation(a).localeCompare(labelNation(b), lang() === 'en' ? 'en' : 'ru'))
       .forEach((civ) => {
-        const nick = playerNick(gameNum, civ);
-        const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'paths-chip paths-chip-player' + (civ === cur ? ' active' : '');
         const civSpan = document.createElement('span');
         civSpan.className = 'paths-chip-civ';
-        civSpan.textContent = civ;
+        civSpan.textContent = civLabel;
         btn.appendChild(civSpan);
         if (nick) {
           const nickSpan = document.createElement('span');
@@ -345,7 +353,7 @@
           nickSpan.textContent = nick;
           btn.appendChild(nickSpan);
         }
-        btn.title = nick ? `${civ} — ${nick}` : civ;
+        btn.title = nick ? `${civLabel} — ${nick}` : civLabel;
         btn.addEventListener('click', () => setPlayer(civ));
         wrap.appendChild(btn);
       });
@@ -613,10 +621,11 @@
     const row = (((timelines.games[gameNum] || {}).players) || {})[civ];
     if (!row) return;
     const nick = playerNick(gameNum, civ);
+    const civLabel = labelNation(civ);
     if (head) {
       head.textContent = nick
-        ? `${civ} — ${nick} · Game ${gameNum}`
-        : `${civ} · Game ${gameNum}`;
+        ? `${civLabel} — ${nick} · Game ${gameNum}`
+        : `${civLabel} · Game ${gameNum}`;
     }
     if (meta) {
       const bits = [
