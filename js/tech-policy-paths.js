@@ -154,11 +154,6 @@
       stats.first_policy_branch,
       'policy'
     );
-    renderStatCards(
-      document.getElementById('pathsFirstTech'),
-      stats.first_tech_after_agriculture,
-      'tech'
-    );
 
     const eraWrap = document.getElementById('pathsEraFirst');
     if (!eraWrap) return;
