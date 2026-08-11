@@ -1,0 +1,1887 @@
+{
+  "source": "RekMOD-iron",
+  "wonders": {
+    "Temple of Artemis": {
+      "kind": "wonder",
+      "name": "Temple of Artemis",
+      "uniques": [
+        "[+15]% Production when constructing [Ranged] units [in this city]",
+        "[+15]% Production when constructing [WaterRanged] units [in this city]",
+        "Only available <after adopting [Honor]>"
+      ],
+      "uniques_en": [
+        "+15% Production when constructing Ranged units in this city",
+        "+15% Production when constructing WaterRanged units in this city",
+        "Only available after adopting Honor"
+      ],
+      "uniques_ru": [
+        "+15% к производству при создании юнитов: Юнит дальнего боя в этом городе",
+        "+15% к производству при создании юнитов: Судно дальнего боя в этом городе",
+        "Доступно только после принятия: Честь"
+      ],
+      "short_lines_en": [
+        "+3 Production, +3 Gold, +3 Culture"
+      ],
+      "short_lines_ru": [
+        "+3 Производство, +3 Золото, +3 Культура"
+      ],
+      "quote": "'It is not so much for its beauty that the forest makes a claim upon men's hearts, as for that subtle something, that quality of air, that emanation from old trees, that so wonderfully changes and renews a weary spirit.' - Robert Louis Stevenson",
+      "quote_ru": "'Лес пленяет сердца людей не столько своей красотой, сколько прекрасным воздухом, эманацией старых деревьев, чем-то неуловимым, что так замечательно изменяет и восстанавливает усталый дух.' - Роберт Льюис Стивенсон",
+      "stats": "+3 Production, +3 Gold, +3 Culture"
+    },
+    "Stonehenge": {
+      "kind": "wonder",
+      "name": "Stonehenge",
+      "uniques": [
+        "[-20]% Culture cost of natural border growth [in all cities]",
+        "[-20]% Gold cost of acquiring tiles [in all cities]"
+      ],
+      "uniques_en": [
+        "-20% Culture cost of natural border growth in all cities",
+        "-20% Gold cost of acquiring tiles in all cities"
+      ],
+      "uniques_ru": [
+        "-20% к затратам культуры на естественное расширение границ во всех городах",
+        "-20% к затратам золота на приобретение клеток во всех городах"
+      ],
+      "short_lines_en": [
+        "+1 Culture, +6 Faith"
+      ],
+      "short_lines_ru": [
+        "+1 Культура, +6 Вера"
+      ],
+      "quote": "'Time crumbles things; everything grows old and is forgotten under the power of time' - Aristotle",
+      "quote_ru": "'Все вещи подвергаются воздействию со стороны времени... ибо время само по себе скорее причина уничтожения.' - Аристотель",
+      "stats": "+1 Culture, +6 Faith"
+    },
+    "The Great Library": {
+      "kind": "wonder",
+      "name": "The Great Library",
+      "uniques": [
+        "Free Technology",
+        "Gain a free [Library] [in this city]",
+        "Comment [Has [2] Great Work of Writing Slots]"
+      ],
+      "uniques_en": [
+        "Free Technology",
+        "Gain a free Library in this city",
+        "Comment Has 2 Great Work of Writing Slots"
+      ],
+      "uniques_ru": [
+        "Бесплатная технология",
+        "Появляется бесплатная постройка Библиотека в этом городе",
+        "ИМеет 2 Слота для Литературного Шедевра"
+      ],
+      "short_lines_en": [
+        "+3 Science, +1 Culture"
+      ],
+      "short_lines_ru": [
+        "+3 Наука, +1 Культура"
+      ],
+      "quote": "'Libraries are as the shrine where all the relics of the ancient saints, full of true virtue, and all that without delusion or imposture are preserved and reposed.' - Sir Francis Bacon",
+      "quote_ru": "'Библиотеки — это раки, где покойно хранятся останки великих святых, полных добродетели и лишенных притворства.' - Сэр Френсис Бэкон",
+      "stats": "+3 Science, +1 Culture"
+    },
+    "Mausoleum of Halicarnassus": {
+      "kind": "wonder",
+      "name": "Mausoleum of Halicarnassus",
+      "uniques": [
+        "Gain [100] [Gold] <upon expending a [Great Person] unit>",
+        "[+2 Gold] from [Marble] tiles [in this city]",
+        "[+2 Gold] from [Stone] tiles [in this city]",
+        "[+2 Gold] from [Obsidian] tiles [in this city]"
+      ],
+      "uniques_en": [
+        "Gain 100 Gold upon expending a Great Person unit",
+        "+2 Gold from Marble tiles in this city",
+        "+2 Gold from Stone tiles in this city",
+        "+2 Gold from Obsidian tiles in this city"
+      ],
+      "uniques_ru": [
+        "Даёт 100 Золото при израсходовании юнита Великий человек",
+        "+2 Золото от клеток Мрамор в этом городе",
+        "+2 Золото от клеток Камень в этом городе",
+        "+2 Золото от клеток Обсидиан в этом городе"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "quote": "'The whole earth is the tomb of heroic men and their story is not given only on stone over their clay but abides everywhere without visible symbol woven into the stuff of other men's lives.' - Pericles",
+      "quote_ru": "'Могилою знаменитых людей служит вся земля, и о них свидетельствуют не только надписи на надгробных плитах в родной стране. Не столько о самих подвигах, сколько о мужестве незаписанное воспоминание вечно живет в каждом человеке.' - Перикл",
+      "stats": "+1 Culture"
+    },
+    "The Pyramids": {
+      "kind": "wonder",
+      "name": "The Pyramids",
+      "uniques": [
+        "Can build [all] improvements at a [+25]% rate",
+        "[2] free [Worker] units appear",
+        "Only available <after adopting [Liberty]>"
+      ],
+      "uniques_en": [
+        "Can build all improvements at a +25% rate",
+        "2 free Worker units appear",
+        "Only available after adopting Liberty"
+      ],
+      "uniques_ru": [
+        "Может строить все улучшения клеток с +25% скоростью",
+        "Появляются 2 бесплатных юнитов: Рабочий",
+        "Доступно только после принятия: Воля"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "quote": "'O, let not the pains of death which come upon thee enter into my body. I am the god Tem, and I am the foremost part of the sky, and the power which protecteth me is that which is with all the gods forever.' - The Book of the Dead, translated by Sir Ernest Alfred Wallis Budge",
+      "quote_ru": "'А вы даруйте мне, когда я есмь там, погребальные тризны, и воскурение ладана, и мази для умащения, и все чистые и прекрасные вещи, в которых обитает бог...' - из египетской \"Книги мертвых\"",
+      "stats": "+1 Culture"
+    },
+    "Statue of Zeus": {
+      "kind": "wonder",
+      "name": "Statue of Zeus",
+      "uniques": [
+        "[+10]% Production when constructing [Military] units [in this city]",
+        "[+15]% Strength <for [All] units> <vs cities> <when attacking>"
+      ],
+      "uniques_en": [
+        "+10% Production when constructing Military units in this city",
+        "+15% Strength for All units vs cities when attacking"
+      ],
+      "uniques_ru": [
+        "+10% к производству при создании юнитов: Военный в этом городе",
+        "+15% к боевой мощи для юнитов: Все против городов когда атакует"
+      ],
+      "short_lines_en": [
+        "+3 Culture"
+      ],
+      "short_lines_ru": [
+        "+3 Культура"
+      ],
+      "quote": "'He spoke, the son of Kronos, and nodded his head with the dark brows, and the immortally anointed hair of the great god swept from his divine head, and all Olympos was shaken' - The Iliad",
+      "quote_ru": "'Молвил Кронин и иссиня-черными двинул бровями; волны нетленных волос с головы Громовержца бессмертной на плечи пали его. И Олимп всколебался великий.' - Илиада",
+      "stats": "+3 Culture"
+    },
+    "The Great Lighthouse": {
+      "kind": "wonder",
+      "name": "The Great Lighthouse",
+      "uniques": [
+        "Must be next to [Coast]",
+        "[+1] Movement <for [{Military} {Water}] units>",
+        "[+1 Gold] from [Water] tiles [in this city]",
+        "[+1] Sight <for [{Military} {Water}] units>",
+        "Gain a free [Lighthouse] [in this city]",
+        "Free [Quinquereme] appears"
+      ],
+      "uniques_en": [
+        "Must be next to Coast",
+        "+1 Movement for Military Water units",
+        "+1 Gold from Water tiles in this city",
+        "+1 Sight for Military Water units",
+        "Gain a free Lighthouse in this city",
+        "Free Quinquereme appears"
+      ],
+      "uniques_ru": [
+        "Должен быть рядом с клеткой Побережье",
+        "+1 к передвижению для юнитов: Военный Морские",
+        "+1 Золото от клеток Морские в этом городе",
+        "+1 к радиусу обзора для юнитов: Военный Морские",
+        "Появляется бесплатная постройка Маяк в этом городе",
+        "Появляется бесплатный юнит: Квинкверма"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "quote": "'They that go down to the sea in ships, that do business in great waters; these see the works of the Lord, and his wonders in the deep.' - The Bible, Psalms 107:23-24",
+      "quote_ru": "'Отправляющиеся на кораблях в море, производящие дела на больших водах, видят дела Господа и чудеса Его в пучине...' - Псалтирь, Псалом 106: 23-24",
+      "stats": "+1 Culture"
+    },
+    "Circus Maximus": {
+      "kind": "wonder",
+      "name": "Circus Maximus",
+      "uniques": [
+        "Only available <if [Colosseum] is constructed in all [non-[Puppeted]] cities>",
+        "Cost increases by [30] per owned city"
+      ],
+      "uniques_en": [
+        "Only available if Colosseum is constructed in all non-Puppeted cities",
+        "Cost increases by 30 per owned city"
+      ],
+      "uniques_ru": [
+        "Доступно только если Арена построено во всех не-Сателлит городах",
+        "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем"
+      ],
+      "short_lines_en": [
+        "+1 Culture, +5 Happiness"
+      ],
+      "short_lines_ru": [
+        "+1 Культура, +5 Счастье"
+      ],
+      "stats": "+1 Culture, +5 Happiness"
+    },
+    "Hanging Gardens": {
+      "kind": "wonder",
+      "name": "Hanging Gardens",
+      "uniques": [
+        "Gain a free [Garden] [in this city]",
+        "Only available <after adopting [Tradition]>"
+      ],
+      "uniques_en": [
+        "Gain a free Garden in this city",
+        "Only available after adopting Tradition"
+      ],
+      "uniques_ru": [
+        "Появляется бесплатная постройка Сад в этом городе",
+        "Доступно только после принятия: Традиция"
+      ],
+      "short_lines_en": [
+        "+6 Food, +1 Culture"
+      ],
+      "short_lines_ru": [
+        "+6 Еда, +1 Культура"
+      ],
+      "quote": "'I think that if ever a mortal heard the word of God it would be in a garden at the cool of the day.' - F. Frankfort Moore",
+      "quote_ru": "'Если бы смертному когда-либо прозвучал голос Бога, это случилось бы в саду на закате дня.' - Ф. Франкфорт Мур",
+      "stats": "+6 Food, +1 Culture"
+    },
+    "Terracotta Army": {
+      "kind": "wonder",
+      "name": "Terracotta Army",
+      "uniques": [
+        "Free [Warrior] appears",
+        "Free [Archer] appears",
+        "Free [Horseman] appears",
+        "Free [Spearman] appears",
+        "Free [Scout] appears",
+        "Free [Chariot Archer] appears"
+      ],
+      "uniques_en": [
+        "Free Warrior appears",
+        "Free Archer appears",
+        "Free Horseman appears",
+        "Free Spearman appears",
+        "Free Scout appears",
+        "Free Chariot Archer appears"
+      ],
+      "uniques_ru": [
+        "Появляется бесплатный юнит: Воин",
+        "Появляется бесплатный юнит: Лучник",
+        "Появляется бесплатный юнит: Всадник",
+        "Появляется бесплатный юнит: Копейщик",
+        "Появляется бесплатный юнит: Разведчик",
+        "Появляется бесплатный юнит: Лучник на колеснице"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "quote": "'Regard your soldiers as your children, and they will follow you into the deepest valleys; look on them as your own beloved sons, and they will stand by you even unto death.' - Sun Tzu",
+      "quote_ru": "'Если будешь смотреть на солдат, как на детей, сможешь отправиться с ними в самое глубокое ущелье; если будешь смотреть на солдат, как на любимых сыновей, сможешь идти с ними хоть на смерть.' - Сунь Цзы",
+      "stats": "+1 Culture"
+    },
+    "Great Mosque of Djenne": {
+      "kind": "wonder",
+      "name": "Great Mosque of Djenne",
+      "uniques": [
+        "All newly-trained [Great Prophet] units [in this city] receive the [Devout] promotion",
+        "All newly-trained [Missionary] units [in this city] receive the [Devout] promotion",
+        "Only available <after adopting [Piety]>"
+      ],
+      "uniques_en": [
+        "All newly-trained Great Prophet units in this city receive the Devout promotion",
+        "All newly-trained Missionary units in this city receive the Devout promotion",
+        "Only available after adopting Piety"
+      ],
+      "uniques_ru": [
+        "Все Великий пророк юниты после прохождения обучения в этом городе получают повышение Набожный",
+        "Все Миссионер юниты после прохождения обучения в этом городе получают повышение Набожный",
+        "Доступно только после принятия: Набожность"
+      ],
+      "short_lines_en": [
+        "+3 Culture, +3 Happiness, +6 Faith"
+      ],
+      "short_lines_ru": [
+        "+3 Культура, +3 Счастье, +6 Вера"
+      ],
+      "quote": "'With the magnificence of eternity before us, let time, with all its fluctuations, dwindle into its own littleness.' - Thomas Chalmers",
+      "stats": "+3 Culture, +3 Happiness, +6 Faith"
+    },
+    "National College": {
+      "kind": "wonder",
+      "name": "National College",
+      "uniques": [
+        "Only available <if [Library] is constructed in all [non-[Puppeted]] cities>",
+        "Cost increases by [30] per owned city"
+      ],
+      "uniques_en": [
+        "Only available if Library is constructed in all non-Puppeted cities",
+        "Cost increases by 30 per owned city"
+      ],
+      "uniques_ru": [
+        "Доступно только если Библиотека построено во всех не-Сателлит городах",
+        "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем"
+      ],
+      "short_lines_en": [
+        "+3 Science, +1 Culture",
+        "+50% Science"
+      ],
+      "short_lines_ru": [
+        "+3 Наука, +1 Культура",
+        "+50% Наука"
+      ],
+      "stats": "+3 Science, +1 Culture"
+    },
+    "The Oracle": {
+      "kind": "wonder",
+      "name": "The Oracle",
+      "uniques": [
+        "Free Social Policy"
+      ],
+      "uniques_en": [
+        "Free Social Policy"
+      ],
+      "uniques_ru": [
+        "Бесплатный общественный институт"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "quote": "'The ancient Oracle said that I was the wisest of all the Greeks. It is because I alone, of all the Greeks, know that I know nothing' - Socrates",
+      "quote_ru": "'Он спросил, есть ли кто-нибудь на свете мудрее меня, и Пифия ему ответила, что никого нет мудрее... потому что я коли уж не знаю, то и не думаю, что знаю.' - Сократ",
+      "stats": "+1 Culture"
+    },
+    "King Solomon's Temple": {
+      "kind": "wonder",
+      "name": "King Solomon's Temple",
+      "uniques": [
+        "Shown while unbuilable",
+        "Unbuildable",
+        "Can be purchased for [300] [Gold] [in all cities]",
+        "Can be purchased for [390] [Faith] [in all cities]",
+        "Only available <if [Library] is constructed in all [non-[Puppeted]] cities>",
+        "Gain [75] [Faith] <(modified by game speed)> <upon expending a [Great Person] unit>",
+        "Gain [75] [Science] <(modified by game speed)> <upon expending a [Great Person] unit>"
+      ],
+      "uniques_en": [
+        "Shown while unbuilable",
+        "Unbuildable",
+        "Can be purchased for 300 Gold in all cities",
+        "Can be purchased for 390 Faith in all cities",
+        "Only available if Library is constructed in all non-Puppeted cities",
+        "Gain 75 Faith (modified by game speed) upon expending a Great Person unit",
+        "Gain 75 Science (modified by game speed) upon expending a Great Person unit"
+      ],
+      "uniques_ru": [
+        "Shown while unbuilable",
+        "Нельзя построить",
+        "Можно купить за 300 Золото во всех городах",
+        "Можно купить за 390 Вера во всех городах",
+        "Доступно только если Библиотека построено во всех не-Сателлит городах",
+        "Даёт 75 Вера (в зависимости от скорости игры) при израсходовании юнита Великий человек",
+        "Даёт 75 Наука (в зависимости от скорости игры) при израсходовании юнита Великий человек"
+      ],
+      "short_lines_en": [
+        "+3 Science, +1 Culture, +3 Faith",
+        "+50% Science"
+      ],
+      "short_lines_ru": [
+        "+3 Наука, +1 Культура, +3 Вера",
+        "+50% Наука"
+      ],
+      "uniqueTo": "Israel",
+      "stats": "+3 Science, +1 Culture, +3 Faith"
+    },
+    "National Epic": {
+      "kind": "wonder",
+      "name": "National Epic",
+      "uniques": [
+        "Only available <if [Monument] is constructed in all [non-[Puppeted]] cities>",
+        "[+25]% Great Person generation [in this city]",
+        "Cost increases by [30] per owned city",
+        "Comment [Has 1 Great Work of Writing Slot]"
+      ],
+      "uniques_en": [
+        "Only available if Monument is constructed in all non-Puppeted cities",
+        "+25% Great Person generation in this city",
+        "Cost increases by 30 per owned city",
+        "Comment Has 1 Great Work of Writing Slot"
+      ],
+      "uniques_ru": [
+        "Доступно только если Монумент построено во всех не-Сателлит городах",
+        "+25% к скорости появления Великих людей в этом городе",
+        "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
+        "Имеет 1 слот для Литературного Шедевра"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "stats": "+1 Culture"
+    },
+    "Parthenon": {
+      "kind": "wonder",
+      "name": "Parthenon",
+      "uniques": [
+        "Instantly provides [1] [Great Work of Writing]",
+        "Comment [Has 1 Great Work of Writing Slot]"
+      ],
+      "uniques_en": [
+        "Instantly provides 1 Great Work of Writing",
+        "Comment Has 1 Great Work of Writing Slot"
+      ],
+      "uniques_ru": [
+        "Мгновенно предоставляет 1 Литературный Шедевр",
+        "Имеет 1 слот для Литературного Шедевра"
+      ],
+      "short_lines_en": [
+        "+4 Culture"
+      ],
+      "short_lines_ru": [
+        "+4 Культура"
+      ],
+      "quote": "'Earth proudly wears the Parthenon as the best gem upon her zone.' - Ralph Waldo Emerson",
+      "stats": "+4 Culture"
+    },
+    "Writer Guild": {
+      "kind": "wonder",
+      "name": "Writer Guild"
+    },
+    "King Ezana's Stele": {
+      "kind": "wonder",
+      "name": "King Ezana's Stele",
+      "uniques": [
+        "Only available <if [Monument] is constructed in all [non-[Puppeted]] cities>",
+        "[+25]% Great Person generation [in this city]",
+        "[+1 Food, +1 Gold, +1 Production, +1 Faith] from every [Monument]",
+        "Cost increases by [30] per owned city",
+        "Comment [Has 1 Great Work of Writing Slot]"
+      ],
+      "uniques_en": [
+        "Only available if Monument is constructed in all non-Puppeted cities",
+        "+25% Great Person generation in this city",
+        "+1 Food, +1 Gold, +1 Production, +1 Faith from every Monument",
+        "Cost increases by 30 per owned city",
+        "Comment Has 1 Great Work of Writing Slot"
+      ],
+      "uniques_ru": [
+        "Доступно только если Монумент построено во всех не-Сателлит городах",
+        "+25% к скорости появления Великих людей в этом городе",
+        "+1 Еда, +1 Золото, +1 Производство, +1 Вера от каждого: Монумент",
+        "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
+        "Имеет 1 слот для Литературного Шедевра"
+      ],
+      "short_lines_en": [
+        "+4 Culture, +4 Faith"
+      ],
+      "short_lines_ru": [
+        "+4 Культура, +4 Вера"
+      ],
+      "uniqueTo": "Aksum",
+      "stats": "+4 Culture, +4 Faith"
+    },
+    "Petra": {
+      "kind": "wonder",
+      "name": "Petra",
+      "uniques": [
+        "Must be next to [Desert]",
+        "[+1 Food, +1 Production] from [Desert] tiles without [Flood plains] [in this city]",
+        "[+6 Culture] [in this city] <after discovering [Archaeology]>",
+        "Provides [1] [Trade Route]",
+        "Free [Caravan] appears"
+      ],
+      "uniques_en": [
+        "Must be next to Desert",
+        "+1 Food, +1 Production from Desert tiles without Flood plains in this city",
+        "+6 Culture in this city after discovering Archaeology",
+        "Provides 1 Trade Route",
+        "Free Caravan appears"
+      ],
+      "uniques_ru": [
+        "Должен быть рядом с клеткой Пустыня",
+        "+1 Еда, +1 Производство от клеток Пустыня, не имеющих Пойма в этом городе",
+        "+6 Культура в этом городе после исследования: Археология",
+        "Предоставляет 1 Торговый путь",
+        "Появляется бесплатный юнит: Караван"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "quote": "'...who drinks the water I shall give him, says the Lord, will have a spring inside him welling up for eternal life. Let them bring me to your holy mountain in the place where you dwell. Across the desert and through the mountain to the Canyon of the Crescent Moon...' - Indiana Jones",
+      "quote_ru": "'...а кто будет пить воду, которую Я дам ему, говорит Господь, будет иметь внутри себя источник воды, текущей в жизнь вечную. Да ведут они меня и приведут на святую гору Твою и в обители Твои. Через пустыню и через горы к каньону Полумесяца...' - Индиана Джонс",
+      "stats": "+1 Culture"
+    },
+    "Grand Canal of Venice": {
+      "kind": "wonder",
+      "name": "Grand Canal of Venice",
+      "uniques": [
+        "Cost increases by [30] per owned city",
+        "Provides [2] [Trade Route]",
+        "[+4 Gold] from [Land Trade Route (Gold)] tiles [in this city]",
+        "[+4 Gold] from [Sea Trade Route (Gold)] tiles [in this city]"
+      ],
+      "uniques_en": [
+        "Cost increases by 30 per owned city",
+        "Provides 2 Trade Route",
+        "+4 Gold from Land Trade Route (Gold) tiles in this city",
+        "+4 Gold from Sea Trade Route (Gold) tiles in this city"
+      ],
+      "uniques_ru": [
+        "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
+        "Предоставляет 2 Торговый путь",
+        "+4 Золото от клеток Сухопутный торговый путь (Золото) в этом городе",
+        "+4 Золото от клеток Морской торговый путь (Золото) в этом городе"
+      ],
+      "short_lines_en": [
+        "+4 Gold",
+        "+25% Gold"
+      ],
+      "short_lines_ru": [
+        "+4 Золото",
+        "+25% Золото"
+      ],
+      "uniqueTo": "Venice",
+      "stats": "+4 Gold"
+    },
+    "Great Wall": {
+      "kind": "wonder",
+      "name": "Great Wall",
+      "uniques": [
+        "Gain a free [Walls] [in this city]",
+        "Gain a free [Watch Tower] [in all cities]"
+      ],
+      "uniques_en": [
+        "Gain a free Walls in this city",
+        "Gain a free Watch Tower in all cities"
+      ],
+      "uniques_ru": [
+        "Появляется бесплатная постройка Стены в этом городе",
+        "Появляется бесплатная постройка Сторожевая Башня во всех городах"
+      ],
+      "short_lines_en": [
+        "+3 Culture"
+      ],
+      "short_lines_ru": [
+        "+3 Культура"
+      ],
+      "quote": "'The art of war teaches us to rely not on the likelihood of the enemy's not attacking, but rather on the fact that we have made our position unassailable.' - Sun Tzu",
+      "quote_ru": "'Правило ведения войны заключается в том, чтобы... не полагаться на то, что враг не нападет, а... на то, что я сделаю нападение на себя невозможным.' - Сунь Цзы",
+      "stats": "+3 Culture"
+    },
+    "Colossus": {
+      "kind": "wonder",
+      "name": "Colossus",
+      "uniques": [
+        "Must be next to [Coast]",
+        "[+2 Gold] from [Land Trade Route (Gold)] tiles [in this city]",
+        "[+2 Gold] from [Sea Trade Route (Gold)] tiles [in this city]",
+        "Free [Cargo Ship] appears",
+        "Provides [1] [Trade Route]"
+      ],
+      "uniques_en": [
+        "Must be next to Coast",
+        "+2 Gold from Land Trade Route (Gold) tiles in this city",
+        "+2 Gold from Sea Trade Route (Gold) tiles in this city",
+        "Free Cargo Ship appears",
+        "Provides 1 Trade Route"
+      ],
+      "uniques_ru": [
+        "Должен быть рядом с клеткой Побережье",
+        "+2 Золото от клеток Сухопутный торговый путь (Золото) в этом городе",
+        "+2 Золото от клеток Морской торговый путь (Золото) в этом городе",
+        "Появляется бесплатный юнит: Грузовое судно",
+        "Предоставляет 1 Торговый путь"
+      ],
+      "short_lines_en": [
+        "+5 Gold, +1 Culture"
+      ],
+      "short_lines_ru": [
+        "+5 Золото, +1 Культура"
+      ],
+      "quote": "'Why man, he doth bestride the narrow world like a colossus, and we petty men walk under his huge legs, and peep about to find ourselves dishonorable graves.' - William Shakespeare, Julius Caesar",
+      "quote_ru": "'По миру тесному шагает колосс, а мы, ничтожные людишки, у исполинских ног его снуем и для себя могил бесславных ищем.' - Уильям Шекспир, 'Юлий Цезарь'",
+      "stats": "+5 Gold, +1 Culture"
+    },
+    "Heroic Epic": {
+      "kind": "wonder",
+      "name": "Heroic Epic",
+      "uniques": [
+        "Only available <if [Barracks] is constructed in all [non-[Puppeted]] cities>",
+        "All newly-trained [non-air] units [in this city] receive the [Morale] promotion",
+        "Cost increases by [30] per owned city",
+        "Comment [Has 1 Great Work of Writing Slot]"
+      ],
+      "uniques_en": [
+        "Only available if Barracks is constructed in all non-Puppeted cities",
+        "All newly-trained non-air units in this city receive the Morale promotion",
+        "Cost increases by 30 per owned city",
+        "Comment Has 1 Great Work of Writing Slot"
+      ],
+      "uniques_ru": [
+        "Доступно только если Казармы построено во всех не-Сателлит городах",
+        "Все не воздушный юниты после прохождения обучения в этом городе получают повышение Мораль",
+        "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
+        "Имеет 1 слот для Литературного Шедевра"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "stats": "+1 Culture"
+    },
+    "Borobudur": {
+      "kind": "wonder",
+      "name": "Borobudur",
+      "uniques": [
+        "Gain a free [Garden] [in this city]",
+        "[3] free [Missionary] units appear",
+        "Can only be built <in [Holy] cities>",
+        "Only available <when religion is enabled>"
+      ],
+      "uniques_en": [
+        "Gain a free Garden in this city",
+        "3 free Missionary units appear",
+        "Can only be built in Holy cities",
+        "Only available when religion is enabled"
+      ],
+      "uniques_ru": [
+        "Появляется бесплатная постройка Сад в этом городе",
+        "Появляются 3 бесплатных юнитов: Миссионер",
+        "Можно построить только в Священный городах",
+        "Доступно только когда религия включена"
+      ],
+      "short_lines_en": [
+        "+5 Faith"
+      ],
+      "short_lines_ru": [
+        "+5 Вера"
+      ],
+      "quote": "'When you realize how perfect everything is, you will tilt your head back and laugh at the sky' - Gautama Buddha",
+      "stats": "+5 Faith"
+    },
+    "Grand Temple": {
+      "kind": "wonder",
+      "name": "Grand Temple",
+      "uniques": [
+        "Only available <if [Temple] is constructed in all [non-[Puppeted]] cities>",
+        "Cost increases by [30] per owned city",
+        "[+100]% Natural religion spread [in this city]",
+        "Only available <when religion is enabled>",
+        "Can only be built <in [Holy] cities>"
+      ],
+      "uniques_en": [
+        "Only available if Temple is constructed in all non-Puppeted cities",
+        "Cost increases by 30 per owned city",
+        "+100% Natural religion spread in this city",
+        "Only available when religion is enabled",
+        "Can only be built in Holy cities"
+      ],
+      "uniques_ru": [
+        "Доступно только если Храм построено во всех не-Сателлит городах",
+        "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
+        "+100% к естественному распространению религии в этом городе",
+        "Доступно только когда религия включена",
+        "Можно построить только в Священный городах"
+      ],
+      "short_lines_en": [
+        "+1 Culture, +8 Faith"
+      ],
+      "short_lines_ru": [
+        "+1 Культура, +8 Вера"
+      ],
+      "stats": "+1 Culture, +8 Faith"
+    },
+    "Hagia Sophia": {
+      "kind": "wonder",
+      "name": "Hagia Sophia",
+      "uniques": [
+        "Gain a free [Temple] [in this city]",
+        "Free [Great Prophet] appears",
+        "Only available <when religion is enabled>"
+      ],
+      "uniques_en": [
+        "Gain a free Temple in this city",
+        "Free Great Prophet appears",
+        "Only available when religion is enabled"
+      ],
+      "uniques_ru": [
+        "Появляется бесплатная постройка Храм в этом городе",
+        "Появляется бесплатный юнит: Великий пророк",
+        "Доступно только когда религия включена"
+      ],
+      "short_lines_en": [
+        "+3 Faith"
+      ],
+      "short_lines_ru": [
+        "+3 Вера"
+      ],
+      "quote": "'For it soars to a height to match the sky, and as if surging up from among the other buildings it stands on high and looks down upon the remainder of the city, adorning it, because it is a part of it, but glorying in its own beauty' - Procopius, De Aedificis",
+      "quote_ru": "'В высоту он поднимается как будто до неба и, как корабль на высоких волнах моря, он выделяется среди других строений, как бы склоняясь над остальным городом, украшая его как составная его часть, и сам украшается им.' - Прокопий, \"О постройках\"",
+      "stats": "+3 Faith"
+    },
+    "Grand Cathedral of Vilnius": {
+      "kind": "wonder",
+      "name": "Grand Cathedral of Vilnius",
+      "uniques": [
+        "Only available <if [Temple] is constructed in all [non-[Puppeted]] cities>",
+        "Cost increases by [30] per owned city",
+        "Only available <when religion is enabled>"
+      ],
+      "uniques_en": [
+        "Only available if Temple is constructed in all non-Puppeted cities",
+        "Cost increases by 30 per owned city",
+        "Only available when religion is enabled"
+      ],
+      "uniques_ru": [
+        "Доступно только если Храм построено во всех не-Сателлит городах",
+        "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
+        "Доступно только когда религия включена"
+      ],
+      "short_lines_en": [
+        "+1 Culture, +8 Faith"
+      ],
+      "short_lines_ru": [
+        "+1 Культура, +8 Вера"
+      ],
+      "uniqueTo": "Lithuania",
+      "stats": "+1 Culture, +8 Faith"
+    },
+    "Saint Peter's Basilica": {
+      "kind": "wonder",
+      "name": "Saint Peter's Basilica",
+      "uniques": [
+        "Only available <if [Temple] is constructed in all [non-[Puppeted]] cities>",
+        "Cost increases by [30] per owned city",
+        "[+100]% Natural religion spread [in this city]",
+        "Only available <when religion is enabled>",
+        "Can only be built <in [Holy] cities>",
+        "Gain a free [Cathedral] [in this city]",
+        "Free [Great Prophet] appears"
+      ],
+      "uniques_en": [
+        "Only available if Temple is constructed in all non-Puppeted cities",
+        "Cost increases by 30 per owned city",
+        "+100% Natural religion spread in this city",
+        "Only available when religion is enabled",
+        "Can only be built in Holy cities",
+        "Gain a free Cathedral in this city",
+        "Free Great Prophet appears"
+      ],
+      "uniques_ru": [
+        "Доступно только если Храм построено во всех не-Сателлит городах",
+        "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
+        "+100% к естественному распространению религии в этом городе",
+        "Доступно только когда религия включена",
+        "Можно построить только в Священный городах",
+        "Появляется бесплатная постройка Собор в этом городе",
+        "Появляется бесплатный юнит: Великий пророк"
+      ],
+      "short_lines_en": [
+        "+1 Culture, +8 Faith"
+      ],
+      "short_lines_ru": [
+        "+1 Культура, +8 Вера"
+      ],
+      "uniqueTo": "Papal State",
+      "stats": "+1 Culture, +8 Faith"
+    },
+    "Chichen Itza": {
+      "kind": "wonder",
+      "name": "Chichen Itza",
+      "uniques": [
+        "[+50]% Golden Age length"
+      ],
+      "uniques_en": [
+        "+50% Golden Age length"
+      ],
+      "uniques_ru": [
+        "+50% к продолжительности золотого века"
+      ],
+      "short_lines_en": [
+        "+1 Culture, +4 Happiness"
+      ],
+      "short_lines_ru": [
+        "+1 Культура, +4 Счастье"
+      ],
+      "quote": "'The katun is established at Chichen Itza. The settlement of the Itza shall take place there. The quetzal shall come, the green bird shall come. Ah Kantenal shall come. It is the word of God. The Itza shall come.' - The Books of Chilam Balam",
+      "quote_ru": "'Катун установлен в Чичен-Итце. Здесь будет поселение Итца. Кетцаль придет, зеленая птица придет. Ах Кантеналь придет. Вот слово Бога. Народ Итца придет.' - из книг Чилам Балам",
+      "stats": "+1 Culture, +4 Happiness"
+    },
+    "Huey Teocalli": {
+      "kind": "wonder",
+      "name": "Huey Teocalli",
+      "uniques": [
+        "Must be next to [Lakes]",
+        "[+2 Culture, +2 Food] from [Lakes] tiles [in this city]"
+      ],
+      "uniques_en": [
+        "Must be next to Lakes",
+        "+2 Culture, +2 Food from Lakes tiles in this city"
+      ],
+      "uniques_ru": [
+        "Должен быть рядом с клеткой Озёра",
+        "+2 Культура, +2 Еда от клеток Озёра в этом городе"
+      ],
+      "short_lines_en": [
+        "+4 Faith"
+      ],
+      "short_lines_ru": [
+        "+4 Вера"
+      ],
+      "stats": "+4 Faith"
+    },
+    "Artist Guild": {
+      "kind": "wonder",
+      "name": "Artist Guild"
+    },
+    "East India Company": {
+      "kind": "wonder",
+      "name": "East India Company",
+      "uniques": [
+        "Only available <if [Market] is constructed in all [non-[Puppeted]] cities>",
+        "Cost increases by [30] per owned city",
+        "Provides [1] [Trade Route]",
+        "[+4 Gold] from [Land Trade Route (Gold)] tiles [in this city]",
+        "[+4 Gold] from [Sea Trade Route (Gold)] tiles [in this city]"
+      ],
+      "uniques_en": [
+        "Only available if Market is constructed in all non-Puppeted cities",
+        "Cost increases by 30 per owned city",
+        "Provides 1 Trade Route",
+        "+4 Gold from Land Trade Route (Gold) tiles in this city",
+        "+4 Gold from Sea Trade Route (Gold) tiles in this city"
+      ],
+      "uniques_ru": [
+        "Доступно только если Рынок построено во всех не-Сателлит городах",
+        "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
+        "Предоставляет 1 Торговый путь",
+        "+4 Золото от клеток Сухопутный торговый путь (Золото) в этом городе",
+        "+4 Золото от клеток Морской торговый путь (Золото) в этом городе"
+      ],
+      "short_lines_en": [
+        "+4 Gold",
+        "+10% Gold"
+      ],
+      "short_lines_ru": [
+        "+4 Золото",
+        "+10% Золото"
+      ],
+      "stats": "+4 Gold"
+    },
+    "Machu Picchu": {
+      "kind": "wonder",
+      "name": "Machu Picchu",
+      "uniques": [
+        "[+25]% [Gold] from Trade Routes",
+        "Must have an owned [Mountain] within [2] tiles"
+      ],
+      "uniques_en": [
+        "+25% Gold from Trade Routes",
+        "Must have an owned Mountain within 2 tiles"
+      ],
+      "uniques_ru": [
+        "+25% Золото от торговых путей",
+        "Городу должна принадлежать клетка Гора в радиусе 2 клеток"
+      ],
+      "short_lines_en": [
+        "+5 Gold, +1 Culture, +2 Faith"
+      ],
+      "short_lines_ru": [
+        "+5 Золото, +1 Культура, +2 Вера"
+      ],
+      "quote": "'Few romances can ever surpass that of the granite citadel on top of the beetling precipices of Machu Picchu, the crown of Inca Land.' - Hiram Bingham",
+      "quote_ru": "'Даже самый захватывающий вид не вызовет такого движения сердца, как гранитная крепость на крутых уступах Мачу Пикчу - короны земли инков.' - Хирам Бингам",
+      "stats": "+5 Gold, +1 Culture, +2 Faith"
+    },
+    "Althing": {
+      "kind": "wonder",
+      "name": "Althing",
+      "uniques": [
+        "Must be next to [Tundra]",
+        "[+1 Culture, +1 Production] from [Tundra] tiles [in this city]"
+      ],
+      "uniques_en": [
+        "Must be next to Tundra",
+        "+1 Culture, +1 Production from Tundra tiles in this city"
+      ],
+      "uniques_ru": [
+        "Должен быть рядом с клеткой Тундра",
+        "+1 Культура, +1 Производство от клеток Тундра в этом городе"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "stats": "+1 Culture"
+    },
+    "Falu Gruva": {
+      "kind": "wonder",
+      "name": "Falu Gruva",
+      "uniques": [
+        "Only available <if [Workshop] is constructed in all [non-[Puppeted]] cities>",
+        "Cost increases by [30] per owned city",
+        "[+1 Production] from [Hill] tiles [in this city]",
+        "[+6 Culture] <after discovering [Flight]>"
+      ],
+      "uniques_en": [
+        "Only available if Workshop is constructed in all non-Puppeted cities",
+        "Cost increases by 30 per owned city",
+        "+1 Production from Hill tiles in this city",
+        "+6 Culture after discovering Flight"
+      ],
+      "uniques_ru": [
+        "Доступно только если Мастерская построено во всех не-Сателлит городах",
+        "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
+        "+1 Производство от клеток Холм в этом городе",
+        "+6 Культура после исследования: Авиация"
+      ],
+      "short_lines_en": [
+        "+8 Production, +1 Culture"
+      ],
+      "short_lines_ru": [
+        "+8 Производство, +1 Культура"
+      ],
+      "uniqueTo": "Sweden",
+      "stats": "+8 Production, +1 Culture"
+    },
+    "Tower of Belem": {
+      "kind": "wonder",
+      "name": "Tower of Belem",
+      "uniques": [
+        "Instantly gain [4] [Golden Age points] <upon turn end>",
+        "[+1 Production, +1 Gold] [in all coastal cities]",
+        "Only available <after adopting [Exploration]>"
+      ],
+      "uniques_en": [
+        "Instantly gain 4 Golden Age points upon turn end",
+        "+1 Production, +1 Gold in all coastal cities",
+        "Only available after adopting Exploration"
+      ],
+      "uniques_ru": [
+        "Мгновенно даëт 4 Golden Age points в конце хода",
+        "+1 Производство, +1 Золото во всех прибрежных городах",
+        "Доступно только после принятия: Исследование"
+      ],
+      "short_lines_en": [
+        "+2 Culture, +2 Happiness"
+      ],
+      "short_lines_ru": [
+        "+2 Культура, +2 Счастье"
+      ],
+      "stats": "+2 Culture, +2 Happiness"
+    },
+    "Angkor Wat": {
+      "kind": "wonder",
+      "name": "Angkor Wat",
+      "uniques": [
+        "Gain a free [University] [in this city]"
+      ],
+      "uniques_en": [
+        "Gain a free University in this city"
+      ],
+      "uniques_ru": [
+        "Появляется бесплатная постройка Университет в этом городе"
+      ],
+      "short_lines_en": [
+        "+5 Science, +5 Culture"
+      ],
+      "short_lines_ru": [
+        "+5 Наука, +5 Культура"
+      ],
+      "quote": "'The temple is like no other building in the world. It has towers and decoration and all the refinements which the human genius can conceive of.' - Antonio da Magdalena",
+      "quote_ru": "'Храм... выдающееся сооружение. Оно имеет башни, рельефы и украшения, какие только может вообразить человеческий гений.' - Антонио де Магдалена",
+      "stats": "+5 Science, +5 Culture"
+    },
+    "Oxford University": {
+      "kind": "wonder",
+      "name": "Oxford University",
+      "uniques": [
+        "Only available <if [University] is constructed in all [non-[Puppeted]] cities>",
+        "Free Technology",
+        "Cost increases by [30] per owned city",
+        "Comment [Has [2] Great Work of Writing Slots]"
+      ],
+      "uniques_en": [
+        "Only available if University is constructed in all non-Puppeted cities",
+        "Free Technology",
+        "Cost increases by 30 per owned city",
+        "Comment Has 2 Great Work of Writing Slots"
+      ],
+      "uniques_ru": [
+        "Доступно только если Университет построено во всех не-Сателлит городах",
+        "Бесплатная технология",
+        "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
+        "ИМеет 2 Слота для Литературного Шедевра"
+      ],
+      "short_lines_en": [
+        "+3 Science, +1 Culture"
+      ],
+      "short_lines_ru": [
+        "+3 Наука, +1 Культура"
+      ],
+      "stats": "+3 Science, +1 Culture"
+    },
+    "Alhambra": {
+      "kind": "wonder",
+      "name": "Alhambra",
+      "uniques": [
+        "All newly-trained [relevant] units [in this city] receive the [Drill I] promotion",
+        "Gain a free [Castle] [in this city]"
+      ],
+      "uniques_en": [
+        "All newly-trained relevant units in this city receive the Drill I promotion",
+        "Gain a free Castle in this city"
+      ],
+      "uniques_ru": [
+        "Все релевантный юниты после прохождения обучения в этом городе получают повышение Муштра I",
+        "Появляется бесплатная постройка Замок в этом городе"
+      ],
+      "short_lines_en": [
+        "+1 Culture",
+        "+20% Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура",
+        "+20% Культура"
+      ],
+      "quote": "'Justice is an unassailable fortress, built on the brow of a mountain which cannot be overthrown by the violence of torrents, nor demolished by the force of armies.' - Joseph Addison",
+      "quote_ru": "'Справедливость - это неприступная крепость, построенная на гребне горы, которую не может разрушить ярость стихий или уничтожить армия солдат.' - Джозеф Эддисон",
+      "stats": "+1 Culture"
+    },
+    "Mysore Palace": {
+      "kind": "wonder",
+      "name": "Mysore Palace",
+      "uniques": [
+        "Comment [Has [3] Great Work of Art Slots]",
+        "Only available <if [Walls] is constructed in all [non-[Puppeted]] cities>",
+        "Cost increases by [30] per owned city",
+        "Empire enters golden age"
+      ],
+      "uniques_en": [
+        "Comment Has 3 Great Work of Art Slots",
+        "Only available if Walls is constructed in all non-Puppeted cities",
+        "Cost increases by 30 per owned city",
+        "Empire enters golden age"
+      ],
+      "uniques_ru": [
+        "Имеет 3 Слота для Художественного Шедевра",
+        "Доступно только если Стены построено во всех не-Сателлит городах",
+        "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
+        "Империя вступает в золотой век"
+      ],
+      "short_lines_en": [
+        "+3 Production, +3 Gold, +3 Science, +5 Culture",
+        "+50% Culture"
+      ],
+      "short_lines_ru": [
+        "+3 Производство, +3 Золото, +3 Наука, +5 Культура",
+        "+50% Культура"
+      ],
+      "uniqueTo": "Mysore",
+      "stats": "+3 Production, +3 Gold, +3 Science, +5 Culture"
+    },
+    "Ironworks": {
+      "kind": "wonder",
+      "name": "Ironworks",
+      "uniques": [
+        "Only available <if [Workshop] is constructed in all [non-[Puppeted]] cities>",
+        "Cost increases by [30] per owned city"
+      ],
+      "uniques_en": [
+        "Only available if Workshop is constructed in all non-Puppeted cities",
+        "Cost increases by 30 per owned city"
+      ],
+      "uniques_ru": [
+        "Доступно только если Мастерская построено во всех не-Сателлит городах",
+        "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем"
+      ],
+      "short_lines_en": [
+        "+8 Production, +1 Culture"
+      ],
+      "short_lines_ru": [
+        "+8 Производство, +1 Культура"
+      ],
+      "stats": "+8 Production, +1 Culture"
+    },
+    "Notre Dame": {
+      "kind": "wonder",
+      "name": "Notre Dame",
+      "short_lines_en": [
+        "+10 Happiness, +4 Faith"
+      ],
+      "short_lines_ru": [
+        "+10 Счастье, +4 Вера"
+      ],
+      "quote": "'Architecture has recorded the great ideas of the human race. Not only every religious symbol, but every human thought has its page in that vast book.' - Victor Hugo",
+      "quote_ru": "'Зодчество было главной летописью человечества... каждая общедоступная идея, как и каждый религиозный закон, имела свой памятник' - Виктор Гюго",
+      "stats": "+10 Happiness, +4 Faith"
+    },
+    "Musician Guild": {
+      "kind": "wonder",
+      "name": "Musician Guild"
+    },
+    "Sistine Chapel": {
+      "kind": "wonder",
+      "name": "Sistine Chapel",
+      "uniques": [
+        "[+25]% [Culture] [in all cities]",
+        "Comment [Has [2] Great Work of Art Slots]"
+      ],
+      "uniques_en": [
+        "+25% Culture in all cities",
+        "Comment Has 2 Great Work of Art Slots"
+      ],
+      "uniques_ru": [
+        "+25% Культура во всех городах",
+        "Имеет 2 Слота для Художественного Шедевра"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "quote": "'I live and love in God's peculiar light.' - Michelangelo Buonarroti",
+      "quote_ru": "'Я живу и люблю в особом свете Господа.' - Микеланджело Буонарроти",
+      "stats": "+1 Culture"
+    },
+    "Forbidden Palace": {
+      "kind": "wonder",
+      "name": "Forbidden Palace",
+      "uniques": [
+        "[-10]% Unhappiness from [Population] [in all cities]",
+        "Only available <after adopting [Patronage]>"
+      ],
+      "uniques_en": [
+        "-10% Unhappiness from Population in all cities",
+        "Only available after adopting Patronage"
+      ],
+      "uniques_ru": [
+        "-10% к недовольству от Население во всех городах",
+        "Доступно только после принятия: Меценатство"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "quote": "'Most of us can, as we choose, make of this world either a palace or a prison' - John Lubbock",
+      "quote_ru": "'Фактически любой из нас может по собственному желанию превратить мир во дворец или в темницу' - Джон Лаббок",
+      "stats": "+1 Culture"
+    },
+    "Globe Theatre": {
+      "kind": "wonder",
+      "name": "Globe Theatre",
+      "uniques": [
+        "Free [Great Writer] appears",
+        "Comment [Has [2] Great Work of Writing Slots]"
+      ],
+      "uniques_en": [
+        "Free Great Writer appears",
+        "Comment Has 2 Great Work of Writing Slots"
+      ],
+      "uniques_ru": [
+        "Появляется бесплатный юнит: Великий Писатель",
+        "ИМеет 2 Слота для Литературного Шедевра"
+      ],
+      "short_lines_en": [
+        "+2 Culture"
+      ],
+      "short_lines_ru": [
+        "+2 Культура"
+      ],
+      "quote": "'Totus mundus agit histrionem.' - Inscription above main entrance to the Globe Theatre",
+      "stats": "+2 Culture"
+    },
+    "Leaning Tower of Pisa": {
+      "kind": "wonder",
+      "name": "Leaning Tower of Pisa",
+      "uniques": [
+        "[+20]% Great Person generation [in all cities]"
+      ],
+      "uniques_en": [
+        "+20% Great Person generation in all cities"
+      ],
+      "uniques_ru": [
+        "+20% к скорости появления Великих людей во всех городах"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "quote": "'Don't clap too hard - it's a very old building.' - John Osbourne",
+      "quote_ru": "'Не хлопайте так громко - здание старое, может развалиться.' - Джон Осборн",
+      "stats": "+1 Culture"
+    },
+    "Himeji Castle": {
+      "kind": "wonder",
+      "name": "Himeji Castle",
+      "uniques": [
+        "[+15]% Strength <for [All] units> <when fighting in [Friendly Land] tiles>",
+        "Gain a free [Castle] [in this city]"
+      ],
+      "uniques_en": [
+        "+15% Strength for All units when fighting in Friendly Land tiles",
+        "Gain a free Castle in this city"
+      ],
+      "uniques_ru": [
+        "+15% к боевой мощи для юнитов: Все когда сражается на клетках Дружественная территория",
+        "Появляется бесплатная постройка Замок в этом городе"
+      ],
+      "short_lines_en": [
+        "+3 Culture"
+      ],
+      "short_lines_ru": [
+        "+3 Культура"
+      ],
+      "quote": "'Bushido is realized in the presence of death. This means choosing death whenever there is a choice between life and death. There is no other reasoning.' - Yamamoto Tsunetomo",
+      "quote_ru": "'Бусидо - путь воина - означает смерть. Когда для выбора имеются два пути, выбирай тот, который ведет к смерти. Не рассуждай! Направь мысль на путь, который ты предпочел, и иди.' - Ямамото Цунэтомо",
+      "stats": "+3 Culture"
+    },
+    "Hermitage": {
+      "kind": "wonder",
+      "name": "Hermitage",
+      "uniques": [
+        "Only available <if [Opera House] is constructed in all [non-[Puppeted]] cities>",
+        "Cost increases by [30] per owned city",
+        "Comment [Has [3] Great Work of Art Slots]"
+      ],
+      "uniques_en": [
+        "Only available if Opera House is constructed in all non-Puppeted cities",
+        "Cost increases by 30 per owned city",
+        "Comment Has 3 Great Work of Art Slots"
+      ],
+      "uniques_ru": [
+        "Доступно только если Оперный театр построено во всех не-Сателлит городах",
+        "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
+        "Имеет 3 Слота для Художественного Шедевра"
+      ],
+      "short_lines_en": [
+        "+5 Culture",
+        "+50% Culture"
+      ],
+      "short_lines_ru": [
+        "+5 Культура",
+        "+50% Культура"
+      ],
+      "stats": "+5 Culture"
+    },
+    "Porcelain Tower": {
+      "kind": "wonder",
+      "name": "Porcelain Tower",
+      "uniques": [
+        "[+3 Science, +3 Culture] from [Luxury resource] tiles [in this city]",
+        "Only available <after adopting [Rationalism]>"
+      ],
+      "uniques_en": [
+        "+3 Science, +3 Culture from Luxury resource tiles in this city",
+        "Only available after adopting Rationalism"
+      ],
+      "uniques_ru": [
+        "+3 Наука, +3 Культура от клеток Редкий ресурс в этом городе",
+        "Доступно только после принятия: Рационализм"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "quote": "'Things always seem fairer when we look back at them, and it is out of that inaccessible tower' - James Russell Lowell",
+      "quote_ru": "'Многое начинает казаться лучше, когда остается в прошлом - и из этой неприступной башни Прошлого нас зовет и манит рукою Тоска.' - Джеймс Расселл Лоуэлл",
+      "stats": "+1 Culture"
+    },
+    "Taj Mahal": {
+      "kind": "wonder",
+      "name": "Taj Mahal",
+      "uniques": [
+        "Empire enters golden age"
+      ],
+      "uniques_en": [
+        "Empire enters golden age"
+      ],
+      "uniques_ru": [
+        "Империя вступает в золотой век"
+      ],
+      "short_lines_en": [
+        "+1 Culture, +4 Happiness"
+      ],
+      "short_lines_ru": [
+        "+1 Культура, +4 Счастье"
+      ],
+      "quote": "'The Taj Mahal rises above the banks of the river like a solitary tear suspended on the cheek of time.' - Rabindranath Tagore",
+      "quote_ru": "'Пусть великолепие алмаза, рубина исчезнет, как магическое мерцание от радуги, только пусть одна слеза - Тадж-Махал - ярко сияет на щеке времени.' - Рабиндарат Тагор",
+      "stats": "+1 Culture, +4 Happiness"
+    },
+    "Uffizi": {
+      "kind": "wonder",
+      "name": "Uffizi",
+      "uniques": [
+        "Free [Great Artist] appears",
+        "Only available <after adopting [Aesthetics]>",
+        "Comment [Has [3] Great Work of Art Slots]"
+      ],
+      "uniques_en": [
+        "Free Great Artist appears",
+        "Only available after adopting Aesthetics",
+        "Comment Has 3 Great Work of Art Slots"
+      ],
+      "uniques_ru": [
+        "Появляется бесплатный юнит: Великий художник",
+        "Доступно только после принятия: Эстетика",
+        "Имеет 3 Слота для Художественного Шедевра"
+      ],
+      "short_lines_en": [
+        "+2 Culture"
+      ],
+      "short_lines_ru": [
+        "+2 Культура"
+      ],
+      "quote": "'The painter is not simply someone who looks and who sees. Above all, the artist is someone who exposes a personal vision by rendering it visible.' - Marcel Paquet",
+      "stats": "+2 Culture"
+    },
+    "Red Fort": {
+      "kind": "wonder",
+      "name": "Red Fort",
+      "uniques": [
+        "[+25]% City Strength from defensive buildings"
+      ],
+      "uniques_en": [
+        "+25% City Strength from defensive buildings"
+      ],
+      "uniques_ru": [
+        "+25% к мощи города от защитных сооружений"
+      ],
+      "short_lines_en": [
+        "+8 Culture, +4 Happiness",
+        "City strength +12"
+      ],
+      "short_lines_ru": [
+        "+8 Культура, +4 Счастье",
+        "Мощь города +12"
+      ],
+      "quote": "'When we build, let us think that we build forever.' - John Ruskin",
+      "stats": "+8 Culture, +4 Happiness"
+    },
+    "The Louvre": {
+      "kind": "wonder",
+      "name": "The Louvre",
+      "uniques": [
+        "Instantly provides [2] [Great Work of Art]",
+        "Comment [Has [4] Great Work of Art Slots]"
+      ],
+      "uniques_en": [
+        "Instantly provides 2 Great Work of Art",
+        "Comment Has 4 Great Work of Art Slots"
+      ],
+      "uniques_ru": [
+        "Мгновенно предоставляет 2 Художественный Шедевр",
+        "Имеет 4 Слота для Художественного Шедевра"
+      ],
+      "short_lines_en": [
+        "+2 Culture"
+      ],
+      "short_lines_ru": [
+        "+2 Культура"
+      ],
+      "quote": "'Every genuine work of art has as much reason for being as the earth and the sun' - Ralph Waldo Emerson",
+      "quote_ru": "'У подлинного произведения искусства столько же прав на существование, сколько у солнца и земли.' - Ральф Уолдо Эмерсон",
+      "stats": "+2 Culture"
+    },
+    "Big Ben": {
+      "kind": "wonder",
+      "name": "Big Ben",
+      "uniques": [
+        "[Gold] cost of purchasing items in cities [-12]%",
+        "Only available <after adopting [Commerce]>"
+      ],
+      "uniques_en": [
+        "Gold cost of purchasing items in cities -12%",
+        "Only available after adopting Commerce"
+      ],
+      "uniques_ru": [
+        "-12% к стоимости покупок в городах за Золото",
+        "Доступно только после принятия: Коммерция"
+      ],
+      "short_lines_en": [
+        "+4 Gold, +1 Culture"
+      ],
+      "short_lines_ru": [
+        "+4 Золото, +1 Культура"
+      ],
+      "quote": "'To achieve great things, two things are needed: a plan, and not quite enough time.' - Leonard Bernstein",
+      "quote_ru": "'Для великих свершений потребны две вещи: план действий и недостаток времени.' - Леонард Бернстайн",
+      "stats": "+4 Gold, +1 Culture"
+    },
+    "Neuschwanstein": {
+      "kind": "wonder",
+      "name": "Neuschwanstein",
+      "uniques": [
+        "[+1 Happiness, +2 Culture, +3 Gold] from every [Castle]",
+        "Must have an owned [Mountain] within [2] tiles"
+      ],
+      "uniques_en": [
+        "+1 Happiness, +2 Culture, +3 Gold from every Castle",
+        "Must have an owned Mountain within 2 tiles"
+      ],
+      "uniques_ru": [
+        "+1 Счастье, +2 Культура, +3 Золото от каждого: Замок",
+        "Городу должна принадлежать клетка Гора в радиусе 2 клеток"
+      ],
+      "short_lines_en": [
+        "+6 Gold, +4 Culture, +2 Happiness"
+      ],
+      "short_lines_ru": [
+        "+6 Золото, +4 Культура, +2 Счастье"
+      ],
+      "quote": "'...the location is one of the most beautiful to be found, holy and unapproachable, a worthy temple for the divine friend who has brought salvation and true blessing to the world.' - King Ludwig II of Bavaria",
+      "stats": "+6 Gold, +4 Culture, +2 Happiness"
+    },
+    "Brandenburg Gate": {
+      "kind": "wonder",
+      "name": "Brandenburg Gate",
+      "uniques": [
+        "Free [Great General] appears",
+        "New [Military] units start with [15] XP [in this city]"
+      ],
+      "uniques_en": [
+        "Free Great General appears",
+        "New Military units start with 15 XP in this city"
+      ],
+      "uniques_ru": [
+        "Появляется бесплатный юнит: Великий полководец",
+        "Новый Военный юниты начинают с 15 ОО в этом городе"
+      ],
+      "short_lines_en": [
+        "+3 Culture"
+      ],
+      "short_lines_ru": [
+        "+3 Культура"
+      ],
+      "quote": "'Pale Death beats equally at the poor man's gate and at the palaces of kings.' - Horace",
+      "quote_ru": "'Что в лачуги нищих, что во дворцы царей бледная Смерть ломится одной и той же ногой.' - Гораций",
+      "stats": "+3 Culture"
+    },
+    "Broadway": {
+      "kind": "wonder",
+      "name": "Broadway",
+      "uniques": [
+        "Free [Great Musician] appears",
+        "Comment [Has [3] Great Work of Music Slots]"
+      ],
+      "uniques_en": [
+        "Free Great Musician appears",
+        "Comment Has 3 Great Work of Music Slots"
+      ],
+      "uniques_ru": [
+        "Появляется бесплатный юнит: Великий Музыкант",
+        "Имеет 3 Слота для Музыкального Шедевра"
+      ],
+      "short_lines_en": [
+        "+2 Culture"
+      ],
+      "short_lines_ru": [
+        "+2 Культура"
+      ],
+      "quote": "'Broadway is a main artery of New York cultural life - the hardened artery.' - Walter Winchell",
+      "stats": "+2 Culture"
+    },
+    "Eiffel Tower": {
+      "kind": "wonder",
+      "name": "Eiffel Tower",
+      "uniques": [
+        "Gain a free [Broadcast Tower] [in this city]"
+      ],
+      "uniques_en": [
+        "Gain a free Broadcast Tower in this city"
+      ],
+      "uniques_ru": [
+        "Появляется бесплатная постройка Радиовышка в этом городе"
+      ],
+      "short_lines_en": [
+        "+1 Culture, +5 Happiness"
+      ],
+      "short_lines_ru": [
+        "+1 Культура, +5 Счастье"
+      ],
+      "quote": "'We live only to discover beauty, all else is a form of waiting' - Kahlil Gibran",
+      "quote_ru": "'Мы живем лишь для того, чтобы познавать красоту. Все прочее – ожидание.' - Халиль Джебран",
+      "stats": "+1 Culture, +5 Happiness"
+    },
+    "National Intelligence Agency": {
+      "kind": "wonder",
+      "name": "National Intelligence Agency",
+      "uniques": [
+        "Only available <when espionage is enabled>",
+        "Gain an extra spy",
+        "Promotes all spies [1] time(s)",
+        "[-15]% enemy spy effectiveness [in this city]",
+        "Only available <if [Constabulary] is constructed in all [non-[Puppeted]] cities>",
+        "Cost increases by [30] per owned city"
+      ],
+      "uniques_en": [
+        "Only available when espionage is enabled",
+        "Gain an extra spy",
+        "Promotes all spies 1 time(s)",
+        "-15% enemy spy effectiveness in this city",
+        "Only available if Constabulary is constructed in all non-Puppeted cities",
+        "Cost increases by 30 per owned city"
+      ],
+      "uniques_ru": [
+        "Доступно только когда шпионаж включен",
+        "Получите дополнительного шпиона",
+        "Повышает всех шпионов 1 раз(а)",
+        "-15% эффективности вражеского шпиона в этом городе",
+        "Доступно только если Жандармерия построено во всех не-Сателлит городах",
+        "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "stats": "+1 Culture"
+    },
+    "Statue of Liberty": {
+      "kind": "wonder",
+      "name": "Statue of Liberty",
+      "uniques": [
+        "[+6] population [in this city]",
+        "Free Social Policy",
+        "Only available <after adopting [Freedom]>"
+      ],
+      "uniques_en": [
+        "+6 population in this city",
+        "Free Social Policy",
+        "Only available after adopting Freedom"
+      ],
+      "uniques_ru": [
+        "+6 к населению в этом городе",
+        "Бесплатный общественный институт",
+        "Доступно только после принятия: Свобода"
+      ],
+      "short_lines_en": [
+        "+1 Culture, +6 Happiness"
+      ],
+      "short_lines_ru": [
+        "+1 Культура, +6 Счастье"
+      ],
+      "quote": "'Give me your tired, your poor, your huddled masses yearning to breathe free, the wretched refuse of your teeming shore. Send these, the homeless, tempest-tossed to me, I lift my lamp beside the golden door!' - Emma Lazarus",
+      "quote_ru": "'А мне отдайте ваших усталых, ваших бедных... а мне отдайте из глубин бездонных своих изгоев, люд забитый свой, пошлите мне отверженных, бездомных, я им свечу у двери золотой...' - Эмма Лазарус",
+      "stats": "+1 Culture, +6 Happiness"
+    },
+    "Prora": {
+      "kind": "wonder",
+      "name": "Prora",
+      "uniques": [
+        "Free Social Policy",
+        "Only available <after adopting [Autocracy]>",
+        "[+1 Happiness] per [2] social policies adopted"
+      ],
+      "uniques_en": [
+        "Free Social Policy",
+        "Only available after adopting Autocracy",
+        "+1 Happiness per 2 social policies adopted"
+      ],
+      "uniques_ru": [
+        "Бесплатный общественный институт",
+        "Доступно только после принятия: Автократия",
+        "+1 Счастье за 2 принятых общественных институтов"
+      ],
+      "short_lines_en": [
+        "+1 Happiness"
+      ],
+      "short_lines_ru": [
+        "+1 Счастье"
+      ],
+      "quote": "'This loss (of freedom) means the fading from human life of values infinitely precious to it. There only remain ironbound conditions of employment and trivial amusements for leisure.' - A.N. Whitehead",
+      "stats": "+1 Happiness"
+    },
+    "Kremlin": {
+      "kind": "wonder",
+      "name": "Kremlin",
+      "uniques": [
+        "[+50]% Production when constructing [Armored] units [in all cities]",
+        "Free Social Policy",
+        "Only available <after adopting [Order]>"
+      ],
+      "uniques_en": [
+        "+50% Production when constructing Armored units in all cities",
+        "Free Social Policy",
+        "Only available after adopting Order"
+      ],
+      "uniques_ru": [
+        "+50% к производству при создании юнитов: Бронированный юнит во всех городах",
+        "Бесплатный общественный институт",
+        "Доступно только после принятия: Порядок"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "quote": "'The Law is a fortress on a hill that armies cannot take or floods wash away.' - The Prophet Muhammed",
+      "stats": "+1 Culture"
+    },
+    "Panama Canal": {
+      "kind": "wonder",
+      "name": "Panama Canal",
+      "uniques": [
+        "Must be next to [Coast]",
+        "Free [Great Merchant] appears",
+        "[+4 Gold] from [Sea Trade Route (Gold)] tiles [in this city]"
+      ],
+      "uniques_en": [
+        "Must be next to Coast",
+        "Free Great Merchant appears",
+        "+4 Gold from Sea Trade Route (Gold) tiles in this city"
+      ],
+      "uniques_ru": [
+        "Должен быть рядом с клеткой Побережье",
+        "Появляется бесплатный юнит: Великий торговец",
+        "+4 Золото от клеток Морской торговый путь (Золото) в этом городе"
+      ],
+      "short_lines_en": [
+        "+3 Gold, +1 Culture"
+      ],
+      "short_lines_ru": [
+        "+3 Золото, +1 Культура"
+      ],
+      "stats": "+3 Gold, +1 Culture"
+    },
+    "Cristo Redentor": {
+      "kind": "wonder",
+      "name": "Cristo Redentor",
+      "uniques": [
+        "[-15]% Culture cost of adopting new Policies"
+      ],
+      "uniques_en": [
+        "-15% Culture cost of adopting new Policies"
+      ],
+      "uniques_ru": [
+        "-15% к затратам культуры на принятие новых общественных институтов"
+      ],
+      "short_lines_en": [
+        "+5 Culture"
+      ],
+      "short_lines_ru": [
+        "+5 Культура"
+      ],
+      "quote": "'Come to me, all who labor and are heavy burdened, and I will give you rest.' - New Testament, Matthew 11:28",
+      "quote_ru": "'Придите ко Мне все трудящиеся и обремененные, и Я успокою вас.' - Евангелие от Матфея, 11:28",
+      "stats": "+5 Culture"
+    },
+    "Manhattan Project": {
+      "kind": "wonder",
+      "name": "Manhattan Project",
+      "uniques": [
+        "Enables nuclear weapon",
+        "Triggers a global alert upon completion",
+        "Cannot be hurried"
+      ],
+      "uniques_en": [
+        "Enables nuclear weapon",
+        "Triggers a global alert upon completion",
+        "Cannot be hurried"
+      ],
+      "uniques_ru": [
+        "Позволяет производить ядерное оружие",
+        "Вызывает глобальное оповещение при завершении",
+        "Нельзя ускорить"
+      ]
+    },
+    "CN Tower": {
+      "kind": "wonder",
+      "name": "CN Tower",
+      "uniques": [
+        "[+1] population [in all cities]",
+        "[+1 Happiness] [in all cities]",
+        "Gain a free [Broadcast Tower] [in this city]"
+      ],
+      "uniques_en": [
+        "+1 population in all cities",
+        "+1 Happiness in all cities",
+        "Gain a free Broadcast Tower in this city"
+      ],
+      "uniques_ru": [
+        "+1 к населению во всех городах",
+        "+1 Счастье во всех городах",
+        "Появляется бесплатная постройка Радиовышка в этом городе"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "quote": "'Nothing travels faster than light with the possible exception of bad news, which obeys its own special rules.' - Douglas Adams",
+      "stats": "+1 Culture"
+    },
+    "Pentagon": {
+      "kind": "wonder",
+      "name": "Pentagon",
+      "uniques": [
+        "[-33]% Gold cost of upgrading <for [Military] units>"
+      ],
+      "uniques_en": [
+        "-33% Gold cost of upgrading for Military units"
+      ],
+      "uniques_ru": [
+        "-33% к затратам золота на модернизацию для юнитов: Военный"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "quote": "'In preparing for battle I have always found that plans are useless, but planning is indispensable.' - Dwight D. Eisenhower",
+      "quote_ru": "'При подготовке к битве планы незаменимы, но, как только битва началась, план становится совершенно бесполезным.' - Дуайт Эйзенхауэр",
+      "stats": "+1 Culture"
+    },
+    "Sydney Opera House": {
+      "kind": "wonder",
+      "name": "Sydney Opera House",
+      "uniques": [
+        "Free Social Policy",
+        "Comment [Has [2] Great Work of Music Slots]"
+      ],
+      "uniques_en": [
+        "Free Social Policy",
+        "Comment Has 2 Great Work of Music Slots"
+      ],
+      "uniques_ru": [
+        "Бесплатный общественный институт",
+        "Имеет 2 Слота для Музыкального Шедевра"
+      ],
+      "short_lines_en": [
+        "+50% Culture"
+      ],
+      "short_lines_ru": [
+        "+50% Культура"
+      ],
+      "quote": "'Those who lose dreaming are lost.' - Australian Aboriginal saying",
+      "quote_ru": "'У кого погибли мечты, тот и сам погиб.' - пословица австралийских аборигенов"
+    },
+    "Apollo Program": {
+      "kind": "wonder",
+      "name": "Apollo Program",
+      "uniques": [
+        "Enables construction of Spaceship parts",
+        "Triggers a global alert upon completion",
+        "Only available <when [Scientific] Victory is enabled>",
+        "Cannot be hurried"
+      ],
+      "uniques_en": [
+        "Enables construction of Spaceship parts",
+        "Triggers a global alert upon completion",
+        "Only available when Scientific Victory is enabled",
+        "Cannot be hurried"
+      ],
+      "uniques_ru": [
+        "Позволяет строить части космического корабля",
+        "Вызывает глобальное оповещение при завершении",
+        "Доступно только когда Научная Победа включена",
+        "Нельзя ускорить"
+      ]
+    },
+    "Great Firewall": {
+      "kind": "wonder",
+      "name": "Great Firewall",
+      "uniques": [
+        "Only available <when espionage is enabled>",
+        "[-99]% enemy spy effectiveness [in this city]",
+        "[-25]% enemy spy effectiveness [in all cities]"
+      ],
+      "uniques_en": [
+        "Only available when espionage is enabled",
+        "-99% enemy spy effectiveness in this city",
+        "-25% enemy spy effectiveness in all cities"
+      ],
+      "uniques_ru": [
+        "Доступно только когда шпионаж включен",
+        "-99% эффективности вражеского шпиона в этом городе",
+        "-25% эффективности вражеского шпиона во всех городах"
+      ],
+      "quote_ru": "'Недоверие и настороженность - родители безопасности.' - Бенджамин Франклин"
+    },
+    "Hubble Space Telescope": {
+      "kind": "wonder",
+      "name": "Hubble Space Telescope",
+      "uniques": [
+        "[+200]% Production when constructing [Spaceship part] units [in this city]",
+        "Gain a free [Recycling Center] [in this city]"
+      ],
+      "uniques_en": [
+        "+200% Production when constructing Spaceship part units in this city",
+        "Gain a free Recycling Center in this city"
+      ],
+      "uniques_ru": [
+        "+200% к производству при создании юнитов: Часть космического корабля в этом городе",
+        "Появляется бесплатная постройка Центр переработки отходов в этом городе"
+      ],
+      "short_lines_en": [
+        "+10 Science"
+      ],
+      "short_lines_ru": [
+        "+10 Наука"
+      ],
+      "quote": "'The wonder is, not that the field of stars is so vast, but that man has measured it.' - Anatole France",
+      "quote_ru": "'Чудо не в том, что звездный небосклон столь обширен, но в том, что человек сумел измерить его.' - Анатоль Франс",
+      "stats": "+10 Science"
+    },
+    "United Nations": {
+      "kind": "wonder",
+      "name": "United Nations",
+      "uniques": [
+        "Triggers voting for the Diplomatic Victory",
+        "Only available <when [Diplomatic] Victory is enabled>",
+        "Triggers a global alert upon completion"
+      ],
+      "uniques_en": [
+        "Triggers voting for the Diplomatic Victory",
+        "Only available when Diplomatic Victory is enabled",
+        "Triggers a global alert upon completion"
+      ],
+      "uniques_ru": [
+        "Начинает голосование за дипломатическую победу",
+        "Доступно только когда Дипломатическая Победа включена",
+        "Вызывает глобальное оповещение при завершении"
+      ],
+      "short_lines_en": [
+        "+1 Culture"
+      ],
+      "short_lines_ru": [
+        "+1 Культура"
+      ],
+      "quote": "'More than ever before in human history, we share a common destiny. We can master it only if we face it together. And that is why we have the United Nations.' - Kofi Annan",
+      "quote_ru": "'Сейчас мы больше, чем когда-либо раньше, связаны общей судьбой. Мы выстоим перед ней, только если встретим её вместе. Именно для этого и нужна ООН.' - Кофи Аннан",
+      "stats": "+1 Culture"
+    }
+  }
+}

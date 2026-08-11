@@ -1043,6 +1043,7 @@
         wonderIconsPath: 'Wonder_icons/',
         colorsPath: 'data/nation_colors.json',
         wonderNamesPath: 'data/wonder_names_ru.json',
+        wonderDetailsPath: 'data/wonder_details.json',
         defaultCapitalsPath: 'data/default_capitals.json',
         replaysPath: 'Replays/'
     };
@@ -1084,6 +1085,8 @@
     }
 
     let wonderNamesRu = {};
+    /** eng wonder → Civilopedia-style lines (from tech_details export). */
+    let wonderDetails = {};
     /** eng nation → { en, ru } default capital (first city in Nations.json). */
     let defaultCapitals = {};
 
@@ -1431,6 +1434,48 @@
         return wonderNamesRu[englishName] || englishName;
     }
 
+    function escapeAttr(text) {
+        return String(text || '')
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/</g, '&lt;');
+    }
+
+    /** Same shape as tech-tree unlock tooltips (stats + translated uniques + quote). */
+    function wonderTooltip(englishName) {
+        const raw = String(englishName || '').trim();
+        if (!raw) return '';
+        const label = wonderNameRu(raw);
+        const kind = (window.IronLeagueI18n && IronLeagueI18n.t)
+            ? (IronLeagueI18n.t('paths.kind.wonder') || 'чудо')
+            : 'чудо';
+        const lines = [`${label} (${kind})`];
+        const detail = wonderDetails[raw] || {};
+        if (detail.uniqueTo) {
+            const uniqueLabel = (window.IronLeagueI18n && IronLeagueI18n.t)
+                ? (IronLeagueI18n.t('paths.uniqueTo') || 'нация')
+                : 'нация';
+            const nationLabel = displayNationName(engToRusNation(detail.uniqueTo));
+            lines.push(`${uniqueLabel}: ${nationLabel || detail.uniqueTo}`);
+        }
+        const isEn = window.IronLeagueI18n && IronLeagueI18n.getLang() === 'en';
+        const quote = (!isEn && detail.quote_ru) ? detail.quote_ru : (detail.quote || '');
+        if (quote) lines.push(quote);
+        const shortLines = (!isEn && detail.short_lines_ru && detail.short_lines_ru.length)
+            ? detail.short_lines_ru
+            : (detail.short_lines_en || []);
+        shortLines.forEach((u) => lines.push(String(u)));
+        const uniques = (!isEn && detail.uniques_ru && detail.uniques_ru.length)
+            ? detail.uniques_ru
+            : (detail.uniques_en || detail.uniques || []);
+        uniques.forEach((u) => lines.push(String(u)));
+        return lines.join('\n');
+    }
+
+    function wonderTitleAttr(englishName) {
+        return escapeAttr(wonderTooltip(englishName) || wonderNameRu(englishName));
+    }
+
     /** Resolve Games.json nation (RU or EN) to default_capitals.json key. */
     function resolveDefaultCapitalNationKey(nation) {
         const raw = String(nation || '').trim();
@@ -1501,12 +1546,13 @@
     function renderWonderItem(englishName) {
         const ru = wonderNameRu(englishName);
         const src = wonderIconUrl(englishName);
+        const tip = wonderTitleAttr(englishName);
         return `<li>` +
             `<span class="wonder-icon-wrap">` +
-            `<img class="wonder-icon" src="${src}" alt="${ru}" title="${ru}" ` +
+            `<img class="wonder-icon" src="${src}" alt="${escapeAttr(ru)}" title="${tip}" ` +
             `loading="lazy" onerror="this.closest('.wonder-icon-wrap').style.display='none'">` +
             `</span>` +
-            `<span>${ru}</span></li>`;
+            `<span title="${tip}">${ru}</span></li>`;
     }
 
     /** Wonder icon + localized name for chips/tables (no &lt;li&gt;). */
@@ -1514,11 +1560,12 @@
         const raw = String(englishName || '').trim();
         if (!raw) return '—';
         const ru = wonderNameRu(raw);
-        const safe = ru.replace(/"/g, '&quot;');
+        const safe = escapeAttr(ru);
+        const tip = wonderTitleAttr(raw);
         const src = wonderIconUrl(raw);
-        return `<span class="wonder-label">` +
+        return `<span class="wonder-label" title="${tip}">` +
             `<span class="wonder-icon-wrap wonder-icon-wrap--mini">` +
-            `<img class="wonder-icon" src="${src}" alt="${safe}" title="${safe}" ` +
+            `<img class="wonder-icon" src="${src}" alt="${safe}" title="${tip}" ` +
             `loading="lazy" onerror="this.closest('.wonder-icon-wrap').style.display='none'">` +
             `</span>` +
             `<span class="wonder-label-text">${ru}</span></span>`;
@@ -2522,10 +2569,11 @@
     // Загрузка данных
     async function loadGamesData() {
         try {
-            const [gamesResponse, colorsResponse, wondersResponse, capitalsResponse] = await Promise.all([
+            const [gamesResponse, colorsResponse, wondersResponse, wonderDetailsResponse, capitalsResponse] = await Promise.all([
                 fetchFresh('Games.json'),
                 fetchFresh(CONFIG.colorsPath),
                 fetchFresh(CONFIG.wonderNamesPath),
+                fetchFresh(CONFIG.wonderDetailsPath),
                 fetchFresh(CONFIG.defaultCapitalsPath),
             ]);
             if (!gamesResponse.ok) throw new Error(`HTTP ${gamesResponse.status}`);
@@ -2545,6 +2593,13 @@
                 wonderNamesRu = wondersData.names || wondersData || {};
             } else {
                 console.warn('wonder_names_ru.json не загружен');
+            }
+
+            if (wonderDetailsResponse.ok) {
+                const detailsData = await wonderDetailsResponse.json();
+                wonderDetails = detailsData.wonders || detailsData || {};
+            } else {
+                console.warn('wonder_details.json не загружен');
             }
 
             if (capitalsResponse.ok) {
@@ -3204,7 +3259,7 @@
         const ideoBadge = profileBadgeSrc(profileTraitBadgeId(ideology));
         const polBadge = profileBadgeSrc(profileTraitBadgeId(topPolicy));
         const wonderSrc = topWonder ? wonderIconUrl(topWonder) : '';
-        const wonderRu = topWonder ? wonderNameRu(topWonder) : '';
+        const wonderTip = topWonder ? wonderTitleAttr(topWonder) : '';
         const subBits = [
             ideology ? displayPolicyName(ideology) : '',
             topPolicy ? displayPolicyName(topPolicy) : '',
@@ -3218,7 +3273,7 @@
                 </div>
                 ${ideoBadge ? `<img class="profile-emblem-badge profile-emblem-badge--ideo" src="${ideoBadge}" alt="" title="${(displayPolicyName(ideology) || '').replace(/"/g, '&quot;')}" width="40" height="40" loading="lazy" onerror="this.style.display='none'">` : ''}
                 ${polBadge ? `<img class="profile-emblem-badge profile-emblem-badge--policy" src="${polBadge}" alt="" title="${(displayPolicyName(topPolicy) || '').replace(/"/g, '&quot;')}" width="40" height="40" loading="lazy" onerror="this.style.display='none'">` : ''}
-                ${wonderSrc ? `<span class="profile-emblem-badge profile-emblem-badge--wonder"><img class="wonder-icon" src="${wonderSrc}" alt="" title="${String(wonderRu).replace(/"/g, '&quot;')}" loading="lazy" onerror="this.closest('.profile-emblem-badge--wonder').style.display='none'"></span>` : ''}
+                ${wonderSrc ? `<span class="profile-emblem-badge profile-emblem-badge--wonder"><img class="wonder-icon" src="${wonderSrc}" alt="" title="${wonderTip}" loading="lazy" onerror="this.closest('.profile-emblem-badge--wonder').style.display='none'"></span>` : ''}
             </div>
             <div class="profile-emblem-caption">
                 <strong>${nationLabel}</strong>
@@ -3906,7 +3961,7 @@
             if (idx < 0) return displayPolicyName(raw);
             return `${displayPolicyName(raw.slice(0, idx))}${sep}${displayPolicyName(raw.slice(idx + sep.length))}`;
         };
-        const wonderLabel = (name) => wonderNameRu(name);
+        const wonderLabel = (name) => renderWonderLabel(name);
 
         window._policyStatsCache = {
             firstPolicyRows,
@@ -3965,7 +4020,7 @@
             (r) => pickStatRowHtml(r, wonderLabel),
             'picks',
             'desc',
-            { name: (r) => wonderLabel(r.name) },
+            { name: (r) => wonderNameRu(r.name) },
         );
         fillSortableTable(
             document.getElementById('wonderOwnedStatsTable'),
@@ -3973,7 +4028,7 @@
             (r) => pickStatRowHtml(r, wonderLabel),
             'picks',
             'desc',
-            { name: (r) => wonderLabel(r.name) },
+            { name: (r) => wonderNameRu(r.name) },
         );
         fillSortableTable(
             document.getElementById('pantheonStatsTable'),
