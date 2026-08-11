@@ -341,6 +341,9 @@
     Object.keys(players)
       .sort((a, b) => labelNation(a).localeCompare(labelNation(b), lang() === 'en' ? 'en' : 'ru'))
       .forEach((civ) => {
+        const nick = playerNick(gameNum, civ);
+        const civLabel = labelNation(civ);
+        const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'paths-chip paths-chip-player' + (civ === cur ? ' active' : '');
         const civSpan = document.createElement('span');
