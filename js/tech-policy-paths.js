@@ -16,11 +16,11 @@
   ];
 
   const NODE_W = 248;
-  const NODE_H = 96;
-  const COL_W = 276;
-  const ROW_H = 116;
-  const PAD_X = 20;
-  const PAD_Y = 16;
+  const NODE_H = 84;
+  const COL_W = 268;
+  const ROW_H = 90;
+  const PAD_X = 16;
+  const PAD_Y = 10;
   const MAX_UNLOCK_ICONS = 8;
 
   let timelines = null;

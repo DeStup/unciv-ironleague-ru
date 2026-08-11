@@ -2965,11 +2965,11 @@
             width: 248px;
             box-sizing: border-box;
             display: grid;
-            grid-template-columns: 42px minmax(0, 1fr);
+            grid-template-columns: 40px minmax(0, 1fr);
             grid-template-rows: auto auto;
-            column-gap: 6px;
-            row-gap: 3px;
-            padding: 4px 6px 4px 4px;
+            column-gap: 5px;
+            row-gap: 2px;
+            padding: 3px 5px 3px 3px;
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.12);
             background: rgba(40, 44, 48, 0.92);
@@ -2990,8 +2990,8 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             background: #ffffff;
             border: 1px solid rgba(0, 0, 0, 0.18);
@@ -2999,8 +2999,8 @@
             flex-shrink: 0;
         }
         .paths-tree-tech-icon {
-            width: 30px;
-            height: 30px;
+            width: 26px;
+            height: 26px;
             image-rendering: pixelated;
             background: transparent;
             border-radius: 0;
@@ -3036,12 +3036,12 @@
             grid-column: 2;
             display: flex;
             flex-wrap: wrap;
-            gap: 3px;
+            gap: 2px;
             align-items: center;
             align-content: flex-start;
-            min-height: 26px;
+            min-height: 22px;
             max-width: 100%;
-            padding: 2px 5px;
+            padding: 2px 4px;
             border-radius: 10px;
             background: rgba(0, 0, 0, 0.55);
             overflow: visible;
@@ -3050,8 +3050,8 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             border-radius: 50%;
             background: #ffffff;
             border: 1px solid rgba(0, 0, 0, 0.16);
@@ -3060,8 +3060,8 @@
             flex-shrink: 0;
         }
         .paths-tree-unlock-img {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             image-rendering: pixelated;
             filter: brightness(0);
         }
