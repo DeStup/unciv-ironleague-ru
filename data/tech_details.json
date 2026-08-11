@@ -18,6 +18,7 @@
             "Can only be built to improve a resource <in [resource] tiles>",
             "Pillaging this improvement yields approximately [+18 Gold]"
           ],
+          "stats": "+1 Food",
           "uniques_en": [
             "Can also be built on tiles adjacent to fresh water in Land tiles",
             "+1 Food from Fresh water tiles after discovering Civil Service",
@@ -31,6 +32,12 @@
             "+1 Еда от клеток Солёная вода после исследования: Удобрения",
             "Можно построить только для улучшения ресурса на клетках ресурс",
             "Разграбление этого улучшения принесет примерно +18 Золото"
+          ],
+          "short_lines_en": [
+            "+1 Food"
+          ],
+          "short_lines_ru": [
+            "+1 Еда"
           ]
         }
       ],
@@ -78,6 +85,7 @@
             "[+1 Food] from [Wheat] tiles [in this city]",
             "[+1 Food] from [Maize] tiles [in this city]"
           ],
+          "stats": "+2 Food",
           "uniques_en": [
             "+1 Food from Deer tiles in this city",
             "+1 Food from Bison tiles in this city",
@@ -91,6 +99,12 @@
             "+1 Еда от клеток Бананы в этом городе",
             "+1 Еда от клеток Пшеница в этом городе",
             "+1 Еда от клеток Кукуруза в этом городе"
+          ],
+          "short_lines_en": [
+            "+2 Food"
+          ],
+          "short_lines_ru": [
+            "+2 Еда"
           ]
         },
         {
@@ -99,11 +113,18 @@
           "uniques": [
             "Only available <when religion is enabled>"
           ],
+          "stats": "+1 Faith",
           "uniques_en": [
             "Only available when religion is enabled"
           ],
           "uniques_ru": [
             "Доступно только когда религия включена"
+          ],
+          "short_lines_en": [
+            "+1 Faith"
+          ],
+          "short_lines_ru": [
+            "+1 Вера"
           ]
         }
       ],
@@ -121,6 +142,7 @@
             "[+6 Production] from [Sea Trade Route (Production)] tiles [in this city] <in cities without a [Workshop]>"
           ],
           "uniqueTo": "Colombia",
+          "stats": "+1 Production, +2 Food",
           "uniques_en": [
             "+1 Food from Deer tiles in this city",
             "+1 Food from Bison tiles in this city",
@@ -138,6 +160,12 @@
             "+1 Еда от клеток Кукуруза в этом городе",
             "+3 Производство от клеток Сухопутный торговый путь (Производство) в этом городе в городах, не имеющих Мастерская",
             "+6 Производство от клеток Морской торговый путь (Производство) в этом городе в городах, не имеющих Мастерская"
+          ],
+          "short_lines_en": [
+            "+1 Production, +2 Food"
+          ],
+          "short_lines_ru": [
+            "+1 Производство, +2 Еда"
           ]
         },
         {
@@ -152,6 +180,7 @@
             "[+1 Gold] from [Cattle] tiles [in this city]"
           ],
           "uniqueTo": "Bulgaria",
+          "stats": "+2 Food",
           "uniques_en": [
             "+1 Food from Deer tiles in this city",
             "+1 Food from Bison tiles in this city",
@@ -167,6 +196,12 @@
             "+1 Еда, +1 Золото от клеток Пшеница в этом городе",
             "+1 Еда от клеток Кукуруза в этом городе",
             "+1 Золото от клеток Скот в этом городе"
+          ],
+          "short_lines_en": [
+            "+2 Food"
+          ],
+          "short_lines_ru": [
+            "+2 Еда"
           ]
         },
         {
@@ -176,11 +211,18 @@
             "Destroyed when the city is captured"
           ],
           "uniqueTo": "Maurya",
+          "stats": "+2 Culture",
           "uniques_en": [
             "Destroyed when the city is captured"
           ],
           "uniques_ru": [
             "Уничтожается при захвате города"
+          ],
+          "short_lines_en": [
+            "+2 Culture"
+          ],
+          "short_lines_ru": [
+            "+2 Культура"
           ]
         },
         {
@@ -190,11 +232,18 @@
             "Only available <when religion is enabled>"
           ],
           "uniqueTo": "The Maya",
+          "stats": "+2 Science, +2 Faith",
           "uniques_en": [
             "Only available when religion is enabled"
           ],
           "uniques_ru": [
             "Доступно только когда религия включена"
+          ],
+          "short_lines_en": [
+            "+2 Science, +2 Faith"
+          ],
+          "short_lines_ru": [
+            "+2 Наука, +2 Вера"
           ]
         },
         {
@@ -206,6 +255,7 @@
             "Only available <when religion is enabled>"
           ],
           "uniqueTo": "Finland",
+          "stats": "+1 Faith",
           "uniques_en": [
             "All newly-trained relevant units in this city receive the Sauna promotion",
             "+2 Culture from Lakes tiles in this city",
@@ -215,6 +265,12 @@
             "Все релевантный юниты после прохождения обучения в этом городе получают повышение Сауна",
             "+2 Культура от клеток Озёра в этом городе",
             "Доступно только когда религия включена"
+          ],
+          "short_lines_en": [
+            "+1 Faith"
+          ],
+          "short_lines_ru": [
+            "+1 Вера"
           ]
         }
       ],
@@ -364,6 +420,7 @@
             "Only available <after adopting [Honor]>"
           ],
           "quote": "'It is not so much for its beauty that the forest makes a claim upon men's hearts, as for that subtle something, that quality of air, that emanation from old trees, that so wonderfully changes and renews a weary spirit.' - Robert Louis Stevenson",
+          "stats": "+3 Production, +3 Gold, +3 Culture",
           "quote_ru": "'Лес пленяет сердца людей не столько своей красотой, сколько прекрасным воздухом, эманацией старых деревьев, чем-то неуловимым, что так замечательно изменяет и восстанавливает усталый дух.' - Роберт Льюис Стивенсон",
           "uniques_en": [
             "+15% Production when constructing Ranged units in this city",
@@ -374,6 +431,12 @@
             "+15% к производству при создании юнитов: Юнит дальнего боя в этом городе",
             "+15% к производству при создании юнитов: Судно дальнего боя в этом городе",
             "Доступно только после принятия: Честь"
+          ],
+          "short_lines_en": [
+            "+3 Production, +3 Gold, +3 Culture"
+          ],
+          "short_lines_ru": [
+            "+3 Производство, +3 Золото, +3 Культура"
           ]
         }
       ],
@@ -505,6 +568,7 @@
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
           "uniqueTo": "Goths",
+          "stats": "+1 Production",
           "uniques_en": [
             "+1 Production after discovering Iron Working",
             "+1 Production after discovering Gunpowder",
@@ -522,6 +586,12 @@
             "Нельзя построить на клетках ресурс",
             "Доступно только когда от 0 до 0 соседних клеток Харджис",
             "Разграбление этого улучшения принесет примерно +20 Золото"
+          ],
+          "short_lines_en": [
+            "+1 Production"
+          ],
+          "short_lines_ru": [
+            "+1 Производство"
           ]
         }
       ],
@@ -684,6 +754,7 @@
             "[+2 Food, +2 Culture] <with [3] to [6] neighboring [Coast] tiles>"
           ],
           "uniqueTo": "Tonga",
+          "stats": "+2 Food, +1 Faith",
           "uniques_en": [
             "+1 Food from Deer tiles in this city",
             "+1 Food from Bison tiles in this city",
@@ -699,6 +770,12 @@
             "+1 Еда от клеток Пшеница в этом городе",
             "+1 Еда от клеток Кукуруза в этом городе",
             "+2 Еда, +2 Культура когда от 6 до 3 соседних клеток Побережье"
+          ],
+          "short_lines_en": [
+            "+2 Food, +1 Faith"
+          ],
+          "short_lines_ru": [
+            "+2 Еда, +1 Вера"
           ]
         }
       ],
@@ -733,6 +810,12 @@
             "[+1 Production] from [Obsidian] tiles [in this city]",
             "[+1 Production] from [Marble] tiles [in this city]"
           ],
+          "stats": "+1 Production, +1 Happiness",
+          "requiredNearbyImprovedResources": [
+            "Marble",
+            "Stone",
+            "Obsidian"
+          ],
           "uniques_en": [
             "+1 Production from Stone tiles in this city",
             "+1 Production from Obsidian tiles in this city",
@@ -742,6 +825,14 @@
             "+1 Производство от клеток Камень в этом городе",
             "+1 Производство от клеток Обсидиан в этом городе",
             "+1 Производство от клеток Мрамор в этом городе"
+          ],
+          "short_lines_en": [
+            "+1 Production, +1 Happiness",
+            "Requires improved Marble/Stone/Obsidian near city"
+          ],
+          "short_lines_ru": [
+            "+1 Производство, +1 Счастье",
+            "Требуется улучшенный Marble/Stone/Obsidian около города"
           ]
         },
         {
@@ -752,6 +843,7 @@
             "[-20]% Gold cost of acquiring tiles [in all cities]"
           ],
           "quote": "'Time crumbles things; everything grows old and is forgotten under the power of time' - Aristotle",
+          "stats": "+1 Culture, +6 Faith",
           "quote_ru": "'Все вещи подвергаются воздействию со стороны времени... ибо время само по себе скорее причина уничтожения.' - Аристотель",
           "uniques_en": [
             "-20% Culture cost of natural border growth in all cities",
@@ -760,6 +852,12 @@
           "uniques_ru": [
             "-20% к затратам культуры на естественное расширение границ во всех городах",
             "-20% к затратам золота на приобретение клеток во всех городах"
+          ],
+          "short_lines_en": [
+            "+1 Culture, +6 Faith"
+          ],
+          "short_lines_ru": [
+            "+1 Культура, +6 Вера"
           ]
         },
         {
@@ -794,6 +892,7 @@
             "[+1 Production] from [Iron] tiles [in this city]"
           ],
           "uniqueTo": "Burma",
+          "stats": "+1 Production, +1 Happiness",
           "uniques_en": [
             "+1 Production from Stone tiles in this city",
             "+1 Production from Obsidian tiles in this city",
@@ -807,6 +906,12 @@
             "+1 Производство от клеток Мрамор в этом городе",
             "+1 Производство от клеток Соль в этом городе",
             "+1 Производство от клеток Железо в этом городе"
+          ],
+          "short_lines_en": [
+            "+1 Production, +1 Happiness"
+          ],
+          "short_lines_ru": [
+            "+1 Производство, +1 Счастье"
           ]
         },
         {
@@ -819,6 +924,7 @@
             "[+2 Culture] <after discovering [Masonry]>"
           ],
           "uniqueTo": "Zimbabwe",
+          "stats": "+1 Production",
           "uniques_en": [
             "+1 Production from Stone tiles in this city",
             "+1 Production from Obsidian tiles in this city",
@@ -830,6 +936,12 @@
             "+1 Производство от клеток Обсидиан в этом городе",
             "+1 Производство от клеток Мрамор в этом городе",
             "+2 Культура после исследования: Каменная кладка"
+          ],
+          "short_lines_en": [
+            "+1 Production"
+          ],
+          "short_lines_ru": [
+            "+1 Производство"
           ]
         },
         {
@@ -845,6 +957,7 @@
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
           "uniqueTo": "Tibet",
+          "stats": "+1 Culture, +2 Faith",
           "uniques_en": [
             "+1 Faith after discovering Theology",
             "+1 Culture after discovering Acoustics",
@@ -862,6 +975,12 @@
             "Можно построить только на клетках Холм",
             "Нельзя построить на клетках ресурс",
             "Разграбление этого улучшения принесет примерно +20 Золото"
+          ],
+          "short_lines_en": [
+            "+1 Culture, +2 Faith"
+          ],
+          "short_lines_ru": [
+            "+1 Культура, +2 Вера"
           ]
         }
       ],
@@ -898,6 +1017,7 @@
             "Comment [Has [2] Great Work of Writing Slots]"
           ],
           "quote": "'Libraries are as the shrine where all the relics of the ancient saints, full of true virtue, and all that without delusion or imposture are preserved and reposed.' - Sir Francis Bacon",
+          "stats": "+3 Science, +1 Culture",
           "quote_ru": "'Библиотеки — это раки, где покойно хранятся останки великих святых, полных добродетели и лишенных притворства.' - Сэр Френсис Бэкон",
           "uniques_en": [
             "Free Technology",
@@ -908,6 +1028,12 @@
             "Бесплатная технология",
             "Появляется бесплатная постройка Библиотека в этом городе",
             "ИМеет 2 Слота для Литературного Шедевра"
+          ],
+          "short_lines_en": [
+            "+3 Science, +1 Culture"
+          ],
+          "short_lines_ru": [
+            "+3 Наука, +1 Культура"
           ]
         }
       ],
@@ -919,11 +1045,18 @@
             "[+1 Science] per [2] population [in this city]"
           ],
           "uniqueTo": "Akkad",
+          "stats": "+1 Science",
           "uniques_en": [
             "+1 Science per 2 population in this city"
           ],
           "uniques_ru": [
             "+1 Наука за каждые 2 населения в этом городе"
+          ],
+          "short_lines_en": [
+            "+1 Science"
+          ],
+          "short_lines_ru": [
+            "+1 Наука"
           ]
         },
         {
@@ -934,6 +1067,7 @@
             "Comment [Has 1 Great Work of Writing Slot]"
           ],
           "uniqueTo": "Greece",
+          "stats": "+1 Gold, +4 Culture",
           "uniques_en": [
             "Destroyed when the city is captured",
             "Comment Has 1 Great Work of Writing Slot"
@@ -941,6 +1075,12 @@
           "uniques_ru": [
             "Уничтожается при захвате города",
             "Имеет 1 слот для Литературного Шедевра"
+          ],
+          "short_lines_en": [
+            "+1 Gold, +4 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Золото, +4 Культура"
           ]
         },
         {
@@ -950,11 +1090,18 @@
             "[+1 Science] per [2] population [in this city]"
           ],
           "uniqueTo": "China",
+          "stats": "+2 Gold",
           "uniques_en": [
             "+1 Science per 2 population in this city"
           ],
           "uniques_ru": [
             "+1 Наука за каждые 2 населения в этом городе"
+          ],
+          "short_lines_en": [
+            "+2 Gold"
+          ],
+          "short_lines_ru": [
+            "+2 Золото"
           ]
         },
         {
@@ -966,6 +1113,7 @@
             "New [Military] units start with [15] XP [in this city] <in cities with a [Royal Library Great Writing Slot]>"
           ],
           "uniqueTo": "Assyria",
+          "stats": "+1 Science, +1 Culture",
           "uniques_en": [
             "+1 Science per 2 population in this city",
             "Comment Has 1 Great Work of Writing Slot",
@@ -975,6 +1123,12 @@
             "+1 Наука за каждые 2 населения в этом городе",
             "Имеет 1 слот для Литературного Шедевра",
             "Новый Военный юниты начинают с 15 ОО в этом городе в городах, имеющих Слот Литературного Шедевра Королевской Библиотеки"
+          ],
+          "short_lines_en": [
+            "+1 Science, +1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Наука, +1 Культура"
           ]
         }
       ],
@@ -992,7 +1146,20 @@
         {
           "kind": "building",
           "name": "Circus",
-          "uniques": []
+          "uniques": [],
+          "stats": "+2 Happiness",
+          "requiredNearbyImprovedResources": [
+            "Ivory",
+            "Horses"
+          ],
+          "short_lines_en": [
+            "+2 Happiness",
+            "Requires improved Ivory/Horses near city"
+          ],
+          "short_lines_ru": [
+            "+2 Счастье",
+            "Требуется улучшенный Ivory/Horses около города"
+          ]
         },
         {
           "kind": "improvement",
@@ -1025,7 +1192,23 @@
           "kind": "building",
           "name": "Plaza de Toros",
           "uniques": [],
-          "uniqueTo": "Spain"
+          "uniqueTo": "Spain",
+          "stats": "+2 Culture, +2 Happiness",
+          "requiredNearbyImprovedResources": [
+            "Ivory",
+            "Truffles",
+            "Furs",
+            "Horses",
+            "Cattle"
+          ],
+          "short_lines_en": [
+            "+2 Culture, +2 Happiness",
+            "Requires improved Ivory/Truffles/Furs/Horses/Cattle near city"
+          ],
+          "short_lines_ru": [
+            "+2 Культура, +2 Счастье",
+            "Требуется улучшенный Ivory/Truffles/Furs/Horses/Cattle около города"
+          ]
         },
         {
           "kind": "improvement",
@@ -1043,6 +1226,7 @@
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
           "uniqueTo": "Sioux",
+          "stats": "+1 Food, +1 Faith",
           "uniques_en": [
             "Does not need removal of Forest",
             "Does not need removal of Jungle",
@@ -1066,6 +1250,12 @@
             "Нельзя построить на клетках Холм",
             "Можно построить только для улучшения ресурса на клетках ресурс",
             "Разграбление этого улучшения принесет примерно +20 Золото"
+          ],
+          "short_lines_en": [
+            "+1 Food, +1 Faith"
+          ],
+          "short_lines_ru": [
+            "+1 Еда, +1 Вера"
           ]
         }
       ],
@@ -1103,11 +1293,18 @@
           "uniques": [
             "Must be on [River]"
           ],
+          "stats": "+1 Production, +2 Food",
           "uniques_en": [
             "Must be on River"
           ],
           "uniques_ru": [
             "Должен находиться на клетке Река"
+          ],
+          "short_lines_en": [
+            "+1 Production, +2 Food"
+          ],
+          "short_lines_ru": [
+            "+1 Производство, +2 Еда"
           ]
         },
         {
@@ -1204,6 +1401,10 @@
             "Must be next to [Fresh water]"
           ],
           "uniqueTo": "Aztecs",
+          "stats": "+1 Production, +2 Food",
+          "percentStatBonus": {
+            "food": 10
+          },
           "uniques_en": [
             "+1 Food from Lakes tiles in this city",
             "Must be next to Fresh water"
@@ -1211,6 +1412,14 @@
           "uniques_ru": [
             "+1 Еда от клеток Озёра в этом городе",
             "Должен быть рядом с клеткой Пресная вода"
+          ],
+          "short_lines_en": [
+            "+1 Production, +2 Food",
+            "+10% Food"
+          ],
+          "short_lines_ru": [
+            "+1 Производство, +2 Еда",
+            "+10% Еда"
           ]
         },
         {
@@ -1221,6 +1430,7 @@
             "Provides [2] [Horses]"
           ],
           "uniqueTo": "Golden Horde",
+          "stats": "+3 Science",
           "uniques_en": [
             "+2 Gold from Land Trade Route (Gold) tiles in this city",
             "Provides 2 Horses"
@@ -1228,6 +1438,12 @@
           "uniques_ru": [
             "+2 Золото от клеток Сухопутный торговый путь (Золото) в этом городе",
             "Предоставляет 2 Лошади"
+          ],
+          "short_lines_en": [
+            "+3 Science"
+          ],
+          "short_lines_ru": [
+            "+3 Наука"
           ]
         },
         {
@@ -1268,11 +1484,21 @@
           "uniques": [
             "Destroyed when the city is captured"
           ],
+          "cityStrength": 5,
+          "cityHealth": 50,
           "uniques_en": [
             "Destroyed when the city is captured"
           ],
           "uniques_ru": [
             "Уничтожается при захвате города"
+          ],
+          "short_lines_en": [
+            "City strength +5",
+            "City health +50"
+          ],
+          "short_lines_ru": [
+            "Мощь города +5",
+            "Здоровье города +50"
           ]
         },
         {
@@ -1285,6 +1511,7 @@
             "[+2 Gold] from [Obsidian] tiles [in this city]"
           ],
           "quote": "'The whole earth is the tomb of heroic men and their story is not given only on stone over their clay but abides everywhere without visible symbol woven into the stuff of other men's lives.' - Pericles",
+          "stats": "+1 Culture",
           "quote_ru": "'Могилою знаменитых людей служит вся земля, и о них свидетельствуют не только надписи на надгробных плитах в родной стране. Не столько о самих подвигах, сколько о мужестве незаписанное воспоминание вечно живет в каждом человеке.' - Перикл",
           "uniques_en": [
             "Gain 100 Gold upon expending a Great Person unit",
@@ -1297,6 +1524,12 @@
             "+2 Золото от клеток Мрамор в этом городе",
             "+2 Золото от клеток Камень в этом городе",
             "+2 Золото от клеток Обсидиан в этом городе"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         },
         {
@@ -1308,6 +1541,7 @@
             "Only available <after adopting [Liberty]>"
           ],
           "quote": "'O, let not the pains of death which come upon thee enter into my body. I am the god Tem, and I am the foremost part of the sky, and the power which protecteth me is that which is with all the gods forever.' - The Book of the Dead, translated by Sir Ernest Alfred Wallis Budge",
+          "stats": "+1 Culture",
           "quote_ru": "'А вы даруйте мне, когда я есмь там, погребальные тризны, и воскурение ладана, и мази для умащения, и все чистые и прекрасные вещи, в которых обитает бог...' - из египетской \"Книги мертвых\"",
           "uniques_en": [
             "Can build all improvements at a +25% rate",
@@ -1318,6 +1552,12 @@
             "Может строить все улучшения клеток с +25% скоростью",
             "Появляются 2 бесплатных юнитов: Рабочий",
             "Доступно только после принятия: Воля"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         },
         {
@@ -1348,11 +1588,24 @@
             "Destroyed when the city is captured"
           ],
           "uniqueTo": "Hittites",
+          "stats": "+2 Gold, +2 Culture",
+          "cityStrength": 5,
+          "cityHealth": 50,
           "uniques_en": [
             "Destroyed when the city is captured"
           ],
           "uniques_ru": [
             "Уничтожается при захвате города"
+          ],
+          "short_lines_en": [
+            "+2 Gold, +2 Culture",
+            "City strength +5",
+            "City health +50"
+          ],
+          "short_lines_ru": [
+            "+2 Золото, +2 Культура",
+            "Мощь города +5",
+            "Здоровье города +50"
           ]
         },
         {
@@ -1363,6 +1616,9 @@
             "[+1 Production] <after discovering [Metal Casting]>"
           ],
           "uniqueTo": "Gaul",
+          "stats": "+1 Production, +1 Happiness",
+          "cityStrength": 6,
+          "cityHealth": 50,
           "uniques_en": [
             "Destroyed when the city is captured",
             "+1 Production after discovering Metal Casting"
@@ -1370,6 +1626,16 @@
           "uniques_ru": [
             "Уничтожается при захвате города",
             "+1 Производство после исследования: Литье"
+          ],
+          "short_lines_en": [
+            "+1 Production, +1 Happiness",
+            "City strength +6",
+            "City health +50"
+          ],
+          "short_lines_ru": [
+            "+1 Производство, +1 Счастье",
+            "Мощь города +6",
+            "Здоровье города +50"
           ]
         },
         {
@@ -1380,6 +1646,9 @@
             "Destroyed when the city is captured"
           ],
           "uniqueTo": "Madagascar",
+          "stats": "+2 Food, +2 Faith",
+          "cityStrength": 5,
+          "cityHealth": 50,
           "uniques_en": [
             "Can be purchased for 225 Faith in all cities",
             "Destroyed when the city is captured"
@@ -1387,6 +1656,16 @@
           "uniques_ru": [
             "Можно купить за 225 Вера во всех городах",
             "Уничтожается при захвате города"
+          ],
+          "short_lines_en": [
+            "+2 Food, +2 Faith",
+            "City strength +5",
+            "City health +50"
+          ],
+          "short_lines_ru": [
+            "+2 Еда, +2 Вера",
+            "Мощь города +5",
+            "Здоровье города +50"
           ]
         },
         {
@@ -1398,6 +1677,9 @@
             "Destroyed when the city is captured"
           ],
           "uniqueTo": "Georgia",
+          "stats": "+3 Faith",
+          "cityStrength": 5,
+          "cityHealth": 50,
           "uniques_en": [
             "+1 Culture from Strategic resource tiles in this city",
             "All newly-trained relevant units in this city receive the Georgia Golden Age from Victories promotion",
@@ -1407,6 +1689,16 @@
             "+1 Культура от клеток Стратегический ресурс в этом городе",
             "Все релевантный юниты после прохождения обучения в этом городе получают повышение Georgia Golden Age from Victories",
             "Уничтожается при захвате города"
+          ],
+          "short_lines_en": [
+            "+3 Faith",
+            "City strength +5",
+            "City health +50"
+          ],
+          "short_lines_ru": [
+            "+3 Вера",
+            "Мощь города +5",
+            "Здоровье города +50"
           ]
         },
         {
@@ -1416,11 +1708,21 @@
             "Destroyed when the city is captured"
           ],
           "uniqueTo": "Babylon",
+          "cityStrength": 6,
+          "cityHealth": 100,
           "uniques_en": [
             "Destroyed when the city is captured"
           ],
           "uniques_ru": [
             "Уничтожается при захвате города"
+          ],
+          "short_lines_en": [
+            "City strength +6",
+            "City health +100"
+          ],
+          "short_lines_ru": [
+            "Мощь города +6",
+            "Здоровье города +100"
           ]
         },
         {
@@ -1434,6 +1736,7 @@
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
           "uniqueTo": "Aksum",
+          "stats": "+2 Faith",
           "uniques_en": [
             "+1 Faith after discovering Theology",
             "Comment +1 Faith to every adjacent Quarry",
@@ -1447,6 +1750,12 @@
             "Нельзя построить на клетках ресурс",
             "Доступно только когда от 0 до 0 соседних клеток Церковь в скале",
             "Разграбление этого улучшения принесет примерно +20 Золото"
+          ],
+          "short_lines_en": [
+            "+2 Faith"
+          ],
+          "short_lines_ru": [
+            "+2 Вера"
           ]
         },
         {
@@ -1512,6 +1821,7 @@
             "[+15]% Strength <for [All] units> <vs cities> <when attacking>"
           ],
           "quote": "'He spoke, the son of Kronos, and nodded his head with the dark brows, and the immortally anointed hair of the great god swept from his divine head, and all Olympos was shaken' - The Iliad",
+          "stats": "+3 Culture",
           "quote_ru": "'Молвил Кронин и иссиня-черными двинул бровями; волны нетленных волос с головы Громовержца бессмертной на плечи пали его. И Олимп всколебался великий.' - Илиада",
           "uniques_en": [
             "+10% Production when constructing Military units in this city",
@@ -1520,6 +1830,12 @@
           "uniques_ru": [
             "+10% к производству при создании юнитов: Военный в этом городе",
             "+15% к боевой мощи для юнитов: Все против городов когда атакует"
+          ],
+          "short_lines_en": [
+            "+3 Culture"
+          ],
+          "short_lines_ru": [
+            "+3 Культура"
           ]
         },
         {
@@ -1530,6 +1846,7 @@
             "Can only be built to improve a resource <in [resource] tiles>",
             "Pillaging this improvement yields approximately [+10 Gold]"
           ],
+          "stats": "+1 Production",
           "uniques_en": [
             "+1 Production after discovering Steel",
             "Can only be built to improve a resource in resource tiles",
@@ -1539,6 +1856,12 @@
             "+1 Производство после исследования: Сталеварение",
             "Можно построить только для улучшения ресурса на клетках ресурс",
             "Разграбление этого улучшения принесет примерно +10 Золото"
+          ],
+          "short_lines_en": [
+            "+1 Production"
+          ],
+          "short_lines_ru": [
+            "+1 Производство"
           ]
         }
       ],
@@ -1611,6 +1934,7 @@
             "All newly-trained [Melee] units [in this city] receive the [Dojo] promotion"
           ],
           "uniqueTo": "Japan",
+          "stats": "+2 Science",
           "uniques_en": [
             "New Military units start with 15 XP in this city",
             "Destroyed when the city is captured",
@@ -1620,6 +1944,12 @@
             "Новый Военный юниты начинают с 15 ОО в этом городе",
             "Уничтожается при захвате города",
             "Все Юнит ближнего боя юниты после прохождения обучения в этом городе получают повышение Додзё"
+          ],
+          "short_lines_en": [
+            "+2 Science"
+          ],
+          "short_lines_ru": [
+            "+2 Наука"
           ]
         },
         {
@@ -1679,6 +2009,7 @@
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
           "uniqueTo": "Brazil",
+          "stats": "+1 Production",
           "uniques_en": [
             "+2 Gold after discovering Machinery",
             "+2 Culture after discovering Acoustics",
@@ -1692,6 +2023,12 @@
             "Улучшает Strategic ресурс в этой клетке",
             "Улучшает Luxury ресурс в этой клетке",
             "Разграбление этого улучшения принесет примерно +20 Золото"
+          ],
+          "short_lines_en": [
+            "+1 Production"
+          ],
+          "short_lines_ru": [
+            "+1 Производство"
           ]
         }
       ],
@@ -1756,6 +2093,7 @@
             "Free [Quinquereme] appears"
           ],
           "quote": "'They that go down to the sea in ships, that do business in great waters; these see the works of the Lord, and his wonders in the deep.' - The Bible, Psalms 107:23-24",
+          "stats": "+1 Culture",
           "quote_ru": "'Отправляющиеся на кораблях в море, производящие дела на больших водах, видят дела Господа и чудеса Его в пучине...' - Псалтирь, Псалом 106: 23-24",
           "uniques_en": [
             "Must be next to Coast",
@@ -1772,6 +2110,12 @@
             "+1 к радиусу обзора для юнитов: Военный Морские",
             "Появляется бесплатная постройка Маяк в этом городе",
             "Появляется бесплатный юнит: Квинкверма"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         }
       ],
@@ -1807,6 +2151,7 @@
             "[+1 Production] from [Water resource] tiles [in this city]"
           ],
           "uniqueTo": "Carthage",
+          "stats": "+1 Production, +1 Food",
           "uniques_en": [
             "Must be next to Coast",
             "+1 Food from Ocean tiles in this city",
@@ -1820,6 +2165,12 @@
             "+1 Еда от клеток Побережье в этом городе",
             "+1 Еда от клеток Рыба в этом городе",
             "+1 Производство от клеток Морской ресурс в этом городе"
+          ],
+          "short_lines_en": [
+            "+1 Production, +1 Food"
+          ],
+          "short_lines_ru": [
+            "+1 Производство, +1 Еда"
           ]
         },
         {
@@ -1833,6 +2184,7 @@
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
           "uniqueTo": "Brunei",
+          "stats": "+1 Food, +1 Gold, +1 Culture",
           "uniques_en": [
             "+1 Production after discovering Navigation",
             "+1 Culture after discovering Flight",
@@ -1846,6 +2198,12 @@
             "Должен быть рядом с клеткой Наземные",
             "Нельзя построить на клетках ресурс",
             "Разграбление этого улучшения принесет примерно +20 Золото"
+          ],
+          "short_lines_en": [
+            "+1 Food, +1 Gold, +1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Еда, +1 Золото, +1 Культура"
           ]
         },
         {
@@ -1913,6 +2271,7 @@
             "[+2 Gold] from [Land Trade Route (Gold)] tiles [in this city]",
             "Provides [2] [Horses]"
           ],
+          "stats": "+2 Gold",
           "uniques_en": [
             "+2 Gold from Land Trade Route (Gold) tiles in this city",
             "Provides 2 Horses"
@@ -1920,6 +2279,12 @@
           "uniques_ru": [
             "+2 Золото от клеток Сухопутный торговый путь (Золото) в этом городе",
             "Предоставляет 2 Лошади"
+          ],
+          "short_lines_en": [
+            "+2 Gold"
+          ],
+          "short_lines_ru": [
+            "+2 Золото"
           ]
         },
         {
@@ -1930,6 +2295,11 @@
             "[+1 Production] from [Cattle] tiles [in this city]",
             "[+1 Production] from [Horses] tiles [in this city]",
             "[+1 Production] from [Sheep] tiles [in this city]"
+          ],
+          "requiredNearbyImprovedResources": [
+            "Horses",
+            "Sheep",
+            "Cattle"
           ],
           "uniques_en": [
             "+15% Production when constructing Mounted units in this city",
@@ -1942,6 +2312,12 @@
             "+1 Производство от клеток Скот в этом городе",
             "+1 Производство от клеток Лошади в этом городе",
             "+1 Производство от клеток Овцы в этом городе"
+          ],
+          "short_lines_en": [
+            "Requires improved Horses/Sheep/Cattle near city"
+          ],
+          "short_lines_ru": [
+            "Требуется улучшенный Horses/Sheep/Cattle около города"
           ]
         },
         {
@@ -1951,6 +2327,7 @@
             "Only available <if [Colosseum] is constructed in all [non-[Puppeted]] cities>",
             "Cost increases by [30] per owned city"
           ],
+          "stats": "+1 Culture, +5 Happiness",
           "uniques_en": [
             "Only available if Colosseum is constructed in all non-Puppeted cities",
             "Cost increases by 30 per owned city"
@@ -1958,6 +2335,12 @@
           "uniques_ru": [
             "Доступно только если Арена построено во всех не-Сателлит городах",
             "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем"
+          ],
+          "short_lines_en": [
+            "+1 Culture, +5 Happiness"
+          ],
+          "short_lines_ru": [
+            "+1 Культура, +5 Счастье"
           ]
         }
       ],
@@ -2036,6 +2419,11 @@
             "New [Mounted] units start with [15] XP [in this city]"
           ],
           "uniqueTo": "Poland",
+          "requiredNearbyImprovedResources": [
+            "Horses",
+            "Sheep",
+            "Cattle"
+          ],
           "uniques_en": [
             "+15% Production when constructing Mounted units in this city",
             "+1 Production, +1 Gold from Cattle tiles in this city",
@@ -2049,6 +2437,12 @@
             "+1 Производство, +1 Золото от клеток Лошади в этом городе",
             "+1 Производство, +1 Золото от клеток Овцы в этом городе",
             "Новый Конница юниты начинают с 15 ОО в этом городе"
+          ],
+          "short_lines_en": [
+            "Requires improved Horses/Sheep/Cattle near city"
+          ],
+          "short_lines_ru": [
+            "Требуется улучшенный Horses/Sheep/Cattle около города"
           ]
         },
         {
@@ -2061,6 +2455,11 @@
             "[+1 Production, +1 Food] from [Sheep] tiles [in this city]"
           ],
           "uniqueTo": "Argentina",
+          "requiredNearbyImprovedResources": [
+            "Horses",
+            "Sheep",
+            "Cattle"
+          ],
           "uniques_en": [
             "+15% Production when constructing Mounted units in this city",
             "+1 Production, +1 Food from Cattle tiles in this city",
@@ -2072,6 +2471,12 @@
             "+1 Производство, +1 Еда от клеток Скот в этом городе",
             "+1 Производство, +1 Еда от клеток Лошади в этом городе",
             "+1 Производство, +1 Еда от клеток Овцы в этом городе"
+          ],
+          "short_lines_en": [
+            "Requires improved Horses/Sheep/Cattle near city"
+          ],
+          "short_lines_ru": [
+            "Требуется улучшенный Horses/Sheep/Cattle около города"
           ]
         },
         {
@@ -2085,6 +2490,11 @@
             "[+1 Production] from [Sheep] tiles [in this city]"
           ],
           "uniqueTo": "The Huns",
+          "requiredNearbyImprovedResources": [
+            "Horses",
+            "Sheep",
+            "Cattle"
+          ],
           "uniques_en": [
             "Provides 2 Horses",
             "+15% Production when constructing Mounted units in this city",
@@ -2098,6 +2508,12 @@
             "+1 Производство от клеток Скот в этом городе",
             "+1 Производство, +1 Вера от клеток Лошади в этом городе",
             "+1 Производство от клеток Овцы в этом городе"
+          ],
+          "short_lines_en": [
+            "Requires improved Horses/Sheep/Cattle near city"
+          ],
+          "short_lines_ru": [
+            "Требуется улучшенный Horses/Sheep/Cattle около города"
           ]
         },
         {
@@ -2108,6 +2524,7 @@
             "Provides [2] [Horses]"
           ],
           "uniqueTo": "Nabataea",
+          "stats": "+2 Food, +3 Gold",
           "uniques_en": [
             "+2 Gold, +1 Food from Land Trade Route (Gold) tiles in this city",
             "Provides 2 Horses"
@@ -2115,6 +2532,12 @@
           "uniques_ru": [
             "+2 Золото, +1 Еда от клеток Сухопутный торговый путь (Золото) в этом городе",
             "Предоставляет 2 Лошади"
+          ],
+          "short_lines_en": [
+            "+2 Food, +3 Gold"
+          ],
+          "short_lines_ru": [
+            "+2 Еда, +3 Золото"
           ]
         },
         {
@@ -2201,6 +2624,7 @@
             "Only available <after adopting [Tradition]>"
           ],
           "quote": "'I think that if ever a mortal heard the word of God it would be in a garden at the cool of the day.' - F. Frankfort Moore",
+          "stats": "+6 Food, +1 Culture",
           "quote_ru": "'Если бы смертному когда-либо прозвучал голос Бога, это случилось бы в саду на закате дня.' - Ф. Франкфорт Мур",
           "uniques_en": [
             "Gain a free Garden in this city",
@@ -2209,6 +2633,12 @@
           "uniques_ru": [
             "Появляется бесплатная постройка Сад в этом городе",
             "Доступно только после принятия: Традиция"
+          ],
+          "short_lines_en": [
+            "+6 Food, +1 Culture"
+          ],
+          "short_lines_ru": [
+            "+6 Еда, +1 Культура"
           ]
         }
       ],
@@ -2264,6 +2694,8 @@
             "Comment [Has 1 Great Work of Writing Slot]"
           ],
           "uniqueTo": "Hungary",
+          "stats": "+3 Production, +3 Gold, +3 Science, +1 Culture",
+          "cityStrength": 2,
           "uniques_en": [
             "Indicates the capital city",
             "+25% Great Person generation in this city",
@@ -2277,6 +2709,14 @@
             "+10% к производству при создании построек: Все в этом городе",
             "До 2 штук на цивилизацию",
             "Имеет 1 слот для Литературного Шедевра"
+          ],
+          "short_lines_en": [
+            "+3 Production, +3 Gold, +3 Science, +1 Culture",
+            "City strength +2"
+          ],
+          "short_lines_ru": [
+            "+3 Производство, +3 Золото, +3 Наука, +1 Культура",
+            "Мощь города +2"
           ]
         },
         {
@@ -2287,6 +2727,7 @@
             "Can only be built <in [Annexed] cities>"
           ],
           "uniqueTo": "Jerusalem",
+          "stats": "+2 Culture, +2 Happiness, +2 Faith",
           "uniques_en": [
             "Removes extra unhappiness from annexed cities",
             "Can only be built in Annexed cities"
@@ -2294,6 +2735,12 @@
           "uniques_ru": [
             "Убирает лишнее несчастье от аннексированных городов",
             "Можно построить только в Аннексированный городах"
+          ],
+          "short_lines_en": [
+            "+2 Culture, +2 Happiness, +2 Faith"
+          ],
+          "short_lines_ru": [
+            "+2 Культура, +2 Счастье, +2 Вера"
           ]
         },
         {
@@ -2331,7 +2778,14 @@
         {
           "kind": "building",
           "name": "Colosseum",
-          "uniques": []
+          "uniques": [],
+          "stats": "+2 Happiness",
+          "short_lines_en": [
+            "+2 Happiness"
+          ],
+          "short_lines_ru": [
+            "+2 Счастье"
+          ]
         },
         {
           "kind": "wonder",
@@ -2345,6 +2799,7 @@
             "Free [Chariot Archer] appears"
           ],
           "quote": "'Regard your soldiers as your children, and they will follow you into the deepest valleys; look on them as your own beloved sons, and they will stand by you even unto death.' - Sun Tzu",
+          "stats": "+1 Culture",
           "quote_ru": "'Если будешь смотреть на солдат, как на детей, сможешь отправиться с ними в самое глубокое ущелье; если будешь смотреть на солдат, как на любимых сыновей, сможешь идти с ними хоть на смерть.' - Сунь Цзы",
           "uniques_en": [
             "Free Warrior appears",
@@ -2361,6 +2816,12 @@
             "Появляется бесплатный юнит: Копейщик",
             "Появляется бесплатный юнит: Разведчик",
             "Появляется бесплатный юнит: Лучник на колеснице"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         }
       ],
@@ -2383,7 +2844,14 @@
           "kind": "building",
           "name": "Mead Hall",
           "uniques": [],
-          "uniqueTo": "Franks"
+          "uniqueTo": "Franks",
+          "stats": "+1 Culture, +3 Happiness",
+          "short_lines_en": [
+            "+1 Culture, +3 Happiness"
+          ],
+          "short_lines_ru": [
+            "+1 Культура, +3 Счастье"
+          ]
         },
         {
           "kind": "building",
@@ -2393,6 +2861,7 @@
             "[-1] population [in this city]"
           ],
           "uniqueTo": "Kongo",
+          "stats": "+4 Production, +5 Gold",
           "uniques_en": [
             "+3 Production, +2 Gold after discovering Industrialization",
             "-1 population in this city"
@@ -2400,6 +2869,12 @@
           "uniques_ru": [
             "+3 Производство, +2 Золото после исследования: Индустриализация",
             "-1 к населению в этом городе"
+          ],
+          "short_lines_en": [
+            "+4 Production, +5 Gold"
+          ],
+          "short_lines_ru": [
+            "+4 Производство, +5 Золото"
           ]
         },
         {
@@ -2415,6 +2890,7 @@
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
           "uniqueTo": "Polynesia",
+          "stats": "+1 Culture",
           "uniques_en": [
             "+1 Culture for each adjacent Moai",
             "+1 Gold after discovering Flight",
@@ -2432,6 +2908,12 @@
             "Улучшает Luxury ресурс в этой клетке",
             "Улучшает Bonus ресурс в этой клетке",
             "Разграбление этого улучшения принесет примерно +20 Золото"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         },
         {
@@ -2445,6 +2927,7 @@
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
           "uniqueTo": "Inca",
+          "stats": "+1 Food",
           "uniques_en": [
             "+1 Food for each adjacent Mountain",
             "+1 Food from Fresh water tiles after discovering Civil Service",
@@ -2458,6 +2941,12 @@
             "+1 Еда от клеток Солёная вода после исследования: Удобрения",
             "Нельзя построить на клетках ресурс",
             "Разграбление этого улучшения принесет примерно +20 Золото"
+          ],
+          "short_lines_en": [
+            "+1 Food"
+          ],
+          "short_lines_ru": [
+            "+1 Еда"
           ]
         }
       ],
@@ -2476,7 +2965,14 @@
         {
           "kind": "building",
           "name": "Temple",
-          "uniques": []
+          "uniques": [],
+          "stats": "+2 Faith",
+          "short_lines_en": [
+            "+2 Faith"
+          ],
+          "short_lines_ru": [
+            "+2 Вера"
+          ]
         },
         {
           "kind": "wonder",
@@ -2487,6 +2983,7 @@
             "Only available <after adopting [Piety]>"
           ],
           "quote": "'With the magnificence of eternity before us, let time, with all its fluctuations, dwindle into its own littleness.' - Thomas Chalmers",
+          "stats": "+3 Culture, +3 Happiness, +6 Faith",
           "uniques_en": [
             "All newly-trained Great Prophet units in this city receive the Devout promotion",
             "All newly-trained Missionary units in this city receive the Devout promotion",
@@ -2496,6 +2993,12 @@
             "Все Великий пророк юниты после прохождения обучения в этом городе получают повышение Набожный",
             "Все Миссионер юниты после прохождения обучения в этом городе получают повышение Набожный",
             "Доступно только после принятия: Набожность"
+          ],
+          "short_lines_en": [
+            "+3 Culture, +3 Happiness, +6 Faith"
+          ],
+          "short_lines_ru": [
+            "+3 Культура, +3 Счастье, +6 Вера"
           ]
         },
         {
@@ -2505,6 +3008,10 @@
             "Only available <if [Library] is constructed in all [non-[Puppeted]] cities>",
             "Cost increases by [30] per owned city"
           ],
+          "stats": "+3 Science, +1 Culture",
+          "percentStatBonus": {
+            "science": 50
+          },
           "uniques_en": [
             "Only available if Library is constructed in all non-Puppeted cities",
             "Cost increases by 30 per owned city"
@@ -2512,6 +3019,14 @@
           "uniques_ru": [
             "Доступно только если Библиотека построено во всех не-Сателлит городах",
             "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем"
+          ],
+          "short_lines_en": [
+            "+3 Science, +1 Culture",
+            "+50% Science"
+          ],
+          "short_lines_ru": [
+            "+3 Наука, +1 Культура",
+            "+50% Наука"
           ]
         },
         {
@@ -2521,12 +3036,19 @@
             "Free Social Policy"
           ],
           "quote": "'The ancient Oracle said that I was the wisest of all the Greeks. It is because I alone, of all the Greeks, know that I know nothing' - Socrates",
+          "stats": "+1 Culture",
           "quote_ru": "'Он спросил, есть ли кто-нибудь на свете мудрее меня, и Пифия ему ответила, что никого нет мудрее... потому что я коли уж не знаю, то и не думаю, что знаю.' - Сократ",
           "uniques_en": [
             "Free Social Policy"
           ],
           "uniques_ru": [
             "Бесплатный общественный институт"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         }
       ],
@@ -2555,6 +3077,7 @@
             "Unsellable"
           ],
           "uniqueTo": "Ayyubids",
+          "stats": "+2 Happiness, +2 Faith",
           "uniques_en": [
             "+100% Gold given to enemy if city is captured in this city",
             "Cannot be purchased",
@@ -2566,6 +3089,12 @@
             "Нельзя купить",
             "Нельзя построить",
             "Нельзя продать"
+          ],
+          "short_lines_en": [
+            "+2 Happiness, +2 Faith"
+          ],
+          "short_lines_ru": [
+            "+2 Счастье, +2 Вера"
           ]
         },
         {
@@ -2575,18 +3104,32 @@
             "[+100]% Gold given to enemy if city is captured <in this city>"
           ],
           "uniqueTo": "Egypt",
+          "stats": "+2 Happiness, +2 Faith",
           "uniques_en": [
             "+100% Gold given to enemy if city is captured in this city"
           ],
           "uniques_ru": [
             "+100% золота передаётся врагу при захвате города в этом городе"
+          ],
+          "short_lines_en": [
+            "+2 Happiness, +2 Faith"
+          ],
+          "short_lines_ru": [
+            "+2 Счастье, +2 Вера"
           ]
         },
         {
           "kind": "building",
           "name": "Mud Pyramid Mosque",
           "uniques": [],
-          "uniqueTo": "Songhai"
+          "uniqueTo": "Songhai",
+          "stats": "+2 Culture, +2 Faith",
+          "short_lines_en": [
+            "+2 Culture, +2 Faith"
+          ],
+          "short_lines_ru": [
+            "+2 Культура, +2 Вера"
+          ]
         },
         {
           "kind": "building",
@@ -2596,6 +3139,7 @@
             "[+1 Production] from [Snow] tiles [in this city]"
           ],
           "uniqueTo": "Norway",
+          "stats": "+2 Faith",
           "uniques_en": [
             "+1 Production from Tundra tiles in this city",
             "+1 Production from Snow tiles in this city"
@@ -2603,13 +3147,31 @@
           "uniques_ru": [
             "+1 Производство от клеток Тундра в этом городе",
             "+1 Производство от клеток Снег в этом городе"
+          ],
+          "short_lines_en": [
+            "+2 Faith"
+          ],
+          "short_lines_ru": [
+            "+2 Вера"
           ]
         },
         {
           "kind": "building",
           "name": "Ziggurat",
           "uniques": [],
-          "uniqueTo": "Sumeria"
+          "uniqueTo": "Sumeria",
+          "stats": "+2 Faith",
+          "percentStatBonus": {
+            "science": 10
+          },
+          "short_lines_en": [
+            "+2 Faith",
+            "+10% Science"
+          ],
+          "short_lines_ru": [
+            "+2 Вера",
+            "+10% Наука"
+          ]
         },
         {
           "kind": "wonder",
@@ -2624,6 +3186,10 @@
             "Gain [75] [Science] <(modified by game speed)> <upon expending a [Great Person] unit>"
           ],
           "uniqueTo": "Israel",
+          "stats": "+3 Science, +1 Culture, +3 Faith",
+          "percentStatBonus": {
+            "science": 50
+          },
           "uniques_en": [
             "Shown while unbuilable",
             "Unbuildable",
@@ -2641,6 +3207,14 @@
             "Доступно только если Библиотека построено во всех не-Сателлит городах",
             "Даёт 75 Вера (в зависимости от скорости игры) при израсходовании юнита Великий человек",
             "Даёт 75 Наука (в зависимости от скорости игры) при израсходовании юнита Великий человек"
+          ],
+          "short_lines_en": [
+            "+3 Science, +1 Culture, +3 Faith",
+            "+50% Science"
+          ],
+          "short_lines_ru": [
+            "+3 Наука, +1 Культура, +3 Вера",
+            "+50% Наука"
           ]
         },
         {
@@ -2676,6 +3250,7 @@
             "Destroyed when the city is captured",
             "Comment [Has 1 Great Work of Writing Slot]"
           ],
+          "stats": "+2 Culture",
           "uniques_en": [
             "Destroyed when the city is captured",
             "Comment Has 1 Great Work of Writing Slot"
@@ -2683,6 +3258,12 @@
           "uniques_ru": [
             "Уничтожается при захвате города",
             "Имеет 1 слот для Литературного Шедевра"
+          ],
+          "short_lines_en": [
+            "+2 Culture"
+          ],
+          "short_lines_ru": [
+            "+2 Культура"
           ]
         },
         {
@@ -2710,6 +3291,7 @@
             "Cost increases by [30] per owned city",
             "Comment [Has 1 Great Work of Writing Slot]"
           ],
+          "stats": "+1 Culture",
           "uniques_en": [
             "Only available if Monument is constructed in all non-Puppeted cities",
             "+25% Great Person generation in this city",
@@ -2721,6 +3303,12 @@
             "+25% к скорости появления Великих людей в этом городе",
             "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
             "Имеет 1 слот для Литературного Шедевра"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         },
         {
@@ -2731,6 +3319,7 @@
             "Comment [Has 1 Great Work of Writing Slot]"
           ],
           "quote": "'Earth proudly wears the Parthenon as the best gem upon her zone.' - Ralph Waldo Emerson",
+          "stats": "+4 Culture",
           "uniques_en": [
             "Instantly provides 1 Great Work of Writing",
             "Comment Has 1 Great Work of Writing Slot"
@@ -2738,6 +3327,12 @@
           "uniques_ru": [
             "Мгновенно предоставляет 1 Литературный Шедевр",
             "Имеет 1 слот для Литературного Шедевра"
+          ],
+          "short_lines_en": [
+            "+4 Culture"
+          ],
+          "short_lines_ru": [
+            "+4 Культура"
           ]
         },
         {
@@ -2774,11 +3369,18 @@
             "[+20]% Great Person generation [in this city]"
           ],
           "uniqueTo": "Indonesia",
+          "stats": "+6 Faith",
           "uniques_en": [
             "+20% Great Person generation in this city"
           ],
           "uniques_ru": [
             "+20% к скорости появления Великих людей в этом городе"
+          ],
+          "short_lines_en": [
+            "+6 Faith"
+          ],
+          "short_lines_ru": [
+            "+6 Вера"
           ]
         },
         {
@@ -2789,6 +3391,7 @@
             "Comment [Has 1 Great Work of Writing Slot]"
           ],
           "uniqueTo": "Byzantium",
+          "stats": "+2 Culture, +1 Happiness, +2 Faith",
           "uniques_en": [
             "Destroyed when the city is captured",
             "Comment Has 1 Great Work of Writing Slot"
@@ -2796,6 +3399,12 @@
           "uniques_ru": [
             "Уничтожается при захвате города",
             "Имеет 1 слот для Литературного Шедевра"
+          ],
+          "short_lines_en": [
+            "+2 Culture, +1 Happiness, +2 Faith"
+          ],
+          "short_lines_ru": [
+            "+2 Культура, +1 Счастье, +2 Вера"
           ]
         },
         {
@@ -2805,11 +3414,18 @@
             "[+20]% Great Person generation [in this city]"
           ],
           "uniqueTo": "Romania",
+          "stats": "+1 Production, +2 Faith",
           "uniques_en": [
             "+20% Great Person generation in this city"
           ],
           "uniques_ru": [
             "+20% к скорости появления Великих людей в этом городе"
+          ],
+          "short_lines_en": [
+            "+1 Production, +2 Faith"
+          ],
+          "short_lines_ru": [
+            "+1 Производство, +2 Вера"
           ]
         },
         {
@@ -2823,6 +3439,7 @@
             "Comment [Has 1 Great Work of Writing Slot]"
           ],
           "uniqueTo": "Aksum",
+          "stats": "+4 Culture, +4 Faith",
           "uniques_en": [
             "Only available if Monument is constructed in all non-Puppeted cities",
             "+25% Great Person generation in this city",
@@ -2836,6 +3453,12 @@
             "+1 Еда, +1 Золото, +1 Производство, +1 Вера от каждого: Монумент",
             "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
             "Имеет 1 слот для Литературного Шедевра"
+          ],
+          "short_lines_en": [
+            "+4 Culture, +4 Faith"
+          ],
+          "short_lines_ru": [
+            "+4 Культура, +4 Вера"
           ]
         },
         {
@@ -2899,6 +3522,10 @@
             "[+1 Gold] from [Land Trade Route (Gold)] tiles [in this city]",
             "[+1 Gold] from [Sea Trade Route (Gold)] tiles [in this city]"
           ],
+          "stats": "+1 Gold",
+          "percentStatBonus": {
+            "gold": 25
+          },
           "uniques_en": [
             "+1 Gold from Land Trade Route (Gold) tiles in this city",
             "+1 Gold from Sea Trade Route (Gold) tiles in this city"
@@ -2906,6 +3533,14 @@
           "uniques_ru": [
             "+1 Золото от клеток Сухопутный торговый путь (Золото) в этом городе",
             "+1 Золото от клеток Морской торговый путь (Золото) в этом городе"
+          ],
+          "short_lines_en": [
+            "+1 Gold",
+            "+25% Gold"
+          ],
+          "short_lines_ru": [
+            "+1 Золото",
+            "+25% Золото"
           ]
         },
         {
@@ -2916,6 +3551,12 @@
             "[+2 Gold] from [Silver] tiles [in this city]",
             "[+2 Gold] from [Copper] tiles [in this city]"
           ],
+          "stats": "+2 Gold",
+          "requiredNearbyImprovedResources": [
+            "Gold Ore",
+            "Silver",
+            "Copper"
+          ],
           "uniques_en": [
             "+2 Gold from Gold Ore tiles in this city",
             "+2 Gold from Silver tiles in this city",
@@ -2925,6 +3566,14 @@
             "+2 Золото от клеток Золотая руда в этом городе",
             "+2 Золото от клеток Серебро в этом городе",
             "+2 Золото от клеток Медь в этом городе"
+          ],
+          "short_lines_en": [
+            "+2 Gold",
+            "Requires improved Gold Ore/Silver/Copper near city"
+          ],
+          "short_lines_ru": [
+            "+2 Золото",
+            "Требуется улучшенный Gold Ore/Silver/Copper около города"
           ]
         },
         {
@@ -2938,6 +3587,7 @@
             "Free [Caravan] appears"
           ],
           "quote": "'...who drinks the water I shall give him, says the Lord, will have a spring inside him welling up for eternal life. Let them bring me to your holy mountain in the place where you dwell. Across the desert and through the mountain to the Canyon of the Crescent Moon...' - Indiana Jones",
+          "stats": "+1 Culture",
           "quote_ru": "'...а кто будет пить воду, которую Я дам ему, говорит Господь, будет иметь внутри себя источник воды, текущей в жизнь вечную. Да ведут они меня и приведут на святую гору Твою и в обители Твои. Через пустыню и через горы к каньону Полумесяца...' - Индиана Джонс",
           "uniques_en": [
             "Must be next to Desert",
@@ -2952,6 +3602,12 @@
             "+6 Культура в этом городе после исследования: Археология",
             "Предоставляет 1 Торговый путь",
             "Появляется бесплатный юнит: Караван"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         }
       ],
@@ -2967,6 +3623,10 @@
             "[+2 Gold] from [Oasis] tiles [in this city]"
           ],
           "uniqueTo": "Arabia",
+          "stats": "+2 Gold, +1 Happiness",
+          "percentStatBonus": {
+            "gold": 25
+          },
           "uniques_en": [
             "+1 Gold from Luxury resource tiles in this city",
             "+2 Gold from Land Trade Route (Gold) tiles in this city",
@@ -2980,6 +3640,14 @@
             "+2 Золото от клеток Морской торговый путь (Золото) в этом городе",
             "+2 Золото от клеток Нефть в этом городе",
             "+2 Золото от клеток Оазис в этом городе"
+          ],
+          "short_lines_en": [
+            "+2 Gold, +1 Happiness",
+            "+25% Gold"
+          ],
+          "short_lines_ru": [
+            "+2 Золото, +1 Счастье",
+            "+25% Золото"
           ]
         },
         {
@@ -2991,6 +3659,10 @@
             "[+1 Gold] from [Sea Trade Route (Gold)] tiles [in this city]"
           ],
           "uniqueTo": "Ukraine",
+          "stats": "+2 Gold",
+          "percentStatBonus": {
+            "gold": 25
+          },
           "uniques_en": [
             "Gain 30 Gold upon expending a Great Person unit (modified by game speed)",
             "+1 Gold from Land Trade Route (Gold) tiles in this city",
@@ -3000,6 +3672,14 @@
             "Даёт 30 Золото при израсходовании юнита Великий человек (в зависимости от скорости игры)",
             "+1 Золото от клеток Сухопутный торговый путь (Золото) в этом городе",
             "+1 Золото от клеток Морской торговый путь (Золото) в этом городе"
+          ],
+          "short_lines_en": [
+            "+2 Gold",
+            "+25% Gold"
+          ],
+          "short_lines_ru": [
+            "+2 Золото",
+            "+25% Золото"
           ]
         },
         {
@@ -3011,6 +3691,7 @@
             "[+2 Gold] from [Copper] tiles [in this city]"
           ],
           "uniqueTo": "Celts",
+          "stats": "+2 Production, +1 Gold",
           "uniques_en": [
             "+2 Gold from Gold Ore tiles in this city",
             "+2 Gold from Silver tiles in this city",
@@ -3020,6 +3701,12 @@
             "+2 Золото от клеток Золотая руда в этом городе",
             "+2 Золото от клеток Серебро в этом городе",
             "+2 Золото от клеток Медь в этом городе"
+          ],
+          "short_lines_en": [
+            "+2 Production, +1 Gold"
+          ],
+          "short_lines_ru": [
+            "+2 Производство, +1 Золото"
           ]
         },
         {
@@ -3032,6 +3719,10 @@
             "[+4 Gold] from [Sea Trade Route (Gold)] tiles [in this city]"
           ],
           "uniqueTo": "Venice",
+          "stats": "+4 Gold",
+          "percentStatBonus": {
+            "gold": 25
+          },
           "uniques_en": [
             "Cost increases by 30 per owned city",
             "Provides 2 Trade Route",
@@ -3043,6 +3734,14 @@
             "Предоставляет 2 Торговый путь",
             "+4 Золото от клеток Сухопутный торговый путь (Золото) в этом городе",
             "+4 Золото от клеток Морской торговый путь (Золото) в этом городе"
+          ],
+          "short_lines_en": [
+            "+4 Gold",
+            "+25% Gold"
+          ],
+          "short_lines_ru": [
+            "+4 Золото",
+            "+25% Золото"
           ]
         }
       ],
@@ -3079,6 +3778,7 @@
             "Gain a free [Watch Tower] [in all cities]"
           ],
           "quote": "'The art of war teaches us to rely not on the likelihood of the enemy's not attacking, but rather on the fact that we have made our position unassailable.' - Sun Tzu",
+          "stats": "+3 Culture",
           "quote_ru": "'Правило ведения войны заключается в том, чтобы... не полагаться на то, что враг не нападет, а... на то, что я сделаю нападение на себя невозможным.' - Сунь Цзы",
           "uniques_en": [
             "Gain a free Walls in this city",
@@ -3087,6 +3787,12 @@
           "uniques_ru": [
             "Появляется бесплатная постройка Стены в этом городе",
             "Появляется бесплатная постройка Сторожевая Башня во всех городах"
+          ],
+          "short_lines_en": [
+            "+3 Culture"
+          ],
+          "short_lines_ru": [
+            "+3 Культура"
           ]
         },
         {
@@ -3117,6 +3823,7 @@
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
           "uniqueTo": "Normandy",
+          "stats": "+1 Production, +1 Food",
           "uniques_en": [
             "Gives a defensive bonus of 25%",
             "+2 Culture after discovering Flight",
@@ -3128,6 +3835,12 @@
             "+2 Культура после исследования: Авиация",
             "Доступно только когда от 0 до 0 соседних клеток Мотт и бейли",
             "Разграбление этого улучшения принесет примерно +20 Золото"
+          ],
+          "short_lines_en": [
+            "+1 Production, +1 Food"
+          ],
+          "short_lines_ru": [
+            "+1 Производство, +1 Еда"
           ]
         }
       ],
@@ -3170,6 +3883,7 @@
             "Provides [1] [Trade Route]"
           ],
           "quote": "'Why man, he doth bestride the narrow world like a colossus, and we petty men walk under his huge legs, and peep about to find ourselves dishonorable graves.' - William Shakespeare, Julius Caesar",
+          "stats": "+5 Gold, +1 Culture",
           "quote_ru": "'По миру тесному шагает колосс, а мы, ничтожные людишки, у исполинских ног его снуем и для себя могил бесславных ищем.' - Уильям Шекспир, 'Юлий Цезарь'",
           "uniques_en": [
             "Must be next to Coast",
@@ -3184,6 +3898,12 @@
             "+2 Золото от клеток Морской торговый путь (Золото) в этом городе",
             "Появляется бесплатный юнит: Грузовое судно",
             "Предоставляет 1 Торговый путь"
+          ],
+          "short_lines_en": [
+            "+5 Gold, +1 Culture"
+          ],
+          "short_lines_ru": [
+            "+5 Золото, +1 Культура"
           ]
         },
         {
@@ -3195,6 +3915,7 @@
             "Cost increases by [30] per owned city",
             "Comment [Has 1 Great Work of Writing Slot]"
           ],
+          "stats": "+1 Culture",
           "uniques_en": [
             "Only available if Barracks is constructed in all non-Puppeted cities",
             "All newly-trained non-air units in this city receive the Morale promotion",
@@ -3206,6 +3927,12 @@
             "Все не воздушный юниты после прохождения обучения в этом городе получают повышение Мораль",
             "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
             "Имеет 1 слот для Литературного Шедевра"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         }
       ],
@@ -3296,6 +4023,7 @@
             "Only available <when religion is enabled>"
           ],
           "quote": "'When you realize how perfect everything is, you will tilt your head back and laugh at the sky' - Gautama Buddha",
+          "stats": "+5 Faith",
           "uniques_en": [
             "Gain a free Garden in this city",
             "3 free Missionary units appear",
@@ -3307,6 +4035,12 @@
             "Появляются 3 бесплатных юнитов: Миссионер",
             "Можно построить только в Священный городах",
             "Доступно только когда религия включена"
+          ],
+          "short_lines_en": [
+            "+5 Faith"
+          ],
+          "short_lines_ru": [
+            "+5 Вера"
           ]
         },
         {
@@ -3319,6 +4053,7 @@
             "Only available <when religion is enabled>",
             "Can only be built <in [Holy] cities>"
           ],
+          "stats": "+1 Culture, +8 Faith",
           "uniques_en": [
             "Only available if Temple is constructed in all non-Puppeted cities",
             "Cost increases by 30 per owned city",
@@ -3332,6 +4067,12 @@
             "+100% к естественному распространению религии в этом городе",
             "Доступно только когда религия включена",
             "Можно построить только в Священный городах"
+          ],
+          "short_lines_en": [
+            "+1 Culture, +8 Faith"
+          ],
+          "short_lines_ru": [
+            "+1 Культура, +8 Вера"
           ]
         },
         {
@@ -3343,6 +4084,7 @@
             "Only available <when religion is enabled>"
           ],
           "quote": "'For it soars to a height to match the sky, and as if surging up from among the other buildings it stands on high and looks down upon the remainder of the city, adorning it, because it is a part of it, but glorying in its own beauty' - Procopius, De Aedificis",
+          "stats": "+3 Faith",
           "quote_ru": "'В высоту он поднимается как будто до неба и, как корабль на высоких волнах моря, он выделяется среди других строений, как бы склоняясь над остальным городом, украшая его как составная его часть, и сам украшается им.' - Прокопий, \"О постройках\"",
           "uniques_en": [
             "Gain a free Temple in this city",
@@ -3353,6 +4095,12 @@
             "Появляется бесплатная постройка Храм в этом городе",
             "Появляется бесплатный юнит: Великий пророк",
             "Доступно только когда религия включена"
+          ],
+          "short_lines_en": [
+            "+3 Faith"
+          ],
+          "short_lines_ru": [
+            "+3 Вера"
           ]
         }
       ],
@@ -3380,6 +4128,7 @@
             "Only available <when religion is enabled>"
           ],
           "uniqueTo": "Lithuania",
+          "stats": "+1 Culture, +8 Faith",
           "uniques_en": [
             "Only available if Temple is constructed in all non-Puppeted cities",
             "Cost increases by 30 per owned city",
@@ -3389,6 +4138,12 @@
             "Доступно только если Храм построено во всех не-Сателлит городах",
             "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
             "Доступно только когда религия включена"
+          ],
+          "short_lines_en": [
+            "+1 Culture, +8 Faith"
+          ],
+          "short_lines_ru": [
+            "+1 Культура, +8 Вера"
           ]
         },
         {
@@ -3404,6 +4159,7 @@
             "Free [Great Prophet] appears"
           ],
           "uniqueTo": "Papal State",
+          "stats": "+1 Culture, +8 Faith",
           "uniques_en": [
             "Only available if Temple is constructed in all non-Puppeted cities",
             "Cost increases by 30 per owned city",
@@ -3421,6 +4177,12 @@
             "Можно построить только в Священный городах",
             "Появляется бесплатная постройка Собор в этом городе",
             "Появляется бесплатный юнит: Великий пророк"
+          ],
+          "short_lines_en": [
+            "+1 Culture, +8 Faith"
+          ],
+          "short_lines_ru": [
+            "+1 Культура, +8 Вера"
           ]
         },
         {
@@ -3541,12 +4303,19 @@
             "[+50]% Golden Age length"
           ],
           "quote": "'The katun is established at Chichen Itza. The settlement of the Itza shall take place there. The quetzal shall come, the green bird shall come. Ah Kantenal shall come. It is the word of God. The Itza shall come.' - The Books of Chilam Balam",
+          "stats": "+1 Culture, +4 Happiness",
           "quote_ru": "'Катун установлен в Чичен-Итце. Здесь будет поселение Итца. Кетцаль придет, зеленая птица придет. Ах Кантеналь придет. Вот слово Бога. Народ Итца придет.' - из книг Чилам Балам",
           "uniques_en": [
             "+50% Golden Age length"
           ],
           "uniques_ru": [
             "+50% к продолжительности золотого века"
+          ],
+          "short_lines_en": [
+            "+1 Culture, +4 Happiness"
+          ],
+          "short_lines_ru": [
+            "+1 Культура, +4 Счастье"
           ]
         },
         {
@@ -3556,6 +4325,7 @@
             "Must be next to [Lakes]",
             "[+2 Culture, +2 Food] from [Lakes] tiles [in this city]"
           ],
+          "stats": "+4 Faith",
           "uniques_en": [
             "Must be next to Lakes",
             "+2 Culture, +2 Food from Lakes tiles in this city"
@@ -3563,6 +4333,12 @@
           "uniques_ru": [
             "Должен быть рядом с клеткой Озёра",
             "+2 Культура, +2 Еда от клеток Озёра в этом городе"
+          ],
+          "short_lines_en": [
+            "+4 Faith"
+          ],
+          "short_lines_ru": [
+            "+4 Вера"
           ]
         },
         {
@@ -3698,6 +4474,14 @@
             "[+2 Gold] from [Salt] tiles [in this city]",
             "[+2 Gold] from [Tea] tiles [in this city]"
           ],
+          "stats": "+2 Gold",
+          "requiredNearbyImprovedResources": [
+            "Tea",
+            "Salt",
+            "Wine",
+            "Sugar",
+            "Coffee"
+          ],
           "uniques_en": [
             "+2 Gold from Sugar tiles in this city",
             "+2 Gold from Coffee tiles in this city",
@@ -3711,6 +4495,14 @@
             "+2 Золото от клеток Вино в этом городе",
             "+2 Золото от клеток Соль в этом городе",
             "+2 Золото от клеток Чай в этом городе"
+          ],
+          "short_lines_en": [
+            "+2 Gold",
+            "Requires improved Tea/Salt/Wine/Sugar/Coffee near city"
+          ],
+          "short_lines_ru": [
+            "+2 Золото",
+            "Требуется улучшенный Tea/Salt/Wine/Sugar/Coffee около города"
           ]
         },
         {
@@ -3728,6 +4520,10 @@
             "[+4 Gold] from [Land Trade Route (Gold)] tiles [in this city]",
             "[+4 Gold] from [Sea Trade Route (Gold)] tiles [in this city]"
           ],
+          "stats": "+4 Gold",
+          "percentStatBonus": {
+            "gold": 10
+          },
           "uniques_en": [
             "Only available if Market is constructed in all non-Puppeted cities",
             "Cost increases by 30 per owned city",
@@ -3741,6 +4537,14 @@
             "Предоставляет 1 Торговый путь",
             "+4 Золото от клеток Сухопутный торговый путь (Золото) в этом городе",
             "+4 Золото от клеток Морской торговый путь (Золото) в этом городе"
+          ],
+          "short_lines_en": [
+            "+4 Gold",
+            "+10% Gold"
+          ],
+          "short_lines_ru": [
+            "+4 Золото",
+            "+10% Золото"
           ]
         },
         {
@@ -3751,6 +4555,7 @@
             "Must have an owned [Mountain] within [2] tiles"
           ],
           "quote": "'Few romances can ever surpass that of the granite citadel on top of the beetling precipices of Machu Picchu, the crown of Inca Land.' - Hiram Bingham",
+          "stats": "+5 Gold, +1 Culture, +2 Faith",
           "quote_ru": "'Даже самый захватывающий вид не вызовет такого движения сердца, как гранитная крепость на крутых уступах Мачу Пикчу - короны земли инков.' - Хирам Бингам",
           "uniques_en": [
             "+25% Gold from Trade Routes",
@@ -3759,6 +4564,12 @@
           "uniques_ru": [
             "+25% Золото от торговых путей",
             "Городу должна принадлежать клетка Гора в радиусе 2 клеток"
+          ],
+          "short_lines_en": [
+            "+5 Gold, +1 Culture, +2 Faith"
+          ],
+          "short_lines_ru": [
+            "+5 Золото, +1 Культура, +2 Вера"
           ]
         },
         {
@@ -3768,6 +4579,7 @@
             "[+1 Gold] <after discovering [Economics]>",
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
+          "stats": "+1 Gold",
           "uniques_en": [
             "+1 Gold after discovering Economics",
             "Pillaging this improvement yields approximately +20 Gold"
@@ -3775,6 +4587,12 @@
           "uniques_ru": [
             "+1 Золото после исследования: Экономика",
             "Разграбление этого улучшения принесет примерно +20 Золото"
+          ],
+          "short_lines_en": [
+            "+1 Gold"
+          ],
+          "short_lines_ru": [
+            "+1 Золото"
           ]
         }
       ],
@@ -3806,6 +4624,7 @@
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
           "uniqueTo": "Morocco",
+          "stats": "+1 Production, +2 Food, +1 Gold",
           "uniques_en": [
             "Can only be built on Desert tiles in Hill tiles",
             "Cannot be built on resource tiles",
@@ -3817,6 +4636,12 @@
             "Нельзя построить на клетках ресурс",
             "Увеличивает защиту юнита на 50%",
             "Разграбление этого улучшения принесет примерно +20 Золото"
+          ],
+          "short_lines_en": [
+            "+1 Production, +2 Food, +1 Gold"
+          ],
+          "short_lines_ru": [
+            "+1 Производство, +2 Еда, +1 Золото"
           ]
         },
         {
@@ -3831,6 +4656,7 @@
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
           "uniqueTo": "The Netherlands",
+          "stats": "+2 Food",
           "uniques_en": [
             "+1 Food from Marsh tiles",
             "+1 Food from Flood plains tiles",
@@ -3846,6 +4672,12 @@
             "Нельзя построить на клетках Морские когда от 2 до 0 соседних клеток Наземные",
             "Нельзя построить на клетках ресурс",
             "Разграбление этого улучшения принесет примерно +20 Золото"
+          ],
+          "short_lines_en": [
+            "+2 Food"
+          ],
+          "short_lines_ru": [
+            "+2 Еда"
           ]
         }
       ],
@@ -3877,6 +4709,9 @@
             "[+15]% Production when constructing [Land] units [in this city]",
             "[+1 Production] from [Iron] tiles [in this city]"
           ],
+          "requiredNearbyImprovedResources": [
+            "Iron"
+          ],
           "uniques_en": [
             "+15% Production when constructing Land units in this city",
             "+1 Production from Iron tiles in this city"
@@ -3884,12 +4719,30 @@
           "uniques_ru": [
             "+15% к производству при создании юнитов: Наземные в этом городе",
             "+1 Производство от клеток Железо в этом городе"
+          ],
+          "short_lines_en": [
+            "Requires improved Iron near city"
+          ],
+          "short_lines_ru": [
+            "Требуется улучшенный Железо около города"
           ]
         },
         {
           "kind": "building",
           "name": "Workshop",
-          "uniques": []
+          "uniques": [],
+          "stats": "+2 Production",
+          "percentStatBonus": {
+            "production": 10
+          },
+          "short_lines_en": [
+            "+2 Production",
+            "+10% Production"
+          ],
+          "short_lines_ru": [
+            "+2 Производство",
+            "+10% Производство"
+          ]
         },
         {
           "kind": "wonder",
@@ -3898,6 +4751,7 @@
             "Must be next to [Tundra]",
             "[+1 Culture, +1 Production] from [Tundra] tiles [in this city]"
           ],
+          "stats": "+1 Culture",
           "uniques_en": [
             "Must be next to Tundra",
             "+1 Culture, +1 Production from Tundra tiles in this city"
@@ -3905,6 +4759,12 @@
           "uniques_ru": [
             "Должен быть рядом с клеткой Тундра",
             "+1 Культура, +1 Производство от клеток Тундра в этом городе"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         }
       ],
@@ -3940,6 +4800,7 @@
             "All newly-trained [Siege] units [in this city] receive the [Accuracy I] promotion"
           ],
           "uniqueTo": "Nubia",
+          "stats": "+2 Culture",
           "uniques_en": [
             "+15% Production when constructing Land units in this city",
             "+1 Production, +2 Culture from Iron tiles in this city",
@@ -3953,6 +4814,12 @@
             "Все Юнит дальнего боя юниты после прохождения обучения в этом городе получают повышение Точность I",
             "Все Разведчик юниты после прохождения обучения в этом городе получают повышение Точность I",
             "Все Осада юниты после прохождения обучения в этом городе получают повышение Точность I"
+          ],
+          "short_lines_en": [
+            "+2 Culture"
+          ],
+          "short_lines_ru": [
+            "+2 Культура"
           ]
         },
         {
@@ -3966,6 +4833,10 @@
             "[+2 Gold] from [Whales] tiles [in this city]"
           ],
           "uniqueTo": "Kilwa",
+          "stats": "+2 Production",
+          "percentStatBonus": {
+            "production": 10
+          },
           "uniques_en": [
             "+2 Production from Coral tiles in this city",
             "+1 Culture from Fish tiles in this city",
@@ -3979,6 +4850,14 @@
             "+1 Культура от клеток Крабы в этом городе",
             "+1 Культура от клеток Жемчуг в этом городе",
             "+2 Золото от клеток Киты в этом городе"
+          ],
+          "short_lines_en": [
+            "+2 Production",
+            "+10% Production"
+          ],
+          "short_lines_ru": [
+            "+2 Производство",
+            "+10% Производство"
           ]
         },
         {
@@ -3990,6 +4869,10 @@
             "[+1 Production] from [Hardwood] tiles [in this city]"
           ],
           "uniqueTo": "Iroquois",
+          "stats": "+2 Production",
+          "percentStatBonus": {
+            "production": 10
+          },
           "uniques_en": [
             "+1 Production from Forest tiles in this city",
             "+1 Production from Jungle tiles in this city",
@@ -3999,6 +4882,14 @@
             "+1 Производство от клеток Лес в этом городе",
             "+1 Производство от клеток Джунгли в этом городе",
             "+1 Производство от клеток Древесина в этом городе"
+          ],
+          "short_lines_en": [
+            "+2 Production",
+            "+10% Production"
+          ],
+          "short_lines_ru": [
+            "+2 Производство",
+            "+10% Производство"
           ]
         },
         {
@@ -4034,6 +4925,7 @@
             "[+6 Culture] <after discovering [Flight]>"
           ],
           "uniqueTo": "Sweden",
+          "stats": "+8 Production, +1 Culture",
           "uniques_en": [
             "Only available if Workshop is constructed in all non-Puppeted cities",
             "Cost increases by 30 per owned city",
@@ -4045,6 +4937,12 @@
             "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
             "+1 Производство от клеток Холм в этом городе",
             "+6 Культура после исследования: Авиация"
+          ],
+          "short_lines_en": [
+            "+8 Production, +1 Culture"
+          ],
+          "short_lines_ru": [
+            "+8 Производство, +1 Культура"
           ]
         },
         {
@@ -4114,6 +5012,7 @@
             "[+1 Production, +1 Gold] [in all coastal cities]",
             "Only available <after adopting [Exploration]>"
           ],
+          "stats": "+2 Culture, +2 Happiness",
           "uniques_en": [
             "Instantly gain 4 Golden Age points upon turn end",
             "+1 Production, +1 Gold in all coastal cities",
@@ -4123,6 +5022,12 @@
             "Мгновенно даëт 4 Golden Age points в конце хода",
             "+1 Производство, +1 Золото во всех прибрежных городах",
             "Доступно только после принятия: Исследование"
+          ],
+          "short_lines_en": [
+            "+2 Culture, +2 Happiness"
+          ],
+          "short_lines_ru": [
+            "+2 Культура, +2 Счастье"
           ]
         },
         {
@@ -4211,6 +5116,7 @@
             "[+2 Production] from [Sea Trade Route (Production)] tiles [in this city]"
           ],
           "uniqueTo": "Oman",
+          "cityStrength": 5,
           "uniques_en": [
             "Connects trade routes over water",
             "Must be next to Coast",
@@ -4224,6 +5130,12 @@
             "+1 Золото, +2 Производство от клеток Морской торговый путь (Золото) в этом городе",
             "+2 Производство от клеток Морской торговый путь (Еда) в этом городе",
             "+2 Производство от клеток Морской торговый путь (Производство) в этом городе"
+          ],
+          "short_lines_en": [
+            "City strength +5"
+          ],
+          "short_lines_ru": [
+            "Мощь города +5"
           ]
         },
         {
@@ -4233,11 +5145,18 @@
             "New [Military] units start with [15] XP [in this city]"
           ],
           "uniqueTo": "Philippines",
+          "stats": "+1 Culture, +2 Happiness, +2 Faith",
           "uniques_en": [
             "New Military units start with 15 XP in this city"
           ],
           "uniques_ru": [
             "Новый Военный юниты начинают с 15 ОО в этом городе"
+          ],
+          "short_lines_en": [
+            "+1 Culture, +2 Happiness, +2 Faith"
+          ],
+          "short_lines_ru": [
+            "+1 Культура, +2 Счастье, +2 Вера"
           ]
         },
         {
@@ -4314,11 +5233,20 @@
           "uniques": [
             "[+2 Science] from [Jungle] tiles [in this city]"
           ],
+          "percentStatBonus": {
+            "science": 33
+          },
           "uniques_en": [
             "+2 Science from Jungle tiles in this city"
           ],
           "uniques_ru": [
             "+2 Наука от клеток Джунгли в этом городе"
+          ],
+          "short_lines_en": [
+            "+33% Science"
+          ],
+          "short_lines_ru": [
+            "+33% Наука"
           ]
         },
         {
@@ -4328,12 +5256,19 @@
             "Gain a free [University] [in this city]"
           ],
           "quote": "'The temple is like no other building in the world. It has towers and decoration and all the refinements which the human genius can conceive of.' - Antonio da Magdalena",
+          "stats": "+5 Science, +5 Culture",
           "quote_ru": "'Храм... выдающееся сооружение. Оно имеет башни, рельефы и украшения, какие только может вообразить человеческий гений.' - Антонио де Магдалена",
           "uniques_en": [
             "Gain a free University in this city"
           ],
           "uniques_ru": [
             "Появляется бесплатная постройка Университет в этом городе"
+          ],
+          "short_lines_en": [
+            "+5 Science, +5 Culture"
+          ],
+          "short_lines_ru": [
+            "+5 Наука, +5 Культура"
           ]
         },
         {
@@ -4345,6 +5280,7 @@
             "Cost increases by [30] per owned city",
             "Comment [Has [2] Great Work of Writing Slots]"
           ],
+          "stats": "+3 Science, +1 Culture",
           "uniques_en": [
             "Only available if University is constructed in all non-Puppeted cities",
             "Free Technology",
@@ -4356,6 +5292,12 @@
             "Бесплатная технология",
             "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
             "ИМеет 2 Слота для Литературного Шедевра"
+          ],
+          "short_lines_en": [
+            "+3 Science, +1 Culture"
+          ],
+          "short_lines_ru": [
+            "+3 Наука, +1 Культура"
           ]
         }
       ],
@@ -4369,6 +5311,10 @@
             "[+1 Science] from [Flood plains] tiles [in this city]"
           ],
           "uniqueTo": "Ayyubids",
+          "stats": "+2 Faith",
+          "percentStatBonus": {
+            "science": 33
+          },
           "uniques_en": [
             "+2 Science from Jungle tiles in this city",
             "+2 Science from Oasis tiles in this city",
@@ -4378,6 +5324,14 @@
             "+2 Наука от клеток Джунгли в этом городе",
             "+2 Наука от клеток Оазис в этом городе",
             "+1 Наука от клеток Пойма в этом городе"
+          ],
+          "short_lines_en": [
+            "+2 Faith",
+            "+33% Science"
+          ],
+          "short_lines_ru": [
+            "+2 Вера",
+            "+33% Наука"
           ]
         },
         {
@@ -4387,11 +5341,23 @@
             "[+2 Science] from [Jungle] tiles [in this city]"
           ],
           "uniqueTo": "Siam",
+          "stats": "+3 Culture",
+          "percentStatBonus": {
+            "science": 33
+          },
           "uniques_en": [
             "+2 Science from Jungle tiles in this city"
           ],
           "uniques_ru": [
             "+2 Наука от клеток Джунгли в этом городе"
+          ],
+          "short_lines_en": [
+            "+3 Culture",
+            "+33% Science"
+          ],
+          "short_lines_ru": [
+            "+3 Культура",
+            "+33% Наука"
           ]
         }
       ],
@@ -4472,11 +5438,21 @@
           "uniques": [
             "Destroyed when the city is captured"
           ],
+          "cityStrength": 7,
+          "cityHealth": 25,
           "uniques_en": [
             "Destroyed when the city is captured"
           ],
           "uniques_ru": [
             "Уничтожается при захвате города"
+          ],
+          "short_lines_en": [
+            "City strength +7",
+            "City health +25"
+          ],
+          "short_lines_ru": [
+            "Мощь города +7",
+            "Здоровье города +25"
           ]
         },
         {
@@ -4506,6 +5482,10 @@
             "Gain a free [Castle] [in this city]"
           ],
           "quote": "'Justice is an unassailable fortress, built on the brow of a mountain which cannot be overthrown by the violence of torrents, nor demolished by the force of armies.' - Joseph Addison",
+          "stats": "+1 Culture",
+          "percentStatBonus": {
+            "culture": 20
+          },
           "quote_ru": "'Справедливость - это неприступная крепость, построенная на гребне горы, которую не может разрушить ярость стихий или уничтожить армия солдат.' - Джозеф Эддисон",
           "uniques_en": [
             "All newly-trained relevant units in this city receive the Drill I promotion",
@@ -4514,6 +5494,14 @@
           "uniques_ru": [
             "Все релевантный юниты после прохождения обучения в этом городе получают повышение Муштра I",
             "Появляется бесплатная постройка Замок в этом городе"
+          ],
+          "short_lines_en": [
+            "+1 Culture",
+            "+20% Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура",
+            "+20% Культура"
           ]
         }
       ],
@@ -4689,11 +5677,29 @@
             "Destroyed when the city is captured"
           ],
           "uniqueTo": "The Moors",
+          "stats": "+3 Science",
+          "percentStatBonus": {
+            "food": 10
+          },
+          "cityStrength": 7,
+          "cityHealth": 25,
           "uniques_en": [
             "Destroyed when the city is captured"
           ],
           "uniques_ru": [
             "Уничтожается при захвате города"
+          ],
+          "short_lines_en": [
+            "+3 Science",
+            "+10% Food",
+            "City strength +7",
+            "City health +25"
+          ],
+          "short_lines_ru": [
+            "+3 Наука",
+            "+10% Еда",
+            "Мощь города +7",
+            "Здоровье города +25"
           ]
         },
         {
@@ -4704,6 +5710,9 @@
             "Destroyed when the city is captured"
           ],
           "uniqueTo": "India",
+          "stats": "+4 Culture, +2 Happiness",
+          "cityStrength": 7,
+          "cityHealth": 25,
           "uniques_en": [
             "+2 Culture in this city after discovering Flight",
             "Destroyed when the city is captured"
@@ -4711,6 +5720,16 @@
           "uniques_ru": [
             "+2 Культура в этом городе после исследования: Авиация",
             "Уничтожается при захвате города"
+          ],
+          "short_lines_en": [
+            "+4 Culture, +2 Happiness",
+            "City strength +7",
+            "City health +25"
+          ],
+          "short_lines_ru": [
+            "+4 Культура, +2 Счастье",
+            "Мощь города +7",
+            "Здоровье города +25"
           ]
         },
         {
@@ -4723,6 +5742,10 @@
             "Empire enters golden age"
           ],
           "uniqueTo": "Mysore",
+          "stats": "+3 Production, +3 Gold, +3 Science, +5 Culture",
+          "percentStatBonus": {
+            "culture": 50
+          },
           "uniques_en": [
             "Comment Has 3 Great Work of Art Slots",
             "Only available if Walls is constructed in all non-Puppeted cities",
@@ -4734,6 +5757,14 @@
             "Доступно только если Стены построено во всех не-Сателлит городах",
             "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
             "Империя вступает в золотой век"
+          ],
+          "short_lines_en": [
+            "+3 Production, +3 Gold, +3 Science, +5 Culture",
+            "+50% Culture"
+          ],
+          "short_lines_ru": [
+            "+3 Производство, +3 Золото, +3 Наука, +5 Культура",
+            "+50% Культура"
           ]
         },
         {
@@ -4746,6 +5777,7 @@
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
           "uniqueTo": "Wales",
+          "stats": "+1 Production, +3 Gold, +1 Culture",
           "uniques_en": [
             "Gives a defensive bonus of 25%",
             "+1 Culture after discovering Acoustics",
@@ -4757,6 +5789,12 @@
             "+1 Культура после исследования: Акустика",
             "Нельзя построить на клетках ресурс",
             "Разграбление этого улучшения принесет примерно +20 Золото"
+          ],
+          "short_lines_en": [
+            "+1 Production, +3 Gold, +1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Производство, +3 Золото, +1 Культура"
           ]
         },
         {
@@ -4771,6 +5809,7 @@
             "Pillaging this improvement yields approximately [+20 Gold]"
           ],
           "uniqueTo": "France",
+          "stats": "+1 Gold, +2 Science, +2 Culture",
           "uniques_en": [
             "Gives a defensive bonus of 50%",
             "+2 Gold, +1 Culture after discovering Flight",
@@ -4786,6 +5825,12 @@
             "Нельзя построить на клетках ресурс",
             "Доступно только когда от 0 до 0 соседних клеток Шато",
             "Разграбление этого улучшения принесет примерно +20 Золото"
+          ],
+          "short_lines_en": [
+            "+1 Gold, +2 Science, +2 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Золото, +2 Наука, +2 Культура"
           ]
         },
         {
@@ -4832,6 +5877,13 @@
             "[+1 Culture] from [Amber] tiles [in this city]",
             "[+1 Culture] from [Gems] tiles [in this city]"
           ],
+          "stats": "+1 Culture",
+          "requiredNearbyImprovedResources": [
+            "Gems",
+            "Amber",
+            "Lapis Lazuli",
+            "Jade"
+          ],
           "uniques_en": [
             "+1 Culture from Jade tiles in this city",
             "+1 Culture from Lapis Lazuli tiles in this city",
@@ -4843,6 +5895,14 @@
             "+1 Культура от клеток Лазурит в этом городе",
             "+1 Культура от клеток Янтарь в этом городе",
             "+1 Культура от клеток Драгоценные камни в этом городе"
+          ],
+          "short_lines_en": [
+            "+1 Culture",
+            "Requires improved Gems/Amber/Lapis Lazuli/Jade near city"
+          ],
+          "short_lines_ru": [
+            "+1 Культура",
+            "Требуется улучшенный Gems/Amber/Lapis Lazuli/Jade около города"
           ]
         },
         {
@@ -4852,6 +5912,7 @@
             "Only available <if [Workshop] is constructed in all [non-[Puppeted]] cities>",
             "Cost increases by [30] per owned city"
           ],
+          "stats": "+8 Production, +1 Culture",
           "uniques_en": [
             "Only available if Workshop is constructed in all non-Puppeted cities",
             "Cost increases by 30 per owned city"
@@ -4859,6 +5920,12 @@
           "uniques_ru": [
             "Доступно только если Мастерская построено во всех не-Сателлит городах",
             "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем"
+          ],
+          "short_lines_en": [
+            "+8 Production, +1 Culture"
+          ],
+          "short_lines_ru": [
+            "+8 Производство, +1 Культура"
           ]
         }
       ],
@@ -4913,6 +5980,11 @@
             "Spies in [in this city] cities act as though they have [+1] levels for [Counter-intelligence]"
           ],
           "uniqueTo": "Australia",
+          "stats": "+1 Production, +1 Gold",
+          "percentStatBonus": {
+            "gold": 5,
+            "production": 5
+          },
           "uniques_en": [
             "Only available when espionage is enabled",
             "-25% enemy spy effectiveness in this city",
@@ -4922,6 +5994,16 @@
             "Доступно только когда шпионаж включен",
             "-25% эффективности вражеского шпиона в этом городе",
             "Шпионы в этом городе действуют так, будто у них на +1 уровней больше для Контрразведка"
+          ],
+          "short_lines_en": [
+            "+1 Production, +1 Gold",
+            "+5% Production",
+            "+5% Gold"
+          ],
+          "short_lines_ru": [
+            "+1 Производство, +1 Золото",
+            "+5% Производство",
+            "+5% Золото"
           ]
         },
         {
@@ -4989,7 +6071,14 @@
           "name": "Notre Dame",
           "uniques": [],
           "quote": "'Architecture has recorded the great ideas of the human race. Not only every religious symbol, but every human thought has its page in that vast book.' - Victor Hugo",
-          "quote_ru": "'Зодчество было главной летописью человечества... каждая общедоступная идея, как и каждый религиозный закон, имела свой памятник' - Виктор Гюго"
+          "stats": "+10 Happiness, +4 Faith",
+          "quote_ru": "'Зодчество было главной летописью человечества... каждая общедоступная идея, как и каждый религиозный закон, имела свой памятник' - Виктор Гюго",
+          "short_lines_en": [
+            "+10 Happiness, +4 Faith"
+          ],
+          "short_lines_ru": [
+            "+10 Счастье, +4 Вера"
+          ]
         }
       ],
       "nation_unlocks": [
@@ -5172,6 +6261,7 @@
             "[+5 Science] from [Mountain] tiles [in this city]",
             "[+1 Science] from [Tundra] tiles [in this city]"
           ],
+          "stats": "+4 Science",
           "uniques_en": [
             "+5 Science from Mountain tiles in this city",
             "+1 Science from Tundra tiles in this city"
@@ -5179,6 +6269,12 @@
           "uniques_ru": [
             "+5 Наука от клеток Гора в этом городе",
             "+1 Наука от клеток Тундра в этом городе"
+          ],
+          "short_lines_en": [
+            "+4 Science"
+          ],
+          "short_lines_ru": [
+            "+4 Наука"
           ]
         }
       ],
@@ -5231,6 +6327,7 @@
             "[+1 Science] from [Tundra] tiles [in this city]"
           ],
           "uniqueTo": "Armenia",
+          "stats": "+4 Science, +4 Culture",
           "uniques_en": [
             "+5 Science, +2 Culture from Mountain tiles in this city",
             "+1 Science from Tundra tiles in this city"
@@ -5238,6 +6335,12 @@
           "uniques_ru": [
             "+5 Наука, +2 Культура от клеток Гора в этом городе",
             "+1 Наука от клеток Тундра в этом городе"
+          ],
+          "short_lines_en": [
+            "+4 Science, +4 Culture"
+          ],
+          "short_lines_ru": [
+            "+4 Наука, +4 Культура"
           ]
         }
       ],
@@ -5268,6 +6371,7 @@
             "Destroyed when the city is captured",
             "Comment [Has 1 Great Work of Music Slot]"
           ],
+          "stats": "+2 Culture",
           "uniques_en": [
             "Destroyed when the city is captured",
             "Comment Has 1 Great Work of Music Slot"
@@ -5275,6 +6379,12 @@
           "uniques_ru": [
             "Уничтожается при захвате города",
             "Имеет 1 слот для Музыкального Шедевра"
+          ],
+          "short_lines_en": [
+            "+2 Culture"
+          ],
+          "short_lines_ru": [
+            "+2 Культура"
           ]
         },
         {
@@ -5290,6 +6400,7 @@
             "Comment [Has [2] Great Work of Art Slots]"
           ],
           "quote": "'I live and love in God's peculiar light.' - Michelangelo Buonarroti",
+          "stats": "+1 Culture",
           "quote_ru": "'Я живу и люблю в особом свете Господа.' - Микеланджело Буонарроти",
           "uniques_en": [
             "+25% Culture in all cities",
@@ -5298,6 +6409,12 @@
           "uniques_ru": [
             "+25% Культура во всех городах",
             "Имеет 2 Слота для Художественного Шедевра"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         }
       ],
@@ -5310,6 +6427,7 @@
             "Comment [Has 1 Great Work of Music Slot]"
           ],
           "uniqueTo": "Scotland",
+          "stats": "+3 Culture, +3 Happiness",
           "uniques_en": [
             "Destroyed when the city is captured",
             "Comment Has 1 Great Work of Music Slot"
@@ -5317,6 +6435,12 @@
           "uniques_ru": [
             "Уничтожается при захвате города",
             "Имеет 1 слот для Музыкального Шедевра"
+          ],
+          "short_lines_en": [
+            "+3 Culture, +3 Happiness"
+          ],
+          "short_lines_ru": [
+            "+3 Культура, +3 Счастье"
           ]
         },
         {
@@ -5327,6 +6451,7 @@
             "Comment [Has 1 Great Work of Music Slot]"
           ],
           "uniqueTo": "Boers",
+          "stats": "+3 Culture",
           "uniques_en": [
             "Destroyed when the city is captured",
             "Comment Has 1 Great Work of Music Slot"
@@ -5334,6 +6459,12 @@
           "uniques_ru": [
             "Уничтожается при захвате города",
             "Имеет 1 слот для Музыкального Шедевра"
+          ],
+          "short_lines_en": [
+            "+3 Culture"
+          ],
+          "short_lines_ru": [
+            "+3 Культура"
           ]
         },
         {
@@ -5422,7 +6553,19 @@
         {
           "kind": "building",
           "name": "Bank",
-          "uniques": []
+          "uniques": [],
+          "stats": "+2 Gold",
+          "percentStatBonus": {
+            "gold": 25
+          },
+          "short_lines_en": [
+            "+2 Gold",
+            "+25% Gold"
+          ],
+          "short_lines_ru": [
+            "+2 Золото",
+            "+25% Золото"
+          ]
         },
         {
           "kind": "building",
@@ -5434,6 +6577,15 @@
             "[+1 Food] from [Olives] tiles [in this city]",
             "[+1 Food] from [Citrus] tiles [in this city]",
             "[+1 Food] from [Coconut] tiles [in this city]"
+          ],
+          "stats": "+1 Food",
+          "requiredNearbyImprovedResources": [
+            "Citrus",
+            "Olives",
+            "Truffles",
+            "Cocoa",
+            "Spices",
+            "Coconut"
           ],
           "uniques_en": [
             "+1 Food from Truffles tiles in this city",
@@ -5450,6 +6602,14 @@
             "+1 Еда от клеток Оливки в этом городе",
             "+1 Еда от клеток Цитрусы в этом городе",
             "+1 Еда от клеток Кокосы в этом городе"
+          ],
+          "short_lines_en": [
+            "+1 Food",
+            "Requires improved Citrus/Olives/Truffles/Cocoa/Spices/Coconut near city"
+          ],
+          "short_lines_ru": [
+            "+1 Еда",
+            "Требуется улучшенный Citrus/Olives/Truffles/Cocoa/Spices/Coconut около города"
           ]
         },
         {
@@ -5460,6 +6620,7 @@
             "Only available <after adopting [Patronage]>"
           ],
           "quote": "'Most of us can, as we choose, make of this world either a palace or a prison' - John Lubbock",
+          "stats": "+1 Culture",
           "quote_ru": "'Фактически любой из нас может по собственному желанию превратить мир во дворец или в темницу' - Джон Лаббок",
           "uniques_en": [
             "-10% Unhappiness from Population in all cities",
@@ -5468,6 +6629,12 @@
           "uniques_ru": [
             "-10% к недовольству от Население во всех городах",
             "Доступно только после принятия: Меценатство"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         }
       ],
@@ -5476,19 +6643,58 @@
           "kind": "building",
           "name": "Canton Factory",
           "uniques": [],
-          "uniqueTo": "Manchuria"
+          "uniqueTo": "Manchuria",
+          "stats": "+2 Gold",
+          "percentStatBonus": {
+            "gold": 35
+          },
+          "short_lines_en": [
+            "+2 Gold",
+            "+35% Gold"
+          ],
+          "short_lines_ru": [
+            "+2 Золото",
+            "+35% Золото"
+          ]
         },
         {
           "kind": "building",
           "name": "Hanse",
           "uniques": [],
-          "uniqueTo": "Germany"
+          "uniqueTo": "Germany",
+          "stats": "+2 Gold",
+          "percentStatBonus": {
+            "gold": 25,
+            "production": 10
+          },
+          "short_lines_en": [
+            "+2 Gold",
+            "+10% Production",
+            "+25% Gold"
+          ],
+          "short_lines_ru": [
+            "+2 Золото",
+            "+10% Производство",
+            "+25% Золото"
+          ]
         },
         {
           "kind": "building",
           "name": "Satrap's Court",
           "uniques": [],
-          "uniqueTo": "Persia"
+          "uniqueTo": "Persia",
+          "stats": "+3 Gold, +2 Happiness",
+          "percentStatBonus": {
+            "gold": 25
+          },
+          "short_lines_en": [
+            "+3 Gold, +2 Happiness",
+            "+25% Gold"
+          ],
+          "short_lines_ru": [
+            "+3 Золото, +2 Счастье",
+            "+25% Золото"
+          ]
         }
       ],
       "uniques": [
@@ -5516,7 +6722,14 @@
         {
           "kind": "building",
           "name": "Zoo",
-          "uniques": []
+          "uniques": [],
+          "stats": "+2 Happiness",
+          "short_lines_en": [
+            "+2 Happiness"
+          ],
+          "short_lines_ru": [
+            "+2 Счастье"
+          ]
         },
         {
           "kind": "wonder",
@@ -5526,6 +6739,7 @@
             "Comment [Has [2] Great Work of Writing Slots]"
           ],
           "quote": "'Totus mundus agit histrionem.' - Inscription above main entrance to the Globe Theatre",
+          "stats": "+2 Culture",
           "uniques_en": [
             "Free Great Writer appears",
             "Comment Has 2 Great Work of Writing Slots"
@@ -5533,6 +6747,12 @@
           "uniques_ru": [
             "Появляется бесплатный юнит: Великий Писатель",
             "ИМеет 2 Слота для Литературного Шедевра"
+          ],
+          "short_lines_en": [
+            "+2 Culture"
+          ],
+          "short_lines_ru": [
+            "+2 Культура"
           ]
         },
         {
@@ -5542,12 +6762,19 @@
             "[+20]% Great Person generation [in all cities]"
           ],
           "quote": "'Don't clap too hard - it's a very old building.' - John Osbourne",
+          "stats": "+1 Culture",
           "quote_ru": "'Не хлопайте так громко - здание старое, может развалиться.' - Джон Осборн",
           "uniques_en": [
             "+20% Great Person generation in all cities"
           ],
           "uniques_ru": [
             "+20% к скорости появления Великих людей во всех городах"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         }
       ],
@@ -5561,6 +6788,10 @@
             "[+1 Production] from [Lakes] tiles [in this city]"
           ],
           "uniqueTo": "Austria",
+          "stats": "+2 Production",
+          "percentStatBonus": {
+            "production": 5
+          },
           "uniques_en": [
             "+20% Great Person generation in this city",
             "+1 Production from Oasis tiles in this city",
@@ -5570,6 +6801,14 @@
             "+20% к скорости появления Великих людей в этом городе",
             "+1 Производство от клеток Оазис в этом городе",
             "+1 Производство от клеток Озёра в этом городе"
+          ],
+          "short_lines_en": [
+            "+2 Production",
+            "+5% Production"
+          ],
+          "short_lines_ru": [
+            "+2 Производство",
+            "+5% Производство"
           ]
         },
         {
@@ -5582,6 +6821,7 @@
             "[+1 Production] from [Tobacco] tiles [in this city]"
           ],
           "uniqueTo": "Ireland",
+          "stats": "+3 Food, +2 Happiness",
           "uniques_en": [
             "+1 Production from Coffee tiles in this city",
             "+1 Production from Wine tiles in this city",
@@ -5593,13 +6833,26 @@
             "+1 Производство от клеток Вино в этом городе",
             "+1 Производство от клеток Чай в этом городе",
             "+1 Производство от клеток Табак в этом городе"
+          ],
+          "short_lines_en": [
+            "+3 Food, +2 Happiness"
+          ],
+          "short_lines_ru": [
+            "+3 Еда, +2 Счастье"
           ]
         },
         {
           "kind": "building",
           "name": "Stade",
           "uniques": [],
-          "uniqueTo": "Belgium"
+          "uniqueTo": "Belgium",
+          "stats": "+1 Gold, +1 Culture, +3 Happiness",
+          "short_lines_en": [
+            "+1 Gold, +1 Culture, +3 Happiness"
+          ],
+          "short_lines_ru": [
+            "+1 Золото, +1 Культура, +3 Счастье"
+          ]
         }
       ],
       "quote_ru": "'Долг газеты - печатать новости и поднимать скандалы.' - 'Чикаго Таймс'"
@@ -5627,6 +6880,7 @@
             "Gain a free [Castle] [in this city]"
           ],
           "quote": "'Bushido is realized in the presence of death. This means choosing death whenever there is a choice between life and death. There is no other reasoning.' - Yamamoto Tsunetomo",
+          "stats": "+3 Culture",
           "quote_ru": "'Бусидо - путь воина - означает смерть. Когда для выбора имеются два пути, выбирай тот, который ведет к смерти. Не рассуждай! Направь мысль на путь, который ты предпочел, и иди.' - Ямамото Цунэтомо",
           "uniques_en": [
             "+15% Strength for All units when fighting in Friendly Land tiles",
@@ -5635,6 +6889,12 @@
           "uniques_ru": [
             "+15% к боевой мощи для юнитов: Все когда сражается на клетках Дружественная территория",
             "Появляется бесплатная постройка Замок в этом городе"
+          ],
+          "short_lines_en": [
+            "+3 Culture"
+          ],
+          "short_lines_ru": [
+            "+3 Культура"
           ]
         }
       ],
@@ -5838,6 +7098,10 @@
             "Cost increases by [30] per owned city",
             "Comment [Has [3] Great Work of Art Slots]"
           ],
+          "stats": "+5 Culture",
+          "percentStatBonus": {
+            "culture": 50
+          },
           "uniques_en": [
             "Only available if Opera House is constructed in all non-Puppeted cities",
             "Cost increases by 30 per owned city",
@@ -5847,6 +7111,14 @@
             "Доступно только если Оперный театр построено во всех не-Сателлит городах",
             "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем",
             "Имеет 3 Слота для Художественного Шедевра"
+          ],
+          "short_lines_en": [
+            "+5 Culture",
+            "+50% Culture"
+          ],
+          "short_lines_ru": [
+            "+5 Культура",
+            "+50% Культура"
           ]
         },
         {
@@ -5857,6 +7129,7 @@
             "Only available <after adopting [Rationalism]>"
           ],
           "quote": "'Things always seem fairer when we look back at them, and it is out of that inaccessible tower' - James Russell Lowell",
+          "stats": "+1 Culture",
           "quote_ru": "'Многое начинает казаться лучше, когда остается в прошлом - и из этой неприступной башни Прошлого нас зовет и манит рукою Тоска.' - Джеймс Расселл Лоуэлл",
           "uniques_en": [
             "+3 Science, +3 Culture from Luxury resource tiles in this city",
@@ -5865,6 +7138,12 @@
           "uniques_ru": [
             "+3 Наука, +3 Культура от клеток Редкий ресурс в этом городе",
             "Доступно только после принятия: Рационализм"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         },
         {
@@ -5874,12 +7153,19 @@
             "Empire enters golden age"
           ],
           "quote": "'The Taj Mahal rises above the banks of the river like a solitary tear suspended on the cheek of time.' - Rabindranath Tagore",
+          "stats": "+1 Culture, +4 Happiness",
           "quote_ru": "'Пусть великолепие алмаза, рубина исчезнет, как магическое мерцание от радуги, только пусть одна слеза - Тадж-Махал - ярко сияет на щеке времени.' - Рабиндарат Тагор",
           "uniques_en": [
             "Empire enters golden age"
           ],
           "uniques_ru": [
             "Империя вступает в золотой век"
+          ],
+          "short_lines_en": [
+            "+1 Culture, +4 Happiness"
+          ],
+          "short_lines_ru": [
+            "+1 Культура, +4 Счастье"
           ]
         },
         {
@@ -5891,6 +7177,7 @@
             "Comment [Has [3] Great Work of Art Slots]"
           ],
           "quote": "'The painter is not simply someone who looks and who sees. Above all, the artist is someone who exposes a personal vision by rendering it visible.' - Marcel Paquet",
+          "stats": "+2 Culture",
           "uniques_en": [
             "Free Great Artist appears",
             "Only available after adopting Aesthetics",
@@ -5900,6 +7187,12 @@
             "Появляется бесплатный юнит: Великий художник",
             "Доступно только после принятия: Эстетика",
             "Имеет 3 Слота для Художественного Шедевра"
+          ],
+          "short_lines_en": [
+            "+2 Culture"
+          ],
+          "short_lines_ru": [
+            "+2 Культура"
           ]
         }
       ],
@@ -5924,6 +7217,12 @@
             "[+1 Culture] from [Tobacco] tiles [in this city]",
             "[+1 Culture] from [Perfume] tiles [in this city]"
           ],
+          "stats": "+2 Culture",
+          "requiredNearbyImprovedResources": [
+            "Incense",
+            "Tobacco",
+            "Perfume"
+          ],
           "uniques_en": [
             "+1 Culture from Incense tiles in this city",
             "+1 Culture from Tobacco tiles in this city",
@@ -5933,6 +7232,14 @@
             "+1 Культура от клеток Благовония в этом городе",
             "+1 Культура от клеток Табак в этом городе",
             "+1 Культура от клеток Парфюм в этом городе"
+          ],
+          "short_lines_en": [
+            "+2 Culture",
+            "Requires improved Incense/Tobacco/Perfume near city"
+          ],
+          "short_lines_ru": [
+            "+2 Культура",
+            "Требуется улучшенный Incense/Tobacco/Perfume около города"
           ]
         },
         {
@@ -5943,6 +7250,13 @@
             "[+2 Production] from [Furs] tiles [in this city]",
             "[+2 Production] from [Cotton] tiles [in this city]",
             "[+2 Production] from [Silk] tiles [in this city]"
+          ],
+          "stats": "+1 Production",
+          "requiredNearbyImprovedResources": [
+            "Cotton",
+            "Silk",
+            "Dyes",
+            "Furs"
           ],
           "uniques_en": [
             "+2 Production from Dyes tiles in this city",
@@ -5955,6 +7269,14 @@
             "+2 Производство от клеток Меха в этом городе",
             "+2 Производство от клеток Хлопок в этом городе",
             "+2 Производство от клеток Шелк в этом городе"
+          ],
+          "short_lines_en": [
+            "+1 Production",
+            "Requires improved Cotton/Silk/Dyes/Furs near city"
+          ],
+          "short_lines_ru": [
+            "+1 Производство",
+            "Требуется улучшенный Cotton/Silk/Dyes/Furs около города"
           ]
         },
         {
@@ -5965,6 +7287,7 @@
             "[+1 Production] from [Oasis] tiles [in this city]",
             "[+1 Production] from [Lakes] tiles [in this city]"
           ],
+          "stats": "+2 Production",
           "uniques_en": [
             "+10% Production when constructing All buildings in this city",
             "+1 Production from Oasis tiles in this city",
@@ -5974,6 +7297,12 @@
             "+10% к производству при создании построек: Все в этом городе",
             "+1 Производство от клеток Оазис в этом городе",
             "+1 Производство от клеток Озёра в этом городе"
+          ],
+          "short_lines_en": [
+            "+2 Production"
+          ],
+          "short_lines_ru": [
+            "+2 Производство"
           ]
         },
         {
@@ -6061,6 +7390,7 @@
             "[+1 Production] from [Luxury resource] tiles [in this city]"
           ],
           "uniqueTo": "Mexico",
+          "stats": "+2 Production",
           "uniques_en": [
             "+10% Production when constructing All buildings in this city",
             "+1 Production from Oasis tiles in this city",
@@ -6076,6 +7406,12 @@
             "+1 Золото от клеток Бонусный ресурс в этом городе",
             "+1 Еда от клеток Стратегический ресурс в этом городе",
             "+1 Производство от клеток Редкий ресурс в этом городе"
+          ],
+          "short_lines_en": [
+            "+2 Production"
+          ],
+          "short_lines_ru": [
+            "+2 Производство"
           ]
         },
         {
@@ -6139,11 +7475,21 @@
           "uniques": [
             "Destroyed when the city is captured"
           ],
+          "cityStrength": 9,
+          "cityHealth": 25,
           "uniques_en": [
             "Destroyed when the city is captured"
           ],
           "uniques_ru": [
             "Уничтожается при захвате города"
+          ],
+          "short_lines_en": [
+            "City strength +9",
+            "City health +25"
+          ],
+          "short_lines_ru": [
+            "Мощь города +9",
+            "Здоровье города +25"
           ]
         },
         {
@@ -6153,11 +7499,21 @@
             "[+25]% City Strength from defensive buildings"
           ],
           "quote": "'When we build, let us think that we build forever.' - John Ruskin",
+          "stats": "+8 Culture, +4 Happiness",
+          "cityStrength": 12,
           "uniques_en": [
             "+25% City Strength from defensive buildings"
           ],
           "uniques_ru": [
             "+25% к мощи города от защитных сооружений"
+          ],
+          "short_lines_en": [
+            "+8 Culture, +4 Happiness",
+            "City strength +12"
+          ],
+          "short_lines_ru": [
+            "+8 Культура, +4 Счастье",
+            "Мощь города +12"
           ]
         }
       ],
@@ -6338,6 +7694,10 @@
             "Destroyed when the city is captured",
             "Comment [Has [2] Great Work of Art Slots]"
           ],
+          "stats": "+2 Culture",
+          "percentStatBonus": {
+            "culture": 10
+          },
           "uniques_en": [
             "Destroyed when the city is captured",
             "Comment Has 2 Great Work of Art Slots"
@@ -6345,6 +7705,14 @@
           "uniques_ru": [
             "Уничтожается при захвате города",
             "Имеет 2 Слота для Художественного Шедевра"
+          ],
+          "short_lines_en": [
+            "+2 Culture",
+            "+10% Culture"
+          ],
+          "short_lines_ru": [
+            "+2 Культура",
+            "+10% Культура"
           ]
         },
         {
@@ -6355,6 +7723,7 @@
             "Comment [Has [4] Great Work of Art Slots]"
           ],
           "quote": "'Every genuine work of art has as much reason for being as the earth and the sun' - Ralph Waldo Emerson",
+          "stats": "+2 Culture",
           "quote_ru": "'У подлинного произведения искусства столько же прав на существование, сколько у солнца и земли.' - Ральф Уолдо Эмерсон",
           "uniques_en": [
             "Instantly provides 2 Great Work of Art",
@@ -6363,6 +7732,12 @@
           "uniques_ru": [
             "Мгновенно предоставляет 2 Художественный Шедевр",
             "Имеет 4 Слота для Художественного Шедевра"
+          ],
+          "short_lines_en": [
+            "+2 Culture"
+          ],
+          "short_lines_ru": [
+            "+2 Культура"
           ]
         },
         {
@@ -6402,6 +7777,11 @@
             "Comment [Has [2] Great Work of Art Slots]"
           ],
           "uniqueTo": "Yugoslavia",
+          "stats": "+2 Culture",
+          "percentStatBonus": {
+            "science": 20,
+            "culture": 10
+          },
           "uniques_en": [
             "Destroyed when the city is captured",
             "Comment Has 2 Great Work of Art Slots"
@@ -6409,6 +7789,16 @@
           "uniques_ru": [
             "Уничтожается при захвате города",
             "Имеет 2 Слота для Художественного Шедевра"
+          ],
+          "short_lines_en": [
+            "+2 Culture",
+            "+20% Science",
+            "+10% Culture"
+          ],
+          "short_lines_ru": [
+            "+2 Культура",
+            "+20% Наука",
+            "+10% Культура"
           ]
         },
         {
@@ -6445,6 +7835,7 @@
             "[+1 Science] per [2] population [in this city]",
             "[+1 Science] from [Forest] tiles [in this city]"
           ],
+          "stats": "+3 Science",
           "uniques_en": [
             "+1 Science per 2 population in this city",
             "+1 Science from Forest tiles in this city"
@@ -6452,6 +7843,12 @@
           "uniques_ru": [
             "+1 Наука за каждые 2 населения в этом городе",
             "+1 Наука от клеток Лес в этом городе"
+          ],
+          "short_lines_en": [
+            "+3 Science"
+          ],
+          "short_lines_ru": [
+            "+3 Наука"
           ]
         },
         {
@@ -6477,6 +7874,7 @@
             "[+1 Science] from [Forest] tiles [in this city]"
           ],
           "uniqueTo": "Turkey",
+          "stats": "+3 Science, +3 Culture",
           "uniques_en": [
             "+1 Science per 2 population in this city",
             "+1 Science from Forest tiles in this city"
@@ -6484,6 +7882,12 @@
           "uniques_ru": [
             "+1 Наука за каждые 2 населения в этом городе",
             "+1 Наука от клеток Лес в этом городе"
+          ],
+          "short_lines_en": [
+            "+3 Science, +3 Culture"
+          ],
+          "short_lines_ru": [
+            "+3 Наука, +3 Культура"
           ]
         }
       ],
@@ -6536,6 +7940,10 @@
             "Adopt [Ideology] <when above [2] [Factories]>",
             "[+2 Gold] from [Rubber] tiles [in this city]"
           ],
+          "stats": "+4 Production",
+          "percentStatBonus": {
+            "production": 10
+          },
           "uniques_en": [
             "Provides 1 Factories",
             "Adopt Ideology when above 2 Factories",
@@ -6545,6 +7953,14 @@
             "Предоставляет 1 Заводы",
             "Принять Идеология когда больше 2 Заводы",
             "+2 Золото от клеток Каучук в этом городе"
+          ],
+          "short_lines_en": [
+            "+4 Production",
+            "+10% Production"
+          ],
+          "short_lines_ru": [
+            "+4 Производство",
+            "+10% Производство"
           ]
         },
         {
@@ -6555,6 +7971,7 @@
             "Only available <after adopting [Commerce]>"
           ],
           "quote": "'To achieve great things, two things are needed: a plan, and not quite enough time.' - Leonard Bernstein",
+          "stats": "+4 Gold, +1 Culture",
           "quote_ru": "'Для великих свершений потребны две вещи: план действий и недостаток времени.' - Леонард Бернстайн",
           "uniques_en": [
             "Gold cost of purchasing items in cities -12%",
@@ -6563,6 +7980,12 @@
           "uniques_ru": [
             "-12% к стоимости покупок в городах за Золото",
             "Доступно только после принятия: Коммерция"
+          ],
+          "short_lines_en": [
+            "+4 Gold, +1 Culture"
+          ],
+          "short_lines_ru": [
+            "+4 Золото, +1 Культура"
           ]
         },
         {
@@ -6668,6 +8091,10 @@
             "Comment [Has [2] Great Work of Art Slots]"
           ],
           "uniqueTo": "Italy",
+          "stats": "+2 Culture",
+          "percentStatBonus": {
+            "culture": 10
+          },
           "uniques_en": [
             "Destroyed when the city is captured",
             "+20% Great Person generation in this city",
@@ -6677,6 +8104,14 @@
             "Уничтожается при захвате города",
             "+20% к скорости появления Великих людей в этом городе",
             "Имеет 2 Слота для Художественного Шедевра"
+          ],
+          "short_lines_en": [
+            "+2 Culture",
+            "+10% Culture"
+          ],
+          "short_lines_ru": [
+            "+2 Культура",
+            "+10% Культура"
           ]
         },
         {
@@ -6688,6 +8123,10 @@
             "[+2 Gold] from [Rubber] tiles [in this city]"
           ],
           "uniqueTo": "Chile",
+          "stats": "+4 Production, +2 Happiness",
+          "percentStatBonus": {
+            "production": 10
+          },
           "uniques_en": [
             "Provides 1 Factories",
             "Adopt Ideology",
@@ -6697,6 +8136,14 @@
             "Предоставляет 1 Заводы",
             "Принять Идеология",
             "+2 Золото от клеток Каучук в этом городе"
+          ],
+          "short_lines_en": [
+            "+4 Production, +2 Happiness",
+            "+10% Production"
+          ],
+          "short_lines_ru": [
+            "+4 Производство, +2 Счастье",
+            "+10% Производство"
           ]
         },
         {
@@ -6708,6 +8155,10 @@
             "[+2 Gold] from [Rubber] tiles [in this city]"
           ],
           "uniqueTo": "Prussia",
+          "stats": "+4 Production",
+          "percentStatBonus": {
+            "production": 10
+          },
           "uniques_en": [
             "Provides 1 Factories",
             "Adopt Ideology when above 2 Factories",
@@ -6717,6 +8168,14 @@
             "Предоставляет 1 Заводы",
             "Принять Идеология когда больше 2 Заводы",
             "+2 Золото от клеток Каучук в этом городе"
+          ],
+          "short_lines_en": [
+            "+4 Production",
+            "+10% Production"
+          ],
+          "short_lines_ru": [
+            "+4 Производство",
+            "+10% Производство"
           ]
         },
         {
@@ -6758,6 +8217,7 @@
             "Must have an owned [Mountain] within [2] tiles"
           ],
           "quote": "'...the location is one of the most beautiful to be found, holy and unapproachable, a worthy temple for the divine friend who has brought salvation and true blessing to the world.' - King Ludwig II of Bavaria",
+          "stats": "+6 Gold, +4 Culture, +2 Happiness",
           "uniques_en": [
             "+1 Happiness, +2 Culture, +3 Gold from every Castle",
             "Must have an owned Mountain within 2 tiles"
@@ -6765,6 +8225,12 @@
           "uniques_ru": [
             "+1 Счастье, +2 Культура, +3 Золото от каждого: Замок",
             "Городу должна принадлежать клетка Гора в радиусе 2 клеток"
+          ],
+          "short_lines_en": [
+            "+6 Gold, +4 Culture, +2 Happiness"
+          ],
+          "short_lines_ru": [
+            "+6 Золото, +4 Культура, +2 Счастье"
           ]
         }
       ],
@@ -6840,6 +8306,7 @@
             "New [Military] units start with [15] XP [in this city]"
           ],
           "quote": "'Pale Death beats equally at the poor man's gate and at the palaces of kings.' - Horace",
+          "stats": "+3 Culture",
           "quote_ru": "'Что в лачуги нищих, что во дворцы царей бледная Смерть ломится одной и той же ногой.' - Гораций",
           "uniques_en": [
             "Free Great General appears",
@@ -6848,6 +8315,12 @@
           "uniques_ru": [
             "Появляется бесплатный юнит: Великий полководец",
             "Новый Военный юниты начинают с 15 ОО в этом городе"
+          ],
+          "short_lines_en": [
+            "+3 Culture"
+          ],
+          "short_lines_ru": [
+            "+3 Культура"
           ]
         }
       ],
@@ -7066,7 +8539,14 @@
         {
           "kind": "building",
           "name": "Hospital",
-          "uniques": []
+          "uniques": [],
+          "stats": "+5 Food",
+          "short_lines_en": [
+            "+5 Food"
+          ],
+          "short_lines_ru": [
+            "+5 Еда"
+          ]
         },
         {
           "kind": "building",
@@ -7074,11 +8554,20 @@
           "uniques": [
             "[+3 Production, +3 Gold] from [Oil] tiles [in this city]"
           ],
+          "requiredNearbyImprovedResources": [
+            "Oil"
+          ],
           "uniques_en": [
             "+3 Production, +3 Gold from Oil tiles in this city"
           ],
           "uniques_ru": [
             "+3 Производство, +3 Золото от клеток Нефть в этом городе"
+          ],
+          "short_lines_en": [
+            "Requires improved Oil near city"
+          ],
+          "short_lines_ru": [
+            "Требуется улучшенный Нефть около города"
           ]
         },
         {
@@ -7176,6 +8665,10 @@
             "Provides [4] [Oil]"
           ],
           "uniqueTo": "Brunei",
+          "stats": "+5 Production, +3 Gold",
+          "requiredNearbyImprovedResources": [
+            "Oil"
+          ],
           "uniques_en": [
             "+3 Production, +3 Gold from Oil tiles in this city",
             "Provides 4 Oil"
@@ -7183,6 +8676,14 @@
           "uniques_ru": [
             "+3 Производство, +3 Золото от клеток Нефть в этом городе",
             "Предоставляет 4 Нефть"
+          ],
+          "short_lines_en": [
+            "+5 Production, +3 Gold",
+            "Requires improved Oil near city"
+          ],
+          "short_lines_ru": [
+            "+5 Производство, +3 Золото",
+            "Требуется улучшенный Нефть около города"
           ]
         }
       ],
@@ -7241,7 +8742,19 @@
         {
           "kind": "building",
           "name": "Stock Exchange",
-          "uniques": []
+          "uniques": [],
+          "stats": "+3 Gold",
+          "percentStatBonus": {
+            "gold": 25
+          },
+          "short_lines_en": [
+            "+3 Gold",
+            "+25% Gold"
+          ],
+          "short_lines_ru": [
+            "+3 Золото",
+            "+25% Золото"
+          ]
         },
         {
           "kind": "resource",
@@ -7293,11 +8806,18 @@
             "[+2 Gold] from [Mountain] tiles [in this city]"
           ],
           "uniqueTo": "Switzerland",
+          "stats": "+3 Culture, +3 Happiness",
           "uniques_en": [
             "+2 Gold from Mountain tiles in this city"
           ],
           "uniques_ru": [
             "+2 Золото от клеток Гора в этом городе"
+          ],
+          "short_lines_en": [
+            "+3 Culture, +3 Happiness"
+          ],
+          "short_lines_ru": [
+            "+3 Культура, +3 Счастье"
           ]
         },
         {
@@ -7307,11 +8827,23 @@
             "[+1 Gold] from [River] tiles [in this city]"
           ],
           "uniqueTo": "Canada",
+          "stats": "+3 Gold, +2 Happiness",
+          "percentStatBonus": {
+            "gold": 25
+          },
           "uniques_en": [
             "+1 Gold from River tiles in this city"
           ],
           "uniques_ru": [
             "+1 Золото от клеток Река в этом городе"
+          ],
+          "short_lines_en": [
+            "+3 Gold, +2 Happiness",
+            "+25% Gold"
+          ],
+          "short_lines_ru": [
+            "+3 Золото, +2 Счастье",
+            "+25% Золото"
           ]
         }
       ],
@@ -7510,7 +9042,14 @@
         {
           "kind": "building",
           "name": "Stadium",
-          "uniques": []
+          "uniques": [],
+          "stats": "+2 Happiness",
+          "short_lines_en": [
+            "+2 Happiness"
+          ],
+          "short_lines_ru": [
+            "+2 Счастье"
+          ]
         },
         {
           "kind": "improvement",
@@ -7551,6 +9090,10 @@
             "Destroyed when the city is captured",
             "Comment [Has 1 Great Work of Music Slot]"
           ],
+          "stats": "+2 Culture",
+          "percentStatBonus": {
+            "culture": 15
+          },
           "uniques_en": [
             "Destroyed when the city is captured",
             "Comment Has 1 Great Work of Music Slot"
@@ -7558,6 +9101,14 @@
           "uniques_ru": [
             "Уничтожается при захвате города",
             "Имеет 1 слот для Музыкального Шедевра"
+          ],
+          "short_lines_en": [
+            "+2 Culture",
+            "+15% Culture"
+          ],
+          "short_lines_ru": [
+            "+2 Культура",
+            "+15% Культура"
           ]
         },
         {
@@ -7568,6 +9119,7 @@
             "Comment [Has [3] Great Work of Music Slots]"
           ],
           "quote": "'Broadway is a main artery of New York cultural life - the hardened artery.' - Walter Winchell",
+          "stats": "+2 Culture",
           "uniques_en": [
             "Free Great Musician appears",
             "Comment Has 3 Great Work of Music Slots"
@@ -7575,6 +9127,12 @@
           "uniques_ru": [
             "Появляется бесплатный юнит: Великий Музыкант",
             "Имеет 3 Слота для Музыкального Шедевра"
+          ],
+          "short_lines_en": [
+            "+2 Culture"
+          ],
+          "short_lines_ru": [
+            "+2 Культура"
           ]
         },
         {
@@ -7584,12 +9142,19 @@
             "Gain a free [Broadcast Tower] [in this city]"
           ],
           "quote": "'We live only to discover beauty, all else is a form of waiting' - Kahlil Gibran",
+          "stats": "+1 Culture, +5 Happiness",
           "quote_ru": "'Мы живем лишь для того, чтобы познавать красоту. Все прочее – ожидание.' - Халиль Джебран",
           "uniques_en": [
             "Gain a free Broadcast Tower in this city"
           ],
           "uniques_ru": [
             "Появляется бесплатная постройка Радиовышка в этом городе"
+          ],
+          "short_lines_en": [
+            "+1 Culture, +5 Happiness"
+          ],
+          "short_lines_ru": [
+            "+1 Культура, +5 Счастье"
           ]
         },
         {
@@ -7603,6 +9168,7 @@
             "Only available <if [Constabulary] is constructed in all [non-[Puppeted]] cities>",
             "Cost increases by [30] per owned city"
           ],
+          "stats": "+1 Culture",
           "uniques_en": [
             "Only available when espionage is enabled",
             "Gain an extra spy",
@@ -7618,6 +9184,12 @@
             "-15% эффективности вражеского шпиона в этом городе",
             "Доступно только если Жандармерия построено во всех не-Сателлит городах",
             "Стоимость строительства увеличивается на 30 за каждый город под вашим контролем"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         },
         {
@@ -7683,11 +9255,21 @@
           "uniques": [
             "Destroyed when the city is captured"
           ],
+          "cityStrength": 12,
+          "cityHealth": 25,
           "uniques_en": [
             "Destroyed when the city is captured"
           ],
           "uniques_ru": [
             "Уничтожается при захвате города"
+          ],
+          "short_lines_en": [
+            "City strength +12",
+            "City health +25"
+          ],
+          "short_lines_ru": [
+            "Мощь города +12",
+            "Здоровье города +25"
           ]
         },
         {
@@ -7699,6 +9281,7 @@
             "Only available <after adopting [Freedom]>"
           ],
           "quote": "'Give me your tired, your poor, your huddled masses yearning to breathe free, the wretched refuse of your teeming shore. Send these, the homeless, tempest-tossed to me, I lift my lamp beside the golden door!' - Emma Lazarus",
+          "stats": "+1 Culture, +6 Happiness",
           "quote_ru": "'А мне отдайте ваших усталых, ваших бедных... а мне отдайте из глубин бездонных своих изгоев, люд забитый свой, пошлите мне отверженных, бездомных, я им свечу у двери золотой...' - Эмма Лазарус",
           "uniques_en": [
             "+6 population in this city",
@@ -7709,6 +9292,12 @@
             "+6 к населению в этом городе",
             "Бесплатный общественный институт",
             "Доступно только после принятия: Свобода"
+          ],
+          "short_lines_en": [
+            "+1 Culture, +6 Happiness"
+          ],
+          "short_lines_ru": [
+            "+1 Культура, +6 Счастье"
           ]
         }
       ],
@@ -7804,6 +9393,7 @@
             "[+1 Happiness] per [2] social policies adopted"
           ],
           "quote": "'This loss (of freedom) means the fading from human life of values infinitely precious to it. There only remain ironbound conditions of employment and trivial amusements for leisure.' - A.N. Whitehead",
+          "stats": "+1 Happiness",
           "uniques_en": [
             "Free Social Policy",
             "Only available after adopting Autocracy",
@@ -7813,6 +9403,12 @@
             "Бесплатный общественный институт",
             "Доступно только после принятия: Автократия",
             "+1 Счастье за 2 принятых общественных институтов"
+          ],
+          "short_lines_en": [
+            "+1 Happiness"
+          ],
+          "short_lines_ru": [
+            "+1 Счастье"
           ]
         }
       ],
@@ -7954,6 +9550,7 @@
             "Only available <after adopting [Order]>"
           ],
           "quote": "'The Law is a fortress on a hill that armies cannot take or floods wash away.' - The Prophet Muhammed",
+          "stats": "+1 Culture",
           "uniques_en": [
             "+50% Production when constructing Armored units in all cities",
             "Free Social Policy",
@@ -7963,6 +9560,12 @@
             "+50% к производству при создании юнитов: Бронированный юнит во всех городах",
             "Бесплатный общественный институт",
             "Доступно только после принятия: Порядок"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         },
         {
@@ -7973,6 +9576,7 @@
             "Free [Great Merchant] appears",
             "[+4 Gold] from [Sea Trade Route (Gold)] tiles [in this city]"
           ],
+          "stats": "+3 Gold, +1 Culture",
           "uniques_en": [
             "Must be next to Coast",
             "Free Great Merchant appears",
@@ -7982,6 +9586,12 @@
             "Должен быть рядом с клеткой Побережье",
             "Появляется бесплатный юнит: Великий торговец",
             "+4 Золото от клеток Морской торговый путь (Золото) в этом городе"
+          ],
+          "short_lines_en": [
+            "+3 Gold, +1 Culture"
+          ],
+          "short_lines_ru": [
+            "+3 Золото, +1 Культура"
           ]
         },
         {
@@ -8026,7 +9636,19 @@
         {
           "kind": "building",
           "name": "Research Lab",
-          "uniques": []
+          "uniques": [],
+          "stats": "+4 Science",
+          "percentStatBonus": {
+            "science": 50
+          },
+          "short_lines_en": [
+            "+4 Science",
+            "+50% Science"
+          ],
+          "short_lines_ru": [
+            "+4 Наука",
+            "+50% Наука"
+          ]
         },
         {
           "kind": "wonder",
@@ -8035,12 +9657,19 @@
             "[-15]% Culture cost of adopting new Policies"
           ],
           "quote": "'Come to me, all who labor and are heavy burdened, and I will give you rest.' - New Testament, Matthew 11:28",
+          "stats": "+5 Culture",
           "quote_ru": "'Придите ко Мне все трудящиеся и обремененные, и Я успокою вас.' - Евангелие от Матфея, 11:28",
           "uniques_en": [
             "-15% Culture cost of adopting new Policies"
           ],
           "uniques_ru": [
             "-15% к затратам культуры на принятие новых общественных институтов"
+          ],
+          "short_lines_en": [
+            "+5 Culture"
+          ],
+          "short_lines_ru": [
+            "+5 Культура"
           ]
         }
       ],
@@ -8475,6 +10104,7 @@
             "Gain a free [Broadcast Tower] [in this city]"
           ],
           "quote": "'Nothing travels faster than light with the possible exception of bad news, which obeys its own special rules.' - Douglas Adams",
+          "stats": "+1 Culture",
           "uniques_en": [
             "+1 population in all cities",
             "+1 Happiness in all cities",
@@ -8484,6 +10114,12 @@
             "+1 к населению во всех городах",
             "+1 Счастье во всех городах",
             "Появляется бесплатная постройка Радиовышка в этом городе"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         }
       ],
@@ -8545,12 +10181,19 @@
             "[-33]% Gold cost of upgrading <for [Military] units>"
           ],
           "quote": "'In preparing for battle I have always found that plans are useless, but planning is indispensable.' - Dwight D. Eisenhower",
+          "stats": "+1 Culture",
           "quote_ru": "'При подготовке к битве планы незаменимы, но, как только битва началась, план становится совершенно бесполезным.' - Дуайт Эйзенхауэр",
           "uniques_en": [
             "-33% Gold cost of upgrading for Military units"
           ],
           "uniques_ru": [
             "-33% к затратам золота на модернизацию для юнитов: Военный"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         }
       ],
@@ -8637,6 +10280,10 @@
             "Must be next to [Desert]",
             "Only available <in cities without a [Nuclear Plant]>"
           ],
+          "stats": "+5 Production",
+          "percentStatBonus": {
+            "production": 15
+          },
           "uniques_en": [
             "Must be next to Desert",
             "Only available in cities without a Nuclear Plant"
@@ -8644,6 +10291,14 @@
           "uniques_ru": [
             "Должен быть рядом с клеткой Пустыня",
             "Доступно только в городах, не имеющих АЭС"
+          ],
+          "short_lines_en": [
+            "+5 Production",
+            "+15% Production"
+          ],
+          "short_lines_ru": [
+            "+5 Производство",
+            "+15% Производство"
           ]
         },
         {
@@ -8654,6 +10309,9 @@
             "Comment [Has [2] Great Work of Music Slots]"
           ],
           "quote": "'Those who lose dreaming are lost.' - Australian Aboriginal saying",
+          "percentStatBonus": {
+            "culture": 50
+          },
           "quote_ru": "'У кого погибли мечты, тот и сам погиб.' - пословица австралийских аборигенов",
           "uniques_en": [
             "Free Social Policy",
@@ -8662,6 +10320,12 @@
           "uniques_ru": [
             "Бесплатный общественный институт",
             "Имеет 2 Слота для Музыкального Шедевра"
+          ],
+          "short_lines_en": [
+            "+50% Culture"
+          ],
+          "short_lines_ru": [
+            "+50% Культура"
           ]
         }
       ],
@@ -8689,11 +10353,23 @@
           "uniques": [
             "Only available <in cities without a [Solar Plant]>"
           ],
+          "stats": "+5 Production",
+          "percentStatBonus": {
+            "production": 15
+          },
           "uniques_en": [
             "Only available in cities without a Solar Plant"
           ],
           "uniques_ru": [
             "Доступно только в городах, не имеющих Солнечная ЭС"
+          ],
+          "short_lines_en": [
+            "+5 Production",
+            "+15% Production"
+          ],
+          "short_lines_ru": [
+            "+5 Производство",
+            "+15% Производство"
           ]
         }
       ],
@@ -9097,6 +10773,7 @@
             "Gain a free [Recycling Center] [in this city]"
           ],
           "quote": "'The wonder is, not that the field of stars is so vast, but that man has measured it.' - Anatole France",
+          "stats": "+10 Science",
           "quote_ru": "'Чудо не в том, что звездный небосклон столь обширен, но в том, что человек сумел измерить его.' - Анатоль Франс",
           "uniques_en": [
             "+200% Production when constructing Spaceship part units in this city",
@@ -9105,6 +10782,12 @@
           "uniques_ru": [
             "+200% к производству при создании юнитов: Часть космического корабля в этом городе",
             "Появляется бесплатная постройка Центр переработки отходов в этом городе"
+          ],
+          "short_lines_en": [
+            "+10 Science"
+          ],
+          "short_lines_ru": [
+            "+10 Наука"
           ]
         }
       ],
@@ -9152,11 +10835,18 @@
           "uniques": [
             "[+50]% Production when constructing [Spaceship part] units [in this city]"
           ],
+          "stats": "+3 Production",
           "uniques_en": [
             "+50% Production when constructing Spaceship part units in this city"
           ],
           "uniques_ru": [
             "+50% к производству при создании юнитов: Часть космического корабля в этом городе"
+          ],
+          "short_lines_en": [
+            "+3 Production"
+          ],
+          "short_lines_ru": [
+            "+3 Производство"
           ]
         }
       ],
@@ -9269,6 +10959,7 @@
             "Triggers a global alert upon completion"
           ],
           "quote": "'More than ever before in human history, we share a common destiny. We can master it only if we face it together. And that is why we have the United Nations.' - Kofi Annan",
+          "stats": "+1 Culture",
           "quote_ru": "'Сейчас мы больше, чем когда-либо раньше, связаны общей судьбой. Мы выстоим перед ней, только если встретим её вместе. Именно для этого и нужна ООН.' - Кофи Аннан",
           "uniques_en": [
             "Triggers voting for the Diplomatic Victory",
@@ -9279,6 +10970,12 @@
             "Начинает голосование за дипломатическую победу",
             "Доступно только когда Дипломатическая Победа включена",
             "Вызывает глобальное оповещение при завершении"
+          ],
+          "short_lines_en": [
+            "+1 Culture"
+          ],
+          "short_lines_ru": [
+            "+1 Культура"
           ]
         }
       ],

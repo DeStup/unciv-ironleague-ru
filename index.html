@@ -1001,7 +1001,7 @@
 <script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=lobby-opp-1"></script>
 <script src="js/achievements.js?v=memo-fp-1"></script>
-<script src="js/tech-policy-paths.js?v=tooltip-civ-1"></script>
+<script src="js/tech-policy-paths.js?v=tooltip-civ-2"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -1051,6 +1051,7 @@
     // Build id is loaded from build-id.txt (changed every deploy) with a
     // timestamp fallback so JSON is never served from an old disk cache.
     let assetCacheBust = String(Date.now());
+    window.IronLeagueCacheBust = assetCacheBust;
 
     function assetUrl(path) {
         const sep = path.includes('?') ? '&' : '?';
@@ -1071,6 +1072,7 @@
         } catch (e) {
             // keep Date.now() fallback
         }
+        window.IronLeagueCacheBust = assetCacheBust;
         if ('caches' in window) {
             try {
                 const keys = await caches.keys();

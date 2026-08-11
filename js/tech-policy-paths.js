@@ -262,17 +262,24 @@
     return `${Math.round((1000 * count) / total) / 10}%`;
   }
 
+  function pathsDataUrl(path) {
+    const bust = window.IronLeagueCacheBust || Date.now();
+    const sep = path.includes('?') ? '&' : '?';
+    return `${path}${sep}v=${encodeURIComponent(bust)}`;
+  }
+
   function ensureLoaded() {
     if (ready) return Promise.resolve();
+    const get = (path) => fetch(pathsDataUrl(path), { cache: 'no-store' }).then((r) => r.json());
     return Promise.all([
-      fetch('data/tech_policy_timelines.json').then((r) => r.json()),
-      fetch('data/tech_names.json').then((r) => r.json()),
-      fetch('data/policy_names.json').then((r) => r.json()),
-      fetch('data/tech_tree.json').then((r) => r.json()),
-      fetch('data/tech_details.json').then((r) => r.json()),
-      fetch('data/construction_names.json').then((r) => r.json()),
-      fetch('data/paths_roster.json').then((r) => r.json()),
-      fetch('data/nation_names.json').then((r) => r.json()),
+      get('data/tech_policy_timelines.json'),
+      get('data/tech_names.json'),
+      get('data/policy_names.json'),
+      get('data/tech_tree.json'),
+      get('data/tech_details.json'),
+      get('data/construction_names.json'),
+      get('data/paths_roster.json'),
+      get('data/nation_names.json'),
     ]).then(([tl, tn, pn, tree, details, cn, rost, nn]) => {
       timelines = tl;
       techNames = tn || {};
@@ -592,44 +599,37 @@
     return item.uniques || [];
   }
 
+  function unlockShortLines(item) {
+    if (lang() === 'ru' && item.short_lines_ru && item.short_lines_ru.length) {
+      return item.short_lines_ru;
+    }
+    if (item.short_lines_en && item.short_lines_en.length) {
+      return item.short_lines_en;
+    }
+    return [];
+  }
+
   function unlockTooltip(item) {
     if (item.kind === 'unique') {
       return `${kindLabel('unique')}: ${item.name}`;
     }
-    if (item.kind === 'improvement_bonus') {
-      const lines = [
-        `${labelConstruction(item.name)} (${kindLabel('improvement_bonus')})`,
-      ];
-      if (item.uniqueTo) lines.push(`${t('paths.uniqueTo', 'нация')}: ${labelNation(item.uniqueTo)}`);
-      unlockUniques(item).forEach((u) => lines.push(String(u)));
-      return lines.join('\n');
-    }
-    if (item.kind === 'building_bonus') {
-      const lines = [
-        `${labelConstruction(item.name)} (${kindLabel('building_bonus')})`,
-      ];
-      if (item.uniqueTo) lines.push(`${t('paths.uniqueTo', 'нация')}: ${labelNation(item.uniqueTo)}`);
-      unlockUniques(item).forEach((u) => lines.push(String(u)));
-      return lines.join('\n');
-    }
+    const lines = [];
     if (item.kind === 'nation_effect') {
-      const lines = [
-        `${labelNation(item.uniqueTo || item.name)} (${kindLabel('nation_effect')})`,
-      ];
-      unlockUniques(item).forEach((u) => lines.push(String(u)));
-      return lines.join('\n');
+      lines.push(`${labelNation(item.uniqueTo || item.name)} (${kindLabel('nation_effect')})`);
+    } else if (item.kind === 'improvement_bonus') {
+      lines.push(`${labelConstruction(item.name)} (${kindLabel('improvement_bonus')})`);
+    } else if (item.kind === 'building_bonus') {
+      lines.push(`${labelConstruction(item.name)} (${kindLabel('building_bonus')})`);
+    } else {
+      lines.push(`${labelConstruction(item.name)} (${kindLabel(item.kind)})`);
     }
-    const lines = [
-      `${labelConstruction(item.name)} (${kindLabel(item.kind)})`,
-    ];
-    if (item.uniqueTo) {
+    if (item.uniqueTo && item.kind !== 'nation_effect') {
       lines.push(`${t('paths.uniqueTo', 'нация')}: ${labelNation(item.uniqueTo)}`);
     }
     const quote = (lang() === 'ru' && item.quote_ru) ? item.quote_ru : (item.quote || '');
     if (quote) lines.push(quote);
-    unlockUniques(item).forEach((u) => {
-      lines.push(String(u));
-    });
+    unlockShortLines(item).forEach((u) => lines.push(String(u)));
+    unlockUniques(item).forEach((u) => lines.push(String(u)));
     return lines.join('\n');
   }
 
