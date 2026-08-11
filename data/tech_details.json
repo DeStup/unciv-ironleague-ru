@@ -1952,6 +1952,14 @@
             "[2] free [Great Artist] units appear"
           ],
           "quote_ru": "'У подлинного произведения искусства столько же прав на существование, сколько у солнца и земли.' - Ральф Уолдо Эмерсон"
+        },
+        {
+          "kind": "building_bonus",
+          "name": "Petra",
+          "uniques": [
+            "[+6 Culture] [in this city] <after discovering [Archaeology]>"
+          ],
+          "is_wonder": true
         }
       ]
     },
@@ -2269,6 +2277,14 @@
             "Должен подготовиться перед дальнобойной атакой",
             "[-1] Sight"
           ]
+        },
+        {
+          "kind": "building_bonus",
+          "name": "Great Wall",
+          "uniques": [
+            "Enemy [Land] units must spend [1] extra movement points when inside your territory <before discovering [Dynamite]> <Suppress warning [*contains a conditional on a unit movement unique*]>"
+          ],
+          "is_wonder": true
         }
       ]
     },
@@ -2442,6 +2458,13 @@
           "name": "Moai",
           "uniques": [
             "[+1 Gold] <after discovering [Flight]>"
+          ]
+        },
+        {
+          "kind": "building_bonus",
+          "name": "Mughal Fort",
+          "uniques": [
+            "[+1 Gold] [in this city] <after discovering [Flight]>"
           ]
         }
       ]
