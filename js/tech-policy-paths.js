@@ -607,42 +607,48 @@
     img.className = 'paths-tree-unlock-img';
     img.alt = item.kind === 'unique' ? item.name : labelConstruction(item.name);
     img.loading = 'lazy';
-    img.src = unlockIcon(item);
-    img.onerror = () => {
-      if (item.kind === 'wonder' && !img.dataset.fallback) {
-        img.dataset.fallback = '1';
-        img.src = `Building_icons/${encodeURIComponent(item.name)}.png`;
-        return;
-      }
-      if (item.kind === 'improvement' && !img.dataset.fallback) {
-        img.dataset.fallback = '1';
-        img.src = `Building_icons/${encodeURIComponent(item.name)}.png`;
-        return;
-      }
-      if (item.kind === 'improvement_bonus' && !img.dataset.fallback) {
-        img.dataset.fallback = '1';
-        img.src = 'Unique_icons/Star.png';
-        return;
-      }
-      if (item.kind === 'building_bonus' && !img.dataset.fallback) {
-        img.dataset.fallback = '1';
-        img.src = item.is_wonder
-          ? `Building_icons/${encodeURIComponent(item.name)}.png`
-          : 'Unique_icons/Star.png';
-        return;
-      }
-      if (item.kind === 'unique' && !img.dataset.fallback) {
-        img.dataset.fallback = '1';
-        img.src = 'Unique_icons/Star.png';
-        return;
-      }
-      if (item.kind === 'unit' && !img.dataset.fallback) {
-        img.dataset.fallback = '1';
-        img.src = 'Unique_icons/Star.png';
-        return;
-      }
-      wrap.remove();
+
+    // Try primary + fallbacks; never remove the slot (missing RekMOD icons
+    // used to flash then vanish via wrap.remove()).
+    const name = item.name;
+    const candidates = [];
+    const push = (url) => {
+      if (url && !candidates.includes(url)) candidates.push(url);
     };
+    push(unlockIcon(item));
+    if (item.kind === 'wonder' || item.is_wonder) {
+      push(`Building_icons/${encodeURIComponent(name)}.png`);
+      push(`Wonder_icons/${encodeURIComponent(name)}.png`);
+    }
+    if (item.kind === 'building' || item.kind === 'building_bonus') {
+      push(`Building_icons/${encodeURIComponent(name)}.png`);
+      push(`Wonder_icons/${encodeURIComponent(name)}.png`);
+    }
+    if (item.kind === 'improvement' || item.kind === 'improvement_bonus') {
+      push(`Improvement_icons/${encodeURIComponent(name)}.png`);
+      push(`Building_icons/${encodeURIComponent(name)}.png`);
+    }
+    if (item.kind === 'unit') {
+      push(`Unit_icons/${encodeURIComponent(name)}.png`);
+    }
+    if (item.kind === 'resource') {
+      push(`Resource_icons/${encodeURIComponent(name)}.png`);
+    }
+    push('Unique_icons/Star.png');
+
+    let tryIdx = 0;
+    img.src = candidates[0];
+    img.onerror = () => {
+      tryIdx += 1;
+      if (tryIdx < candidates.length) {
+        img.src = candidates[tryIdx];
+        return;
+      }
+      // Last resort already tried — keep empty plate, do not remove.
+      img.onerror = null;
+      img.style.visibility = 'hidden';
+    };
+
     wrap.appendChild(img);
     if (opts && opts.withNation && item.uniqueTo) {
       const tag = document.createElement('span');
