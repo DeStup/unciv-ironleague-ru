@@ -582,6 +582,16 @@
     };
   }
 
+  function unlockUniques(item) {
+    if (lang() === 'ru' && item.uniques_ru && item.uniques_ru.length) {
+      return item.uniques_ru;
+    }
+    if (item.uniques_en && item.uniques_en.length) {
+      return item.uniques_en;
+    }
+    return item.uniques || [];
+  }
+
   function unlockTooltip(item) {
     if (item.kind === 'unique') {
       return `${kindLabel('unique')}: ${item.name}`;
@@ -591,7 +601,7 @@
         `${labelConstruction(item.name)} (${kindLabel('improvement_bonus')})`,
       ];
       if (item.uniqueTo) lines.push(`${t('paths.uniqueTo', 'нация')}: ${labelNation(item.uniqueTo)}`);
-      (item.uniques || []).forEach((u) => lines.push(String(u)));
+      unlockUniques(item).forEach((u) => lines.push(String(u)));
       return lines.join('\n');
     }
     if (item.kind === 'building_bonus') {
@@ -599,14 +609,14 @@
         `${labelConstruction(item.name)} (${kindLabel('building_bonus')})`,
       ];
       if (item.uniqueTo) lines.push(`${t('paths.uniqueTo', 'нация')}: ${labelNation(item.uniqueTo)}`);
-      (item.uniques || []).forEach((u) => lines.push(String(u)));
+      unlockUniques(item).forEach((u) => lines.push(String(u)));
       return lines.join('\n');
     }
     if (item.kind === 'nation_effect') {
       const lines = [
         `${labelNation(item.uniqueTo || item.name)} (${kindLabel('nation_effect')})`,
       ];
-      (item.uniques || []).forEach((u) => lines.push(String(u)));
+      unlockUniques(item).forEach((u) => lines.push(String(u)));
       return lines.join('\n');
     }
     const lines = [
@@ -617,10 +627,7 @@
     }
     const quote = (lang() === 'ru' && item.quote_ru) ? item.quote_ru : (item.quote || '');
     if (quote) lines.push(quote);
-    const uniques = (lang() === 'ru' && item.uniques_ru && item.uniques_ru.length)
-      ? item.uniques_ru
-      : (item.uniques || []);
-    uniques.forEach((u) => {
+    unlockUniques(item).forEach((u) => {
       lines.push(String(u));
     });
     return lines.join('\n');
