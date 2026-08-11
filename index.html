@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=paths-tree-1">
+    <link rel="stylesheet" href="css/site.css?v=paths-polish-2">
 
 </head>
 <body>
@@ -244,13 +244,6 @@
 <div class="view-panel" id="viewPaths">
     <div class="filters" id="pathsFilters">
         <div class="filter-group">
-            <label data-i18n="filter.sort">Сортировка</label>
-            <select id="pathsSortSelect">
-                <option value="newest" data-i18n="filter.newest" selected>Сначала новые</option>
-                <option value="oldest" data-i18n="filter.oldest">Сначала старые</option>
-            </select>
-        </div>
-        <div class="filter-group">
             <label data-i18n="paths.filter.game">Игра</label>
             <select id="pathsGameSelect"></select>
         </div>
@@ -261,14 +254,20 @@
     </div>
 
     <p class="stats-intro" data-i18n="paths.lead">
-        По бэкапам ходов восстановлен порядок открытия технологий и институтов. Нет бэкапов: games 4–11 и 14.
+        По бэкапам ходов восстановлен порядок открытия технологий и институтов. Нет бэкапов: games 4–11 и 14. Статистика «что открывали первым» — только по полным архивам.
     </p>
     <p class="hint" id="pathsCoverageNote"></p>
 
     <section class="paths-section" id="pathsBrowseSection">
         <h2 data-i18n="paths.browseTitle">Партия и игрок</h2>
-        <div class="paths-chip-row" id="pathsGameChips" role="tablist" data-i18n-aria="paths.filter.game" aria-label="Игры"></div>
-        <div class="paths-chip-row" id="pathsPlayerChips" role="tablist" data-i18n-aria="paths.filter.player" aria-label="Игроки"></div>
+        <div class="paths-browse-games">
+            <h3 class="paths-subhead" data-i18n="paths.gamesHeading">Игры</h3>
+            <div class="paths-chip-row" id="pathsGameChips" role="tablist" data-i18n-aria="paths.filter.game" aria-label="Игры"></div>
+        </div>
+        <div class="paths-browse-players">
+            <h3 class="paths-subhead" data-i18n="paths.playersHeading">Игроки нации</h3>
+            <div class="paths-chip-row" id="pathsPlayerChips" role="tablist" data-i18n-aria="paths.filter.player" aria-label="Игроки"></div>
+        </div>
         <h3 id="pathsPlayerHeading"></h3>
         <p class="hint" id="pathsPlayerMeta"></p>
         <div class="paths-era-tabs" id="pathsEraTabs" role="tablist" data-i18n-aria="paths.eraTabs" aria-label="Эпохи"></div>
@@ -996,13 +995,13 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=paths-tree-1"></script>
+<script src="js/i18n.js?v=paths-polish-2"></script>
 <script src="js/player-meta.js?v=click4x-cy-ru-1"></script>
 <script src="js/stats-charts.js?v=policy-colors-1"></script>
 <script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=lobby-opp-1"></script>
 <script src="js/achievements.js?v=survival-top3-1"></script>
-<script src="js/tech-policy-paths.js?v=tree-1"></script>
+<script src="js/tech-policy-paths.js?v=polish-2"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {

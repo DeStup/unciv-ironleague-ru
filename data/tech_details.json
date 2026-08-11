@@ -1,0 +1,2488 @@
+{
+  "techs": {
+    "Agriculture": {
+      "era": "Ancient era",
+      "column": 0,
+      "row": 6,
+      "prerequisites": [],
+      "quote": "'Where tillage begins, other arts follow. The farmers therefore are the founders of human civilization.' - Daniel Webster",
+      "quote_ru": "'Лишь на возделанной почве расцветают другие искусства. Поэтому фермеры — основатели цивилизации.' - Даниэль Уэбстер",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "Worker",
+          "uniques": [
+            "Can build [Land] improvements on tiles",
+            "Automation is a primary action"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Settler",
+          "uniques": [
+            "Founds a new city <by consuming this unit>",
+            "Excess Food converted to Production when under construction",
+            "Requires at least [2] population"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Scout",
+          "uniques": [
+            "May upgrade to [Archer] through ruins-like effects",
+            "Never appears as a Barbarian unit"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Warrior",
+          "uniques": [
+            "May upgrade to [Spearman] through ruins-like effects"
+          ]
+        },
+        {
+          "kind": "improvement",
+          "name": "Farm",
+          "uniques": [
+            "Can also be built on tiles adjacent to fresh water",
+            "[+1 Food] from [Fresh water] tiles <after discovering [Civil Service]>",
+            "[+1 Food] from [non-fresh water] tiles <after discovering [Fertilizer]>",
+            "Pillaging this improvement yields approximately [+18 Gold]"
+          ]
+        }
+      ]
+    },
+    "Pottery": {
+      "era": "Ancient era",
+      "column": 1,
+      "row": 2,
+      "prerequisites": [
+        "Agriculture"
+      ],
+      "quote": "'Shall the clay say to him that fashioneth it, what makest thou?' - Bible Isaiah 45:9",
+      "quote_ru": "'Разве скажет глиняный сосуд гончару: Что ты делаешь?' - книга Исайи, 45:9",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Granary",
+          "uniques": [
+            "[+1 Food] from [Deer] tiles [in this city]",
+            "[+1 Food] from [Bananas] tiles [in this city]",
+            "[+1 Food] from [Wheat] tiles [in this city]"
+          ]
+        },
+        {
+          "kind": "building",
+          "name": "Shrine",
+          "uniques": [
+            "Only available <when religion is enabled>"
+          ]
+        }
+      ]
+    },
+    "Animal Husbandry": {
+      "era": "Ancient era",
+      "column": 1,
+      "row": 5,
+      "prerequisites": [
+        "Agriculture"
+      ],
+      "quote": "'Thou shalt not muzzle the ox when he treadeth out the corn.' - Bible Deuteronomy 25:4",
+      "quote_ru": "'Не заграждай рта волу, когда он молотит.' - Второзаконие 25:4",
+      "unlocks": [
+        {
+          "kind": "improvement",
+          "name": "Pasture",
+          "uniques": [
+            "[+1 Food] <after discovering [Fertilizer]>",
+            "Can only be built to improve a resource",
+            "Pillaging this improvement yields approximately [+10 Gold]"
+          ]
+        }
+      ]
+    },
+    "Archery": {
+      "era": "Ancient era",
+      "column": 1,
+      "row": 7,
+      "prerequisites": [
+        "Agriculture"
+      ],
+      "quote": "'The haft of the arrow has been feathered with one of the eagle's own plumes, we often give our enemies the means of our own destruction' - Aesop",
+      "quote_ru": "'Оперение на древке стрелы было сделано из орлиного пера. Мы сами вкладываем в руки врагов средства к своему уничтожению.' - Эзоп",
+      "unlocks": [
+        {
+          "kind": "wonder",
+          "name": "Temple of Artemis",
+          "quote": "'It is not so much for its beauty that the forest makes a claim upon men's hearts, as for that subtle something, that quality of air, that emanation from old trees, that so wonderfully changes and renews a weary spirit.' - Robert Louis Stevenson",
+          "uniques": [
+            "[+10]% [Food] [in all cities]",
+            "[+15]% Production when constructing [Archery] units [in this city]",
+            "[+15]% Production when constructing [Ranged Gunpowder] units [in this city]"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Archer"
+        }
+      ]
+    },
+    "Mining": {
+      "era": "Ancient era",
+      "column": 1,
+      "row": 9,
+      "prerequisites": [
+        "Agriculture"
+      ],
+      "quote": "'The meek shall inherit the Earth, but not its mineral rights.' - J. Paul Getty",
+      "quote_ru": "'Кроткие унаследуют землю, но не ее минеральные ресурсы.' - Пол Гетти",
+      "unlocks": [
+        {
+          "kind": "improvement",
+          "name": "Mine",
+          "uniques": [
+            "[+1 Production] <after discovering [Chemistry]>",
+            "Pillaging this improvement yields approximately [+20 Gold]"
+          ]
+        },
+        {
+          "kind": "improvement",
+          "name": "Remove Forest",
+          "uniques": [
+            "Can be built outside your borders",
+            "Excluded from map editor"
+          ]
+        }
+      ]
+    },
+    "Sailing": {
+      "era": "Ancient era",
+      "column": 2,
+      "row": 1,
+      "prerequisites": [
+        "Pottery"
+      ],
+      "quote": "'He who commands the sea has command of everything.' - Themistocles",
+      "quote_ru": "'Тот, кто господствует на море, хозяин положения.' - Фемистокл",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "Work Boats",
+          "uniques": [
+            "Cannot enter ocean tiles <before discovering [Astronomy]>",
+            "May create improvements on water resources",
+            "Uncapturable",
+            "Automation is a primary action"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Trireme",
+          "uniques": [
+            "Cannot enter ocean tiles",
+            "Never appears as a Barbarian unit"
+          ]
+        },
+        {
+          "kind": "improvement",
+          "name": "Fishing Boats",
+          "uniques": [
+            "[+1 Gold] <after discovering [Compass]>",
+            "Can only be built to improve a resource",
+            "Pillaging this improvement yields approximately [+10 Gold]"
+          ]
+        }
+      ]
+    },
+    "Calendar": {
+      "era": "Ancient era",
+      "column": 2,
+      "row": 2,
+      "prerequisites": [
+        "Pottery"
+      ],
+      "quote": "'So teach us to number our days, so that we may apply our hearts unto wisdom.' - Bible Psalms 90:12",
+      "quote_ru": "'Научи нас так счислять дни наши, чтобы нам приобрести сердце мудрое.' - Псалом 89:12",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Stone Works",
+          "uniques": [
+            "Must not be on [Plains]",
+            "[+1 Production] from [Stone] tiles [in this city]",
+            "[+1 Production] from [Marble] tiles [in this city]"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Stonehenge",
+          "quote": "'Time crumbles things; everything grows old and is forgotten under the power of time' - Aristotle"
+        },
+        {
+          "kind": "improvement",
+          "name": "Plantation",
+          "uniques": [
+            "[+1 Food] <after discovering [Fertilizer]>",
+            "Can only be built to improve a resource",
+            "Pillaging this improvement yields approximately [+10 Gold]"
+          ]
+        }
+      ]
+    },
+    "Writing": {
+      "era": "Ancient era",
+      "column": 2,
+      "row": 3,
+      "prerequisites": [
+        "Pottery"
+      ],
+      "quote": "'He who destroys a good book kills reason itself.' - John Milton",
+      "quote_ru": "'Тот, кто уничтожает книгу, убивает самый разум.' - Джон Мильтон",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Library",
+          "uniques": [
+            "[+1 Science] per [2] population [in this city]"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "The Great Library",
+          "quote": "'Libraries are as the shrine where all the relics of the ancient saints, full of true virtue, and all that without delusion or imposture are preserved and reposed.' - Sir Francis Bacon",
+          "uniques": [
+            "Free Technology",
+            "Gain a free [Library] [in this city]"
+          ]
+        }
+      ]
+    },
+    "Trapping": {
+      "era": "Ancient era",
+      "column": 2,
+      "row": 5,
+      "prerequisites": [
+        "Animal Husbandry"
+      ],
+      "quote": "'Even brute beasts and wandering birds do not fall into the same traps or nets twice.' - Saint Jerome",
+      "quote_ru": "'Даже примитивные звери и перелетные птицы не попадают в одни и те же ловушки.' - Джон Мильтон",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Circus"
+        },
+        {
+          "kind": "improvement",
+          "name": "Camp",
+          "uniques": [
+            "Does not need removal of [Forest]",
+            "Does not need removal of [Jungle]",
+            "[+1 Gold] <after discovering [Economics]>",
+            "Can only be built to improve a resource"
+          ]
+        }
+      ]
+    },
+    "The Wheel": {
+      "era": "Ancient era",
+      "column": 2,
+      "row": 7,
+      "prerequisites": [
+        "Animal Husbandry",
+        "Archery"
+      ],
+      "quote": "'Wisdom and virtue are like the two wheels of a cart.' - Japanese proverb",
+      "quote_ru": "'Мудрость и добродетель — как два колеса телеги.' - японская пословица",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Water Mill",
+          "uniques": [
+            "Must be on [River]"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Chariot Archer",
+          "uniques": [
+            "No defensive terrain bonus",
+            "Rough terrain penalty",
+            "Never appears as a Barbarian unit"
+          ]
+        },
+        {
+          "kind": "improvement",
+          "name": "Road",
+          "uniques": [
+            "Can be built outside your borders",
+            "Costs [1] [Gold] per turn"
+          ]
+        }
+      ]
+    },
+    "Masonry": {
+      "era": "Ancient era",
+      "column": 2,
+      "row": 9,
+      "prerequisites": [
+        "Mining"
+      ],
+      "quote": "'How happy are those whose walls already rise!' - Virgil",
+      "quote_ru": "'Счастливы те, для кого возводятся крепкие стены!' - Вергилий, «Энеида»",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Walls",
+          "uniques": [
+            "Destroyed when the city is captured"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "The Pyramids",
+          "quote": "'O, let not the pains of death which come upon thee enter into my body. I am the god Tem, and I am the foremost part of the sky, and the power which protecteth me is that which is with all the gods forever.' - The Book of the Dead, translated by Sir Ernest Alfred Wallis Budge",
+          "uniques": [
+            "Can build [all] improvements at a [+25]% rate",
+            "[2] free [Worker] units appear"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Mausoleum of Halicarnassus",
+          "quote": "'The whole earth is the tomb of heroic men and their story is not given only on stone over their clay but abides everywhere without visible symbol woven into the stuff of other men's lives.' - Pericles",
+          "uniques": [
+            "Gain [100] [Gold] <upon expending a [Great Person] unit> <(modified by game speed)>",
+            "[+2 Gold] from [Marble] tiles [in this city]",
+            "[+2 Gold] from [Stone] tiles [in this city]"
+          ]
+        },
+        {
+          "kind": "improvement",
+          "name": "Quarry",
+          "uniques": [
+            "[+1 Production] <after discovering [Chemistry]>",
+            "Can only be built to improve a resource",
+            "Pillaging this improvement yields approximately [+20 Gold]"
+          ]
+        },
+        {
+          "kind": "improvement",
+          "name": "Remove Marsh",
+          "uniques": [
+            "Can be built outside your borders",
+            "Excluded from map editor"
+          ]
+        }
+      ]
+    },
+    "Bronze Working": {
+      "era": "Ancient era",
+      "column": 2,
+      "row": 10,
+      "prerequisites": [
+        "Mining"
+      ],
+      "quote": "'Here Hector entered, with a spear eleven cubits long in his hand; the bronze point gleamed in front of him, and was fastened to the shaft of the spear by a ring of gold.' - Homer",
+      "quote_ru": "'В двери вступил божественный Гектор; в деснице держал он пику в одиннадцать локтей; далеко на древке сияло медное жало копья и кольцо вкруг него золотое.' - Гомер",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Barracks",
+          "uniques": [
+            "New [Military] units start with [15] XP [in this city]",
+            "Destroyed when the city is captured"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Statue of Zeus",
+          "quote": "'He spoke, the son of Kronos, and nodded his head with the dark brows, and the immortally anointed hair of the great god swept from his divine head, and all Olympos was shaken' - The Iliad",
+          "uniques": [
+            "[+15]% Strength <for [All] units> <vs cities> <when attacking>"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Spearman",
+          "uniques": [
+            "[+50]% Strength <vs [Mounted] units>"
+          ]
+        },
+        {
+          "kind": "improvement",
+          "name": "Remove Jungle",
+          "uniques": [
+            "Can be built outside your borders",
+            "Excluded from map editor"
+          ]
+        }
+      ]
+    },
+    "Optics": {
+      "era": "Classical era",
+      "column": 3,
+      "row": 1,
+      "prerequisites": [
+        "Sailing"
+      ],
+      "quote": "'He made an instrument to know if the moon shine at full or no.' - Samuel Butler",
+      "quote_ru": "'Он создал новый инструмент. Проверить, месяц есть иль нет.' - Сэмюэль Батлер",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Lighthouse",
+          "uniques": [
+            "Must be next to [Coast]",
+            "[+1 Food] from [Ocean] tiles [in this city]",
+            "[+1 Food] from [Coast] tiles [in this city]",
+            "[+1 Food] from [Fish] tiles [in this city]"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "The Great Lighthouse",
+          "quote": "'They that go down to the sea in ships, that do business in great waters; these see the works of the Lord, and his wonders in the deep.' - The Bible, Psalms 107:23-24",
+          "uniques": [
+            "Must be next to [Coast]",
+            "[+1] Movement <for [{Military} {Water}] units>",
+            "[+1] Sight <for [{Military} {Water}] units>",
+            "Gain a free [Lighthouse] [in this city]"
+          ]
+        }
+      ]
+    },
+    "Horseback Riding": {
+      "era": "Classical era",
+      "column": 3,
+      "row": 5,
+      "prerequisites": [
+        "Trapping",
+        "The Wheel"
+      ],
+      "quote": "'A Horse! A Horse! My kingdom for a horse!' - Shakespeare (Richard III)",
+      "quote_ru": "'Коня! Коня! Престол мой за коня!' - Уильям Шекспир, «Ричард III»",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Stable",
+          "uniques": [
+            "[+15]% Production when constructing [Mounted] units [in this city]",
+            "[+1 Production] from [Cattle] tiles [in this city]",
+            "[+1 Production] from [Horses] tiles [in this city]",
+            "[+1 Production] from [Sheep] tiles [in this city]"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Circus Maximus",
+          "uniques": [
+            "Only available <if [Colosseum] is constructed in all [non-[Puppeted]] cities>",
+            "Cost increases by [30] per owned city"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Horseman",
+          "uniques": [
+            "Can move after attacking",
+            "No defensive terrain bonus",
+            "[-33]% Strength <vs cities> <when attacking>"
+          ]
+        }
+      ]
+    },
+    "Mathematics": {
+      "era": "Classical era",
+      "column": 3,
+      "row": 7,
+      "prerequisites": [
+        "The Wheel"
+      ],
+      "quote": "'Mathematics is the gate and key to the sciences.' - Roger Bacon",
+      "quote_ru": "'Математика — врата и ключ всех наук.' - Роджер Бэкон",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Courthouse",
+          "uniques": [
+            "Removes extra unhappiness from annexed cities",
+            "Can only be built <in [Annexed] cities>"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Hanging Gardens",
+          "quote": "'I think that if ever a mortal heard the word of God it would be in a garden at the cool of the day.' - F. Frankfort Moore",
+          "uniques": [
+            "Gain a free [Garden] [in this city]"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Catapult",
+          "uniques": [
+            "[+200]% Strength <vs cities> <when attacking>",
+            "No defensive terrain bonus",
+            "Must set up to ranged attack",
+            "[-1] Sight"
+          ]
+        }
+      ]
+    },
+    "Construction": {
+      "era": "Classical era",
+      "column": 3,
+      "row": 9,
+      "prerequisites": [
+        "Masonry",
+        "The Wheel"
+      ],
+      "quote": "'Three things are to be looked to in a building: that it stands on the right spot; that it be securely founded; that it be successfully executed.' - Johann Wolfgang von Goethe",
+      "quote_ru": "'Три правила следует помнить при всякой постройке: здание должно стоять на подобающем месте, иметь прочное основание и быть полностью завершено.' - Иоганн Гете",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Colosseum"
+        },
+        {
+          "kind": "wonder",
+          "name": "Terracotta Army",
+          "quote": "'Regard your soldiers as your children, and they will follow you into the deepest valleys; look on them as your own beloved sons, and they will stand by you even unto death.' - Sun Tzu"
+        },
+        {
+          "kind": "unit",
+          "name": "Composite Bowman"
+        },
+        {
+          "kind": "improvement",
+          "name": "Lumber mill",
+          "uniques": [
+            "[+1 Production] <after discovering [Scientific Theory]>",
+            "Pillaging this improvement yields approximately [+10 Gold]"
+          ]
+        },
+        {
+          "kind": "improvement",
+          "name": "Moai",
+          "uniques": [
+            "Can only be built on [Coastal] tiles",
+            "[+1 Culture] for each adjacent [Moai]",
+            "[+1 Gold] <after discovering [Flight]>",
+            "Pillaging this improvement yields approximately [+10 Gold]"
+          ]
+        },
+        {
+          "kind": "improvement",
+          "name": "Terrace farm",
+          "uniques": [
+            "Cannot be built on [Bonus resource] tiles",
+            "[+1 Food] for each adjacent [Mountain]",
+            "[+1 Food] from [Fresh water] tiles <after discovering [Civil Service]>",
+            "[+1 Food] from [non-fresh water] tiles <after discovering [Fertilizer]>"
+          ]
+        }
+      ]
+    },
+    "Philosophy": {
+      "era": "Classical era",
+      "column": 4,
+      "row": 2,
+      "prerequisites": [
+        "Writing",
+        "Calendar"
+      ],
+      "quote": "'There is only one good, knowledge, and one evil, ignorance.' - Socrates",
+      "quote_ru": "'Есть лишь один бог - знание, и лишь один порок - невежество.' - Сократ",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Temple",
+          "uniques": [
+            "Only available <when religion is enabled>",
+            "Destroyed when the city is captured"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "National College",
+          "uniques": [
+            "Only available <if [Library] is constructed in all [non-[Puppeted]] cities>",
+            "Cost increases by [30] per owned city"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "The Oracle",
+          "quote": "'The ancient Oracle said that I was the wisest of all the Greeks. It is because I alone, of all the Greeks, know that I know nothing' - Socrates",
+          "uniques": [
+            "Free Social Policy"
+          ]
+        }
+      ]
+    },
+    "Drama and Poetry": {
+      "era": "Classical era",
+      "column": 4,
+      "row": 3,
+      "prerequisites": [
+        "Writing"
+      ],
+      "quote": "'What is drama but life with the dull bits cut out.' - Alfred Hitchcock",
+      "quote_ru": "'Что такое драма, если не сама жизнь, из которой вырезаны скучные кадры.' - Альфред Хичкок",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Amphitheater",
+          "uniques": [
+            "Destroyed when the city is captured"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "National Epic",
+          "uniques": [
+            "Only available <if [Monument] is constructed in all [non-[Puppeted]] cities>",
+            "[+25]% Great Person generation [in this city]",
+            "Cost increases by [30] per owned city"
+          ]
+        }
+      ]
+    },
+    "Currency": {
+      "era": "Classical era",
+      "column": 4,
+      "row": 7,
+      "prerequisites": [
+        "Mathematics"
+      ],
+      "quote": "'Better is bread with a happy heart than wealth with vexation.' - Amenemope",
+      "quote_ru": "'Лучше хлеб, который съедается с радостным сердцем, чем богатство с заботами.' - Аменемоп",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Market"
+        },
+        {
+          "kind": "building",
+          "name": "Mint",
+          "uniques": [
+            "[+2 Gold] from [Gold Ore] tiles [in this city]",
+            "[+2 Gold] from [Silver] tiles [in this city]"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Petra",
+          "quote": "'...who drinks the water I shall give him, says the Lord, will have a spring inside him welling up for eternal life. Let them bring me to your holy mountain in the place where you dwell. Across the desert and through the mountain to the Canyon of the Crescent Moon...' - Indiana Jones",
+          "uniques": [
+            "Must be next to [Desert]",
+            "[+1 Food, +1 Production, +1 Gold] from [Desert] tiles without [Flood plains] [in this city]",
+            "Gain a free [Amphitheater] [in this city]",
+            "[+6 Culture] [in this city] <after discovering [Archaeology]>"
+          ]
+        }
+      ]
+    },
+    "Engineering": {
+      "era": "Classical era",
+      "column": 4,
+      "row": 8,
+      "prerequisites": [
+        "Mathematics",
+        "Construction"
+      ],
+      "quote": "'Instrumental or mechanical science is the noblest and, above all others, the most useful.' - Leonardo da Vinci",
+      "quote_ru": "'Механика — самая благородная и, главное, самая полезная из наук.' - Леонардо да Винчи",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Aqueduct",
+          "uniques": [
+            "[40]% Food is carried over after population increases [in this city]"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Great Wall",
+          "quote": "'The art of war teaches us to rely not on the likelihood of the enemy's not attacking, but rather on the fact that we have made our position unassailable.' - Sun Tzu",
+          "uniques": [
+            "Enemy [Land] units must spend [1] extra movement points when inside your territory <before discovering [Dynamite]> <Suppress warning [*contains a conditional on a unit movement unique*]>",
+            "Gain a free [Walls] [in this city]"
+          ]
+        },
+        {
+          "kind": "improvement",
+          "name": "Fort",
+          "uniques": [
+            "Can be built outside your borders",
+            "Gives a defensive bonus of [50]%"
+          ]
+        }
+      ]
+    },
+    "Iron Working": {
+      "era": "Classical era",
+      "column": 4,
+      "row": 10,
+      "prerequisites": [
+        "Bronze Working"
+      ],
+      "quote": "'Do not wait to strike til the iron is hot, but make it hot by striking.' - William Butler Yeats",
+      "quote_ru": "'Не жди, пока железо станет горячим для ковки - но куй, и оно станет горячим.' - Уильям Батлер Йейтс",
+      "unlocks": [
+        {
+          "kind": "wonder",
+          "name": "Heroic Epic",
+          "uniques": [
+            "Only available <if [Barracks] is constructed in all [non-[Puppeted]] cities>",
+            "All newly-trained [non-[Air]] units [in this city] receive the [Morale] promotion",
+            "Cost increases by [30] per owned city"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Colossus",
+          "quote": "'Why man, he doth bestride the narrow world like a colossus, and we petty men walk under his huge legs, and peep about to find ourselves dishonorable graves.' - William Shakespeare, Julius Caesar",
+          "uniques": [
+            "Must be next to [Coast]",
+            "[+1 Gold] from [Water] tiles [in this city]"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Swordsman"
+        }
+      ]
+    },
+    "Theology": {
+      "era": "Medieval era",
+      "column": 5,
+      "row": 2,
+      "prerequisites": [
+        "Philosophy",
+        "Drama and Poetry"
+      ],
+      "quote": "'Three things are necessary for the salvation of man: to know what he ought to believe; to know what he ought to desire; and to know what he ought to do' - St. Thomas Aquinas",
+      "quote_ru": "'Человеку для спасения нужно знать три вещи: чему он должен верить, чего желать и что делать.' - Фома Аквинский",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Garden",
+          "uniques": [
+            "[+25]% Great Person generation [in this city]",
+            "Must be next to [Fresh water]"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Hagia Sophia",
+          "quote": "'For it soars to a height to match the sky, and as if surging up from among the other buildings it stands on high and looks down upon the remainder of the city, adorning it, because it is a part of it, but glorying in its own beauty' - Procopius, De Aedificis",
+          "uniques": [
+            "Gain a free [Temple] [in this city]",
+            "Free [Great Prophet] appears",
+            "Only available <when religion is enabled>"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Great Mosque of Djenne",
+          "quote": "'With the magnificence of eternity before us, let time, with all its fluctuations, dwindle into its own littleness.' - Thomas Chalmers",
+          "uniques": [
+            "Gain a free [Mosque] [in this city]",
+            "Only available <when religion is enabled>",
+            "All newly-trained [Missionary] units [in this city] receive the [Devout] promotion",
+            "All newly-trained [Great Prophet] units [in this city] receive the [Devout] promotion"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Grand Temple",
+          "uniques": [
+            "Only available <if [Temple] is constructed in all [non-[Puppeted]] cities>",
+            "Cost increases by [30] per owned city",
+            "[+100]% Natural religion spread [in this city]",
+            "Only available <when religion is enabled>"
+          ]
+        }
+      ]
+    },
+    "Civil Service": {
+      "era": "Medieval era",
+      "column": 5,
+      "row": 5,
+      "prerequisites": [
+        "Currency",
+        "Horseback Riding",
+        "Drama and Poetry"
+      ],
+      "quote": "'The only thing that saves us from the bureaucracy is its inefficiency' - Eugene McCarthy",
+      "quote_ru": "'Единственное, что нас спасает от бюрократии, это ее неэффективность.' - Юджин Маккарти",
+      "unlocks": [
+        {
+          "kind": "wonder",
+          "name": "Chichen Itza",
+          "quote": "'The katun is established at Chichen Itza. The settlement of the Itza shall take place there. The quetzal shall come, the green bird shall come. Ah Kantenal shall come. It is the word of God. The Itza shall come.' - The Books of Chilam Balam",
+          "uniques": [
+            "[+50]% Golden Age length"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Pikeman",
+          "uniques": [
+            "[+50]% Strength <vs [Mounted] units>"
+          ]
+        }
+      ]
+    },
+    "Guilds": {
+      "era": "Medieval era",
+      "column": 5,
+      "row": 7,
+      "prerequisites": [
+        "Currency"
+      ],
+      "quote": "'The merchants and the traders have come; their profits are pre-ordained...' - Sri Guru Granth Sahib",
+      "quote_ru": "'Пришли купцы и торговцы; их прибыли предопределены...' - Шри Гуру Грант Сахиб",
+      "unlocks": [
+        {
+          "kind": "wonder",
+          "name": "National Treasury",
+          "uniques": [
+            "Only available <if [Market] is constructed in all [non-[Puppeted]] cities>",
+            "Cost increases by [30] per owned city"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Machu Picchu",
+          "quote": "'Few romances can ever surpass that of the granite citadel on top of the beetling precipices of Machu Picchu, the crown of Inca Land.' - Hiram Bingham",
+          "uniques": [
+            "[+25]% [Gold] from Trade Routes",
+            "Must have an owned [{non-[Natural Wonder]} {Mountain}] within [2] tiles"
+          ]
+        },
+        {
+          "kind": "improvement",
+          "name": "Trading post",
+          "uniques": [
+            "[+1 Gold] <after discovering [Economics]>",
+            "Pillaging this improvement yields approximately [+20 Gold]"
+          ]
+        },
+        {
+          "kind": "improvement",
+          "name": "Polder",
+          "uniques": [
+            "[+1 Production, +2 Gold] <after discovering [Economics]>",
+            "Pillaging this improvement yields approximately [+18 Gold]"
+          ]
+        }
+      ]
+    },
+    "Metal Casting": {
+      "era": "Medieval era",
+      "column": 5,
+      "row": 9,
+      "prerequisites": [
+        "Engineering",
+        "Iron Working"
+      ],
+      "quote": "'When pieces of bronze or gold or iron break, the metal-smith welds them together again in the fire, and the bond is established.' - Sri Guru Granth Sahib",
+      "quote_ru": "'Случись изделию из бронзы, золота или железа сломаться - кузнец сплавит обломки в огне, восстанавливая узы.' - Из книги 'Гратнх Сахиб'",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Workshop"
+        },
+        {
+          "kind": "building",
+          "name": "Forge",
+          "uniques": [
+            "[+15]% Production when constructing [Land] units [in this city]",
+            "[+1 Production] from [Iron] tiles [in this city]"
+          ]
+        }
+      ]
+    },
+    "Compass": {
+      "era": "Medieval era",
+      "column": 6,
+      "row": 1,
+      "prerequisites": [
+        "Optics",
+        "Theology"
+      ],
+      "quote": "'I find the great thing in this world is not so much where we stand, as in what direction we are moving.' - Oliver Wendell Holmes",
+      "quote_ru": "'Главное в этом мире не то, где мы стоим, а то, в каком направлении движемся.' - Оливер Уэнделл Холмс",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Harbor",
+          "uniques": [
+            "[+1 Production] from [Water resource] tiles [in this city]",
+            "Connects trade routes over water",
+            "Must be next to [Coast]"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Galleass",
+          "uniques": [
+            "Cannot enter ocean tiles"
+          ]
+        }
+      ]
+    },
+    "Education": {
+      "era": "Medieval era",
+      "column": 6,
+      "row": 3,
+      "prerequisites": [
+        "Theology",
+        "Civil Service"
+      ],
+      "quote": "'Education is the best provision for old age.' - Aristotle",
+      "quote_ru": "'Воспитание - лучший припас к старости.' - Аристотель",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "University",
+          "uniques": [
+            "[+2 Science] from [Jungle] tiles [in this city]"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Oxford University",
+          "uniques": [
+            "Only available <if [University] is constructed in all [non-[Puppeted]] cities>",
+            "Free Technology",
+            "Cost increases by [30] per owned city"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Angkor Wat",
+          "quote": "'The temple is like no other building in the world. It has towers and decoration and all the refinements which the human genius can conceive of.' - Antonio da Magdalena",
+          "uniques": [
+            "[-25]% Culture cost of natural border growth [in all cities]",
+            "[-25]% Gold cost of acquiring tiles [in all cities]"
+          ]
+        }
+      ]
+    },
+    "Chivalry": {
+      "era": "Medieval era",
+      "column": 6,
+      "row": 6,
+      "prerequisites": [
+        "Civil Service",
+        "Guilds"
+      ],
+      "quote": "'Whoso pulleth out this sword of this stone and anvil, is rightwise king born of all England.' - Malory",
+      "quote_ru": "'Кто вытащит сей меч из-под наковальни, тот и есть по праву рождения король над всей землей английской.' - Сэр Томас Мэлори",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Castle",
+          "uniques": [
+            "Destroyed when the city is captured"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Alhambra",
+          "quote": "'Justice is an unassailable fortress, built on the brow of a mountain which cannot be overthrown by the violence of torrents, nor demolished by the force of armies.' - Joseph Addison",
+          "uniques": [
+            "All newly-trained [relevant] units [in this city] receive the [Drill I] promotion",
+            "Gain a free [Castle] [in this city]"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Knight",
+          "uniques": [
+            "Can move after attacking",
+            "No defensive terrain bonus",
+            "[-33]% Strength <vs cities> <when attacking>",
+            "Never appears as a Barbarian unit"
+          ]
+        }
+      ]
+    },
+    "Machinery": {
+      "era": "Medieval era",
+      "column": 6,
+      "row": 8,
+      "prerequisites": [
+        "Guilds",
+        "Engineering"
+      ],
+      "quote": "'The press is the best instrument for enlightening the mind of man, and improving him as a rational, moral and social being.' - Thomas Jefferson",
+      "quote_ru": "'Пресса - лучший способ просвещения и улучшения человека как существа мыслящего, нравственного и общительного.' - Томас Джефферсон",
+      "unlocks": [
+        {
+          "kind": "wonder",
+          "name": "Ironworks",
+          "uniques": [
+            "Only available <if [Workshop] is constructed in all [non-[Puppeted]] cities>",
+            "Cost increases by [30] per owned city"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Crossbowman"
+        }
+      ]
+    },
+    "Physics": {
+      "era": "Medieval era",
+      "column": 6,
+      "row": 9,
+      "prerequisites": [
+        "Metal Casting"
+      ],
+      "quote": "'Measure what is measurable, and make measurable what is not so.' - Galileo Galilei",
+      "quote_ru": "'Измеряй измеримое и делай неизмеримое измеримым.' - Галилео Галилей",
+      "unlocks": [
+        {
+          "kind": "wonder",
+          "name": "Notre Dame",
+          "quote": "'Architecture has recorded the great ideas of the human race. Not only every religious symbol, but every human thought has its page in that vast book.' - Victor Hugo"
+        },
+        {
+          "kind": "unit",
+          "name": "Trebuchet",
+          "uniques": [
+            "[+200]% Strength <vs cities> <when attacking>",
+            "No defensive terrain bonus",
+            "Must set up to ranged attack",
+            "[-1] Sight"
+          ]
+        }
+      ]
+    },
+    "Steel": {
+      "era": "Medieval era",
+      "column": 6,
+      "row": 10,
+      "prerequisites": [
+        "Metal Casting"
+      ],
+      "quote": "'John Henry said to his Captain, / 'A man ain't nothin' but a man, / And before I'll let your steam drill beat me down, / I'll die with the hammer in my hand.'' - Anonymous: The Ballad of John Henry, the Steel-Drivin' Man",
+      "quote_ru": "'Закали свои порывы, / Преврати порывы в сталь / И лети мечтой игривой / Ты в заоблачную даль.' - Сергей Есенин",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Armory",
+          "uniques": [
+            "New [Military] units start with [15] XP [in this city]",
+            "Destroyed when the city is captured"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Longswordsman"
+        }
+      ]
+    },
+    "Astronomy": {
+      "era": "Renaissance era",
+      "column": 7,
+      "row": 2,
+      "prerequisites": [
+        "Compass",
+        "Education"
+      ],
+      "quote": "'Joyfully to the breeze royal Odysseus spread his sail, and with his rudder skillfully he steered.' - Homer",
+      "quote_ru": "'Сидя на крепком плоту, искусной рукою все время правил рулем Одиссей.' - Гомер",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Observatory",
+          "uniques": [
+            "Must be next to [Mountain]"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Caravel",
+          "uniques": [
+            "[+1] Sight",
+            "Withdraws before melee combat <with [80]% chance>"
+          ]
+        }
+      ]
+    },
+    "Acoustics": {
+      "era": "Renaissance era",
+      "column": 7,
+      "row": 4,
+      "prerequisites": [
+        "Education"
+      ],
+      "quote": "'Their rising all at once was as the sound of thunder heard remote' - Milton",
+      "quote_ru": "'Под громовый рык рогов и труб воинственных он повелел поднять свою могучую хоругвь.' - Джон Мильтон",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Opera House",
+          "uniques": [
+            "Destroyed when the city is captured"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Sistine Chapel",
+          "quote": "'I live and love in God's peculiar light.' - Michelangelo Buonarroti",
+          "uniques": [
+            "[+25]% [Culture] [in all cities]"
+          ]
+        }
+      ]
+    },
+    "Banking": {
+      "era": "Renaissance era",
+      "column": 7,
+      "row": 6,
+      "prerequisites": [
+        "Chivalry",
+        "Education"
+      ],
+      "quote": "'Happiness: a good bank account, a good cook and a good digestion' - Jean Jacques Rousseau",
+      "quote_ru": "'Счастье - хороший счет в банке, хороший повар и хорошее пищеварение.' - Жан-Жак Руссо",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Bank"
+        },
+        {
+          "kind": "building",
+          "name": "Constabulary",
+          "uniques": [
+            "Only available <when espionage is enabled>",
+            "[-25]% enemy spy effectiveness [in this city]"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Forbidden Palace",
+          "quote": "'Most of us can, as we choose, make of this world either a palace or a prison' - John Lubbock",
+          "uniques": [
+            "[-10]% Unhappiness from [Population] [in all non-occupied cities]"
+          ]
+        }
+      ]
+    },
+    "Printing Press": {
+      "era": "Renaissance era",
+      "column": 7,
+      "row": 8,
+      "prerequisites": [
+        "Machinery",
+        "Physics",
+        "Chivalry"
+      ],
+      "quote": "'It is a newspaper's duty to print the news and raise hell.' - The Chicago Times",
+      "quote_ru": "'Долг газеты - печатать новости и поднимать скандалы.' - 'Чикаго Таймс'",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Theatre"
+        },
+        {
+          "kind": "wonder",
+          "name": "Leaning Tower of Pisa",
+          "quote": "'Don't clap too hard - it's a very old building.' - John Osbourne",
+          "uniques": [
+            "[+25]% Great Person generation [in all cities]",
+            "Free Great Person"
+          ]
+        }
+      ]
+    },
+    "Gunpowder": {
+      "era": "Renaissance era",
+      "column": 7,
+      "row": 10,
+      "prerequisites": [
+        "Physics",
+        "Steel"
+      ],
+      "quote": "'The day when two army corps can annihilate each other in one second, all civilized nations, it is to be hoped, will recoil from war and discharge their troops.' - Alfred Nobel",
+      "quote_ru": "'В тот день, когда у двух армий окажется возможность уничтожить друг друга за считанные секунды, все цивилизованные страны, надо надеяться, отвернутся от войны.' - Альфред Нобель",
+      "unlocks": [
+        {
+          "kind": "wonder",
+          "name": "Himeji Castle",
+          "quote": "'Bushido is realized in the presence of death. This means choosing death whenever there is a choice between life and death. There is no other reasoning.' - Yamamoto Tsunetomo",
+          "uniques": [
+            "[+15]% Strength <for [All] units> <when fighting in [Friendly Land] tiles>",
+            "Gain a free [Castle] [in this city]"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Musketman"
+        }
+      ]
+    },
+    "Navigation": {
+      "era": "Renaissance era",
+      "column": 8,
+      "row": 2,
+      "prerequisites": [
+        "Astronomy"
+      ],
+      "quote": "'The winds and the waves are always on the side of the ablest navigators.' - Edward Gibbon",
+      "quote_ru": "'Ветер и волны всегда на стороне самых искусных мореходов.' - 'Эдвард Гиббон'",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Seaport",
+          "uniques": [
+            "[+1 Production, +1 Gold] from [Water resource] tiles [in this city]",
+            "Must be next to [Coast]",
+            "[+15]% Production when constructing [Water] units [in this city]"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Privateer"
+        },
+        {
+          "kind": "unit",
+          "name": "Frigate"
+        }
+      ]
+    },
+    "Architecture": {
+      "era": "Renaissance era",
+      "column": 8,
+      "row": 4,
+      "prerequisites": [
+        "Acoustics",
+        "Banking"
+      ],
+      "quote": "'Architecture begins where engineering ends.' - Walter Gropius",
+      "quote_ru": "'Архитектура начинается там, где кончается машина.' - Ле Корбюзье",
+      "unlocks": [
+        {
+          "kind": "wonder",
+          "name": "Hermitage",
+          "uniques": [
+            "Only available <if [Opera House] is constructed in all [non-[Puppeted]] cities>",
+            "Cost increases by [30] per owned city"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Taj Mahal",
+          "quote": "'The Taj Mahal rises above the banks of the river like a solitary tear suspended on the cheek of time.' - Rabindranath Tagore",
+          "uniques": [
+            "Empire enters golden age"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Porcelain Tower",
+          "quote": "'Things always seem fairer when we look back at them, and it is out of that inaccessible tower of the past that Longing leans and beckons.' - James Russell Lowell",
+          "uniques": [
+            "Free [Great Scientist] appears",
+            "Science gained from research agreements [+50]%"
+          ]
+        }
+      ]
+    },
+    "Economics": {
+      "era": "Renaissance era",
+      "column": 8,
+      "row": 6,
+      "prerequisites": [
+        "Banking",
+        "Printing Press"
+      ],
+      "quote": "'Compound interest is the most powerful force in the universe.' - Albert Einstein",
+      "quote_ru": "'Во всей Вселенной нет ничего более могущественного, чем сложный процент.' - Альберт Эйнштейн",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Windmill",
+          "uniques": [
+            "Must not be on [Hill]",
+            "[+10]% Production when constructing [All] buildings [in this city]"
+          ]
+        }
+      ]
+    },
+    "Metallurgy": {
+      "era": "Renaissance era",
+      "column": 8,
+      "row": 9,
+      "prerequisites": [
+        "Printing Press",
+        "Gunpowder"
+      ],
+      "quote": "'There never was a good knife made of bad steel.' - Benjamin Franklin",
+      "quote_ru": "'Из плохой стали не выковать хорошего клинка.' - Бенджамин Франклин",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Arsenal",
+          "uniques": [
+            "Destroyed when the city is captured"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Kremlin",
+          "quote": "'The Kremlin is constantly changing the rules of the game to suit its purposes. We are not playing chess, we're playing roulette.' - Garry Kasparov",
+          "uniques": [
+            "[+25]% City Strength from defensive buildings"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Lancer",
+          "uniques": [
+            "Can move after attacking",
+            "No defensive terrain bonus",
+            "[-33]% Strength <vs cities> <when attacking>",
+            "Never appears as a Barbarian unit"
+          ]
+        }
+      ]
+    },
+    "Chemistry": {
+      "era": "Renaissance era",
+      "column": 8,
+      "row": 10,
+      "prerequisites": [
+        "Gunpowder"
+      ],
+      "quote": "'Wherever we look, the work of the chemist has raised the level of our civilization and has increased the productive capacity of the nation.' - Calvin Coolidge",
+      "quote_ru": "'Куда ни посмотри, химия повсеместно повысила уровень цивилизации и продуктивную способность нации.' - Джон Калвин Кулидж",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "Cannon",
+          "uniques": [
+            "[+200]% Strength <vs cities> <when attacking>",
+            "No defensive terrain bonus",
+            "Must set up to ranged attack",
+            "[-1] Sight"
+          ]
+        }
+      ]
+    },
+    "Archaeology": {
+      "era": "Industrial era",
+      "column": 9,
+      "row": 2,
+      "prerequisites": [
+        "Navigation",
+        "Architecture"
+      ],
+      "quote": "'Those who cannot remember the past are condemned to repeat it.' - George Santayana",
+      "quote_ru": "'Те, кто не помнит своей истории, обречены повторять ее.'- Джордж Сантаяна",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Museum",
+          "uniques": [
+            "Destroyed when the city is captured"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "The Louvre",
+          "quote": "'Every genuine work of art has as much reason for being as the earth and the sun' - Ralph Waldo Emerson",
+          "uniques": [
+            "[2] free [Great Artist] units appear"
+          ]
+        }
+      ]
+    },
+    "Scientific Theory": {
+      "era": "Industrial era",
+      "column": 9,
+      "row": 4,
+      "prerequisites": [
+        "Architecture",
+        "Economics"
+      ],
+      "quote": "'Every great advance in science has issued from a new audacity of imagination.' - John Dewey",
+      "quote_ru": "'Каждый великий успех науки имеет своим истоком великую дерзость воображения.' - Джон Дьюи",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Public School",
+          "uniques": [
+            "[+1 Science] per [2] population [in this city]"
+          ]
+        }
+      ]
+    },
+    "Industrialization": {
+      "era": "Industrial era",
+      "column": 9,
+      "row": 6,
+      "prerequisites": [
+        "Economics"
+      ],
+      "quote": "'Industrialization based on machinery, already referred to as a characteristic of our age, is but one aspect of the revolution that is being wrought by technology.' - Emily Greene Balch",
+      "quote_ru": "'Индустриализация, уже ставшая неотъемлемой чертой нашего века, - всего лишь *одно* из проявлений революции, которую произвели технические науки.'- Эмили Грин Болч",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Factory"
+        },
+        {
+          "kind": "wonder",
+          "name": "Big Ben",
+          "quote": "'To achieve great things, two things are needed: a plan, and not quite enough time.' - Leonard Bernstein",
+          "uniques": [
+            "[Gold] cost of purchasing items in cities [-15]%"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Gatling Gun"
+        }
+      ]
+    },
+    "Rifling": {
+      "era": "Industrial era",
+      "column": 9,
+      "row": 7,
+      "prerequisites": [
+        "Economics",
+        "Metallurgy"
+      ],
+      "quote": "'It is well that war is so terrible, or we should grow too fond of it.' - Robert E. Lee",
+      "quote_ru": "'Хорошо, что война так ужасна, иначе мы любили бы ее слишком сильно.'- генерал Роберт Ли",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "Rifleman"
+        }
+      ]
+    },
+    "Military Science": {
+      "era": "Industrial era",
+      "column": 9,
+      "row": 9,
+      "prerequisites": [
+        "Metallurgy",
+        "Chemistry"
+      ],
+      "quote": "'Wars may be fought with weapons, but they are won by men. It is the spirit of the men who follow and of the man who leads that gains the victory.' - George S. Patton",
+      "quote_ru": "'Пусть войны ведутся оружием, выигрывают их люди. К победе приводит боевой дух того, кто ведет за собой, и тех, кто следует.' - Джордж Паттон",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Military Academy",
+          "uniques": [
+            "New [Military] units start with [15] XP [in this city]",
+            "Destroyed when the city is captured"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Brandenburg Gate",
+          "quote": "'Pale Death beats equally at the poor man's gate and at the palaces of kings.' - Horace",
+          "uniques": [
+            "Free [Great General] appears",
+            "New [Military] units start with [15] XP [in this city]"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Cavalry",
+          "uniques": [
+            "Can move after attacking",
+            "No defensive terrain bonus",
+            "[-33]% Strength <vs cities> <when attacking>",
+            "Never appears as a Barbarian unit"
+          ]
+        }
+      ]
+    },
+    "Fertilizer": {
+      "era": "Industrial era",
+      "column": 9,
+      "row": 10,
+      "prerequisites": [
+        "Chemistry"
+      ],
+      "quote": "'The nation that destroys its soil destroys itself.' - Franklin Delano Roosevelt",
+      "quote_ru": "'Народ, который разрушает свою почву, уничтожает сам себя.' - Франклин Делано Рузвельт",
+      "unlocks": []
+    },
+    "Biology": {
+      "era": "Industrial era",
+      "column": 10,
+      "row": 2,
+      "prerequisites": [
+        "Archaeology",
+        "Scientific Theory"
+      ],
+      "quote": "'If the brain were so simple we could understand it, we would be so simple we couldn't.' - Lyall Watson",
+      "quote_ru": "'Если бы работа мозга была доступна для нашего понимания, мы были бы слишком глупы, чтобы понять.' - Лиалл Уотсон",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Hospital"
+        },
+        {
+          "kind": "improvement",
+          "name": "Oil well",
+          "uniques": [
+            "Can only be built to improve a resource",
+            "Cannot be built on [Water] tiles",
+            "Pillaging this improvement yields approximately [+20 Gold]"
+          ]
+        }
+      ]
+    },
+    "Electricity": {
+      "era": "Industrial era",
+      "column": 10,
+      "row": 3,
+      "prerequisites": [
+        "Scientific Theory"
+      ],
+      "quote": "'Is it a fact - or have I dreamt it - that, by means of electricity, the world of matter has become a great nerve, vibrating thousands of miles in a breathless point of time?' - Nathaniel Hawthorne",
+      "quote_ru": "'Верно ль - или мне почудилось? - что электричество преобразило мир вещей в гигантский трепещущий нерв, раскинувшийся на сотни километров в одно мгновение?' - Натаниель Готорн",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Stock Exchange"
+        },
+        {
+          "kind": "building",
+          "name": "Hydro Plant",
+          "uniques": [
+            "Must be on [River]",
+            "[+1 Production] from [River] tiles [in this city]"
+          ]
+        },
+        {
+          "kind": "building",
+          "name": "Police Station",
+          "uniques": [
+            "Only available <when espionage is enabled>",
+            "[-25]% enemy spy effectiveness [in this city]"
+          ]
+        }
+      ]
+    },
+    "Steam Power": {
+      "era": "Industrial era",
+      "column": 10,
+      "row": 6,
+      "prerequisites": [
+        "Industrialization",
+        "Scientific Theory",
+        "Rifling"
+      ],
+      "quote": "'The nations of the West hope that by means of steam communication all the world will become as one family.' - Townsend Harris",
+      "quote_ru": "'Западные народы надеются, что паровая тяга сделает весь мир большой семьей' - Таунсенд Харрис",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "Ironclad",
+          "uniques": [
+            "[+33]% Strength <vs cities>",
+            "Double movement in [Coast]",
+            "Never appears as a Barbarian unit"
+          ]
+        }
+      ]
+    },
+    "Dynamite": {
+      "era": "Industrial era",
+      "column": 10,
+      "row": 9,
+      "prerequisites": [
+        "Fertilizer",
+        "Military Science"
+      ],
+      "quote": "'As soon as men decide that all means are permitted to fight an evil, then their good becomes indistinguishable from the evil that they set out to destroy.' - Christopher Dawson",
+      "quote_ru": "'Стоит человечеству решить, что для борьбы с пороком все средства хороши, как добро становится неотличимым от порока, который было призвано победить' - Кристофер Доусон",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "Artillery",
+          "uniques": [
+            "[+200]% Strength <vs cities> <when attacking>",
+            "No defensive terrain bonus",
+            "Must set up to ranged attack",
+            "[-1] Sight"
+          ]
+        }
+      ]
+    },
+    "Refrigeration": {
+      "era": "Modern era",
+      "column": 11,
+      "row": 2,
+      "prerequisites": [
+        "Biology",
+        "Electricity"
+      ],
+      "quote": "'And homeless near a thousand homes I stood, and near a thousand tables pined and wanted food.' - William Wordsworth",
+      "quote_ru": "'Метели, снега и туманы / Покорны морозу всегда, / Пойду на моря-окияны / -Построю дворцы изо льда' - Николай Некрасов",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Stadium"
+        },
+        {
+          "kind": "unit",
+          "name": "Submarine",
+          "uniques": [
+            "[+75]% Strength <when attacking>",
+            "Can only attack [Water] tiles",
+            "Never appears as a Barbarian unit"
+          ]
+        },
+        {
+          "kind": "improvement",
+          "name": "Offshore Platform",
+          "uniques": [
+            "Can only be built to improve a resource",
+            "Can only be built on [Water] tiles",
+            "Pillaging this improvement yields approximately [+20 Gold]"
+          ]
+        }
+      ]
+    },
+    "Radio": {
+      "era": "Modern era",
+      "column": 11,
+      "row": 3,
+      "prerequisites": [
+        "Electricity"
+      ],
+      "quote": "'The whole country was tied together by radio. We all experienced the same heroes and comedians and singers. They were giants.' - Woody Allen",
+      "quote_ru": "'Радио объединяло всю страну. Мы все росли на одних исполнителях, героях и юмористах' - Вуди Аллен, 'Радиодни'",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Broadcast Tower",
+          "uniques": [
+            "Destroyed when the city is captured"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Eiffel Tower",
+          "quote": "'We live only to discover beauty, all else is a form of waiting' - Kahlil Gibran",
+          "uniques": [
+            "[+1 Happiness] per [2] social policies adopted"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "National Intelligence Agency",
+          "uniques": [
+            "Only available <when espionage is enabled>",
+            "New spies start with [1] level(s)",
+            "Promotes all spies [1] time(s)",
+            "Gain an extra spy"
+          ]
+        }
+      ]
+    },
+    "Replaceable Parts": {
+      "era": "Modern era",
+      "column": 11,
+      "row": 4,
+      "prerequisites": [
+        "Electricity",
+        "Steam Power"
+      ],
+      "quote": "'Nothing is particularly hard if you divide it into small jobs.' - Henry Ford",
+      "quote_ru": "'Никакое дело не покажется невыполнимым, если разбить его на мелкие части' - Генри Форд",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Military Base",
+          "uniques": [
+            "Destroyed when the city is captured"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Statue of Liberty",
+          "quote": "'Give me your tired, your poor, your huddled masses yearning to breathe free, the wretched refuse of your teeming shore. Send these, the homeless, tempest-tossed to me, I lift my lamp beside the golden door!' - Emma Lazarus",
+          "uniques": [
+            "[+1 Production] from every specialist [in all cities]"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Great War Infantry"
+        }
+      ]
+    },
+    "Flight": {
+      "era": "Modern era",
+      "column": 11,
+      "row": 6,
+      "prerequisites": [
+        "Steam Power"
+      ],
+      "quote": "'Aeronautics was neither an industry nor a science. It was a miracle.' - Igor Sikorsky",
+      "quote_ru": "'Воздухоплавание не было ни наукой, ни отраслью промышленности. Оно было чудом.' - Игорь Сикорский",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "Triplane",
+          "uniques": [
+            "[50]% chance to intercept air attacks",
+            "[+150]% Strength <vs [Bomber] units>",
+            "[+150]% Strength <vs [Helicopter] units>"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Great War Bomber"
+        }
+      ]
+    },
+    "Railroads": {
+      "era": "Modern era",
+      "column": 11,
+      "row": 8,
+      "prerequisites": [
+        "Steam Power",
+        "Dynamite"
+      ],
+      "quote": "'The introduction of so powerful an agent as steam to a carriage on wheels will make a great change in the situation of man.' - Thomas Jefferson",
+      "quote_ru": "'Применение к колесному транспорту столь мощной движущей силы, как пар, радикально изменит положение человечества.' - Томас Джефферсон",
+      "unlocks": [
+        {
+          "kind": "wonder",
+          "name": "Neuschwanstein",
+          "quote": "'...the location is one of the most beautiful to be found, holy and unapproachable, a worthy temple for the divine friend who has brought salvation and true blessing to the world.' - King Ludwig II of Bavaria",
+          "uniques": [
+            "[+1 Happiness, +2 Culture, +3 Gold] from every [Castle]",
+            "Must have an owned [{non-[Natural Wonder]} {Mountain}] within [2] tiles"
+          ]
+        },
+        {
+          "kind": "improvement",
+          "name": "Railroad",
+          "uniques": [
+            "Can be built outside your borders",
+            "Costs [2] [Gold] per turn"
+          ]
+        }
+      ]
+    },
+    "Plastics": {
+      "era": "Modern era",
+      "column": 12,
+      "row": 3,
+      "prerequisites": [
+        "Radio",
+        "Replaceable Parts"
+      ],
+      "quote": "'Ben, I want to say one word to you, just one word: plastics.' - Buck Henry and Calder Willingham, The Graduate",
+      "quote_ru": "'Все на свете из пластмассы, и вокруг пластмассовая жизнь.' - группа 'Сплин'",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Research Lab"
+        },
+        {
+          "kind": "wonder",
+          "name": "Cristo Redentor",
+          "quote": "'Come to me, all who labor and are heavy burdened, and I will give you rest.' - New Testament, Matthew 11:28",
+          "uniques": [
+            "[-10]% Culture cost of adopting new Policies"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Infantry"
+        }
+      ]
+    },
+    "Electronics": {
+      "era": "Modern era",
+      "column": 12,
+      "row": 5,
+      "prerequisites": [
+        "Replaceable Parts",
+        "Flight"
+      ],
+      "quote": "'There's a basic principle about consumer electronics: it gets more powerful all the time and it gets cheaper all the time.' - Trip Hawkins",
+      "quote_ru": "'Потребительские электротовары подчиняются простому принципу: они становятся все мощнее и все дешевле.' - Трип Хокинс",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "Carrier",
+          "uniques": [
+            "Cannot attack",
+            "Can carry [2] [Aircraft] units"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Battleship",
+          "uniques": [
+            "Never appears as a Barbarian unit"
+          ]
+        }
+      ]
+    },
+    "Ballistics": {
+      "era": "Modern era",
+      "column": 12,
+      "row": 6,
+      "prerequisites": [
+        "Flight"
+      ],
+      "quote": "'Men, like bullets, go farthest when they are smoothest.' - Jean Paul",
+      "quote_ru": "'Люди, подобно пулям, чем лучше обработаны, тем дальше летят.' - Жан Поль",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "Machine Gun"
+        },
+        {
+          "kind": "unit",
+          "name": "Anti-Aircraft Gun",
+          "uniques": [
+            "[100]% chance to intercept air attacks",
+            "[+150]% Strength <vs [Air] units>",
+            "[+150]% Strength <vs [Helicopter] units>",
+            "Never appears as a Barbarian unit"
+          ]
+        }
+      ]
+    },
+    "Combustion": {
+      "era": "Modern era",
+      "column": 12,
+      "row": 8,
+      "prerequisites": [
+        "Railroads"
+      ],
+      "quote": "'Any man who can drive safely while kissing a pretty girl is simply not giving the kiss the attention it deserves.' - Albert Einstein",
+      "quote_ru": "'Мужчина, который может спокойно вести машину, одновременно целуя красотку, просто не уделяет поцелую должного внимания.' - Альберт Эйнштейн",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "Landship",
+          "uniques": [
+            "Can move after attacking",
+            "No defensive terrain bonus",
+            "Never appears as a Barbarian unit"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Destroyer",
+          "uniques": [
+            "Can see invisible [Submarine] units",
+            "[40]% chance to intercept air attacks",
+            "Withdraws before melee combat <with [80]% chance>",
+            "[+100]% Strength <vs [Submarine] units>"
+          ]
+        }
+      ]
+    },
+    "Pharmaceuticals": {
+      "era": "Atomic era",
+      "column": 13,
+      "row": 2,
+      "prerequisites": [
+        "Plastics",
+        "Refrigeration"
+      ],
+      "quote": "'In nothing do men more nearly approach the gods than in giving health to men.' - Cicero",
+      "quote_ru": "'Люди более всего приближаются к богам именно тогда, когда даруют людям спасение.' - Марк Туллий Цицерон",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Medical Lab",
+          "uniques": [
+            "[25]% Food is carried over after population increases [in this city]"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Marine",
+          "uniques": [
+            "[+1] Sight <when [Embarked]>",
+            "[+100]% Strength <when defending> <when [Embarked]>"
+          ]
+        }
+      ]
+    },
+    "Atomic Theory": {
+      "era": "Atomic era",
+      "column": 13,
+      "row": 4,
+      "prerequisites": [
+        "Plastics",
+        "Electronics"
+      ],
+      "quote": "'The unleashed power of the atom has changed everything save our modes of thinking, and we thus drift toward unparalleled catastrophes.' - Albert Einstein",
+      "quote_ru": "'Высвобожденная ядерная энергия изменила все, кроме нашего мышления. Поэтому мы медленно близимся к катастрофе невиданных масштабов.' - Альберт Эйнштейн",
+      "unlocks": [
+        {
+          "kind": "wonder",
+          "name": "Manhattan Project",
+          "uniques": [
+            "Enables nuclear weapon",
+            "Triggers a global alert upon completion",
+            "Cannot be hurried"
+          ]
+        }
+      ]
+    },
+    "Radar": {
+      "era": "Atomic era",
+      "column": 13,
+      "row": 6,
+      "prerequisites": [
+        "Ballistics",
+        "Electronics"
+      ],
+      "quote": "'Vision is the art of seeing things invisible.' - Jonathan Swift",
+      "quote_ru": "'Дальновидность - искусство узреть незримое' - Джонатан Свифт",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "Fighter",
+          "uniques": [
+            "[100]% chance to intercept air attacks",
+            "[+150]% Strength <vs [Bomber] units>",
+            "[+150]% Strength <vs [Helicopter] units>"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Bomber"
+        },
+        {
+          "kind": "unit",
+          "name": "Paratrooper",
+          "uniques": [
+            "May Paradrop to [Land] tiles up to [5] tiles away <in [{Friendly} {Land}] tiles>",
+            "Never appears as a Barbarian unit"
+          ]
+        }
+      ]
+    },
+    "Combined Arms": {
+      "era": "Atomic era",
+      "column": 13,
+      "row": 8,
+      "prerequisites": [
+        "Ballistics",
+        "Combustion"
+      ],
+      "quote": "'The root of the evil is not the construction of new, more dreadful weapons. It is the spirit of conquest.' - Ludwig von Mises",
+      "quote_ru": "'Корень зла лежит не в создании нового, более смертоносного оружия, а в духе завоевания.' - Людвиг фон Мизес",
+      "unlocks": [
+        {
+          "kind": "wonder",
+          "name": "Pentagon",
+          "quote": "'In preparing for battle I have always found that plans are useless, but planning is indispensable.' - Dwight D. Eisenhower",
+          "uniques": [
+            "[-33]% Gold cost of upgrading <for [Military] units>"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Tank",
+          "uniques": [
+            "Can move after attacking",
+            "No defensive terrain bonus",
+            "Never appears as a Barbarian unit"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Anti-Tank Gun",
+          "uniques": [
+            "[+100]% Strength <vs [Armored] units>",
+            "Never appears as a Barbarian unit"
+          ]
+        }
+      ]
+    },
+    "Ecology": {
+      "era": "Atomic era",
+      "column": 14,
+      "row": 2,
+      "prerequisites": [
+        "Atomic Theory",
+        "Pharmaceuticals"
+      ],
+      "quote": "'Only within the moment of time represented by the present century has one species, man, acquired significant power to alter the nature of his world.' - Rachel Carson",
+      "quote_ru": "'В нашем столетии один вид - человек - стал достаточно могущественным для того, чтобы изменять окружающую среду.' - Рейчел Карсон",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Solar Plant",
+          "uniques": [
+            "Must be next to [Desert]",
+            "Only available <in cities without a [Nuclear Plant]>"
+          ]
+        },
+        {
+          "kind": "building",
+          "name": "Recycling Center",
+          "uniques": [
+            "Provides [2] [Aluminum]",
+            "Limited to [5] per Civilization"
+          ]
+        },
+        {
+          "kind": "wonder",
+          "name": "Sydney Opera House",
+          "quote": "'Those who lose dreaming are lost.' - Australian Aboriginal saying",
+          "uniques": [
+            "Free Social Policy",
+            "Must be next to [Coast]"
+          ]
+        }
+      ]
+    },
+    "Nuclear Fission": {
+      "era": "Atomic era",
+      "column": 14,
+      "row": 4,
+      "prerequisites": [
+        "Atomic Theory",
+        "Radar"
+      ],
+      "quote": "'I am become Death, the destroyer of worlds.' - J. Robert Oppenheimer",
+      "quote_ru": "'И я стану Смертью, разрушителем миров.' - Роберт Оппенгеймер",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Nuclear Plant",
+          "uniques": [
+            "Only available <in cities without a [Solar Plant]>"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Atomic Bomb",
+          "uniques": [
+            "Nuclear weapon of Strength [1]",
+            "Only available <if [Manhattan Project] is constructed>",
+            "Self-destructs when attacking",
+            "Blast radius [2]"
+          ]
+        }
+      ]
+    },
+    "Rocketry": {
+      "era": "Atomic era",
+      "column": 14,
+      "row": 6,
+      "prerequisites": [
+        "Radar"
+      ],
+      "quote": "'A good rule for rocket experimenters to follow is this: always assume that it will explode.' - Astronautics Magazine, 1937",
+      "quote_ru": "'Вот верное правило ракетостроения: всегда рассчитывайте на то, что в ходе эксперимента ракета взорвется.' - Журнал 'Астронавтика', 1937",
+      "unlocks": [
+        {
+          "kind": "wonder",
+          "name": "Apollo Program",
+          "uniques": [
+            "Enables construction of Spaceship parts",
+            "Triggers a global alert upon completion",
+            "Only available <when [Scientific] Victory is enabled>",
+            "Cannot be hurried"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Rocket Artillery",
+          "uniques": [
+            "[+200]% Strength <vs cities> <when attacking>",
+            "No defensive terrain bonus",
+            "[-1] Sight",
+            "Never appears as a Barbarian unit"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Mobile SAM",
+          "uniques": [
+            "[100]% chance to intercept air attacks",
+            "[+150]% Strength <vs [Air] units>",
+            "[+150]% Strength <vs [Helicopter] units>",
+            "Never appears as a Barbarian unit"
+          ]
+        }
+      ]
+    },
+    "Computers": {
+      "era": "Atomic era",
+      "column": 14,
+      "row": 8,
+      "prerequisites": [
+        "Combined Arms",
+        "Radar"
+      ],
+      "quote": "'Computers are like Old Testament gods: lots of rules and no mercy.' - Joseph Campbell",
+      "quote_ru": "'Компьютеры похожи на ветхозаветных богов: сплошные правила и ни капли жалости.' - Дж. Кэмпбелл",
+      "unlocks": [
+        {
+          "kind": "wonder",
+          "name": "Great Firewall",
+          "quote": "'Distrust and caution are the parents of security.' - Benjamin Franklin",
+          "uniques": [
+            "Only available <when espionage is enabled>",
+            "[-99]% enemy spy effectiveness [in this city]",
+            "[-25]% enemy spy effectiveness [in all cities]"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Helicopter Gunship",
+          "uniques": [
+            "[+100]% Strength <vs [Armored] units>",
+            "No defensive terrain bonus",
+            "Can move after attacking",
+            "All tiles cost 1 movement"
+          ]
+        }
+      ]
+    },
+    "Telecommunications": {
+      "era": "Information era",
+      "column": 15,
+      "row": 2,
+      "prerequisites": [
+        "Ecology"
+      ],
+      "quote": "'The more we elaborate our means of communication, the less we communicate.' - J.B. Priestly",
+      "quote_ru": "'Чем более развиты наши средства связи, тем меньше мы общаемся.' – Джон Бойтон Пристли",
+      "unlocks": [
+        {
+          "kind": "wonder",
+          "name": "CN Tower",
+          "quote": "'Nothing travels faster than light with the possible exception of bad news, which obeys its own special rules.' - Douglas Adams",
+          "uniques": [
+            "[+1] population [in all cities]",
+            "[+1 Happiness] [in all cities]",
+            "Gain a free [Broadcast Tower] [in all cities]"
+          ]
+        },
+        {
+          "kind": "building",
+          "name": "Bomb Shelter",
+          "uniques": [
+            "Population loss from nuclear attacks [-75]% [in this city]",
+            "Damage to garrison from nuclear attacks [-75]% [in this city]",
+            "Only available <when nuclear weapons are enabled> <hidden from users>"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Nuclear Submarine",
+          "uniques": [
+            "[+75]% Strength <when attacking>",
+            "Can only attack [Water] tiles",
+            "[+1] Sight",
+            "Can carry [2] [Missile] units"
+          ]
+        }
+      ]
+    },
+    "Mobile Tactics": {
+      "era": "Information era",
+      "column": 15,
+      "row": 3,
+      "prerequisites": [
+        "Ecology",
+        "Nuclear Fission"
+      ],
+      "quote": "'All men can see these tactics whereby I conquer, but what none can see is the strategy out of which victory is evolved.' - Sun Tzu",
+      "quote_ru": "'Все воины знают форму, благодаря которой мы добиваемся победы, но никто не знает той формы, с помощью которой мы управляем победой.' - Сунь Цзы",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "Mechanized Infantry",
+          "uniques": [
+            "Never appears as a Barbarian unit"
+          ]
+        }
+      ]
+    },
+    "Advanced Ballistics": {
+      "era": "Information era",
+      "column": 15,
+      "row": 5,
+      "prerequisites": [
+        "Nuclear Fission",
+        "Rocketry"
+      ],
+      "quote": "'Our scientific power has outrun our spiritual power, we have guided missiles and misguided men.' – Martin Luther King Jr.",
+      "quote_ru": "'Наша научная мощь обогнала наше духовное развитие. У нас есть управляемые ракеты и неуправляемые люди.' – Мартин Лютер Кинг",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "Guided Missile",
+          "uniques": [
+            "[-100]% maintenance costs"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Nuclear Missile",
+          "uniques": [
+            "Nuclear weapon of Strength [2]",
+            "Only available <if [Manhattan Project] is constructed>",
+            "Blast radius [2]",
+            "Consumes [2] [Uranium]"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "SS Booster",
+          "uniques": [
+            "Spaceship part",
+            "Cannot be purchased",
+            "Only available <if [Apollo Program] is constructed>",
+            "Uncapturable"
+          ]
+        }
+      ]
+    },
+    "Satellites": {
+      "era": "Information era",
+      "column": 15,
+      "row": 6,
+      "prerequisites": [
+        "Rocketry"
+      ],
+      "quote": "'Now, somehow, in some new way, the sky seemed almost alien.' - Lyndon B. Johnson",
+      "quote_ru": "'Теперь вдруг небо выглядело почти чужим.' - Линдон Джонсон",
+      "unlocks": [
+        {
+          "kind": "wonder",
+          "name": "Hubble Space Telescope",
+          "quote": "'The wonder is, not that the field of stars is so vast, but that man has measured it.' - Anatole France",
+          "uniques": [
+            "[2] free [Great Scientist] units appear",
+            "[+25]% Production when constructing [Spaceship part] units [in this city]",
+            "Gain a free [Spaceship Factory] [in this city]"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "SS Cockpit",
+          "uniques": [
+            "Spaceship part",
+            "Cannot be purchased",
+            "Only available <if [Apollo Program] is constructed>",
+            "Uncapturable"
+          ]
+        }
+      ]
+    },
+    "Robotics": {
+      "era": "Information era",
+      "column": 15,
+      "row": 7,
+      "prerequisites": [
+        "Rocketry",
+        "Computers"
+      ],
+      "quote": "'1. A robot may not injure a human being or, through inaction, allow a human being to come to harm. 2. A robot must obey any orders given to it by human beings, except when such orders would conflict with the First Law. 3. A robot must protect its own existence as long as such protection does not conflict with the First or Second Law.' - Isaac Asimov",
+      "quote_ru": "'1. Робот не может причинить вреда человеку или своим бездействием допустить, чтобы человеку был причинен вред. 2. Робот должен повиноваться всем приказам, которые даёт человек, кроме тех случаев, когда эти приказы противоречат Первому Закону. 3. Робот должен заботиться о своей безопасности в той мере, в которой это не противоречит Первому и Второму Законам.' - Айзек Азимов",
+      "unlocks": [
+        {
+          "kind": "building",
+          "name": "Spaceship Factory",
+          "uniques": [
+            "[+50]% Production when constructing [Spaceship part] units [in this city]"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Missile Cruiser",
+          "uniques": [
+            "[100]% chance to intercept air attacks",
+            "Can see invisible [Submarine] units",
+            "Can carry [3] [Missile] units",
+            "[+100]% Strength <vs [Submarine] units>"
+          ]
+        }
+      ]
+    },
+    "Lasers": {
+      "era": "Information era",
+      "column": 15,
+      "row": 8,
+      "prerequisites": [
+        "Computers"
+      ],
+      "quote": "'The night is far spent, the day is at hand: let us therefore cast off the works of darkness, and let us put on the armor of light.' - The Holy Bible: Romans, 13:12",
+      "quote_ru": "'Ночь прошла, а день приблизился: итак отвергнем дела тьмы и облечемся в оружия света.' - Послание к Римлянам, 13:12",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "Modern Armor",
+          "uniques": [
+            "Can move after attacking",
+            "No defensive terrain bonus",
+            "Never appears as a Barbarian unit"
+          ]
+        },
+        {
+          "kind": "unit",
+          "name": "Jet Fighter",
+          "uniques": [
+            "[100]% chance to intercept air attacks",
+            "[+150]% Strength <vs [Bomber] units>",
+            "[+150]% Strength <vs [Helicopter] units>"
+          ]
+        }
+      ]
+    },
+    "Globalization": {
+      "era": "Information era",
+      "column": 16,
+      "row": 2,
+      "prerequisites": [
+        "Telecommunications"
+      ],
+      "quote": "'The new electronic interdependence recreates the world in the image of a global village.' - Marshall McLuhan",
+      "quote_ru": "'Новая электронная взаимозависимость воссоздает мир в образе глобальной деревни.' - Маршалл Маклюэн",
+      "unlocks": [
+        {
+          "kind": "wonder",
+          "name": "United Nations",
+          "quote": "'More than ever before in human history, we share a common destiny. We can master it only if we face it together. And that is why we have the United Nations.' - Kofi Annan",
+          "uniques": [
+            "Triggers voting for the Diplomatic Victory",
+            "Only available <when [Diplomatic] Victory is enabled>",
+            "Triggers a global alert upon completion"
+          ]
+        }
+      ]
+    },
+    "Particle Physics": {
+      "era": "Information era",
+      "column": 16,
+      "row": 3,
+      "prerequisites": [
+        "Telecommunications",
+        "Mobile Tactics",
+        "Advanced Ballistics"
+      ],
+      "quote": "'Every particle of matter is attracted by or gravitates to every other particle of matter with a force inversely proportional to the squares of their distances.' - Isaac Newton",
+      "quote_ru": "'Две частицы притягиваются друг к другу с силой, прямо пропорциональной произведению масс и обратно пропорциональной квадрату расстояния между ними.' - Исаак Ньютон",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "SS Engine",
+          "uniques": [
+            "Spaceship part",
+            "Cannot be purchased",
+            "Only available <if [Apollo Program] is constructed>",
+            "Uncapturable"
+          ]
+        }
+      ]
+    },
+    "Nuclear Fusion": {
+      "era": "Information era",
+      "column": 16,
+      "row": 6,
+      "prerequisites": [
+        "Advanced Ballistics",
+        "Satellites",
+        "Robotics"
+      ],
+      "quote": "'The release of atomic energy has not created a new problem. It has readily made more urgent the necessity of solving an existing one.' - Albert Einstein",
+      "quote_ru": "'Открытие атомной энергии не создало новой проблемы: оно лишь подчеркнуло необходимость решения уже существующей.' - Альберт Эйнштейн",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "Giant Death Robot",
+          "uniques": [
+            "Can move after attacking",
+            "No defensive terrain bonus",
+            "Never appears as a Barbarian unit"
+          ]
+        }
+      ]
+    },
+    "Nanotechnology": {
+      "era": "Information era",
+      "column": 16,
+      "row": 7,
+      "prerequisites": [
+        "Robotics"
+      ],
+      "quote": "'The impact of nanotechnology is expected to exceed the impact that the electronics revolution has had on our lives.' - Richard Schwartz",
+      "quote_ru": "'Нанотехнологии, вероятно, наложат на нашу жизнь даже больший отпечаток, чем появление электронных приборов.' - Ричард Шварц",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "SS Stasis Chamber",
+          "uniques": [
+            "Spaceship part",
+            "Cannot be purchased",
+            "Only available <if [Apollo Program] is constructed>",
+            "Uncapturable"
+          ]
+        }
+      ]
+    },
+    "Stealth": {
+      "era": "Information era",
+      "column": 16,
+      "row": 8,
+      "prerequisites": [
+        "Robotics",
+        "Lasers"
+      ],
+      "quote": "'Be extremely subtle, even to the point of formlessness, be extremely mysterious, even to the point of soundlessness. Thereby you can be the director of the opponent's fate.' - Sun Tzu",
+      "quote_ru": "'Будь неуловимым, почти бесформенным. Будь скрытным, почти беззвучным. Тогда ты сможешь направлять судьбу врага как тебе угодно.' – Сунь-Цзы",
+      "unlocks": [
+        {
+          "kind": "unit",
+          "name": "Stealth Bomber",
+          "uniques": [
+            "Damage taken from interception reduced by [100]%",
+            "Cannot be carried by [Carrier] units",
+            "[+4] Sight",
+            "Can see over obstacles"
+          ]
+        }
+      ]
+    },
+    "Future Tech": {
+      "era": "Future era",
+      "column": 17,
+      "row": 5,
+      "prerequisites": [
+        "Globalization",
+        "Particle Physics",
+        "Nuclear Fusion",
+        "Nanotechnology",
+        "Stealth"
+      ],
+      "quote": "'I think we agree, the past is over.' - George W. Bush",
+      "quote_ru": "'Думаю, мы все согласны, что прошлое закончилось.' - Линдон Джонсон",
+      "unlocks": []
+    }
+  }
+}

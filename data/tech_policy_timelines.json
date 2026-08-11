@@ -61491,7 +61491,7 @@
       },
       {
         "name": "Liberty",
-        "count": 56
+        "count": 52
       },
       {
         "name": "Piety",
@@ -61499,33 +61499,7 @@
       },
       {
         "name": "Honor",
-        "count": 11
-      },
-      {
-        "name": "Exploration",
-        "count": 1
-      },
-      {
-        "name": "Aesthetics",
-        "count": 1
-      }
-    ],
-    "first_tech_after_agriculture": [
-      {
-        "name": "Pottery",
-        "count": 91
-      },
-      {
-        "name": "Mining",
-        "count": 45
-      },
-      {
-        "name": "Animal Husbandry",
-        "count": 29
-      },
-      {
-        "name": "Archery",
-        "count": 4
+        "count": 10
       }
     ],
     "first_tech_by_era": {
@@ -61540,7 +61514,7 @@
         },
         {
           "name": "Animal Husbandry",
-          "count": 29
+          "count": 22
         },
         {
           "name": "Archery",
@@ -61572,7 +61546,7 @@
         },
         {
           "name": "Construction",
-          "count": 49
+          "count": 43
         },
         {
           "name": "Mathematics",
@@ -61593,10 +61567,6 @@
         {
           "name": "Horseback Riding",
           "count": 4
-        },
-        {
-          "name": "Currency",
-          "count": 1
         }
       ],
       "Industrial era": [
@@ -61646,23 +61616,19 @@
       "Medieval era": [
         {
           "name": "Metal Casting",
-          "count": 93
+          "count": 89
         },
         {
           "name": "Civil Service",
-          "count": 31
+          "count": 30
         },
         {
           "name": "Guilds",
-          "count": 18
+          "count": 17
         },
         {
           "name": "Theology",
           "count": 13
-        },
-        {
-          "name": "Compass",
-          "count": 1
         }
       ],
       "Modern era": [
@@ -61706,7 +61672,7 @@
         },
         {
           "name": "Astronomy",
-          "count": 25
+          "count": 24
         },
         {
           "name": "Acoustics",
@@ -61714,7 +61680,8 @@
         }
       ]
     },
-    "samples": 169
+    "samples": 162,
+    "samples_note": "ok games with turn_min<=5 only"
   },
   "tech_era": {
     "Agriculture": "Ancient era",
