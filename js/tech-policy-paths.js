@@ -21,7 +21,21 @@
   const ROW_H = 90;
   const PAD_X = 16;
   const PAD_Y = 10;
+  const ERA_BANNER_H = 30;
   const MAX_UNLOCK_ICONS = 8;
+
+  /** RekMOD / Unciv Eras.json iconRGB — era header bands on the tech tree. */
+  const ERA_COLORS = {
+    'Ancient era': [255, 87, 35],
+    'Classical era': [233, 31, 99],
+    'Medieval era': [157, 39, 176],
+    'Renaissance era': [104, 58, 183],
+    'Industrial era': [63, 81, 182],
+    'Modern era': [33, 150, 243],
+    'Atomic era': [0, 150, 136],
+    'Information era': [76, 176, 81],
+    'Future era': [76, 176, 81],
+  };
 
   let timelines = null;
   let techTree = null;
@@ -82,18 +96,28 @@
   function eraLabel(eraEn) {
     if (eraEn === 'all') return t('paths.era.all', lang() === 'en' ? 'All eras' : 'Все эпохи');
     const key = 'paths.era.' + String(eraEn || '').replace(/ /g, '_');
+    // Unciv Russian.properties / English keys (full era names).
     const fallbacks = {
-      'Ancient era': 'Древность',
-      'Classical era': 'Классика',
-      'Medieval era': 'Средневековье',
-      'Renaissance era': 'Ренессанс',
-      'Industrial era': 'Индустриальная',
-      'Modern era': 'Новейшая',
-      'Atomic era': 'Атомная',
-      'Information era': 'Информационная',
-      'Future era': 'Будущее',
+      'Ancient era': { ru: 'Древнейший мир', en: 'Ancient era' },
+      'Classical era': { ru: 'Античность', en: 'Classical era' },
+      'Medieval era': { ru: 'Средневековье', en: 'Medieval era' },
+      'Renaissance era': { ru: 'Новое время', en: 'Renaissance era' },
+      'Industrial era': { ru: 'Новейшее время', en: 'Industrial era' },
+      'Modern era': { ru: 'Современность', en: 'Modern era' },
+      'Atomic era': { ru: 'Атомная эра', en: 'Atomic era' },
+      'Information era': { ru: 'Информационная эра', en: 'Information era' },
+      'Future era': { ru: 'Будущее', en: 'Future era' },
     };
-    return t(key, lang() === 'en' ? String(eraEn || '').replace(' era', '') : (fallbacks[eraEn] || eraEn));
+    const fb = fallbacks[eraEn];
+    const fallback = fb
+      ? (lang() === 'en' ? fb.en : fb.ru)
+      : (lang() === 'en' ? String(eraEn || '') : String(eraEn || ''));
+    return t(key, fallback);
+  }
+
+  function eraRgb(eraEn) {
+    const rgb = ERA_COLORS[eraEn];
+    return rgb || [96, 96, 96];
   }
 
   function kindLabel(kind) {
@@ -554,7 +578,7 @@
   function nodeOrigin(tech, minCol, minRow) {
     return {
       x: PAD_X + (tech.column - minCol) * COL_W,
-      y: PAD_Y + (tech.row - minRow) * ROW_H,
+      y: PAD_Y + ERA_BANNER_H + 10 + (tech.row - minRow) * ROW_H,
     };
   }
 
@@ -810,7 +834,8 @@
     const minRow = Math.min(...techs.map((x) => x.row));
     const maxRow = Math.max(...techs.map((x) => x.row));
     const width = PAD_X * 2 + (maxCol - minCol) * COL_W + NODE_W;
-    const height = PAD_Y * 2 + (maxRow - minRow) * ROW_H + NODE_H;
+    const height =
+      PAD_Y * 2 + ERA_BANNER_H + 10 + (maxRow - minRow) * ROW_H + NODE_H;
 
     const byName = Object.create(null);
     techs.forEach((tech) => { byName[tech.name] = tech; });
@@ -818,6 +843,27 @@
     canvas.innerHTML = '';
     canvas.style.width = `${width}px`;
     canvas.style.height = `${height}px`;
+
+    // Unciv-style era header bands spanning each era's columns.
+    const eraBands = document.createElement('div');
+    eraBands.className = 'paths-tree-era-banners';
+    ERA_ORDER.forEach((era) => {
+      const cols = techs.filter((tech) => tech.era === era).map((tech) => tech.column);
+      if (!cols.length) return;
+      const eraMin = Math.min(...cols);
+      const eraMax = Math.max(...cols);
+      const band = document.createElement('div');
+      band.className = 'paths-tree-era-banner';
+      band.style.left = `${PAD_X + (eraMin - minCol) * COL_W}px`;
+      band.style.width = `${(eraMax - eraMin) * COL_W + NODE_W}px`;
+      const rgb = eraRgb(era);
+      band.style.background = `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, 0.88)`;
+      band.style.borderColor = `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, 1)`;
+      band.textContent = eraLabel(era);
+      band.title = eraLabel(era);
+      eraBands.appendChild(band);
+    });
+    canvas.appendChild(eraBands);
 
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('class', 'paths-tree-edges');
