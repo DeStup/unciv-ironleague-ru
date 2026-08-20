@@ -988,6 +988,8 @@
             gap: 10px;
             transition: opacity 0.3s;
             margin-top: 10px;
+            text-decoration: none;
+            box-sizing: border-box;
         }
 
         .replay-button:hover {
@@ -996,6 +998,16 @@
 
         .replay-button:active {
             transform: scale(0.98);
+        }
+
+        /* Interactive map viewer (unciv-web) — distinct from the GIF toggle. */
+        .replay-button--web {
+            background: linear-gradient(45deg, #3d8bfd, #1a5fb4);
+            color: #f5f8ff;
+        }
+
+        .game-modal-section--replays .replay-button--web {
+            margin-bottom: 12px;
         }
 
         .replay-wrap {

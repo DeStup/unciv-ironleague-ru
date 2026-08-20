@@ -1050,8 +1050,27 @@
         wonderNamesPath: 'data/wonder_names_ru.json',
         wonderDetailsPath: 'data/wonder_details.json',
         defaultCapitalsPath: 'data/default_capitals.json',
-        replaysPath: 'Replays/'
+        replaysPath: 'Replays/',
+        // Spectator viewer (ICanSeeForever/unciv-web): /unciv/replays/gameN
+        webReplaysBase: 'https://icanseeforever.ru/unciv/replays',
     };
+
+    /** Deep-link to unciv-web for this Iron League game (`game{id}` backup folder). */
+    function webReplayUrl(game) {
+        const id = Number(game && game.id);
+        if (!Number.isFinite(id) || id < 1) return '';
+        const base = String(CONFIG.webReplaysBase || '').replace(/\/+$/, '');
+        if (!base) return '';
+        return `${base}/game${id}`;
+    }
+
+    function renderWebReplayButton(game) {
+        const href = webReplayUrl(game);
+        if (!href) return '';
+        return `<a class="replay-button replay-button--web" href="${href}"
+            target="_blank" rel="noopener noreferrer"
+            title="${tt('card.webReplayTitle')}">${tt('card.webReplay')}</a>`;
+    }
 
     // Bust stale browser/CDN cache after GitHub Pages deploys.
     // Build id is loaded from build-id.txt (changed every deploy) with a
@@ -2448,16 +2467,18 @@
                 <div class="players-list">${survivorsHtml}</div>
                 ${renderLeagueBlock(game)}
             </div>
-            ${hasGif ? `<div class="game-modal-section"><h3>${tt('modal.replay')}</h3>
+            <div class="game-modal-section game-modal-section--replays">
+                ${renderWebReplayButton(game)}
+                ${hasGif ? `<h3>${tt('modal.replay')}</h3>
                 <div class="replay-wrap replay-wrap--modal">
                     <img class="replay-gif-full" src="${game.gif}" alt="Replay"
                          loading="lazy"
                          title="${tt('replay.title')}"
                          data-replay-src="${game.gif}"
-                         onerror="this.closest('.game-modal-section').style.display='none'">
+                         onerror="this.closest('.replay-wrap').style.display='none'">
                     <div class="replay-hint">${tt('replay.hint')}</div>
-                </div>
-            </div>` : ''}
+                </div>` : ''}
+            </div>
         `;
         modal.classList.add('open');
         modal.setAttribute('aria-hidden', 'false');
@@ -2536,6 +2557,7 @@
                     <div class="players-list">${survivorsHtml}</div>
                     ${leagueHtml}
                 </div>
+                ${renderWebReplayButton(game)}
                 ${hasGif ? `
                     <div class="replay-preview" data-gif-preview="${game.gif}">
                         <canvas class="replay-preview-canvas" hidden></canvas>
@@ -2574,8 +2596,8 @@
             }
         });
 
-        // Обработчики для кнопок реплея
-        document.querySelectorAll('.replay-button').forEach(button => {
+        // Обработчики для кнопок GIF-реплея (не трогаем ссылку на unciv-web)
+        document.querySelectorAll('.replay-button[data-replay]').forEach(button => {
             const wrap = button.nextElementSibling;
             const replayGif = wrap?.querySelector?.('.replay-gif');
             if (replayGif) {
