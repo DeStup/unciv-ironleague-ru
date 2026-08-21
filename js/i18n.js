@@ -225,6 +225,8 @@
       'home.league.5':
         'Telegram-бот уведомляет о наступлении хода и помогает с драфтом, FAQ и спектатором.',
       'home.siteTitle': 'Что есть на сайте',
+      'home.card.webReplaysTitle': 'Интерактивные реплеи',
+      'home.card.webReplays': 'Карта партии на unciv-web — ходы по бэкапам.',
       'home.card.archive': 'Реплеи, финалы, победители и карточки партий.',
       'home.card.stats': 'Винрейты, нации, институты, чудеса и верования.',
       'home.card.rating': 'Elo и очки лобби (шкала от 1000 или от нуля).',
@@ -871,6 +873,8 @@
       'home.league.5':
         'A Telegram bot pings turns and helps with draft, FAQ, and spectator tools.',
       'home.siteTitle': 'What is on this site',
+      'home.card.webReplaysTitle': 'Interactive replays',
+      'home.card.webReplays': 'Watch the map on unciv-web — turns from backups.',
       'home.card.archive': 'Replays, finales, winners, and game cards.',
       'home.card.stats': 'Win rates, nations, policies, wonders, and beliefs.',
       'home.card.rating': 'Elo and lobby points (scale from 1000 or from zero).',

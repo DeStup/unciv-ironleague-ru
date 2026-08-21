@@ -2169,6 +2169,12 @@
             max-width: 260px;
         }
 
+        a.home-card {
+            text-decoration: none;
+            color: inherit;
+            box-sizing: border-box;
+        }
+
         .home-card:hover {
             border-color: rgba(255, 215, 0, 0.55);
             background: rgba(36, 30, 48, 0.92);
