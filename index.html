@@ -1005,12 +1005,12 @@
 </footer>
 
 <script src="js/i18n.js?v=home-web-replays-1"></script>
-<script src="js/player-meta.js?v=click4x-cy-ru-1"></script>
+<script src="js/player-meta.js?v=short-tg-1"></script>
 <script src="js/stats-charts.js?v=profile-perf-1"></script>
 <script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=lobby-opp-1"></script>
 <script src="js/achievements.js?v=memo-fp-1"></script>
-<script src="js/tech-policy-paths.js?v=tooltip-civ-2"></script>
+<script src="js/tech-policy-paths.js?v=short-tg-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -1024,6 +1024,17 @@
     /** localeCompare options for UI alphabetical sorts. */
     function localeCompareOpts() {
         return { sensitivity: 'base', numeric: true };
+    }
+
+    /**
+     * Public player label (Telegram nicks truncated; site logins unchanged).
+     * Публичная подпись игрока (тг-ники режем, логины сайта нет).
+     */
+    function displayPlayerName(name) {
+        if (window.IronLeaguePlayerMeta && IronLeaguePlayerMeta.displayPlayerName) {
+            return IronLeaguePlayerMeta.displayPlayerName(name);
+        }
+        return String(name || '').trim();
     }
 
     /**
@@ -1694,7 +1705,7 @@
         for (const name of sorted) {
             const opt = document.createElement('option');
             opt.value = name;
-            opt.textContent = name;
+            opt.textContent = displayPlayerName(name);
             select.appendChild(opt);
         }
         if ([...select.options].some((o) => o.value === prev)) {
@@ -1775,11 +1786,13 @@
     }
 
     function playerLinkHtml(name) {
-        const safe = String(name || '').replace(/"/g, '&quot;');
+        const raw = String(name || '').trim();
+        const safe = raw.replace(/"/g, '&quot;');
+        const shown = displayPlayerName(raw);
         const flag = (window.IronLeaguePlayerMeta && IronLeaguePlayerMeta.flagHtml)
-            ? IronLeaguePlayerMeta.flagHtml(name, { lang: (window.IronLeagueI18n && IronLeagueI18n.getLang()) || 'ru' })
+            ? IronLeaguePlayerMeta.flagHtml(raw, { lang: (window.IronLeagueI18n && IronLeagueI18n.getLang()) || 'ru' })
             : '';
-        return `<span class="player-link-wrap">${flag}<button type="button" class="player-link" data-player="${safe}">${safe}</button></span>`;
+        return `<span class="player-link-wrap">${flag}<button type="button" class="player-link" data-player="${safe}">${shown}</button></span>`;
     }
 
     function isInvalidFirstPolicy(name) {
@@ -1861,7 +1874,7 @@
             const flag = (window.IronLeaguePlayerMeta && IronLeaguePlayerMeta.flagHtml)
                 ? IronLeaguePlayerMeta.flagHtml(name, { lang })
                 : '';
-            title.innerHTML = `${flag} <span>${tt('profile.title', { name })}</span>`;
+            title.innerHTML = `${flag} <span>${tt('profile.title', { name: displayPlayerName(name) })}</span>`;
         }
         if (flagsEl && window.IronLeaguePlayerMeta) {
             flagsEl.innerHTML = IronLeaguePlayerMeta.flagHtml(name, { lang });
@@ -2353,7 +2366,7 @@
             <div class="survivor-item ${isAlive ? '' : 'eliminated'}${isBarbarian ? ' survivor-barbarian' : ''}">
                 <div class="survivor-head">
                     ${isBarbarian ? '' : renderNationPortrait(row.nation, 'player-nation-mini')}
-                    <span class="player-name">${name}</span>
+                    <span class="player-name">${isBarbarian ? name : displayPlayerName(name)}</span>
                     ${isWinner ? `<span class="player-status">${tt('status.winner')}</span>` : ''}
                     ${!isAlive && !isBarbarian ? `<span class="player-status">${tt('status.eliminated')}</span>` : ''}
                     ${isBarbarian ? `<span class="player-status">${tt('status.barbarian')}</span>` : ''}
@@ -2441,7 +2454,7 @@
             const isWinner = player.nation === game.winner;
             return `<div class="player-item">
                 ${renderNationPortrait(player.nation, 'player-nation-mini')}
-                <span class="player-name">${player.name}</span>
+                <span class="player-name">${displayPlayerName(player.name)}</span>
                 ${isWinner ? `<span class="player-status">${tt('status.winner')}</span>` : ''}
             </div>`;
         }).join('');
@@ -2517,7 +2530,7 @@
                 return `
                     <div class="player-item ${isHighlighted ? 'highlighted' : ''}">
                         ${renderNationPortrait(player.nation, 'player-nation-mini')}
-                        <span class="player-name">${player.name}</span>
+                        <span class="player-name">${displayPlayerName(player.name)}</span>
                         ${isWinner ? `<span class="player-status">${tt('status.winner')}</span>` : ''}
                     </div>
                 `;
@@ -2885,20 +2898,20 @@
         });
         const simpleRow = (r) => `<tr>
             <td class="num">${r.place}</td>
-            <td>${r.name}</td>
+            <td>${playerLinkHtml(r.name)}</td>
             <td class="num">${r.rating.toFixed(2)}</td>
             <td class="num">${r.games}</td>
         </tr>`;
         const lobbyRow = (r) => `<tr>
             <td class="num">${r.place}</td>
-            <td>${r.name}</td>
+            <td>${playerLinkHtml(r.name)}</td>
             <td class="num">${r.rating.toFixed(2)}</td>
             <td class="num">${r.perGame != null ? r.perGame.toFixed(2) : '—'}</td>
             <td class="num">${r.games}</td>
         </tr>`;
         const combinedRow = (r) => `<tr>
             <td class="num">${r.place}</td>
-            <td>${r.name}</td>
+            <td>${playerLinkHtml(r.name)}</td>
             <td class="num">${r.rating.toFixed(2)}</td>
             <td class="num">${r.avgPlace != null ? r.avgPlace.toFixed(2) : '—'}</td>
             <td class="num">${r.placeFfa ?? '—'}</td>
@@ -3029,7 +3042,7 @@
         let flavor = tt(flavorKey);
         if (flavor === flavorKey) flavor = '';
         const vacant = !!item.vacant;
-        const playerLabel = vacant ? tt('records.vacantPlayer') : item.player;
+        const playerLabel = vacant ? tt('records.vacantPlayer') : displayPlayerName(item.player);
         let body;
         if (vacant) {
             const vacantKey = `records.item.${item.id}.bodyVacant`;
@@ -3037,7 +3050,7 @@
             if (body === vacantKey) body = tt('records.empty');
         } else {
             body = tt(`records.item.${item.id}.body`, {
-                player: item.player,
+                player: displayPlayerName(item.player),
                 value: item.value,
                 games: item.games != null ? String(item.games) : '',
                 wins: item.wins != null ? String(item.wins) : '',
@@ -3045,7 +3058,7 @@
                 game: item.gameNumber != null ? String(item.gameNumber) : '',
             });
             if (body === `records.item.${item.id}.body`) {
-                body = `${item.player}: ${item.value}`;
+                body = `${displayPlayerName(item.player)}: ${item.value}`;
             }
         }
         const runners = (Array.isArray(item.top) ? item.top : []).filter((t) => t && t.place > 1);
@@ -3058,7 +3071,7 @@
                     return `<li>
                     <span class="record-runner-place">#${t.place}</span>
                     ${nat}
-                    <span class="record-runner-name">${t.player}</span>
+                    <span class="record-runner-name">${displayPlayerName(t.player)}</span>
                     <span class="record-runner-value">${t.value}</span>
                 </li>`;
                 }).join('')
@@ -3966,7 +3979,7 @@
             document.getElementById('playerDetailTable'),
             playerRows.filter((p) => p.games > 0),
             (p) => `<tr>
-                <td>${p.name}</td>
+                <td>${playerLinkHtml(p.name)}</td>
                 <td><span class="nation-cell">${p.topNation !== '—' ? renderNationPortrait(p.topNation, 'player-nation-mini') : ''}${p.topNation !== '—' ? displayNationName(p.topNation) : '—'}</span></td>
                 <td>${p.topIdeology !== '—' ? displayPolicyName(p.topIdeology) : '—'}</td>
                 <td class="num">${p.uniqueNations}</td>
