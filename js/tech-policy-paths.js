@@ -86,11 +86,20 @@
     return lang() === 'en' ? (row.en || name) : (row.ru || name);
   }
 
+  function displayNick(raw) {
+    const meta = global.IronLeaguePlayerMeta;
+    if (meta && typeof meta.displayPlayerName === 'function') {
+      return meta.displayPlayerName(raw);
+    }
+    return String(raw || '').trim();
+  }
+
   function playerNick(gameNum, civ) {
     const fromRoster = ((roster[String(gameNum)] || {})[civ]) || '';
-    if (fromRoster) return fromRoster;
-    const row = (((timelines.games[String(gameNum)] || {}).players) || {})[civ] || {};
-    return row.player || '';
+    const raw = fromRoster
+      || ((((timelines.games[String(gameNum)] || {}).players) || {})[civ] || {}).player
+      || '';
+    return displayNick(raw);
   }
 
   function eraLabel(eraEn) {

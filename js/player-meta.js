@@ -119,6 +119,49 @@
     return `<img class="map-preview" src="img/maps/${key}.svg" alt="" width="48" height="48" loading="lazy">`;
   }
 
+  /**
+   * Same truncation as Unciv lobby prod: keep min(9, L − floor(L/3)), strip trailing _/-.
+   * Та же обрезка, что на проде лобби Unciv.
+   *
+   * :param n: Full nick / полный ник
+   * :return: Short nick / короткий ник
+   */
+  function shortNick(n) {
+    const s = String(n == null ? '' : n);
+    if (!s) return '';
+    const keep = Math.min(9, s.length - Math.floor(s.length / 3));
+    return s.slice(0, keep).replace(/[_-]+$/, '');
+  }
+
+  /**
+   * True for Telegram-style handles (latin, digits, underscore). Not site logins.
+   * True для тг-ников (латиница, цифры, _). Логины сайта — нет.
+   *
+   * :param n: Candidate / кандидат
+   * :return: Whether to truncate / нужно ли резать
+   */
+  function isTelegramNick(n) {
+    const s = String(n || '').trim().replace(/^@/, '');
+    if (!s) return false;
+    if (s === 'Barbarians' || s === 'Варвары') return false;
+    return /^[A-Za-z0-9_]+$/.test(s);
+  }
+
+  /**
+   * Public label: shorten Telegram nicks; leave Unciv/site logins unchanged.
+   * Публичная подпись: тг-ники режем, логины сайта не трогаем.
+   *
+   * :param n: Stored player name / имя из архива
+   * :return: Display string / строка для UI
+   */
+  function displayPlayerName(n) {
+    const raw = String(n || '').trim();
+    if (!raw) return '';
+    const s = raw.replace(/^@/, '');
+    if (!isTelegramNick(s)) return raw;
+    return shortNick(s);
+  }
+
   global.IronLeaguePlayerMeta = {
     COUNTRY_BY_PLAYER,
     countryCodeFor,
@@ -127,5 +170,8 @@
     profileBackgroundStyle,
     mapPreviewKey,
     mapPreviewHtml,
+    shortNick,
+    isTelegramNick,
+    displayPlayerName,
   };
 })(typeof window !== 'undefined' ? window : globalThis);
