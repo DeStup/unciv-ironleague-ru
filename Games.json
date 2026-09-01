@@ -15389,6 +15389,1010 @@
         }
       },
       "gif": "Replays/Game_29.gif"
+    },
+    {
+      "id": 30,
+      "version": "4.21.7-patch2 (Build 1245)",
+      "number": "Team Game 2",
+      "players": [
+        {
+          "name": "den_stu",
+          "nation": "Венгрия"
+        },
+        {
+          "name": "Jokeroldsschool",
+          "nation": "Гунны"
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Мексика"
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Чили"
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Япония"
+        },
+        {
+          "name": "Click4x",
+          "nation": "Аккад"
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Мадагаскар"
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Колумбия"
+        }
+      ],
+      "winner": "",
+      "map": "Perlin",
+      "playerCount": 8,
+      "endedOnTurn": "53",
+      "victoryType": "CC",
+      "flags": [
+        "teams"
+      ],
+      "excludeFromStats": true,
+      "note": "Командная игра (тим-гейм).",
+      "survivors": [
+        {
+          "name": "Jokeroldsschool",
+          "nation": "Гунны",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Венгрия",
+              "city": "Buda"
+            }
+          ],
+          "ideology": "",
+          "wonders": [
+            "Stonehenge"
+          ],
+          "wonders_built": [
+            "Stonehenge"
+          ],
+          "techs": 14,
+          "policies": 7,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 250,
+          "units": 19,
+          "strength": 781,
+          "science": 22,
+          "cities": 7,
+          "population": 27,
+          "religion": "Taoism",
+          "religion_state": "Religion",
+          "pantheon": "God of Craftsman",
+          "founder_beliefs": [
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Synagogues"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 2,
+          "wars_received": 1,
+          "production": 68,
+          "gold": 68,
+          "culture": 22,
+          "gold_income": 6,
+          "capital_population": 5,
+          "military_deaths": 6,
+          "great_people_types": {
+            "General": 1
+          },
+          "great_people": 1
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Колумбия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Colossus"
+          ],
+          "wonders_built": [
+            "Colossus"
+          ],
+          "techs": 14,
+          "policies": 5,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 201,
+          "units": 13,
+          "strength": 566,
+          "science": 25,
+          "cities": 6,
+          "population": 26,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "Spirit Trees",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 2,
+          "wars_received": 0,
+          "production": 83,
+          "gold": 86,
+          "culture": 14,
+          "gold_income": 4,
+          "capital_population": 9,
+          "military_deaths": 1
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Мексика",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 14,
+          "policies": 7,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 190,
+          "units": 14,
+          "strength": 571,
+          "science": 22,
+          "cities": 6,
+          "population": 21,
+          "religion": "Christianity",
+          "religion_state": "Religion",
+          "pantheon": "Sacred Path",
+          "founder_beliefs": [
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Guruship"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 2,
+          "wars_received": 2,
+          "production": 62,
+          "gold": 113,
+          "culture": 24,
+          "gold_income": 11,
+          "capital_population": 7,
+          "military_deaths": 1
+        },
+        {
+          "name": "Click4x",
+          "nation": "Аккад",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army"
+          ],
+          "wonders_built": [
+            "Terracotta Army"
+          ],
+          "techs": 13,
+          "policies": 6,
+          "policy_branches": [
+            "Воля",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 182,
+          "units": 18,
+          "strength": 733,
+          "science": 19,
+          "cities": 5,
+          "population": 17,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "Stone Circles",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 2,
+          "production": 58,
+          "gold": 36,
+          "culture": 11,
+          "gold_income": -7,
+          "capital_population": 4,
+          "military_deaths": 2
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Япония",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 15,
+          "policies": 7,
+          "policy_branches": [
+            "Традиция"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 169,
+          "units": 5,
+          "strength": 152,
+          "science": 22,
+          "cities": 4,
+          "population": 23,
+          "religion": "Shinto",
+          "religion_state": "Religion",
+          "pantheon": "Seafood Rituals",
+          "founder_beliefs": [
+            "Tithe"
+          ],
+          "follower_beliefs": [
+            "Pagodas"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 2,
+          "wars_received": 0,
+          "production": 29,
+          "gold": 30,
+          "culture": 19,
+          "gold_income": 0,
+          "capital_population": 9
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Чили",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 13,
+          "policies": 7,
+          "policy_branches": [
+            "Традиция"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 146,
+          "units": 3,
+          "strength": 31,
+          "science": 18,
+          "cities": 4,
+          "population": 18,
+          "religion": "Чилийский штурвал",
+          "religion_state": "Religion",
+          "pantheon": "God of the Sea",
+          "founder_beliefs": [
+            "Mithraea"
+          ],
+          "follower_beliefs": [
+            "Viharas"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 25,
+          "gold": 37,
+          "culture": 21,
+          "gold_income": 4,
+          "capital_population": 7,
+          "military_deaths": 1
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Мадагаскар",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 12,
+          "policies": 7,
+          "policy_branches": [
+            "Набожность"
+          ],
+          "first_policy": "Набожность",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Древность",
+          "score": 123,
+          "units": 5,
+          "strength": 110,
+          "science": 16,
+          "cities": 3,
+          "population": 14,
+          "religion": "Islam",
+          "religion_state": "Усилена",
+          "pantheon": "Goddess of Love",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Messiah"
+          ],
+          "follower_beliefs": [
+            "City of God",
+            "Religious Community",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 3,
+          "production": 24,
+          "gold": 142,
+          "culture": 13,
+          "gold_income": 6,
+          "capital_population": 5,
+          "military_deaths": 4
+        },
+        {
+          "name": "den_stu",
+          "nation": "Венгрия",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "Гунны",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 12,
+          "policies": 6,
+          "policy_branches": [
+            "Честь",
+            "Набожность"
+          ],
+          "first_policy": "Честь",
+          "eliminated_turn": null,
+          "capital_lost_turn": 47,
+          "era": "Древность",
+          "score": 63,
+          "units": 0,
+          "strength": 1,
+          "science": 8,
+          "cities": 1,
+          "population": 3,
+          "religion": "Zoroastrianism",
+          "religion_state": "Religion",
+          "pantheon": "Goddess of the Hunt",
+          "founder_beliefs": [
+            "Zakat"
+          ],
+          "follower_beliefs": [
+            "Devoted Elite",
+            "Apostolic Palace"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 2,
+          "production": 6,
+          "gold": 62,
+          "culture": 5,
+          "gold_income": -10,
+          "capital_population": 4,
+          "military_deaths": 11
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 106,
+          "is_barbarian": true
+        }
+      ],
+      "league": {
+        "capital_lost_turns": {
+          "Венгрия": 47
+        }
+      }
+    },
+    {
+      "id": 31,
+      "version": "4.21.9-patch1 (Build 1248)",
+      "number": "Team Game 3",
+      "players": [
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Кельты"
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Сонгай"
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Инки"
+        },
+        {
+          "name": "Jokeroldsschool",
+          "nation": "Ирокезы"
+        },
+        {
+          "name": "den_stu",
+          "nation": "Готы"
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Вавилон"
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Конго"
+        },
+        {
+          "name": "Click4x",
+          "nation": "Дания"
+        }
+      ],
+      "winner": "",
+      "map": "Perlin",
+      "playerCount": 8,
+      "endedOnTurn": "73",
+      "victoryType": "CC",
+      "flags": [
+        "teams"
+      ],
+      "excludeFromStats": true,
+      "note": "Командная игра (тим-гейм).",
+      "survivors": [
+        {
+          "name": "den_stu",
+          "nation": "Готы",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 18,
+          "policies": 8,
+          "policy_branches": [
+            "Воля",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 281,
+          "units": 27,
+          "strength": 1278,
+          "science": 51,
+          "cities": 7,
+          "population": 44,
+          "religion": "Sikhism",
+          "religion_state": "Усилена",
+          "pantheon": "Goddess of Festivals",
+          "founder_beliefs": [
+            "Kotel",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Pagodas",
+            "Guruship"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 3,
+          "wars_received": 1,
+          "production": 101,
+          "gold": 155,
+          "culture": 21,
+          "gold_income": -7,
+          "capital_population": 7,
+          "military_deaths": 6,
+          "great_people_types": {
+            "General": 1
+          },
+          "great_people": 1
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Сонгай",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army",
+            "The Pyramids"
+          ],
+          "wonders_built": [
+            "Terracotta Army",
+            "The Pyramids"
+          ],
+          "techs": 20,
+          "policies": 7,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 275,
+          "units": 6,
+          "strength": 282,
+          "science": 40,
+          "cities": 5,
+          "population": 30,
+          "religion": "Islam",
+          "religion_state": "Religion",
+          "pantheon": "God of Craftsman",
+          "founder_beliefs": [
+            "Initiation Rites"
+          ],
+          "follower_beliefs": [
+            "Religious Center"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 3,
+          "wars_received": 0,
+          "production": 87,
+          "gold": 270,
+          "culture": 17,
+          "gold_income": 8,
+          "capital_population": 8,
+          "military_deaths": 2
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Конго",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Инки",
+              "city": "Cuzco"
+            }
+          ],
+          "ideology": "",
+          "wonders": [
+            "Colossus"
+          ],
+          "wonders_built": [
+            "Colossus"
+          ],
+          "techs": 17,
+          "policies": 8,
+          "policy_branches": [
+            "Воля",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 267,
+          "units": 18,
+          "strength": 922,
+          "science": 26,
+          "cities": 7,
+          "population": 29,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "Ritual Sacrifice",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 2,
+          "wars_received": 2,
+          "production": 101,
+          "gold": 379,
+          "culture": 25,
+          "gold_income": 27,
+          "capital_population": 7,
+          "military_deaths": 19,
+          "great_people_types": {
+            "General": 1
+          },
+          "great_people": 1
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Кельты",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Great Wall"
+          ],
+          "wonders_built": [
+            "Great Wall"
+          ],
+          "techs": 19,
+          "policies": 8,
+          "policy_branches": [
+            "Воля",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 250,
+          "units": 17,
+          "strength": 618,
+          "science": 32,
+          "cities": 5,
+          "population": 32,
+          "religion": "Tengriism",
+          "religion_state": "Religion",
+          "pantheon": "Seafood Rituals",
+          "founder_beliefs": [
+            "Zakat"
+          ],
+          "follower_beliefs": [
+            "Sacred Waters"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 2,
+          "production": 92,
+          "gold": 89,
+          "culture": 23,
+          "gold_income": -19,
+          "capital_population": 9,
+          "military_deaths": 8
+        },
+        {
+          "name": "Click4x",
+          "nation": "Дания",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Statue of Zeus"
+          ],
+          "wonders_built": [
+            "Statue of Zeus"
+          ],
+          "techs": 17,
+          "policies": 9,
+          "policy_branches": [
+            "Воля",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 234,
+          "units": 28,
+          "strength": 1783,
+          "science": 35,
+          "cities": 7,
+          "population": 33,
+          "religion": "Christianity",
+          "religion_state": "Усилена",
+          "pantheon": "God of the Sea",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Religious Community",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 3,
+          "wars_received": 1,
+          "production": 91,
+          "gold": 63,
+          "culture": 35,
+          "gold_income": -10,
+          "capital_population": 10,
+          "military_deaths": 29,
+          "great_people_types": {
+            "General": 3
+          },
+          "great_people": 3
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Вавилон",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 19,
+          "policies": 8,
+          "policy_branches": [
+            "Воля",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 205,
+          "units": 21,
+          "strength": 908,
+          "science": 41,
+          "cities": 4,
+          "population": 27,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "Mystic Rituals",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 4,
+          "production": 38,
+          "gold": 18,
+          "culture": 19,
+          "gold_income": -6,
+          "capital_population": 9,
+          "military_deaths": 6,
+          "great_people_types": {
+            "Scientist": 1
+          },
+          "great_people": 1
+        },
+        {
+          "name": "Jokeroldsschool",
+          "nation": "Ирокезы",
+          "alive": false,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 14,
+          "policies": 8,
+          "policy_branches": [
+            "Воля",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": 73,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 163,
+          "units": 16,
+          "strength": 1032,
+          "science": 22,
+          "cities": 4,
+          "population": 18,
+          "religion": "Hinduism",
+          "religion_state": "Religion",
+          "pantheon": "Tears of the Gods",
+          "founder_beliefs": [
+            "Religious Unity"
+          ],
+          "follower_beliefs": [
+            "Followers of Refined Crafts"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 3,
+          "production": 57,
+          "gold": 248,
+          "culture": 17,
+          "gold_income": 22,
+          "capital_population": 4,
+          "military_deaths": 24,
+          "great_people_types": {
+            "General": 3
+          },
+          "great_people": 3
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Инки",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Конго",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 14,
+          "policies": 5,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": 55,
+          "capital_lost_turn": 45,
+          "era": "Античность",
+          "score": 76,
+          "units": 0,
+          "strength": 68,
+          "science": 9,
+          "cities": 0,
+          "population": 3,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "God-King",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 2,
+          "wars_received": 1,
+          "production": 21,
+          "gold": 49,
+          "culture": 4,
+          "gold_income": 5,
+          "capital_population": 4,
+          "military_deaths": 16,
+          "great_people_types": {
+            "General": 1
+          },
+          "great_people": 1
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 194,
+          "is_barbarian": true
+        }
+      ],
+      "league": {
+        "capital_lost_turns": {
+          "Инки": 45
+        },
+        "eliminated_turns": {
+          "Инки": 55
+        }
+      }
     }
   ]
 }
