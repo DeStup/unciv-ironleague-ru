@@ -210,6 +210,8 @@
       maxGreatGeneralsGame: null,
       maxGreatCulturePeople: 0,
       maxGreatCulturePeopleGame: null,
+      maxWondersOneTurn: 0,
+      maxWondersOneTurnGame: null,
       minIdeologyTurn: Infinity,
       minIdeologyTurnGame: null,
     };
@@ -336,6 +338,10 @@
           bumpPeak(s, 'maxGreatEngineers', 'maxGreatEngineersGame', gpTypeCount(row, 'Engineer'), gNum);
           bumpPeak(s, 'maxGreatGenerals', 'maxGreatGeneralsGame', gpTypeCount(row, 'General'), gNum);
           bumpPeak(s, 'maxGreatCulturePeople', 'maxGreatCulturePeopleGame', gpCultureCount(row), gNum);
+          const mw = Number(row.max_wonders_built_one_turn);
+          if (Number.isFinite(mw) && mw >= 2) {
+            bumpPeak(s, 'maxWondersOneTurn', 'maxWondersOneTurnGame', mw, gNum);
+          }
           bumpMinPeak(s, 'minIdeologyTurn', 'minIdeologyTurnGame', row.ideology_turn, gNum);
         }
 
@@ -711,6 +717,27 @@
       pickTop(stats, (s) => s.wondersOwned, (s) => s.wondersOwned > 0),
       (h) => String(h.stat.wondersOwned),
     );
+
+    const twoWonderHits = pickTop(
+      stats,
+      (s) => s.maxWondersOneTurn,
+      (s) => s.maxWondersOneTurn >= 2,
+    );
+    if (twoWonderHits.length) {
+      pushTop(
+        'two_wonders_one_turn',
+        twoWonderHits,
+        (h) => String(h.stat.maxWondersOneTurn),
+        (h) => ({ gameNumber: h.stat.maxWondersOneTurnGame }),
+      );
+    } else {
+      out.push({
+        id: 'two_wonders_one_turn',
+        player: '',
+        value: '—',
+        vacant: true,
+      });
+    }
 
     pushTop(
       'most_unique_nations',

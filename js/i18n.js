@@ -749,6 +749,12 @@
       'records.item.most_wonders_owned.flavor': 'Музей под открытым небом',
       'records.item.most_wonders_owned.body':
         '{player} владел суммарно большим числом чудес (свои + трофеи): {value}.',
+      'records.item.two_wonders_one_turn.title': 'Два чуда за ход',
+      'records.item.two_wonders_one_turn.flavor': 'Великие инженеры не спят',
+      'records.item.two_wonders_one_turn.body':
+        '{player} завершил больше всего чудес за один ход: {value} (Game {game}).',
+      'records.item.two_wonders_one_turn.bodyVacant':
+        'Пока никто не завершил два и более чудес за один ход.',
       'records.item.most_unique_nations.title': 'Турист по нациям',
       'records.item.most_unique_nations.flavor': 'Паспортный стол',
       'records.item.most_unique_nations.body':
@@ -1397,6 +1403,12 @@
       'records.item.most_wonders_owned.flavor': 'Open-air museum',
       'records.item.most_wonders_owned.body':
         '{player} owned the most wonders in total (built + captured): {value}.',
+      'records.item.two_wonders_one_turn.title': 'Two wonders in one turn',
+      'records.item.two_wonders_one_turn.flavor': 'Great engineers never sleep',
+      'records.item.two_wonders_one_turn.body':
+        '{player} finished the most wonders in a single turn: {value} (Game {game}).',
+      'records.item.two_wonders_one_turn.bodyVacant':
+        'No one has finished two or more wonders in one turn yet.',
       'records.item.most_unique_nations.title': 'Nation tourist',
       'records.item.most_unique_nations.flavor': 'Passport office',
       'records.item.most_unique_nations.body':
