@@ -2,7 +2,7 @@
  * Tech / policy unlock paths tab for Iron League archive.
  * Full G&K tech tree, unlock icons, roster nicks from Games.json.
  */
-(function () {
+(function (global) {
   const ERA_ORDER = [
     'Ancient era',
     'Classical era',
@@ -405,10 +405,14 @@
   function setGame(gameNum, opts) {
     const select = document.getElementById('pathsGameSelect');
     if (select) select.value = gameNum || '';
-    fillPlayerSelect(gameNum);
-    renderGameChips();
-    renderPlayerChips();
-    if (!opts || opts.render !== false) renderPlayer();
+    // Keep chips in sync even if nick/roster helpers throw.
+    try {
+      fillPlayerSelect(gameNum);
+    } finally {
+      renderGameChips();
+      renderPlayerChips();
+      if (!opts || opts.render !== false) renderPlayer();
+    }
   }
 
   function setPlayer(civ, opts) {
@@ -494,9 +498,17 @@
       wrap.appendChild(hint);
       return;
     }
-    const players = (timelines.games[gameNum] || {}).players || {};
+    const players = (timelines.games[String(gameNum)] || {}).players || {};
+    const civs = Object.keys(players);
+    if (!civs.length) {
+      const hint = document.createElement('span');
+      hint.className = 'paths-chip-hint';
+      hint.textContent = t('paths.noPlayers', 'Нет данных игроков для этой игры');
+      wrap.appendChild(hint);
+      return;
+    }
     const cur = selectedPlayer();
-    Object.keys(players)
+    civs
       .sort((a, b) => labelNation(a).localeCompare(labelNation(b), lang() === 'en' ? 'en' : 'ru'))
       .forEach((civ) => {
         const nick = playerNick(gameNum, civ);
@@ -1024,7 +1036,7 @@
     renderPlayer();
   }
 
-  window.IronLeaguePaths = {
+  global.IronLeaguePaths = {
     show() {
       ensureLoaded()
         .then(() => renderAll())
@@ -1046,4 +1058,4 @@
       setPlayer(e.target.value);
     });
   });
-})();
+})(typeof window !== 'undefined' ? window : globalThis);
