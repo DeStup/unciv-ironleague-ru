@@ -6,7 +6,7 @@ Iron League (Unciv) — архив, статистика, рейтинг и пу
 
 ## Что это
 
-Статический сайт на GitHub Pages. Источник партий — `Games.json`; бот **Civ Bot** открывает PR с новыми завершёнными играми (`/syncironleague`, `/addironleague`).
+Статический сайт на GitHub Pages. Источник партий — `Games.json`; бот (**unciv-core-service**, админ-команды `/syncironleague`, `/addironleague`) открывает PR с новыми завершёнными играми.
 
 Правила лиги и unlock-данные на вкладке **Техи и институты** берутся из **RekMOD-iron** (не из vanilla G&K).
 
@@ -27,6 +27,14 @@ Iron League (Unciv) — архив, статистика, рейтинг и пу
 ### Техи и институты
 
 Порядок открытия техов и политик по партии и игроку: полное древо (RekMOD-iron), эпохи как в Unciv, таймлайны, статистика «что открывали первым». Анлоки на узлах (здания/юниты/чудеса/ресурсы/улучшения/бонусы); UU/UB своей нации в основном ряду, остальные нации и UA-эффекты — в панели ★.
+
+Данные вкладки:
+
+- `data/tech_policy_timelines.json` — порядок открытий по играм (из бэкапов ходов)
+- `data/paths_roster.json` — ники игроков (из `Games.json`)
+- `data/tech_tree.json` / `tech_details.json` — древо и анлоки RekMOD-iron
+
+Игры без бэкапов (сейчас 4–11, 14) в таймлайнах отсутствуют; в UI они не попадают в селектор. Статистика «что открывали первым» считается только по полным архивам (`status: ok`), не по `partial`.
 
 ### Рейтинг
 
@@ -51,10 +59,11 @@ Iron League (Unciv) — архив, статистика, рейтинг и пу
 | `index.html` | Разметка + bootstrap UI / cache-bust |
 | `css/site.css` | Стили |
 | `js/i18n.js` | RU/EN строки |
-| `js/tech-policy-paths.js` | Вкладка техов/институтов |
+| `js/player-meta.js` | Ники/флаги/мета игрока (`IronLeaguePlayerMeta`) |
+| `js/tech-policy-paths.js` | Вкладка техов/институтов (зависит от `player-meta.js`) |
 | `js/rating.js` | Рейтинг |
 | `js/achievements.js` | Рекорды |
-| `js/stats-charts.js`, `player-meta.js`, `gif-preview.js` | Статистика / мета / GIF |
+| `js/stats-charts.js`, `gif-preview.js` | Статистика / GIF |
 | `Games.json` | Архив игр (стабильный URL для бота) |
 | `data/` | FAQ, тирлист, имена, древо/детали техов, таймлайны |
 | `tools/export_tech_details.py` | Сборка `tech_details.json` / `tech_tree.json` из RekMOD-iron |
@@ -80,6 +89,18 @@ Iron League (Unciv) — архив, статистика, рейтинг и пу
 | `paths_roster.json` | Ники игроков для путей |
 | `faq.json` / `faq_en.json`, `tierlist.json`, `nation_colors.json` | FAQ, тирлист, цвета портретов |
 
+### Конвенция JS-модулей
+
+Клиентские скрипты — IIFE с явным `global` (как `window`):
+
+```js
+(function (global) {
+  global.IronLeagueSomething = { … };
+})(typeof window !== 'undefined' ? window : globalThis);
+```
+
+Нельзя обращаться к голому `global` внутри модуля без параметра IIFE: в браузере `global` не определён (в Node — да, поэтому баг легко пропустить локально). Порядок `<script>` в `index.html` важен: `player-meta.js` до `tech-policy-paths.js`.
+
 ## Обновление данных (мейнтейнеры)
 
 ### Техи / анлоки (RekMOD-iron)
@@ -95,9 +116,23 @@ py -3 tools\extract_missing_unlock_icons.py
 
 Закоммить `data/tech_details.json`, `data/tech_tree.json` и новые иконки при необходимости.
 
+### Таймлайны техов/институтов
+
+Sidecar `data/tech_policy_timelines.json` пока собирается вручную из бэкапов game-server (скрипт ещё в монолите Civ_bot, не в sync-командах сайта):
+
+```powershell
+cd D:\PythonProjects\Civ_bot
+py -3 scripts\extract_ironleague_timelines.py
+# или точечно: py -3 scripts\extract_ironleague_timelines.py --game 29
+```
+
+Скрипт пишет в `unciv-ironleague-ru/data/tech_policy_timelines.json` (нужны `GAME_SERVER_*` в `.env`). PR на сайт — отдельно. После новых игр без обновления sidecar вкладка «Техи и институты» их не увидит, даже если `Games.json` уже обновлён.
+
+Ники: при необходимости обновить `data/paths_roster.json` из `Games.json` (или руками).
+
 ### Архив игр
 
-Новые партии обычно приходят PR от Civ Bot (`Games.json`, иногда `Replays/`). Тирлист / FAQ правятся вручную в `data/`.
+Новые партии обычно приходят PR от **unciv-core-service** (`Games.json`, иногда `Replays/`). Тирлист / FAQ правятся вручную в `data/`.
 
 ## Локальный просмотр
 
@@ -108,7 +143,7 @@ npx --yes serve -l 3000 .
 # или: py -3 -m http.server 3000
 ```
 
-Открой http://localhost:3000/
+Открой http://localhost:3000/ → вкладка **Техи и институты**: выбери игру — должны появиться чипы наций/игроков, затем древо.
 
 ## Кэш и пересборка Pages
 
@@ -122,10 +157,12 @@ npx --yes serve -l 3000 .
 
 ## Синхронизация с ботом
 
-Админ-команды Civ Bot (категория «Сайт IronLeague» в `/admin`):
+Админ-команды **unciv-core-service** (категория Iron League / сайт):
 
 - `/syncironleague` / `dry` — недостающие завершённые `gameN` → PR в этот репозиторий
 - `/addironleague <uuid> [N]` — одна игра по Unciv `GAME_ID`
 - `/ironleaguegifs` — записи без поля `gif`
 
-Нужен `GITHUB_TOKEN` у бота с правом открывать PR в fork / `DeStup/unciv-ironleague-ru`.
+Нужен `GITHUB_TOKEN` у сервиса с правом открывать PR в fork / `DeStup/unciv-ironleague-ru`.
+
+Монолит `ICanSeeForever/Civ_bot` для новой логики не используется.
