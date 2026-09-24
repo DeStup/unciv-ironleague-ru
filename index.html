@@ -1004,7 +1004,12 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=paths-no-players-1"></script>
+<script src="js/games-core.js?v=shared-core-1"></script>
+    <script src="js/policy-terms.js?v=shared-policy-1"></script>
+    <script src="js/nation-names.js?v=shared-nations-1"></script>
+    <script src="js/site-core.js?v=web-replays-ironleague-1"></script>
+    <script src="js/ui-helpers.js?v=shared-ui-1"></script>
+    <script src="js/i18n.js?v=paths-no-players-1"></script>
 <script src="js/player-meta.js?v=short-tg-1"></script>
 <script src="js/stats-charts.js?v=profile-perf-1"></script>
 <script src="js/gif-preview.js?v=1"></script>
@@ -1014,15 +1019,18 @@
 <script>
     // Конфигурация
     function tt(key, vars) {
+        if (window.IronLeagueUiHelpers && IronLeagueUiHelpers.tt) return IronLeagueUiHelpers.tt(key, vars);
         if (window.IronLeagueI18n && IronLeagueI18n.t) return IronLeagueI18n.t(key, vars);
         return key;
     }
     function localeTag() {
+        if (window.IronLeagueUiHelpers && IronLeagueUiHelpers.localeTag) return IronLeagueUiHelpers.localeTag();
         return (window.IronLeagueI18n && IronLeagueI18n.getLang() === 'en') ? 'en' : 'ru';
     }
 
     /** localeCompare options for UI alphabetical sorts. */
     function localeCompareOpts() {
+        if (window.IronLeagueUiHelpers && IronLeagueUiHelpers.localeCompareOpts) return IronLeagueUiHelpers.localeCompareOpts();
         return { sensitivity: 'base', numeric: true };
     }
 
@@ -1058,44 +1066,18 @@
         return null;
     }
 
-    const CONFIG = {
-        nationsPath: 'Nation_icons/',
-        wonderIconsPath: 'Wonder_icons/',
-        colorsPath: 'data/nation_colors.json',
-        wonderNamesPath: 'data/wonder_names_ru.json',
-        wonderDetailsPath: 'data/wonder_details.json',
-        defaultCapitalsPath: 'data/default_capitals.json',
-        replaysPath: 'Replays/',
-        // Spectator viewer on unciv.icanseeforever.com (not icanseeforever.com/unciv).
-        webReplaysBase: 'https://unciv.icanseeforever.com/replays',
-    };
-
-    /** Deep-link to unciv-web for this Iron League game (`game{id}` backup folder). */
-    function webReplayUrl(game) {
-        const id = Number(game && game.id);
-        if (!Number.isFinite(id) || id < 1) return '';
-        const base = String(CONFIG.webReplaysBase || '').replace(/\/+$/, '');
-        if (!base) return '';
-        return `${base}/game${id}`;
-    }
-
-    function renderWebReplayButton(game) {
-        const href = webReplayUrl(game);
-        if (!href) return '';
-        return `<a class="replay-button replay-button--web" href="${href}"
-            target="_blank" rel="noopener noreferrer"
-            title="${tt('card.webReplayTitle')}">${tt('card.webReplay')}</a>`;
-    }
-
-    // Bust stale browser/CDN cache after GitHub Pages deploys.
-    // Build id is loaded from build-id.txt (changed every deploy) with a
-    // timestamp fallback so JSON is never served from an old disk cache.
+    // Site config + cache-busted fetch + unciv-web replay helpers live in
+    // js/site-core.js (IronLeagueSiteCore). Local aliases keep the rest of the
+    // page script unchanged; assetCacheBust stays here so initAssetCacheBust
+    // (called from the page) can update IronLeagueCacheBust for every module.
+    const CONFIG = (window.IronLeagueSiteCore && IronLeagueSiteCore.CONFIG) || {};
     let assetCacheBust = String(Date.now());
     window.IronLeagueCacheBust = assetCacheBust;
 
     function assetUrl(path) {
+        const bust = window.IronLeagueCacheBust || assetCacheBust;
         const sep = path.includes('?') ? '&' : '?';
-        return `${path}${sep}v=${encodeURIComponent(assetCacheBust)}`;
+        return `${path}${sep}v=${encodeURIComponent(bust)}`;
     }
 
     async function fetchFresh(path, init) {
@@ -1123,133 +1105,51 @@
         }
     }
 
+    function webReplayUrl(game) {
+        if (window.IronLeagueSiteCore && IronLeagueSiteCore.webReplayUrl) {
+            return IronLeagueSiteCore.webReplayUrl(game);
+        }
+        const id = Number(game && game.id);
+        if (!Number.isFinite(id) || id < 1) return '';
+        const base = String(CONFIG.webReplaysBase || '').replace(/\/+$/, '');
+        if (!base) return '';
+        return `${base}/ironleague-${id}`;
+    }
+
+    function renderWebReplayButton(game) {
+        if (window.IronLeagueSiteCore && IronLeagueSiteCore.renderWebReplayButton) {
+            return IronLeagueSiteCore.renderWebReplayButton(game);
+        }
+        const href = webReplayUrl(game);
+        if (!href) return '';
+        return `<a class="replay-button replay-button--web" href="${href}"
+            target="_blank" rel="noopener noreferrer"
+            title="${tt('card.webReplayTitle')}">${tt('card.webReplay')}</a>`;
+    }
+    }
+
     let wonderNamesRu = {};
     /** eng wonder → Civilopedia-style lines (from tech_details export). */
     let wonderDetails = {};
     /** eng nation → { en, ru } default capital (first city in Nations.json). */
     let defaultCapitals = {};
 
-    // Массив соответствия русских и английских названий наций
-    const nations = [
-        { eng: "Akkad", rus: "Аккад" },
-        { eng: "Aksum", rus: "Аксум" },
-        { eng: "America", rus: "Америка" },
-        { eng: "Arabia", rus: "Аравия" },
-        { eng: "Argentina", rus: "Аргентина" },
-        { eng: "Armenia", rus: "Армения" },
-        { eng: "Assyria", rus: "Ассирия" },
-        { eng: "Australia", rus: "Австралия" },
-        { eng: "Austria", rus: "Австрия" },
-        { eng: "Ayyubids", rus: "Айюбиды" },
-        { eng: "Aztecs", rus: "Ацтеки" },
-        { eng: "Babylon", rus: "Вавилон" },
-        { eng: "Belgium", rus: "Бельгия" },
-        { eng: "Boers", rus: "Буры" },
-        { eng: "Bolivia", rus: "Боливия" },
-        { eng: "Brazil", rus: "Бразилия" },
-        { eng: "Brunei", rus: "Бруней" },
-        { eng: "Bulgaria", rus: "Болгария" },
-        { eng: "Burma", rus: "Бирма" },
-        { eng: "Byzantium", rus: "Византия" },
-        { eng: "Canada", rus: "Канада" },
-        { eng: "Carthage", rus: "Карфаген" },
-        { eng: "Celts", rus: "Кельты" },
-        { eng: "Chile", rus: "Чили" },
-        { eng: "China", rus: "Китай" },
-        { eng: "Colombia", rus: "Колумбия" },
-        { eng: "Cuba", rus: "Куба" },
-        { eng: "Czechia", rus: "Чехия" },
-        { eng: "Denmark", rus: "Дания" },
-        { eng: "Egypt", rus: "Египет" },
-        { eng: "England", rus: "Англия" },
-        { eng: "Ethiopia", rus: "Эфиопия" },
-        { eng: "Finland", rus: "Финляндия" },
-        { eng: "France", rus: "Франция" },
-        { eng: "Franks", rus: "Франки" },
-        { eng: "Gaul", rus: "Галлы" },
-        { eng: "Georgia", rus: "Грузия" },
-        { eng: "Germany", rus: "Германия" },
-        { eng: "Golden Horde", rus: "Золотая Орда" },
-        { eng: "Goths", rus: "Готы" },
-        { eng: "Greece", rus: "Греция" },
-        { eng: "Hittites", rus: "Хетты" },
-        { eng: "Hungary", rus: "Венгрия" },
-        { eng: "The Huns", rus: "Гунны" },
-        { eng: "Inca", rus: "Инки" },
-        { eng: "India", rus: "Индия" },
-        { eng: "Indonesia", rus: "Индонезия" },
-        { eng: "Ireland", rus: "Ирландия" },
-        { eng: "Iroquois", rus: "Ирокезы" },
-        { eng: "Israel", rus: "Израиль" },
-        { eng: "Italy", rus: "Италия" },
-        { eng: "Japan", rus: "Япония" },
-        { eng: "Jerusalem", rus: "Иерусалим" },
-        { eng: "Khmer", rus: "Кхмеры" },
-        { eng: "Kilwa", rus: "Кильва" },
-        { eng: "Kongo", rus: "Конго" },
-        { eng: "Korea", rus: "Корея" },
-        { eng: "Lithuania", rus: "Литва" },
-        { eng: "Macedonia", rus: "Македония" },
-        { eng: "Madagascar", rus: "Мадагаскар" },
-        { eng: "Manchuria", rus: "Маньчжурия" },
-        { eng: "Maori", rus: "Маори" },
-        { eng: "Maurya", rus: "Маурья" },
-        { eng: "The Maya", rus: "Майя" },
-        { eng: "Mexico", rus: "Мексика" },
-        { eng: "Mongolia", rus: "Монголия" },
-        { eng: "The Moors", rus: "Мавры" },
-        { eng: "Morocco", rus: "Марокко" },
-        { eng: "Mughals", rus: "Великие Моголы" },
-        { eng: "Mysore", rus: "Майсур" },
-        { eng: "Nabataea", rus: "Набатея" },
-        { eng: "The Netherlands", rus: "Нидерланды" },
-        { eng: "New Zealand", rus: "Новая Зеландия" },
-        { eng: "Normandy", rus: "Нормандия" },
-        { eng: "Norway", rus: "Норвегия" },
-        { eng: "Nubia", rus: "Нубия" },
-        { eng: "Oman", rus: "Оман" },
-        { eng: "The Ottomans", rus: "Османы" },
-        { eng: "Palmyra", rus: "Пальмира" },
-        { eng: "Papal State", rus: "Папская область" },
-        { eng: "Persia", rus: "Персия" },
-        { eng: "Philippines", rus: "Филиппины" },
-        { eng: "Phoenicia", rus: "Финикия" },
-        { eng: "Poland", rus: "Польша" },
-        { eng: "Polynesia", rus: "Полинезия" },
-        { eng: "Portugal", rus: "Португалия" },
-        { eng: "Prussia", rus: "Пруссия" },
-        { eng: "Romania", rus: "Румыния" },
-        { eng: "Rome", rus: "Рим" },
-        { eng: "Russia", rus: "Россия" },
-        { eng: "Scotland", rus: "Шотландия" },
-        { eng: "Shoshone", rus: "Шошоны" },
-        { eng: "Siam", rus: "Сиам" },
-        { eng: "Sioux", rus: "Сиу" },
-        { eng: "Songhai", rus: "Сонгай" },
-        { eng: "Spain", rus: "Испания" },
-        { eng: "Sumeria", rus: "Шумеры" },
-        { eng: "Sweden", rus: "Швеция" },
-        { eng: "Switzerland", rus: "Швейцария" },
-        { eng: "Tibet", rus: "Тибет" },
-        { eng: "Timurids", rus: "Тимуриды" },
-        { eng: "Tonga", rus: "Тонга" },
-        { eng: "Tunisia", rus: "Тунис" },
-        { eng: "Turkey", rus: "Турция" },
-        { eng: "UAE", rus: "ОАЭ" },
-        { eng: "Ukraine", rus: "Украина" },
-        { eng: "Venice", rus: "Венеция" },
-        { eng: "Vietnam", rus: "Вьетнам" },
-        { eng: "Wales", rus: "Уэльс" },
-        { eng: "Yugoslavia", rus: "Югославия" },
-        { eng: "Zimbabwe", rus: "Зимбабве" },
-        { eng: "Zulu", rus: "Зулусы" }
-    ];
+    // Названия наций (eng <-> ru) — из data/nation_names.json (источник: Nations.json RekMOD).
+    let nations = [];
 
-    // Создаем Map для быстрого поиска: русское название -> английское
-    const nationMap = new Map();
-    nations.forEach(item => {
-        nationMap.set(item.rus, item.eng);
-    });
+    // Map для быстрого поиска: русское название -> английское (строится после загрузки nations).
+    let nationMap = new Map();
+    function rebuildNationMap() {
+        nationMap = new Map();
+        nations.forEach(item => {
+            if (item.rus) nationMap.set(item.rus, item.eng);
+        });
+        // Keep the shared module in sync — engToRusNation/displayNationName
+        // prefer IronLeagueNationNames when the script is loaded.
+        if (window.IronLeagueNationNames && typeof IronLeagueNationNames.setNations === 'function') {
+            IronLeagueNationNames.setNations(nations);
+        }
+    }
 
     // Цвета наций (Unciv + RekMOD): eng -> {outer, inner}
     let nationColors = {};
@@ -1260,12 +1160,14 @@
     let allNations = new Set();
 
     function gameFlags(game) {
-        return Array.isArray(game && game.flags) ? game.flags.map(String) : [];
+        return (window.IronLeagueGamesCore && IronLeagueGamesCore.gameFlags)
+            ? IronLeagueGamesCore.gameFlags(game)
+            : (Array.isArray(game && game.flags) ? game.flags.map(String) : []);
     }
 
     function isExcludedGame(game) {
-        if (window.IronLeagueRating && typeof IronLeagueRating.isExcludedGame === 'function') {
-            return IronLeagueRating.isExcludedGame(game);
+        if (window.IronLeagueGamesCore && typeof IronLeagueGamesCore.isExcludedGame === 'function') {
+            return IronLeagueGamesCore.isExcludedGame(game);
         }
         if (game && game.excludeFromStats) return true;
         const flags = gameFlags(game).map((f) => f.toLowerCase());
@@ -1273,6 +1175,9 @@
     }
 
     function rankedGamesOnly(games) {
+        if (window.IronLeagueGamesCore && typeof IronLeagueGamesCore.rankedGamesOnly === 'function') {
+            return IronLeagueGamesCore.rankedGamesOnly(games);
+        }
         return (games || []).filter((g) => !isExcludedGame(g));
     }
 
@@ -1474,6 +1379,7 @@
     }
 
     function escapeAttr(text) {
+        if (window.IronLeagueUiHelpers && IronLeagueUiHelpers.escapeAttr) return IronLeagueUiHelpers.escapeAttr(text);
         return String(text || '')
             .replace(/&/g, '&amp;')
             .replace(/"/g, '&quot;')
@@ -1678,6 +1584,7 @@
 
 
     function canonicalizeMapName(name) {
+        if (window.IronLeagueUiHelpers && IronLeagueUiHelpers.canonicalizeMapName) return IronLeagueUiHelpers.canonicalizeMapName(name);
         if (window.IronLeagueI18n && IronLeagueI18n.canonicalizeMap) {
             return IronLeagueI18n.canonicalizeMap(name);
         }
@@ -1829,6 +1736,7 @@
     }
 
     function topCounted(mapObj, n, labelFn) {
+        if (window.IronLeagueUiHelpers && IronLeagueUiHelpers.topCounted) return IronLeagueUiHelpers.topCounted(mapObj, n, labelFn);
         const label = labelFn || ((k) => String(k));
         const entries = [...(mapObj || new Map()).entries()]
             .sort((a, b) => b[1] - a[1]
@@ -1837,11 +1745,13 @@
     }
 
     function avgOrDash(sum, count) {
+        if (window.IronLeagueUiHelpers && IronLeagueUiHelpers.avgOrDash) return IronLeagueUiHelpers.avgOrDash(sum, count);
         if (!count) return '—';
         return (sum / count).toFixed(1);
     }
 
     function avgOrDashSigned(sum, count) {
+        if (window.IronLeagueUiHelpers && IronLeagueUiHelpers.avgOrDashSigned) return IronLeagueUiHelpers.avgOrDashSigned(sum, count);
         if (!count) return '—';
         const v = sum / count;
         const body = Math.abs(v).toFixed(1);
@@ -2674,12 +2584,13 @@
     // Загрузка данных
     async function loadGamesData() {
         try {
-            const [gamesResponse, colorsResponse, wondersResponse, wonderDetailsResponse, capitalsResponse] = await Promise.all([
+            const [gamesResponse, colorsResponse, wondersResponse, wonderDetailsResponse, capitalsResponse, nationsResponse] = await Promise.all([
                 fetchFresh('Games.json'),
                 fetchFresh(CONFIG.colorsPath),
                 fetchFresh(CONFIG.wonderNamesPath),
                 fetchFresh(CONFIG.wonderDetailsPath),
                 fetchFresh(CONFIG.defaultCapitalsPath),
+                fetchFresh(CONFIG.nationsNamesPath),
             ]);
             if (!gamesResponse.ok) throw new Error(`HTTP ${gamesResponse.status}`);
 
@@ -2711,6 +2622,17 @@
                 defaultCapitals = await capitalsResponse.json() || {};
             } else {
                 console.warn('default_capitals.json не загружен');
+            }
+
+            if (nationsResponse.ok) {
+                const nationsData = await nationsResponse.json();
+                nations = Object.entries(nationsData).map(([eng, v]) => ({
+                    eng: String(v.en || eng),
+                    rus: String(v.ru || eng),
+                }));
+                rebuildNationMap();
+            } else {
+                console.warn('nation_names.json не загружен');
             }
 
             const data = await gamesResponse.json();
@@ -3243,35 +3165,15 @@
     });
 
     function engToRusNation(eng) {
+        if (window.IronLeagueNationNames) return IronLeagueNationNames.engToRusNation(eng);
         const hit = nations.find(n => n.eng.toLowerCase() === String(eng || '').toLowerCase());
-        if (hit) return hit.rus;
-        // common aliases in the sheet
-        const aliases = {
-            Aztec: 'Ацтеки',
-            Aztecs: 'Ацтеки',
-            Gaul: 'Галлы',
-            Gauls: 'Галлы',
-            Maya: 'Майя',
-            'The Maya': 'Майя',
-            Huns: 'Гунны',
-            'The Huns': 'Гунны',
-            Netherlands: 'Нидерланды',
-            'The Netherlands': 'Нидерланды',
-            Yugolslavia: 'Югославия',
-            Yugoslavia: 'Югославия',
-            Chile: 'Чили',
-            Colombia: 'Колумбия',
-            Ottomans: 'Османы',
-            'The Ottomans': 'Османы',
-            Moors: 'Мавры',
-            'The Moors': 'Мавры',
-        };
-        return aliases[eng] || eng;
+        return (hit && hit.rus) || eng;
     }
 
     function rusToEngNation(rus) {
+        if (window.IronLeagueNationNames) return IronLeagueNationNames.rusToEngNation(rus);
         const hit = nations.find(n => n.rus === rus);
-        return hit ? hit.eng : rus;
+        return (hit && hit.eng) || rus;
     }
 
     /** Tierlist average for a Russian nation name (or null). */
@@ -3308,13 +3210,19 @@
     }
 
     function displayNationName(russianName) {
-        if (window.IronLeagueI18n && IronLeagueI18n.getLang() === 'en') {
+        if (window.IronLeagueNationNames && IronLeagueNationNames.displayNationName) {
+            return IronLeagueNationNames.displayNationName(russianName);
+        }
+        if (window.IronLeagueI18n && IronLeagueI18n.getLang && IronLeagueI18n.getLang() === 'en') {
             return rusToEngNation(russianName);
         }
         return russianName || '';
     }
 
     function displayPolicyName(name) {
+        if (window.IronLeagueNationNames && IronLeagueNationNames.displayPolicyName) {
+            return IronLeagueNationNames.displayPolicyName(name);
+        }
         if (window.IronLeagueI18n && IronLeagueI18n.translateTerm) {
             return IronLeagueI18n.translateTerm(name);
         }

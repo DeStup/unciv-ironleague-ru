@@ -7,25 +7,12 @@
 
   const STORAGE_KEY = 'ironleague_lang';
 
-  /** Russian in-game terms → English (policies, ideologies, eras). */
+  /**
+   * Russian in-game terms → English. Policy branches / ideologies live in the
+   * shared IronLeaguePolicyTerms module (js/policy-terms.js) so i18n.js and
+   * stats-charts.js cannot drift; this map keeps eras + religion status.
+   */
   const TERM_EN = {
-    // Policy branches / openers
-    'Традиция': 'Tradition',
-    'Вольность': 'Liberty',
-    'Воля': 'Liberty',
-    'Честь': 'Honor',
-    'Благочестие': 'Piety',
-    'Набожность': 'Piety',
-    'Заступничество': 'Patronage',
-    'Меценатство': 'Patronage',
-    'Эстетика': 'Aesthetics',
-    'Коммерция': 'Commerce',
-    'Исследование': 'Exploration',
-    'Рационализм': 'Rationalism',
-    'Свобода': 'Freedom',
-    'Порядок': 'Order',
-    'Самодержавие': 'Autocracy',
-    'Автократия': 'Autocracy',
     // Religion status
     'Пантеон': 'Pantheon',
     'Усилена': 'Enhanced',
@@ -1541,6 +1528,10 @@
     if (name == null || name === '') return name;
     const raw = String(name).trim();
     if (!raw) return name;
+    // Policy branches / ideologies are owned by IronLeaguePolicyTerms.
+    if (window.IronLeaguePolicyTerms && IronLeaguePolicyTerms.toEnglish(raw) !== raw) {
+      return IronLeaguePolicyTerms.toEnglish(raw);
+    }
     if (lang === 'en') {
       return TERM_EN[raw] || raw;
     }
