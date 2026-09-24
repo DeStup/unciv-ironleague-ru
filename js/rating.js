@@ -28,11 +28,21 @@
     return flags;
   }
 
+  function isTournamentGame(game) {
+    if (window.IronLeagueGamesCore && IronLeagueGamesCore.isTournamentGame) {
+      return IronLeagueGamesCore.isTournamentGame(game);
+    }
+    if (game && String(game.tournamentName || '').trim()) return true;
+    const flags = gameFlags(game).map((f) => f.toLowerCase());
+    return flags.includes('tournament');
+  }
+
   function isExcludedGame(game) {
     if (window.IronLeagueGamesCore && IronLeagueGamesCore.isExcludedGame) {
       return IronLeagueGamesCore.isExcludedGame(game);
     }
     if (game && game.excludeFromStats) return true;
+    if (isTournamentGame(game)) return true;
     const flags = gameFlags(game).map((f) => f.toLowerCase());
     return flags.includes('teams') || flags.includes('scrap') || flags.includes('team');
   }
@@ -47,11 +57,24 @@
     return m ? parseInt(m[1], 10) : 0;
   }
 
+  /**
+   * Eligible games for rating. FFA: exclude teams/scrap/tournament.
+   * Tournament pool: when every rostered game is a tournament match, skip
+   * isExcludedGame so duel sessions (excludeFromStats) still count.
+   */
   function eligibleGames(games) {
+    const list = games || [];
+    const withPlayers = list.filter((g) => Array.isArray(g.players) && g.players.length > 0);
+    if (withPlayers.length && withPlayers.every(isTournamentGame)) {
+      if (window.IronLeagueGamesCore && IronLeagueGamesCore.poolEligibleGames) {
+        return IronLeagueGamesCore.poolEligibleGames(list);
+      }
+      return withPlayers.slice().sort((a, b) => parseGameNum(a) - parseGameNum(b));
+    }
     if (window.IronLeagueGamesCore && IronLeagueGamesCore.eligibleGames) {
       return IronLeagueGamesCore.eligibleGames(games);
     }
-    return (games || [])
+    return list
       .filter((g) => !isExcludedGame(g))
       .filter((g) => Array.isArray(g.players) && g.players.length > 0)
       .slice()
