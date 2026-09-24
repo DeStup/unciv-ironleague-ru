@@ -91,7 +91,9 @@
     const survByName = new Map(
       survivors.map((s) => [String(s.name || '').trim(), s])
     );
-    const winnerNation = String(game.winner || '').trim();
+    const winnerNation = (window.IronLeagueGamesCore && IronLeagueGamesCore.resolveWinnerNation)
+      ? IronLeagueGamesCore.resolveWinnerNation(game)
+      : String(game.winner || '').trim();
 
     const names = [...byName.keys()].filter(Boolean);
     names.sort((a, b) => {

@@ -103,6 +103,50 @@
     return (games || []).filter(isTournamentGame);
   }
 
+  function isBarbarianNation(nation) {
+    const n = String(nation || '').trim().toLowerCase();
+    return !n || n === 'варвары' || n === 'barbarians' || n === 'barbarian';
+  }
+
+  /**
+   * Winning nation for display/stats/rating.
+   * Prefer explicit ``winner``, then CC vote nation, then highest finale score.
+   */
+  function resolveWinnerNation(game) {
+    if (!game) return '';
+    const explicit = String(game.winner || '').trim();
+    if (explicit && !isBarbarianNation(explicit)) return explicit;
+
+    const cc = game.league && game.league.cc;
+    const ccNation = cc && String(cc.nation || '').trim();
+    if (ccNation && !isBarbarianNation(ccNation)) return ccNation;
+
+    const survivors = Array.isArray(game.survivors) ? game.survivors : [];
+    let best = null;
+    let bestScore = -Infinity;
+    for (const s of survivors) {
+      if (!s || s.is_barbarian) continue;
+      const nation = String(s.nation || '').trim();
+      if (isBarbarianNation(nation)) continue;
+      const score = Number(s.score);
+      const n = Number.isFinite(score) ? score : -1;
+      if (n > bestScore) {
+        bestScore = n;
+        best = nation;
+      }
+    }
+    if (best) return best;
+
+    const alive = survivors.filter((s) => {
+      if (!s || s.is_barbarian) return false;
+      const nation = String(s.nation || '').trim();
+      if (isBarbarianNation(nation)) return false;
+      return s.alive !== false;
+    });
+    if (alive.length === 1) return String(alive[0].nation || '').trim();
+    return '';
+  }
+
   global.IronLeagueGamesCore = {
     gameFlags,
     isTournamentGame,
@@ -115,5 +159,6 @@
     parseGameNum,
     formatGameLabel,
     spectatorFolderName,
+    resolveWinnerNation,
   };
 })(typeof window !== 'undefined' ? window : globalThis);
