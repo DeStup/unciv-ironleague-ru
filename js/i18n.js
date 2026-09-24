@@ -335,6 +335,15 @@
       'filter.victoryAll': 'Все типы',
       'filter.map': 'Карта',
       'filter.mapAll': 'Все карты',
+      'pool.mode': 'Пул',
+      'pool.ffa': 'FFA',
+      'pool.tournaments': 'Турниры',
+      'pool.tournament': 'Турнир',
+      'pool.tournamentAll': 'Все турниры',
+      'badge.tournament': 'Турнир',
+      'records.section.rivalry': 'Соперничество',
+      'records.intro.duel':
+        'Дуэльные рекорды считаются только по турнирным матчам. Переключатель пула: FFA | Турниры.',
       'stats.tab.players': 'Игроки',
       'stats.tab.nations': 'Нации',
       'stats.tab.policies': 'Институты',
@@ -866,6 +875,114 @@
       'records.item.fastest_ideology.flavor': 'Уже определился',
       'records.item.fastest_ideology.body':
         '{player} взял идеологию раньше всех: ход {value} ({game}).',
+      'records.item.most_wins_same_nation.title': 'Верность знамени',
+      'records.item.most_wins_same_nation.flavor': 'Одна нация — много триумфов',
+      'records.item.most_wins_same_nation.body':
+        '{player} чаще всех побеждал одной и той же нацией: {value} побед.',
+      'records.item.underdog_win.title': 'Аутсайдер',
+      'records.item.underdog_win.flavor': 'Слабая на бумаге',
+      'records.item.underdog_win.body':
+        '{player} чаще всех побеждал нацией с наименьшим числом побед в архиве: {value}.',
+      'records.item.wonder_race_loss.title': 'Чудеса без короны',
+      'records.item.wonder_race_loss.flavor': 'Красиво, но недостаточно',
+      'records.item.wonder_race_loss.body':
+        '{player} чаще всех проигрывал, имея больше чудес, чем победитель: {value}.',
+      'records.item.no_war_win.title': 'Победа без объявлений войны',
+      'records.item.no_war_win.flavor': 'Мирным путём',
+      'records.item.no_war_win.body':
+        '{player} чаще всех побеждал при wars_declared=0: {value}.',
+      'records.item.late_ideology_win.title': 'Поздняя идеология и победа',
+      'records.item.late_ideology_win.flavor': 'Не спешил определяться',
+      'records.item.late_ideology_win.body':
+        '{player} победил с самой поздней идеологией: ход {value} ({game}).',
+      'records.item.duel_most_wins.title': 'Дуэли: больше всего побед',
+      'records.item.duel_most_wins.flavor': 'Король сетки',
+      'records.item.duel_most_wins.body':
+        '{player} выиграл больше всего турнирных матчей: {value} (из {games}).',
+      'records.item.duel_best_winrate.title': 'Дуэли: лучший винрейт',
+      'records.item.duel_best_winrate.flavor': 'Стабильный клинок',
+      'records.item.duel_best_winrate.body':
+        '{player} лидирует по винрейту в дуэлях: {value} ({wins}/{games}, мин. 5 матчей).',
+      'records.item.duel_longest_win_streak.title': 'Дуэли: стрик побед',
+      'records.item.duel_longest_win_streak.flavor': 'Серия без осечек',
+      'records.item.duel_longest_win_streak.body':
+        'У {player} самый длинный стрик побед в дуэлях: {value}.',
+      'records.item.duel_fastest_win.title': 'Дуэли: быстрая победа',
+      'records.item.duel_fastest_win.flavor': 'Спринт 1v1',
+      'records.item.duel_fastest_win.body':
+        '{player} закрыл дуэль {game} на ходу {value}.',
+      'records.item.duel_slowest_win.title': 'Дуэли: долгая победа',
+      'records.item.duel_slowest_win.flavor': 'Марафон BO',
+      'records.item.duel_slowest_win.body':
+        '{player} дожал дуэль {game} на ходу {value}.',
+      'records.item.duel_most_military_deaths.title': 'Дуэли: мясорубка',
+      'records.item.duel_most_military_deaths.flavor': 'Кровь на арене',
+      'records.item.duel_most_military_deaths.body':
+        '{player} потерял больше всего юнитов в дуэлях: {value}.',
+      'records.item.duel_fewest_military_deaths.title': 'Дуэли: чистая победа',
+      'records.item.duel_fewest_military_deaths.flavor': 'Минимум потерь',
+      'records.item.duel_fewest_military_deaths.body':
+        '{player} потерял меньше всего юнитов в своих победах: {value} (по {games} победам с данными).',
+      'records.item.duel_most_wonders_built.title': 'Дуэли: строитель чудес',
+      'records.item.duel_most_wonders_built.flavor': 'Чудеса под давлением',
+      'records.item.duel_most_wonders_built.body':
+        '{player} построил больше всего чудес в дуэлях: {value}.',
+      'records.item.duel_fastest_ideology.title': 'Дуэли: ранняя идеология',
+      'records.item.duel_fastest_ideology.flavor': 'Темп культуры',
+      'records.item.duel_fastest_ideology.body':
+        '{player} взял идеологию раньше всех в дуэлях: ход {value} ({game}).',
+      'records.item.duel_tournament_titles.title': 'Чемпионские титулы',
+      'records.item.duel_tournament_titles.flavor': 'GF / Final',
+      'records.item.duel_tournament_titles.body':
+        '{player} выиграл больше всего финалов турнира: {value}.',
+      'records.item.duel_sweep.title': 'Свип серии',
+      'records.item.duel_sweep.flavor': 'Сухая серия',
+      'records.item.duel_sweep.body':
+        '{player} выиграл все игры серии (bo3/bo5) чаще всех: {value}.',
+      'records.item.duel_rematch_king.title': 'Король реваншей',
+      'records.item.duel_rematch_king.flavor': 'Снова те же лица',
+      'records.item.duel_rematch_king.body':
+        '{player} чаще всех играл против одного соперника ({opponent}): {value} матчей.',
+      'records.item.duel_nemesis.title': 'Немезида',
+      'records.item.duel_nemesis.flavor': 'Проклятый оппонент',
+      'records.item.duel_nemesis.body':
+        '{player} чаще всех проигрывал одному сопернику ({opponent}): {value}.',
+      'records.item.duel_mirror.title': 'Зеркало нации',
+      'records.item.duel_mirror.flavor': 'Одна и та же',
+      'records.item.duel_mirror.body':
+        '{player} чаще всех побеждал одной нацией в дуэлях: {value}.',
+      'records.item.duel_nation_hopper.title': 'Скиталец наций',
+      'records.item.duel_nation_hopper.flavor': 'Каждый раз новая',
+      'records.item.duel_nation_hopper.body':
+        '{player} побеждал наибольшим числом разных наций в дуэлях: {value}.',
+      'records.item.duel_max_score_finale.title': 'Дуэли: пик очков',
+      'records.item.duel_max_score_finale.flavor': 'Счётчик 1v1',
+      'records.item.duel_max_score_finale.body':
+        '{player} набрал больше всего очков в дуэли: {value} ({game}).',
+      'records.item.duel_max_units_finale.title': 'Дуэли: армия',
+      'records.item.duel_max_units_finale.flavor': 'Тень легиона',
+      'records.item.duel_max_units_finale.body':
+        '{player} вывел больше всего юнитов в дуэли: {value} ({game}).',
+      'records.item.duel_max_techs_finale.title': 'Дуэли: техпик',
+      'records.item.duel_max_techs_finale.flavor': 'Наука под прессом',
+      'records.item.duel_max_techs_finale.body':
+        '{player} открыл больше всего технологий в дуэли: {value} ({game}).',
+      'records.item.duel_max_science_finale.title': 'Дуэли: наука',
+      'records.item.duel_max_science_finale.flavor': 'Эврика 1v1',
+      'records.item.duel_max_science_finale.body':
+        '{player} показал пик науки в дуэли: {value} ({game}).',
+      'records.item.duel_max_culture_finale.title': 'Дуэли: культура',
+      'records.item.duel_max_culture_finale.flavor': 'Культурный удар',
+      'records.item.duel_max_culture_finale.body':
+        '{player} показал пик культуры в дуэли: {value} ({game}).',
+      'records.item.duel_max_production_finale.title': 'Дуэли: производство',
+      'records.item.duel_max_production_finale.flavor': 'Заводы 1v1',
+      'records.item.duel_max_production_finale.body':
+        '{player} показал пик производства в дуэли: {value} ({game}).',
+      'records.item.duel_max_gold_finale.title': 'Дуэли: казна',
+      'records.item.duel_max_gold_finale.flavor': 'Золотой запас',
+      'records.item.duel_max_gold_finale.body':
+        '{player} накопил больше всего золота в дуэли: {value} ({game}).',
       'tier.title': 'Тирлист наций',
       'tier.col.nation': 'Нация',
       'tier.col.avg': 'Среднее',
@@ -1021,6 +1138,15 @@
       'filter.victoryAll': 'All types',
       'filter.map': 'Map',
       'filter.mapAll': 'All maps',
+      'pool.mode': 'Pool',
+      'pool.ffa': 'FFA',
+      'pool.tournaments': 'Tournaments',
+      'pool.tournament': 'Tournament',
+      'pool.tournamentAll': 'All tournaments',
+      'badge.tournament': 'Tournament',
+      'records.section.rivalry': 'Rivalry',
+      'records.intro.duel':
+        'Duel records are computed from tournament matches only. Pool switch: FFA | Tournaments.',
       'stats.tab.players': 'Players',
       'stats.tab.nations': 'Nations',
       'stats.tab.policies': 'Policies',
@@ -1552,6 +1678,114 @@
       'records.item.fastest_ideology.flavor': 'Already decided',
       'records.item.fastest_ideology.body':
         '{player} adopted an ideology earliest: turn {value} ({game}).',
+      'records.item.most_wins_same_nation.title': 'Loyal banner',
+      'records.item.most_wins_same_nation.flavor': 'One nation, many triumphs',
+      'records.item.most_wins_same_nation.body':
+        '{player} has the most wins with the same nation: {value}.',
+      'records.item.underdog_win.title': 'Underdog',
+      'records.item.underdog_win.flavor': 'Weak on paper',
+      'records.item.underdog_win.body':
+        '{player} has the most wins with a nation that has the fewest archive wins: {value}.',
+      'records.item.wonder_race_loss.title': 'Wonders without a crown',
+      'records.item.wonder_race_loss.flavor': 'Pretty, but not enough',
+      'records.item.wonder_race_loss.body':
+        '{player} most often lost while owning more wonders than the winner: {value}.',
+      'records.item.no_war_win.title': 'No-war win',
+      'records.item.no_war_win.flavor': 'Peaceful path',
+      'records.item.no_war_win.body':
+        '{player} has the most wins with wars_declared=0: {value}.',
+      'records.item.late_ideology_win.title': 'Late ideology win',
+      'records.item.late_ideology_win.flavor': 'In no hurry to choose',
+      'records.item.late_ideology_win.body':
+        '{player} won with the latest ideology adoption: turn {value} ({game}).',
+      'records.item.duel_most_wins.title': 'Duels: most wins',
+      'records.item.duel_most_wins.flavor': 'King of the bracket',
+      'records.item.duel_most_wins.body':
+        '{player} won the most tournament matches: {value} (of {games}).',
+      'records.item.duel_best_winrate.title': 'Duels: best winrate',
+      'records.item.duel_best_winrate.flavor': 'Steady blade',
+      'records.item.duel_best_winrate.body':
+        '{player} leads duel winrate: {value} ({wins}/{games}, min 5 matches).',
+      'records.item.duel_longest_win_streak.title': 'Duels: win streak',
+      'records.item.duel_longest_win_streak.flavor': 'No misses',
+      'records.item.duel_longest_win_streak.body':
+        '{player} has the longest duel win streak: {value}.',
+      'records.item.duel_fastest_win.title': 'Duels: fastest win',
+      'records.item.duel_fastest_win.flavor': '1v1 sprint',
+      'records.item.duel_fastest_win.body':
+        '{player} closed duel {game} on turn {value}.',
+      'records.item.duel_slowest_win.title': 'Duels: slowest win',
+      'records.item.duel_slowest_win.flavor': 'BO marathon',
+      'records.item.duel_slowest_win.body':
+        '{player} finished duel {game} on turn {value}.',
+      'records.item.duel_most_military_deaths.title': 'Duels: meat grinder',
+      'records.item.duel_most_military_deaths.flavor': 'Blood on the arena',
+      'records.item.duel_most_military_deaths.body':
+        '{player} lost the most units in duels: {value}.',
+      'records.item.duel_fewest_military_deaths.title': 'Duels: clean win',
+      'records.item.duel_fewest_military_deaths.flavor': 'Minimal losses',
+      'records.item.duel_fewest_military_deaths.body':
+        '{player} lost the fewest units across their wins: {value} (over {games} wins with data).',
+      'records.item.duel_most_wonders_built.title': 'Duels: wonder builder',
+      'records.item.duel_most_wonders_built.flavor': 'Wonders under pressure',
+      'records.item.duel_most_wonders_built.body':
+        '{player} built the most wonders in duels: {value}.',
+      'records.item.duel_fastest_ideology.title': 'Duels: fastest ideology',
+      'records.item.duel_fastest_ideology.flavor': 'Culture tempo',
+      'records.item.duel_fastest_ideology.body':
+        '{player} adopted an ideology earliest in a duel: turn {value} ({game}).',
+      'records.item.duel_tournament_titles.title': 'Tournament titles',
+      'records.item.duel_tournament_titles.flavor': 'GF / Final',
+      'records.item.duel_tournament_titles.body':
+        '{player} won the most tournament finals: {value}.',
+      'records.item.duel_sweep.title': 'Series sweep',
+      'records.item.duel_sweep.flavor': 'Clean series',
+      'records.item.duel_sweep.body':
+        '{player} swept the most bo3/bo5 series: {value}.',
+      'records.item.duel_rematch_king.title': 'Rematch king',
+      'records.item.duel_rematch_king.flavor': 'Same faces again',
+      'records.item.duel_rematch_king.body':
+        '{player} played the most matches vs one opponent ({opponent}): {value}.',
+      'records.item.duel_nemesis.title': 'Nemesis',
+      'records.item.duel_nemesis.flavor': 'Cursed opponent',
+      'records.item.duel_nemesis.body':
+        '{player} lost most often to one opponent ({opponent}): {value}.',
+      'records.item.duel_mirror.title': 'Nation mirror',
+      'records.item.duel_mirror.flavor': 'Same civ again',
+      'records.item.duel_mirror.body':
+        '{player} has the most duel wins with one nation: {value}.',
+      'records.item.duel_nation_hopper.title': 'Nation hopper',
+      'records.item.duel_nation_hopper.flavor': 'A new civ every time',
+      'records.item.duel_nation_hopper.body':
+        '{player} won with the most different nations in duels: {value}.',
+      'records.item.duel_max_score_finale.title': 'Duels: score peak',
+      'records.item.duel_max_score_finale.flavor': '1v1 scoreboard',
+      'records.item.duel_max_score_finale.body':
+        '{player} posted the highest duel score: {value} ({game}).',
+      'records.item.duel_max_units_finale.title': 'Duels: army',
+      'records.item.duel_max_units_finale.flavor': 'Shadow legion',
+      'records.item.duel_max_units_finale.body':
+        '{player} fielded the most units in a duel: {value} ({game}).',
+      'records.item.duel_max_techs_finale.title': 'Duels: tech peak',
+      'records.item.duel_max_techs_finale.flavor': 'Science under pressure',
+      'records.item.duel_max_techs_finale.body':
+        '{player} had the most techs in a duel: {value} ({game}).',
+      'records.item.duel_max_science_finale.title': 'Duels: science',
+      'records.item.duel_max_science_finale.flavor': '1v1 eureka',
+      'records.item.duel_max_science_finale.body':
+        '{player} posted the highest science in a duel: {value} ({game}).',
+      'records.item.duel_max_culture_finale.title': 'Duels: culture',
+      'records.item.duel_max_culture_finale.flavor': 'Culture strike',
+      'records.item.duel_max_culture_finale.body':
+        '{player} posted the highest culture in a duel: {value} ({game}).',
+      'records.item.duel_max_production_finale.title': 'Duels: production',
+      'records.item.duel_max_production_finale.flavor': '1v1 factories',
+      'records.item.duel_max_production_finale.body':
+        '{player} posted the highest production in a duel: {value} ({game}).',
+      'records.item.duel_max_gold_finale.title': 'Duels: treasury',
+      'records.item.duel_max_gold_finale.flavor': 'Gold reserve',
+      'records.item.duel_max_gold_finale.body':
+        '{player} held the most gold in a duel: {value} ({game}).',
       'tier.title': 'Nation tier list',
       'tier.col.nation': 'Nation',
       'tier.col.avg': 'Average',

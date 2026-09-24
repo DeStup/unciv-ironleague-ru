@@ -4,7 +4,7 @@
  * the archive filters and display names (match unciv-web / spectator folders).
  *
  * Used by index.html, rating.js, achievements.js, site-core.js — avoids copies
- * of the same teams/scrap/excludeFromStats logic drifting apart.
+ * of the same teams/scrap/excludeFromStats/tournament logic drifting apart.
  */
 (function (global) {
   'use strict';
@@ -15,11 +15,22 @@
   }
 
   /**
-   * True for games excluded from rating/stats: explicit excludeFromStats or
-   * flags containing teams / scrap / team.
+   * Tournament match: flag "tournament" (any case) or a non-empty tournamentName.
+   */
+  function isTournamentGame(game) {
+    if (!game) return false;
+    if (String(game.tournamentName || '').trim()) return true;
+    const flags = gameFlags(game).map((f) => f.toLowerCase());
+    return flags.includes('tournament');
+  }
+
+  /**
+   * True for games excluded from FFA rating/stats: explicit excludeFromStats,
+   * tournament matches, or flags containing teams / scrap / team.
    */
   function isExcludedGame(game) {
     if (game && game.excludeFromStats) return true;
+    if (isTournamentGame(game)) return true;
     const flags = gameFlags(game).map((f) => f.toLowerCase());
     return flags.includes('teams') || flags.includes('scrap') || flags.includes('team');
   }
@@ -34,9 +45,13 @@
 
   /**
    * Display / spectator folder name as on unciv-web:
-   * `IronLeague-25`, `IronLeague-team2`.
+   * `IronLeague-25`, `IronLeague-team2`, or raw session name for tournaments.
    */
   function formatGameLabel(game) {
+    if (isTournamentGame(game)) {
+      const raw = String((game && game.number) || '').trim();
+      return raw || '';
+    }
     const raw = String((game && game.number) || '').trim();
     const il = /^IronLeague-(team)?(\d+)$/i.exec(raw);
     if (il) return il[1] ? `IronLeague-team${il[2]}` : `IronLeague-${il[2]}`;
@@ -52,7 +67,7 @@
     return formatGameLabel(game);
   }
 
-  /** Ranked games only (no teams/scrap), sorted by game number. */
+  /** Ranked FFA games only (no teams/scrap/tournament), sorted by game number. */
   function eligibleGames(games) {
     return (games || [])
       .filter((g) => !isExcludedGame(g))
@@ -61,16 +76,42 @@
       .sort((a, b) => parseGameNum(a) - parseGameNum(b));
   }
 
-  /** Ranked games only (no teams/scrap); unsorted — used by archive filters. */
+  /**
+   * Games already selected as a stats/rating pool (FFA or tournament):
+   * only require a non-empty player roster. Does not re-apply isExcludedGame,
+   * so tournament matches (excludeFromStats / tournament flag) still count.
+   */
+  function poolEligibleGames(games) {
+    return (games || [])
+      .filter((g) => Array.isArray(g.players) && g.players.length > 0)
+      .slice()
+      .sort((a, b) => parseGameNum(a) - parseGameNum(b));
+  }
+
+  /** Ranked FFA games only (no teams/scrap/tournament); unsorted. */
   function rankedGamesOnly(games) {
     return (games || []).filter((g) => !isExcludedGame(g));
   }
 
+  /** Alias: FFA pool = ranked (tournaments excluded via isExcludedGame). */
+  function ffaGamesOnly(games) {
+    return rankedGamesOnly(games);
+  }
+
+  /** Tournament matches only (unsorted). */
+  function tournamentGamesOnly(games) {
+    return (games || []).filter(isTournamentGame);
+  }
+
   global.IronLeagueGamesCore = {
     gameFlags,
+    isTournamentGame,
     isExcludedGame,
     eligibleGames,
+    poolEligibleGames,
     rankedGamesOnly,
+    ffaGamesOnly,
+    tournamentGamesOnly,
     parseGameNum,
     formatGameLabel,
     spectatorFolderName,

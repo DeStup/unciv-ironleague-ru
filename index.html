@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=seasons-live-awards-1">
+    <link rel="stylesheet" href="css/site.css?v=tournament-pool-1">
 
 </head>
 <body>
@@ -143,6 +143,19 @@
 
     <div class="view-panel" id="viewArchive">
     <div class="filters">
+        <div class="filter-group pool-mode-group">
+            <label data-i18n="pool.mode">Пул</label>
+            <div class="pool-mode-switch" role="group" aria-label="Pool">
+                <button type="button" class="pool-mode-btn active" data-pool="ffa" data-i18n="pool.ffa">FFA</button>
+                <button type="button" class="pool-mode-btn" data-pool="tournaments" data-i18n="pool.tournaments">Турниры</button>
+            </div>
+        </div>
+        <div class="filter-group" id="tournamentNameFilterGroup" hidden>
+            <label data-i18n="pool.tournament">Турнир</label>
+            <select id="tournamentNameFilter">
+                <option value="all" data-i18n="pool.tournamentAll">Все турниры</option>
+            </select>
+        </div>
         <div class="filter-group">
             <label data-i18n="filter.nation">Фильтр по нации</label>
             <select id="nationFilter">
@@ -162,7 +175,7 @@
                 <option value="oldest" data-i18n="filter.oldest">Сначала старые</option>
             </select>
         </div>
-        <div class="filter-group">
+        <div class="filter-group" id="relevanceFilterGroup">
             <label data-i18n="filter.relevance">Неактуальные игры</label>
             <select id="relevanceFilter">
                 <option value="all" data-i18n="filter.relevanceAll">Все игры</option>
@@ -316,6 +329,18 @@
 </div>
 
 <div class="view-panel" id="viewStats">
+        <div class="pool-mode-row">
+            <span class="rating-k-label" data-i18n="pool.mode">Пул</span>
+            <div class="pool-mode-switch" role="group" aria-label="Pool">
+                <button type="button" class="pool-mode-btn active" data-pool="ffa" data-i18n="pool.ffa">FFA</button>
+                <button type="button" class="pool-mode-btn" data-pool="tournaments" data-i18n="pool.tournaments">Турниры</button>
+            </div>
+            <div class="filter-group pool-inline-filter" id="statsTournamentFilterGroup" hidden>
+                <select id="statsTournamentNameFilter" aria-label="Tournament">
+                    <option value="all" data-i18n="pool.tournamentAll">Все турниры</option>
+                </select>
+            </div>
+        </div>
         <p class="stats-intro" id="statsIntro" data-i18n="stats.intro">В статистику не входят игры с пометками «командная» (teams) и «скрап» (scrap).</p>
         <label class="stats-game-links-toggle">
             <input type="checkbox" id="statsShowGameLinks">
@@ -728,6 +753,18 @@
     
 
 <div class="view-panel" id="viewRating">
+        <div class="pool-mode-row">
+            <span class="rating-k-label" data-i18n="pool.mode">Пул</span>
+            <div class="pool-mode-switch" role="group" aria-label="Pool">
+                <button type="button" class="pool-mode-btn active" data-pool="ffa" data-i18n="pool.ffa">FFA</button>
+                <button type="button" class="pool-mode-btn" data-pool="tournaments" data-i18n="pool.tournaments">Турниры</button>
+            </div>
+            <div class="filter-group pool-inline-filter" id="ratingTournamentFilterGroup" hidden>
+                <select id="ratingTournamentNameFilter" aria-label="Tournament">
+                    <option value="all" data-i18n="pool.tournamentAll">Все турниры</option>
+                </select>
+            </div>
+        </div>
         <div class="rating-scale-row" role="group" data-i18n-aria="rating.scaleLabel" aria-label="Шкала рейтинга">
             <span class="rating-k-label" data-i18n="rating.scaleLabel">Шкала</span>
             <select id="ratingScaleSelect" class="rating-scale-select" aria-label="Шкала рейтинга">
@@ -995,15 +1032,28 @@
     </div>
 
     <div class="view-panel" id="viewRecords">
-        <p class="rating-intro" data-i18n="records.intro">
+        <div class="pool-mode-row">
+            <span class="rating-k-label" data-i18n="pool.mode">Пул</span>
+            <div class="pool-mode-switch" role="group" aria-label="Pool">
+                <button type="button" class="pool-mode-btn active" data-pool="ffa" data-i18n="pool.ffa">FFA</button>
+                <button type="button" class="pool-mode-btn" data-pool="tournaments" data-i18n="pool.tournaments">Турниры</button>
+            </div>
+            <div class="filter-group pool-inline-filter" id="recordsTournamentFilterGroup" hidden>
+                <select id="recordsTournamentNameFilter" aria-label="Tournament">
+                    <option value="all" data-i18n="pool.tournamentAll">Все турниры</option>
+                </select>
+            </div>
+        </div>
+        <p class="rating-intro" id="recordsIntro" data-i18n="records.intro">
             Рекорды считаются из архива при каждой загрузке. Игры с флагами teams / scrap не учитываются.
         </p>
-        <div class="faq-toc" data-i18n-aria="records.toc" aria-label="Разделы рекордов">
+        <div class="faq-toc" id="recordsToc" data-i18n-aria="records.toc" aria-label="Разделы рекордов">
             <a href="#records-glory" data-i18n="records.section.glory">Слава</a>
             <a href="#records-war" data-i18n="records.section.war">Война</a>
             <a href="#records-style" data-i18n="records.section.style">Стиль</a>
             <a href="#records-peaks" data-i18n="records.section.peaks">Пики финала</a>
-            <a href="#records-curious" data-i18n="records.section.curious">Курьёзы</a>
+            <a href="#records-curious" data-section-ffa data-i18n="records.section.curious">Курьёзы</a>
+            <a href="#records-rivalry" data-section-duel hidden data-i18n="records.section.rivalry">Соперничество</a>
         </div>
         <div class="stats-section" id="records-glory">
             <h2 data-i18n="records.section.glory">Слава</h2>
@@ -1021,9 +1071,13 @@
             <h2 data-i18n="records.section.peaks">Пики финала</h2>
             <div class="records-grid" id="recordsPeaks"></div>
         </div>
-        <div class="stats-section" id="records-curious">
+        <div class="stats-section" id="records-curious" data-section-ffa>
             <h2 data-i18n="records.section.curious">Курьёзы</h2>
             <div class="records-grid" id="recordsCurious"></div>
+        </div>
+        <div class="stats-section" id="records-rivalry" data-section-duel hidden>
+            <h2 data-i18n="records.section.rivalry">Соперничество</h2>
+            <div class="records-grid" id="recordsRivalry"></div>
         </div>
     </div>
 
@@ -1053,17 +1107,17 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/games-core.js?v=ironleague-labels-1"></script>
+<script src="js/games-core.js?v=tournament-pool-1"></script>
     <script src="js/policy-terms.js?v=shared-policy-1"></script>
     <script src="js/nation-names.js?v=shared-nations-1"></script>
     <script src="js/site-core.js?v=seasons-live-awards-1"></script>
     <script src="js/ui-helpers.js?v=shared-ui-1"></script>
-    <script src="js/i18n.js?v=seasons-live-awards-1"></script>
+    <script src="js/i18n.js?v=tournament-pool-1"></script>
 <script src="js/player-meta.js?v=short-tg-1"></script>
 <script src="js/stats-charts.js?v=profile-perf-1"></script>
 <script src="js/gif-preview.js?v=1"></script>
-<script src="js/rating.js?v=ironleague-labels-1"></script>
-<script src="js/achievements.js?v=ironleague-labels-1"></script>
+<script src="js/rating.js?v=tournament-pool-1"></script>
+<script src="js/achievements.js?v=tournament-pool-1"></script>
 <script src="js/live-league.js?v=seasons-awards-1"></script>
 <script src="js/tech-policy-paths.js?v=ironleague-labels-1"></script>
 <script>
@@ -1209,8 +1263,18 @@
             return IronLeagueGamesCore.isExcludedGame(game);
         }
         if (game && game.excludeFromStats) return true;
+        if (isTournamentGame(game)) return true;
         const flags = gameFlags(game).map((f) => f.toLowerCase());
         return flags.includes('teams') || flags.includes('scrap') || flags.includes('team');
+    }
+
+    function isTournamentGame(game) {
+        if (window.IronLeagueGamesCore && typeof IronLeagueGamesCore.isTournamentGame === 'function') {
+            return IronLeagueGamesCore.isTournamentGame(game);
+        }
+        if (game && String(game.tournamentName || '').trim()) return true;
+        const flags = gameFlags(game).map((f) => f.toLowerCase());
+        return flags.includes('tournament');
     }
 
     function rankedGamesOnly(games) {
@@ -1218,6 +1282,142 @@
             return IronLeagueGamesCore.rankedGamesOnly(games);
         }
         return (games || []).filter((g) => !isExcludedGame(g));
+    }
+
+    function tournamentGamesOnly(games) {
+        if (window.IronLeagueGamesCore && typeof IronLeagueGamesCore.tournamentGamesOnly === 'function') {
+            return IronLeagueGamesCore.tournamentGamesOnly(games);
+        }
+        return (games || []).filter(isTournamentGame);
+    }
+
+    const POOL_MODE_KEY = 'ironleague_pool_mode';
+    const TOURNAMENT_NAME_KEY = 'ironleague_tournament_name';
+    let poolMode = 'ffa';
+    let tournamentNameFilter = 'all';
+
+    function getPoolMode() {
+        return poolMode === 'tournaments' ? 'tournaments' : 'ffa';
+    }
+
+    function getTournamentNameFilter() {
+        return tournamentNameFilter || 'all';
+    }
+
+    function loadPoolMode() {
+        try {
+            const saved = localStorage.getItem(POOL_MODE_KEY);
+            poolMode = saved === 'tournaments' ? 'tournaments' : 'ffa';
+            const tn = localStorage.getItem(TOURNAMENT_NAME_KEY);
+            tournamentNameFilter = tn && tn !== 'all' ? tn : 'all';
+        } catch (e) {
+            poolMode = 'ffa';
+            tournamentNameFilter = 'all';
+        }
+    }
+
+    function setPoolMode(mode, silent) {
+        poolMode = mode === 'tournaments' ? 'tournaments' : 'ffa';
+        try {
+            localStorage.setItem(POOL_MODE_KEY, poolMode);
+        } catch (e) { /* ignore */ }
+        syncPoolModeUi();
+        if (!silent) refreshPoolDependentViews();
+    }
+
+    function setTournamentNameFilter(name, silent) {
+        tournamentNameFilter = name && name !== 'all' ? String(name) : 'all';
+        try {
+            localStorage.setItem(TOURNAMENT_NAME_KEY, tournamentNameFilter);
+        } catch (e) { /* ignore */ }
+        document.querySelectorAll(
+            '#tournamentNameFilter, #statsTournamentNameFilter, #ratingTournamentNameFilter, #recordsTournamentNameFilter',
+        ).forEach((el) => {
+            if (el && el.value !== tournamentNameFilter) el.value = tournamentNameFilter;
+        });
+        if (!silent) refreshPoolDependentViews();
+    }
+
+    function activeGamesPool() {
+        if (getPoolMode() === 'tournaments') {
+            let list = tournamentGamesOnly(gamesData);
+            const tn = getTournamentNameFilter();
+            if (tn && tn !== 'all') {
+                list = list.filter((g) => String(g.tournamentName || '').trim() === tn);
+            }
+            return list;
+        }
+        return rankedGamesOnly(gamesData);
+    }
+
+    function uniqueTournamentNames() {
+        const names = new Set();
+        for (const g of tournamentGamesOnly(gamesData)) {
+            const n = String(g.tournamentName || '').trim();
+            if (n) names.add(n);
+        }
+        return [...names].sort((a, b) => a.localeCompare(b));
+    }
+
+    function fillTournamentNameSelects() {
+        const names = uniqueTournamentNames();
+        const selects = [
+            document.getElementById('tournamentNameFilter'),
+            document.getElementById('statsTournamentNameFilter'),
+            document.getElementById('ratingTournamentNameFilter'),
+            document.getElementById('recordsTournamentNameFilter'),
+        ];
+        for (const sel of selects) {
+            if (!sel) continue;
+            const cur = tournamentNameFilter || 'all';
+            sel.innerHTML = `<option value="all">${tt('pool.tournamentAll')}</option>`
+                + names.map((n) => `<option value="${String(n).replace(/"/g, '&quot;')}">${n}</option>`).join('');
+            sel.value = names.includes(cur) ? cur : 'all';
+            if (sel.value !== tournamentNameFilter) tournamentNameFilter = sel.value;
+        }
+    }
+
+    function syncPoolModeUi() {
+        const mode = getPoolMode();
+        document.querySelectorAll('.pool-mode-btn').forEach((btn) => {
+            btn.classList.toggle('active', btn.dataset.pool === mode);
+        });
+        const isTour = mode === 'tournaments';
+        const tourGroups = [
+            document.getElementById('tournamentNameFilterGroup'),
+            document.getElementById('statsTournamentFilterGroup'),
+            document.getElementById('ratingTournamentFilterGroup'),
+            document.getElementById('recordsTournamentFilterGroup'),
+        ];
+        tourGroups.forEach((el) => {
+            if (el) el.hidden = !isTour;
+        });
+        const rel = document.getElementById('relevanceFilterGroup');
+        if (rel) rel.hidden = isTour;
+        document.querySelectorAll('[data-section-ffa]').forEach((el) => {
+            el.hidden = isTour;
+        });
+        document.querySelectorAll('[data-section-duel]').forEach((el) => {
+            el.hidden = !isTour;
+        });
+        const intro = document.getElementById('recordsIntro');
+        if (intro) {
+            intro.setAttribute('data-i18n', isTour ? 'records.intro.duel' : 'records.intro');
+            intro.textContent = tt(isTour ? 'records.intro.duel' : 'records.intro');
+        }
+    }
+
+    function refreshPoolDependentViews() {
+        filterGames();
+        renderStatsTables();
+        renderRatingTables();
+        renderRecords();
+        const profileActive = document.getElementById('viewProfile')?.classList.contains('active');
+        if (profileActive) {
+            const title = document.getElementById('profileTitle');
+            const name = title?.dataset?.playerName || '';
+            if (name) openPlayerProfile(name);
+        }
     }
 
     function parseGameNum(game) {
@@ -1243,13 +1443,17 @@
     function renderGameFlags(game) {
         const flags = gameFlags(game).map((f) => f.toLowerCase());
         const parts = [];
+        const isTour = isTournamentGame(game);
+        if (isTour) {
+            parts.push(`<span class="game-flag-badge tournament">${tt('badge.tournament')}</span>`);
+        }
         if (flags.includes('teams') || flags.includes('team')) {
             parts.push(`<span class="game-flag-badge teams">${tt('badge.teams')}</span>`);
         }
         if (flags.includes('scrap')) {
             parts.push(`<span class="game-flag-badge scrap">${tt('badge.scrap')}</span>`);
         }
-        if (isExcludedGame(game)) {
+        if (!isTour && isExcludedGame(game)) {
             parts.push(`<span class="game-flag-badge excluded">${tt('badge.excluded')}</span>`);
         }
         if (game && game.note) {
@@ -1822,7 +2026,7 @@
     function openPlayerProfile(playerName) {
         const name = String(playerName || '').trim();
         if (!name) return;
-        const ranked = rankedGamesOnly(gamesData);
+        const ranked = activeGamesPool();
         const { playerRows } = computeArchiveStats(ranked);
         const row = playerRows.find((p) => p.name === name);
         const title = document.getElementById('profileTitle');
@@ -1840,6 +2044,7 @@
             hero.setAttribute('style', IronLeaguePlayerMeta.profileBackgroundStyle(name));
         }
         if (title) {
+            title.dataset.playerName = name;
             const flag = (window.IronLeaguePlayerMeta && IronLeaguePlayerMeta.flagHtml)
                 ? IronLeaguePlayerMeta.flagHtml(name, { lang })
                 : '';
@@ -1882,7 +2087,9 @@
 
         if (achEl && window.IronLeagueAchievements) {
             try {
-                const items = IronLeagueAchievements.computeAchievements(ranked) || [];
+                const items = getPoolMode() === 'tournaments'
+                    ? (IronLeagueAchievements.computeDuelAchievements(ranked) || [])
+                    : (IronLeagueAchievements.computeAchievements(ranked) || []);
                 const owned = [];
                 for (const it of items) {
                     const places = Array.isArray(it.top) && it.top.length
@@ -2619,12 +2826,19 @@
 
         const victoryFilter = document.getElementById('victoryFilter')?.value || 'all';
         const mapFilter = document.getElementById('mapFilter')?.value || 'all';
+        const tourMode = getPoolMode() === 'tournaments';
+        const tn = getTournamentNameFilter();
 
         let filtered = gamesData.filter(game => {
             const roster = Array.isArray(game.players) ? game.players : [];
-            const excluded = isExcludedGame(game);
-            if (relevance === 'hide' && excluded) return false;
-            if (relevance === 'only' && !excluded) return false;
+            if (tourMode) {
+                if (!isTournamentGame(game)) return false;
+                if (tn && tn !== 'all' && String(game.tournamentName || '').trim() !== tn) return false;
+            } else {
+                const excluded = isExcludedGame(game);
+                if (relevance === 'hide' && excluded) return false;
+                if (relevance === 'only' && !excluded) return false;
+            }
             if (nationFilter !== 'all' && !roster.some(p => p.nation === nationFilter))
                 return false;
             if (playerFilter !== 'all' && !roster.some(p => String(p.name || '').trim() === playerFilter))
@@ -2709,6 +2923,8 @@
             populateNationFilter();
             populatePlayerFilter();
             populateExtraFilters();
+            fillTournamentNameSelects();
+            syncPoolModeUi();
             updateStats();
             filterGames();
             renderStatsTables();
@@ -2876,8 +3092,9 @@
 
     function renderRatingTables() {
         if (!window.IronLeagueRating || !gamesData.length) return;
-        const result = IronLeagueRating.computeAll(gamesData, ratingK);
-        const zero = IronLeagueRating.computeAll(gamesData, ratingK, {
+        const pool = activeGamesPool();
+        const result = IronLeagueRating.computeAll(pool, ratingK);
+        const zero = IronLeagueRating.computeAll(pool, ratingK, {
             zeroBase: true,
             elimPenalty: lobbyElimPenalty,
         });
@@ -2963,6 +3180,7 @@
             'longest_play_streak',
             'fastest_win',
             'slowest_win',
+            'most_wins_same_nation',
             'most_achievements',
         ],
         war: [
@@ -2982,6 +3200,7 @@
             'ideology_order_count',
             'ideology_freedom_count',
             'ideology_autocracy_count',
+            'late_ideology_win',
             'most_wonders_built',
             'most_wonders_owned',
             'two_wonders_one_turn',
@@ -3014,6 +3233,44 @@
             'pacifist_games',
             'survived_no_capital',
             'fewest_military_deaths',
+            'underdog_win',
+            'wonder_race_loss',
+            'no_war_win',
+        ],
+    };
+
+    const DUEL_RECORD_SECTIONS = {
+        glory: [
+            'duel_most_wins',
+            'duel_best_winrate',
+            'duel_longest_win_streak',
+            'duel_fastest_win',
+            'duel_slowest_win',
+            'duel_tournament_titles',
+        ],
+        war: [
+            'duel_most_military_deaths',
+            'duel_fewest_military_deaths',
+        ],
+        style: [
+            'duel_most_wonders_built',
+            'duel_fastest_ideology',
+            'duel_mirror',
+            'duel_nation_hopper',
+        ],
+        peaks: [
+            'duel_max_score_finale',
+            'duel_max_units_finale',
+            'duel_max_techs_finale',
+            'duel_max_science_finale',
+            'duel_max_culture_finale',
+            'duel_max_production_finale',
+            'duel_max_gold_finale',
+        ],
+        rivalry: [
+            'duel_sweep',
+            'duel_rematch_king',
+            'duel_nemesis',
         ],
     };
 
@@ -3041,6 +3298,7 @@
                 games: item.games != null ? String(item.games) : '',
                 wins: item.wins != null ? String(item.wins) : '',
                 survived: item.survived != null ? String(item.survived) : '',
+                opponent: item.opponent != null ? displayPlayerName(item.opponent) : '',
                 game: (() => {
                     if (item.gameNumber == null) return '';
                     const g = (gamesData || []).find((x) => parseGameNum(x) === Number(item.gameNumber));
@@ -3092,7 +3350,12 @@
 
     function renderRecords() {
         if (!window.IronLeagueAchievements || !gamesData.length) return;
-        const items = IronLeagueAchievements.computeAchievements(gamesData);
+        const pool = activeGamesPool();
+        const duel = getPoolMode() === 'tournaments';
+        const sections = duel ? DUEL_RECORD_SECTIONS : RECORD_SECTIONS;
+        const items = duel
+            ? IronLeagueAchievements.computeDuelAchievements(pool)
+            : IronLeagueAchievements.computeAchievements(pool);
         const byId = new Map(items.map((x) => [x.id, x]));
         const map = {
             glory: document.getElementById('recordsGlory'),
@@ -3100,11 +3363,12 @@
             style: document.getElementById('recordsStyle'),
             peaks: document.getElementById('recordsPeaks'),
             curious: document.getElementById('recordsCurious'),
+            rivalry: document.getElementById('recordsRivalry'),
         };
-        Object.keys(RECORD_SECTIONS).forEach((section) => {
+        Object.keys(sections).forEach((section) => {
             const el = map[section];
             if (!el) return;
-            const cards = RECORD_SECTIONS[section]
+            const cards = sections[section]
                 .map((id) => byId.get(id))
                 .filter(Boolean)
                 .map(formatRecordCard);
@@ -3113,17 +3377,30 @@
                 : `<p class="hint">${tt('records.empty')}</p>`;
             hydrateNationPortraits(el);
         });
+        // Clear unused section grids
+        if (duel && map.curious) map.curious.innerHTML = '';
+        if (!duel && map.rivalry) map.rivalry.innerHTML = '';
     }
 
     // Запуск
     (async function boot() {
         await initAssetCacheBust();
         if (window.IronLeagueI18n) IronLeagueI18n.initLang();
+        loadPoolMode();
         applyViewMeta('home');
         loadRatingK();
         loadLobbyElimPenalty();
         loadRatingMinGames();
         loadRatingScale();
+        syncPoolModeUi();
+        document.querySelectorAll('.pool-mode-btn').forEach((btn) => {
+            btn.addEventListener('click', () => setPoolMode(btn.dataset.pool));
+        });
+        document.querySelectorAll(
+            '#tournamentNameFilter, #statsTournamentNameFilter, #ratingTournamentNameFilter, #recordsTournamentNameFilter',
+        ).forEach((el) => {
+            el?.addEventListener('change', () => setTournamentNameFilter(el.value));
+        });
         document.querySelectorAll('.rating-k-btn').forEach((btn) => {
             btn.addEventListener('click', () => setRatingK(btn.dataset.k));
         });
@@ -4111,7 +4388,7 @@
             pantheonRows,
             founderBeliefRows,
             followerBeliefRows,
-        } = computeArchiveStats(rankedGamesOnly(gamesData));
+        } = computeArchiveStats(activeGamesPool());
 
         fillSortableTable(
             document.getElementById('playerWinrateTable'),
@@ -4383,7 +4660,7 @@
         }
         {
             const mapCounts = new Map();
-            for (const game of rankedGamesOnly(gamesData)) {
+            for (const game of activeGamesPool()) {
                 const m = canonicalizeMapName(game.map);
                 if (!m) continue;
                 mapCounts.set(m, (mapCounts.get(m) || 0) + 1);
@@ -4567,6 +4844,8 @@
             populateNationFilter();
             populatePlayerFilter();
             populateExtraFilters();
+            fillTournamentNameSelects();
+            syncPoolModeUi();
             filterGames();
             renderStatsTables();
             renderRatingTables();
