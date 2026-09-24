@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=tournament-pool-1">
+    <link rel="stylesheet" href="css/site.css?v=tournament-pool-2">
 
 </head>
 <body>
@@ -1107,17 +1107,17 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/games-core.js?v=tournament-pool-1"></script>
+<script src="js/games-core.js?v=tournament-pool-2"></script>
     <script src="js/policy-terms.js?v=shared-policy-1"></script>
     <script src="js/nation-names.js?v=shared-nations-1"></script>
     <script src="js/site-core.js?v=seasons-live-awards-1"></script>
     <script src="js/ui-helpers.js?v=shared-ui-1"></script>
-    <script src="js/i18n.js?v=tournament-pool-1"></script>
-<script src="js/player-meta.js?v=short-tg-1"></script>
+    <script src="js/i18n.js?v=tournament-pool-2"></script>
+    <script src="js/player-meta.js?v=short-tg-1"></script>
 <script src="js/stats-charts.js?v=profile-perf-1"></script>
 <script src="js/gif-preview.js?v=1"></script>
-<script src="js/rating.js?v=tournament-pool-1"></script>
-<script src="js/achievements.js?v=tournament-pool-1"></script>
+<script src="js/rating.js?v=tournament-pool-2"></script>
+<script src="js/achievements.js?v=tournament-pool-2"></script>
 <script src="js/live-league.js?v=seasons-awards-1"></script>
 <script src="js/tech-policy-paths.js?v=ironleague-labels-1"></script>
 <script>
@@ -1275,6 +1275,14 @@
         if (game && String(game.tournamentName || '').trim()) return true;
         const flags = gameFlags(game).map((f) => f.toLowerCase());
         return flags.includes('tournament');
+    }
+
+    /** Winning nation: Games.json winner, else CC vote, else top finale score. */
+    function resolveWinnerNation(game) {
+        if (window.IronLeagueGamesCore && typeof IronLeagueGamesCore.resolveWinnerNation === 'function') {
+            return IronLeagueGamesCore.resolveWinnerNation(game);
+        }
+        return String((game && game.winner) || '').trim();
     }
 
     function rankedGamesOnly(games) {
@@ -2220,7 +2228,7 @@
                 const roster = Array.isArray(game.players) ? game.players : [];
                 const me = roster.find((p) => (p.name || '').trim() === name);
                 if (!me) continue;
-                const won = (me.nation || '') === (game.winner || '');
+                const won = (me.nation || '') === resolveWinnerNation(game);
                 const surv = (game.survivors || []).find((s) => (s.name || '').trim() === name);
                 const units = surv && Number.isFinite(Number(surv.units)) ? surv.units : '—';
                 const cities = surv && Number.isFinite(Number(surv.cities)) ? surv.cities : '—';
@@ -2445,7 +2453,7 @@
     }
 
     function renderSurvivorBlock(row, game, mode) {
-        const isWinner = row.nation === game.winner;
+        const isWinner = row.nation === resolveWinnerNation(game);
         const isBarbarian = !!(row.is_barbarian
             || row.nation === 'Варвары'
             || row.nation === 'Barbarians'
@@ -2628,8 +2636,9 @@
             game.endedOnTurn ? `${tt('modal.turn')} ${game.endedOnTurn}` : '',
         ].filter(Boolean).join(' · ');
 
+        const winnerNation = resolveWinnerNation(game);
         const roster = (Array.isArray(game.players) ? game.players : []).map((player) => {
-            const isWinner = player.nation === game.winner;
+            const isWinner = player.nation === winnerNation;
             return `<div class="player-item">
                 ${renderNationPortrait(player.nation, 'player-nation-mini')}
                 <span class="player-name">${displayPlayerName(player.name)}</span>
@@ -2647,8 +2656,8 @@
             <div class="winner-section">
                 <div class="winner-label">${tt('card.winner')}</div>
                 <div class="winner-nation">
-                    ${renderNationPortrait(game.winner, 'nation-icon-small')}
-                    <span>${displayNationName(game.winner) || '—'}</span>
+                    ${renderNationPortrait(winnerNation, 'nation-icon-small')}
+                    <span>${displayNationName(winnerNation) || '—'}</span>
                 </div>
             </div>
             ${renderGameFlags(game)}
@@ -2700,8 +2709,9 @@
             const card = document.createElement('div');
             card.className = 'game-card';
 
+            const winnerNation = resolveWinnerNation(game);
             const playersHtml = (Array.isArray(game.players) ? game.players : []).map(player => {
-                const isWinner = player.nation === game.winner;
+                const isWinner = player.nation === winnerNation;
                 const isHighlighted = highlightName
                     && String(player.name || '').trim() === highlightName;
 
@@ -2736,8 +2746,8 @@
                 <div class="winner-section">
                     <div class="winner-label">${tt('card.winner')}</div>
                     <div class="winner-nation">
-                        ${renderNationPortrait(game.winner, 'nation-icon-small')}
-                        <span>${displayNationName(game.winner)}</span>
+                        ${renderNationPortrait(winnerNation, 'nation-icon-small')}
+                        <span>${displayNationName(winnerNation)}</span>
                     </div>
                 </div>
                 <div class="card-tabs">
@@ -4108,9 +4118,10 @@
         }
 
         for (const game of games || []) {
-            if (isExcludedGame(game)) continue;
+            // Pool is already FFA-ranked or tournament-only — do not re-apply
+            // isExcludedGame (it treats tournaments as excluded from FFA).
             const roster = Array.isArray(game.players) ? game.players : [];
-            const winnerNation = game.winner || '';
+            const winnerNation = resolveWinnerNation(game);
             const placeOrder = (window.IronLeagueRating && IronLeagueRating.placementOrder)
                 ? IronLeagueRating.placementOrder(game)
                 : roster.map((p) => String(p.name || '').trim()).filter(Boolean);

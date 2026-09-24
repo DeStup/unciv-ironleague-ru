@@ -160,7 +160,7 @@
 
   /** Resolve winner username from Russian nation in game.winner. */
   function winnerPlayer(game) {
-    const nation = String(game.winner || '').trim();
+    const nation = resolveWinnerNation(game);
     if (!nation) return null;
     for (const s of game.survivors || []) {
       if (String(s.nation || '').trim() === nation) {
@@ -175,6 +175,13 @@
       }
     }
     return null;
+  }
+
+  function resolveWinnerNation(game) {
+    if (window.IronLeagueGamesCore && IronLeagueGamesCore.resolveWinnerNation) {
+      return IronLeagueGamesCore.resolveWinnerNation(game);
+    }
+    return String((game && game.winner) || '').trim();
   }
 
   function playerNames(game) {
@@ -329,7 +336,7 @@
         seen.add(nat);
         nationGames.set(nat, (nationGames.get(nat) || 0) + 1);
       }
-      const winnerNat = String(game.winner || '').trim();
+      const winnerNat = resolveWinnerNation(game);
       if (winnerNat) nationWins.set(winnerNat, (nationWins.get(winnerNat) || 0) + 1);
     }
     let minNationWins = Infinity;
@@ -462,7 +469,7 @@
           if (Number.isFinite(turn) && turn > 0) {
             s.winTurns.push({ turn, game: gNum });
           }
-          const winNation = String((row && row.nation) || game.winner || '').trim();
+          const winNation = String((row && row.nation) || resolveWinnerNation(game) || '').trim();
           if (winNation) {
             s.winsByNation.set(winNation, (s.winsByNation.get(winNation) || 0) + 1);
             s.winNations.add(winNation);
