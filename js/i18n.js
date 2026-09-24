@@ -983,6 +983,24 @@
       'records.item.duel_max_gold_finale.flavor': 'Казна дуэли',
       'records.item.duel_max_gold_finale.body':
         '{player} накопил больше всего золота в дуэли: {value} ({game}).',
+      'records.item.duel_capital_only_win.title': 'Одна столица',
+      'records.item.duel_capital_only_win.flavor': 'Хватит и этого',
+      'records.item.duel_capital_only_win.body':
+        '{player} чаще всех побеждал, имея только столицу: {value}.',
+      'records.item.duel_capital_only_win.bodyVacant':
+        'Пока никто не выиграл дуэль, держа только столицу.',
+      'records.item.duel_no_capital_win.title': 'Победа без столицы',
+      'records.item.duel_no_capital_win.flavor': 'Столица — это статус',
+      'records.item.duel_no_capital_win.body':
+        '{player} чаще всех побеждал, уже потеряв столицу: {value}.',
+      'records.item.duel_no_capital_win.bodyVacant':
+        'Пока никто не выиграл дуэль без своей столицы.',
+      'records.item.duel_tech_lead_loss.title': 'Наука без короны',
+      'records.item.duel_tech_lead_loss.flavor': 'Технологии не спасли',
+      'records.item.duel_tech_lead_loss.body':
+        '{player} проиграл дуэль с наибольшим преимуществом в технологиях: +{value} ({game}).',
+      'records.item.duel_tech_lead_loss.bodyVacant':
+        'Пока никто не проиграл дуэль, опережая победителя на 10+ технологий.',
       'tier.title': 'Тирлист наций',
       'tier.col.nation': 'Нация',
       'tier.col.avg': 'Среднее',
@@ -1786,6 +1804,24 @@
       'records.item.duel_max_gold_finale.flavor': 'Duel treasury',
       'records.item.duel_max_gold_finale.body':
         '{player} held the most gold in a duel: {value} ({game}).',
+      'records.item.duel_capital_only_win.title': 'Capital only',
+      'records.item.duel_capital_only_win.flavor': 'One city is enough',
+      'records.item.duel_capital_only_win.body':
+        '{player} has the most wins while owning only the capital: {value}.',
+      'records.item.duel_capital_only_win.bodyVacant':
+        'No one has won a duel while holding only their capital yet.',
+      'records.item.duel_no_capital_win.title': 'Win without a capital',
+      'records.item.duel_no_capital_win.flavor': 'Capital is just a status',
+      'records.item.duel_no_capital_win.body':
+        '{player} has the most wins after losing their capital: {value}.',
+      'records.item.duel_no_capital_win.bodyVacant':
+        'No one has won a duel without their capital yet.',
+      'records.item.duel_tech_lead_loss.title': 'Science without a crown',
+      'records.item.duel_tech_lead_loss.flavor': 'Techs did not save them',
+      'records.item.duel_tech_lead_loss.body':
+        '{player} lost a duel with the largest tech lead: +{value} ({game}).',
+      'records.item.duel_tech_lead_loss.bodyVacant':
+        'No one has lost a duel while leading the winner by 10+ techs yet.',
       'tier.title': 'Nation tier list',
       'tier.col.nation': 'Nation',
       'tier.col.avg': 'Average',
