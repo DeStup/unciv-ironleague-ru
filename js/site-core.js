@@ -22,6 +22,8 @@
     replaysPath: 'Replays/',
     // Spectator viewer on unciv.icanseeforever.com (not icanseeforever.com/unciv).
     webReplaysBase: 'https://unciv.icanseeforever.com/replays',
+    // Live seasons / awards / player cards (unciv-core via unciv-web nginx).
+    liveApiBase: 'https://unciv.icanseeforever.com/api/home',
   };
 
   /** Deep-link to unciv-web (`IronLeague-N` / `IronLeague-teamN` folder). */
