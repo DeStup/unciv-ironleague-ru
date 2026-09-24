@@ -947,18 +947,22 @@
       'records.item.duel_nemesis.flavor': 'Проклятый оппонент',
       'records.item.duel_nemesis.body':
         '{player} чаще всех проигрывал одному сопернику ({opponent}): {value}.',
-      'records.item.duel_mirror.title': 'Одно знамя',
-      'records.item.duel_mirror.flavor': 'Верность нации',
+      'records.item.duel_mirror.title': 'Национальный герой',
+      'records.item.duel_mirror.flavor': 'Одно знамя — много побед',
       'records.item.duel_mirror.body':
-        '{player} чаще всех побеждал одной нацией в дуэлях: {value}.',
+        '{player} чаще всех побеждал одной и той же нацией в дуэлях: {value}.',
       'records.item.duel_nation_hopper.title': 'Скиталец наций',
       'records.item.duel_nation_hopper.flavor': 'Каждый раз новая',
       'records.item.duel_nation_hopper.body':
         '{player} побеждал наибольшим числом разных наций в дуэлях: {value}.',
-      'records.item.duel_max_score_finale.title': 'Пик дуэли',
-      'records.item.duel_max_score_finale.flavor': 'Счётчик арены',
+      'records.item.duel_max_score_finale.title': 'Высота',
+      'records.item.duel_max_score_finale.flavor': 'Пик очков',
       'records.item.duel_max_score_finale.body':
-        '{player} набрал больше всего очков в дуэли: {value} ({game}).',
+        '{player} набрал больше всего очков на финале дуэли: {value} ({game}).',
+      'records.item.duel_max_strength_finale.title': 'Имя мне легион',
+      'records.item.duel_max_strength_finale.flavor': 'Сила на весах',
+      'records.item.duel_max_strength_finale.body':
+        '{player} показал наибольшую силу армии на финале дуэли: {value} ({game}).',
       'records.item.duel_max_units_finale.title': 'Тень легиона',
       'records.item.duel_max_units_finale.flavor': 'Армия на двоих',
       'records.item.duel_max_units_finale.body':
@@ -983,12 +987,12 @@
       'records.item.duel_max_gold_finale.flavor': 'Казна дуэли',
       'records.item.duel_max_gold_finale.body':
         '{player} накопил больше всего золота в дуэли: {value} ({game}).',
-      'records.item.duel_capital_only_win.title': 'Одна столица',
-      'records.item.duel_capital_only_win.flavor': 'Хватит и этого',
+      'records.item.duel_capital_only_win.title': 'Минимализм',
+      'records.item.duel_capital_only_win.flavor': 'Одного города хватит',
       'records.item.duel_capital_only_win.body':
-        '{player} чаще всех побеждал, имея только столицу: {value}.',
+        '{player} чаще всех побеждал, имея только один город: {value}.',
       'records.item.duel_capital_only_win.bodyVacant':
-        'Пока никто не выиграл дуэль, держа только столицу.',
+        'Пока никто не выиграл дуэль с одним городом.',
       'records.item.duel_no_capital_win.title': 'Победа без столицы',
       'records.item.duel_no_capital_win.flavor': 'Столица — это статус',
       'records.item.duel_no_capital_win.body':
@@ -1001,6 +1005,44 @@
         '{player} проиграл дуэль с наибольшим преимуществом в технологиях: +{value} ({game}).',
       'records.item.duel_tech_lead_loss.bodyVacant':
         'Пока никто не проиграл дуэль, опережая победителя на 10+ технологий.',
+      'records.item.duel_patriot.title': 'Патриот',
+      'records.item.duel_patriot.flavor': 'Своя кровь',
+      'records.item.duel_patriot.body':
+        '{player} чаще всех играл одной нацией в дуэлях: {value} матчей.',
+      'records.item.duel_fiasco.title': 'Фиаско',
+      'records.item.duel_fiasco.flavor': 'Рабы и поселы',
+      'records.item.duel_fiasco.body':
+        '{player} чаще всех терял рабочих/поселенцев пачками: до {value} за дуэль ({game}).',
+      'records.item.duel_fiasco.bodyVacant':
+        'Пока нет данных о потере 2+ рабочих/поселенцев за одну дуэль.',
+      'records.item.duel_empire.title': 'Империя',
+      'records.item.duel_empire.flavor': 'Все под короной',
+      'records.item.duel_empire.body':
+        '{player} чаще всех захватывал все столицы соперников (или все ГГ): {value}.',
+      'records.item.duel_empire.bodyVacant':
+        'Пока никто не захватил все столицы соперников / все города-государства в дуэли.',
+      'records.item.duel_comeback.title': 'Комбек',
+      'records.item.duel_comeback.flavor': 'С колен на трон',
+      'records.item.duel_comeback.body':
+        '{player} чаще всех побеждал, первым потеряв столицу: {value}.',
+      'records.item.duel_comeback.bodyVacant':
+        'Пока никто не выиграл дуэль после первой потери столицы.',
+      'records.item.duel_tradition_first.title': 'Традиционные ценности',
+      'records.item.duel_tradition_first.flavor': 'Классика жанра',
+      'records.item.duel_tradition_first.body':
+        '{player} чаще всех открывал первым институтом Традицию: {value}.',
+      'records.item.duel_liberty_first.title': 'Адепт воли',
+      'records.item.duel_liberty_first.flavor': 'Воля к расширению',
+      'records.item.duel_liberty_first.body':
+        '{player} чаще всех открывал первым институтом Волю: {value}.',
+      'records.item.duel_honor_first.title': 'Язык дубины и камня',
+      'records.item.duel_honor_first.flavor': 'Честь превыше всего',
+      'records.item.duel_honor_first.body':
+        '{player} чаще всех открывал первым институтом Честь: {value}.',
+      'records.item.duel_piety_first.title': 'Путь бога',
+      'records.item.duel_piety_first.flavor': 'Amen.',
+      'records.item.duel_piety_first.body':
+        '{player} чаще всех открывал первым институтом Набожность: {value}.',
       'tier.title': 'Тирлист наций',
       'tier.col.nation': 'Нация',
       'tier.col.avg': 'Среднее',
@@ -1768,18 +1810,22 @@
       'records.item.duel_nemesis.flavor': 'Cursed opponent',
       'records.item.duel_nemesis.body':
         '{player} lost most often to one opponent ({opponent}): {value}.',
-      'records.item.duel_mirror.title': 'One banner',
-      'records.item.duel_mirror.flavor': 'Loyal to a civ',
+      'records.item.duel_mirror.title': 'National hero',
+      'records.item.duel_mirror.flavor': 'One banner, many wins',
       'records.item.duel_mirror.body':
-        '{player} has the most duel wins with one nation: {value}.',
+        '{player} has the most duel wins with the same nation: {value}.',
       'records.item.duel_nation_hopper.title': 'Nation hopper',
       'records.item.duel_nation_hopper.flavor': 'A new civ every time',
       'records.item.duel_nation_hopper.body':
         '{player} won with the most different nations in duels: {value}.',
-      'records.item.duel_max_score_finale.title': 'Duel peak',
-      'records.item.duel_max_score_finale.flavor': 'Arena scoreboard',
+      'records.item.duel_max_score_finale.title': 'Altitude',
+      'records.item.duel_max_score_finale.flavor': 'Score peak',
       'records.item.duel_max_score_finale.body':
-        '{player} posted the highest duel score: {value} ({game}).',
+        '{player} posted the highest duel finale score: {value} ({game}).',
+      'records.item.duel_max_strength_finale.title': 'My name is Legion',
+      'records.item.duel_max_strength_finale.flavor': 'Power on the scales',
+      'records.item.duel_max_strength_finale.body':
+        '{player} posted the highest army strength at duel end: {value} ({game}).',
       'records.item.duel_max_units_finale.title': 'Shadow legion',
       'records.item.duel_max_units_finale.flavor': 'Army for two',
       'records.item.duel_max_units_finale.body':
@@ -1804,12 +1850,12 @@
       'records.item.duel_max_gold_finale.flavor': 'Duel treasury',
       'records.item.duel_max_gold_finale.body':
         '{player} held the most gold in a duel: {value} ({game}).',
-      'records.item.duel_capital_only_win.title': 'Capital only',
+      'records.item.duel_capital_only_win.title': 'Minimalism',
       'records.item.duel_capital_only_win.flavor': 'One city is enough',
       'records.item.duel_capital_only_win.body':
-        '{player} has the most wins while owning only the capital: {value}.',
+        '{player} has the most wins with only one city: {value}.',
       'records.item.duel_capital_only_win.bodyVacant':
-        'No one has won a duel while holding only their capital yet.',
+        'No one has won a duel with only one city yet.',
       'records.item.duel_no_capital_win.title': 'Win without a capital',
       'records.item.duel_no_capital_win.flavor': 'Capital is just a status',
       'records.item.duel_no_capital_win.body':
@@ -1822,6 +1868,44 @@
         '{player} lost a duel with the largest tech lead: +{value} ({game}).',
       'records.item.duel_tech_lead_loss.bodyVacant':
         'No one has lost a duel while leading the winner by 10+ techs yet.',
+      'records.item.duel_patriot.title': 'Patriot',
+      'records.item.duel_patriot.flavor': 'Own blood',
+      'records.item.duel_patriot.body':
+        '{player} played the most duel matches with one nation: {value}.',
+      'records.item.duel_fiasco.title': 'Fiasco',
+      'records.item.duel_fiasco.flavor': 'Workers and settlers',
+      'records.item.duel_fiasco.body':
+        '{player} most often lost workers/settlers in bulk: up to {value} in a duel ({game}).',
+      'records.item.duel_fiasco.bodyVacant':
+        'No data yet for losing 2+ workers/settlers in a single duel.',
+      'records.item.duel_empire.title': 'Empire',
+      'records.item.duel_empire.flavor': 'All under the crown',
+      'records.item.duel_empire.body':
+        '{player} most often captured all rival capitals (or all city-states): {value}.',
+      'records.item.duel_empire.bodyVacant':
+        'No one has captured all rival capitals / all city-states in a duel yet.',
+      'records.item.duel_comeback.title': 'Comeback',
+      'records.item.duel_comeback.flavor': 'From the knees to the throne',
+      'records.item.duel_comeback.body':
+        '{player} most often won after being first to lose their capital: {value}.',
+      'records.item.duel_comeback.bodyVacant':
+        'No one has won a duel after being first to lose their capital yet.',
+      'records.item.duel_tradition_first.title': 'Traditional values',
+      'records.item.duel_tradition_first.flavor': 'Classic opener',
+      'records.item.duel_tradition_first.body':
+        '{player} most often opened Tradition first: {value}.',
+      'records.item.duel_liberty_first.title': 'Adept of Liberty',
+      'records.item.duel_liberty_first.flavor': 'Will to expand',
+      'records.item.duel_liberty_first.body':
+        '{player} most often opened Liberty first: {value}.',
+      'records.item.duel_honor_first.title': 'Language of club and stone',
+      'records.item.duel_honor_first.flavor': 'Honor above all',
+      'records.item.duel_honor_first.body':
+        '{player} most often opened Honor first: {value}.',
+      'records.item.duel_piety_first.title': 'Path of God',
+      'records.item.duel_piety_first.flavor': 'Amen.',
+      'records.item.duel_piety_first.body':
+        '{player} most often opened Piety first: {value}.',
       'tier.title': 'Nation tier list',
       'tier.col.nation': 'Nation',
       'tier.col.avg': 'Average',

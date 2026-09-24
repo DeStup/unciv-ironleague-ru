@@ -239,6 +239,8 @@
       maxScoreGame: null,
       maxUnits: 0,
       maxUnitsGame: null,
+      maxStrength: 0,
+      maxStrengthGame: null,
       maxTechs: 0,
       maxTechsGame: null,
       maxPopulation: 0,
@@ -288,7 +290,55 @@
       techLeadLosses: 0,
       maxTechLeadLoss: 0,
       maxTechLeadLossGame: null,
+      nationPlayCounts: new Map(),
+      comebackWins: 0,
+      comebackWinGame: null,
+      empireWins: 0,
+      empireWinGame: null,
+      fiascoGames: 0,
+      fiascoGame: null,
+      maxFiascoLosses: 0,
     };
+  }
+
+  /** Worker+Settler losses in one game (optional finale fields). */
+  function civilianFiascoCount(row) {
+    if (!row || typeof row !== 'object') return null;
+    const direct = Number(
+      row.worker_settler_deaths != null ? row.worker_settler_deaths
+        : row.civilian_deaths != null ? row.civilian_deaths
+          : NaN,
+    );
+    if (Number.isFinite(direct) && direct >= 0) return direct;
+    const ud = row.unit_deaths;
+    if (ud && typeof ud === 'object') {
+      const keys = ['Worker', 'Settler', 'worker', 'settler', 'Рабочий', 'Поселенец'];
+      let sum = 0;
+      let any = false;
+      for (const k of keys) {
+        if (ud[k] == null) continue;
+        const n = Number(ud[k]);
+        if (!Number.isFinite(n)) continue;
+        any = true;
+        sum += n;
+      }
+      if (any) return sum;
+    }
+    return null;
+  }
+
+  /** City-states conquered this game (optional fields; ГГ in RU slang). */
+  function cityStatesCaptured(row) {
+    if (!row || typeof row !== 'object') return null;
+    if (Array.isArray(row.conquered_city_states)) {
+      return row.conquered_city_states.filter(Boolean).length;
+    }
+    const n = Number(
+      row.city_states_captured != null ? row.city_states_captured
+        : row.city_states_conquered != null ? row.city_states_conquered
+          : NaN,
+    );
+    return Number.isFinite(n) && n >= 0 ? n : null;
   }
 
   function gpTypeCount(row, type) {
@@ -380,12 +430,38 @@
         const won = name === wp;
         let piety = false;
 
+        // Nation pick from roster (patriot / hopper), even without finale row.
+        let pickNation = '';
+        for (const p of game.players || []) {
+          if (String(p.name || '').trim() === name) {
+            pickNation = String(p.nation || '').trim();
+            break;
+          }
+        }
+        if (!pickNation && row) pickNation = String(row.nation || '').trim();
+        if (pickNation) {
+          s.nations.add(pickNation);
+          // Avoid double-count when row also adds below — track once here.
+          if (!row) {
+            s.nationPlayCounts.set(pickNation, (s.nationPlayCounts.get(pickNation) || 0) + 1);
+          }
+        }
+
         if (won) {
           s.wins += 1;
           s.winRun += 1;
           s.winStreak = Math.max(s.winStreak, s.winRun);
         } else {
           s.winRun = 0;
+        }
+
+        const fiascoN = civilianFiascoCount(row);
+        if (fiascoN != null && fiascoN >= 2) {
+          s.fiascoGames += 1;
+          if (fiascoN > s.maxFiascoLosses) {
+            s.maxFiascoLosses = fiascoN;
+            s.fiascoGame = gNum;
+          }
         }
 
         if (row) {
@@ -431,11 +507,15 @@
           if (Number.isFinite(Number(row.wars_received))) {
             s.warsReceived += Number(row.wars_received);
           }
-          const nat = String(row.nation || '').trim();
-          if (nat) s.nations.add(nat);
+          const nat = String(row.nation || '').trim() || pickNation;
+          if (nat) {
+            s.nations.add(nat);
+            s.nationPlayCounts.set(nat, (s.nationPlayCounts.get(nat) || 0) + 1);
+          }
           bumpPeak(s, 'maxCities', 'maxCitiesGame', row.cities, gNum);
           bumpPeak(s, 'maxScore', 'maxScoreGame', row.score, gNum);
           bumpPeak(s, 'maxUnits', 'maxUnitsGame', row.units, gNum);
+          bumpPeak(s, 'maxStrength', 'maxStrengthGame', row.strength, gNum);
           bumpPeak(s, 'maxTechs', 'maxTechsGame', row.techs, gNum);
           bumpPeak(s, 'maxPopulation', 'maxPopulationGame', row.population, gNum);
           bumpPeak(s, 'maxCapitalPop', 'maxCapitalPopGame', row.capital_population, gNum);
@@ -503,6 +583,59 @@
           if (row && row.has_capital === false) {
             s.noCapitalWins += 1;
             s.noCapitalWinGame = gNum;
+          }
+          // Comeback: won after being first to lose the capital (best city-loss proxy).
+          if (row && Number.isFinite(Number(row.capital_lost_turn))) {
+            const myLost = Number(row.capital_lost_turn);
+            let wasFirst = myLost > 0;
+            for (const other of game.survivors || []) {
+              if (String(other.name || '').trim() === name) continue;
+              const ot = Number(other.capital_lost_turn);
+              if (Number.isFinite(ot) && ot > 0 && ot < myLost) {
+                wasFirst = false;
+                break;
+              }
+            }
+            if (wasFirst) {
+              s.comebackWins += 1;
+              s.comebackWinGame = gNum;
+            }
+          }
+          // Empire: capture all city-states (ГГ) when tracked, else all rival capitals.
+          const csCap = cityStatesCaptured(row);
+          if (csCap != null && csCap > 0) {
+            // Prefer explicit CS count when present (any positive CS wipe counts as progress;
+            // "all" is recorded when field city_states_total matches, else any wipe).
+            const csTotal = Number(row.city_states_total);
+            if (!Number.isFinite(csTotal) || csCap >= csTotal) {
+              s.empireWins += 1;
+              s.empireWinGame = gNum;
+            }
+          } else if (row) {
+            const opponents = playerNames(game).filter((n) => n !== name);
+            if (opponents.length) {
+              const caps = Array.isArray(row.conquered_capitals) ? row.conquered_capitals : [];
+              const captured = new Set(
+                caps.map((c) => String((c && c.nation) || '').trim()).filter(Boolean),
+              );
+              const allTaken = opponents.every((opp) => {
+                const oRow = survivorByName(game, opp);
+                if (oRow && oRow.has_capital === false) return true;
+                let oppNation = '';
+                for (const p of game.players || []) {
+                  if (String(p.name || '').trim() === opp) {
+                    oppNation = String(p.nation || '').trim();
+                    break;
+                  }
+                }
+                if (!oppNation && oRow) oppNation = String(oRow.nation || '').trim();
+                return oppNation && captured.has(oppNation);
+              });
+              if (allTaken) {
+                s.empireWins += 1;
+                s.empireWinGame = gNum;
+              }
+            }
           }
           if (isFinalMatch(game)) s.tournamentTitles += 1;
         } else if (row && wp) {
@@ -1340,6 +1473,15 @@
       (h) => ({ gameNumber: h.stat.maxScoreGame }),
     );
     pushTop(
+      'duel_max_strength_finale',
+      withGame(
+        pickTop(stats, (s) => s.maxStrength, (s) => s.maxStrength > 0),
+        (h) => h.stat.maxStrengthGame,
+      ),
+      (h) => String(h.stat.maxStrength),
+      (h) => ({ gameNumber: h.stat.maxStrengthGame }),
+    );
+    pushTop(
       'duel_max_units_finale',
       withGame(pickTop(stats, (s) => s.maxUnits, (s) => s.maxUnits > 0), (h) => h.stat.maxUnitsGame),
       (h) => String(h.stat.maxUnits),
@@ -1557,6 +1699,82 @@
         gameNumber: h.stat.maxTechLeadLossGame,
         games: h.stat.techLeadLosses,
       }),
+    );
+
+    pushTop(
+      'duel_patriot',
+      pickTop(
+        stats,
+        (s) => Math.max(0, ...[...s.nationPlayCounts.values()], 0),
+        (s) => Math.max(0, ...[...s.nationPlayCounts.values()], 0) >= 2,
+      ),
+      (h) => String(Math.max(0, ...h.stat.nationPlayCounts.values())),
+      (h) => {
+        let bestNat = '';
+        let best = 0;
+        for (const [nat, n] of h.stat.nationPlayCounts) {
+          if (n > best) {
+            best = n;
+            bestNat = nat;
+          }
+        }
+        return { nation: bestNat, games: h.stat.played };
+      },
+    );
+
+    pushOrVacant(
+      'duel_fiasco',
+      withGame(
+        pickTop(stats, (s) => s.fiascoGames, (s) => s.fiascoGames > 0),
+        (h) => h.stat.fiascoGame,
+      ),
+      (h) => String(h.stat.maxFiascoLosses || h.stat.fiascoGames),
+      (h) => ({ gameNumber: h.stat.fiascoGame, games: h.stat.fiascoGames }),
+    );
+
+    pushOrVacant(
+      'duel_empire',
+      withGame(
+        pickTop(stats, (s) => s.empireWins, (s) => s.empireWins > 0),
+        (h) => h.stat.empireWinGame,
+      ),
+      (h) => String(h.stat.empireWins),
+      (h) => ({ gameNumber: h.stat.empireWinGame }),
+    );
+
+    pushOrVacant(
+      'duel_comeback',
+      withGame(
+        pickTop(stats, (s) => s.comebackWins, (s) => s.comebackWins > 0),
+        (h) => h.stat.comebackWinGame,
+      ),
+      (h) => String(h.stat.comebackWins),
+      (h) => ({ gameNumber: h.stat.comebackWinGame }),
+    );
+
+    pushTop(
+      'duel_tradition_first',
+      pickTop(stats, (s) => s.traditionCount, (s) => s.traditionCount >= 1),
+      (h) => String(h.stat.traditionCount),
+      (h) => ({ games: h.stat.played }),
+    );
+    pushTop(
+      'duel_liberty_first',
+      pickTop(stats, (s) => s.libertyCount, (s) => s.libertyCount >= 1),
+      (h) => String(h.stat.libertyCount),
+      (h) => ({ games: h.stat.played }),
+    );
+    pushTop(
+      'duel_honor_first',
+      pickTop(stats, (s) => s.honorCount, (s) => s.honorCount >= 1),
+      (h) => String(h.stat.honorCount),
+      (h) => ({ games: h.stat.played }),
+    );
+    pushTop(
+      'duel_piety_first',
+      pickTop(stats, (s) => s.pietyCount, (s) => s.pietyCount >= 1),
+      (h) => String(h.stat.pietyCount),
+      (h) => ({ games: h.stat.played }),
     );
 
     duelCacheKey = key;
