@@ -15,23 +15,40 @@
   /** Default lobby elimination penalty when the UI toggle is on. */
   const LOBBY_ELIM_PENALTY = 5;
 
+  /**
+   * Shared Games.json helpers (IronLeagueGamesCore): flags, exclusion rules,
+   * parseGameNum, eligibleGames. Local fallback keeps rating.js usable even if
+   * the shared module failed to load.
+   */
   function gameFlags(game) {
+    if (window.IronLeagueGamesCore && IronLeagueGamesCore.gameFlags) {
+      return IronLeagueGamesCore.gameFlags(game);
+    }
     const flags = Array.isArray(game.flags) ? game.flags.map(String) : [];
     return flags;
   }
 
   function isExcludedGame(game) {
+    if (window.IronLeagueGamesCore && IronLeagueGamesCore.isExcludedGame) {
+      return IronLeagueGamesCore.isExcludedGame(game);
+    }
     if (game && game.excludeFromStats) return true;
     const flags = gameFlags(game).map((f) => f.toLowerCase());
     return flags.includes('teams') || flags.includes('scrap') || flags.includes('team');
   }
 
   function parseGameNum(game) {
+    if (window.IronLeagueGamesCore && IronLeagueGamesCore.parseGameNum) {
+      return IronLeagueGamesCore.parseGameNum(game);
+    }
     const m = String(game.number || '').match(/(\d+)/);
     return m ? parseInt(m[1], 10) : (game.id || 0);
   }
 
   function eligibleGames(games) {
+    if (window.IronLeagueGamesCore && IronLeagueGamesCore.eligibleGames) {
+      return IronLeagueGamesCore.eligibleGames(games);
+    }
     return (games || [])
       .filter((g) => !isExcludedGame(g))
       .filter((g) => Array.isArray(g.players) && g.players.length > 0)

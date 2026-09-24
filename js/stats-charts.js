@@ -15,38 +15,43 @@
   /**
    * Stable colors per policy tree / ideology (Civ5-ish).
    * Matched by normalized RU or EN name so pie slices keep color when sorted by size.
+   *
+   * Keys are built from the shared IronLeaguePolicyTerms map (js/policy-terms.js)
+   * so renaming a branch in the mod edits one file, not two. The static fallback
+   * keeps colors correct even if the shared module failed to load.
    */
-  const POLICY_TREE_COLORS = {
-    tradition: '#9b5de5',
-    традиция: '#9b5de5',
-    liberty: '#3d8a4a',
-    вольность: '#3d8a4a',
-    воля: '#3d8a4a',
-    honor: '#c0392b',
-    honour: '#c0392b',
-    честь: '#c0392b',
-    piety: '#f1c40f',
-    благочестие: '#f1c40f',
-    набожность: '#f1c40f',
-    patronage: '#3498db',
-    заступничество: '#3498db',
-    меценатство: '#3498db',
-    aesthetics: '#e91e63',
-    эстетика: '#e91e63',
-    commerce: '#1abc9c',
-    коммерция: '#1abc9c',
-    exploration: '#d35400',
-    исследование: '#d35400',
-    rationalism: '#5dade2',
-    рационализм: '#5dade2',
-    freedom: '#2980b9',
-    свобода: '#2980b9',
-    order: '#e74c3c',
-    порядок: '#e74c3c',
-    autocracy: '#7f8c8d',
-    самодержавие: '#7f8c8d',
-    автократия: '#7f8c8d',
-  };
+  const POLICY_TREE_COLORS = (function () {
+    const map = {};
+    const fill = (key, color) => {
+      map[key.toLowerCase().replace(/\s+/g, ' ')] = color;
+    };
+    const pairs = [
+      ['Tradition', '#9b5de5'],
+      ['Liberty', '#3d8a4a'],
+      ['Honor', '#c0392b'],
+      ['Piety', '#f1c40f'],
+      ['Patronage', '#3498db'],
+      ['Aesthetics', '#e91e63'],
+      ['Commerce', '#1abc9c'],
+      ['Exploration', '#d35400'],
+      ['Rationalism', '#5dade2'],
+      ['Freedom', '#2980b9'],
+      ['Order', '#e74c3c'],
+      ['Autocracy', '#7f8c8d'],
+    ];
+    for (const [en, color] of pairs) {
+      fill(en, color);
+      const terms = window.IronLeaguePolicyTerms;
+      if (terms && terms.MAP) {
+        for (const [ru, branchEn] of Object.entries(terms.MAP)) {
+          if (branchEn === en) fill(ru, color);
+        }
+      }
+    }
+    // honour spelling variant
+    fill('honour', '#c0392b');
+    return map;
+  })();
 
   function normalizeColorKey(raw) {
     return String(raw || '')

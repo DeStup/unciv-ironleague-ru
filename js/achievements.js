@@ -27,22 +27,39 @@
     return wonders.some((w) => ZEUS_WONDER_NAMES.has(String(w || '').trim().toLowerCase()));
   }
 
+  /**
+   * Shared Games.json helpers (IronLeagueGamesCore): flags, exclusion rules,
+   * parseGameNum, eligibleGames. Local fallback keeps achievements usable even
+   * if the shared module failed to load.
+   */
   function gameFlags(game) {
+    if (window.IronLeagueGamesCore && IronLeagueGamesCore.gameFlags) {
+      return IronLeagueGamesCore.gameFlags(game);
+    }
     return Array.isArray(game.flags) ? game.flags.map(String) : [];
   }
 
   function isExcludedGame(game) {
+    if (window.IronLeagueGamesCore && IronLeagueGamesCore.isExcludedGame) {
+      return IronLeagueGamesCore.isExcludedGame(game);
+    }
     if (game && game.excludeFromStats) return true;
     const flags = gameFlags(game).map((f) => f.toLowerCase());
     return flags.includes('teams') || flags.includes('scrap') || flags.includes('team');
   }
 
   function parseGameNum(game) {
+    if (window.IronLeagueGamesCore && IronLeagueGamesCore.parseGameNum) {
+      return IronLeagueGamesCore.parseGameNum(game);
+    }
     const m = String(game.number || '').match(/(\d+)/);
     return m ? parseInt(m[1], 10) : Number(game.id) || 0;
   }
 
   function eligibleGames(games) {
+    if (window.IronLeagueGamesCore && IronLeagueGamesCore.eligibleGames) {
+      return IronLeagueGamesCore.eligibleGames(games);
+    }
     return (games || [])
       .filter((g) => !isExcludedGame(g))
       .filter((g) => Array.isArray(g.players) && g.players.length > 0)
