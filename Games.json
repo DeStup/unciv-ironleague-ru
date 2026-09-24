@@ -16393,6 +16393,843 @@
           "Инки": 55
         }
       }
+    },
+    {
+      "id": 32,
+      "version": "4.21.19 (Build 1260)",
+      "number": "ILD0-B21-baha-vs-08DD",
+      "players": [
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Шошоны"
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Монголия"
+        }
+      ],
+      "winner": "",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "69",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels 0",
+      "note": "Турнирная дуэль (IronLeague Duels 0).",
+      "matchId": "W2M1",
+      "matchCode": "B21",
+      "survivors": [
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Шошоны",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "The Great Library",
+            "Great Wall"
+          ],
+          "wonders_built": [
+            "The Great Library",
+            "Great Wall"
+          ],
+          "techs": 20,
+          "policies": 8,
+          "policy_branches": [
+            "Воля",
+            "Набожность"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Средневековье",
+          "score": 465,
+          "units": 18,
+          "strength": 1060,
+          "science": 50,
+          "cities": 6,
+          "population": 41,
+          "religion": "Buddhism",
+          "religion_state": "Religion",
+          "pantheon": "One with Nature",
+          "founder_beliefs": [
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 82,
+          "gold": 27,
+          "culture": 27,
+          "gold_income": -46,
+          "capital_population": 10
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Монголия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army"
+          ],
+          "wonders_built": [
+            "Terracotta Army"
+          ],
+          "techs": 19,
+          "policies": 7,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 397,
+          "units": 10,
+          "strength": 486,
+          "science": 42,
+          "cities": 5,
+          "population": 39,
+          "religion": "Tengriism",
+          "religion_state": "Усилена",
+          "pantheon": "Spirit Animals",
+          "founder_beliefs": [
+            "Kotel",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Religious Community",
+            "Guruship"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 114,
+          "gold": 28,
+          "culture": 15,
+          "gold_income": -23,
+          "capital_population": 10
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Шошоны",
+          "start": 69,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 33,
+      "version": "4.21.19 (Build 1260)",
+      "number": "ILD0-Final-3-baha-vs-08DD",
+      "players": [
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Тимуриды"
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Тибет"
+        }
+      ],
+      "winner": "",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "6",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels 0",
+      "note": "Турнирная дуэль (IronLeague Duels 0).",
+      "matchId": "GF",
+      "matchCode": "Final",
+      "seriesGame": 3,
+      "survivors": [
+        {
+          "name": "O8DD_ff",
+          "nation": "Тибет",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 2,
+          "policies": 0,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Древность",
+          "score": 37,
+          "units": 2,
+          "strength": 44,
+          "science": 3,
+          "cities": 1,
+          "population": 2,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 0,
+          "production": 6,
+          "gold": 55,
+          "culture": 1,
+          "gold_income": 11,
+          "capital_population": 2
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Тимуриды",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 2,
+          "policies": 0,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Древность",
+          "score": 35,
+          "units": 4,
+          "strength": 74,
+          "science": 4,
+          "cities": 1,
+          "population": 2,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 0,
+          "production": 6,
+          "gold": 93,
+          "culture": 1,
+          "gold_income": 18,
+          "capital_population": 2
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Тимуриды",
+          "start": 6,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 34,
+      "version": "4.21.19 (Build 1260)",
+      "number": "ILD0-N11-Repunzel2882-vs-lalkakoalka",
+      "players": [
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Тимуриды"
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Шумеры"
+        }
+      ],
+      "winner": "",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "78",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels 0",
+      "note": "Турнирная дуэль (IronLeague Duels 0).",
+      "matchId": "L1M1",
+      "matchCode": "N11",
+      "survivors": [
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Тимуриды",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army"
+          ],
+          "wonders_built": [
+            "Terracotta Army"
+          ],
+          "techs": 20,
+          "policies": 9,
+          "policy_branches": [
+            "Воля",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 464,
+          "units": 11,
+          "strength": 613,
+          "science": 38,
+          "cities": 7,
+          "population": 40,
+          "religion": "Tengriism",
+          "religion_state": "Усилена",
+          "pantheon": "God of the Open Sky",
+          "founder_beliefs": [
+            "Kotel",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Devout Performers",
+            "Religious Community"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 114,
+          "gold": 36,
+          "culture": 30,
+          "gold_income": 6,
+          "capital_population": 7
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Шумеры",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 19,
+          "policies": 11,
+          "policy_branches": [
+            "Воля",
+            "Набожность"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 324,
+          "units": 7,
+          "strength": 561,
+          "science": 32,
+          "cities": 4,
+          "population": 27,
+          "religion": "Шумерский штурвал",
+          "religion_state": "Усилена",
+          "pantheon": "Ancestor Worship",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Holy Warriors",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 70,
+          "gold": 184,
+          "culture": 43,
+          "gold_income": 6,
+          "capital_population": 6
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Тимуриды",
+          "start": 78,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 35,
+      "version": "4.21.19 (Build 1260)",
+      "number": "ILD0-N21-Repunzel2882-vs-08DD",
+      "players": [
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Тимуриды"
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Пруссия"
+        }
+      ],
+      "winner": "",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "81",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels 0",
+      "note": "Турнирная дуэль (IronLeague Duels 0).",
+      "matchId": "L2M1",
+      "matchCode": "N21",
+      "survivors": [
+        {
+          "name": "O8DD_ff",
+          "nation": "Пруссия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army",
+            "The Oracle",
+            "The Great Library",
+            "Colossus",
+            "Temple of Artemis",
+            "The Pyramids"
+          ],
+          "wonders_built": [
+            "Terracotta Army",
+            "The Oracle",
+            "The Great Library",
+            "Colossus",
+            "Temple of Artemis"
+          ],
+          "techs": 22,
+          "policies": 11,
+          "policy_branches": [
+            "Честь",
+            "Набожность"
+          ],
+          "first_policy": "Честь",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Средневековье",
+          "score": 555,
+          "units": 24,
+          "strength": 2348,
+          "science": 56,
+          "cities": 5,
+          "population": 40,
+          "religion": "Christianity",
+          "religion_state": "Усилена",
+          "pantheon": "Goddess of the Fields",
+          "founder_beliefs": [
+            "Messiah",
+            "Unity of the Prophets"
+          ],
+          "follower_beliefs": [
+            "City of God",
+            "Religious Community",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 215,
+          "gold": 959,
+          "culture": 40,
+          "gold_income": -28,
+          "capital_population": 15
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Тимуриды",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 20,
+          "policies": 9,
+          "policy_branches": [
+            "Воля",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 356,
+          "units": 7,
+          "strength": 171,
+          "science": 44,
+          "cities": 5,
+          "population": 32,
+          "religion": "Tengriism",
+          "religion_state": "Усилена",
+          "pantheon": "Ancestor Worship",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Devout Performers",
+            "Synagogues"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 85,
+          "gold": 34,
+          "culture": 34,
+          "gold_income": 2,
+          "capital_population": 5
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Пруссия",
+          "start": 81,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 36,
+      "version": "4.21.19 (Build 1260)",
+      "number": "ILD0-O8DDff-vs-AlexUnderHill",
+      "players": [
+        {
+          "name": "AlexUnderHill",
+          "nation": "Аккад"
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Пруссия"
+        }
+      ],
+      "winner": "",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "72",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels 0",
+      "note": "Турнирная дуэль (IronLeague Duels 0).",
+      "matchId": "W1M2",
+      "matchCode": "B12",
+      "survivors": [
+        {
+          "name": "O8DD_ff",
+          "nation": "Пруссия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Mausoleum of Halicarnassus",
+            "Terracotta Army",
+            "The Oracle",
+            "The Great Library",
+            "Colossus"
+          ],
+          "wonders_built": [
+            "Mausoleum of Halicarnassus",
+            "Terracotta Army",
+            "The Oracle",
+            "The Great Library",
+            "Colossus"
+          ],
+          "techs": 20,
+          "policies": 9,
+          "policy_branches": [
+            "Воля",
+            "Набожность"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Средневековье",
+          "score": 503,
+          "units": 16,
+          "strength": 930,
+          "science": 38,
+          "cities": 5,
+          "population": 39,
+          "religion": "Christianity",
+          "religion_state": "Усилена",
+          "pantheon": "Goddess of the Fields",
+          "founder_beliefs": [
+            "Kotel",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Religious Community",
+            "Guruship"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 177,
+          "gold": 445,
+          "culture": 20,
+          "gold_income": 25,
+          "capital_population": 9,
+          "max_wonders_built_one_turn": 2,
+          "max_wonders_built_one_turn_at": 71
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Аккад",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Statue of Zeus"
+          ],
+          "wonders_built": [
+            "Statue of Zeus"
+          ],
+          "techs": 17,
+          "policies": 7,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 281,
+          "units": 14,
+          "strength": 856,
+          "science": 28,
+          "cities": 4,
+          "population": 20,
+          "religion": "Аккадский штурвал",
+          "religion_state": "Religion",
+          "pantheon": "Goddess of Festivals",
+          "founder_beliefs": [
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 63,
+          "gold": 129,
+          "culture": 14,
+          "gold_income": 6,
+          "capital_population": 8
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Пруссия",
+          "start": 72,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 37,
+      "version": "4.21.19 (Build 1260)",
+      "number": "ILD0-REPUNZEL2882-vs-Bahahanchiklkm",
+      "players": [
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Россия"
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Карфаген"
+        }
+      ],
+      "winner": "",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "31",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels 0",
+      "note": "Турнирная дуэль (IronLeague Duels 0).",
+      "matchId": "W1M1",
+      "matchCode": "B11",
+      "survivors": [
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Россия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 9,
+          "policies": 4,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Древность",
+          "score": 128,
+          "units": 5,
+          "strength": 104,
+          "science": 9,
+          "cities": 3,
+          "population": 6,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "Mystic Rituals",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 26,
+          "gold": 161,
+          "culture": 8,
+          "gold_income": -1,
+          "capital_population": 3
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Карфаген",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 9,
+          "policies": 3,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Древность",
+          "score": 123,
+          "units": 3,
+          "strength": 29,
+          "science": 9,
+          "cities": 3,
+          "population": 6,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 25,
+          "gold": 85,
+          "culture": 4,
+          "gold_income": 4,
+          "capital_population": 4
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Россия",
+          "start": 31,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
     }
   ]
 }
