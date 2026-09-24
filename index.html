@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=home-web-replays-1">
+    <link rel="stylesheet" href="css/site.css?v=seasons-live-awards-1">
 
 </head>
 <body>
@@ -36,6 +36,7 @@
         <button type="button" class="site-nav-btn" data-view="stats" data-i18n="nav.stats">Статистика</button>
         <button type="button" class="site-nav-btn" data-view="paths" data-i18n="nav.paths">Техи и институты</button>
         <button type="button" class="site-nav-btn" data-view="rating" data-i18n="nav.rating">Рейтинг</button>
+        <button type="button" class="site-nav-btn" data-view="seasons" data-i18n="nav.seasons">Сезоны</button>
         <button type="button" class="site-nav-btn" data-view="tierlist" data-i18n="nav.tierlist">Тирлист</button>
         <button type="button" class="site-nav-btn" data-view="records" data-i18n="nav.records">Рекорды</button>
         <button type="button" class="site-nav-btn" data-view="faq" data-i18n="nav.faq">FAQ</button>
@@ -78,6 +79,10 @@
                 <button type="button" class="home-card" data-go-view="rating">
                     <span class="home-card-title" data-i18n="nav.rating">Рейтинг</span>
                     <span class="home-card-text" data-i18n="home.card.rating">Elo и очки лобби (шкала от 1000 или от нуля).</span>
+                </button>
+                <button type="button" class="home-card" data-go-view="seasons">
+                    <span class="home-card-title" data-i18n="nav.seasons">Сезоны</span>
+                    <span class="home-card-text" data-i18n="home.card.seasons">Живой рейтинг сезона и награды с сайта реплеев.</span>
                 </button>
                 <button type="button" class="home-card" data-go-view="tierlist">
                     <span class="home-card-title" data-i18n="nav.tierlist">Тирлист</span>
@@ -224,6 +229,11 @@
         <div class="stats-section">
             <h3 data-i18n="profile.achievements">Достижения</h3>
             <div class="profile-achievements" id="profileAchievements"></div>
+        </div>
+        <div class="stats-section">
+            <h3 data-i18n="profile.liveAwards">Награды (live)</h3>
+            <p class="hint" data-i18n="profile.liveAwardsHint">Медали с сайта реплеев. Если игрока нет в live-базе — блок пуст.</p>
+            <div class="profile-achievements" id="profileLiveAwards"></div>
         </div>
         <div class="stats-section">
             <h3 data-i18n="profile.games">Игры</h3>
@@ -945,6 +955,45 @@
         </div>
     </div>
 
+    <div class="view-panel" id="viewSeasons">
+        <p class="rating-intro" data-i18n="seasons.intro">
+            Живые данные с unciv.icanseeforever.com: рейтинг сезона и каталог наград.
+            Сезон 0 — легаси IronLeague 1–11; дальше — текущие сезоны лиги.
+        </p>
+        <div class="seasons-toolbar">
+            <label class="seasons-picker-label" for="seasonSelect" data-i18n="seasons.pick">Сезон</label>
+            <select id="seasonSelect" class="filter-select" aria-label="Сезон"></select>
+            <span class="seasons-label" id="seasonLabel"></span>
+            <a class="seasons-ext-link" id="seasonLiveLink" href="https://unciv.icanseeforever.com/season" target="_blank" rel="noopener noreferrer" data-i18n="seasons.openLive">Открыть на сайте реплеев</a>
+        </div>
+        <div class="stats-section" id="seasons-rating">
+            <h2 data-i18n="seasons.ratingTitle">Рейтинг сезона</h2>
+            <p class="hint" id="seasonsRatingStatus" data-i18n="seasons.loading">Загрузка…</p>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="seasonRatingTable">
+                    <thead>
+                        <tr>
+                            <th class="num" data-i18n="seasons.col.place">#</th>
+                            <th data-i18n="seasons.col.player">Игрок</th>
+                            <th class="num" data-i18n="seasons.col.games">Игр</th>
+                            <th class="num" data-i18n="seasons.col.ilGames">IL игр</th>
+                            <th class="num" data-i18n="seasons.col.ilWins">IL побед</th>
+                            <th class="num" data-i18n="seasons.col.duelGames">Дуэли</th>
+                            <th class="num" data-i18n="seasons.col.duelWins">Дуэли побед</th>
+                            <th class="num" data-i18n="seasons.col.tournaments">Турниры</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="stats-section" id="seasons-awards">
+            <h2 data-i18n="seasons.awardsTitle">Награды</h2>
+            <p class="hint" id="seasonsAwardsStatus" data-i18n="seasons.awardsHint">Live-медали с карточек игроков. Клик по нику — профиль на сайте реплеев.</p>
+            <div class="live-awards-grid" id="liveAwardsGrid"></div>
+        </div>
+    </div>
+
     <div class="view-panel" id="viewRecords">
         <p class="rating-intro" data-i18n="records.intro">
             Рекорды считаются из архива при каждой загрузке. Игры с флагами teams / scrap не учитываются.
@@ -1007,14 +1056,15 @@
 <script src="js/games-core.js?v=ironleague-labels-1"></script>
     <script src="js/policy-terms.js?v=shared-policy-1"></script>
     <script src="js/nation-names.js?v=shared-nations-1"></script>
-    <script src="js/site-core.js?v=ironleague-labels-1"></script>
+    <script src="js/site-core.js?v=seasons-live-awards-1"></script>
     <script src="js/ui-helpers.js?v=shared-ui-1"></script>
-    <script src="js/i18n.js?v=ironleague-labels-1"></script>
+    <script src="js/i18n.js?v=seasons-live-awards-1"></script>
 <script src="js/player-meta.js?v=short-tg-1"></script>
 <script src="js/stats-charts.js?v=profile-perf-1"></script>
 <script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=ironleague-labels-1"></script>
 <script src="js/achievements.js?v=ironleague-labels-1"></script>
+<script src="js/live-league.js?v=seasons-awards-1"></script>
 <script src="js/tech-policy-paths.js?v=ironleague-labels-1"></script>
 <script>
     // Конфигурация
@@ -1878,6 +1928,8 @@
             renderProfileEmblem(row, 0);
         }
 
+        void fillProfileLiveAwards(name);
+
         if (summaryBody) {
             const nationCell = (nationRu) => renderNationLabel(nationRu);
             const chip = (labelHtml, count) =>
@@ -2690,6 +2742,7 @@
             stats: viewTitle('title.stats', 'Статистика лиги'),
             paths: viewTitle('title.paths', 'Техи и институты'),
             rating: viewTitle('title.rating', 'Рейтинг'),
+            seasons: viewTitle('title.seasons', 'Сезоны'),
             tierlist: viewTitle('title.tierlist', 'Тирлист наций'),
             records: viewTitle('title.records', 'Рекорды'),
             faq: viewTitle('title.faq', 'FAQ'),
@@ -2701,6 +2754,7 @@
             stats: viewTitle('footer.stats', 'Статистика по играм архива (без teams/scrap)'),
             paths: viewTitle('footer.paths', 'Порядок открытия по бэкапам ходов'),
             rating: viewTitle('footer.rating', 'Рейтинг: шкала от 1000 или от нуля'),
+            seasons: viewTitle('footer.seasons', 'Сезоны и награды (live)'),
             tierlist: viewTitle('footer.tierlist', 'Тирлист наций лиги'),
             records: viewTitle('footer.records', 'Рекорды и достижения (без teams/scrap)'),
             faq: viewTitle('footer.faq', 'Частые вопросы'),
@@ -3134,8 +3188,216 @@
         renderRecords();
     })();
 
+    // --- Live seasons + awards (unciv.icanseeforever.com) ---
+    let seasonsState = {
+        selected: null,
+        rating: null,
+        awards: null,
+        playersIndex: null,
+        loaded: false,
+        loading: false,
+        error: null,
+    };
+
+    function escapeHtml(s) {
+        return String(s ?? '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    function renderSeasonPicker(data) {
+        const select = document.getElementById('seasonSelect');
+        const labelEl = document.getElementById('seasonLabel');
+        const link = document.getElementById('seasonLiveLink');
+        if (!select || !data) return;
+        const seasons = Array.isArray(data.seasons) ? data.seasons : [];
+        const cur = seasonsState.selected != null ? seasonsState.selected : data.season;
+        select.innerHTML = seasons.map((s) => {
+            const v = Number(s.value);
+            const lab = s.label || `Season ${v}`;
+            return `<option value="${v}"${v === Number(cur) ? ' selected' : ''}>${escapeHtml(lab)}</option>`;
+        }).join('');
+        if (labelEl) labelEl.textContent = data.label || '';
+        if (link && window.IronLeagueLive) {
+            link.href = IronLeagueLive.seasonPageUrl(cur);
+        }
+    }
+
+    function renderSeasonRatingTable(data) {
+        const tbody = document.querySelector('#seasonRatingTable tbody');
+        const status = document.getElementById('seasonsRatingStatus');
+        if (!tbody) return;
+        const rows = Array.isArray(data && data.players) ? [...data.players] : [];
+        rows.sort((a, b) => (b.ilWins - a.ilWins) || (b.wins - a.wins) || String(a.nick).localeCompare(String(b.nick)));
+        if (status) {
+            status.textContent = rows.length
+                ? tt('seasons.ratingCount', { n: String(rows.length) })
+                : tt('seasons.empty');
+        }
+        tbody.innerHTML = rows.map((r, i) => {
+            const nick = escapeHtml(displayPlayerName(r.nick));
+            const href = window.IronLeagueLive
+                ? IronLeagueLive.playerCardUrl(r.id)
+                : '#';
+            return `<tr>
+                <td class="num">${i + 1}</td>
+                <td><a class="stats-game-link seasons-player-link" href="${href}" target="_blank" rel="noopener noreferrer">${nick}</a></td>
+                <td class="num">${r.games ?? 0}</td>
+                <td class="num">${r.ilGames ?? 0}</td>
+                <td class="num">${r.ilWins ?? 0}</td>
+                <td class="num">${r.duelGames ?? 0}</td>
+                <td class="num">${r.duelWins ?? 0}</td>
+                <td class="num">${r.tournaments ?? 0}</td>
+            </tr>`;
+        }).join('');
+    }
+
+    function renderLiveAwardsGrid(awards) {
+        const grid = document.getElementById('liveAwardsGrid');
+        const status = document.getElementById('seasonsAwardsStatus');
+        if (!grid) return;
+        const list = Array.isArray(awards) ? awards : [];
+        if (!list.length) {
+            grid.innerHTML = `<div class="no-games">${tt('seasons.awardsEmpty')}</div>`;
+            if (status) status.textContent = tt('seasons.awardsEmpty');
+            return;
+        }
+        if (status) status.textContent = tt('seasons.awardsHint');
+        grid.innerHTML = list.map((a) => {
+            const img = a.imageUrl && window.IronLeagueLive
+                ? `<img src="${escapeHtml(IronLeagueLive.absUrl(a.imageUrl))}" alt="" loading="lazy">`
+                : `<span class="live-award-fallback" aria-hidden="true">🏅</span>`;
+            const holders = Array.isArray(a.holderList) ? a.holderList : [];
+            const holdersHtml = holders.length
+                ? holders.map((h) => {
+                    const href = window.IronLeagueLive ? IronLeagueLive.playerCardUrl(h.id) : '#';
+                    return `<a href="${href}" target="_blank" rel="noopener noreferrer">${escapeHtml(displayPlayerName(h.nick))}</a>`;
+                }).join(', ')
+                : `<span class="hint">${tt('seasons.noHolders')}</span>`;
+            return `<article class="live-award-card">
+                <div class="live-award-media">${img}</div>
+                <div class="live-award-body">
+                    <h3 class="live-award-title">${escapeHtml(a.title || '')}</h3>
+                    <p class="live-award-desc">${escapeHtml(a.description || '')}</p>
+                    <div class="live-award-holders"><span>${tt('seasons.holders')}:</span> ${holdersHtml}</div>
+                </div>
+            </article>`;
+        }).join('');
+    }
+
+    async function loadSeasonRating(season) {
+        if (!window.IronLeagueLive) throw new Error('live module missing');
+        const data = await IronLeagueLive.fetchSeasonRating(season);
+        seasonsState.rating = data;
+        seasonsState.selected = data.season;
+        renderSeasonPicker(data);
+        renderSeasonRatingTable(data);
+        return data;
+    }
+
+    async function loadLiveAwards() {
+        if (!window.IronLeagueLive) throw new Error('live module missing');
+        const data = await IronLeagueLive.fetchAwardsPublic();
+        seasonsState.awards = data.awards || [];
+        renderLiveAwardsGrid(seasonsState.awards);
+        return seasonsState.awards;
+    }
+
+    async function ensureSeasonsView(force) {
+        if (!window.IronLeagueLive) {
+            const status = document.getElementById('seasonsRatingStatus');
+            if (status) status.textContent = tt('seasons.unavailable');
+            return;
+        }
+        if (seasonsState.loading) return;
+        if (seasonsState.loaded && !force) {
+            renderSeasonPicker(seasonsState.rating);
+            renderSeasonRatingTable(seasonsState.rating);
+            renderLiveAwardsGrid(seasonsState.awards);
+            return;
+        }
+        seasonsState.loading = true;
+        const status = document.getElementById('seasonsRatingStatus');
+        if (status) status.textContent = tt('seasons.loading');
+        try {
+            await Promise.all([
+                loadSeasonRating(seasonsState.selected),
+                loadLiveAwards(),
+            ]);
+            seasonsState.loaded = true;
+            seasonsState.error = null;
+        } catch (e) {
+            seasonsState.error = String(e);
+            if (status) status.textContent = tt('seasons.error', { err: String(e.message || e) });
+            const aStatus = document.getElementById('seasonsAwardsStatus');
+            if (aStatus) aStatus.textContent = tt('seasons.error', { err: String(e.message || e) });
+        } finally {
+            seasonsState.loading = false;
+        }
+    }
+
+    async function ensureLivePlayersIndex() {
+        if (seasonsState.playersIndex || !window.IronLeagueLive) return seasonsState.playersIndex;
+        try {
+            const data = await IronLeagueLive.fetchPlayers();
+            seasonsState.playersIndex = IronLeagueLive.nickIndex(data.players || []);
+        } catch (e) {
+            seasonsState.playersIndex = new Map();
+        }
+        return seasonsState.playersIndex;
+    }
+
+    async function fillProfileLiveAwards(playerName) {
+        const el = document.getElementById('profileLiveAwards');
+        if (!el) return;
+        el.innerHTML = `<span class="hint">${tt('seasons.loading')}</span>`;
+        if (!window.IronLeagueLive) {
+            el.innerHTML = `<span class="hint">${tt('seasons.unavailable')}</span>`;
+            return;
+        }
+        try {
+            const index = await ensureLivePlayersIndex();
+            const hit = IronLeagueLive.findPlayerByNick(index, playerName);
+            if (!hit) {
+                el.innerHTML = `<span class="hint">${tt('profile.liveAwardsNone')}</span>`;
+                return;
+            }
+            const card = await IronLeagueLive.fetchPlayer(hit.id);
+            const awards = Array.isArray(card.awards) ? card.awards : [];
+            if (!awards.length) {
+                el.innerHTML = `<span class="hint">${tt('profile.liveAwardsNone')}</span>`;
+                return;
+            }
+            const liveLink = `<a class="seasons-ext-link" href="${IronLeagueLive.playerCardUrl(hit.id)}" target="_blank" rel="noopener noreferrer">${tt('profile.openLiveCard')}</a>`;
+            el.innerHTML = awards.map((a) => {
+                const img = a.imageUrl
+                    ? `<img src="${escapeHtml(IronLeagueLive.absUrl(a.imageUrl))}" alt="" loading="lazy">`
+                    : `<span class="live-award-fallback" aria-hidden="true">🏅</span>`;
+                const when = a.grantedAt ? String(a.grantedAt).slice(0, 10) : '';
+                return `<div class="profile-ach-card" title="${escapeHtml(a.description || '')}">
+                    ${img}
+                    <div class="profile-ach-main">
+                        <span class="profile-ach-title">${escapeHtml(a.title || '')}</span>
+                        <span class="profile-ach-value">${escapeHtml(when)}</span>
+                    </div>
+                </div>`;
+            }).join('') + `<div class="profile-live-link">${liveLink}</div>`;
+        } catch (e) {
+            el.innerHTML = `<span class="hint">${tt('seasons.error', { err: String(e.message || e) })}</span>`;
+        }
+    }
+
+    document.getElementById('seasonSelect')?.addEventListener('change', (e) => {
+        const n = Number(e.target.value);
+        seasonsState.selected = Number.isFinite(n) ? n : null;
+        seasonsState.loaded = false;
+        void ensureSeasonsView(true);
+    });
+
     function showSiteView(view) {
-        const allowed = new Set(['home', 'archive', 'stats', 'paths', 'rating', 'tierlist', 'records', 'faq', 'profile']);
+        const allowed = new Set(['home', 'archive', 'stats', 'paths', 'rating', 'seasons', 'tierlist', 'records', 'faq', 'profile']);
         const next = allowed.has(view) ? view : 'home';
         document.querySelectorAll('.site-nav-btn').forEach((b) => {
             b.classList.toggle('active', b.dataset.view === next);
@@ -3146,6 +3408,7 @@
         document.getElementById('viewPaths')?.classList.toggle('active', next === 'paths');
         document.getElementById('viewProfile')?.classList.toggle('active', next === 'profile');
         document.getElementById('viewRating')?.classList.toggle('active', next === 'rating');
+        document.getElementById('viewSeasons')?.classList.toggle('active', next === 'seasons');
         document.getElementById('viewTierlist').classList.toggle('active', next === 'tierlist');
         document.getElementById('viewRecords')?.classList.toggle('active', next === 'records');
         document.getElementById('viewFaq').classList.toggle('active', next === 'faq');
@@ -3159,6 +3422,7 @@
             applyRatingScale(ratingScale, true);
             renderRatingTables();
         }
+        if (next === 'seasons') void ensureSeasonsView();
         if (next === 'records') renderRecords();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -4330,6 +4594,13 @@
         if (document.getElementById('viewRecords')?.classList.contains('active')) {
             renderRecords();
         }
+        if (document.getElementById('viewSeasons')?.classList.contains('active')) {
+            if (seasonsState.rating) {
+                renderSeasonPicker(seasonsState.rating);
+                renderSeasonRatingTable(seasonsState.rating);
+            }
+            renderLiveAwardsGrid(seasonsState.awards);
+        }
         if (window.IronLeaguePaths) window.IronLeaguePaths.refreshLabels();
     };
 
@@ -4349,4 +4620,4 @@
     })();
 </script>
 </body>
-</html>         
+</html>

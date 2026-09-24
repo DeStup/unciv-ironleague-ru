@@ -3370,3 +3370,82 @@
                 max-height: 70vh;
             }
         }
+        /* Live seasons + awards */
+        .seasons-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px 14px;
+            margin: 8px 0 18px;
+        }
+        .seasons-picker-label {
+            color: rgba(255, 215, 0, 0.85);
+            font-weight: 600;
+        }
+        .seasons-label {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.95rem;
+        }
+        .seasons-ext-link,
+        .seasons-player-link {
+            color: #ffd700;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.35);
+        }
+        .seasons-ext-link:hover,
+        .seasons-player-link:hover {
+            border-bottom-color: #ffd700;
+        }
+        .live-awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 14px;
+            margin-top: 10px;
+        }
+        .live-award-card {
+            display: flex;
+            gap: 12px;
+            border: 1px solid rgba(255, 215, 0, 0.28);
+            background: rgba(20, 18, 32, 0.88);
+            border-radius: 12px;
+            padding: 12px;
+        }
+        .live-award-media img,
+        .live-award-fallback {
+            width: 72px;
+            height: 72px;
+            object-fit: cover;
+            border-radius: 10px;
+            background: #1a1624;
+            box-shadow: 0 0 0 1px rgba(255, 215, 0, 0.28);
+            flex-shrink: 0;
+        }
+        .live-award-fallback {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        .live-award-title {
+            margin: 0 0 6px;
+            font-family: Cinzel, serif;
+            font-size: 1.05rem;
+            color: #ffd700;
+        }
+        .live-award-desc {
+            margin: 0 0 8px;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 0.9rem;
+            line-height: 1.35;
+        }
+        .live-award-holders {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        .live-award-holders a {
+            color: #ffd700;
+        }
+        .profile-live-link {
+            flex: 1 1 100%;
+            margin-top: 4px;
+        }
