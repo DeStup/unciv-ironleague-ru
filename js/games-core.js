@@ -1,9 +1,10 @@
 /**
  * Shared Games.json helpers: flags, exclusion rules, game-number parsing,
- * eligible (ranked) games. Single source of truth for the archive filters.
+ * eligible (ranked) games, spectator-style labels. Single source of truth for
+ * the archive filters and display names (match unciv-web / spectator folders).
  *
- * Used by index.html, rating.js, achievements.js — avoids three copies of
- * the same teams/scrap/excludeFromStats logic drifting apart.
+ * Used by index.html, rating.js, achievements.js, site-core.js — avoids copies
+ * of the same teams/scrap/excludeFromStats logic drifting apart.
  */
 (function (global) {
   'use strict';
@@ -23,6 +24,34 @@
     return flags.includes('teams') || flags.includes('scrap') || flags.includes('team');
   }
 
+  /** Numeric archive id — prefer `id`, fall back to digits in `number`. */
+  function parseGameNum(game) {
+    const id = Number(game && game.id);
+    if (Number.isFinite(id) && id >= 1) return id;
+    const m = String((game && game.number) || '').match(/(\d+)\s*$/);
+    return m ? parseInt(m[1], 10) : 0;
+  }
+
+  /**
+   * Display / spectator folder name as on unciv-web:
+   * `IronLeague-25`, `IronLeague-team2`.
+   */
+  function formatGameLabel(game) {
+    const raw = String((game && game.number) || '').trim();
+    const il = /^IronLeague-(team)?(\d+)$/i.exec(raw);
+    if (il) return il[1] ? `IronLeague-team${il[2]}` : `IronLeague-${il[2]}`;
+    const team = /^Team\s+Game\s+(\d+)$/i.exec(raw);
+    if (team) return `IronLeague-team${team[1]}`;
+    const id = Number(game && game.id);
+    if (Number.isFinite(id) && id >= 1) return `IronLeague-${id}`;
+    return raw || '';
+  }
+
+  /** Alias used by replay deep-links (same as formatGameLabel). */
+  function spectatorFolderName(game) {
+    return formatGameLabel(game);
+  }
+
   /** Ranked games only (no teams/scrap), sorted by game number. */
   function eligibleGames(games) {
     return (games || [])
@@ -37,17 +66,13 @@
     return (games || []).filter((g) => !isExcludedGame(g));
   }
 
-  /** Numeric game id from `number` ("Game 29") or `id`. */
-  function parseGameNum(game) {
-    const m = String(game.number || '').match(/(\d+)/);
-    return m ? parseInt(m[1], 10) : Number(game.id) || 0;
-  }
-
   global.IronLeagueGamesCore = {
     gameFlags,
     isExcludedGame,
     eligibleGames,
     rankedGamesOnly,
     parseGameNum,
+    formatGameLabel,
+    spectatorFolderName,
   };
 })(typeof window !== 'undefined' ? window : globalThis);

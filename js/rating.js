@@ -41,8 +41,10 @@
     if (window.IronLeagueGamesCore && IronLeagueGamesCore.parseGameNum) {
       return IronLeagueGamesCore.parseGameNum(game);
     }
-    const m = String(game.number || '').match(/(\d+)/);
-    return m ? parseInt(m[1], 10) : (game.id || 0);
+    const id = Number(game && game.id);
+    if (Number.isFinite(id) && id >= 1) return id;
+    const m = String((game && game.number) || '').match(/(\d+)\s*$/);
+    return m ? parseInt(m[1], 10) : 0;
   }
 
   function eligibleGames(games) {

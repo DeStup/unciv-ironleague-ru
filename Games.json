@@ -3,7 +3,7 @@
     {
       "id": 1,
       "version": "4.7.2 (Build881)",
-      "number": "Game 1",
+      "number": "IronLeague-1",
       "players": [
         {
           "name": "Click4x",
@@ -399,7 +399,7 @@
     {
       "id": 2,
       "version": "4.7.7 (Build889)",
-      "number": "Game 2",
+      "number": "IronLeague-2",
       "players": [
         {
           "name": "Click4x",
@@ -964,7 +964,7 @@
     {
       "id": 3,
       "version": "4.7.12-patch2 (Build 898)",
-      "number": "Game 3",
+      "number": "IronLeague-3",
       "players": [
         {
           "name": "Click4x",
@@ -1520,7 +1520,7 @@
     {
       "id": 4,
       "version": "4.7.17 (Build 904)",
-      "number": "Game 4",
+      "number": "IronLeague-4",
       "players": [
         {
           "name": "freedomanarhy",
@@ -2071,7 +2071,7 @@
     },
     {
       "version": "",
-      "number": "Game 5",
+      "number": "IronLeague-5",
       "players": [],
       "winner": "",
       "map": "",
@@ -2090,7 +2090,7 @@
     {
       "id": 6,
       "version": "4.8.7 (Build 915)",
-      "number": "Game 6",
+      "number": "IronLeague-6",
       "players": [
         {
           "name": "Overslidishe",
@@ -2537,7 +2537,7 @@
     },
     {
       "version": "",
-      "number": "Game 7",
+      "number": "IronLeague-7",
       "players": [],
       "winner": "",
       "map": "",
@@ -2556,7 +2556,7 @@
     {
       "id": 8,
       "version": "4.8.13 (Build 923)",
-      "number": "Game 8",
+      "number": "IronLeague-8",
       "players": [
         {
           "name": "AlexUnderHill",
@@ -3136,7 +3136,7 @@
     {
       "id": 9,
       "version": "4.8.13 (Build 1036)",
-      "number": "Game 9",
+      "number": "IronLeague-9",
       "players": [
         {
           "name": "AlexUnderHill",
@@ -3507,7 +3507,7 @@
     {
       "id": 10,
       "version": "4.13.1 (Build 1040)",
-      "number": "Game 10",
+      "number": "IronLeague-10",
       "players": [
         {
           "name": "VlaterRogue",
@@ -3545,7 +3545,7 @@
     {
       "id": 11,
       "version": "4.13.4 (Build 1043)",
-      "number": "Game 11",
+      "number": "IronLeague-11",
       "players": [
         {
           "name": "AlexUnderHill",
@@ -3914,7 +3914,7 @@
     {
       "id": 12,
       "version": "4.13.13 (Build 1055)",
-      "number": "Game 12",
+      "number": "IronLeague-12",
       "players": [
         {
           "name": "AlexUnderHill",
@@ -4408,7 +4408,7 @@
     {
       "id": 13,
       "version": "4.14.4 (Build 1067)",
-      "number": "Game 13",
+      "number": "IronLeague-13",
       "players": [
         {
           "name": "munlait21",
@@ -5162,7 +5162,7 @@
     {
       "id": 14,
       "version": "4.14.14 (Build 1081) -> 4.4.19 (Build 1087)",
-      "number": "Game 14",
+      "number": "IronLeague-14",
       "players": [
         {
           "name": "Overslidishe",
@@ -5905,7 +5905,7 @@
     {
       "id": 15,
       "version": "4.15.12 (Build 1091)",
-      "number": "Game 15",
+      "number": "IronLeague-15",
       "players": [
         {
           "name": "AlexUnderHill",
@@ -6505,7 +6505,7 @@
     {
       "id": 16,
       "version": "4.15.14 (Build 1107)",
-      "number": "Game 16",
+      "number": "IronLeague-16",
       "players": [
         {
           "name": "den_stu",
@@ -7137,7 +7137,7 @@
     {
       "id": 17,
       "version": "4.16.4 (Build 1119)",
-      "number": "Game 17",
+      "number": "IronLeague-17",
       "players": [
         {
           "name": "Overslidishe",
@@ -7866,7 +7866,7 @@
     {
       "id": 18,
       "version": "4.16.9 (Build 1125)",
-      "number": "Game 18",
+      "number": "IronLeague-18",
       "players": [
         {
           "name": "n9306867842",
@@ -8338,7 +8338,7 @@
     },
     {
       "version": "4.17.17-patch1 (Build 1159)",
-      "number": "Game 19",
+      "number": "IronLeague-19",
       "players": [
         {
           "name": "Ashegg2",
@@ -8899,7 +8899,7 @@
     {
       "id": 20,
       "version": "4.17.17-patch1 (Build 1159)",
-      "number": "Game 20",
+      "number": "IronLeague-20",
       "players": [
         {
           "name": "Ashegg2",
@@ -9631,7 +9631,7 @@
     {
       "id": 21,
       "version": "4.18.4 (Build 1166)",
-      "number": "Game 21",
+      "number": "IronLeague-21",
       "players": [
         {
           "name": "Ouni0",
@@ -10391,7 +10391,7 @@
     {
       "id": 22,
       "version": "4.18.14-patch1",
-      "number": "Game 22",
+      "number": "IronLeague-22",
       "players": [
         {
           "name": "VlaterRogue",
@@ -10901,7 +10901,7 @@
     {
       "id": 23,
       "version": "4.19.12 (1200)",
-      "number": "Game 23",
+      "number": "IronLeague-23",
       "players": [
         {
           "name": "Lvxvcs",
@@ -11587,7 +11587,7 @@
     {
       "id": 24,
       "version": "4.19.18 (Build 1209)",
-      "number": "Game 24",
+      "number": "IronLeague-24",
       "players": [
         {
           "name": "REPUNZEL2882",
@@ -12441,7 +12441,7 @@
     {
       "id": 25,
       "version": "4.20.1 (Build 1212)",
-      "number": "Game 25",
+      "number": "IronLeague-25",
       "players": [
         {
           "name": "Click4x",
@@ -13126,7 +13126,7 @@
     {
       "id": 26,
       "version": "4.20.7 (Build 1219)",
-      "number": "Game 26",
+      "number": "IronLeague-26",
       "players": [
         {
           "name": "Bahahanchiklkm",
@@ -13833,7 +13833,7 @@
     {
       "id": 27,
       "version": "4.20.15 (Build 1229)",
-      "number": "Game 27",
+      "number": "IronLeague-27",
       "players": [
         {
           "name": "Click4x",
@@ -14325,7 +14325,7 @@
     {
       "id": 28,
       "version": "4.20.19 (Build 1234)",
-      "number": "Game 28",
+      "number": "IronLeague-28",
       "players": [
         {
           "name": "Laste2187",
@@ -14834,7 +14834,7 @@
     {
       "id": 29,
       "version": "4.21.4 (Build 1239)",
-      "number": "Game 29",
+      "number": "IronLeague-29",
       "players": [
         {
           "name": "den_stu",
@@ -15393,7 +15393,7 @@
     {
       "id": 30,
       "version": "4.21.7-patch2 (Build 1245)",
-      "number": "Team Game 2",
+      "number": "IronLeague-team2",
       "players": [
         {
           "name": "den_stu",
@@ -15880,7 +15880,7 @@
     {
       "id": 31,
       "version": "4.21.9-patch1 (Build 1248)",
-      "number": "Team Game 3",
+      "number": "IronLeague-team3",
       "players": [
         {
           "name": "REPUNZEL2882",

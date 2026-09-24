@@ -1004,18 +1004,18 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/games-core.js?v=shared-core-1"></script>
+<script src="js/games-core.js?v=ironleague-labels-1"></script>
     <script src="js/policy-terms.js?v=shared-policy-1"></script>
     <script src="js/nation-names.js?v=shared-nations-1"></script>
-    <script src="js/site-core.js?v=web-replays-IronLeague-2"></script>
+    <script src="js/site-core.js?v=ironleague-labels-1"></script>
     <script src="js/ui-helpers.js?v=shared-ui-1"></script>
-    <script src="js/i18n.js?v=paths-no-players-1"></script>
+    <script src="js/i18n.js?v=ironleague-labels-1"></script>
 <script src="js/player-meta.js?v=short-tg-1"></script>
 <script src="js/stats-charts.js?v=profile-perf-1"></script>
 <script src="js/gif-preview.js?v=1"></script>
-<script src="js/rating.js?v=lobby-opp-1"></script>
-<script src="js/achievements.js?v=memo-fp-1"></script>
-<script src="js/tech-policy-paths.js?v=fix-global-nick-1"></script>
+<script src="js/rating.js?v=ironleague-labels-1"></script>
+<script src="js/achievements.js?v=ironleague-labels-1"></script>
+<script src="js/tech-policy-paths.js?v=ironleague-labels-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -1067,53 +1067,43 @@
     }
 
     // Site config + cache-busted fetch + unciv-web replay helpers live in
-    // js/site-core.js (IronLeagueSiteCore). Local aliases keep the rest of the
-    // page script unchanged; assetCacheBust stays here so initAssetCacheBust
-    // (called from the page) can update IronLeagueCacheBust for every module.
+    // js/site-core.js (IronLeagueSiteCore). Thin wrappers keep the page script
+    // calling the same names while modules share one cache-bust token.
     const CONFIG = (window.IronLeagueSiteCore && IronLeagueSiteCore.CONFIG) || {};
-    let assetCacheBust = String(Date.now());
-    window.IronLeagueCacheBust = assetCacheBust;
 
     function assetUrl(path) {
-        const bust = window.IronLeagueCacheBust || assetCacheBust;
+        if (window.IronLeagueSiteCore && IronLeagueSiteCore.assetUrl) {
+            return IronLeagueSiteCore.assetUrl(path);
+        }
+        const bust = window.IronLeagueCacheBust || String(Date.now());
         const sep = path.includes('?') ? '&' : '?';
         return `${path}${sep}v=${encodeURIComponent(bust)}`;
     }
 
-    async function fetchFresh(path, init) {
+    function fetchFresh(path, init) {
+        if (window.IronLeagueSiteCore && IronLeagueSiteCore.fetchFresh) {
+            return IronLeagueSiteCore.fetchFresh(path, init);
+        }
         const opts = Object.assign({ cache: 'no-store' }, init || {});
         return fetch(assetUrl(path), opts);
     }
 
-    async function initAssetCacheBust() {
-        try {
-            const response = await fetch(`build-id.txt?v=${Date.now()}`, { cache: 'no-store' });
-            if (!response.ok) return;
-            const text = (await response.text()).trim();
-            if (text) assetCacheBust = text.split(/\r?\n/)[0].trim() || assetCacheBust;
-        } catch (e) {
-            // keep Date.now() fallback
+    function initAssetCacheBust() {
+        if (window.IronLeagueSiteCore && IronLeagueSiteCore.initAssetCacheBust) {
+            return IronLeagueSiteCore.initAssetCacheBust();
         }
-        window.IronLeagueCacheBust = assetCacheBust;
-        if ('caches' in window) {
-            try {
-                const keys = await caches.keys();
-                await Promise.all(keys.map((key) => caches.delete(key)));
-            } catch (e) {
-                // ignore
-            }
-        }
+        return Promise.resolve();
     }
 
     function webReplayUrl(game) {
         if (window.IronLeagueSiteCore && IronLeagueSiteCore.webReplayUrl) {
             return IronLeagueSiteCore.webReplayUrl(game);
         }
-        const id = Number(game && game.id);
-        if (!Number.isFinite(id) || id < 1) return '';
+        const folder = formatGameLabel(game);
+        if (!folder) return '';
         const base = String(CONFIG.webReplaysBase || '').replace(/\/+$/, '');
         if (!base) return '';
-        return `${base}/IronLeague-${id}`;
+        return `${base}/${folder}`;
     }
 
     function renderWebReplayButton(game) {
@@ -1178,6 +1168,26 @@
             return IronLeagueGamesCore.rankedGamesOnly(games);
         }
         return (games || []).filter((g) => !isExcludedGame(g));
+    }
+
+    function parseGameNum(game) {
+        if (window.IronLeagueGamesCore && IronLeagueGamesCore.parseGameNum) {
+            return IronLeagueGamesCore.parseGameNum(game);
+        }
+        const id = Number(game && game.id);
+        if (Number.isFinite(id) && id >= 1) return id;
+        const m = String((game && game.number) || '').match(/(\d+)\s*$/);
+        return m ? parseInt(m[1], 10) : 0;
+    }
+
+    /** Spectator-style label: IronLeague-25 / IronLeague-team2. */
+    function formatGameLabel(game) {
+        if (window.IronLeagueGamesCore && IronLeagueGamesCore.formatGameLabel) {
+            return IronLeagueGamesCore.formatGameLabel(game);
+        }
+        const id = Number(game && game.id);
+        if (Number.isFinite(id) && id >= 1) return `IronLeague-${id}`;
+        return String((game && game.number) || '');
     }
 
     function renderGameFlags(game) {
@@ -1945,7 +1955,7 @@
             const rows = [];
             const perfSeries = [];
             const gamesChrono = ranked.slice().sort((a, b) =>
-                (Number(a.number) || Number(a.id) || 0) - (Number(b.number) || Number(b.id) || 0)
+                parseGameNum(a) - parseGameNum(b)
             );
             for (const game of gamesChrono) {
                 const roster = Array.isArray(game.players) ? game.players : [];
@@ -1955,9 +1965,9 @@
                 const surv = (game.survivors || []).find((s) => (s.name || '').trim() === name);
                 const units = surv && Number.isFinite(Number(surv.units)) ? surv.units : '—';
                 const cities = surv && Number.isFinite(Number(surv.cities)) ? surv.cities : '—';
-                const gameLabel = String(game.number || game.id);
+                const gameLabel = formatGameLabel(game);
                 rows.push(`<tr>
-                    <td><button type="button" class="stats-game-link" data-game-id="${game.id}">#${gameLabel}</button></td>
+                    <td><button type="button" class="stats-game-link" data-game-id="${game.id}">${gameLabel}</button></td>
                     <td>${renderNationLabel(me.nation)}</td>
                     <td>${won ? tt('profile.win') : tt('profile.loss')}</td>
                     <td>${displayMapName(game.map) || '—'}</td>
@@ -1970,8 +1980,8 @@
                         return Number.isFinite(v) ? v : null;
                     };
                     perfSeries.push({
-                        game: Number(game.number) || Number(game.id) || 0,
-                        gameLabel: `#${gameLabel}`,
+                        game: parseGameNum(game),
+                        gameLabel,
                         techs: num('techs'),
                         science: num('science'),
                         culture: num('culture'),
@@ -2351,7 +2361,7 @@
         const title = document.getElementById('gameModalTitle');
         const meta = document.getElementById('gameModalMeta');
         const body = document.getElementById('gameModalBody');
-        title.textContent = game.number || `Session ${game.id}`;
+        title.textContent = formatGameLabel(game);
         meta.textContent = [
             game.version || '',
             displayMapName(game.map) || '',
@@ -2457,7 +2467,7 @@
             card.innerHTML = `
                 <div class="game-header">
                     <div style="display:flex;flex-direction:column;gap:4px;">
-                        <span class="game-number">🌍 ${game.number || `Session ${game.id}`}</span>
+                        <span class="game-number">🌍 ${formatGameLabel(game)}</span>
                         <span class="game-version">${game.version || tt('card.versionUnknown')}</span>
                     </div>
                     <button type="button" class="game-expand-btn" data-expand-id="${game.id}">${tt('card.expand')}</button>
@@ -2977,7 +2987,11 @@
                 games: item.games != null ? String(item.games) : '',
                 wins: item.wins != null ? String(item.wins) : '',
                 survived: item.survived != null ? String(item.survived) : '',
-                game: item.gameNumber != null ? String(item.gameNumber) : '',
+                game: (() => {
+                    if (item.gameNumber == null) return '';
+                    const g = (gamesData || []).find((x) => parseGameNum(x) === Number(item.gameNumber));
+                    return g ? formatGameLabel(g) : `IronLeague-${item.gameNumber}`;
+                })(),
             });
             if (body === `records.item.${item.id}.body`) {
                 body = `${displayPlayerName(item.player)}: ${item.value}`;
@@ -3448,7 +3462,10 @@
             return `<td class="num">${row.wins}</td>`;
         }
         const g = row.winGames[0];
-        const label = Number.isFinite(g.number) ? `Game ${g.number}` : 'Game';
+        const full = (gamesData || []).find((x) => String(x.id) === String(g.id));
+        const label = full
+            ? formatGameLabel(full)
+            : (Number.isFinite(g.number) ? `IronLeague-${g.number}` : 'IronLeague');
         const extra = row.winGames.length > 1
             ? ` title="${tt('stats.winGamesMore', { n: String(row.winGames.length) })}"`
             : ` title="${tt('stats.winGameOpen')}"`;
@@ -4298,7 +4315,7 @@
                 // re-open current modal body if any game was shown
                 const title = document.getElementById('gameModalTitle')?.textContent;
                 if (title) {
-                    const g = gamesData.find((x) => (x.number || `Session ${x.id}`) === title);
+                    const g = gamesData.find((x) => formatGameLabel(x) === title);
                     if (g) openGameModal(g.id);
                 }
             }

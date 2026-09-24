@@ -24,14 +24,15 @@
     webReplaysBase: 'https://unciv.icanseeforever.com/replays',
   };
 
-  /** Deep-link to unciv-web for this Iron League game (`IronLeague-{id}` backup folder). */
+  /** Deep-link to unciv-web (`IronLeague-N` / `IronLeague-teamN` folder). */
   function webReplayUrl(game) {
-    const id = Number(game && game.id);
-    if (!Number.isFinite(id) || id < 1) return '';
+    const folder = (global.IronLeagueGamesCore && IronLeagueGamesCore.spectatorFolderName)
+      ? IronLeagueGamesCore.spectatorFolderName(game)
+      : '';
+    if (!folder) return '';
     const base = String(CONFIG.webReplaysBase || '').replace(/\/+$/, '');
     if (!base) return '';
-    // Folder names on the spectator host are PascalCase (IronLeague-25), not lowercase.
-    return `${base}/IronLeague-${id}`;
+    return `${base}/${folder}`;
   }
 
   function renderWebReplayButton(game) {

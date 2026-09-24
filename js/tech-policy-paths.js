@@ -355,7 +355,7 @@
         if (!timelines.games[String(n)]) missing.push(n);
       }
       const parts = [
-        t('paths.coverage', 'Покрытие:') + ` Game ${games.join(', ')}`,
+        t('paths.coverage', 'Покрытие:') + ` ${games.map((n) => `IronLeague-${n}`).join(', ')}`,
         `${t('paths.samples', 'игроков')}: ${stats.samples || 0}`,
         t('paths.statsFilter', 'статистика только по полным архивам'),
       ];
@@ -438,7 +438,7 @@
       opt.value = String(n);
       const players = Object.keys(g.players || {}).length;
       const tag = g.status === 'partial' ? ' *' : '';
-      opt.textContent = `Game ${n}${tag} (${players})`;
+      opt.textContent = `IronLeague-${n}${tag} (${players})`;
       select.appendChild(opt);
     });
     if (cur && timelines.games[cur]) select.value = cur;
@@ -480,7 +480,7 @@
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'paths-chip' + (String(n) === cur ? ' active' : '');
-      btn.textContent = `Game ${n}${g.status === 'partial' ? '*' : ''}`;
+      btn.textContent = `IronLeague-${n}${g.status === 'partial' ? '*' : ''}`;
       btn.addEventListener('click', () => setGame(String(n)));
       wrap.appendChild(btn);
     });
@@ -1003,8 +1003,8 @@
     const civLabel = labelNation(civ);
     if (head) {
       head.textContent = nick
-        ? `${civLabel} — ${nick} · Game ${gameNum}`
-        : `${civLabel} · Game ${gameNum}`;
+        ? `${civLabel} — ${nick} · IronLeague-${gameNum}`
+        : `${civLabel} · IronLeague-${gameNum}`;
     }
     if (meta) {
       const bits = [
