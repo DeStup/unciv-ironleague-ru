@@ -653,11 +653,11 @@
       'records.item.fastest_win.title': 'Самая быстрая победа',
       'records.item.fastest_win.flavor': 'Блицкриг',
       'records.item.fastest_win.body':
-        '{player} закрыл Game {game} на ходу {value}.',
+        '{player} закрыл {game} на ходу {value}.',
       'records.item.slowest_win.title': 'Самая долгая победа',
       'records.item.slowest_win.flavor': 'Дорогу осилит идущий',
       'records.item.slowest_win.body':
-        '{player} дожал Game {game} аж на ходу {value}.',
+        '{player} дожал {game} аж на ходу {value}.',
       'records.item.most_achievements.title': 'Самый титулованный',
       'records.item.most_achievements.flavor': 'Чей-чей генерал?',
       'records.item.most_achievements.body':
@@ -669,7 +669,7 @@
       'records.item.most_caps_single_win.title': 'Триумфальный разгром',
       'records.item.most_caps_single_win.flavor': 'Один ход — империя',
       'records.item.most_caps_single_win.body':
-        '{player} в одной победе (Game {game}) забрал больше всего столиц: {value}.',
+        '{player} в одной победе ({game}) забрал больше всего столиц: {value}.',
       'records.item.most_caps.title': 'Охотник за столицами',
       'records.item.most_caps.flavor': 'Карта перекрашена',
       'records.item.most_caps.body':
@@ -685,7 +685,7 @@
       'records.item.zeus_statue_win.title': 'Построить Статую Зевса и победить',
       'records.item.zeus_statue_win.flavor': 'Олимпийский контракт',
       'records.item.zeus_statue_win.body':
-        '{player} выиграл партию, построив Статую Зевса (Game {game}).',
+        '{player} выиграл партию, построив Статую Зевса ({game}).',
       'records.item.zeus_statue_win.bodyVacant':
         'Пока никто не получил: в архиве нет победы с собственно построенной Статуей Зевса. Гром ждёт своего полководца.',
       'records.vacantPlayer': 'Пока никого',
@@ -740,7 +740,7 @@
       'records.item.two_wonders_one_turn.title': 'Два чуда за ход',
       'records.item.two_wonders_one_turn.flavor': 'Великие инженеры не спят',
       'records.item.two_wonders_one_turn.body':
-        '{player} завершил больше всего чудес за один ход: {value} (Game {game}).',
+        '{player} завершил больше всего чудес за один ход: {value} ({game}).',
       'records.item.two_wonders_one_turn.bodyVacant':
         'Пока никто не завершил два и более чудес за один ход.',
       'records.item.most_unique_nations.title': 'Турист по нациям',
@@ -770,71 +770,71 @@
       'records.item.max_score_finale.title': 'Рекорд очков',
       'records.item.max_score_finale.flavor': 'Счётчик сломался',
       'records.item.max_score_finale.body':
-        '{player} набрал больше всего очков в одном финале: {value} (Game {game}).',
+        '{player} набрал больше всего очков в одном финале: {value} ({game}).',
       'records.item.max_cities_finale.title': 'Империя городов',
       'records.item.max_cities_finale.flavor': 'Споткнулся о город',
       'records.item.max_cities_finale.body':
-        '{player} держал больше всего городов в одном финале: {value} (Game {game}).',
+        '{player} держал больше всего городов в одном финале: {value} ({game}).',
       'records.item.max_units_finale.title': 'Армия на финале',
       'records.item.max_units_finale.flavor': 'Тень империи',
       'records.item.max_units_finale.body':
-        '{player} вывел больше всего юнитов в одном финале: {value} (Game {game}).',
+        '{player} вывел больше всего юнитов в одном финале: {value} ({game}).',
       'records.item.max_techs_finale.title': 'Технологический пик',
       'records.item.max_techs_finale.flavor': 'Всё исследовано',
       'records.item.max_techs_finale.body':
-        '{player} открыл больше всего технологий к одному финалу: {value} (Game {game}).',
+        '{player} открыл больше всего технологий к одному финалу: {value} ({game}).',
       'records.item.max_population_finale.title': 'Самое большое население',
       'records.item.max_population_finale.flavor': 'Людской вал',
       'records.item.max_population_finale.body':
-        '{player} набрал больше всего населения империи в одном финале: {value} (Game {game}).',
+        '{player} набрал больше всего населения империи в одном финале: {value} ({game}).',
       'records.item.max_capital_population_finale.title': 'Самая населённая столица',
       'records.item.max_capital_population_finale.flavor': 'Мегаполис',
       'records.item.max_capital_population_finale.body':
-        '{player} вырастил самую населённую столицу к финалу: {value} (Game {game}).',
+        '{player} вырастил самую населённую столицу к финалу: {value} ({game}).',
       'records.item.max_production_finale.title': 'Пик производства',
       'records.item.max_production_finale.flavor': 'Заводы гудят',
       'records.item.max_production_finale.body':
-        '{player} показал наибольшее производство за ход в финале: {value} (Game {game}).',
+        '{player} показал наибольшее производство за ход в финале: {value} ({game}).',
       'records.item.max_gold_finale.title': 'Самая тугая казна',
       'records.item.max_gold_finale.flavor': 'Куда тратить?',
       'records.item.max_gold_finale.body':
-        '{player} накопил больше всего золота в казне к финалу: {value} (Game {game}).',
+        '{player} накопил больше всего золота в казне к финалу: {value} ({game}).',
       'records.item.max_gold_income_finale.title': 'Самый жирный инком',
       'records.item.max_gold_income_finale.flavor': '+золото в ход',
       'records.item.max_gold_income_finale.body':
-        '{player} показал наибольший прирост казны за ход (прокси GPT +X) в финале: {value} (Game {game}).',
+        '{player} показал наибольший прирост казны за ход (прокси GPT +X) в финале: {value} ({game}).',
       'records.item.max_science_finale.title': 'Научный пик',
       'records.item.max_science_finale.flavor': 'Эврика!',
       'records.item.max_science_finale.body':
-        '{player} выдал наибольший урожай науки (среднее за последние ходы) в финале: {value} (Game {game}).',
+        '{player} выдал наибольший урожай науки (среднее за последние ходы) в финале: {value} ({game}).',
       'records.item.max_culture_finale.title': 'Культурный пик',
       'records.item.max_culture_finale.flavor': 'Туристы в очереди',
       'records.item.max_culture_finale.body':
-        '{player} выдал наибольший урожай культуры (среднее за последние ходы) в финале: {value} (Game {game}).',
+        '{player} выдал наибольший урожай культуры (среднее за последние ходы) в финале: {value} ({game}).',
       'records.item.most_great_people_finale.title': 'Фабрика великих',
       'records.item.most_great_people_finale.flavor': 'Гении на конвейере',
       'records.item.most_great_people_finale.body':
-        '{player} родил больше всего великих людей за игру: {value} (Game {game}).',
+        '{player} родил больше всего великих людей за игру: {value} ({game}).',
       'records.item.most_great_scientists_finale.title': 'Академия учёных',
       'records.item.most_great_scientists_finale.flavor': 'Эврика × N',
       'records.item.most_great_scientists_finale.body':
-        '{player} вырастил больше всего великих учёных: {value} (Game {game}).',
+        '{player} вырастил больше всего великих учёных: {value} ({game}).',
       'records.item.most_great_engineers_finale.title': 'Цех инженеров',
       'records.item.most_great_engineers_finale.flavor': 'Чудо за чудом',
       'records.item.most_great_engineers_finale.body':
-        '{player} вырастил больше всего великих инженеров: {value} (Game {game}).',
+        '{player} вырастил больше всего великих инженеров: {value} ({game}).',
       'records.item.most_great_culture_people_finale.title': 'Пантеон муз',
       'records.item.most_great_culture_people_finale.flavor': 'Писатели, художники, музыканты',
       'records.item.most_great_culture_people_finale.body':
-        '{player} собрал больше всего культурных великих (писатель+художник+музыкант): {value} (Game {game}).',
+        '{player} собрал больше всего культурных великих (писатель+художник+музыкант): {value} ({game}).',
       'records.item.most_great_generals_finale.title': 'Школа полководцев',
       'records.item.most_great_generals_finale.flavor': 'Звёзды на погонах',
       'records.item.most_great_generals_finale.body':
-        '{player} вырастил больше всего великих генералов: {value} (Game {game}).',
+        '{player} вырастил больше всего великих генералов: {value} ({game}).',
       'records.item.fastest_ideology.title': 'Самая быстрая идеология',
       'records.item.fastest_ideology.flavor': 'Уже определился',
       'records.item.fastest_ideology.body':
-        '{player} взял идеологию раньше всех: ход {value} (Game {game}).',
+        '{player} взял идеологию раньше всех: ход {value} ({game}).',
       'tier.title': 'Тирлист наций',
       'tier.col.nation': 'Нация',
       'tier.col.avg': 'Среднее',
@@ -1308,11 +1308,11 @@
       'records.item.fastest_win.title': 'Fastest win',
       'records.item.fastest_win.flavor': 'Blitzkrieg',
       'records.item.fastest_win.body':
-        '{player} finished Game {game} on turn {value}.',
+        '{player} finished {game} on turn {value}.',
       'records.item.slowest_win.title': 'Longest win',
       'records.item.slowest_win.flavor': 'The path belongs to those who walk',
       'records.item.slowest_win.body':
-        '{player} finally closed Game {game} on turn {value}.',
+        '{player} finally closed {game} on turn {value}.',
       'records.item.most_achievements.title': 'Most decorated',
       'records.item.most_achievements.flavor': 'Whose general is this?',
       'records.item.most_achievements.body':
@@ -1324,7 +1324,7 @@
       'records.item.most_caps_single_win.title': 'Single-game capital haul',
       'records.item.most_caps_single_win.flavor': 'One turn, an empire',
       'records.item.most_caps_single_win.body':
-        '{player} took the most capitals in one win (Game {game}): {value}.',
+        '{player} took the most capitals in one win ({game}): {value}.',
       'records.item.most_caps.title': 'Capital hunter',
       'records.item.most_caps.flavor': 'The map got repainted',
       'records.item.most_caps.body':
@@ -1340,7 +1340,7 @@
       'records.item.zeus_statue_win.title': 'Build the Statue of Zeus and win',
       'records.item.zeus_statue_win.flavor': 'Olympic contract',
       'records.item.zeus_statue_win.body':
-        '{player} won a game after building the Statue of Zeus (Game {game}).',
+        '{player} won a game after building the Statue of Zeus ({game}).',
       'records.item.zeus_statue_win.bodyVacant':
         'Unclaimed so far: no archive win with a self-built Statue of Zeus. The thunder still waits.',
       'records.vacantPlayer': 'Nobody yet',
@@ -1395,7 +1395,7 @@
       'records.item.two_wonders_one_turn.title': 'Two wonders in one turn',
       'records.item.two_wonders_one_turn.flavor': 'Great engineers never sleep',
       'records.item.two_wonders_one_turn.body':
-        '{player} finished the most wonders in a single turn: {value} (Game {game}).',
+        '{player} finished the most wonders in a single turn: {value} ({game}).',
       'records.item.two_wonders_one_turn.bodyVacant':
         'No one has finished two or more wonders in one turn yet.',
       'records.item.most_unique_nations.title': 'Nation tourist',
@@ -1425,71 +1425,71 @@
       'records.item.max_score_finale.title': 'Score peak',
       'records.item.max_score_finale.flavor': 'Scoreboard broke',
       'records.item.max_score_finale.body':
-        '{player} posted the highest finale score: {value} (Game {game}).',
+        '{player} posted the highest finale score: {value} ({game}).',
       'records.item.max_cities_finale.title': 'City empire',
       'records.item.max_cities_finale.flavor': 'Tripped over a city',
       'records.item.max_cities_finale.body':
-        '{player} held the most cities in one finale: {value} (Game {game}).',
+        '{player} held the most cities in one finale: {value} ({game}).',
       'records.item.max_units_finale.title': 'Finale army',
       'records.item.max_units_finale.flavor': 'Shadow of an empire',
       'records.item.max_units_finale.body':
-        '{player} fielded the most units in one finale: {value} (Game {game}).',
+        '{player} fielded the most units in one finale: {value} ({game}).',
       'records.item.max_techs_finale.title': 'Tech peak',
       'records.item.max_techs_finale.flavor': 'Fully researched',
       'records.item.max_techs_finale.body':
-        '{player} had the most techs in one finale: {value} (Game {game}).',
+        '{player} had the most techs in one finale: {value} ({game}).',
       'records.item.max_population_finale.title': 'Highest population',
       'records.item.max_population_finale.flavor': 'Human wave',
       'records.item.max_population_finale.body':
-        '{player} reached the highest empire population in one finale: {value} (Game {game}).',
+        '{player} reached the highest empire population in one finale: {value} ({game}).',
       'records.item.max_capital_population_finale.title': 'Most populated capital',
       'records.item.max_capital_population_finale.flavor': 'Megacity',
       'records.item.max_capital_population_finale.body':
-        '{player} grew the most populated capital by finale: {value} (Game {game}).',
+        '{player} grew the most populated capital by finale: {value} ({game}).',
       'records.item.max_production_finale.title': 'Production peak',
       'records.item.max_production_finale.flavor': 'Factories humming',
       'records.item.max_production_finale.body':
-        '{player} posted the highest per-turn production in a finale: {value} (Game {game}).',
+        '{player} posted the highest per-turn production in a finale: {value} ({game}).',
       'records.item.max_gold_finale.title': 'Fullest treasury',
       'records.item.max_gold_finale.flavor': 'Where to spend it?',
       'records.item.max_gold_finale.body':
-        '{player} held the most gold in the treasury at finale: {value} (Game {game}).',
+        '{player} held the most gold in the treasury at finale: {value} ({game}).',
       'records.item.max_gold_income_finale.title': 'Highest gold income',
       'records.item.max_gold_income_finale.flavor': '+gold per turn',
       'records.item.max_gold_income_finale.body':
-        '{player} posted the highest treasury growth per turn (GPT +X proxy) in a finale: {value} (Game {game}).',
+        '{player} posted the highest treasury growth per turn (GPT +X proxy) in a finale: {value} ({game}).',
       'records.item.max_science_finale.title': 'Science peak',
       'records.item.max_science_finale.flavor': 'Eureka!',
       'records.item.max_science_finale.body':
-        '{player} posted the highest science yield (recent-turn average) in a finale: {value} (Game {game}).',
+        '{player} posted the highest science yield (recent-turn average) in a finale: {value} ({game}).',
       'records.item.max_culture_finale.title': 'Culture peak',
       'records.item.max_culture_finale.flavor': 'Tourists queuing',
       'records.item.max_culture_finale.body':
-        '{player} posted the highest culture yield (recent-turn average) in a finale: {value} (Game {game}).',
+        '{player} posted the highest culture yield (recent-turn average) in a finale: {value} ({game}).',
       'records.item.most_great_people_finale.title': 'Great Person factory',
       'records.item.most_great_people_finale.flavor': 'Geniuses on a conveyor',
       'records.item.most_great_people_finale.body':
-        '{player} spawned the most Great People in one game: {value} (Game {game}).',
+        '{player} spawned the most Great People in one game: {value} ({game}).',
       'records.item.most_great_scientists_finale.title': 'Scientist academy',
       'records.item.most_great_scientists_finale.flavor': 'Eureka × N',
       'records.item.most_great_scientists_finale.body':
-        '{player} spawned the most Great Scientists: {value} (Game {game}).',
+        '{player} spawned the most Great Scientists: {value} ({game}).',
       'records.item.most_great_engineers_finale.title': 'Engineer workshop',
       'records.item.most_great_engineers_finale.flavor': 'Wonder after wonder',
       'records.item.most_great_engineers_finale.body':
-        '{player} spawned the most Great Engineers: {value} (Game {game}).',
+        '{player} spawned the most Great Engineers: {value} ({game}).',
       'records.item.most_great_culture_people_finale.title': 'Pantheon of the muses',
       'records.item.most_great_culture_people_finale.flavor': 'Writers, artists, musicians',
       'records.item.most_great_culture_people_finale.body':
-        '{player} spawned the most cultural Great People (writer+artist+musician): {value} (Game {game}).',
+        '{player} spawned the most cultural Great People (writer+artist+musician): {value} ({game}).',
       'records.item.most_great_generals_finale.title': 'School of generals',
       'records.item.most_great_generals_finale.flavor': 'Stars on the shoulders',
       'records.item.most_great_generals_finale.body':
-        '{player} spawned the most Great Generals: {value} (Game {game}).',
+        '{player} spawned the most Great Generals: {value} ({game}).',
       'records.item.fastest_ideology.title': 'Fastest ideology',
       'records.item.fastest_ideology.flavor': 'Already decided',
       'records.item.fastest_ideology.body':
-        '{player} adopted an ideology earliest: turn {value} (Game {game}).',
+        '{player} adopted an ideology earliest: turn {value} ({game}).',
       'tier.title': 'Nation tier list',
       'tier.col.nation': 'Nation',
       'tier.col.avg': 'Average',
