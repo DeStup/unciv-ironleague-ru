@@ -1007,7 +1007,7 @@
 <script src="js/games-core.js?v=shared-core-1"></script>
     <script src="js/policy-terms.js?v=shared-policy-1"></script>
     <script src="js/nation-names.js?v=shared-nations-1"></script>
-    <script src="js/site-core.js?v=web-replays-ironleague-1"></script>
+    <script src="js/site-core.js?v=web-replays-IronLeague-2"></script>
     <script src="js/ui-helpers.js?v=shared-ui-1"></script>
     <script src="js/i18n.js?v=paths-no-players-1"></script>
 <script src="js/player-meta.js?v=short-tg-1"></script>
@@ -1113,7 +1113,7 @@
         if (!Number.isFinite(id) || id < 1) return '';
         const base = String(CONFIG.webReplaysBase || '').replace(/\/+$/, '');
         if (!base) return '';
-        return `${base}/ironleague-${id}`;
+        return `${base}/IronLeague-${id}`;
     }
 
     function renderWebReplayButton(game) {
