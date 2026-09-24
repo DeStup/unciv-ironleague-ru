@@ -281,6 +281,13 @@
       tournamentTitles: 0,
       sweepSeries: 0,
       winNations: new Set(),
+      capitalOnlyWins: 0,
+      capitalOnlyWinGame: null,
+      noCapitalWins: 0,
+      noCapitalWinGame: null,
+      techLeadLosses: 0,
+      maxTechLeadLoss: 0,
+      maxTechLeadLossGame: null,
     };
   }
 
@@ -488,6 +495,15 @@
               s.maxIdeologyTurnWinGame = gNum;
             }
           }
+          // One-city (capital-only) win / win after losing the capital.
+          if (row && Number(row.cities) === 1 && row.has_capital !== false) {
+            s.capitalOnlyWins += 1;
+            s.capitalOnlyWinGame = gNum;
+          }
+          if (row && row.has_capital === false) {
+            s.noCapitalWins += 1;
+            s.noCapitalWinGame = gNum;
+          }
           if (isFinalMatch(game)) s.tournamentTitles += 1;
         } else if (row && wp) {
           // Lost with more wonders owned than the winner.
@@ -495,6 +511,20 @@
           const wRow = survivorByName(game, wp);
           const theirW = wRow && Array.isArray(wRow.wonders) ? wRow.wonders.length : 0;
           if (myW > theirW && myW > 0) s.wonderRaceLosses += 1;
+
+          // Lost despite a large tech lead over the winner (duel curiosities).
+          const myTechs = Number(row.techs);
+          const theirTechs = wRow != null ? Number(wRow.techs) : NaN;
+          if (Number.isFinite(myTechs) && Number.isFinite(theirTechs)) {
+            const lead = myTechs - theirTechs;
+            if (lead >= 10) {
+              s.techLeadLosses += 1;
+              if (lead > s.maxTechLeadLoss) {
+                s.maxTechLeadLoss = lead;
+                s.maxTechLeadLossGame = gNum;
+              }
+            }
+          }
         }
       }
     }
@@ -1481,6 +1511,52 @@
       ),
       (h) => String(h.stat.winNations.size),
       (h) => ({ games: h.stat.wins }),
+    );
+
+    function pushOrVacant(id, hits, valueFn, extraFn) {
+      if (hits && hits.length) {
+        pushTop(id, hits, valueFn, extraFn);
+      } else {
+        out.push({
+          id,
+          player: '',
+          value: '—',
+          vacant: true,
+        });
+      }
+    }
+
+    pushOrVacant(
+      'duel_capital_only_win',
+      withGame(
+        pickTop(stats, (s) => s.capitalOnlyWins, (s) => s.capitalOnlyWins > 0),
+        (h) => h.stat.capitalOnlyWinGame,
+      ),
+      (h) => String(h.stat.capitalOnlyWins),
+      (h) => ({ gameNumber: h.stat.capitalOnlyWinGame }),
+    );
+
+    pushOrVacant(
+      'duel_no_capital_win',
+      withGame(
+        pickTop(stats, (s) => s.noCapitalWins, (s) => s.noCapitalWins > 0),
+        (h) => h.stat.noCapitalWinGame,
+      ),
+      (h) => String(h.stat.noCapitalWins),
+      (h) => ({ gameNumber: h.stat.noCapitalWinGame }),
+    );
+
+    pushOrVacant(
+      'duel_tech_lead_loss',
+      withGame(
+        pickTop(stats, (s) => s.maxTechLeadLoss, (s) => s.maxTechLeadLoss >= 10),
+        (h) => h.stat.maxTechLeadLossGame,
+      ),
+      (h) => String(h.stat.maxTechLeadLoss),
+      (h) => ({
+        gameNumber: h.stat.maxTechLeadLossGame,
+        games: h.stat.techLeadLosses,
+      }),
     );
 
     duelCacheKey = key;
