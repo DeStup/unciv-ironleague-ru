@@ -808,7 +808,7 @@
 
     const { stats, games: gameList } = buildStats(games);
     const out = [];
-    const { withGame, pushTop } = createRecordEmitter(gameList, out);
+    const { nationAtGame, withGame, pushTop } = createRecordEmitter(gameList, out);
 
     pushTop(
       'most_wins',

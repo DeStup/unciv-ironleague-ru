@@ -66,15 +66,22 @@
   }
 
   async function initAssetCacheBust() {
+    // boot.js may already have resolved build-id; keep that stamp.
+    if (global.IronLeagueCacheBust && String(global.IronLeagueCacheBust).trim()) {
+      assetCacheBust = String(global.IronLeagueCacheBust).trim();
+    }
     try {
       const response = await fetch(`build-id.txt?v=${Date.now()}`, { cache: 'no-store' });
-      if (!response.ok) return;
+      if (!response.ok) {
+        global.IronLeagueCacheBust = assetCacheBust;
+        return;
+      }
       const text = (await response.text()).trim();
       if (text) {
         assetCacheBust = text.split(/\r?\n/)[0].trim() || assetCacheBust;
       }
     } catch (e) {
-      // keep Date.now() fallback
+      // keep existing / Date.now() fallback
     }
     global.IronLeagueCacheBust = assetCacheBust;
     if ('caches' in window) {

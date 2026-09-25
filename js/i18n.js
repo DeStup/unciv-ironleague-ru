@@ -668,7 +668,7 @@
       'rating.col.pPair': 'Место pair',
       'rating.col.pFin': 'Место finish',
       'records.intro':
-        'Рекорды считаются из архива при каждой загрузке. Игры с флагами teams / scrap не учитываются. Для FFA можно смотреть все сезоны или каждый отдельно (сезон 0 — IL 1–11).',
+        'Рекорды считаются из архива при каждой загрузке. Игры с флагами teams / scrap не учитываются. Для FFA фильтр сезона общий с архивом, статистикой и рейтингом (сезон 0 — IL 1–11).',
       'records.toc': 'Разделы рекордов',
       'records.empty': 'Пока нет данных для этого раздела.',
       'records.runners': '2–3 места',
@@ -1624,7 +1624,7 @@
       'rating.col.pPair': 'Pair place',
       'rating.col.pFin': 'Finish place',
       'records.intro':
-        'Records are computed from the archive on every load. Games flagged teams / scrap are ignored. For FFA you can view all seasons or each one separately (season 0 is IL 1–11).',
+        'Records are computed from the archive on every load. Games flagged teams / scrap are ignored. For FFA the season filter is shared with archive, stats, and rating (season 0 is IL 1–11).',
       'records.toc': 'Records sections',
       'records.empty': 'No data for this section yet.',
       'records.runners': '2nd–3rd places',

@@ -76,17 +76,25 @@
 
   /** Public policy/ideology label (shared policy-terms + i18n translateTerm). */
   function displayPolicyName(name) {
-    const terms = global.IronLeaguePolicyTerms;
-    if (terms && typeof terms.toEnglish === 'function' && terms.toEnglish(name) !== name) {
-      return terms.toEnglish(name);
+    const raw = name == null ? '' : String(name);
+    if (!raw) return '';
+    const lang = (global.IronLeagueI18n && global.IronLeagueI18n.getLang)
+      ? global.IronLeagueI18n.getLang()
+      : 'ru';
+    if (lang === 'en') {
+      const terms = global.IronLeaguePolicyTerms;
+      if (terms && typeof terms.toEnglish === 'function') {
+        const en = terms.toEnglish(raw);
+        if (en && en !== raw) return en;
+      }
+      if (global.IronLeagueI18n && global.IronLeagueI18n.translateTerm) {
+        return global.IronLeagueI18n.translateTerm(raw);
+      }
+      if (global.IronLeagueI18n && global.IronLeagueI18n.translatePolicy) {
+        return global.IronLeagueI18n.translatePolicy(raw);
+      }
     }
-    if (global.IronLeagueI18n && global.IronLeagueI18n.translateTerm) {
-      return global.IronLeagueI18n.translateTerm(name);
-    }
-    if (global.IronLeagueI18n && global.IronLeagueI18n.translatePolicy) {
-      return global.IronLeagueI18n.translatePolicy(name);
-    }
-    return name;
+    return raw;
   }
 
   global.IronLeagueNationNames = {
