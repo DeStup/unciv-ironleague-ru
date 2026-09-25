@@ -1636,6 +1636,7 @@
         }
 
         #viewRating::before { background-image: url('../bg/rating.png'); }
+        #viewSeasons::before { background-image: url('../bg/seasons.png'); }
         #viewRecords::before { background-image: url('../bg/records.png'); }
 
         .rating-scale-row {
