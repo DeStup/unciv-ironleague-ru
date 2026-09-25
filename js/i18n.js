@@ -2130,14 +2130,15 @@
     if (name == null || name === '') return name;
     const raw = String(name).trim();
     if (!raw) return name;
-    // Policy branches / ideologies are owned by IronLeaguePolicyTerms.
-    if (window.IronLeaguePolicyTerms && IronLeaguePolicyTerms.toEnglish(raw) !== raw) {
-      return IronLeaguePolicyTerms.toEnglish(raw);
-    }
     if (lang === 'en') {
+      // Policies/ideologies are RU in Games.json → English labels.
+      if (window.IronLeaguePolicyTerms && IronLeaguePolicyTerms.toEnglish(raw) !== raw) {
+        return IronLeaguePolicyTerms.toEnglish(raw);
+      }
+      // Eras / religion status (already RU keys in TERM_EN); beliefs stay English.
       return TERM_EN[raw] || raw;
     }
-    // RU UI: beliefs are often English in Games.json — show mod/in-game Russian.
+    // RU UI: policies already Russian; beliefs are English in JSON → Russian labels.
     return BELIEF_RU[raw] || raw;
   }
 

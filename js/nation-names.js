@@ -74,25 +74,19 @@
     return russianName || '';
   }
 
-  /** Public policy/ideology label (shared policy-terms + i18n translateTerm). */
+  /**
+   * Policy / ideology / belief / era label for the current UI language.
+   * Games.json: policies & ideologies in Russian; beliefs usually English (Unciv).
+   * Delegates to IronLeagueI18n.translateTerm (lang-aware).
+   */
   function displayPolicyName(name) {
     const raw = name == null ? '' : String(name);
     if (!raw) return '';
-    const lang = (global.IronLeagueI18n && global.IronLeagueI18n.getLang)
-      ? global.IronLeagueI18n.getLang()
-      : 'ru';
-    if (lang === 'en') {
-      const terms = global.IronLeaguePolicyTerms;
-      if (terms && typeof terms.toEnglish === 'function') {
-        const en = terms.toEnglish(raw);
-        if (en && en !== raw) return en;
-      }
-      if (global.IronLeagueI18n && global.IronLeagueI18n.translateTerm) {
-        return global.IronLeagueI18n.translateTerm(raw);
-      }
-      if (global.IronLeagueI18n && global.IronLeagueI18n.translatePolicy) {
-        return global.IronLeagueI18n.translatePolicy(raw);
-      }
+    if (global.IronLeagueI18n && typeof global.IronLeagueI18n.translateTerm === 'function') {
+      return global.IronLeagueI18n.translateTerm(raw);
+    }
+    if (global.IronLeagueI18n && typeof global.IronLeagueI18n.translatePolicy === 'function') {
+      return global.IronLeagueI18n.translatePolicy(raw);
     }
     return raw;
   }
