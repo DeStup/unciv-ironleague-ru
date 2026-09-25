@@ -147,6 +147,74 @@
     return '';
   }
 
+  /**
+   * First IronLeague-N of each FFA season (matches live/core: season 0 = IL 1–11).
+   * When season 2 starts, add its first IL here (e.g. 2: 40). Prefer game.season when present.
+   */
+  const SEASON_FIRST_IL = Object.freeze({
+    0: 1,
+    1: 12,
+  });
+
+  /** IronLeague-N session number, or null for teams/tournaments/other. */
+  function ilSessionNumber(game) {
+    const raw = String((game && game.number) || '').trim();
+    const m = /^IronLeague-(\d+)$/i.exec(raw);
+    return m ? parseInt(m[1], 10) : null;
+  }
+
+  /**
+   * Archive FFA season id for a game, or null if not an IL numbered session.
+   * Uses ``game.season`` when set; otherwise maps IL-N via SEASON_FIRST_IL.
+   */
+  function gameSeasonId(game) {
+    if (game && game.season != null && game.season !== '') {
+      const s = Number(game.season);
+      if (Number.isFinite(s) && s >= 0) return s;
+    }
+    const n = ilSessionNumber(game);
+    if (n == null || n < 1) return null;
+    let best = null;
+    let bestFirst = -Infinity;
+    for (const key of Object.keys(SEASON_FIRST_IL)) {
+      const sid = Number(key);
+      const first = Number(SEASON_FIRST_IL[key]);
+      if (!Number.isFinite(sid) || !Number.isFinite(first)) continue;
+      if (n >= first && first >= bestFirst) {
+        bestFirst = first;
+        best = sid;
+      }
+    }
+    return best;
+  }
+
+  /** Filter games to one season; ``all`` / null / '' returns the input list. */
+  function filterGamesBySeason(games, seasonId) {
+    if (seasonId == null || seasonId === '' || seasonId === 'all') {
+      return Array.isArray(games) ? games : [];
+    }
+    const want = Number(seasonId);
+    if (!Number.isFinite(want)) return Array.isArray(games) ? games : [];
+    return (games || []).filter((g) => gameSeasonId(g) === want);
+  }
+
+  /**
+   * Season ids to offer in the FFA records picker: known SEASON_FIRST_IL keys
+   * plus any seasons present on games (explicit ``season`` field).
+   */
+  function listArchiveSeasonIds(games) {
+    const set = new Set();
+    for (const key of Object.keys(SEASON_FIRST_IL)) {
+      const sid = Number(key);
+      if (Number.isFinite(sid)) set.add(sid);
+    }
+    for (const g of games || []) {
+      const s = gameSeasonId(g);
+      if (s != null) set.add(s);
+    }
+    return [...set].sort((a, b) => a - b);
+  }
+
   global.IronLeagueGamesCore = {
     gameFlags,
     isTournamentGame,
@@ -160,5 +228,10 @@
     formatGameLabel,
     spectatorFolderName,
     resolveWinnerNation,
+    SEASON_FIRST_IL,
+    ilSessionNumber,
+    gameSeasonId,
+    filterGamesBySeason,
+    listArchiveSeasonIds,
   };
 })(typeof window !== 'undefined' ? window : globalThis);

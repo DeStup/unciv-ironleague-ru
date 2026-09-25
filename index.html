@@ -340,6 +340,11 @@
                     <option value="all" data-i18n="pool.tournamentAll">Все турниры</option>
                 </select>
             </div>
+            <div class="filter-group pool-inline-filter" id="statsSeasonFilterGroup" data-section-ffa>
+                <select id="statsSeasonFilter" aria-label="Season" data-i18n-aria="records.seasonPick">
+                    <option value="all" data-i18n="records.seasonAll">Все сезоны</option>
+                </select>
+            </div>
         </div>
         <p class="stats-intro" id="statsIntro" data-i18n="stats.intro">В статистику не входят игры с пометками «командная» (teams) и «скрап» (scrap).</p>
         <label class="stats-game-links-toggle">
@@ -764,6 +769,11 @@
                     <option value="all" data-i18n="pool.tournamentAll">Все турниры</option>
                 </select>
             </div>
+            <div class="filter-group pool-inline-filter" id="ratingSeasonFilterGroup" data-section-ffa>
+                <select id="ratingSeasonFilter" aria-label="Season" data-i18n-aria="records.seasonPick">
+                    <option value="all" data-i18n="records.seasonAll">Все сезоны</option>
+                </select>
+            </div>
         </div>
         <div class="rating-scale-row" role="group" data-i18n-aria="rating.scaleLabel" aria-label="Шкала рейтинга">
             <span class="rating-k-label" data-i18n="rating.scaleLabel">Шкала</span>
@@ -1043,6 +1053,11 @@
                     <option value="all" data-i18n="pool.tournamentAll">Все турниры</option>
                 </select>
             </div>
+            <div class="filter-group pool-inline-filter" id="recordsSeasonFilterGroup" data-section-ffa>
+                <select id="recordsSeasonFilter" aria-label="Season" data-i18n-aria="records.seasonPick">
+                    <option value="all" data-i18n="records.seasonAll">Все сезоны</option>
+                </select>
+            </div>
         </div>
         <p class="rating-intro" id="recordsIntro" data-i18n="records.intro">
             Рекорды считаются из архива при каждой загрузке. Игры с флагами teams / scrap не учитываются.
@@ -1113,12 +1128,12 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/games-core.js?v=tournament-pool-3"></script>
+<script src="js/games-core.js?v=records-seasons-1"></script>
     <script src="js/policy-terms.js?v=shared-policy-1"></script>
     <script src="js/nation-names.js?v=shared-nations-1"></script>
     <script src="js/site-core.js?v=seasons-live-awards-1"></script>
     <script src="js/ui-helpers.js?v=shared-ui-1"></script>
-    <script src="js/i18n.js?v=epic-plaques-1"></script>
+    <script src="js/i18n.js?v=records-seasons-3"></script>
     <script src="js/player-meta.js?v=short-tg-1"></script>
 <script src="js/stats-charts.js?v=profile-perf-1"></script>
 <script src="js/gif-preview.js?v=1"></script>
@@ -1307,8 +1322,11 @@
 
     const POOL_MODE_KEY = 'ironleague_pool_mode';
     const TOURNAMENT_NAME_KEY = 'ironleague_tournament_name';
+    const FFA_SEASON_KEY = 'ironleague_ffa_season';
+    const FFA_SEASON_KEY_LEGACY = 'ironleague_records_season';
     let poolMode = 'ffa';
     let tournamentNameFilter = 'all';
+    let ffaSeasonFilter = 'all';
 
     function getPoolMode() {
         return poolMode === 'tournaments' ? 'tournaments' : 'ffa';
@@ -1318,15 +1336,28 @@
         return tournamentNameFilter || 'all';
     }
 
+    function getFfaSeasonFilter() {
+        return ffaSeasonFilter || 'all';
+    }
+
+    /** @deprecated alias — same as getFfaSeasonFilter */
+    function getRecordsSeasonFilter() {
+        return getFfaSeasonFilter();
+    }
+
     function loadPoolMode() {
         try {
             const saved = localStorage.getItem(POOL_MODE_KEY);
             poolMode = saved === 'tournaments' ? 'tournaments' : 'ffa';
             const tn = localStorage.getItem(TOURNAMENT_NAME_KEY);
             tournamentNameFilter = tn && tn !== 'all' ? tn : 'all';
+            const sn = localStorage.getItem(FFA_SEASON_KEY)
+                || localStorage.getItem(FFA_SEASON_KEY_LEGACY);
+            ffaSeasonFilter = sn && sn !== 'all' ? String(sn) : 'all';
         } catch (e) {
             poolMode = 'ffa';
             tournamentNameFilter = 'all';
+            ffaSeasonFilter = 'all';
         }
     }
 
@@ -1352,6 +1383,26 @@
         if (!silent) refreshPoolDependentViews();
     }
 
+    function syncFfaSeasonSelects() {
+        document.querySelectorAll('#recordsSeasonFilter, #statsSeasonFilter, #ratingSeasonFilter').forEach((el) => {
+            if (el && el.value !== ffaSeasonFilter) el.value = ffaSeasonFilter;
+        });
+    }
+
+    function setFfaSeasonFilter(season, silent) {
+        ffaSeasonFilter = season != null && String(season) !== 'all' ? String(season) : 'all';
+        try {
+            localStorage.setItem(FFA_SEASON_KEY, ffaSeasonFilter);
+        } catch (e) { /* ignore */ }
+        syncFfaSeasonSelects();
+        if (!silent) refreshPoolDependentViews();
+    }
+
+    /** @deprecated alias */
+    function setRecordsSeasonFilter(season, silent) {
+        setFfaSeasonFilter(season, silent);
+    }
+
     function activeGamesPool() {
         if (getPoolMode() === 'tournaments') {
             let list = tournamentGamesOnly(gamesData);
@@ -1362,6 +1413,24 @@
             return list;
         }
         return rankedGamesOnly(gamesData);
+    }
+
+    /**
+     * FFA pool for records + stats (+ profile achievements): season-scoped when
+     * a season is selected. Tournaments ignore season.
+     */
+    function seasonScopedPool() {
+        const pool = activeGamesPool();
+        if (getPoolMode() !== 'ffa') return pool;
+        if (!window.IronLeagueGamesCore || !IronLeagueGamesCore.filterGamesBySeason) {
+            return pool;
+        }
+        return IronLeagueGamesCore.filterGamesBySeason(pool, getFfaSeasonFilter());
+    }
+
+    /** @deprecated alias */
+    function recordsGamesPool() {
+        return seasonScopedPool();
     }
 
     function uniqueTournamentNames() {
@@ -1389,6 +1458,33 @@
             sel.value = names.includes(cur) ? cur : 'all';
             if (sel.value !== tournamentNameFilter) tournamentNameFilter = sel.value;
         }
+    }
+
+    function seasonOptionLabel(sid) {
+        if (Number(sid) === 0) return tt('records.season0');
+        return tt('records.seasonN', { n: String(sid) });
+    }
+
+    function fillFfaSeasonSelects() {
+        const ids = (window.IronLeagueGamesCore && IronLeagueGamesCore.listArchiveSeasonIds)
+            ? IronLeagueGamesCore.listArchiveSeasonIds(gamesData)
+            : [0, 1];
+        const cur = getFfaSeasonFilter();
+        const html = `<option value="all">${tt('records.seasonAll')}</option>`
+            + ids.map((id) => `<option value="${id}">${seasonOptionLabel(id)}</option>`).join('');
+        let resolved = 'all';
+        if (cur !== 'all' && ids.map(String).includes(String(cur))) resolved = String(cur);
+        document.querySelectorAll('#recordsSeasonFilter, #statsSeasonFilter, #ratingSeasonFilter').forEach((sel) => {
+            if (!sel) return;
+            sel.innerHTML = html;
+            sel.value = resolved;
+        });
+        ffaSeasonFilter = resolved;
+    }
+
+    /** @deprecated alias */
+    function fillRecordsSeasonSelect() {
+        fillFfaSeasonSelects();
     }
 
     function syncPoolModeUi() {
@@ -2040,7 +2136,7 @@
     function openPlayerProfile(playerName) {
         const name = String(playerName || '').trim();
         if (!name) return;
-        const ranked = activeGamesPool();
+        const ranked = recordsGamesPool();
         const { playerRows } = computeArchiveStats(ranked);
         const row = playerRows.find((p) => p.name === name);
         const title = document.getElementById('profileTitle');
@@ -2940,6 +3036,7 @@
             populatePlayerFilter();
             populateExtraFilters();
             fillTournamentNameSelects();
+            fillFfaSeasonSelects();
             syncPoolModeUi();
             updateStats();
             filterGames();
@@ -3108,7 +3205,7 @@
 
     function renderRatingTables() {
         if (!window.IronLeagueRating || !gamesData.length) return;
-        const pool = activeGamesPool();
+        const pool = seasonScopedPool();
         const result = IronLeagueRating.computeAll(pool, ratingK);
         const zero = IronLeagueRating.computeAll(pool, ratingK, {
             zeroBase: true,
@@ -3390,7 +3487,7 @@
 
     function renderRecords() {
         if (!window.IronLeagueAchievements || !gamesData.length) return;
-        const pool = activeGamesPool();
+        const pool = recordsGamesPool();
         const duel = getPoolMode() === 'tournaments';
         const sections = duel ? DUEL_RECORD_SECTIONS : RECORD_SECTIONS;
         const items = duel
@@ -3398,7 +3495,7 @@
             : [
                 ...(IronLeagueAchievements.computeAchievements(pool) || []),
                 ...(IronLeagueAchievements.computeEpicPlaques
-                  ? IronLeagueAchievements.computeEpicPlaques(gamesData)
+                  ? IronLeagueAchievements.computeEpicPlaques(pool)
                   : []),
               ];
         const byId = new Map(items.map((x) => [x.id, x]));
@@ -3447,6 +3544,9 @@
             '#tournamentNameFilter, #statsTournamentNameFilter, #ratingTournamentNameFilter, #recordsTournamentNameFilter',
         ).forEach((el) => {
             el?.addEventListener('change', () => setTournamentNameFilter(el.value));
+        });
+        document.querySelectorAll('#recordsSeasonFilter, #statsSeasonFilter, #ratingSeasonFilter').forEach((el) => {
+            el?.addEventListener('change', () => setFfaSeasonFilter(el.value));
         });
         document.querySelectorAll('.rating-k-btn').forEach((btn) => {
             btn.addEventListener('click', () => setRatingK(btn.dataset.k));
@@ -4436,7 +4536,7 @@
             pantheonRows,
             founderBeliefRows,
             followerBeliefRows,
-        } = computeArchiveStats(activeGamesPool());
+        } = computeArchiveStats(seasonScopedPool());
 
         fillSortableTable(
             document.getElementById('playerWinrateTable'),
@@ -4708,7 +4808,7 @@
         }
         {
             const mapCounts = new Map();
-            for (const game of activeGamesPool()) {
+            for (const game of seasonScopedPool()) {
                 const m = canonicalizeMapName(game.map);
                 if (!m) continue;
                 mapCounts.set(m, (mapCounts.get(m) || 0) + 1);
@@ -4893,6 +4993,7 @@
             populatePlayerFilter();
             populateExtraFilters();
             fillTournamentNameSelects();
+            fillFfaSeasonSelects();
             syncPoolModeUi();
             filterGames();
             renderStatsTables();

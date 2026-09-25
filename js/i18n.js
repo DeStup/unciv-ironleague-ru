@@ -340,6 +340,10 @@
       'pool.tournaments': 'Турниры',
       'pool.tournament': 'Турнир',
       'pool.tournamentAll': 'Все турниры',
+      'records.seasonAll': 'Все сезоны',
+      'records.seasonPick': 'Сезон',
+      'records.season0': 'Сезон 0 (IL 1–11)',
+      'records.seasonN': 'Сезон {n}',
       'badge.tournament': 'Турнир',
       'records.section.rivalry': 'Соперничество',
       'records.intro.duel':
@@ -517,7 +521,7 @@
       'victory.cc': 'Досрочное окончание (СС)',
       'stats.toc': 'Разделы статистики',
       'stats.intro':
-        'В статистику не входят игры с пометками «командная» (teams) и «скрап» (scrap): они остаются в архиве и показываются с бейджем, но не влияют на винрейт, средние и рейтинг. Фильтр архива позволяет скрыть или показать только такие игры.',
+        'В статистику не входят игры с пометками «командная» (teams) и «скрап» (scrap): они остаются в архиве и показываются с бейджем, но не влияют на винрейт, средние и рейтинг. Для FFA можно смотреть все сезоны или каждый отдельно (сезон 0 — IL 1–11). Фильтр архива позволяет скрыть или показать только такие игры.',
       'stats.winrate': 'Винрейт игроков',
       'stats.winrateHint':
         'Победы / участия только в актуальных играх (без teams/scrap). «Выжил» — alive=true в финале. Минимум 1 игра.',
@@ -607,7 +611,7 @@
       'stats.col.belief': 'Верование',
       'stats.col.avgPlaceNorm': 'Ср. место',
       'rating.intro':
-        'Классический рейтинг считается в браузере из Games.json при каждой загрузке страницы.\n\nКакие игры входят\n• Только актуальные FFA без флагов teams / scrap (и без excludeFromStats).\n• Игры обрабатываются по номеру по возрастанию (хронология лиги).\n\nКак определяется место в одной партии\n1) Победитель (нация winner) — всегда 1-е место.\n2) Среди остальных: сначала живые, потом выбывшие.\n3) Внутри группы — по очкам финала (score) по убыванию; если очков нет — по нику.\n\nШкала «от 1000»\n• Все стартуют с 1000 (Elo FFA / pairwise).\n• Финиш мапится на ~1000 ± 400.\n• Сводный = среднее трёх методов на этой шкале.\n\nШкалу «от нуля» и очки лобби можно выбрать в выпадающем списке сверху.',
+        'Классический рейтинг считается в браузере из Games.json при каждой загрузке страницы.\n\nКакие игры входят\n• Только актуальные FFA без флагов teams / scrap (и без excludeFromStats).\n• Для FFA можно считать все сезоны или каждый отдельно (сезон 0 — IL 1–11).\n• Игры обрабатываются по номеру по возрастанию (хронология лиги).\n\nКак определяется место в одной партии\n1) Победитель (нация winner) — всегда 1-е место.\n2) Среди остальных: сначала живые, потом выбывшие.\n3) Внутри группы — по очкам финала (score) по убыванию; если очков нет — по нику.\n\nШкала «от 1000»\n• Все стартуют с 1000 (Elo FFA / pairwise).\n• Финиш мапится на ~1000 ± 400.\n• Сводный = среднее трёх методов на этой шкале.\n\nШкалу «от нуля» и очки лобби можно выбрать в выпадающем списке сверху.',
       'rating.introZero':
         'Рейтинг от нуля и очки лобби считаются в браузере из Games.json при каждой загрузке.\n\nКакие игры входят и как считается место — как на шкале «от 1000» (только FFA без teams/scrap; победитель → живые → выбывшие → score).\n\nЧто на этой шкале\n• Сводный Elo от нуля: FFA / pairwise стартуют с 0; финиш = среднее placeScore × 100 (без базы 1000).\n• Очки лобби (победа): всем +(N−1), победителю +(N−1)+10.\n• Очки лобби (Avg): всем +(N−1)+Avg (techs/policies/cities).\n\nФильтры\n• K — только для Elo FFA/pairwise в сводной таблице от нуля.\n• Штраф за выбывание (−5 при alive=false) — только для двух таблиц «Очки лобби»; по умолчанию выключен.',
       'rating.scaleLabel': 'Шкала',
@@ -664,7 +668,7 @@
       'rating.col.pPair': 'Место pair',
       'rating.col.pFin': 'Место finish',
       'records.intro':
-        'Рекорды считаются из архива при каждой загрузке. Игры с флагами teams / scrap не учитываются.',
+        'Рекорды считаются из архива при каждой загрузке. Игры с флагами teams / scrap не учитываются. Для FFA можно смотреть все сезоны или каждый отдельно (сезон 0 — IL 1–11).',
       'records.toc': 'Разделы рекордов',
       'records.empty': 'Пока нет данных для этого раздела.',
       'records.runners': '2–3 места',
@@ -1266,6 +1270,10 @@
       'pool.tournaments': 'Tournaments',
       'pool.tournament': 'Tournament',
       'pool.tournamentAll': 'All tournaments',
+      'records.seasonAll': 'All seasons',
+      'records.seasonPick': 'Season',
+      'records.season0': 'Season 0 (IL 1–11)',
+      'records.seasonN': 'Season {n}',
       'badge.tournament': 'Tournament',
       'records.section.rivalry': 'Rivalry',
       'records.intro.duel':
@@ -1443,7 +1451,7 @@
       'victory.cc': 'Early end (World Congress)',
       'stats.toc': 'Statistics sections',
       'stats.intro':
-        'Statistics exclude games tagged teams or scrap: they stay in the archive with a badge, but do not affect winrates, averages, or ratings. Use the archive filter to hide or show only those games.',
+        'Statistics exclude games tagged teams or scrap: they stay in the archive with a badge, but do not affect winrates, averages, or ratings. For FFA you can view all seasons or each one separately (season 0 is IL 1–11). Use the archive filter to hide or show only those games.',
       'stats.winrate': 'Player winrate',
       'stats.winrateHint':
         'Wins / games in ranked archive only (no teams/scrap). “Survived” = alive=true in finale. Minimum 1 game.',
@@ -1533,7 +1541,7 @@
       'stats.col.belief': 'Belief',
       'stats.col.avgPlaceNorm': 'Avg place',
       'rating.intro':
-        'Classic ratings are computed in the browser from Games.json on every page load.\n\nWhich games count\n• Ranked FFA only — no teams / scrap flags (and no excludeFromStats).\n• Games are processed in ascending game-number order (league chronology).\n\nPlacement inside one game\n1) The winner (winner nation) is always 1st.\n2) Among the rest: living players first, then eliminated.\n3) Within a group — by finale score descending; if score is missing — by nickname.\n\n“From 1000” scale\n• Everyone starts at 1000 (FFA / pairwise Elo).\n• Finish maps onto ~1000 ± 400.\n• Combined = mean of the three methods on this scale.\n\nUse the dropdown at the top for the zero-based scale and Lobby points.',
+        'Classic ratings are computed in the browser from Games.json on every page load.\n\nWhich games count\n• Ranked FFA only — no teams / scrap flags (and no excludeFromStats).\n• For FFA you can rate all seasons or each one separately (season 0 is IL 1–11).\n• Games are processed in ascending game-number order (league chronology).\n\nPlacement inside one game\n1) The winner (winner nation) is always 1st.\n2) Among the rest: living players first, then eliminated.\n3) Within a group — by finale score descending; if score is missing — by nickname.\n\n“From 1000” scale\n• Everyone starts at 1000 (FFA / pairwise Elo).\n• Finish maps onto ~1000 ± 400.\n• Combined = mean of the three methods on this scale.\n\nUse the dropdown at the top for the zero-based scale and Lobby points.',
       'rating.introZero':
         'Zero-based ratings and lobby points are computed in the browser from Games.json on every page load.\n\nWhich games count and how placement works match the “from 1000” scale (ranked FFA only; winner → living → eliminated → score).\n\nWhat is on this scale\n• Zero-based combined Elo: FFA / pairwise start at 0; finish = mean placeScore × 100 (no 1000 baseline).\n• Lobby points (win): everyone +(N−1), winner +(N−1)+10.\n• Lobby points (Avg): everyone +(N−1)+Avg (techs/policies/cities).\n\nFilters\n• K — only for Elo FFA/pairwise inside the zero-based combined table.\n• Elimination penalty (−5 when alive=false) — only for the two Lobby points tables; off by default.',
       'rating.scaleLabel': 'Scale',
@@ -1590,7 +1598,7 @@
       'rating.col.pPair': 'Pair place',
       'rating.col.pFin': 'Finish place',
       'records.intro':
-        'Records are computed from the archive on every load. Games flagged teams / scrap are ignored.',
+        'Records are computed from the archive on every load. Games flagged teams / scrap are ignored. For FFA you can view all seasons or each one separately (season 0 is IL 1–11).',
       'records.toc': 'Records sections',
       'records.empty': 'No data for this section yet.',
       'records.runners': '2nd–3rd places',
