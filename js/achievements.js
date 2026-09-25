@@ -94,24 +94,37 @@
   function isFinalMatch(game) {
     const code = `${game && game.matchId != null ? game.matchId : ''} ${
       game && game.matchCode != null ? game.matchCode : ''
-    }`.toLowerCase();
+    } ${game && game.number != null ? game.number : ''}`.toLowerCase();
     return /\bgf\b/.test(code) || code.includes('final') || code.includes('grand');
   }
 
-  /** Cheap fingerprint so we recompute only when archive content changes. */
+  /** Cheap fingerprint so we recompute only when archive content / pool changes. */
   function gamesFingerprint(games) {
     if (!games || !games.length) return '0';
     let parts = [String(games.length)];
     for (const g of games) {
+      const survivors = Array.isArray(g.survivors) ? g.survivors : [];
+      let scoreSum = 0;
+      let deathsSum = 0;
+      for (const s of survivors) {
+        const sc = Number(s && s.score);
+        if (Number.isFinite(sc)) scoreSum += sc;
+        const d = Number(s && s.military_deaths);
+        if (Number.isFinite(d)) deathsSum += d;
+      }
       parts.push(
         [
           g.id,
           g.number,
           g.endedOnTurn,
           g.winner,
-          Array.isArray(g.survivors) ? g.survivors.length : 0,
+          g.victoryType,
+          g.bugCount != null ? g.bugCount : g.bugsFound,
+          survivors.length,
           Array.isArray(g.players) ? g.players.length : 0,
-        ].join(':')
+          Math.round(scoreSum),
+          Math.round(deathsSum),
+        ].join(':'),
       );
     }
     return parts.join('|');
@@ -201,7 +214,6 @@
     return {
       played: 0,
       wins: 0,
-      winsWithCaps: 0,
       winsNoCaps: 0,
       caps: 0,
       deaths: 0,
@@ -265,8 +277,15 @@
       maxGreatEngineersGame: null,
       maxGreatGenerals: 0,
       maxGreatGeneralsGame: null,
+      maxGreatMerchants: 0,
+      maxGreatMerchantsGame: null,
+      maxGreatAdmirals: 0,
+      maxGreatAdmiralsGame: null,
       maxGreatCulturePeople: 0,
       maxGreatCulturePeopleGame: null,
+      maxMilitaryDeathsSingle: 0,
+      maxMilitaryDeathsSingleGame: null,
+      capitalTakes: 0,
       maxWondersOneTurn: 0,
       maxWondersOneTurnGame: null,
       minIdeologyTurn: Infinity,
@@ -277,7 +296,6 @@
       underdogWins: 0,
       wonderRaceLosses: 0,
       noWarWins: 0,
-      lateIdeologyWins: 0,
       deathsInWins: 0,
       deathsInWinsKnown: 0,
       tournamentTitles: 0,
@@ -372,42 +390,37 @@
     }
   }
 
+  function playerNameByNation(game, nation) {
+    const want = String(nation || '').trim();
+    if (!want) return null;
+    for (const s of game.survivors || []) {
+      if (String(s.nation || '').trim() !== want) continue;
+      const name = String(s.name || '').trim();
+      if (name && !isBarbarianName(name) && !s.is_barbarian) return name;
+    }
+    for (const p of game.players || []) {
+      if (String(p.nation || '').trim() !== want) continue;
+      const name = String(p.name || '').trim();
+      if (name && !isBarbarianName(name)) return name;
+    }
+    return null;
+  }
+
+  function militaryDeathsInCap(game, row) {
+    if (!row || !Number.isFinite(Number(row.military_deaths))) return null;
+    const deathsVal = Number(row.military_deaths);
+    const endedTurn = Number(game && game.endedOnTurn);
+    const turnCap = Number.isFinite(endedTurn) ? endedTurn * 3 : 400;
+    const cap = Math.max(250, turnCap);
+    if (deathsVal < 0 || deathsVal > cap) return null;
+    return deathsVal;
+  }
+
   function buildStats(games, listOverride) {
     const list = Array.isArray(listOverride) ? listOverride : eligibleGames(games);
     const stats = new Map();
-
-    // Nation appearance + win counts (underdog = fewest wins among nations with ≥1 game).
-    const nationGames = new Map();
-    const nationWins = new Map();
-    for (const game of list) {
-      const seen = new Set();
-      for (const p of game.players || []) {
-        const nat = String(p.nation || '').trim();
-        if (!nat || seen.has(nat)) continue;
-        seen.add(nat);
-        nationGames.set(nat, (nationGames.get(nat) || 0) + 1);
-      }
-      for (const s of game.survivors || []) {
-        const nat = String(s.nation || '').trim();
-        if (!nat || seen.has(nat)) continue;
-        seen.add(nat);
-        nationGames.set(nat, (nationGames.get(nat) || 0) + 1);
-      }
-      const winnerNat = resolveWinnerNation(game);
-      if (winnerNat) nationWins.set(winnerNat, (nationWins.get(winnerNat) || 0) + 1);
-    }
-    let minNationWins = Infinity;
-    for (const [, w] of nationWins) {
-      if (w >= 1 && w < minNationWins) minNationWins = w;
-    }
-    // Fallback: if no wins yet, use 0 among appeared nations.
-    if (!Number.isFinite(minNationWins)) {
-      minNationWins = 0;
-      for (const [nat] of nationGames) {
-        const w = nationWins.get(nat) || 0;
-        if (w < minNationWins) minNationWins = w;
-      }
-    }
+    // Chronological: first league win for a civilization counts as underdog/pioneer.
+    const nationWinsSoFar = new Map();
 
     function ensure(name) {
       if (!stats.has(name)) stats.set(name, emptyStat());
@@ -419,6 +432,17 @@
       const wp = winnerPlayer(game);
       const turn = Number(game.endedOnTurn);
       const gNum = parseGameNum(game);
+
+      // Credit capital takes before per-player loop (one event per eliminated capital).
+      for (const s of game.survivors || []) {
+        if (!s || s.is_barbarian || isBarbarianName(s.name)) continue;
+        const capBy = String(s.capital_taken_by || '').trim();
+        if (!capBy) continue;
+        const killer = playerNameByNation(game, capBy);
+        if (!killer) continue;
+        ensure(killer).capitalTakes += 1;
+      }
+
       for (const name of playerNames(game)) {
         const s = ensure(name);
         s.played += 1;
@@ -468,20 +492,16 @@
           s.finaleGames += 1;
           const caps = Array.isArray(row.conquered_capitals) ? row.conquered_capitals.length : 0;
           s.caps += caps;
-          if (Number.isFinite(Number(row.military_deaths))) {
-            const deathsVal = Number(row.military_deaths);
-            // Games 12–13 had corrupt tallies (thousands of “deaths”);
-            // skip absurd per-game values vs turn length.
-            const endedTurn = Number(game.endedOnTurn);
-            const turnCap = Number.isFinite(endedTurn) ? endedTurn * 3 : 400;
-            const cap = Math.max(250, turnCap);
-            if (deathsVal >= 0 && deathsVal <= cap) {
-              s.deathsKnownGames += 1;
-              s.deaths += deathsVal;
-              if (won) {
-                s.deathsInWinsKnown += 1;
-                s.deathsInWins += deathsVal;
-              }
+          const deathsVal = militaryDeathsInCap(game, row);
+          if (deathsVal != null) {
+            s.deathsKnownGames += 1;
+            s.deaths += deathsVal;
+            if (won) {
+              s.deathsInWinsKnown += 1;
+              s.deathsInWins += deathsVal;
+            }
+            if (!isBarbarianName(name) && !row.is_barbarian) {
+              bumpPeak(s, 'maxMilitaryDeathsSingle', 'maxMilitaryDeathsSingleGame', deathsVal, gNum);
             }
           }
           s.wondersBuilt += Array.isArray(row.wonders_built) ? row.wonders_built.length : 0;
@@ -528,6 +548,8 @@
           bumpPeak(s, 'maxGreatScientists', 'maxGreatScientistsGame', gpTypeCount(row, 'Scientist'), gNum);
           bumpPeak(s, 'maxGreatEngineers', 'maxGreatEngineersGame', gpTypeCount(row, 'Engineer'), gNum);
           bumpPeak(s, 'maxGreatGenerals', 'maxGreatGeneralsGame', gpTypeCount(row, 'General'), gNum);
+          bumpPeak(s, 'maxGreatMerchants', 'maxGreatMerchantsGame', gpTypeCount(row, 'Merchant'), gNum);
+          bumpPeak(s, 'maxGreatAdmirals', 'maxGreatAdmiralsGame', gpTypeCount(row, 'Admiral'), gNum);
           bumpPeak(s, 'maxGreatCulturePeople', 'maxGreatCulturePeopleGame', gpCultureCount(row), gNum);
           const mw = Number(row.max_wonders_built_one_turn);
           if (Number.isFinite(mw) && mw >= 2) {
@@ -547,8 +569,7 @@
           const caps = Array.isArray((row || {}).conquered_capitals)
             ? row.conquered_capitals.length
             : 0;
-          if (caps > 0) s.winsWithCaps += 1;
-          else s.winsNoCaps += 1;
+          if (caps <= 0) s.winsNoCaps += 1;
           if (caps > s.maxCapsInWin) {
             s.maxCapsInWin = caps;
             s.maxCapsInWinGame = gNum;
@@ -560,16 +581,15 @@
           if (winNation) {
             s.winsByNation.set(winNation, (s.winsByNation.get(winNation) || 0) + 1);
             s.winNations.add(winNation);
-            if ((nationWins.get(winNation) || 0) === minNationWins) {
-              s.underdogWins += 1;
-            }
+            const prior = nationWinsSoFar.get(winNation) || 0;
+            if (prior === 0) s.underdogWins += 1;
+            nationWinsSoFar.set(winNation, prior + 1);
           }
           if (row && Number.isFinite(Number(row.wars_declared)) && Number(row.wars_declared) === 0) {
             s.noWarWins += 1;
           }
           if (row && Number.isFinite(Number(row.ideology_turn)) && Number(row.ideology_turn) > 0) {
             const ideoTurn = Number(row.ideology_turn);
-            s.lateIdeologyWins += 1;
             if (ideoTurn > s.maxIdeologyTurnWin) {
               s.maxIdeologyTurnWin = ideoTurn;
               s.maxIdeologyTurnWinGame = gNum;
@@ -661,7 +681,7 @@
         }
       }
     }
-    return { stats, games: list, nationWins, minNationWins };
+    return { stats, games: list };
   }
 
   /**
@@ -696,30 +716,8 @@
     }));
   }
 
-  function pickMax(stats, scoreFn, filterFn) {
-    return pickTop(stats, scoreFn, filterFn, 1)[0] || null;
-  }
-
-  function pickMin(stats, scoreFn, filterFn) {
-    return pickTopMin(stats, scoreFn, filterFn, 1)[0] || null;
-  }
-
-  /**
-   * Compute league records from archive games.
-   * Считает рекорды лиги по архиву.
-   *
-   * :param games: Games.json games array / массив игр
-   * :return: achievement objects for the UI / объекты ачивок для UI
-   */
-  function computeAchievements(games) {
-    const key = gamesFingerprint(games);
-    if (achievementsCacheKey === key && achievementsCacheItems) {
-      return achievementsCacheItems;
-    }
-
-    const { stats, games: gameList } = buildStats(games);
-    const out = [];
-
+  /** Shared nation/game helpers + ranked record emitter for FFA and duel. */
+  function createRecordEmitter(gameList, out) {
     function nationAtGame(player, gNum) {
       const want = Number(gNum);
       if (!Number.isFinite(want) || want <= 0) return '';
@@ -738,7 +736,6 @@
       return '';
     }
 
-    /** Attach per-hit game number so top-2/3 and nation badges resolve. */
     function withGame(hits, gameFromHit) {
       return (hits || []).map((h) => {
         const g = typeof gameFromHit === 'function' ? gameFromHit(h) : gameFromHit;
@@ -747,15 +744,6 @@
       });
     }
 
-    /**
-     * Push a ranked record with optional top-2 / top-3 runners-up.
-     * Пишет рекорд с опциональными 2–3 местами.
-     *
-     * :param id: record id / id рекорда
-     * :param hits: pickTop rows / строки pickTop
-     * :param valueFn: (hit) => display value / значение для UI
-     * :param extraFn: optional (hit) => extra fields for #1 body / доп. поля для текста 1 места
-     */
     function pushTop(id, hits, valueFn, extraFn) {
       if (!hits || !hits.length) return;
       const top = hits.map((h, i) => {
@@ -788,6 +776,39 @@
         top,
       }, extra));
     }
+
+    function pushOrVacant(id, hits, valueFn, extraFn) {
+      if (hits && hits.length) {
+        pushTop(id, hits, valueFn, extraFn);
+      } else {
+        out.push({
+          id,
+          player: '',
+          value: '—',
+          vacant: true,
+        });
+      }
+    }
+
+    return { nationAtGame, withGame, pushTop, pushOrVacant };
+  }
+
+  /**
+   * Compute league records from archive games.
+   * Считает рекорды лиги по архиву.
+   *
+   * :param games: Games.json games array / массив игр
+   * :return: achievement objects for the UI / объекты ачивок для UI
+   */
+  function computeAchievements(games) {
+    const key = gamesFingerprint(games);
+    if (achievementsCacheKey === key && achievementsCacheItems) {
+      return achievementsCacheItems;
+    }
+
+    const { stats, games: gameList } = buildStats(games);
+    const out = [];
+    const { withGame, pushTop } = createRecordEmitter(gameList, out);
 
     pushTop(
       'most_wins',
@@ -905,6 +926,27 @@
         (s) => s.deathsKnownGames >= 1 && s.deaths > 0,
       ),
       (h) => String(h.stat.deaths),
+    );
+
+    pushTop(
+      'max_military_deaths_single',
+      withGame(
+        pickTop(
+          stats,
+          (s) => s.maxMilitaryDeathsSingle,
+          (s) => s.maxMilitaryDeathsSingle >= 40,
+        ),
+        (h) => h.stat.maxMilitaryDeathsSingleGame,
+      ),
+      (h) => String(h.stat.maxMilitaryDeathsSingle),
+      (h) => ({ gameNumber: h.stat.maxMilitaryDeathsSingleGame }),
+    );
+
+    pushTop(
+      'most_capital_takes',
+      pickTop(stats, (s) => s.capitalTakes, (s) => s.capitalTakes >= 2),
+      (h) => String(h.stat.capitalTakes),
+      (h) => ({ games: h.stat.played }),
     );
 
     pushTop(
@@ -1112,6 +1154,16 @@
     );
 
     pushTop(
+      'max_strength_finale',
+      withGame(
+        pickTop(stats, (s) => s.maxStrength, (s) => s.maxStrength > 0),
+        (h) => h.stat.maxStrengthGame,
+      ),
+      (h) => String(h.stat.maxStrength),
+      (h) => ({ gameNumber: h.stat.maxStrengthGame }),
+    );
+
+    pushTop(
       'max_techs_finale',
       withGame(pickTop(stats, (s) => s.maxTechs, (s) => s.maxTechs > 0), (h) => h.stat.maxTechsGame),
       (h) => String(h.stat.maxTechs),
@@ -1193,6 +1245,26 @@
       withGame(pickTop(stats, (s) => s.maxGreatGenerals, (s) => s.maxGreatGenerals > 0), (h) => h.stat.maxGreatGeneralsGame),
       (h) => String(h.stat.maxGreatGenerals),
       (h) => ({ gameNumber: h.stat.maxGreatGeneralsGame }),
+    );
+
+    pushTop(
+      'most_great_merchants_finale',
+      withGame(
+        pickTop(stats, (s) => s.maxGreatMerchants, (s) => s.maxGreatMerchants > 0),
+        (h) => h.stat.maxGreatMerchantsGame,
+      ),
+      (h) => String(h.stat.maxGreatMerchants),
+      (h) => ({ gameNumber: h.stat.maxGreatMerchantsGame }),
+    );
+
+    pushTop(
+      'most_great_admirals_finale',
+      withGame(
+        pickTop(stats, (s) => s.maxGreatAdmirals, (s) => s.maxGreatAdmirals > 0),
+        (h) => h.stat.maxGreatAdmiralsGame,
+      ),
+      (h) => String(h.stat.maxGreatAdmirals),
+      (h) => ({ gameNumber: h.stat.maxGreatAdmiralsGame }),
     );
 
     pushTop(
@@ -1314,65 +1386,7 @@
     const list = duelEligibleGames(games);
     const { stats, games: gameList } = buildStats(games, list);
     const out = [];
-
-    function nationAtGame(player, gNum) {
-      const want = Number(gNum);
-      if (!Number.isFinite(want) || want <= 0) return '';
-      for (const game of gameList) {
-        if (parseGameNum(game) !== want) continue;
-        const row = survivorByName(game, player);
-        if (row && String(row.nation || '').trim()) {
-          return String(row.nation).trim();
-        }
-        for (const p of game.players || []) {
-          if (String(p.name || '').trim() !== player) continue;
-          const nat = String(p.nation || '').trim();
-          if (nat) return nat;
-        }
-      }
-      return '';
-    }
-
-    function withGame(hits, gameFromHit) {
-      return (hits || []).map((h) => {
-        const g = typeof gameFromHit === 'function' ? gameFromHit(h) : gameFromHit;
-        if (g == null || !Number.isFinite(Number(g))) return h;
-        return Object.assign({}, h, { game: Number(g) });
-      });
-    }
-
-    function pushTop(id, hits, valueFn, extraFn) {
-      if (!hits || !hits.length) return;
-      const top = hits.map((h, i) => {
-        const row = { place: i + 1, player: h.player, value: valueFn(h) };
-        if (h.game != null) row.gameNumber = h.game;
-        if (h.nation) row.nation = h.nation;
-        else if (row.gameNumber != null) {
-          const nat = nationAtGame(h.player, row.gameNumber);
-          if (nat) row.nation = nat;
-        }
-        return row;
-      });
-      const head = hits[0];
-      const extra = typeof extraFn === 'function' ? (extraFn(head) || {}) : (extraFn || {});
-      if (extra.gameNumber != null && top[0].gameNumber == null) {
-        top[0].gameNumber = extra.gameNumber;
-      }
-      if (!extra.nation && top[0].nation) extra.nation = top[0].nation;
-      if (extra.gameNumber != null && !extra.nation) {
-        const nat = nationAtGame(head.player, extra.gameNumber);
-        if (nat) {
-          extra.nation = nat;
-          top[0].nation = nat;
-        }
-      }
-      out.push(Object.assign({
-        id,
-        player: head.player,
-        value: top[0].value,
-        top,
-      }, extra));
-    }
+    const { withGame, pushTop, pushOrVacant } = createRecordEmitter(gameList, out);
 
     pushTop(
       'duel_most_wins',
@@ -1655,19 +1669,6 @@
       (h) => ({ games: h.stat.wins }),
     );
 
-    function pushOrVacant(id, hits, valueFn, extraFn) {
-      if (hits && hits.length) {
-        pushTop(id, hits, valueFn, extraFn);
-      } else {
-        out.push({
-          id,
-          player: '',
-          value: '—',
-          vacant: true,
-        });
-      }
-    }
-
     pushOrVacant(
       'duel_capital_only_win',
       withGame(
@@ -1775,6 +1776,29 @@
       pickTop(stats, (s) => s.pietyCount, (s) => s.pietyCount >= 1),
       (h) => String(h.stat.pietyCount),
       (h) => ({ games: h.stat.played }),
+    );
+
+    // Shortest grand final (or any final match) by endedOnTurn.
+    const finalHits = [];
+    for (const game of gameList) {
+      if (!isFinalMatch(game)) continue;
+      const turn = Number(game.endedOnTurn);
+      if (!Number.isFinite(turn) || turn <= 0) continue;
+      const wp = winnerPlayer(game);
+      if (!wp) continue;
+      finalHits.push({
+        player: wp,
+        turn,
+        game: parseGameNum(game),
+        score: -turn,
+      });
+    }
+    finalHits.sort((a, b) => (a.turn - b.turn) || a.player.localeCompare(b.player));
+    pushOrVacant(
+      'duel_shortest_final',
+      withGame(finalHits.slice(0, 3), (h) => h.game),
+      (h) => String(h.turn),
+      (h) => ({ gameNumber: h.game }),
     );
 
     duelCacheKey = key;

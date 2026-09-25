@@ -799,11 +799,19 @@
       'records.item.most_military_deaths.title': 'Мясорубка',
       'records.item.most_military_deaths.flavor': 'Мясной штурм',
       'records.item.most_military_deaths.body':
-        '{player} потерял больше всего юнитов в бою: {value}.',
+        '{player} потерял больше всего юнитов в бою суммарно: {value}.',
+      'records.item.max_military_deaths_single.title': 'Мясо одной игры',
+      'records.item.max_military_deaths_single.flavor': 'Рекордный забой',
+      'records.item.max_military_deaths_single.body':
+        '{player} потерял больше всего юнитов в одной партии: {value} ({game}).',
+      'records.item.most_capital_takes.title': 'Палач',
+      'records.item.most_capital_takes.flavor': 'Столицы падают к ногам',
+      'records.item.most_capital_takes.body':
+        '{player} чаще всех захватывал чужие столицы (по capital_taken_by): {value}.',
       'records.item.fewest_military_deaths.title': 'Бережливый полководец',
       'records.item.fewest_military_deaths.flavor': 'Юниты на вес золота',
       'records.item.fewest_military_deaths.body':
-        '{player} потерял в бою меньше всего юнитов среди игроков с данными минимум по 5 партиям: {value} потерь за {games} игр.',
+        '{player} потерял в бою меньше всего юнитов суммарно среди игроков с данными минимум по 5 партиям: {value} потерь за {games} игр.',
       'records.item.piety_first_count.title': 'Свидетель Иегов',
       'records.item.piety_first_count.flavor': 'Amen.',
       'records.item.piety_first_count.body':
@@ -930,6 +938,14 @@
       'records.item.most_great_engineers_finale.flavor': 'Чудо за чудом',
       'records.item.most_great_engineers_finale.body':
         '{player} вырастил больше всего великих инженеров: {value} ({game}).',
+      'records.item.most_great_merchants_finale.title': 'Гильдия купцов',
+      'records.item.most_great_merchants_finale.flavor': 'Караваны и контракты',
+      'records.item.most_great_merchants_finale.body':
+        '{player} вырастил больше всего великих торговцев: {value} ({game}).',
+      'records.item.most_great_admirals_finale.title': 'Адмиралтейство',
+      'records.item.most_great_admirals_finale.flavor': 'Флот великих',
+      'records.item.most_great_admirals_finale.body':
+        '{player} вырастил больше всего великих адмиралов: {value} ({game}).',
       'records.item.most_great_culture_people_finale.title': 'Пантеон муз',
       'records.item.most_great_culture_people_finale.flavor': 'Писатели, художники, музыканты',
       'records.item.most_great_culture_people_finale.body':
@@ -938,6 +954,10 @@
       'records.item.most_great_generals_finale.flavor': 'Звёзды на погонах',
       'records.item.most_great_generals_finale.body':
         '{player} вырастил больше всего великих генералов: {value} ({game}).',
+      'records.item.max_strength_finale.title': 'Имя мне легион',
+      'records.item.max_strength_finale.flavor': 'Сила на весах',
+      'records.item.max_strength_finale.body':
+        '{player} показал наибольшую силу армии на финале: {value} ({game}).',
       'records.item.fastest_ideology.title': 'Самая быстрая идеология',
       'records.item.fastest_ideology.flavor': 'Уже определился',
       'records.item.fastest_ideology.body':
@@ -946,10 +966,10 @@
       'records.item.most_wins_same_nation.flavor': 'Одна нация — много триумфов',
       'records.item.most_wins_same_nation.body':
         '{player} чаще всех побеждал одной и той же нацией: {value} побед.',
-      'records.item.underdog_win.title': 'Аутсайдер',
-      'records.item.underdog_win.flavor': 'Слабая на бумаге',
+      'records.item.underdog_win.title': 'Первопроходец нации',
+      'records.item.underdog_win.flavor': 'Первая победа цивилизации',
       'records.item.underdog_win.body':
-        '{player} чаще всех побеждал нацией с наименьшим числом побед в архиве: {value}.',
+        '{player} чаще всех открывал первую победу лиги за нацию: {value}.',
       'records.item.wonder_race_loss.title': 'Чудеса без короны',
       'records.item.wonder_race_loss.flavor': 'Красиво, но недостаточно',
       'records.item.wonder_race_loss.body':
@@ -1002,6 +1022,12 @@
       'records.item.duel_tournament_titles.flavor': 'Финал за нами',
       'records.item.duel_tournament_titles.body':
         '{player} выиграл больше всего финалов турнира: {value}.',
+      'records.item.duel_shortest_final.title': 'Финал на ходу 6',
+      'records.item.duel_shortest_final.flavor': 'Минимализм арены',
+      'records.item.duel_shortest_final.body':
+        '{player} выиграл самый короткий финал турнира: ход {value} ({game}).',
+      'records.item.duel_shortest_final.bodyVacant':
+        'Пока в архиве нет финальных матчей с известным ходом окончания.',
       'records.item.duel_sweep.title': 'Сухая серия',
       'records.item.duel_sweep.flavor': 'Ни одной осечки',
       'records.item.duel_sweep.body':
@@ -1729,11 +1755,19 @@
       'records.item.most_military_deaths.title': 'Meat grinder',
       'records.item.most_military_deaths.flavor': 'Meat grinder',
       'records.item.most_military_deaths.body':
-        '{player} lost the most military units: {value}.',
+        '{player} lost the most military units in total: {value}.',
+      'records.item.max_military_deaths_single.title': 'Single-game meat',
+      'records.item.max_military_deaths_single.flavor': 'Record slaughter',
+      'records.item.max_military_deaths_single.body':
+        '{player} lost the most units in one game: {value} ({game}).',
+      'records.item.most_capital_takes.title': 'Executioner',
+      'records.item.most_capital_takes.flavor': 'Capitals fall at their feet',
+      'records.item.most_capital_takes.body':
+        '{player} captured the most enemy capitals (via capital_taken_by): {value}.',
       'records.item.fewest_military_deaths.title': 'Careful commander',
       'records.item.fewest_military_deaths.flavor': 'Units are precious',
       'records.item.fewest_military_deaths.body':
-        '{player} lost the fewest combat units among players with data in at least 5 games: {value} losses over {games} games.',
+        '{player} lost the fewest combat units in total among players with data in at least 5 games: {value} losses over {games} games.',
       'records.item.piety_first_count.title': "Jehovah's Witness",
       'records.item.piety_first_count.flavor': 'Amen.',
       'records.item.piety_first_count.body':
@@ -1860,6 +1894,14 @@
       'records.item.most_great_engineers_finale.flavor': 'Wonder after wonder',
       'records.item.most_great_engineers_finale.body':
         '{player} spawned the most Great Engineers: {value} ({game}).',
+      'records.item.most_great_merchants_finale.title': 'Merchant guild',
+      'records.item.most_great_merchants_finale.flavor': 'Caravans and contracts',
+      'records.item.most_great_merchants_finale.body':
+        '{player} spawned the most Great Merchants: {value} ({game}).',
+      'records.item.most_great_admirals_finale.title': 'Admiralty',
+      'records.item.most_great_admirals_finale.flavor': 'Fleet of greats',
+      'records.item.most_great_admirals_finale.body':
+        '{player} spawned the most Great Admirals: {value} ({game}).',
       'records.item.most_great_culture_people_finale.title': 'Pantheon of the muses',
       'records.item.most_great_culture_people_finale.flavor': 'Writers, artists, musicians',
       'records.item.most_great_culture_people_finale.body':
@@ -1868,6 +1910,10 @@
       'records.item.most_great_generals_finale.flavor': 'Stars on the shoulders',
       'records.item.most_great_generals_finale.body':
         '{player} spawned the most Great Generals: {value} ({game}).',
+      'records.item.max_strength_finale.title': 'My name is Legion',
+      'records.item.max_strength_finale.flavor': 'Power on the scales',
+      'records.item.max_strength_finale.body':
+        '{player} posted the highest army strength in a finale: {value} ({game}).',
       'records.item.fastest_ideology.title': 'Fastest ideology',
       'records.item.fastest_ideology.flavor': 'Already decided',
       'records.item.fastest_ideology.body':
@@ -1876,10 +1922,10 @@
       'records.item.most_wins_same_nation.flavor': 'One nation, many triumphs',
       'records.item.most_wins_same_nation.body':
         '{player} has the most wins with the same nation: {value}.',
-      'records.item.underdog_win.title': 'Underdog',
-      'records.item.underdog_win.flavor': 'Weak on paper',
+      'records.item.underdog_win.title': 'Nation pioneer',
+      'records.item.underdog_win.flavor': 'First win for a civ',
       'records.item.underdog_win.body':
-        '{player} has the most wins with a nation that has the fewest archive wins: {value}.',
+        '{player} most often delivered a civilization’s first league win: {value}.',
       'records.item.wonder_race_loss.title': 'Wonders without a crown',
       'records.item.wonder_race_loss.flavor': 'Pretty, but not enough',
       'records.item.wonder_race_loss.body':
@@ -1932,6 +1978,12 @@
       'records.item.duel_tournament_titles.flavor': 'Finals are ours',
       'records.item.duel_tournament_titles.body':
         '{player} won the most tournament finals: {value}.',
+      'records.item.duel_shortest_final.title': 'Final on turn 6',
+      'records.item.duel_shortest_final.flavor': 'Arena minimalism',
+      'records.item.duel_shortest_final.body':
+        '{player} won the shortest tournament final: turn {value} ({game}).',
+      'records.item.duel_shortest_final.bodyVacant':
+        'No tournament finals with a known end turn in the archive yet.',
       'records.item.duel_sweep.title': 'Clean sweep',
       'records.item.duel_sweep.flavor': 'Not a single miss',
       'records.item.duel_sweep.body':
