@@ -674,6 +674,69 @@
       'records.section.style': 'Стиль',
       'records.section.peaks': 'Пики финала',
       'records.section.curious': 'Курьёзы',
+      'records.section.epic': 'Эпос',
+      'records.epic.intro':
+        'Знаковые партии архива — не накопительные рекорды, а моменты одной игры.',
+      'records.item.epic_most_broken.title': 'Самая сломанная',
+      'records.item.epic_most_broken.flavor': 'Баг-фестиваль',
+      'records.item.epic_most_broken.body':
+        'В {game} нашли больше всего багов: {value}.',
+      'records.item.epic_most_broken.bodyVacant':
+        'Слот зарезервирован за IronLeague-30 — рекорд по найденным багам (партия ещё идёт).',
+      'records.item.epic_science_underdog.title': 'Научный аутсайдер',
+      'records.item.epic_science_underdog.flavor': 'Космос важнее счёта',
+      'records.item.epic_science_underdog.body':
+        '{player} взял научную победу в {game}, отставая от лидера по очкам ({opponent}) на {value}.',
+      'records.item.epic_science_underdog.bodyVacant':
+        'Пока не было научной победы без лидерства по очкам.',
+      'records.item.epic_bait_throne.title': 'Наживка на троне',
+      'records.item.epic_bait_throne.flavor': 'Не объявлял — его объявили',
+      'records.item.epic_bait_throne.body':
+        '{player} победил в {game}, ни разу не объявив войну, при {value} войнах против себя.',
+      'records.item.epic_bait_throne.bodyVacant':
+        'Пока никто не выиграл с wars_declared=0 и пачкой войн «в себя».',
+      'records.item.epic_first_culture.title': 'Первая культура',
+      'records.item.epic_first_culture.flavor': 'Не только СС и ракета',
+      'records.item.epic_first_culture.body':
+        '{player} взял первую культурную победу лиги в {game} (ход {value}).',
+      'records.item.epic_first_culture.bodyVacant':
+        'Культурных побед в архиве ещё не было.',
+      'records.item.epic_meat_cosmos.title': 'Мясной космос',
+      'records.item.epic_meat_cosmos.flavor': 'Кровь и звезда',
+      'records.item.epic_meat_cosmos.body':
+        '{player} выиграл наукой в {game}, потеряв {value} юнитов — космос сквозь мясорубку.',
+      'records.item.epic_meat_cosmos.bodyVacant':
+        'Пока не было научной победы с большим мясным счётом.',
+      'records.item.epic_cc_not_lead.title': 'СС без счёта',
+      'records.item.epic_cc_not_lead.flavor': 'Политика сильнее таблицы',
+      'records.item.epic_cc_not_lead.body':
+        '{player} закрыл {game} по СС, уступая {opponent} по очкам на {value}.',
+      'records.item.epic_cc_not_lead.bodyVacant':
+        'Пока все СС-победители были и лидерами по очкам.',
+      'records.item.epic_lobby_bloodbath.title': 'Резня лобби',
+      'records.item.epic_lobby_bloodbath.flavor': 'Мало кто дожил',
+      'records.item.epic_lobby_bloodbath.body':
+        'В {game} выбыло больше всего игроков: {value}. Победитель — {player}.',
+      'records.item.epic_lobby_bloodbath.bodyVacant':
+        'Пока не было партий с 3+ вылетами.',
+      'records.item.epic_war_hawk_game.title': 'Ястреб одной игры',
+      'records.item.epic_war_hawk_game.flavor': 'Дипломатия? Нет.',
+      'records.item.epic_war_hawk_game.body':
+        '{player} объявил больше всего войн за одну партию: {value} ({game}).',
+      'records.item.epic_war_hawk_game.bodyVacant':
+        'Пока никто не объявил 4+ войны в одной игре.',
+      'records.item.epic_score_crush.title': 'Разгром по очкам',
+      'records.item.epic_score_crush.flavor': 'Без вариантов',
+      'records.item.epic_score_crush.body':
+        '{player} оторвался от второго места на {value} очков в {game}.',
+      'records.item.epic_score_crush.bodyVacant':
+        'Пока нет данных для отрыва победителя по очкам.',
+      'records.item.epic_wonder_no_crown.title': 'Музей без короны',
+      'records.item.epic_wonder_no_crown.flavor': 'Красиво, но мимо',
+      'records.item.epic_wonder_no_crown.body':
+        '{player} собрал {value} чудес в {game} и всё равно проиграл ({opponent}).',
+      'records.item.epic_wonder_no_crown.bodyVacant':
+        'Пока никто не проиграл с огромной коллекцией чудес.',
       'records.item.most_wins.title': 'Больше всего побед',
       'records.item.most_wins.flavor': 'Пришёл. Увидел. Победил.',
       'records.item.most_wins.body':
@@ -1537,6 +1600,69 @@
       'records.section.style': 'Style',
       'records.section.peaks': 'Finale peaks',
       'records.section.curious': 'Oddities',
+      'records.section.epic': 'Epic',
+      'records.epic.intro':
+        'Iconic archive games — single-match moments, not career totals.',
+      'records.item.epic_most_broken.title': 'Most broken',
+      'records.item.epic_most_broken.flavor': 'Bug festival',
+      'records.item.epic_most_broken.body':
+        '{game} produced the most bug reports: {value}.',
+      'records.item.epic_most_broken.bodyVacant':
+        'Slot reserved for IronLeague-30 — most bugs found (session still in progress).',
+      'records.item.epic_science_underdog.title': 'Science underdog',
+      'records.item.epic_science_underdog.flavor': 'Space over scoreboard',
+      'records.item.epic_science_underdog.body':
+        '{player} won a science victory in {game} while trailing {opponent} by {value} score.',
+      'records.item.epic_science_underdog.bodyVacant':
+        'No science win without the score lead yet.',
+      'records.item.epic_bait_throne.title': 'Bait on the throne',
+      'records.item.epic_bait_throne.flavor': 'Never declared — always declared on',
+      'records.item.epic_bait_throne.body':
+        '{player} won {game} with wars_declared=0 while receiving {value} wars.',
+      'records.item.epic_bait_throne.bodyVacant':
+        'No win yet with wars_declared=0 and a pile of wars received.',
+      'records.item.epic_first_culture.title': 'First culture',
+      'records.item.epic_first_culture.flavor': 'Not only CC and rockets',
+      'records.item.epic_first_culture.body':
+        '{player} took the league’s first cultural victory in {game} (turn {value}).',
+      'records.item.epic_first_culture.bodyVacant':
+        'No cultural victories in the archive yet.',
+      'records.item.epic_meat_cosmos.title': 'Meat cosmos',
+      'records.item.epic_meat_cosmos.flavor': 'Blood and a star',
+      'records.item.epic_meat_cosmos.body':
+        '{player} won scientifically in {game} after losing {value} units — space through the grinder.',
+      'records.item.epic_meat_cosmos.bodyVacant':
+        'No science win with a huge death toll yet.',
+      'records.item.epic_cc_not_lead.title': 'CC without the lead',
+      'records.item.epic_cc_not_lead.flavor': 'Politics over the table',
+      'records.item.epic_cc_not_lead.body':
+        '{player} closed {game} by CC while trailing {opponent} by {value} score.',
+      'records.item.epic_cc_not_lead.bodyVacant':
+        'Every CC winner so far also led on score.',
+      'records.item.epic_lobby_bloodbath.title': 'Lobby bloodbath',
+      'records.item.epic_lobby_bloodbath.flavor': 'Few survived',
+      'records.item.epic_lobby_bloodbath.body':
+        '{game} eliminated the most players: {value}. Winner — {player}.',
+      'records.item.epic_lobby_bloodbath.bodyVacant':
+        'No games with 3+ eliminations yet.',
+      'records.item.epic_war_hawk_game.title': 'Single-game hawk',
+      'records.item.epic_war_hawk_game.flavor': 'Diplomacy? No.',
+      'records.item.epic_war_hawk_game.body':
+        '{player} declared the most wars in one game: {value} ({game}).',
+      'records.item.epic_war_hawk_game.bodyVacant':
+        'No one has declared 4+ wars in a single game yet.',
+      'records.item.epic_score_crush.title': 'Score crush',
+      'records.item.epic_score_crush.flavor': 'No contest',
+      'records.item.epic_score_crush.body':
+        '{player} beat 2nd place by {value} score in {game}.',
+      'records.item.epic_score_crush.bodyVacant':
+        'No winner score-gap data yet.',
+      'records.item.epic_wonder_no_crown.title': 'Museum without a crown',
+      'records.item.epic_wonder_no_crown.flavor': 'Pretty, but not enough',
+      'records.item.epic_wonder_no_crown.body':
+        '{player} owned {value} wonders in {game} and still lost to {opponent}.',
+      'records.item.epic_wonder_no_crown.bodyVacant':
+        'No huge wonder collection loss yet.',
       'records.item.most_wins.title': 'Most wins',
       'records.item.most_wins.flavor': 'Veni. Vidi. Vici.',
       'records.item.most_wins.body':

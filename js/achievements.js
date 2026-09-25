@@ -1782,17 +1782,415 @@
     return out;
   }
 
+  let epicCacheKey = '';
+  let epicCacheItems = null;
+
+  function victoryKey(game) {
+    return String((game && game.victoryType) || '').trim().toLowerCase();
+  }
+
+  function isScientificVictory(game) {
+    const v = victoryKey(game);
+    return v === 'scientific' || v === 'science';
+  }
+
+  function isCulturalVictory(game) {
+    const v = victoryKey(game);
+    return v === 'cultural' || v === 'culture';
+  }
+
+  function isCcVictory(game) {
+    const v = victoryKey(game);
+    return !v || v === 'cc' || v === 'conciliation' || v === 'concession';
+  }
+
+  function rowScore(row) {
+    const n = Number(row && row.score);
+    return Number.isFinite(n) ? n : null;
+  }
+
+  /**
+   * Hall-of-fame “epic plaques”: iconic single-game moments from the FFA archive.
+   * IronLeague-30 is reserved for «most bugs found» until that session is published.
+   */
+  function computeEpicPlaques(games) {
+    const key = `epic|${gamesFingerprint(games)}`;
+    if (epicCacheKey === key && epicCacheItems) {
+      return epicCacheItems;
+    }
+
+    const list = eligibleGames(games);
+    const all = Array.isArray(games) ? games : [];
+    const out = [];
+
+    function vacant(id, value) {
+      out.push({
+        id,
+        player: '',
+        value: value != null ? String(value) : '—',
+        vacant: true,
+      });
+    }
+
+    // 1) Most broken — reserved for session IronLeague-30 (not archive id 30 / team2).
+    const g30 = all.find((g) => {
+      const raw = String((g && g.number) || '').trim();
+      return /^IronLeague-30$/i.test(raw);
+    });
+    const bugs = g30
+      ? Number(
+        g30.bugCount != null ? g30.bugCount
+          : g30.bugsFound != null ? g30.bugsFound
+            : g30.bugs != null ? g30.bugs
+              : NaN,
+      )
+      : NaN;
+    if (g30 && Number.isFinite(bugs) && bugs > 0) {
+      const reporter = String(g30.bugReporter || g30.bugFinder || '').trim();
+      out.push({
+        id: 'epic_most_broken',
+        player: reporter || 'Iron League',
+        value: String(bugs),
+        gameNumber: 30,
+      });
+    } else {
+      vacant('epic_most_broken', '30');
+    }
+
+    // 2) Science underdog — science win while someone else led on score.
+    let sciUnder = null;
+    for (const game of list) {
+      if (!isScientificVictory(game)) continue;
+      const wp = winnerPlayer(game);
+      if (!wp) continue;
+      const wrow = survivorByName(game, wp);
+      const wScore = rowScore(wrow);
+      if (wScore == null) continue;
+      let best = null;
+      for (const s of game.survivors || []) {
+        if (!s || s.is_barbarian || isBarbarianName(s.name)) continue;
+        if (String(s.name || '').trim() === wp) continue;
+        const sc = rowScore(s);
+        if (sc == null) continue;
+        if (!best || sc > best.score) {
+          best = { score: sc, player: String(s.name || '').trim() };
+        }
+      }
+      if (!best || best.score <= wScore) continue;
+      const deficit = best.score - wScore;
+      if (!sciUnder || deficit > sciUnder.deficit) {
+        sciUnder = {
+          deficit,
+          player: wp,
+          nation: String((wrow && wrow.nation) || '').trim(),
+          opponent: best.player,
+          gameNumber: parseGameNum(game),
+        };
+      }
+    }
+    if (sciUnder) {
+      out.push({
+        id: 'epic_science_underdog',
+        player: sciUnder.player,
+        nation: sciUnder.nation,
+        opponent: sciUnder.opponent,
+        value: String(Math.round(sciUnder.deficit)),
+        gameNumber: sciUnder.gameNumber,
+      });
+    } else {
+      vacant('epic_science_underdog');
+    }
+
+    // 3) Bait on the throne — win with 0 wars declared, maximize wars received.
+    let bait = null;
+    for (const game of list) {
+      const wp = winnerPlayer(game);
+      if (!wp) continue;
+      const wrow = survivorByName(game, wp);
+      if (!wrow || !Number.isFinite(Number(wrow.wars_declared)) || Number(wrow.wars_declared) !== 0) {
+        continue;
+      }
+      const received = Number(wrow.wars_received);
+      if (!Number.isFinite(received) || received < 3) continue;
+      if (!bait || received > bait.received) {
+        bait = {
+          received,
+          player: wp,
+          nation: String(wrow.nation || '').trim(),
+          gameNumber: parseGameNum(game),
+        };
+      }
+    }
+    if (bait) {
+      out.push({
+        id: 'epic_bait_throne',
+        player: bait.player,
+        nation: bait.nation,
+        value: String(bait.received),
+        gameNumber: bait.gameNumber,
+      });
+    } else {
+      vacant('epic_bait_throne');
+    }
+
+    // 4) First cultural victory (chronological).
+    let culture = null;
+    for (const game of list) {
+      if (!isCulturalVictory(game)) continue;
+      const wp = winnerPlayer(game);
+      if (!wp) continue;
+      const wrow = survivorByName(game, wp);
+      culture = {
+        player: wp,
+        nation: String((wrow && wrow.nation) || '').trim(),
+        gameNumber: parseGameNum(game),
+        turn: Number(game.endedOnTurn) || 0,
+      };
+      break;
+    }
+    if (culture) {
+      out.push({
+        id: 'epic_first_culture',
+        player: culture.player,
+        nation: culture.nation,
+        value: culture.turn ? String(culture.turn) : '1',
+        gameNumber: culture.gameNumber,
+      });
+    } else {
+      vacant('epic_first_culture');
+    }
+
+    // 5) Meat cosmos — science win with the highest military deaths on the winner.
+    let meat = null;
+    for (const game of list) {
+      if (!isScientificVictory(game)) continue;
+      const wp = winnerPlayer(game);
+      if (!wp) continue;
+      const wrow = survivorByName(game, wp);
+      if (!wrow) continue;
+      const deaths = Number(wrow.military_deaths);
+      const strength = Number(wrow.strength);
+      if (!Number.isFinite(deaths) || deaths < 40) continue;
+      const score = deaths + (Number.isFinite(strength) ? strength / 10000 : 0);
+      if (!meat || score > meat.score) {
+        meat = {
+          score,
+          deaths,
+          player: wp,
+          nation: String(wrow.nation || '').trim(),
+          gameNumber: parseGameNum(game),
+        };
+      }
+    }
+    if (meat) {
+      out.push({
+        id: 'epic_meat_cosmos',
+        player: meat.player,
+        nation: meat.nation,
+        value: String(meat.deaths),
+        gameNumber: meat.gameNumber,
+      });
+    } else {
+      vacant('epic_meat_cosmos');
+    }
+
+    // 6) CC without the score lead.
+    let ccUnder = null;
+    for (const game of list) {
+      if (!isCcVictory(game) || isScientificVictory(game) || isCulturalVictory(game)) continue;
+      const wp = winnerPlayer(game);
+      if (!wp) continue;
+      const wrow = survivorByName(game, wp);
+      const wScore = rowScore(wrow);
+      if (wScore == null) continue;
+      let best = null;
+      for (const s of game.survivors || []) {
+        if (!s || s.is_barbarian || isBarbarianName(s.name)) continue;
+        if (String(s.name || '').trim() === wp) continue;
+        const sc = rowScore(s);
+        if (sc == null) continue;
+        if (!best || sc > best.score) {
+          best = { score: sc, player: String(s.name || '').trim() };
+        }
+      }
+      if (!best || best.score <= wScore) continue;
+      const deficit = best.score - wScore;
+      if (!ccUnder || deficit > ccUnder.deficit) {
+        ccUnder = {
+          deficit,
+          player: wp,
+          nation: String((wrow && wrow.nation) || '').trim(),
+          opponent: best.player,
+          gameNumber: parseGameNum(game),
+        };
+      }
+    }
+    if (ccUnder) {
+      out.push({
+        id: 'epic_cc_not_lead',
+        player: ccUnder.player,
+        nation: ccUnder.nation,
+        opponent: ccUnder.opponent,
+        value: String(Math.round(ccUnder.deficit)),
+        gameNumber: ccUnder.gameNumber,
+      });
+    } else {
+      vacant('epic_cc_not_lead');
+    }
+
+    // 7) Lobby bloodbath — most eliminations in one game.
+    let blood = null;
+    for (const game of list) {
+      const surv = (game.survivors || []).filter((s) => s && !s.is_barbarian && !isBarbarianName(s.name));
+      const dead = surv.filter((s) => s.alive === false).length;
+      if (dead < 3) continue;
+      const wp = winnerPlayer(game);
+      const wrow = wp ? survivorByName(game, wp) : null;
+      if (!blood || dead > blood.dead) {
+        blood = {
+          dead,
+          player: wp || '',
+          nation: String((wrow && wrow.nation) || '').trim(),
+          gameNumber: parseGameNum(game),
+        };
+      }
+    }
+    if (blood && blood.player) {
+      out.push({
+        id: 'epic_lobby_bloodbath',
+        player: blood.player,
+        nation: blood.nation,
+        value: String(blood.dead),
+        gameNumber: blood.gameNumber,
+      });
+    } else {
+      vacant('epic_lobby_bloodbath');
+    }
+
+    // 8) Single-game war hawk — max wars_declared in one finale row.
+    let hawk = null;
+    for (const game of list) {
+      for (const s of game.survivors || []) {
+        if (!s || s.is_barbarian || isBarbarianName(s.name)) continue;
+        const wd = Number(s.wars_declared);
+        if (!Number.isFinite(wd) || wd < 4) continue;
+        if (!hawk || wd > hawk.wd) {
+          hawk = {
+            wd,
+            player: String(s.name || '').trim(),
+            nation: String(s.nation || '').trim(),
+            gameNumber: parseGameNum(game),
+          };
+        }
+      }
+    }
+    if (hawk) {
+      out.push({
+        id: 'epic_war_hawk_game',
+        player: hawk.player,
+        nation: hawk.nation,
+        value: String(hawk.wd),
+        gameNumber: hawk.gameNumber,
+      });
+    } else {
+      vacant('epic_war_hawk_game');
+    }
+
+    // 9) Score crush — largest winner−#2 gap when winner leads on score.
+    let crush = null;
+    for (const game of list) {
+      const wp = winnerPlayer(game);
+      if (!wp) continue;
+      const wrow = survivorByName(game, wp);
+      const wScore = rowScore(wrow);
+      if (wScore == null) continue;
+      let second = null;
+      for (const s of game.survivors || []) {
+        if (!s || s.is_barbarian || isBarbarianName(s.name)) continue;
+        if (String(s.name || '').trim() === wp) continue;
+        const sc = rowScore(s);
+        if (sc == null) continue;
+        if (second == null || sc > second) second = sc;
+      }
+      if (second == null || wScore <= second) continue;
+      const gap = wScore - second;
+      if (!crush || gap > crush.gap) {
+        crush = {
+          gap,
+          player: wp,
+          nation: String((wrow && wrow.nation) || '').trim(),
+          gameNumber: parseGameNum(game),
+        };
+      }
+    }
+    if (crush) {
+      out.push({
+        id: 'epic_score_crush',
+        player: crush.player,
+        nation: crush.nation,
+        value: String(Math.round(crush.gap)),
+        gameNumber: crush.gameNumber,
+      });
+    } else {
+      vacant('epic_score_crush');
+    }
+
+    // 10) Wonder without a crown — largest wonders owned by a non-winner.
+    let wonderLoss = null;
+    for (const game of list) {
+      const wp = winnerPlayer(game);
+      if (!wp) continue;
+      const wrow = survivorByName(game, wp);
+      const ww = wrow ? (Array.isArray(wrow.wonders) ? wrow.wonders.length : 0) : 0;
+      for (const s of game.survivors || []) {
+        if (!s || s.is_barbarian || isBarbarianName(s.name)) continue;
+        const name = String(s.name || '').trim();
+        if (!name || name === wp) continue;
+        const owned = Array.isArray(s.wonders) ? s.wonders.length : 0;
+        if (owned < 8 || owned <= ww) continue;
+        if (!wonderLoss || owned > wonderLoss.owned) {
+          wonderLoss = {
+            owned,
+            player: name,
+            nation: String(s.nation || '').trim(),
+            opponent: wp,
+            gameNumber: parseGameNum(game),
+          };
+        }
+      }
+    }
+    if (wonderLoss) {
+      out.push({
+        id: 'epic_wonder_no_crown',
+        player: wonderLoss.player,
+        nation: wonderLoss.nation,
+        opponent: wonderLoss.opponent,
+        value: String(wonderLoss.owned),
+        gameNumber: wonderLoss.gameNumber,
+      });
+    } else {
+      vacant('epic_wonder_no_crown');
+    }
+
+    epicCacheKey = key;
+    epicCacheItems = out;
+    return out;
+  }
+
   /** Drop memo when Games.json is reloaded (same array ref can still be mutated). */
   function invalidateAchievementsCache() {
     achievementsCacheKey = '';
     achievementsCacheItems = null;
     duelCacheKey = '';
     duelCacheItems = null;
+    epicCacheKey = '';
+    epicCacheItems = null;
   }
 
   global.IronLeagueAchievements = {
     computeAchievements,
     computeDuelAchievements,
+    computeEpicPlaques,
     invalidateAchievementsCache,
     isExcludedGame,
     isTournamentGame,

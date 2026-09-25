@@ -1049,6 +1049,7 @@
         </p>
         <div class="faq-toc" id="recordsToc" data-i18n-aria="records.toc" aria-label="Разделы рекордов">
             <a href="#records-glory" data-i18n="records.section.glory">Слава</a>
+            <a href="#records-epic" data-section-ffa data-i18n="records.section.epic">Эпос</a>
             <a href="#records-war" data-i18n="records.section.war">Война</a>
             <a href="#records-style" data-i18n="records.section.style">Стиль</a>
             <a href="#records-peaks" data-i18n="records.section.peaks">Пики финала</a>
@@ -1058,6 +1059,11 @@
         <div class="stats-section" id="records-glory">
             <h2 data-i18n="records.section.glory">Слава</h2>
             <div class="records-grid" id="recordsGlory"></div>
+        </div>
+        <div class="stats-section" id="records-epic" data-section-ffa>
+            <h2 data-i18n="records.section.epic">Эпос</h2>
+            <p class="hint" data-i18n="records.epic.intro">Знаковые партии архива — не накопительные рекорды, а моменты одной игры.</p>
+            <div class="records-grid" id="recordsEpic"></div>
         </div>
         <div class="stats-section" id="records-war">
             <h2 data-i18n="records.section.war">Война</h2>
@@ -1112,12 +1118,12 @@
     <script src="js/nation-names.js?v=shared-nations-1"></script>
     <script src="js/site-core.js?v=seasons-live-awards-1"></script>
     <script src="js/ui-helpers.js?v=shared-ui-1"></script>
-    <script src="js/i18n.js?v=duel-named-1"></script>
+    <script src="js/i18n.js?v=epic-plaques-1"></script>
     <script src="js/player-meta.js?v=short-tg-1"></script>
 <script src="js/stats-charts.js?v=profile-perf-1"></script>
 <script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=tournament-pool-2"></script>
-<script src="js/achievements.js?v=duel-named-1"></script>
+<script src="js/achievements.js?v=epic-plaques-1"></script>
 <script src="js/live-league.js?v=seasons-awards-1"></script>
 <script src="js/tech-policy-paths.js?v=ironleague-labels-1"></script>
 <script>
@@ -3193,6 +3199,18 @@
             'most_wins_same_nation',
             'most_achievements',
         ],
+        epic: [
+            'epic_most_broken',
+            'epic_science_underdog',
+            'epic_bait_throne',
+            'epic_first_culture',
+            'epic_meat_cosmos',
+            'epic_cc_not_lead',
+            'epic_lobby_bloodbath',
+            'epic_war_hawk_game',
+            'epic_score_crush',
+            'epic_wonder_no_crown',
+        ],
         war: [
             'wins_all_with_caps',
             'most_caps_single_win',
@@ -3377,10 +3395,16 @@
         const sections = duel ? DUEL_RECORD_SECTIONS : RECORD_SECTIONS;
         const items = duel
             ? IronLeagueAchievements.computeDuelAchievements(pool)
-            : IronLeagueAchievements.computeAchievements(pool);
+            : [
+                ...(IronLeagueAchievements.computeAchievements(pool) || []),
+                ...(IronLeagueAchievements.computeEpicPlaques
+                  ? IronLeagueAchievements.computeEpicPlaques(gamesData)
+                  : []),
+              ];
         const byId = new Map(items.map((x) => [x.id, x]));
         const map = {
             glory: document.getElementById('recordsGlory'),
+            epic: document.getElementById('recordsEpic'),
             war: document.getElementById('recordsWar'),
             style: document.getElementById('recordsStyle'),
             peaks: document.getElementById('recordsPeaks'),
@@ -3401,6 +3425,7 @@
         });
         // Clear unused section grids
         if (duel && map.curious) map.curious.innerHTML = '';
+        if (duel && map.epic) map.epic.innerHTML = '';
         if (!duel && map.rivalry) map.rivalry.innerHTML = '';
     }
 
