@@ -1808,7 +1808,7 @@
     }
 
     function applyViewMeta(view) {
-        const homeTitle = `<span class="page-title-icon" aria-hidden="true"><img src="img/icons/capital.svg" alt=""></span>`
+        const homeTitle = `<span class="page-title-icon" aria-hidden="true"><img src="img/icons/capital.svg" alt="" width="28" height="28"></span>`
             + `<span class="page-title-text">${viewTitle('title.home', 'Главная')}</span>`;
         const titles = {
             home: homeTitle,

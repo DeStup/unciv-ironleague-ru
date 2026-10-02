@@ -75,11 +75,28 @@
     return bust;
   }
 
+  function markCssReady() {
+    document.documentElement.classList.add('il-css-ready');
+  }
+
   async function boot() {
-    const bust = await resolveBuildId();
+    // Don't block CSS forever on a slow build-id fetch (that caused title-icon FOUC).
+    const provisional = String(Date.now());
+    const bustPromise = resolveBuildId();
+    let bust = await Promise.race([
+      bustPromise,
+      new Promise((resolve) => setTimeout(() => resolve(provisional), 120)),
+    ]);
     for (const href of STYLES) {
       await loadStylesheet(withBust(href, bust));
     }
+    markCssReady();
+    // Prefer the real build-id for subsequent script loads when it arrives.
+    try {
+      const resolved = await bustPromise;
+      if (resolved) bust = resolved;
+    } catch (e) { /* keep provisional */ }
+    global.IronLeagueCacheBust = bust;
     if (document.readyState === 'loading') {
       await new Promise((resolve) => {
         document.addEventListener('DOMContentLoaded', resolve, { once: true });
@@ -92,6 +109,7 @@
 
   boot().catch((err) => {
     console.error('[IronLeague boot]', err);
+    markCssReady();
     const body = document.body;
     if (body) {
       const el = document.createElement('p');
