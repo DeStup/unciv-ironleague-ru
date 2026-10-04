@@ -1835,7 +1835,9 @@
 
   /**
    * Hall-of-fame “epic plaques”: iconic single-game moments from the FFA archive.
-   * IronLeague-30 is reserved for «most bugs found» until that session is published.
+   * «Most broken» is pinned to session IronLeague-30 (even if that game is scrap /
+   * excluded from ranked stats) — pass the full archive (or season-filtered list
+   * that still includes scrap), not only rankedGamesOnly.
    */
   function computeEpicPlaques(games) {
     const key = `epic|${gamesFingerprint(games)}`;
@@ -1856,7 +1858,8 @@
       });
     }
 
-    // 1) Most broken — reserved for session IronLeague-30 (not archive id 30 / team2).
+    // 1) Most broken — session IronLeague-30 (not archive id 30 / team2).
+    // Kept even when the game is scrap / excludeFromStats.
     const g30 = all.find((g) => {
       const raw = String((g && g.number) || '').trim();
       return /^IronLeague-30$/i.test(raw);
@@ -1869,13 +1872,15 @@
               : NaN,
       )
       : NaN;
-    if (g30 && Number.isFinite(bugs) && bugs > 0) {
+    if (g30) {
       const reporter = String(g30.bugReporter || g30.bugFinder || '').trim();
+      const scraped = isExcludedGame(g30);
       out.push({
         id: 'epic_most_broken',
         player: reporter || 'Iron League',
-        value: String(bugs),
+        value: Number.isFinite(bugs) && bugs > 0 ? String(bugs) : '30',
         gameNumber: 30,
+        scrap: scraped,
       });
     } else {
       vacant('epic_most_broken', '30');

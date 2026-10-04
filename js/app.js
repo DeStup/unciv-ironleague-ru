@@ -2180,19 +2180,36 @@
             body = tt(vacantKey);
             if (body === vacantKey) body = tt('records.empty');
         } else {
-            body = tt(`records.item.${item.id}.body`, {
+            const gameLabel = (() => {
+                if (item.gameNumber == null) return '';
+                // Prefer session name match: epic_most_broken uses IronLeague-30,
+                // whose archive id is not 30 (team2 occupies id 30).
+                const byNumber = (gamesData || []).find((x) => {
+                    const raw = String((x && x.number) || '').trim();
+                    return new RegExp(`^IronLeague-${item.gameNumber}$`, 'i').test(raw);
+                });
+                if (byNumber) return formatGameLabel(byNumber);
+                const g = (gamesData || []).find((x) => parseGameNum(x) === Number(item.gameNumber));
+                return g ? formatGameLabel(g) : `IronLeague-${item.gameNumber}`;
+            })();
+            const bodyVars = {
                 player: displayPlayerName(item.player),
                 value: item.value,
                 games: item.games != null ? String(item.games) : '',
                 wins: item.wins != null ? String(item.wins) : '',
                 survived: item.survived != null ? String(item.survived) : '',
                 opponent: item.opponent != null ? displayPlayerName(item.opponent) : '',
-                game: (() => {
-                    if (item.gameNumber == null) return '';
-                    const g = (gamesData || []).find((x) => parseGameNum(x) === Number(item.gameNumber));
-                    return g ? formatGameLabel(g) : `IronLeague-${item.gameNumber}`;
-                })(),
-            });
+                game: gameLabel,
+            };
+            if (item.scrap) {
+                const scrapKey = `records.item.${item.id}.bodyScrap`;
+                body = tt(scrapKey, bodyVars);
+                if (body === scrapKey) {
+                    body = tt(`records.item.${item.id}.body`, bodyVars);
+                }
+            } else {
+                body = tt(`records.item.${item.id}.body`, bodyVars);
+            }
             if (body === `records.item.${item.id}.body`) {
                 body = `${displayPlayerName(item.player)}: ${item.value}`;
             }
@@ -2241,12 +2258,23 @@
         const pool = recordsGamesPool();
         const duel = getPoolMode() === 'tournaments';
         const sections = duel ? DUEL_RECORD_SECTIONS : RECORD_SECTIONS;
+        // Epic plaques may reference scrap sessions (e.g. IronLeague-30 «most broken»).
+        // Other epic rows still use eligibleGames() internally; pass season-filtered
+        // archive including scrap, not rankedGamesOnly.
+        const epicPool = (() => {
+            const all = Array.isArray(gamesData) ? gamesData : [];
+            if (getPoolMode() !== 'ffa') return all;
+            if (!window.IronLeagueGamesCore || !IronLeagueGamesCore.filterGamesBySeason) {
+                return all;
+            }
+            return IronLeagueGamesCore.filterGamesBySeason(all, getRecordsSeasonFilter());
+        })();
         const items = duel
             ? IronLeagueAchievements.computeDuelAchievements(pool)
             : [
                 ...(IronLeagueAchievements.computeAchievements(pool) || []),
                 ...(IronLeagueAchievements.computeEpicPlaques
-                  ? IronLeagueAchievements.computeEpicPlaques(pool)
+                  ? IronLeagueAchievements.computeEpicPlaques(epicPool)
                   : []),
               ];
         const byId = new Map(items.map((x) => [x.id, x]));
