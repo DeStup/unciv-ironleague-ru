@@ -17278,6 +17278,11 @@
       "playerCount": 9,
       "endedOnTurn": "172",
       "victoryType": "CC",
+      "flags": [
+        "scrap"
+      ],
+      "excludeFromStats": true,
+      "note": "Скрапнута из-за багов.",
       "survivors": [
         {
           "name": "Bahahanchiklkm",

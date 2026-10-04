@@ -685,8 +685,10 @@
       'records.item.epic_most_broken.flavor': 'Баг-фестиваль',
       'records.item.epic_most_broken.body':
         'В {game} нашли больше всего багов: {value}.',
+      'records.item.epic_most_broken.bodyScrap':
+        'В {game} нашли больше всего багов. В итоге партия скрапнута.',
       'records.item.epic_most_broken.bodyVacant':
-        'Слот зарезервирован за IronLeague-30 — рекорд по найденным багам (партия ещё идёт).',
+        'Слот зарезервирован за IronLeague-30 — рекорд по найденным багам.',
       'records.item.epic_science_underdog.title': 'Научный аутсайдер',
       'records.item.epic_science_underdog.flavor': 'Космос важнее счёта',
       'records.item.epic_science_underdog.body':
@@ -1641,8 +1643,10 @@
       'records.item.epic_most_broken.flavor': 'Bug festival',
       'records.item.epic_most_broken.body':
         '{game} produced the most bug reports: {value}.',
+      'records.item.epic_most_broken.bodyScrap':
+        '{game} produced the most bug reports. The session was ultimately scrapped.',
       'records.item.epic_most_broken.bodyVacant':
-        'Slot reserved for IronLeague-30 — most bugs found (session still in progress).',
+        'Slot reserved for IronLeague-30 — most bugs found.',
       'records.item.epic_science_underdog.title': 'Science underdog',
       'records.item.epic_science_underdog.flavor': 'Space over scoreboard',
       'records.item.epic_science_underdog.body':
