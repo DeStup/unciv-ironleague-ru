@@ -17,7 +17,7 @@
     <!-- Critical CSS before boot: site.css is injected async after build-id. -->
     <style id="il-critical">
       html, body { margin: 0; background: #12121c; color: #e8e8e8; }
-      /* Hide unstyled content until boot marks CSS ready (avoids giant title icon FOUC). */
+      /* Hide until boot finishes CSS+JS (FOUC + dead nav before app.js). */
       html:not(.il-css-ready) body { visibility: hidden; }
       .page-title-icon img {
         display: inline-block;
@@ -29,10 +29,11 @@
       }
     </style>
     <script>
-      /* Failsafe if boot.js never runs */
+      /* Failsafe if boot.js never completes — skip if boot already revealed UI */
       setTimeout(function () {
+        if (window.__IL_BOOT_DONE) return;
         document.documentElement.classList.add('il-css-ready');
-      }, 3000);
+      }, 10000);
     </script>
     <script src="js/boot.js"></script>
 </head>

@@ -2627,6 +2627,14 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    // Expose for boot.js pending-nav flush (clicks before handlers were attached).
+    window.IronLeagueShowSiteView = showSiteView;
+    if (window.__ilPendingView) {
+        const pending = window.__ilPendingView;
+        window.__ilPendingView = null;
+        showSiteView(pending);
+    }
+
     // Переключение разделов
     document.querySelectorAll('.site-nav-btn').forEach(btn => {
         btn.addEventListener('click', () => showSiteView(btn.dataset.view));
@@ -2640,6 +2648,7 @@
             }
         });
     });
+
 
     function engToRusNation(eng) {
         if (window.IronLeagueNationNames) return IronLeagueNationNames.engToRusNation(eng);
