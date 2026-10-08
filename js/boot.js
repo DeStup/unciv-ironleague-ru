@@ -2,6 +2,9 @@
  * Boot loader: resolve build-id, then load CSS/JS with a single cache-bust token.
  *
  * index.html only needs this script. Feature modules are listed in LIBS (order matters).
+ *
+ * Body stays hidden (il-css-ready) until CSS *and* app scripts are loaded, so nav
+ * clicks are not dead between paint and app.js handlers.
  */
 (function (global) {
   'use strict';
@@ -75,9 +78,39 @@
     return bust;
   }
 
-  function markCssReady() {
-    document.documentElement.classList.add('il-css-ready');
+  function flushPendingView() {
+    const pending = global.__ilPendingView;
+    if (!pending) return;
+    global.__ilPendingView = null;
+    if (typeof global.IronLeagueShowSiteView === 'function') {
+      global.IronLeagueShowSiteView(pending);
+    }
   }
+
+  function markBootReady() {
+    global.__IL_BOOT_DONE = true;
+    document.documentElement.classList.add('il-css-ready');
+    flushPendingView();
+  }
+
+  // Queue nav clicks if UI becomes visible before app.js (failsafe / slow net).
+  document.addEventListener(
+    'click',
+    (e) => {
+      if (global.__IL_BOOT_DONE) return;
+      const t = e.target;
+      if (!t || typeof t.closest !== 'function') return;
+      const nav = t.closest('.site-nav-btn');
+      const go = t.closest('[data-go-view]');
+      if (!nav && !go) return;
+      e.preventDefault();
+      e.stopPropagation();
+      global.__ilPendingView = nav
+        ? nav.dataset.view
+        : go.getAttribute('data-go-view');
+    },
+    true,
+  );
 
   async function boot() {
     // Don't block CSS forever on a slow build-id fetch (that caused title-icon FOUC).
@@ -90,7 +123,6 @@
     for (const href of STYLES) {
       await loadStylesheet(withBust(href, bust));
     }
-    markCssReady();
     // Prefer the real build-id for subsequent script loads when it arrives.
     try {
       const resolved = await bustPromise;
@@ -105,11 +137,13 @@
     for (const src of LIBS) {
       await loadScript(withBust(src, bust));
     }
+    // Reveal only after app handlers exist (nav/lang/home cards).
+    markBootReady();
   }
 
   boot().catch((err) => {
     console.error('[IronLeague boot]', err);
-    markCssReady();
+    markBootReady();
     const body = document.body;
     if (body) {
       const el = document.createElement('p');
