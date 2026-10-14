@@ -24,6 +24,7 @@
     'js/rating.js',
     'js/achievements.js',
     'js/live-league.js',
+    'js/tournament-bracket.js',
     'js/tech-policy-paths.js',
     'js/pool.js',
     'js/archive-stats.js',

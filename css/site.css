@@ -3497,3 +3497,288 @@
             flex: 1 1 100%;
             margin-top: 4px;
         }
+
+        /* Live tournament bracket (archive / stats) */
+        .il-bracket-host {
+            margin: 0 0 18px;
+        }
+
+        .il-bracket {
+            background: rgba(0, 0, 0, 0.42);
+            border: 1px solid rgba(255, 215, 0, 0.28);
+            border-radius: 12px;
+            padding: 14px 16px 16px;
+        }
+
+        .il-bracket-head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 8px 16px;
+            margin-bottom: 12px;
+        }
+
+        .il-bracket-title {
+            margin: 0;
+            font-family: Cinzel, serif;
+            font-size: 1.15rem;
+            color: #ffd700;
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .il-bracket-status {
+            font-size: 0.82rem;
+            color: rgba(255, 248, 230, 0.75);
+            font-weight: 600;
+        }
+
+        .il-bracket-live {
+            color: #ffd700;
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .il-bracket-live:hover {
+            text-decoration: underline;
+        }
+
+        .il-bracket-empty {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.92rem;
+            padding: 6px 0;
+        }
+
+        .il-bracket-podium {
+            list-style: none;
+            margin: 0 0 14px;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+        }
+
+        .il-bracket-podium-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.92rem;
+        }
+
+        .il-bracket-podium-place {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.4em;
+            height: 1.4em;
+            border-radius: 50%;
+            font-size: 0.78rem;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .il-bracket-podium-item--1 .il-bracket-podium-place {
+            background: rgba(255, 215, 0, 0.28);
+            color: #ffd700;
+        }
+
+        .il-bracket-podium-item--2 .il-bracket-podium-place {
+            background: rgba(200, 210, 230, 0.22);
+            color: #d0d8e8;
+        }
+
+        .il-bracket-podium-item--3 .il-bracket-podium-place {
+            background: rgba(205, 140, 80, 0.28);
+            color: #e0a060;
+        }
+
+        .il-bracket-band {
+            margin-top: 12px;
+        }
+
+        .il-bracket-band-title {
+            margin: 0 0 8px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: rgba(255, 215, 0, 0.85);
+        }
+
+        .il-bracket-band--lb .il-bracket-band-title {
+            color: rgba(180, 160, 255, 0.9);
+        }
+
+        .il-bracket-band--gf .il-bracket-band-title {
+            color: #ffd700;
+        }
+
+        .il-bracket-rounds {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            scrollbar-width: thin;
+        }
+
+        .il-bracket-round {
+            flex: 0 0 auto;
+            min-width: 168px;
+            max-width: 200px;
+        }
+
+        .il-bracket-round-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .il-bracket-round-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .il-bm {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 8px;
+            padding: 6px 8px 7px;
+            font-size: 0.82rem;
+        }
+
+        .il-bm.is-done {
+            border-color: rgba(255, 215, 0, 0.35);
+        }
+
+        .il-bm--playing {
+            border-color: rgba(100, 200, 255, 0.45);
+        }
+
+        .il-bm-id {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .il-bm-bo3 {
+            margin-left: 4px;
+            padding: 0 4px;
+            border-radius: 4px;
+            background: rgba(255, 215, 0, 0.18);
+            color: #ffd700;
+            font-size: 0.65rem;
+        }
+
+        .il-bm-status {
+            font-weight: 600;
+            text-transform: lowercase;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .il-bm-status--playing { color: #9fd0ff; }
+        .il-bm-status--draft { color: #ffb08a; }
+        .il-bm-status--finished { color: rgba(255, 215, 0, 0.85); }
+
+        .il-bm-slot {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+            padding: 3px 5px;
+            border-radius: 4px;
+            margin-top: 2px;
+            background: rgba(0, 0, 0, 0.25);
+            min-height: 1.5em;
+        }
+
+        .il-bm-slot.is-pending {
+            color: rgba(255, 255, 255, 0.4);
+            font-style: italic;
+        }
+
+        .il-bm-slot.is-win {
+            background: rgba(255, 215, 0, 0.16);
+            color: #ffe566;
+            font-weight: 700;
+        }
+
+        .il-bm-nick {
+            border: none;
+            background: transparent;
+            color: inherit;
+            font: inherit;
+            padding: 0;
+            text-align: left;
+            cursor: pointer;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 100%;
+        }
+
+        button.il-bm-nick:hover {
+            color: #ffd700;
+            text-decoration: underline;
+        }
+
+        span.il-bm-nick {
+            cursor: default;
+        }
+
+        .il-bm-wins {
+            flex: 0 0 auto;
+            font-variant-numeric: tabular-nums;
+            font-weight: 700;
+            opacity: 0.85;
+        }
+
+        .il-bm-foot {
+            margin-top: 5px;
+        }
+
+        .il-bm-open {
+            border: 1px solid rgba(255, 215, 0, 0.35);
+            background: rgba(255, 215, 0, 0.1);
+            color: #ffd700;
+            border-radius: 5px;
+            padding: 3px 7px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .il-bm-open:hover {
+            background: rgba(255, 215, 0, 0.2);
+        }
+
+        .il-bm-session {
+            display: block;
+            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.45);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 640px) {
+            .il-bracket {
+                padding: 12px;
+            }
+            .il-bracket-round {
+                min-width: 150px;
+            }
+        }

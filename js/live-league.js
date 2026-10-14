@@ -31,6 +31,11 @@
     return `${LIVE_ORIGIN}/season/${encodeURIComponent(season)}`;
   }
 
+  function tournamentPageUrl(name) {
+    if (!name) return `${LIVE_ORIGIN}/tournaments`;
+    return `${LIVE_ORIGIN}/tournaments/${encodeURIComponent(name)}`;
+  }
+
   async function fetchJson(path) {
     const url = `${apiBase()}${path.startsWith('/') ? path : `/${path}`}`;
     const res = await fetch(url, { cache: 'no-store', credentials: 'omit' });
@@ -59,6 +64,14 @@
     return fetchJson('/players');
   }
 
+  function fetchTournaments() {
+    return fetchJson('/tournaments');
+  }
+
+  function fetchTournament(name) {
+    return fetchJson(`/tournaments/${encodeURIComponent(name)}`);
+  }
+
   /** Case-insensitive nick → live user id (first match). */
   function nickIndex(players) {
     const map = new Map();
@@ -81,11 +94,14 @@
     absUrl,
     playerCardUrl,
     seasonPageUrl,
+    tournamentPageUrl,
     fetchCurrentSeason,
     fetchSeasonRating,
     fetchAwardsPublic,
     fetchPlayer,
     fetchPlayers,
+    fetchTournaments,
+    fetchTournament,
     nickIndex,
     findPlayerByNick,
   };
