@@ -240,12 +240,22 @@
         IronLeaguePool.syncUi();
     }
 
+    function refreshTournamentBracket() {
+        if (!window.IronLeagueBracket || typeof IronLeagueBracket.refresh !== 'function') return;
+        try {
+            IronLeagueBracket.refresh();
+        } catch (err) {
+            console.error('[IronLeague] bracket refresh failed', err);
+        }
+    }
+
     function refreshPoolDependentViews() {
         const steps = [
             filterGames,
             renderStatsTables,
             renderRatingTables,
             renderRecords,
+            refreshTournamentBracket,
         ];
         for (const step of steps) {
             try {
@@ -1787,6 +1797,7 @@
             filterGames();
             renderStatsTables();
             renderRatingTables();
+            refreshTournamentBracket();
 
         } catch (error) {
             console.error('Ошибка:', error);
@@ -2314,6 +2325,19 @@
             onChange: () => refreshPoolDependentViews(),
             tt,
         });
+        if (window.IronLeagueBracket) {
+            IronLeagueBracket.configure({
+                containers: ['#archiveBracket', '#statsBracket'],
+                getGames: () => gamesData,
+                getPoolMode: () => getPoolMode(),
+                getTournamentNameFilter: () => getTournamentNameFilter(),
+                onOpenGame: (gameId) => {
+                    showSiteView('archive');
+                    openGameModal(gameId);
+                },
+                onOpenPlayer: (name) => openPlayerProfile(name),
+            });
+        }
         loadPoolMode();
         IronLeaguePool.bindUi();
 
@@ -3784,6 +3808,7 @@
             renderStatsTables();
             renderRatingTables();
             renderRecords();
+            refreshTournamentBracket();
             if (tierlistData) loadTierlistData();
             loadFaqData();
             const openModal = document.getElementById('gameModal');
@@ -3804,6 +3829,7 @@
         fillTournamentNameSelects();
         fillFfaSeasonSelects();
         syncPoolModeUi();
+        refreshTournamentBracket();
         if (document.getElementById('viewStats')?.classList.contains('active')) {
             renderStatsTables();
         }
