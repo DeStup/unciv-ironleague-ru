@@ -18030,6 +18030,3152 @@
           "capital_population": 10
         }
       ]
+    },
+    {
+      "id": 40,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-B11-EbaIIIyBKaIIIy-vs-Joker",
+      "players": [
+        {
+          "name": "EbaIIIy_B_kaIIIy",
+          "nation": "Америка"
+        },
+        {
+          "name": "Jokeroldsschool",
+          "nation": "Зимбабве"
+        }
+      ],
+      "winner": "Зимбабве",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "62",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "W1M1",
+      "matchCode": "B11",
+      "survivors": [
+        {
+          "name": "Jokeroldsschool",
+          "nation": "Зимбабве",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Америка",
+              "city": "gg wp Зимбабве не котрится"
+            }
+          ],
+          "ideology": "",
+          "wonders": [
+            "Mausoleum of Halicarnassus",
+            "Terracotta Army",
+            "Stonehenge",
+            "The Oracle"
+          ],
+          "wonders_built": [
+            "Mausoleum of Halicarnassus",
+            "Terracotta Army",
+            "Stonehenge"
+          ],
+          "techs": 18,
+          "policies": 9,
+          "policy_branches": [
+            "Честь",
+            "Набожность"
+          ],
+          "first_policy": "Честь",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 467,
+          "units": 19,
+          "strength": 1059,
+          "science": 45,
+          "cities": 5,
+          "population": 34,
+          "religion": "Zoroastrianism",
+          "religion_state": "Усилена",
+          "pantheon": "Goddess of Festivals",
+          "founder_beliefs": [
+            "Hajj",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "City of God",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 71,
+          "gold": 781,
+          "culture": 38,
+          "gold_income": 43,
+          "capital_population": 9
+        },
+        {
+          "name": "EbaIIIy_B_kaIIIy",
+          "nation": "Америка",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "Зимбабве",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 16,
+          "policies": 8,
+          "policy_branches": [
+            "Воля",
+            "Набожность"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": 62,
+          "era": "Античность",
+          "score": 138,
+          "units": 5,
+          "strength": 117,
+          "science": 30,
+          "cities": 2,
+          "population": 7,
+          "religion": "Владислав наш Бог",
+          "religion_state": "Усилена",
+          "pantheon": "One with Nature",
+          "founder_beliefs": [
+            "Kotel",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Houses of Worship",
+            "Religious Community",
+            "Guruship"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 21,
+          "gold": 14,
+          "culture": 40,
+          "gold_income": 3,
+          "capital_population": 6
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Зимбабве",
+          "start": 62,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        },
+        "capital_lost_turns": {
+          "Америка": 62
+        }
+      }
+    },
+    {
+      "id": 41,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-B12-Lvxvcs-vs-DityaVavilona",
+      "players": [
+        {
+          "name": "Ditya_Vavilona",
+          "nation": "Сиу"
+        },
+        {
+          "name": "Lvxvcs",
+          "nation": "Англия"
+        }
+      ],
+      "winner": "Англия",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "98",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "W1M2",
+      "matchCode": "B12",
+      "survivors": [
+        {
+          "name": "Ditya_Vavilona",
+          "nation": "Сиу",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Stonehenge"
+          ],
+          "wonders_built": [
+            "Stonehenge"
+          ],
+          "techs": 26,
+          "policies": 14,
+          "policy_branches": [
+            "Воля",
+            "Набожность"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Средневековье",
+          "score": 506,
+          "units": 31,
+          "strength": 1702,
+          "science": 81,
+          "cities": 7,
+          "population": 40,
+          "religion": "Christianity",
+          "religion_state": "Усилена",
+          "pantheon": "One with Nature",
+          "founder_beliefs": [
+            "Hajj",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Houses of Worship",
+            "Gurdwaras",
+            "Pagodas"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 86,
+          "gold": 27,
+          "culture": 118,
+          "gold_income": 2,
+          "capital_population": 9
+        },
+        {
+          "name": "Lvxvcs",
+          "nation": "Англия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Chichen Itza",
+            "Terracotta Army",
+            "The Great Library"
+          ],
+          "wonders_built": [
+            "Chichen Itza",
+            "Terracotta Army",
+            "The Great Library"
+          ],
+          "techs": 25,
+          "policies": 10,
+          "policy_branches": [
+            "Воля",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Средневековье",
+          "score": 436,
+          "units": 25,
+          "strength": 2050,
+          "science": 47,
+          "cities": 4,
+          "population": 34,
+          "religion": "Taoism",
+          "religion_state": "Усилена",
+          "pantheon": "Ancestor Worship",
+          "founder_beliefs": [
+            "Kotel",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Devout Performers",
+            "Religious Community"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 91,
+          "gold": 161,
+          "culture": 29,
+          "gold_income": 10,
+          "capital_population": 12
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Англия",
+          "start": 98,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 42,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-B13-ejex-vs-Tamplier",
+      "players": [
+        {
+          "name": "Tamplyer",
+          "nation": "Аргентина"
+        },
+        {
+          "name": "ejex1234",
+          "nation": "Персия"
+        }
+      ],
+      "winner": "Аргентина",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "71",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "W1M3",
+      "matchCode": "B13",
+      "survivors": [
+        {
+          "name": "Tamplyer",
+          "nation": "Аргентина",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Персия",
+              "city": "Persepolis"
+            }
+          ],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army",
+            "The Great Library",
+            "Statue of Zeus",
+            "Hanging Gardens"
+          ],
+          "wonders_built": [
+            "Terracotta Army"
+          ],
+          "techs": 22,
+          "policies": 8,
+          "policy_branches": [
+            "Воля",
+            "Меценатство"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 440,
+          "units": 15,
+          "strength": 551,
+          "science": 60,
+          "cities": 7,
+          "population": 50,
+          "religion": "Christianity",
+          "religion_state": "Усилена",
+          "pantheon": "Spirit Animals",
+          "founder_beliefs": [
+            "Hajj",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Divine inspiration",
+            "Mandirs"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 114,
+          "gold": 126,
+          "culture": 24,
+          "gold_income": 3,
+          "capital_population": 9
+        },
+        {
+          "name": "ejex1234",
+          "nation": "Персия",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "Аргентина",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 19,
+          "policies": 7,
+          "policy_branches": [
+            "Традиция",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": 71,
+          "era": "Античность",
+          "score": 279,
+          "units": 1,
+          "strength": 126,
+          "science": 26,
+          "cities": 1,
+          "population": 5,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "Altars of Worship",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 19,
+          "gold": 49,
+          "culture": 14,
+          "gold_income": 2,
+          "capital_population": 8
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Аргентина",
+          "start": 71,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        },
+        "capital_lost_turns": {
+          "Персия": 71
+        }
+      }
+    },
+    {
+      "id": 43,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-B14-lalkakoalka-vs-abaiq",
+      "players": [
+        {
+          "name": "abaiiiq",
+          "nation": "Золотая Орда"
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Уэльс"
+        }
+      ],
+      "winner": "Уэльс",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "53",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "W1M4",
+      "matchCode": "B14",
+      "survivors": [
+        {
+          "name": "AlexUnderHill",
+          "nation": "Уэльс",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Золотая Орда",
+              "city": "Sarai Batu"
+            }
+          ],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army",
+            "Statue of Zeus"
+          ],
+          "wonders_built": [
+            "Terracotta Army"
+          ],
+          "techs": 14,
+          "policies": 7,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 378,
+          "units": 6,
+          "strength": 190,
+          "science": 17,
+          "cities": 7,
+          "population": 23,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "God of Craftsman",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 50,
+          "gold": 230,
+          "culture": 23,
+          "gold_income": 13,
+          "capital_population": 5
+        },
+        {
+          "name": "abaiiiq",
+          "nation": "Золотая Орда",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "Уэльс",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 15,
+          "policies": 5,
+          "policy_branches": [
+            "Традиция"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": null,
+          "capital_lost_turn": 53,
+          "era": "Античность",
+          "score": 132,
+          "units": 4,
+          "strength": 175,
+          "science": 21,
+          "cities": 2,
+          "population": 7,
+          "religion": "Zoroastrianism",
+          "religion_state": "Religion",
+          "pantheon": "Goddess of the Fields",
+          "founder_beliefs": [
+            "Religious Unity"
+          ],
+          "follower_beliefs": [
+            "Mandirs"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 15,
+          "gold": 37,
+          "culture": 12,
+          "gold_income": -22,
+          "capital_population": 5
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Уэльс",
+          "start": 53,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        },
+        "capital_lost_turns": {
+          "Золотая Орда": 53
+        }
+      }
+    },
+    {
+      "id": 44,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-B16-culturni-vs-vladimir2315",
+      "players": [
+        {
+          "name": "vladimir2315",
+          "nation": "Нубия"
+        },
+        {
+          "name": "Kulturni_Makc",
+          "nation": "Готы"
+        }
+      ],
+      "winner": "Нубия",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "24",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "W1M6",
+      "matchCode": "B16",
+      "survivors": [
+        {
+          "name": "Kulturni_Makc",
+          "nation": "Готы",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "Нубия",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 6,
+          "policies": 3,
+          "policy_branches": [
+            "Традиция"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": null,
+          "capital_lost_turn": 24,
+          "era": "Древность",
+          "score": 87,
+          "units": 1,
+          "strength": 34,
+          "science": 7,
+          "cities": 1,
+          "population": 0,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 12,
+          "gold": 96,
+          "culture": 8,
+          "gold_income": 1,
+          "capital_population": 2
+        },
+        {
+          "name": "vladimir2315",
+          "nation": "Нубия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Готы",
+              "city": "гг спасибо за игру"
+            }
+          ],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 7,
+          "policies": 3,
+          "policy_branches": [
+            "Воля",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Древность",
+          "score": 69,
+          "units": 12,
+          "strength": 188,
+          "science": 7,
+          "cities": 2,
+          "population": 6,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 11,
+          "gold": 24,
+          "culture": 4,
+          "gold_income": 2,
+          "capital_population": 4
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Нубия",
+          "start": 24,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        },
+        "capital_lost_turns": {
+          "Готы": 24
+        }
+      }
+    },
+    {
+      "id": 45,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-B17-08DD-vs-Predoh4",
+      "players": [
+        {
+          "name": "O8DD_ff",
+          "nation": "Тибет"
+        },
+        {
+          "name": "predoh4",
+          "nation": "Америка"
+        }
+      ],
+      "winner": "Тибет",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "57",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "W1M7",
+      "matchCode": "B17",
+      "survivors": [
+        {
+          "name": "O8DD_ff",
+          "nation": "Тибет",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army"
+          ],
+          "wonders_built": [
+            "Terracotta Army"
+          ],
+          "techs": 13,
+          "policies": 7,
+          "policy_branches": [
+            "Набожность"
+          ],
+          "first_policy": "Набожность",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 278,
+          "units": 12,
+          "strength": 483,
+          "science": 20,
+          "cities": 5,
+          "population": 17,
+          "religion": "Buddhism",
+          "religion_state": "Усилена",
+          "pantheon": "Goddess of the Fields",
+          "founder_beliefs": [
+            "Messiah",
+            "Unity of the Prophets"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "City of God",
+            "Religious Community"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 54,
+          "gold": 29,
+          "culture": 18,
+          "gold_income": 0,
+          "capital_population": 7
+        },
+        {
+          "name": "predoh4",
+          "nation": "Америка",
+          "alive": false,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [
+            "Hanging Gardens"
+          ],
+          "techs": 16,
+          "policies": 7,
+          "policy_branches": [
+            "Традиция"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": 56,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 218,
+          "units": 5,
+          "strength": 241,
+          "science": 22,
+          "cities": 2,
+          "population": 17,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "Stone Circles",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 36,
+          "gold": 128,
+          "culture": 9,
+          "gold_income": 4,
+          "capital_population": 12
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Тибет",
+          "start": 56,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 46,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-B18-Laste2187-vs-baha",
+      "players": [
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Шошоны"
+        },
+        {
+          "name": "Laste2187",
+          "nation": "Корея"
+        }
+      ],
+      "winner": "Шошоны",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "153",
+      "victoryType": "Cultural",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "W1M8",
+      "matchCode": "B18",
+      "survivors": [
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Шошоны",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "Свобода",
+          "wonders": [
+            "Leaning Tower of Pisa",
+            "The Oracle",
+            "Statue of Liberty",
+            "Angkor Wat",
+            "Alhambra",
+            "Mausoleum of Halicarnassus",
+            "The Louvre",
+            "Colossus",
+            "Great Wall",
+            "Sistine Chapel",
+            "Terracotta Army",
+            "Chichen Itza",
+            "Stonehenge",
+            "Notre Dame",
+            "Statue of Zeus",
+            "The Pyramids",
+            "Taj Mahal",
+            "Machu Picchu",
+            "Himeji Castle",
+            "Cristo Redentor",
+            "The Great Lighthouse",
+            "Great Mosque of Djenne",
+            "Hagia Sophia"
+          ],
+          "wonders_built": [
+            "Leaning Tower of Pisa",
+            "The Oracle",
+            "Statue of Liberty",
+            "Angkor Wat",
+            "Alhambra",
+            "Mausoleum of Halicarnassus",
+            "The Louvre",
+            "Colossus",
+            "Great Wall",
+            "Sistine Chapel",
+            "Terracotta Army",
+            "Chichen Itza",
+            "Stonehenge",
+            "Notre Dame",
+            "Statue of Zeus",
+            "The Pyramids",
+            "Taj Mahal",
+            "Machu Picchu",
+            "Himeji Castle",
+            "Cristo Redentor",
+            "The Great Lighthouse",
+            "Great Mosque of Djenne",
+            "Hagia Sophia"
+          ],
+          "techs": 53,
+          "policies": 45,
+          "policy_branches": [
+            "Традиция",
+            "Воля",
+            "Честь",
+            "Набожность",
+            "Эстетика"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Современность",
+          "score": 1535,
+          "units": 15,
+          "strength": 10292,
+          "science": 582,
+          "cities": 5,
+          "population": 99,
+          "religion": "Buddhism",
+          "religion_state": "Усилена",
+          "pantheon": "One with Nature",
+          "founder_beliefs": [
+            "Religious Troubadours",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Houses of Worship",
+            "Choral Music"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 124,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 1,
+          "production": 330,
+          "gold": 17381,
+          "culture": 1197,
+          "gold_income": 794,
+          "capital_population": 27,
+          "max_wonders_built_one_turn": 3,
+          "max_wonders_built_one_turn_at": 90
+        },
+        {
+          "name": "Laste2187",
+          "nation": "Корея",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "The Great Library",
+            "Temple of Artemis"
+          ],
+          "wonders_built": [
+            "The Great Library",
+            "Temple of Artemis"
+          ],
+          "techs": 41,
+          "policies": 15,
+          "policy_branches": [
+            "Честь",
+            "Меценатство",
+            "Рационализм"
+          ],
+          "first_policy": "Честь",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Индустриальная",
+          "score": 860,
+          "units": 27,
+          "strength": 5872,
+          "science": 213,
+          "cities": 7,
+          "population": 92,
+          "religion": "Christianity",
+          "religion_state": "Religion",
+          "pantheon": "God-King",
+          "founder_beliefs": [
+            "Zakat"
+          ],
+          "follower_beliefs": [
+            "Devout Performers"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 1,
+          "production": 122,
+          "gold": 923,
+          "culture": 81,
+          "gold_income": -28,
+          "capital_population": 17
+        }
+      ],
+      "league": {
+        "ideology_turns": {
+          "Шошоны": 124
+        }
+      }
+    },
+    {
+      "id": 47,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-B21-Joker-vs-Lvxvcs",
+      "players": [
+        {
+          "name": "Lvxvcs",
+          "nation": "Айюбиды"
+        },
+        {
+          "name": "Jokeroldsschool",
+          "nation": "Россия"
+        }
+      ],
+      "winner": "Россия",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "45",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "W2M1",
+      "matchCode": "B21",
+      "survivors": [
+        {
+          "name": "Jokeroldsschool",
+          "nation": "Россия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army",
+            "Stonehenge"
+          ],
+          "wonders_built": [
+            "Terracotta Army",
+            "Stonehenge"
+          ],
+          "techs": 15,
+          "policies": 5,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 296,
+          "units": 12,
+          "strength": 447,
+          "science": 24,
+          "cities": 4,
+          "population": 20,
+          "religion": "Zoroastrianism",
+          "religion_state": "Religion",
+          "pantheon": "Earth Mother",
+          "founder_beliefs": [
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Divine inspiration"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 47,
+          "gold": 136,
+          "culture": 12,
+          "gold_income": 3,
+          "capital_population": 8
+        },
+        {
+          "name": "Lvxvcs",
+          "nation": "Айюбиды",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 11,
+          "policies": 4,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 159,
+          "units": 3,
+          "strength": 75,
+          "science": 17,
+          "cities": 3,
+          "population": 12,
+          "religion": "Christianity",
+          "religion_state": "Religion",
+          "pantheon": "One with Nature",
+          "founder_beliefs": [
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Religious Community"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 31,
+          "gold": 153,
+          "culture": 9,
+          "gold_income": 17,
+          "capital_population": 5
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Россия",
+          "start": 45,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 48,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-B22-Tamplier-vs-lalkakoalka",
+      "players": [
+        {
+          "name": "AlexUnderHill",
+          "nation": "Ацтеки"
+        },
+        {
+          "name": "Tamplyer",
+          "nation": "Аргентина"
+        }
+      ],
+      "winner": "Ацтеки",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "92",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "W2M2",
+      "matchCode": "B22",
+      "survivors": [
+        {
+          "name": "AlexUnderHill",
+          "nation": "Ацтеки",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army",
+            "Stonehenge",
+            "Great Wall",
+            "Angkor Wat",
+            "Petra",
+            "The Oracle"
+          ],
+          "wonders_built": [
+            "Terracotta Army",
+            "Stonehenge",
+            "Great Wall",
+            "Angkor Wat",
+            "Petra",
+            "The Oracle"
+          ],
+          "techs": 25,
+          "policies": 12,
+          "policy_branches": [
+            "Воля",
+            "Набожность"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Средневековье",
+          "score": 723,
+          "units": 15,
+          "strength": 1148,
+          "science": 93,
+          "cities": 7,
+          "population": 64,
+          "religion": "Zoroastrianism",
+          "religion_state": "Усилена",
+          "pantheon": "Goddess of Love",
+          "founder_beliefs": [
+            "Kotel",
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Religious Community",
+            "Indulgences"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 233,
+          "gold": 138,
+          "culture": 61,
+          "gold_income": -1,
+          "capital_population": 13
+        },
+        {
+          "name": "Tamplyer",
+          "nation": "Аргентина",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Chichen Itza",
+            "The Great Library",
+            "Statue of Zeus"
+          ],
+          "wonders_built": [
+            "Chichen Itza",
+            "The Great Library",
+            "Statue of Zeus"
+          ],
+          "techs": 27,
+          "policies": 9,
+          "policy_branches": [
+            "Традиция",
+            "Коммерция"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Средневековье",
+          "score": 459,
+          "units": 9,
+          "strength": 828,
+          "science": 56,
+          "cities": 4,
+          "population": 37,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "Altars of Worship",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 109,
+          "gold": 7,
+          "culture": 17,
+          "gold_income": -12,
+          "capital_population": 11
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Ацтеки",
+          "start": 91,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 49,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-B23-plplploo88-vs-vladimir2315",
+      "players": [
+        {
+          "name": "plplploo",
+          "nation": "Египет"
+        },
+        {
+          "name": "vladimir2315",
+          "nation": "Готы"
+        }
+      ],
+      "winner": "Египет",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "145",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "W2M3",
+      "matchCode": "B23",
+      "survivors": [
+        {
+          "name": "plplploo",
+          "nation": "Египет",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "Порядок",
+          "wonders": [
+            "Sistine Chapel",
+            "The Great Library",
+            "The Pyramids",
+            "Great Mosque of Djenne",
+            "Porcelain Tower",
+            "Chichen Itza",
+            "Great Wall",
+            "Notre Dame",
+            "Machu Picchu",
+            "Himeji Castle",
+            "Petra",
+            "Mausoleum of Halicarnassus",
+            "Stonehenge"
+          ],
+          "wonders_built": [
+            "Sistine Chapel",
+            "The Great Library",
+            "The Pyramids",
+            "Great Mosque of Djenne",
+            "Porcelain Tower",
+            "Chichen Itza",
+            "Great Wall",
+            "Notre Dame",
+            "Machu Picchu",
+            "Himeji Castle",
+            "Petra",
+            "Mausoleum of Halicarnassus",
+            "Stonehenge"
+          ],
+          "techs": 38,
+          "policies": 19,
+          "policy_branches": [
+            "Воля",
+            "Набожность",
+            "Рационализм"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Индустриальная",
+          "score": 1050,
+          "units": 29,
+          "strength": 6565,
+          "science": 215,
+          "cities": 7,
+          "population": 73,
+          "religion": "Christianity",
+          "religion_state": "Усилена",
+          "pantheon": "Desert Folklore",
+          "founder_beliefs": [
+            "Jizya",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Choral Music",
+            "Apostolic Palace",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 144,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 341,
+          "gold": 1241,
+          "culture": 121,
+          "gold_income": 126,
+          "capital_population": 17,
+          "max_wonders_built_one_turn": 2,
+          "max_wonders_built_one_turn_at": 99
+        },
+        {
+          "name": "vladimir2315",
+          "nation": "Готы",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Alhambra",
+            "Leaning Tower of Pisa",
+            "The Oracle",
+            "Terracotta Army",
+            "Statue of Zeus",
+            "Taj Mahal",
+            "Temple of Artemis",
+            "Angkor Wat",
+            "Hagia Sophia",
+            "Colossus",
+            "The Great Lighthouse"
+          ],
+          "wonders_built": [
+            "Alhambra",
+            "Leaning Tower of Pisa",
+            "The Oracle",
+            "Terracotta Army",
+            "Statue of Zeus",
+            "Taj Mahal",
+            "Temple of Artemis",
+            "Angkor Wat",
+            "Hagia Sophia",
+            "Colossus",
+            "The Great Lighthouse"
+          ],
+          "techs": 36,
+          "policies": 14,
+          "policy_branches": [
+            "Воля",
+            "Честь",
+            "Коммерция",
+            "Рационализм"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Возрождение",
+          "score": 903,
+          "units": 33,
+          "strength": 4823,
+          "science": 161,
+          "cities": 7,
+          "population": 58,
+          "religion": "Taoism",
+          "religion_state": "Усилена",
+          "pantheon": "Goddess of Festivals",
+          "founder_beliefs": [
+            "Mithraea",
+            "Hajj"
+          ],
+          "follower_beliefs": [
+            "Devoted Elite",
+            "Guruship"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 247,
+          "gold": 639,
+          "culture": 76,
+          "gold_income": -21,
+          "capital_population": 18
+        }
+      ],
+      "league": {
+        "ideology_turns": {
+          "Египет": 144
+        }
+      }
+    },
+    {
+      "id": 50,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-B24-08DD-vs-baha",
+      "players": [
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Нубия"
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Индонезия"
+        }
+      ],
+      "winner": "Нубия",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "35",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "W2M4",
+      "matchCode": "B24",
+      "survivors": [
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Нубия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 10,
+          "policies": 4,
+          "policy_branches": [
+            "Традиция"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Древность",
+          "score": 151,
+          "units": 9,
+          "strength": 151,
+          "science": 11,
+          "cities": 3,
+          "population": 10,
+          "religion": "Buddhism",
+          "religion_state": "Religion",
+          "pantheon": "One with Nature",
+          "founder_beliefs": [
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Religious Community"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 21,
+          "gold": 48,
+          "culture": 10,
+          "gold_income": 1,
+          "capital_population": 4
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Индонезия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 10,
+          "policies": 4,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Древность",
+          "score": 127,
+          "units": 4,
+          "strength": 137,
+          "science": 11,
+          "cities": 2,
+          "population": 10,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 16,
+          "gold": 80,
+          "culture": 5,
+          "gold_income": -2,
+          "capital_population": 6
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Нубия",
+          "start": 35,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 51,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-B31-Joker-vs-lalkakoalka",
+      "players": [
+        {
+          "name": "AlexUnderHill",
+          "nation": "Ацтеки"
+        },
+        {
+          "name": "Jokeroldsschool",
+          "nation": "Иерусалим"
+        }
+      ],
+      "winner": "Иерусалим",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "100",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "W3M1",
+      "matchCode": "B31",
+      "survivors": [
+        {
+          "name": "Jokeroldsschool",
+          "nation": "Иерусалим",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Statue of Zeus",
+            "The Great Library",
+            "Great Wall",
+            "Temple of Artemis",
+            "Colossus"
+          ],
+          "wonders_built": [
+            "Statue of Zeus",
+            "The Great Library",
+            "Great Wall",
+            "Temple of Artemis",
+            "Colossus"
+          ],
+          "techs": 28,
+          "policies": 14,
+          "policy_branches": [
+            "Честь",
+            "Набожность"
+          ],
+          "first_policy": "Честь",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Средневековье",
+          "score": 610,
+          "units": 22,
+          "strength": 1974,
+          "science": 78,
+          "cities": 6,
+          "population": 42,
+          "religion": "Zoroastrianism",
+          "religion_state": "Усилена",
+          "pantheon": "Work Spirituals",
+          "founder_beliefs": [
+            "Hajj",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Houses of Worship",
+            "Religious Community",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 164,
+          "gold": 403,
+          "culture": 106,
+          "gold_income": 9,
+          "capital_population": 9,
+          "max_wonders_built_one_turn": 2,
+          "max_wonders_built_one_turn_at": 67
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Ацтеки",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army",
+            "The Oracle",
+            "The Great Lighthouse",
+            "Stonehenge"
+          ],
+          "wonders_built": [
+            "Terracotta Army",
+            "The Oracle",
+            "The Great Lighthouse",
+            "Stonehenge"
+          ],
+          "techs": 27,
+          "policies": 12,
+          "policy_branches": [
+            "Воля",
+            "Исследование"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Средневековье",
+          "score": 471,
+          "units": 17,
+          "strength": 655,
+          "science": 70,
+          "cities": 4,
+          "population": 36,
+          "religion": "Taoism",
+          "religion_state": "Religion",
+          "pantheon": "Goddess of Love",
+          "founder_beliefs": [
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Guruship"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 103,
+          "gold": 298,
+          "culture": 32,
+          "gold_income": 14,
+          "capital_population": 11
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Иерусалим",
+          "start": 100,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 52,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-B32-plplploo88-vs-baha",
+      "players": [
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Кельты"
+        },
+        {
+          "name": "plplploo",
+          "nation": "Золотая Орда"
+        }
+      ],
+      "winner": "Кельты",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "95",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "W3M2",
+      "matchCode": "B32",
+      "survivors": [
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Кельты",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Alhambra",
+            "Terracotta Army",
+            "The Oracle",
+            "The Pyramids",
+            "Mausoleum of Halicarnassus",
+            "Stonehenge",
+            "Great Mosque of Djenne",
+            "Great Wall",
+            "Machu Picchu",
+            "Statue of Zeus",
+            "Colossus"
+          ],
+          "wonders_built": [
+            "Alhambra",
+            "Terracotta Army",
+            "The Oracle",
+            "The Pyramids",
+            "Mausoleum of Halicarnassus",
+            "Stonehenge",
+            "Great Mosque of Djenne",
+            "Great Wall",
+            "Machu Picchu",
+            "Statue of Zeus",
+            "Colossus"
+          ],
+          "techs": 30,
+          "policies": 12,
+          "policy_branches": [
+            "Воля",
+            "Набожность"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Возрождение",
+          "score": 926,
+          "units": 27,
+          "strength": 2737,
+          "science": 197,
+          "cities": 7,
+          "population": 68,
+          "religion": "Buddhism",
+          "religion_state": "Усилена",
+          "pantheon": "Stone Circles",
+          "founder_beliefs": [
+            "Kotel",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Religious Community",
+            "Guruship",
+            "Indulgences"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 230,
+          "gold": 199,
+          "culture": 73,
+          "gold_income": -42,
+          "capital_population": 9,
+          "max_wonders_built_one_turn": 2,
+          "max_wonders_built_one_turn_at": 75
+        },
+        {
+          "name": "plplploo",
+          "nation": "Золотая Орда",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Chichen Itza",
+            "The Great Library",
+            "Petra",
+            "Notre Dame"
+          ],
+          "wonders_built": [
+            "Chichen Itza",
+            "The Great Library",
+            "Petra",
+            "Notre Dame"
+          ],
+          "techs": 25,
+          "policies": 9,
+          "policy_branches": [
+            "Воля",
+            "Набожность"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Средневековье",
+          "score": 658,
+          "units": 16,
+          "strength": 1435,
+          "science": 103,
+          "cities": 7,
+          "population": 62,
+          "religion": "Islam",
+          "religion_state": "Усилена",
+          "pantheon": "Sun God",
+          "founder_beliefs": [
+            "Zakat",
+            "Jizya"
+          ],
+          "follower_beliefs": [
+            "Devoted Elite",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 166,
+          "gold": 314,
+          "culture": 24,
+          "gold_income": -32,
+          "capital_population": 11
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Кельты",
+          "start": 95,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 53,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-N11-EbaIIIyBKaIIIy-vs-DityaVavilona",
+      "players": [
+        {
+          "name": "EbaIIIy_B_kaIIIy",
+          "nation": "Нубия"
+        },
+        {
+          "name": "Ditya_Vavilona",
+          "nation": "Персия"
+        }
+      ],
+      "winner": "Нубия",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "43",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "L1M1",
+      "matchCode": "N11",
+      "survivors": [
+        {
+          "name": "EbaIIIy_B_kaIIIy",
+          "nation": "Нубия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army"
+          ],
+          "wonders_built": [
+            "Terracotta Army"
+          ],
+          "techs": 13,
+          "policies": 5,
+          "policy_branches": [
+            "Традиция"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 154,
+          "units": 22,
+          "strength": 255,
+          "science": 15,
+          "cities": 2,
+          "population": 13,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 20,
+          "gold": 53,
+          "culture": 8,
+          "gold_income": 1,
+          "capital_population": 8
+        },
+        {
+          "name": "Ditya_Vavilona",
+          "nation": "Персия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 12,
+          "policies": 3,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Древность",
+          "score": 154,
+          "units": 9,
+          "strength": 493,
+          "science": 13,
+          "cities": 3,
+          "population": 9,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 23,
+          "gold": 92,
+          "culture": 4,
+          "gold_income": 4,
+          "capital_population": 6
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Нубия",
+          "start": 43,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 54,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-N12-ejex-vs-abaiq",
+      "players": [
+        {
+          "name": "abaiiiq",
+          "nation": "Карфаген"
+        },
+        {
+          "name": "ejex1234",
+          "nation": "Россия"
+        }
+      ],
+      "winner": "Карфаген",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "59",
+      "victoryType": "Domination",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "L1M2",
+      "matchCode": "N12",
+      "survivors": [
+        {
+          "name": "abaiiiq",
+          "nation": "Карфаген",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Россия",
+              "city": "первоград"
+            }
+          ],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army",
+            "The Great Library"
+          ],
+          "wonders_built": [
+            "Terracotta Army"
+          ],
+          "techs": 15,
+          "policies": 7,
+          "policy_branches": [
+            "Традиция"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 342,
+          "units": 13,
+          "strength": 739,
+          "science": 20,
+          "cities": 5,
+          "population": 24,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "Goddess of the Fields",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 17,
+          "gold": 253,
+          "culture": 10,
+          "gold_income": -13,
+          "capital_population": 6
+        },
+        {
+          "name": "ejex1234",
+          "nation": "Россия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Карфаген",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 17,
+          "policies": 5,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": 57,
+          "capital_lost_turn": 55,
+          "era": "Античность",
+          "score": 117,
+          "units": 0,
+          "strength": 30,
+          "science": 15,
+          "cities": 0,
+          "population": 6,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 12,
+          "gold": 66,
+          "culture": 4,
+          "gold_income": -3,
+          "capital_population": 5
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Карфаген",
+          "start": 58,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        },
+        "capital_lost_turns": {
+          "Россия": 55
+        }
+      }
+    },
+    {
+      "id": 55,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-N13-dildo1-vs-culturni",
+      "players": [
+        {
+          "name": "Mironchikcrytoy",
+          "nation": "Корея"
+        },
+        {
+          "name": "Kulturni_Makc",
+          "nation": "Америка"
+        }
+      ],
+      "winner": "Корея",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "64",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "L1M3",
+      "matchCode": "N13",
+      "survivors": [
+        {
+          "name": "Mironchikcrytoy",
+          "nation": "Корея",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "The Great Library",
+            "Hanging Gardens"
+          ],
+          "wonders_built": [
+            "The Great Library",
+            "Hanging Gardens"
+          ],
+          "techs": 18,
+          "policies": 7,
+          "policy_branches": [
+            "Традиция"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 299,
+          "units": 4,
+          "strength": 99,
+          "science": 31,
+          "cities": 3,
+          "population": 24,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "Harvest Festival",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 28,
+          "gold": 74,
+          "culture": 15,
+          "gold_income": 0,
+          "capital_population": 14
+        },
+        {
+          "name": "Kulturni_Makc",
+          "nation": "Америка",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army"
+          ],
+          "wonders_built": [
+            "Terracotta Army"
+          ],
+          "techs": 16,
+          "policies": 7,
+          "policy_branches": [
+            "Традиция"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 200,
+          "units": 7,
+          "strength": 175,
+          "science": 22,
+          "cities": 2,
+          "population": 13,
+          "religion": "Judaism",
+          "religion_state": "Religion",
+          "pantheon": "Earth Mother",
+          "founder_beliefs": [
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Religious Community"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 39,
+          "gold": 15,
+          "culture": 9,
+          "gold_income": -4,
+          "capital_population": 8
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Корея",
+          "start": 64,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 56,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-N14-Predoh4-vs-Laste2187",
+      "players": [
+        {
+          "name": "Laste2187",
+          "nation": "Марокко"
+        },
+        {
+          "name": "predoh4",
+          "nation": "Филиппины"
+        }
+      ],
+      "winner": "Филиппины",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "79",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "L1M4",
+      "matchCode": "N14",
+      "survivors": [
+        {
+          "name": "predoh4",
+          "nation": "Филиппины",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Марокко",
+              "city": "Marrakech"
+            }
+          ],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army",
+            "Hanging Gardens",
+            "The Great Library",
+            "Stonehenge"
+          ],
+          "wonders_built": [
+            "Terracotta Army",
+            "Hanging Gardens",
+            "The Great Library"
+          ],
+          "techs": 24,
+          "policies": 8,
+          "policy_branches": [
+            "Традиция",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Средневековье",
+          "score": 542,
+          "units": 22,
+          "strength": 1666,
+          "science": 62,
+          "cities": 5,
+          "population": 47,
+          "religion": "голландский штурвал",
+          "religion_state": "Усилена",
+          "pantheon": "Stone Circles",
+          "founder_beliefs": [
+            "Kotel",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Divine inspiration",
+            "Religious Community"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 113,
+          "gold": 54,
+          "culture": 16,
+          "gold_income": -2,
+          "capital_population": 16
+        },
+        {
+          "name": "Laste2187",
+          "nation": "Марокко",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "Филиппины",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Colossus"
+          ],
+          "wonders_built": [
+            "Colossus"
+          ],
+          "techs": 22,
+          "policies": 9,
+          "policy_branches": [
+            "Воля",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": 76,
+          "era": "Античность",
+          "score": 260,
+          "units": 4,
+          "strength": 114,
+          "science": 45,
+          "cities": 3,
+          "population": 19,
+          "religion": "Christianity",
+          "religion_state": "Усилена",
+          "pantheon": "Goddess of the Fields",
+          "founder_beliefs": [
+            "Religious Troubadours",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Feed the World",
+            "Peace Gardens"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 36,
+          "gold": 221,
+          "culture": 29,
+          "gold_income": 3,
+          "capital_population": 6
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Филиппины",
+          "start": 79,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        },
+        "capital_lost_turns": {
+          "Марокко": 76
+        }
+      }
+    },
+    {
+      "id": 57,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-N21-EbaIIIyBKaIIIy-vs-Lvxvcs",
+      "players": [
+        {
+          "name": "Lvxvcs",
+          "nation": "Англия"
+        },
+        {
+          "name": "EbaIIIy_B_kaIIIy",
+          "nation": "Инки"
+        }
+      ],
+      "winner": "Инки",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "35",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "L2M1",
+      "matchCode": "N21",
+      "survivors": [
+        {
+          "name": "EbaIIIy_B_kaIIIy",
+          "nation": "Инки",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army"
+          ],
+          "wonders_built": [
+            "Terracotta Army"
+          ],
+          "techs": 11,
+          "policies": 3,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Древность",
+          "score": 170,
+          "units": 11,
+          "strength": 414,
+          "science": 14,
+          "cities": 3,
+          "population": 8,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 19,
+          "gold": 149,
+          "culture": 6,
+          "gold_income": -11,
+          "capital_population": 3
+        },
+        {
+          "name": "Lvxvcs",
+          "nation": "Англия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 11,
+          "policies": 4,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Древность",
+          "score": 141,
+          "units": 2,
+          "strength": 41,
+          "science": 10,
+          "cities": 3,
+          "population": 7,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "Stone Circles",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 16,
+          "gold": 18,
+          "culture": 6,
+          "gold_income": 0,
+          "capital_population": 4
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Инки",
+          "start": 35,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 58,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-N24-Predoh4-vs-08DD",
+      "players": [
+        {
+          "name": "predoh4",
+          "nation": "Египет"
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Польша"
+        }
+      ],
+      "winner": "Польша",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "108",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "L2M4",
+      "matchCode": "N24",
+      "survivors": [
+        {
+          "name": "O8DD_ff",
+          "nation": "Польша",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "The Pyramids",
+            "Angkor Wat",
+            "Mausoleum of Halicarnassus",
+            "Notre Dame",
+            "Colossus",
+            "The Great Lighthouse",
+            "Great Wall",
+            "Great Mosque of Djenne"
+          ],
+          "wonders_built": [
+            "The Pyramids",
+            "Angkor Wat",
+            "Mausoleum of Halicarnassus",
+            "Notre Dame",
+            "Colossus",
+            "The Great Lighthouse",
+            "Great Wall",
+            "Great Mosque of Djenne"
+          ],
+          "techs": 35,
+          "policies": 12,
+          "policy_branches": [
+            "Воля",
+            "Набожность"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Возрождение",
+          "score": 841,
+          "units": 28,
+          "strength": 8194,
+          "science": 184,
+          "cities": 5,
+          "population": 65,
+          "religion": "Buddhism",
+          "religion_state": "Усилена",
+          "pantheon": "Spirit Animals",
+          "founder_beliefs": [
+            "Kotel",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Religious Community",
+            "Guruship",
+            "Jesuit Education"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 231,
+          "gold": 4183,
+          "culture": 89,
+          "gold_income": 140,
+          "capital_population": 16,
+          "max_wonders_built_one_turn": 2,
+          "max_wonders_built_one_turn_at": 94
+        },
+        {
+          "name": "predoh4",
+          "nation": "Египет",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Alhambra",
+            "Terracotta Army",
+            "The Oracle",
+            "Hanging Gardens",
+            "The Great Library",
+            "Statue of Zeus",
+            "Machu Picchu",
+            "Chichen Itza",
+            "Petra",
+            "Himeji Castle"
+          ],
+          "wonders_built": [
+            "Alhambra",
+            "Terracotta Army",
+            "The Oracle",
+            "Hanging Gardens",
+            "The Great Library",
+            "Statue of Zeus",
+            "Machu Picchu",
+            "Chichen Itza",
+            "Petra",
+            "Himeji Castle"
+          ],
+          "techs": 36,
+          "policies": 12,
+          "policy_branches": [
+            "Традиция",
+            "Набожность",
+            "Рационализм"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Индустриальная",
+          "score": 733,
+          "units": 17,
+          "strength": 2080,
+          "science": 198,
+          "cities": 4,
+          "population": 49,
+          "religion": "Christianity",
+          "religion_state": "Усилена",
+          "pantheon": "Stone Circles",
+          "founder_beliefs": [
+            "Hajj",
+            "Tithe"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Work Ethic",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 164,
+          "gold": 605,
+          "culture": 60,
+          "gold_income": -53,
+          "capital_population": 18
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Польша",
+          "start": 108,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 59,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-N32-dildo1-vs-08DD",
+      "players": [
+        {
+          "name": "Mironchikcrytoy",
+          "nation": "Корея"
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Тонга"
+        }
+      ],
+      "winner": "Тонга",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "35",
+      "victoryType": "Domination",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "L3M2",
+      "matchCode": "N32",
+      "survivors": [
+        {
+          "name": "O8DD_ff",
+          "nation": "Тонга",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Корея",
+              "city": "Seoul"
+            }
+          ],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 10,
+          "policies": 4,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Древность",
+          "score": 193,
+          "units": 14,
+          "strength": 381,
+          "science": 11,
+          "cities": 4,
+          "population": 15,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "Stone Circles",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 26,
+          "gold": 180,
+          "culture": 6,
+          "gold_income": 15,
+          "capital_population": 5
+        },
+        {
+          "name": "Mironchikcrytoy",
+          "nation": "Корея",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Тонга",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 12,
+          "policies": 4,
+          "policy_branches": [
+            "Традиция"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": 33,
+          "capital_lost_turn": 33,
+          "era": "Древность",
+          "score": 102,
+          "units": 0,
+          "strength": 35,
+          "science": 11,
+          "cities": 0,
+          "population": 8,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 7,
+          "gold": 41,
+          "culture": 6,
+          "gold_income": 0,
+          "capital_population": 5
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Тонга",
+          "start": 34,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 60,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-N42-08DD-vs-plplploo88",
+      "players": [
+        {
+          "name": "plplploo",
+          "nation": "Египет"
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Ирокезы"
+        }
+      ],
+      "winner": "Ирокезы",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "53",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "L4M2",
+      "matchCode": "N42",
+      "survivors": [
+        {
+          "name": "O8DD_ff",
+          "nation": "Ирокезы",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army",
+            "Colossus"
+          ],
+          "wonders_built": [
+            "Terracotta Army",
+            "Colossus"
+          ],
+          "techs": 15,
+          "policies": 5,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 313,
+          "units": 14,
+          "strength": 751,
+          "science": 19,
+          "cities": 5,
+          "population": 20,
+          "religion": "Buddhism",
+          "religion_state": "Religion",
+          "pantheon": "One with Nature",
+          "founder_beliefs": [
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Religious Community"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 56,
+          "gold": 267,
+          "culture": 13,
+          "gold_income": 33,
+          "capital_population": 6
+        },
+        {
+          "name": "plplploo",
+          "nation": "Египет",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "The Pyramids"
+          ],
+          "wonders_built": [
+            "The Pyramids"
+          ],
+          "techs": 13,
+          "policies": 5,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 199,
+          "units": 10,
+          "strength": 325,
+          "science": 17,
+          "cities": 3,
+          "population": 12,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "Altars of Worship",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 31,
+          "gold": 122,
+          "culture": 15,
+          "gold_income": 12,
+          "capital_population": 6
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Ирокезы",
+          "start": 52,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
     }
   ]
 }
