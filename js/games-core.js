@@ -45,7 +45,7 @@
 
   /**
    * Display / spectator folder name as on unciv-web:
-   * `IronLeague-25`, `IronLeague-team2`, or raw session name for tournaments.
+   * `IronLeague-25`, `IronLeague-S2G1`, `IronLeague-team2`, or raw tournament name.
    */
   function formatGameLabel(game) {
     if (isTournamentGame(game)) {
@@ -53,6 +53,8 @@
       return raw || '';
     }
     const raw = String((game && game.number) || '').trim();
+    const season = /^IronLeague-S(\d+)G(\d+)$/i.exec(raw);
+    if (season) return `IronLeague-S${season[1]}G${season[2]}`;
     const il = /^IronLeague-(team)?(\d+)$/i.exec(raw);
     if (il) return il[1] ? `IronLeague-team${il[2]}` : `IronLeague-${il[2]}`;
     const team = /^Team\s+Game\s+(\d+)$/i.exec(raw);
@@ -148,30 +150,41 @@
   }
 
   /**
-   * First IronLeague-N of each FFA season (matches live/core: season 0 = IL 1–11).
-   * When season 2 starts, add its first IL here (e.g. 2: 40). Prefer game.season when present.
+   * First legacy IronLeague-N of each FFA season (live/core: season 0 = IL 1–11,
+   * season 1 = IL 12–30). From season 2 games are ``IronLeague-S{n}G{m}`` (or
+   * carry explicit ``game.season``); no linear N mapping needed for those.
    */
   const SEASON_FIRST_IL = Object.freeze({
     0: 1,
     1: 12,
   });
 
-  /** IronLeague-N session number, or null for teams/tournaments/other. */
+  /** Parse ``IronLeague-S{season}G{game}`` → ``{ season, game }``, else null. */
+  function parseSeasonGameLabel(raw) {
+    const m = /^IronLeague-S(\d+)G(\d+)$/i.exec(String(raw || '').trim());
+    if (!m) return null;
+    return { season: parseInt(m[1], 10), game: parseInt(m[2], 10) };
+  }
+
+  /** IronLeague-N session number, or null for S{n}G{m}/teams/tournaments/other. */
   function ilSessionNumber(game) {
     const raw = String((game && game.number) || '').trim();
+    if (parseSeasonGameLabel(raw)) return null;
     const m = /^IronLeague-(\d+)$/i.exec(raw);
     return m ? parseInt(m[1], 10) : null;
   }
 
   /**
    * Archive FFA season id for a game, or null if not an IL numbered session.
-   * Uses ``game.season`` when set; otherwise maps IL-N via SEASON_FIRST_IL.
+   * Order: ``game.season`` → ``IronLeague-S{n}G{m}`` → legacy IL-N via SEASON_FIRST_IL.
    */
   function gameSeasonId(game) {
     if (game && game.season != null && game.season !== '') {
       const s = Number(game.season);
       if (Number.isFinite(s) && s >= 0) return s;
     }
+    const sg = parseSeasonGameLabel((game && game.number) || '');
+    if (sg) return sg.season;
     const n = ilSessionNumber(game);
     if (n == null || n < 1) return null;
     let best = null;
@@ -229,6 +242,7 @@
     spectatorFolderName,
     resolveWinnerNation,
     SEASON_FIRST_IL,
+    parseSeasonGameLabel,
     ilSessionNumber,
     gameSeasonId,
     filterGamesBySeason,
