@@ -22153,6 +22153,509 @@
           "stop": false
         }
       }
+    },
+    {
+      "id": 67,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "IronLeague-S2G1",
+      "season": 2,
+      "players": [
+        {
+          "name": "Jokeroldsschool",
+          "nation": "Япония"
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Венеция"
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Россия"
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Зулусы"
+        },
+        {
+          "name": "plplploo",
+          "nation": "Колумбия"
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Мадагаскар"
+        },
+        {
+          "name": "Ouni0",
+          "nation": "Тимуриды"
+        }
+      ],
+      "winner": "Мадагаскар",
+      "map": "Rectangular",
+      "playerCount": 7,
+      "endedOnTurn": "152",
+      "victoryType": "CC",
+      "survivors": [
+        {
+          "name": "O8DD_ff",
+          "nation": "Мадагаскар",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Зулусы",
+              "city": "Ulundi"
+            },
+            {
+              "nation": "Россия",
+              "city": "Moscow"
+            }
+          ],
+          "ideology": "Порядок",
+          "wonders": [
+            "Terracotta Army",
+            "Porcelain Tower",
+            "Angkor Wat",
+            "Eiffel Tower",
+            "Cristo Redentor",
+            "Alhambra",
+            "Colossus",
+            "Kremlin",
+            "Taj Mahal",
+            "Hagia Sophia",
+            "Chichen Itza",
+            "Hanging Gardens",
+            "The Great Library",
+            "Brandenburg Gate",
+            "Great Wall",
+            "Himeji Castle",
+            "Notre Dame"
+          ],
+          "wonders_built": [
+            "Terracotta Army",
+            "Porcelain Tower",
+            "Angkor Wat",
+            "Eiffel Tower",
+            "Cristo Redentor",
+            "Alhambra",
+            "Colossus",
+            "Kremlin",
+            "Taj Mahal"
+          ],
+          "techs": 63,
+          "policies": 29,
+          "policy_branches": [
+            "Честь",
+            "Набожность",
+            "Рационализм"
+          ],
+          "first_policy": "Честь",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Информационная",
+          "score": 1302,
+          "units": 82,
+          "strength": 102317,
+          "science": 1264,
+          "cities": 14,
+          "population": 217,
+          "religion": "Buddhism",
+          "religion_state": "Усилена",
+          "pantheon": "Stone Circles",
+          "founder_beliefs": [
+            "Messiah",
+            "Unity of the Prophets"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "City of God",
+            "Religious Community"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 98,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 3,
+          "wars_received": 5,
+          "production": 1028,
+          "gold": 3767,
+          "culture": 321,
+          "gold_income": 38,
+          "capital_population": 27,
+          "max_wonders_built_one_turn": 2,
+          "max_wonders_built_one_turn_at": 102
+        },
+        {
+          "name": "Jokeroldsschool",
+          "nation": "Япония",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "Автократия",
+          "wonders": [
+            "Sistine Chapel",
+            "Leaning Tower of Pisa",
+            "The Oracle",
+            "Mausoleum of Halicarnassus",
+            "Great Mosque of Djenne",
+            "Temple of Artemis",
+            "The Louvre",
+            "Petra"
+          ],
+          "wonders_built": [
+            "Sistine Chapel",
+            "Leaning Tower of Pisa",
+            "The Oracle",
+            "Mausoleum of Halicarnassus",
+            "Great Mosque of Djenne",
+            "Temple of Artemis",
+            "The Louvre"
+          ],
+          "techs": 54,
+          "policies": 28,
+          "policy_branches": [
+            "Честь",
+            "Набожность",
+            "Исследование"
+          ],
+          "first_policy": "Честь",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Современность",
+          "score": 767,
+          "units": 61,
+          "strength": 22228,
+          "science": 446,
+          "cities": 9,
+          "population": 131,
+          "religion": "Zoroastrianism",
+          "religion_state": "Усилена",
+          "pantheon": "Goddess of the Fields",
+          "founder_beliefs": [
+            "Hajj",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Indulgences",
+            "Holy Warriors",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 119,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 3,
+          "wars_received": 1,
+          "production": 574,
+          "gold": 1641,
+          "culture": 474,
+          "gold_income": 146,
+          "capital_population": 22
+        },
+        {
+          "name": "Ouni0",
+          "nation": "Тимуриды",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "Порядок",
+          "wonders": [
+            "Statue of Zeus",
+            "The Pyramids",
+            "Forbidden Palace",
+            "Machu Picchu",
+            "Neuschwanstein"
+          ],
+          "wonders_built": [
+            "Statue of Zeus",
+            "The Pyramids",
+            "Forbidden Palace",
+            "Machu Picchu",
+            "Neuschwanstein"
+          ],
+          "techs": 61,
+          "policies": 25,
+          "policy_branches": [
+            "Воля",
+            "Набожность",
+            "Меценатство"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Атомная",
+          "score": 719,
+          "units": 36,
+          "strength": 25245,
+          "science": 1144,
+          "cities": 9,
+          "population": 155,
+          "religion": "Taoism",
+          "religion_state": "Усилена",
+          "pantheon": "Ritual Sacrifice",
+          "founder_beliefs": [
+            "Kotel",
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Devout Performers",
+            "Jesuit Education",
+            "Peace Gardens"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 101,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 2,
+          "wars_received": 0,
+          "production": 749,
+          "gold": 715,
+          "culture": 192,
+          "gold_income": 62,
+          "capital_population": 22
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Зулусы",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Мадагаскар",
+          "conquered_capitals": [
+            {
+              "nation": "Колумбия",
+              "city": "Bogotá"
+            }
+          ],
+          "ideology": "Порядок",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 54,
+          "policies": 22,
+          "policy_branches": [
+            "Воля",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": 147,
+          "capital_lost_turn": 146,
+          "era": "Современность",
+          "score": 546,
+          "units": 5,
+          "strength": 2260,
+          "science": 559,
+          "cities": 6,
+          "population": 107,
+          "religion": "Confucianism",
+          "religion_state": "Усилена",
+          "pantheon": "Goddess of Festivals",
+          "founder_beliefs": [
+            "Ceremonial Burial",
+            "Karma"
+          ],
+          "follower_beliefs": [
+            "Mosques",
+            "Guruship"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 116,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 4,
+          "wars_received": 4,
+          "production": 272,
+          "gold": 2428,
+          "culture": 106,
+          "gold_income": 122,
+          "capital_population": 18
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Венеция",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "Свобода",
+          "wonders": [
+            "The Great Lighthouse"
+          ],
+          "wonders_built": [
+            "The Great Lighthouse"
+          ],
+          "techs": 54,
+          "policies": 19,
+          "policy_branches": [
+            "Традиция",
+            "Меценатство",
+            "Исследование"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Современность",
+          "score": 455,
+          "units": 22,
+          "strength": 4584,
+          "science": 428,
+          "cities": 4,
+          "population": 95,
+          "religion": "Tengriism",
+          "religion_state": "Religion",
+          "pantheon": "God of the Open Sky",
+          "founder_beliefs": [
+            "Mithraea"
+          ],
+          "follower_beliefs": [
+            "Pagodas"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 113,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 3,
+          "wars_received": 1,
+          "production": 316,
+          "gold": 1428,
+          "culture": 148,
+          "gold_income": 87,
+          "capital_population": 37
+        },
+        {
+          "name": "plplploo",
+          "nation": "Колумбия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Зулусы",
+          "conquered_capitals": [],
+          "ideology": "Автократия",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 45,
+          "policies": 16,
+          "policy_branches": [
+            "Воля",
+            "Набожность",
+            "Исследование"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": 151,
+          "capital_lost_turn": 104,
+          "era": "Индустриальная",
+          "score": 304,
+          "units": 8,
+          "strength": 2483,
+          "science": 70,
+          "cities": 6,
+          "population": 48,
+          "religion": "Judaism",
+          "religion_state": "Усилена",
+          "pantheon": "Spirit Animals",
+          "founder_beliefs": [
+            "Zakat",
+            "Jizya"
+          ],
+          "follower_beliefs": [
+            "Choral Music",
+            "Devoted Elite"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 143,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 5,
+          "production": 205,
+          "gold": 3005,
+          "culture": 24,
+          "gold_income": 47,
+          "capital_population": 18
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Россия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Мадагаскар",
+          "conquered_capitals": [],
+          "ideology": "Автократия",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 57,
+          "policies": 24,
+          "policy_branches": [
+            "Традиция",
+            "Честь",
+            "Рационализм"
+          ],
+          "first_policy": "",
+          "eliminated_turn": 141,
+          "capital_lost_turn": 137,
+          "era": "Современность",
+          "score": 285,
+          "units": 4,
+          "strength": 2570,
+          "science": 76,
+          "cities": 2,
+          "population": 26,
+          "religion": "Christianity",
+          "religion_state": "Усилена",
+          "pantheon": "Mystic Rituals",
+          "founder_beliefs": [
+            "Sanctified Innovations",
+            "World Church"
+          ],
+          "follower_beliefs": [
+            "Synagogues",
+            "Feed the World"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 113,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 2,
+          "wars_received": 2,
+          "production": 118,
+          "gold": 685,
+          "culture": 26,
+          "gold_income": 16,
+          "capital_population": 11
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Мадагаскар",
+          "start": 152,
+          "plus": [
+            "Тимуриды",
+            "Венеция",
+            "Япония"
+          ],
+          "minus": [],
+          "abstain": [],
+          "stop": true
+        },
+        "capital_lost_turns": {
+          "Колумбия": 104,
+          "Россия": 137,
+          "Зулусы": 146
+        },
+        "eliminated_turns": {
+          "Россия": 141,
+          "Зулусы": 147
+        },
+        "ideology_turns": {
+          "Мадагаскар": 98,
+          "Тимуриды": 101,
+          "Венеция": 113,
+          "Россия": 113,
+          "Зулусы": 116,
+          "Япония": 119,
+          "Колумбия": 143
+        }
+      },
+      "gif": "Replays/Game_S2G1.gif"
     }
   ]
 }
