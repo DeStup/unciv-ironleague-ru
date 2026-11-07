@@ -26,11 +26,12 @@ Iron League (Unciv) — архив, статистика, рейтинг, сез
 
 ### Сезоны FFA (архив)
 
-Маппинг IL → сезон живёт в `js/games-core.js` (`SEASON_FIRST_IL`):
+Как на live (`unciv.icanseeforever.com`): сезон 0 / 1 / 2…. Маппинг в `js/games-core.js`:
 
-- **Сезон 0** — `IronLeague-1` … `IronLeague-11` (легаси)
-- **Сезон 1** — `IronLeague-12+` (пока сезон 2 не начат)
-- Если в `Games.json` появится поле `game.season`, оно имеет приоритет
+- **Сезон 0** — легаси `IronLeague-1` … `IronLeague-11` (`SEASON_FIRST_IL`)
+- **Сезон 1** — легаси `IronLeague-12` … `IronLeague-30`
+- **Сезон 2+** — `IronLeague-S{season}G{game}` (например `IronLeague-S2G1`); также поле `game.season`
+- Приоритет сезона: `game.season` → разбор `S{n}G{m}` → диапазон legacy `IronLeague-N`
 
 Общий фильтр `ironleague_ffa_season` (localStorage) синхронизирован на **Архив / Статистика / Рейтинг / Рекорды**. Турниры сезон не режут.
 
@@ -125,7 +126,7 @@ py -3 scripts\extract_ironleague_timelines.py
 
 PR от **unciv-core-service** (`Games.json`, иногда `Replays/`).
 
-Когда стартует **сезон 2**, добавь первый IL в `SEASON_FIRST_IL` в `js/games-core.js` (или прокинь `season` в JSON).
+С сезона 2 новые IL-игры именуются `IronLeague-S{n}G{m}`; `/syncironleague` подхватывает их сам (gif — `Replays/Game_S{n}G{m}.gif`).
 
 ## Локальный просмотр
 
@@ -142,7 +143,7 @@ npx --yes serve -l 3000 .
 
 Админ-команды **unciv-core-service**:
 
-- `/syncironleague` / `dry` — недостающие `gameN` → PR
+- `/syncironleague` / `dry` — недостающие `gameN` / `IronLeague-S{n}G{m}` / team / tournament → PR
 - `/addironleague <uuid> [N]` — одна игра по GAME_ID
 - `/ironleaguegifs` — записи без `gif`
 

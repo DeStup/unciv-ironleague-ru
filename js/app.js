@@ -2194,14 +2194,17 @@
             const gameLabel = (() => {
                 if (item.gameNumber == null) return '';
                 // Prefer session name match: epic_most_broken uses IronLeague-30,
-                // whose archive id is not 30 (team2 occupies id 30).
+                // whose archive id is not 30 (team2 occupies id 30). Also S{n}G{m}.
+                const want = String(item.gameNumber).trim();
                 const byNumber = (gamesData || []).find((x) => {
                     const raw = String((x && x.number) || '').trim();
-                    return new RegExp(`^IronLeague-${item.gameNumber}$`, 'i').test(raw);
+                    return new RegExp(`^IronLeague-${want}$`, 'i').test(raw);
                 });
                 if (byNumber) return formatGameLabel(byNumber);
                 const g = (gamesData || []).find((x) => parseGameNum(x) === Number(item.gameNumber));
-                return g ? formatGameLabel(g) : `IronLeague-${item.gameNumber}`;
+                if (g) return formatGameLabel(g);
+                if (/^S\d+G\d+$/i.test(want)) return `IronLeague-${want}`;
+                return `IronLeague-${item.gameNumber}`;
             })();
             const bodyVars = {
                 player: displayPlayerName(item.player),
