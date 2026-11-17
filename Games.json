@@ -22656,6 +22656,308 @@
         }
       },
       "gif": "Replays/Game_S2G1.gif"
+    },
+    {
+      "id": 68,
+      "version": "4.22.6-patch1 (Build 1267)",
+      "number": "ILD-Final-1-Joker-vs-baha",
+      "players": [
+        {
+          "name": "Jokeroldsschool",
+          "nation": "Ирокезы"
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Греция"
+        }
+      ],
+      "winner": "Ирокезы",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "114",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "GF",
+      "matchCode": "Final",
+      "seriesGame": 1,
+      "survivors": [
+        {
+          "name": "Jokeroldsschool",
+          "nation": "Ирокезы",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Colossus",
+            "Temple of Artemis",
+            "Alhambra",
+            "Statue of Zeus",
+            "The Oracle",
+            "Stonehenge",
+            "Machu Picchu",
+            "Petra"
+          ],
+          "wonders_built": [
+            "Colossus",
+            "Temple of Artemis",
+            "Alhambra",
+            "Statue of Zeus",
+            "The Oracle",
+            "Stonehenge",
+            "Machu Picchu"
+          ],
+          "techs": 29,
+          "policies": 13,
+          "policy_branches": [
+            "Воля",
+            "Честь",
+            "Исследование"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Средневековье",
+          "score": 804,
+          "units": 38,
+          "strength": 4656,
+          "science": 81,
+          "cities": 8,
+          "population": 63,
+          "religion": "Zoroastrianism",
+          "religion_state": "Усилена",
+          "pantheon": "God of Craftsman",
+          "founder_beliefs": [
+            "Hajj",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Devout Performers",
+            "Guruship"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 248,
+          "gold": 803,
+          "culture": 55,
+          "gold_income": 15,
+          "capital_population": 9,
+          "max_wonders_built_one_turn": 2,
+          "max_wonders_built_one_turn_at": 94
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Греция",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army",
+            "The Great Library",
+            "Hanging Gardens",
+            "Mausoleum of Halicarnassus",
+            "Chichen Itza",
+            "Himeji Castle",
+            "Great Wall",
+            "Notre Dame"
+          ],
+          "wonders_built": [
+            "Terracotta Army",
+            "The Great Library",
+            "Hanging Gardens",
+            "Mausoleum of Halicarnassus",
+            "Chichen Itza",
+            "Himeji Castle",
+            "Great Wall",
+            "Notre Dame"
+          ],
+          "techs": 28,
+          "policies": 11,
+          "policy_branches": [
+            "Традиция",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Возрождение",
+          "score": 657,
+          "units": 16,
+          "strength": 2240,
+          "science": 88,
+          "cities": 5,
+          "population": 46,
+          "religion": "Buddhism",
+          "religion_state": "Усилена",
+          "pantheon": "Stone Circles",
+          "founder_beliefs": [
+            "Kotel",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Divine inspiration",
+            "Religious Community"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 109,
+          "gold": 1415,
+          "culture": 46,
+          "gold_income": -18,
+          "capital_population": 16
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Ирокезы",
+          "start": 114,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
+    },
+    {
+      "id": 69,
+      "version": "4.22.17 (Build 1281)",
+      "number": "ILD-Final-2-Joker-vs-baha",
+      "players": [
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Готы"
+        },
+        {
+          "name": "Jokeroldsschool",
+          "nation": "Галлы"
+        }
+      ],
+      "winner": "Галлы",
+      "map": "Pangaea",
+      "playerCount": 2,
+      "endedOnTurn": "43",
+      "victoryType": "CC",
+      "flags": [
+        "tournament"
+      ],
+      "excludeFromStats": true,
+      "tournamentName": "IronLeague Duels",
+      "note": "Турнирная дуэль (IronLeague Duels).",
+      "matchId": "GF",
+      "matchCode": "Final",
+      "seriesGame": 2,
+      "survivors": [
+        {
+          "name": "Jokeroldsschool",
+          "nation": "Галлы",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 12,
+          "policies": 4,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Древность",
+          "score": 236,
+          "units": 12,
+          "strength": 472,
+          "science": 15,
+          "cities": 5,
+          "population": 18,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "God of Craftsmen",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0,
+          "production": 42,
+          "gold": 87,
+          "culture": 9,
+          "gold_income": -11,
+          "capital_population": 6
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Готы",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 11,
+          "policies": 4,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Древность",
+          "score": 207,
+          "units": 7,
+          "strength": 266,
+          "science": 13,
+          "cities": 5,
+          "population": 12,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "pantheon": "Divine Judgement",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1,
+          "production": 29,
+          "gold": 352,
+          "culture": 7,
+          "gold_income": -5,
+          "capital_population": 4
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Галлы",
+          "start": 43,
+          "plus": [],
+          "minus": [],
+          "abstain": [],
+          "stop": false
+        }
+      }
     }
   ]
 }
